@@ -54,6 +54,7 @@ unzip file.zip - extract the files from zip
 44. : Check if a program has used openmp directives
 45. history : list of all used commands [History of commands used through the terminal] 
 46.chmod 777 file/folder_name : give full permissions to the file for all 3 types of users [admin user and others]
+	chmod -R 777 /foldername :  give full access to a folder and all its subfolders.
 47. which :
 48.watch :
 CUDA:
