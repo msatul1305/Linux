@@ -115,3 +115,6 @@ cd ~
 63. install .run file: cd /home/user/Downloads
 			sudo chmod +x some-app.run
 			sudo ./some-app.run
+64. xampp - sudo /opt/lampp/lampp start
+				  stop
+				  restart
