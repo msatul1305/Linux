@@ -6,7 +6,7 @@
 6. clear / ctrl+l: clear terminal
 7. cat: read a file
 8. mkdir: make directory
-9. su -  change to root user
+9. su -i :   change to root user
 10. su - "username" : change current user
 11. useradd 
 12. ctrl+ d/logout/exit: logout
