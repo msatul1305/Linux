@@ -1,0 +1,30 @@
+Function Keys for LibreOffice Writer
+Shortcut keys	Effect
+
+F2	Formula Bar
+Ctrl+F2	Insert Fields
+F3	Complete AutoText
+Ctrl+F3	Edit AutoText
+F4	Open Data Source View
+Shift+F4	Select next frame
+F5	Navigator on/off
+Ctrl+Shift+F5	Navigator on, go to page number
+F7	Spellcheck
+Ctrl+F7	Thesaurus
+F8	Extension mode
+Ctrl+F8	Field shadings on / off
+Shift+F8	Additional selection mode
+Ctrl+Shift+F8	Block selection mode
+F9	Update fields
+Ctrl+F9	Show fields
+Shift+F9	Calculate Table
+Ctrl+Shift+F9	Update Input Fields and Input Lists
+Ctrl+F10	Nonprinting Characters on/off
+F11	Styles and Formatting window on/off
+Shift+F11	Create Style
+Ctrl+F11	Sets focus to Apply Style box
+Ctrl+Shift+F11	Update Style
+F12	Numbering on
+Ctrl+F12	Insert or edit Table
+Shift+F12	Bullets on
+Ctrl+Shift+F12	Numbering / Bullets off
