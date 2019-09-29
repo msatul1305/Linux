@@ -118,3 +118,5 @@ cd ~
 64. xampp - sudo /opt/lampp/lampp start
 				  stop
 				  restart
+65. using dictionary dictd :  dict -d wn "dictionary"
+
