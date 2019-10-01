@@ -74,6 +74,11 @@ get pts and ptsno from who command
 Go back to terminal keeping vim in background: ctrl+z
 type "fg" to go back to vim 
 55.nproc - No of CPUs in the System
+56. find . -name *ones* - TO track down files that you know exist if you can't remember where you put them.
+57. diff - Compares the 2 text files and shows the difference between them.
+58. curl - is a toll to retrieve information and files from Uniform Resource Locators or internet addresses.
+59. chown - allows to change the owner and group owner of a file.
+60. groups - tells us which group a user is member of.
 
 
 Using GUI Linux remote access: ssh -X user@ip
