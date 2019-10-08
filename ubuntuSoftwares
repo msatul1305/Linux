@@ -30,6 +30,7 @@ installed
                           sudo apt-get install artha
                iii) GoldenDictionary: sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
                                       sudo apt-get install goldendict
+2. Opencv Python - pip install opencv-python
 
                               
 GIMP
