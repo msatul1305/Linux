@@ -29,6 +29,8 @@ Xampp
 5. C -                sudo apt-get install gcc
 6. Python -           sudo apt-get install python
 7. Python3 -          sudo apt-get install python3
+8. IDLE (PYTHON) -    sudo apt-get install idle
+
                               
 GIMP
 git
