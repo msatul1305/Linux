@@ -16,3 +16,6 @@ LibreOffice:
 Shotwell :
 	ctrl+o : crop
 	ctrl+shift+E : export
+Okular : 
+	F6 : open annotations (highlight and other options)
+	
