@@ -124,4 +124,5 @@ cd ~
 				  stop
 				  restart
 65. using dictionary dictd :  dict -d wn "dictionary"
-
+66. alias : create an alias to make easier the use of complexes commands. Example of use: alias "name_of_alias":"command"
+67. activate virtual environment to use tensorflow : source ./venv/bin/activate
