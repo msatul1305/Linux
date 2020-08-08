@@ -28,14 +28,23 @@
 10. git                              
 
 Image Editor: GIMP
+Photo viewer: Shotwell
 Screen Sharing Applications: AnyDesk, TeamViewer, Discord
 Chat Applications: Telegram
 Web Browsers: Chrome, Chromium, Firefox
 Pdf Viewer: Document Viewer, Okular
 Download Manager: Free Download Manager
 Video Player: VLC
-Coding Environment: VSCODE, Android Studio
+Coding Environment: VSCODE, Android Studio, IDLE(Python), 
 Live server: Xampp
+Partition Manager: GParted
+Screen Recorder:  KAZAM
+Phone to laptop connect: KDE connect
+Video Editing: Kdenlive
+Paint: Pinta
+Remote Desktop Client: Remmina, 
+Video Calling: Skype, 
+Virtual Machine Setup: Virtual Box, VMware
 
 VSCODE Extensions
 live server
