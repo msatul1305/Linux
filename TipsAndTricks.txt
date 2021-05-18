@@ -1,1 +1,1 @@
-1. To get the website layout in github: username.github.io/reponame
+1. To get the website layout hosted in github: username.github.io/reponame
