@@ -1,2 +1,2 @@
-1. create web app: django-admin startproject projectname
+1. create new web app: django-admin startproject projectname
 2.Run Web app: python manage.py runserver
