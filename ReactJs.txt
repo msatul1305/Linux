@@ -2,4 +2,4 @@
 2.Install create react app: npm install create-react-app
 3. Create new project: create-react-app-project-name
 4. Run project: npm start
-5. main file: src/app.js
+5. main file: src/App.js
