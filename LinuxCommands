@@ -127,7 +127,12 @@ cd ~
 66. alias : create an alias to make easier the use of complexes commands. Example of use: alias "name_of_alias":"command"
 67. activate virtual environment to use tensorflow : source ./venv/bin/activate
 68. Open VS code in current folder : code .  
-69. Copy a whole website : You may need to mirror the website completely, but be aware that some links may really dead. You can use HTTrack or wget:
+69. uname : know the UNIX machine name
+	uname -a: all info about unix machine
+
+
+
+Copy a whole website : You may need to mirror the website completely, but be aware that some links may really dead. You can use HTTrack or wget:
 
 wget -r http://winapp.com # or whatever
 With HTTrack, first install it:
