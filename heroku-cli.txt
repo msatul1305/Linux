@@ -1,4 +1,4 @@
 1. Verify Installation: heroku --version
 2. Login via browser: heroku login
 3. Login via CLI: heroku login -i
-4. 
+4. Create random new app: heroku create
