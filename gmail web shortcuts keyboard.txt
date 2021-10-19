@@ -1,0 +1,6 @@
+1. unselect/select conversation: x
+2. * + a : select all
+3. * + n: deselect all
+4. o : open message/mail
+5. Alt + backspace: go back to inbox from message
+6. shift + i : mark as read
