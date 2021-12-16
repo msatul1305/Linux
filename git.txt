@@ -1,0 +1,15 @@
+Basic flow:
+
+1. git clone "url"
+2. git status
+3. git checkout "some branch"
+4. git add .
+5. git commit -m "something"
+6. git push
+
+To undo git add . (remove all files from stage):
+  git reset
+
+To undo git add to specific file:
+  git reset <file>
+  
