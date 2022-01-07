@@ -1,0 +1,8 @@
+1. Go to end of file: Shift+ G
+2. Undo: u
+3. Redo: Ctrl + r
+4. Tab multiple lines: 
+  a. Enter Visual Mode (shift + v)
+  b. select text using arrow keys
+  c. shift + .
+ 5. Search for text: /"search text"
