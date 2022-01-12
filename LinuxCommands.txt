@@ -141,3 +141,5 @@ sudo apt-get install httrack
 now run it just 1 external link:
 
 httrack --ext-depth=1 http://winapp.com
+
+70. create symbolic link between 2 files: ln -s "filetobelinkedto" "filetobelinkedfrom" 
