@@ -3,8 +3,14 @@
 3. Go to specific line number: :"lineno"
 3. Undo: u
 4. Redo: Ctrl + r
-5. Tab multiple lines: 
+5. (A). Tab multiple lines: 
   a. Enter Visual Mode (shift + v)
   b. select text using arrow keys
-  c. shift + .
+  c. shift + >
+  
+  (B) Untab multiple lines: 
+  a. Enter Visual Mode (shift + v)
+  b. select text using arrow keys
+  c. shift + <
+
 6. Search for text: /"search text"
