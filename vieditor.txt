@@ -1,1 +1,0 @@
-go to end of file in vi: press the Esc key and then press Shift + G to move cursor to end of file in vi
