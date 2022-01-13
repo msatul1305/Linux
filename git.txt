@@ -7,12 +7,12 @@ I. Basic flow:
 5. git commit -m "something"
 6. git push
 
-To undo git add . (remove all files from stage):
+II. To undo git add . (remove all files from stage):
   git reset
 
-To undo git add to specific file:
+III. To undo git add to specific file:
   git reset <file>
   
-II. get current branch:
+IV. get current branch:
   git status | grep 'On branch'
   
