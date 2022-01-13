@@ -1,4 +1,4 @@
-Basic flow:
+I. Basic flow:
 
 1. git clone "url"
 2. git status
@@ -12,4 +12,7 @@ To undo git add . (remove all files from stage):
 
 To undo git add to specific file:
   git reset <file>
+  
+II. get current branch:
+  git status | grep 'On branch'
   
