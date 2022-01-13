@@ -13,6 +13,10 @@ II. To undo git add . (remove all files from stage):
 III. To undo git add to specific file:
   git reset <file>
   
-IV. get current branch:
+IV. Explicitly remove a tracked file from tracking in git(like a config file):
+  git rm --cached path/filename
+  
+V. get current branch:
   git status | grep 'On branch'
+  
   
