@@ -19,4 +19,7 @@ IV. Explicitly remove a tracked file from tracking in git(like a config file):
 V. get current branch:
   git status | grep 'On branch'
   
+ VI. difference between current version and last updated version of a file:
+  git diff "filename"
+  
   
