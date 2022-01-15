@@ -22,4 +22,7 @@ V. get current branch:
  VI. difference between current version and last updated version of a file:
   git diff "filename"
   
+  VII. get config list:
+    git config --list
+  
   
