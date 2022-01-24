@@ -14,3 +14,5 @@
   c. shift + <
 
 6. Search for text: /"search text"
+7. show line numbers: set nu
+8. Hide line numbers: set nu!
