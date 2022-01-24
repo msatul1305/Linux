@@ -16,3 +16,14 @@
 6. Search for text: /"search text"
 7. show line numbers: set nu
 8. Hide line numbers: set nu!
+
+
+
+
+
+
+
+
+
+.vimrc file in home folder: To set default views of a vim editor 
+1. comments in .vimrc file: "" this is a comment line
