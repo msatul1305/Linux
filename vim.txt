@@ -26,4 +26,4 @@
 
 
 .vimrc file in home folder: To set default views of a vim editor 
-1. comments in .vimrc file: "" this is a comment line
+1. comments in .vimrc file: " this is a comment line
