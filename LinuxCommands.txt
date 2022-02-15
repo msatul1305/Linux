@@ -143,3 +143,4 @@ now run it just 1 external link:
 httrack --ext-depth=1 http://winapp.com
 
 70. create soft link between 2 files (-s => soft link): ln -s "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"  ***
+71. check all softlinks (ll => long list): ll -i
