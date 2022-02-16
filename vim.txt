@@ -17,7 +17,7 @@
 7. show line numbers: set nu
 8. Hide line numbers: set nu!
 9. Go to end of line: $
-
+10. Go to start of line: ^
 
 
 
