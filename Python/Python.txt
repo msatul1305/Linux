@@ -11,3 +11,5 @@
   1 002             1.100000
     ^^^
     0's padded to 2
+    
+   3. use + : print("hello"+str(var1)+str(var2))
