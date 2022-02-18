@@ -1,6 +1,9 @@
-#basic multithreading using 
+#This is the older, simpler and manual way of creating and executing threads [Slower than concurrent.futures approach]
+
+#Basic multithreading using 
 #1. "threading" library
 #2. thread.start() and thread.join()
+
 
 import threading
 import time
