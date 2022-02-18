@@ -1,4 +1,4 @@
-#This is the older, simpler and manual way of creating and executing threads [Slower than concurrent.futures approach]
+#This is the older, simpler and manual way of creating and executing threads [Slower than concurrent.futures approach - python>3.2]
 
 #Basic multithreading using 
 #1. "threading" library
