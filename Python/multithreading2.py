@@ -20,7 +20,7 @@ def do_something(seconds):
 with concurrent.futures.ThreadPoolExecutor() as executor:
     results = [executor.submit(do_something, 1) for _ in range(10)]
     for f in concurrent.futures.as_completed(results):
-      print(f.result)
+      print(f.result())
 
     # for result in results:
     #     print(result)
