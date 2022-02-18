@@ -1,4 +1,5 @@
 # same as multithreading3 but using map
+# map returns the results instead of a future object(as in submit method) - It returns the result in the order that they were started i.e. 1, 2, 3, 4, 5 instead of the order that they got completed i.e. 1, 2, 3, 4, 5
 #Using:
 #1. concurrent.futures library
 #Using ThreadPoolExecutor() as executor
