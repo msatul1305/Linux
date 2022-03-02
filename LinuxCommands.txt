@@ -145,3 +145,4 @@ httrack --ext-depth=1 http://winapp.com
 70. create soft link between 2 files (-s => soft link): ln -s "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
 71. check all softlinks (ll => long list): ll -i
 72. Update softlink: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
+eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
