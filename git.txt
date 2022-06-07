@@ -26,3 +26,4 @@ V. get current branch:
     git config --list
   
   
+Get git diff line numbers where changes are made: git diff --unified=0 | grep -Po '^\+\+\+ ./\K.*|^@@ -[0-9]+(,[0-9]+)? \+\K[0-9]+(,[0-9]+)?(?= @@)' 
