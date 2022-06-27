@@ -1,0 +1,3 @@
+Oracle vs SQL Server: https://www.youtube.com/watch?v=VSJ3SA_z4Gk
+1. Change Column Size in SQL Server: ALTER TABLE Employee ALTER COLUMN FirstName VARCHAR(50);
+2. Change the size in the Oracle database: ALTER TABLE Employee MODIFY (FirstName VARCHAR2(50));
