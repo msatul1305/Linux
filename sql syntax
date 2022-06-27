@@ -1,3 +1,5 @@
-Oracle vs SQL Server: https://www.youtube.com/watch?v=VSJ3SA_z4Gk
+mysql vs sqlserver vs postgresql: https://www.youtube.com/watch?v=loZ5L_NmCG8 
+https://www.youtube.com/watch?v=VSJ3SA_z4Gk
 1. Change Column Size in SQL Server: ALTER TABLE Employee ALTER COLUMN FirstName VARCHAR(50);
 2. Change the size in the Oracle database: ALTER TABLE Employee MODIFY (FirstName VARCHAR2(50));
+3. change the size in the PostgreSQL database: ALTER TABLE Employee ALTER COLUMN FirstName TYPE VARCHAR(50);
