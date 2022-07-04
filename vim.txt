@@ -18,6 +18,8 @@
 8. Hide line numbers: set nu!
 9. Go to end of line: $
 10. Go to start of line: ^
+11. Delete lines from Visual mode:
+Shift+V to move to visual mode then select lines and press "d" to delete selected lines.
 
 
 
