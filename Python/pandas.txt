@@ -3,4 +3,4 @@ df = pd.read_csv("file.csv")
 
 df.shape  #returns (row, column) in the dataframe eg. (100, 10) i.e. 100 rows and 10 columns.
 
-df.describe() #list of all data from csv file along with column and row definition
+df.describe() #Gives a description of the data like min, max, mean, count, standard deviation etc. for each column
