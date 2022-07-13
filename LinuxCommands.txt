@@ -146,3 +146,4 @@ httrack --ext-depth=1 http://winapp.com
 71. check all softlinks (ll => long list): ll -i
 72. Update softlink: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
 eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
+73. id: gives the user and group names of current user(UID or group id) in the server.
