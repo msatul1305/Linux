@@ -1,6 +1,12 @@
+eg. file taken = tips.csv -> https://github.com/mwaskom/seaborn-data/blob/master/tips.csv
+
 import pandas as pd
 df = pd.read_csv("file.csv")
 
 df.shape  #returns (row, column) in the dataframe eg. (100, 10) i.e. 100 rows and 10 columns.
 
-df.describe() #Gives a description of the data like min, max, mean, count, standard deviation etc. for each column
+df.describe() #Gives a description of the data for each column like min, max, mean, count, standard deviation etc.
+
+df.values -> returns all values in csv in a 2-d array
+
+
