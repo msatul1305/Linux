@@ -47,9 +47,14 @@ FIX Message components:
   
 3. Trailer
   **key = 10**, value = checksum
-  checksum = sum of message upto but not including (from 8 = FIX to 6 = 0 |)%128
+  checksum = sum of message upto but not including (from 8 = FIX to 6 = 0 |)%128 or %256?
   
 8=FIX.4.4|9=110|35=D|34=3|49=CLIENT|52=20190424-11:19:16.885|56=SERVER|11=ID|21=3|40=1|54=1|55=EUR/USD|60=20190424-11:19:16.885|10=54|
+
+
+8 Till 56 = Header
+11 till 60 = Body
+10 = Tailer
 
 D => Order Single 
 34 - MsgSeqNum = 3
@@ -61,5 +66,14 @@ D => Order Single
 60 - TransactTime
 
 
+Types of FIX messages
+(Tag - 35, Type: String)
+
+0 - Heartbeat(Helps to monitor status of communicatrion string and identify when the last of the message was not received)
+5 - Logout
+A - Logon
+D - New order -Single
+F - Order Cancel Request
+8 - Execution Report
 
 
