@@ -31,12 +31,19 @@ FIX Message components:
 1. **Standard header**
   8 - BeginString
   9 - BodyLength
-  35 - MsgType
+  35 - MsgType => eg. Cancelling Order, Placing order etc.
   49 - SenderCompID
   56 - TargetCompID
   34 - MsgSeqNum
   52 - SendingTime
   
+  
+2. Message body
+  message sent by application
+  
+3. Trailer
+  key = 10, value = checksum
+  checksum = sum of message upto but not including (from 8 = FIX to 6 = 0 |)%128
 
 
 
