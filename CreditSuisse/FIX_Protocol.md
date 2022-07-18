@@ -74,6 +74,6 @@ Types of FIX messages
 A - Logon
 D - New order - Single(Sending order electronically via a broker)
 F - Order Cancel Request
-8 - Execution Report(Confirms the receipt of an order(order received or not), also confirms changes to an existing order: accept, cancel or replace request, relay order status information:FILL, TRADABLE OR RESTRICTED TRADABLE INFO,  ETC.)
+8 - Execution Report(Confirms the receipt of an order(order received or not), also confirms changes to an existing order: accept, cancel or replace request, relay order status information:FILL, TRADABLE OR RESTRICTED TRADABLE INFO,  ETC., REJECT ORDERS, REPORT POST TRADE FEES CALCULATIONS ETC.)
 
 
