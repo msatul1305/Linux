@@ -72,8 +72,8 @@ Types of FIX messages
 0 - Heartbeat(Helps to monitor status of communicatrion string and identify when the last of the message was not received)
 5 - Logout
 A - Logon
-D - New order -Single
+D - New order - Single(Sending order electronically via a broker)
 F - Order Cancel Request
-8 - Execution Report
+8 - Execution Report(Confirms the receipt of an order(order received or not), also confirms changes to an existing order: accept, cancel or replace request, relay order status information:FILL, TRADABLE OR RESTRICTED TRADABLE INFO,  ETC.)
 
 
