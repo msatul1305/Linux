@@ -25,6 +25,10 @@ eg(s):
      array_2d = np.random.rand(3,2)          #array([0.329819879, 0.678668],
                                                     [0.629819879, 0.78668],
                                                     [0.987679, 0.778668])
+                                                    
+     Accessing 2d array: same as C/C++ accessing: array_2d[0][1] or comma based: array_2d[0,1]df
+     -> Comma based accessing doesn't work with dataframe
+
      
 import pandas as pd
 df = pd.read_csv("file.csv")
