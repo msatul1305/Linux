@@ -40,3 +40,14 @@ df.describe() #Gives a description of the data for each column like min, max, me
 df.values -> returns all values in csv in a 2-d array
 
 
+Pandas data sources:
+Text, Binary, Relational databases.
+
+Text => CSV, JSON, HTML tables
+
+
+To use only specific columns from  the datasheet:
+     df = pd.read_csv("path", nrows=5, index_col = 'id', usecols= ['id', 'artist'])
+
+
+
