@@ -13,6 +13,8 @@ eg(s):
      arr = np.random.rand(3)       #array([0.329819879, 0.678668, 0.8766978])
 2. Panda series(Series always has 1 column):
       ser = pd.Series(np.random.rand(3))          #0,1,2: 0.329819879, 0.678668, 0.8766978
+   we can define index ourself for series as:
+       ser = pd.Series(np.random.rand(3), index = ["First", "Second", "Third"])      #First, Second, Third: 0.329819879, 0.678668, 0.8766978
 3. DataFrame - 2 columns with random numbers
     df = pd.DataFrame(np.random.rand(3, 2))       0         1
                                                   0 0.9987 0.566
