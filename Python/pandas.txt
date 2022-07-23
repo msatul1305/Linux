@@ -20,7 +20,12 @@ eg(s):
                                                   0 0.9987 0.566
                                                   1 0.76   0.876
                                                   2 0.333   0.455
-
+          
+4. Creating 2d array:
+     array_2d = np.random.rand(3,2)          #array([0.329819879, 0.678668],
+                                                    [0.629819879, 0.78668],
+                                                    [0.987679, 0.778668])
+     
 import pandas as pd
 df = pd.read_csv("file.csv")
 
