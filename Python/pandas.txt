@@ -4,9 +4,9 @@ Numpy:
 import numpy as np
 
 Data Types:
-1. np.array/np.ndarray:    #nd=> n-dimensional array 
-2. pd.Series
-3. pd.DataFrame
+1. np.array/np.ndarray: same as array/List    #nd=> n-dimensional array 
+2. pd.Series: array+Row label 
+3. pd.DataFrame: array + row label + column label
 
 eg(s):
 1. Create a 3-element ndarray
