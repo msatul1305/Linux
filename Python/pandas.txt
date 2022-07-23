@@ -1,5 +1,21 @@
 eg. file taken = tips.csv -> https://github.com/mwaskom/seaborn-data/blob/master/tips.csv
 
+Numpy:
+import numpy as np
+
+Data Types:
+1. np.array/np.ndarray:    #nd=> n-dimensional array 
+2. pd.Series
+3. pd.DataFrame
+
+eg(s):
+1. Create a 3-element ndarray
+     arr = np.random.rand(3)
+2. Panda series(Series always has 1 column):
+      ser = pd.Series(np.random.rand(3))
+3. DataFrame
+    df = pd.DataFrame(np.random.rand(3, 2))
+
 import pandas as pd
 df = pd.read_csv("file.csv")
 
