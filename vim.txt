@@ -20,7 +20,9 @@
 10. Go to start of line: ^
 11. Delete lines from Visual mode:
 Shift+V to move to visual mode then select lines and press "d" to delete selected lines.
-
+12. Copy paste in vi editor: press i-> ctrl+shift+V
+Or
+Use :set paste to disable automated indenting etc.
 
 
 
