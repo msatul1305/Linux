@@ -1,4 +1,8 @@
-1. How can I print variable and string on same line in Python?
+-> set current project path in python:
+export PYTHONPATH=`pwd`
+
+
+-> How can I print variable and string on same line in Python?
   1. Use , to separate strings and variables while printing:
   print("If there was a birth every 7 seconds, there would be: ", var, "births")
   , in print function separates the items by a single space:
@@ -6,10 +10,10 @@
   2. or better use string formatting:
   print("If there was a birth every 7 seconds, there would be: {} births".format(births))
  
- 2. String formatting in python:
+ -> String formatting in python:
   >>> print("{:d} {:03d} {:>20f}".format(1, 2, 1.1))
   1 002             1.100000
     ^^^
     0's padded to 2
     
-   3. use + : print("hello"+str(var1)+str(var2))
+ -> use + : print("hello"+str(var1)+str(var2))
