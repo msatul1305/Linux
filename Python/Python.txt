@@ -17,3 +17,14 @@ export PYTHONPATH=`pwd`
     0's padded to 2
     
  -> use + : print("hello"+str(var1)+str(var2))
+
+
+Abstract class in python:
+1. Can't be instantiated but can be inherited i.e. blueprint for other classes
+2. Abstract method - method without implementation
+3. EG. 
+from abc import ABC, abstractmethod
+class AbstractClassName(ABC):
+ @abstractmethod
+ def abstract_method_name(self):
+  Pass
