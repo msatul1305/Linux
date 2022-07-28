@@ -21,7 +21,7 @@ export PYTHONPATH=`pwd`
 
 Abstract class in python:
 ABC = ABSTRACT BASE CLASSES
-1. Can't be instantiated but can be inherited i.e. blueprint for other classes
+1. Can't be instantiated(i.e. can't create object of the class) but can be inherited i.e. blueprint for other classes
 2. Abstract method - method without implementation
 3. EG. 
 from abc import ABC, abstractmethod
