@@ -1,6 +1,8 @@
 -> set current project path in python:
 export PYTHONPATH=`pwd`
 
+r("C:\\") : r before the string disables the processing of escape sequences.
+
 
 -> How can I print variable and string on same line in Python?
   1. Use , to separate strings and variables while printing:
