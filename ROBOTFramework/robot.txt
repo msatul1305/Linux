@@ -1,6 +1,6 @@
 Robot Framework -  Generic open source automation framework for:
-1. Acceptance Testing
-2. ATTD - Acceptance Test driven development
-3. RPA - Robotic Process Automation
+1. Acceptance Testing - To test the capability of a system.
+2. ATTD - Acceptance Test driven development - Development methodology based on communication between business, customers, developers and testers - creating of acceptance tests before development of actual functionality
+3. RPA - Robotic Process Automation -> Reducing human efforts for machines that uses ML and AI. Handles high level repeatable tasks.
 
 -> Uses Keyword driven testing approach.
