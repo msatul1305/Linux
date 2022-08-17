@@ -1,4 +1,5 @@
-Robot Framework -  Generic open source automation framework for:
+***Robot Framework***
+- Generic open source automation framework for:
 1. Acceptance Testing - To test the capability of a system.
 2. ATTD - Acceptance Test driven development - Development methodology based on communication between business, customers, developers and testers - creating of acceptance tests before development of actual functionality
 3. RPA - Robotic Process Automation -> Reducing human efforts for machines that uses ML and AI. Handles high level repeatable tasks.
@@ -32,3 +33,21 @@ When Robot Framework is started, it processes the data, executes the test cases 
 1. Data Driven tests
 2. Work flow tests
 3. High level tests
+
+
+Test case tables:
+1st column: test names
+2nd column: Keyword names/ setting variables from keyword return values
+***Setting names: square brackets around them - to distinguish them from keywords***
+***There should be nothing between table headers and 1st test***
+Test cases can also have their own settings
+
+
+Some available settings:
+[documentation] - specifying test case documentation
+[tags] - used for tagging test cases
+[setup]
+[teardown]
+[template]
+[timeout] - set test case timeout
+
