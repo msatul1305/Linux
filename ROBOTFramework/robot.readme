@@ -4,3 +4,6 @@ Robot Framework -  Generic open source automation framework for:
 3. RPA - Robotic Process Automation -> Reducing human efforts for machines that uses ML and AI. Handles high level repeatable tasks.
 
 -> Uses Keyword driven testing approach.
+
+
+***Architecture***
