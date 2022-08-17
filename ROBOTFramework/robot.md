@@ -1,4 +1,5 @@
 ***Robot Framework***
+https://www.youtube.com/watch?v=d-KWz7euLlc
 - Generic open source automation framework for:
 1. Acceptance Testing - To test the capability of a system.
 2. ATTD - Acceptance Test driven development - Development methodology based on communication between business, customers, developers and testers - creating of acceptance tests before development of actual functionality
@@ -50,4 +51,13 @@ Some available settings:
 [teardown]
 [template]
 [timeout] - set test case timeout
+
+***Keywords***
+1. Library keywords: pre defined keywords in languages like python, Java etc.
+2. User keywords: Custom high level keywords craeted by users
+
+eg. of library settings importing:
+***Settings***
+Library  OperatingSystem
+Library  lib/LoginLibrary.py
 
