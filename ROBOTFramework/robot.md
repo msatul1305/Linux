@@ -57,7 +57,11 @@ Some available settings:
 2. User keywords: Custom high level keywords craeted by users
 
 eg. of library settings importing:
-***Settings***
+``` *** Settings ***
 Library  OperatingSystem
-Library  lib/LoginLibrary.py
+Library  lib/LoginLibrary.py```
+
+
+
+
 
