@@ -119,5 +119,10 @@ User status is stored in database
   Login  {USERNAME}  {PASSWORD}
   Database should contain  {USERNAME}  {PASSWORD} Active
   
+*** Keywords ***
+Database should contain
+  [Arguments]  ${username}  {password}  ${status}
+  ${database} =  Get File  ${DATABASE FILE}
+  Should Contain   ${database}  ${username}t{password}t${status}n
   
 ```
