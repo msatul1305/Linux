@@ -99,4 +99,25 @@ She cannot use the old password anymore
  
 ```
 
+***Defining Variables***
+```
+*** Variables ***
+${USERNAME}  janedoe
+${PASSWORD}  JANEDOE
+${NEW PASSWORD}  JANEDOE1
+${DATABASE FILE}  ${TEMPDIR}${/}robotframework-quickstart-db.txt
+${PWD INVALID LENGTH}  Password must be 7-12 characters long 
+```
 
+***Using Variables***
+```
+*** Test Cases ***
+User status is stored in database
+  [Tags]  variables  database
+  Create Valid User  {USERNAME}  {PASSWORD}
+  Database should contain  {USERNAME}  {PASSWORD}  Inactive
+  Login  {USERNAME}  {PASSWORD}
+  Database should contain  {USERNAME}  {PASSWORD} Active
+  
+  
+```
