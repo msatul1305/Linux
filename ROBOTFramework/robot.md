@@ -63,7 +63,40 @@ Library  OperatingSystem
 Library  lib/LoginLibrary.py
 ```
 
+```
+*** Keywords ***
+Clear login database
+  Remove file  ${DATABASE FILE}
+  
+Create valid user
+  [Arguments]  ${username}  ${password}
+  Create user ${username}  ${password}
+  Status should be  SUCCESS
 
+Creating user with invalid password should fail
+  [Arguments]  ${password}  ${error}
+  Create user  example  {password}
+  Status should be  Creating user failed: ${error}
+  
+Login
+  [Arguments]  ${username}  ${password}
+  Attempt to login with credentials  ${username}  ${password}
+  Status should be  Logged In
+  
+A user has a valid account
+  Create  valid user  {USERNAME}  {PASSWORD}
 
+She changes her password
+  Change Password  {USERNAME}  {PASSWORD}  {NEW PASSWORD}
+  Status should be   SUCCESS
+  
+She can login with the new password
+  LOGIN  {USERNAME}  {NEW PASSWORD}
+  
+She cannot use the old password anymore
+  Attempt to login with credentials  {USERNAME}  {PASSWORD}
+  Status should be  Access Denied
+ 
+```
 
 
