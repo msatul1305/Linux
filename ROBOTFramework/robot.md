@@ -124,5 +124,17 @@ Database should contain
   [Arguments]  ${username}  {password}  ${status}
   ${database} =  Get File  ${DATABASE FILE}
   Should Contain   ${database}  ${username}t{password}t${status}n
-  
 ```
+  
+*** Organizing Test Cases ***
+
+```
+*** Settings ***
+Suite Setup  Clear Login Database
+Test Teardown  Clear Login Database
+
+*** Settings ***
+Force.Tags  quickstart
+Default tags  example  smoke
+```
+  
