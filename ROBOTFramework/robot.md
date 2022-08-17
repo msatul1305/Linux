@@ -21,3 +21,14 @@ When Robot Framework is started, it processes the data, executes the test cases 
 9. String: replace string using regX, split 2 lines, should be string
 10. telnet: telnet connections
 11. XML framework
+
+***Built-in Tools***
+1. Testdoc
+2. Tidy
+3. Rebot
+4. Libdoc
+
+***Test Cases***
+1. Data Driven tests
+2. Work flow tests
+3. High level tests
