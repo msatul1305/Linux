@@ -186,7 +186,8 @@ Welcome Page Should Be Open
 
 
 Working Examples:
-1. 
+
+```
 *** Settings ***
 Library  SeleniumLibrary
 
@@ -204,3 +205,4 @@ Login Test2
         Input Text  id:pass  demo
         Click Element  name:login
         Close Browser
+```
