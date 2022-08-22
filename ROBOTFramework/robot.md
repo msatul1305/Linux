@@ -1,11 +1,11 @@
 ***Robot Framework***
 Edureka -> https://www.youtube.com/watch?v=d-KWz7euLlc
 - Generic open source automation framework for:
-1. Acceptance Testing - To test the capability of a system.
-2. ATTD - Acceptance Test driven development - Development methodology based on communication between business, customers, developers and testers - creating of acceptance tests before development of actual functionality
-3. RPA - Robotic Process Automation -> Reducing human efforts for machines that uses ML and AI. Handles high level repeatable tasks.
+1. ***Acceptance Testing*** - To test the capability of a system. -> Normally done by users.
+2. ***ATTD - Acceptance Test driven development*** - Development methodology based on communication between business, customers, developers and testers - creating of acceptance tests before development of actual functionality
+3. ***RPA - Robotic Process Automation*** -> Reducing human efforts for machines that uses ML and AI. Handles high level repeatable tasks.
 
--> Uses Keyword driven testing approach.
+-> Uses ***Keyword driven testing*** approach.
 
 
 ***Architecture***
@@ -182,3 +182,23 @@ Welcome Page Should Be Open
 
 
 
+
+Working Examples:
+1. 
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Test Cases ***
+Login Test
+        Open Browser  https://www.facebook.com  Firefox
+        Input Text  name:email  demo
+        Input Text  name:pass  demo
+        Click Element  name:login
+        Close Browser
+
+Login Test2
+        Open Browser  https://www.facebook.com  Firefox
+        Input Text  id:email  demo
+        Input Text  id:pass  demo
+        Click Element  name:login
+        Close Browser
