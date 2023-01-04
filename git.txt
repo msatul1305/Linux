@@ -31,3 +31,5 @@ Get git diff line numbers where changes are made: git diff --unified=0 | grep -P
 Reset and sync local repository with remote branch:
 Note: This command will destroy all local changes 
 git fetch origin && git reset --hard origin/master && git clean -f -d
+get host id to do telnet: host "servername"
+eg. host MSI
