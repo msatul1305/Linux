@@ -3,6 +3,8 @@ On most Linux systems a program called bash (which stands for Bourne Again SHell
 What's a "Terminal?"
 This is a program that opens a window and lets you interact with the shell. Some Linux distributions install several. These might include gnome-terminal, konsole, xterm, rxvt, kvt, nxterm, and eterm.
 
+If the last character of your shell prompt is # rather than $, you are operating as the superuser. 
+
 1.df -Th : No of Partitions/My Computer of Linux
 2.cd - change directory, md - make directory
 3. ls- list (ls -a: all files(show hidden files))
