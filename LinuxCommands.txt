@@ -194,7 +194,7 @@ httrack --ext-depth=1 http://winapp.com
 72. Update softlink: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
 eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 73. id: gives the user and group names of current user(UID or group id) in the server.
-
+74. file "filename.ext": to know he type of content in a file eg. hello.cpp: ASCII text
 
 
 
@@ -215,3 +215,4 @@ G	Go to the end of the text file
 n	Repeat the previous search
 h	Display a complete list less commands and options
 q	Quit
+
