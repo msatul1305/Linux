@@ -80,7 +80,7 @@ ps -aux
 	:%s/"oldtext"/"newtext" : search and replace all
 28.head -n "10" "filename": display first 10 lines 
 29.tail -n "10" "filename" : display last 10 lines
-30.more/less "filename": display first 10 lines and press enter to show next line
+30.more/less "filename": reada file
 31. head -n 50| tail -n 15 : display line 35 to 50  (1st find first 50 lines and then show last 15 lines of that first 50 line)
 32.tar -zxvf "filename" - extract archive files (zxvf-> z:gzip,x:extract,v:verbose,f:bzip2)
 unzip file.zip - extract the files from zip
@@ -194,3 +194,24 @@ httrack --ext-depth=1 http://winapp.com
 72. Update softlink: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
 eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 73. id: gives the user and group names of current user(UID or group id) in the server.
+
+
+
+
+
+Less command:
+less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.
+eg. less text_file
+Controlling less
+Once started, less will display the text file one page at a time. We can use the Page Up and Page Down keys to move through the text file. To exit less, we type "q". Here are some commands that less will accept:
+
+Keyboard commands for the less program
+Command	Action
+Page Up or b	Scroll back one page
+Page Down or space	Scroll forward one page
+G	Go to the end of the text file
+1G	Go to the beginning of the text file
+/characters	Search forward in the text file for an occurrence of the specified characters
+n	Repeat the previous search
+h	Display a complete list less commands and options
+q	Quit
