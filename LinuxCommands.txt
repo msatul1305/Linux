@@ -47,6 +47,7 @@ unzip file.zip - extract the files from zip
 38. mv : move-It renames if you move it to same dir(used to rename files)
 39. du : disk utilisation (du -sh "foldername")
 	-h: human readable form
+	-> To get list of all users and their storage usage: du -s | sort -nr
 40./proc/cpuinfo (or) lscpu : get no of processors /cores
 41. yum -y update: update  
 42. kill "PID" :killl a process using its pid
