@@ -5,7 +5,19 @@ This is a program that opens a window and lets you interact with the shell. Some
 
 If the last character of your shell prompt is # rather than $, you are operating as the superuser. 
 
-Format of any linux command: command -options arguments
+Format of any linux command: 
+	command -options arguments 
+	eg. ls -l /etc
+	
+File Permissions
+A representation of the file's access permissions. 
+The first character is the type of file. 
+	"-" indicates a regular (ordinary) file. 
+	"d" indicates a directory.
+The second set of three characters represent the read, write, and execution rights of the file's owner. 
+The next three represent the rights of the file's group, and the 
+final three represent the rights granted to everybody else.
+eg. drwxr-xr-x  6 me  me  1024 Oct 9 2019 web_page
 
 1.df -Th : No of Partitions/My Computer of Linux
 2.cd - change directory, md - make directory
