@@ -1,11 +1,11 @@
--a: 
+-a: all
 -b:
 -c:
 -d:
 -e:
 -f:
 -g:
--h:
+-h: human readable format
 -i:
 -j:
 -k:
@@ -29,3 +29,8 @@
 
 Usage examples:
 1. ls -l: List the files in the working directory in long format
+2. du -h: size of bytes in human readbale format
+3. ls -a: list all hidden files also along with normal files/folders.
+
+Combination of options:
+eg. ls -ahl
