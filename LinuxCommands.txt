@@ -39,7 +39,10 @@ drwxr-xr-x   6 me       me           1024 Oct  9  2019 web_page
     |
     +----------------------------------------------   File Permissions
     
-    
+
+ASCII text. ASCII (pronounced "As-Key") is short for American Standard Code for Information Interchange. This is a simple encoding scheme that was first used on Teletype machines to map keyboard characters to numbers.
+Text is a simple one-to-one mapping of characters to numbers. It is very compact. Fifty characters of text translates to fifty bytes of data.
+i.e. 1 character = 1 byte data = 8 bits data. that's why ASCII = 8 bits(0 to 2^7 or 127)
 1.df -Th : No of Partitions/My Computer of Linux
 2.cd - change directory, md - make directory
 3. ls- list (ls -a: all files(show hidden files))
