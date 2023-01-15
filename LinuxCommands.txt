@@ -123,7 +123,8 @@ SCP- secure copy protocol
 60. Copy folder from server to local : scp -r user@your.server.example.com:/path/to/foo /home/user/Desktop/
 
 61. go to home from anywhere in the terminal
-cd ~
+cd ~ or simply "cd"
+Got to home folder of a user: cd ~"user-name"
 62. anaconda-navigator : Opens anaconda
 63. install .run file: cd /home/user/Downloads
 			sudo chmod +x some-app.run
