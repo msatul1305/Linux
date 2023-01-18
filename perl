@@ -7,3 +7,12 @@ PERL: Practical Extraction and Report Language.
 
 Perl is an interpreted language,
   -> which means that your code can be run as is, without a compilation stage that creates a non portable executable program.
+
+Check if perl is installed:
+  perl -v
+  
+Run perl
+  $perl  -e <perl code>           # Unix/Linux
+  or 
+  C:>perl -e <perl code>          # Windows/DOS
+ 
