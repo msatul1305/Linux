@@ -1,0 +1,27 @@
+Most Common:
+35 = A => LOGON
+35 = 0 => Heartbeat
+35 = 3 => REJECT
+35 = 5 => LOGOUT
+35 = 8 => Execution Report
+35 = D => New Order Single
+35 = V => Market Data Request
+35 = W => Market Data Snapshot Refresh
+
+Others:
+35 = j => Allocation Instruction
+35 = P => Allocation Instruction Acknowledgement
+35 = Y => Market Data Request Reject
+
+
+Header:
+8 = FIX Version
+9 = body length of msg
+35 = type of msg
+
+
+Body of the msg:
+
+
+End of MSG:
+10 = checksum 
