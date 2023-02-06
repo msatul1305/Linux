@@ -1,0 +1,7 @@
+GTT orders: Good Till Triggered: allows users to place buy or sell orders 
+                                - of any stock at market or limit price. 
+                                - These orders are executed (triggered) once the market price of the stock reaches your desired price 
+                                - i.e the price you mentioned in the GTT Order. 
+                                - GTT orders are valid for 1 year.
+GTD orders: A GTD order will remain in the system until it is either filled or until the date specified,
+            at which time it is automatically cancelled by the system. This is another kind of open order.
