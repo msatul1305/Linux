@@ -8,3 +8,4 @@ ctrl + shift + f: find a word in files
 ctrl + shift + - : collapse all blocks/functions/classes
 
 ctrl + t: pull latest changes from remote(git) for current branch 
+Multiple cursors - Alt + Shift + Click at target locations 
