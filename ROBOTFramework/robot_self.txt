@@ -1,0 +1,4 @@
+${var1} - this a normal variable 
+&{var2} - this is dictionary variable
+
+
