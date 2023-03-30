@@ -201,6 +201,8 @@ eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 	a. vi ~/.bash_aliases
 	b. append at last: alias new_alias='sudo yum update'
 	c. source ~/.bash_aliases
+78. How to execute a script in a different directory than the current one?:
+    /home/user/scripts/someScript.sh
 
 
 Less command:
