@@ -197,7 +197,10 @@ eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 74. file "filename.ext": to know he type of content in a file eg. hello.cpp: ASCII text
 75. get ip from host: hostname -i
 76. get hostname from ip: nslookup "ip"
-
+77. Steps to create a permanent Bash alias:
+	a. vi ~/.bash_aliases
+	b. append at last: alias new_alias='sudo yum update'
+	c. source ~/.bash_aliases
 
 
 Less command:
