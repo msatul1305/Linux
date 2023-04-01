@@ -4,7 +4,7 @@
 # Using ThreadPoolExecutor() as executor
 # Using :
 # submit method: If we want to execute a function once at a time - Submit method executes a function once at a time and
-# retuns a future object
+# returns a future object
 # Finally, print results of each submit using as_completed() method
 
 import concurrent.futures
