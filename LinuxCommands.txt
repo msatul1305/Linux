@@ -203,6 +203,7 @@ eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 	c. source ~/.bash_aliases
 78. How to execute a script in a different directory than the current one?:
     /home/user/scripts/someScript.sh
+    79. download a file from its URL: wget "URL"
 
 
 Less command:
