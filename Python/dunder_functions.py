@@ -4,7 +4,16 @@
 # 2. __repr__(self):
 # 3. __add__(self, other):
 
+# Some more operations and their corresponding dunders:
+# a < b : a.__lt__(b)
+# a != b: a.__ne__(b)
+# a % b: a.__mod__(b)
+# def f(x): return x**2 : f.__call__(5)
+# lis = [1,2,3,4], len(lis): lis.__len__()
+# lis[-1]: lis.__getitem__(-1)
 
+# there is no destructor in python, Everything is a pointer/object in python. we don't have any control
+# of memory management in py.
 # declare our own string class
 class String:
 
@@ -17,6 +26,8 @@ class String:
         return 'Object: {}'.format(self.s1)
     def __add__(self, other):
         return self.s1 + other
+    def __eq__(self, other):
+        pass
 
 # Driver Code
 if __name__ == '__main__':
@@ -27,3 +38,30 @@ if __name__ == '__main__':
     # print object location
     # print(string1)
     print(string1 +' Geeks')
+
+
+# dunder repr vs dunder str
+# __repr__() is used for debugging and development purposes, while __str__() is used for display purposes.
+# __repr__() should return a string that, when evaluated by Python, can be used to recreate the object. On the other
+# hand, __str__() should return a human-readable string that represents the object.
+# If an object does not have a __str__() method, but does have a __repr__() method, the __repr__() method will be used
+# as a fallback for display purposes.
+# If an object does not have a __repr__() method, but does have a __str__() method, the __str__() method will be used
+# as a fallback for debugging purposes.
+# if object has both, print(obj) will print obj.__str__().
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def __str__(self):
+        return f"{self.name} is {self.age} years old"
+    def __repr__(self):
+        return f"{self.name} : {self.age}"
+
+p = Person("Alice", 30)
+print(p.__str__())
+print(p.__repr__())
+print(p)
+print(str(p))
+print(repr(p))
