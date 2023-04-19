@@ -21,6 +21,7 @@ my_dict = {"apple": 5, "banana": 3, "orange": 7, "grape": 2}
 sorted_list = sorted(my_dict.items(), key=lambda x: x[1])
 sorted_dict = dict(sorted_list)
 
+
 # print the sorted dictionary
 print("Sorted dictionary:", sorted_dict)
 
