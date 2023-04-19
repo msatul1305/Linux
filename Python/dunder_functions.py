@@ -3,6 +3,9 @@
 # 1. __init__(self)
 # 2. __repr__(self):
 # 3. __add__(self, other):
+# 4. __iter__()
+
+# 4. __iter__() is used
 
 # Some more operations and their corresponding dunders:
 # a < b : a.__lt__(b)
