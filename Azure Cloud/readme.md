@@ -740,7 +740,14 @@ ARM Benefits
       - China Region
         - All customer data kept inside China.
     - Privacy
-      - 
+      - Azure Information Protection
+      	- Classify, label and protect data based on data sensitivity.
+      - Azure Policy
+      	- define and enforce rules to ensure privacy and regulations.
+      - Guides
+      	- Guide to respond and comply with GDPR privacy requests.
+      - Compliance Manager
+     	 	- make sure to follow privacy guidelines.
     - Trust
     - Azure Arc
       - extends Azure governance and management methods to non-Azure resources. 
