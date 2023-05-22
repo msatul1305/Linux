@@ -749,5 +749,7 @@ ARM Benefits
       - Compliance Manager
      	 	- make sure to follow privacy guidelines.
     - Trust
+    	- Trust Center: hub for info about security, privacy, GDPR, data location, compliance etc.
+    	- Service Trust Portal: Audit reports of Azure compliance, services and products.
     - Azure Arc
       - extends Azure governance and management methods to non-Azure resources. 
