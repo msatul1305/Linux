@@ -752,4 +752,16 @@ ARM Benefits
     	- Trust Center: hub for info about security, privacy, GDPR, data location, compliance etc.
     	- Service Trust Portal: Audit reports of Azure compliance, services and products.
     - Azure Arc
-      - extends Azure governance and management methods to non-Azure resources. 
+      - extends Azure governance and management methods to non-Azure resources.
+      - manage complex computing environments through single unified interface
+      - manage both azure and non-azure resources in same interface
+      - apply azure governance policies to non-azure resources.
+      - installs agent into non-azure resources.
+      - allows to manage non-azure kubernetes clusters
+      - deploy azure-managed db services to non-azure locations
+      - manage and protect non-azure servers/os with ms defender for cloud
+      - apply azure automation runbooks
+      - apply azure governance
+      - deploy azure serverless services to non-azure hardware
+
+
