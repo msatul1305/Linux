@@ -674,16 +674,73 @@ ARM Benefits
         - Maximize performance
         - Max. Availability
         - Identify Issues
-      - Monitoring tools
+      - Monitoring tools: 3 built-in tools to gain full visibility of azure environment
         - Log Analytics
-          - 
+          - analyze logs from azure monitor and telemetry data
+          - Insights:
+            - disk size of VM
+            - VPN connection logs
+            - Long term analysis of trends over time
+            - combine metrics for complex queries(pre-built queries also available)
+            - Or build your own custom query:
+              - in KQL: Kusto Query language(similar to SQL but different syntax)
         - Application Insights
+          - performance insights for web based applications only
+          - user metrics(e.g. which page is browsed the most)
+          - performance bottlenecks
+          - website errors
+          - available for app service, azure VMs, and non-azure resources.
+            - VMs require agent to be installed
         - Azure Monitor Alerts
-    - Azure Service Health
+          - send alerts/notifications if something breaks/unexpected events occur
+          - e.g. VM unresponsive
+            - VM using excessive CPUs.
+            - Application latency over 500ms
+          - Alert Components - 2
+            - Alert Rule: trigger rule to send notification
+              - Monitored resource: e.g. VM
+              - monitored telemetry: e.g. CPU utilization
+              - conditions to trigger alert e.g. >90% CPU usage for 5 mins
+              - assigned severity e.g. 2 - Warning
+            - Action group
+              - Actions taken when rule is triggered
+                - Notification targets: Email/SMS to teams
+                - send to automation workflows(Logic app, azure functions etc.): automated fix
+    - Azure Service Health: Dashboard, custom alerts for planned and non-planned outages, real-time tracking, free 
       - Max uptime
       - None or very low downtime
-    - Compliance
+    - Compliance: Azure Compliance Manager
+      - GDPR: General Data Protection Regulation 
+        - to protect individuals with regard to their personal data
+        - give control of data back to individual instead of company owning the data.
+        - measures for companies to protect and manage data.
+      - ISO:
+        - Compliance of quality and customer satisfaction.
+        - Most common: ISO 9001:2008
+        - food safety management, environmental management.
+      - NIST
+        - National Institute of Standards and Technology.
+          - for tech industry
+          - for US federal agencies.
+          - Federal US regulation complaince
+          - IT security frameworks
+          - e.g. of NIST framework: cybersecurity framework
+      - Azure Compliance Manager
+        - Recommendations based on GDPR, ISO, NIST etc.
+        - Tasks: assign compliance task to team members and track progress.
+        - Compliance score
+        - Secure Storage
+        - Reports
+          - For managers, auditors, regulators etc.
+      - Azure Government Cloud
+        - Dedicated Regions: separate dedicated data centers.
+        - Exclusivity: only US federal, state and local govt have access. 
+        - Compliance: level 5 department of defence approval
+        - Azure Benefits: high availability, scalability etc.
+      - China Region
+        - All customer data kept inside China.
     - Privacy
+      - 
     - Trust
     - Azure Arc
       - extends Azure governance and management methods to non-Azure resources. 
