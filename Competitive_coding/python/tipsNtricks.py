@@ -27,3 +27,9 @@ print("Sorted dictionary:", sorted_dict)
 # print the last element of a dictionary in Python:
 last_key = list(my_dict.keys())[-1]
 last_value = my_dict[last_key]
+
+# Dictionary update
+j = {"MsgType": "NewOrderSingle"}
+j = j.update({"OrderQty": 1400})
+
+# Output: {'MsgType': 'NewOrderSingle', 'OrderQty': 1400}

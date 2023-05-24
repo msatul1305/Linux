@@ -641,7 +641,7 @@ ARM Benefits
         - minimum access to user: only what they need
         - target specific use case: explicit use.
         - Role assignment:
-          - Security principal: object representing a entity like user or group
+          - Security principal: object representing an entity like user or group
           - Role definition: list of permissions like read, write and delete.
             - Scope: The resource the access applies to.
           - e.g. 
@@ -741,13 +741,13 @@ ARM Benefits
         - All customer data kept inside China.
     - Privacy
       - Azure Information Protection
-      	- Classify, label and protect data based on data sensitivity.
+        - Classify, label and protect data based on data sensitivity.
       - Azure Policy
-      	- define and enforce rules to ensure privacy and regulations.
+        - define and enforce rules to ensure privacy and regulations.
       - Guides
-      	- Guide to respond and comply with GDPR privacy requests.
+        - Guide to respond and comply with GDPR privacy requests.
       - Compliance Manager
-     	 	- make sure to follow privacy guidelines.
+        - make sure to follow privacy guidelines.
     - Trust
     	- Trust Center: hub for info about security, privacy, GDPR, data location, compliance etc.
     	- Service Trust Portal: Audit reports of Azure compliance, services and products.
@@ -759,9 +759,139 @@ ARM Benefits
       - installs agent into non-azure resources.
       - allows to manage non-azure kubernetes clusters
       - deploy azure-managed db services to non-azure locations
-      - manage and protect non-azure servers/os with ms defender for cloud
+      - manage and protect non-azure servers/os with MS Defender for cloud
       - apply azure automation runbooks
       - apply azure governance
       - deploy azure serverless services to non-azure hardware
+7. Pricing
+    - Subscriptions: billing + access control
+        - Each resource subscribe to particular subscription
+        - Multiple subscriptions for each department
+        - Billing Admin: Billing access restricted to admins only.
+        - Billing Cycle: 30 or 60 days.
+        - Offer types: Various type of subscriptions available. e.g. student plan, free plan, pay-as-you-go etc.
+        - Management Groups: if company has many subscriptions, to easily manage with groups:
+            - Group Subscriptions: take action in bulk via groups.
+            - Organize: e.g. per country/dept.
+            - Billing Logic:
+                - resources paid from right budget
+                - Nest management group to indicate hierarchy and relationship.
+        - Access control
+    - Cost Management:
+        - Need to buy services to use them:
+            - Free Accounts: 12 months, 750 hours compute time on VMs, 5gb storage, 250 GB SQL db, 5 GB data on Cosmos DB, AI services.
+                - Always Free: Azure functions, Event Grids, Container services, Load balancers, Advisory services, etc.
+        - costs accrued
+        - Azure Cost Management: to manage costs
+            - Dashboard
+            - Download reports on spending, recommendations on cost savings, analyze costs.
+            - Cost Optimizations: monitor AWS as well.
+        - Spot VMs:
+            - deep discounts: save up to 90%.
+            - Do not run forever
+                - Can be evicted/lost anytime whenever azure needs to compute capacity back.
+            - Used for non-critical processing
+            - Can be used with Azure Scale Sets.
+            - Max price for VM can be set.
+            - Not for PROD processes.
+    - Pricing factors:
+        - factors:
+            - Resource Size: Storage, CPU etc.
+            - Resource Type: Hardware types
+            - Location: Exchange rates, labor costs, etc.
+            - Bandwidth: usage
+            - Billing Zones: 3 zones
+                - Data transfer within a zone is free: Ingress(data-in)
+                - Data transfer between zones is chargeable: Egress(data-out)
+        - Azure Pricing Calculator:
+            - to estimate costs monthly.
+            - Total cost of Ownership calculator(TCO):
+                - calculate total savings we get if we move from on-premise to cloud.
+        - Calculate estimate costs of owning resource
+    - Best Practices: for managing costs
+        - Spending limits
+            - Default limit
+            - stops use of resource
+            - No increase: either remove limit entirely or leave it in effect.
+            - Pay-as-you-go: do not have any limits
+        - Quotas:
+            - limits on resource usage:
+                - e.g. max 100 namespaces for an Event hub, 10 event hubs per namespace, 32 partitions per events hub, etc.
+                - can be requested to be increased
+        - Tags
+            - non-functional labels can be attached to each resource group or resource.
+            - Can be named
+            - one resource can have many tags.
+            - Best practices
+                - Identify roles: which roles can access what resource
+                - Related resources: make bulk processing and updating easier by defining relationship between resources.
+                - Filter: per customer/project or reporting.
+                - Unambiguous: list/grouping of tags: description, tag name, potential values.
+        - Pay-as-you-go
+            - most expensive option
+        - Reserved instances
+            - better suited for long time: provided with discounted price if reserved for long term.
+        - Reserved Capacity: Save up to:
+            - Azure SQL: 80%
+            - Cosmos DB: 65%
+            - Synapse Analytics: 65%
+            - Redis Cache: 55%
+        - Azure Hybrid benefit:
+            - use existing license instead of purchasing new one for every new VM/Server.
+        - Advisor:
+            - Cost optimization section.
+                - Scale down VM
+                - Remove networks
+                - remove dormant storage.
+
+8. Support
+    - Plans
+        - Tiers
+        - Inclusions in all support plans:
+            -  24/7 access to billing and subscription support.
+            -  Online self-help: documentation and white papers.
+            -  Forums: Q&A
+            -  Azure advisor: best practice recommendations
+            -  Service health: access to maintenance schedules and current issues.
+        - 5 tiers with increasing order of support and cost:
+            - Basic
+            - Developer $
+            - Standard $$
+            - Professional direct $$$
+            - Premier $$$$
+        - Severity:
+            - A(most severe), B and C(less severe)
+    - Support Tickets
+        - Create and submit
+            - Through Azure Portal
+            - Choose ticket type:
+                - Billing
+                - Service and subscription limits(quotas)
+                - Subscription management
+                - Technical
+            - Form fill up and submit
+        - unique identifier/ticket number
+    - Channels
+        - get support without support plan
+        - Azure documentation, articles
+        - Forums
+        - Social media
+    - Knowledge Center
+        - Types of information
+        - Common questions(FAQs: Frequently asked questions)
+    - Service Level Agreements(SLAs)
+        - Contract/guarantee that servers are running and stable.(uptime and availability and connectivity).
+        - e.g. 5 minutes in a month
+        - can claim compensation from Microsoft if SLA are not adhered to
+        - Companies pay for SLA
+        - Multiple SLAs
+        - Mandatory for non-free tiers
+    - Service Lifecycle
+        - Previews
+        - Private(invite only) and Public(available to all customers) previews of services
+        - general availability → available to all
+        - Azure updates
+
+
 
 
