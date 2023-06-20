@@ -63,7 +63,7 @@ ARM Benefits
    - pay based on monthly/yearly subscription
  - Serverless - Extreme PaaS
     - You don't have to manage any servers.
-    - you are effecively using someone's server to run on. 
+    - you are effectively using someone's server to run on. 
     - e.g. Azure functions
     - Azure functions -> Completely extracting away the server in such a way that single functon of code can be
     hosted, deployed, run and managed without having to maintain full application.
@@ -167,9 +167,9 @@ ARM Benefits
        - Binary large object - anything with bits and bytes.
        - Images, Videos, audio, logs, archives, data store - backup, restore, disaster recovery, etc.
        - Types:
-           - Block blob: text and binary data upto 4.7TB. made up of individually managed blocks of data.
+           - Block blob: text and binary data up to 4.7TB. made up of individually managed blocks of data.
            - Append block blobs: block blobs optimized for append operations like logging.
-           - Page blobs: Any type of data upto 8TB.
+           - Page blobs: Any type of data up to 8TB.
        Pricing:
            - Hot: Low access time, high cost
            - Cool: higher access time, lower cost
@@ -178,7 +178,7 @@ ARM Benefits
        - HDD: backups, low cost.
        - Standard SSD: standard for production. higher reliability, scalability and lower latency over HDD.
        - Premium SSD: Super fast, high performance, low latency. used for critical workloads.
-       - Ultra Disks: for demanding, data-intensive workloads. (upto 64TB)
+       - Ultra Disks: for demanding, data-intensive workloads. (up to 64TB)
    - File Storage
        - Benefits:
            - Sharing
@@ -261,9 +261,9 @@ ARM Benefits
    - Cosmos DB: Globally scaled, fully managed db, powerful and fast read and write.
      - Global on the go.
      - nosql db(JSON)
-     - 0-9 miliseconds latency
+     - 0-9 milliseconds latency
      - scalable on high-demand.
-     - infinte number of users.
+     - infinite number of users.
      - SDK and API integration
      - language support: C#, Java, Node.js
      - Migration from SQL, MongoDB, Cassandra.
@@ -272,7 +272,7 @@ ARM Benefits
      - Migration on-premise SQL db to Azure SQL.
      - Built-in machine learning.
        - Scalable
-       - Space: upto 100TBs.
+       - Space: up to 100TBs.
        - Secure
    - MySQL
      - open source, built and maintained by community.
@@ -294,7 +294,7 @@ ARM Benefits
        - Use cases:
          - Financial applications, online transactions and mathematical software.
          - Government: GIS - Geometric data, eg. PostGIS.
-           - Manufacturing: Low downtime, automated failover, full redundancy.
+           - Manufacturing: Low downtime, automated fail over, full redundancy.
    - Database Migration Services.(Azure DMS)
      - Single tool
      - Documentation
@@ -329,12 +329,12 @@ ARM Benefits
        - Remote work is a challenge
        - VPN can be used, but it is just the extension of trusted perimeter/network.
        - Mobile devices access is more challenging: need to load VPN client in mobile device.
-       - One user from inside the perimter network get malware which can be spread across the network
-         - due to too broad of scope of acess to some trusted devices
+       - One user from inside the perimeter network get malware which can be spread across the network
+         - due to too broad of scope of access to some trusted devices
        - Zero trust model/Untrusted model(Trusted Identities, Not Location)
          - assumes everyone is untrustworthy regardless of user is inside or from outside network.
          - Trust is proven by identity instead of location/security perimeter.
-         - least previlage access: just enough permissions to perform job
+         - least privilege access: just enough permissions to perform job
          - simplified, centralized management.
          - Allow access from approved devices only (regardless of location).
    - Multi-Factor Authentication - More Security but less convenient(more steps to log in)
@@ -352,7 +352,7 @@ ARM Benefits
        - Block sign-ins from legacy authentication protocols.
        - Grant access to only specific locations.
        - require organization-managed devices for application sign-in.
-   - Passwordless Authentication
+   - Password-less Authentication
      - Increase convenience along with staying secure.
      - No need of password
      - Own device identified as secure
@@ -416,7 +416,7 @@ ARM Benefits
        - For large amount of data processing
        - Parallel processing
        - ready to go
-     - Azure HDInsigts(Yellow Elephant)
+     - Azure HDInsights(Yellow Elephant)
        - Similar to Azure Data Lake Analytics
        - but Open-source
        - Includes Apache Hadoop, Apache Spark, Apache Kafka
@@ -468,7 +468,7 @@ ARM Benefits
          - Quick start
            - no coding required
        - Event Grid: for routing events fast and accurate
-         - Service -> eventgrids -> apps
+         - Service -> event grids -> apps
    - DevOps:(Development + Operations) 
      - GitHub and 
      - GitHub Actions
@@ -616,7 +616,7 @@ ARM Benefits
         - Cloud Scale
     - Azure Dedicated Hosts
       - full physical server with full control
-      - For higher compliance, gloabal infrastructure, OS of your choice.
+      - For higher compliance, global infrastructure, OS of your choice.
     - Microsoft Defender for Identity(formerly Advanced Threat Protection)
       - Monitors users
         - Analyze user activity, permission and membership of groups.
@@ -700,7 +700,7 @@ ARM Benefits
             - Alert Rule: trigger rule to send notification
               - Monitored resource: e.g. VM
               - monitored telemetry: e.g. CPU utilization
-              - conditions to trigger alert e.g. >90% CPU usage for 5 mins
+              - conditions to trigger alert e.g. >90% CPU usage for 5 minutes
               - assigned severity e.g. 2 - Warning
             - Action group
               - Actions taken when rule is triggered
@@ -749,8 +749,8 @@ ARM Benefits
       - Compliance Manager
         - make sure to follow privacy guidelines.
     - Trust
-    	- Trust Center: hub for info about security, privacy, GDPR, data location, compliance etc.
-    	- Service Trust Portal: Audit reports of Azure compliance, services and products.
+        - Trust Center: hub for info about security, privacy, GDPR, data location, compliance etc.
+        - Service Trust Portal: Audit reports of Azure compliance, services and products.
     - Azure Arc
       - extends Azure governance and management methods to non-Azure resources.
       - manage complex computing environments through single unified interface
@@ -891,3 +891,110 @@ ARM Benefits
         - Private(invite only) and Public(available to all customers) previews of services
         - general availability → available to all
         - Azure updates
+9. Azure Well-Architected Framework pillars
+    - set of guiding tenets to build high-quality solutions on Azure.
+    - 5 pillars:
+        - Cost optimization
+            - cost-effective for operations and development
+            - Identify inefficiency and waste in cloud spending
+        - Operational excellence
+            - advantage of modern development practices such as DevOps
+            - faster development and deployment cycles.
+            - Automation
+        - Performance efficiency
+            - match resource capacity to demand
+            - scaling applications dynamically based on activity in the application.
+        - Reliability
+            -  recover from a failure
+        - Security
+            - protect the integrity of your data through tools like encryption.
+            - protections against various threats, such as network intrusion and DDoS attacks.
+    - General design principles
+        - Enable architectural evolution
+        - Use data to make decisions
+        - Educate and enable
+        - Automate
+    - Cost Optimization
+        - Cloud services should be consumed on demand only.
+        - CaPEX
+        - Opex
+        - Use monitoring and analytics to gain cost insights
+10. Testing strategies for your application
+    - Automated Testing: to make sure that they're executed
+      - Unit Testing
+        - run by each new version of code that's committed into your version-control system.
+        - ideally cover 100% of the code
+        - quick (typically under 30 seconds)
+        - should be applied both to application code and infrastructure code.
+      - Smoke Testing
+        - more exhaustive than unit tests
+        - but still not as much as integration tests.
+        - run in less than 15 minutes.
+        - verify that each component can be correctly built, and each component meets your criteria for expected functionality and performance.
+        - usually involve building the application code.
+      - Integration Testing
+        - determines whether your components can interact with each other as they should
+        - usually take longer than smoke testing, and consequently they're sometimes executed less frequently.
+        - For example, running integration tests every night still offers a good compromise
+    - Manual Testing: much more expensive and used less frequently than automated testing
+      - to correct errors before they become too expensive to repair, or before they cause customer dissatisfaction.
+      - Types:
+        - Acceptance Testing: confirming that the application is doing what it should.
+          - Blue/Green deployments: 
+            - when deploying a new application version, you can deploy it in parallel to the existing one.
+            - you can start redirecting your clients to the new version.
+            - If everything goes well, you'll decommission the old version.
+            - If there's any problem with the new deployment, you can always redirect your clients back to the older deployment.
+          - Canary releases:
+            - you can expose new functionality of your application (ideally using feature flags) to a select group of users.
+          - A/B testing:
+            - similar to canary release testing, but while canary releases focus on mitigating risk, 
+            - A/B testing focuses on evaluating the effectiveness of two similar ways of achieving the same goal.
+            - For example, if you have two versions of the layout of a certain area of your application, you could send half of your users to one version and the other half your users to the other, 
+            - then you could use some metrics to see which layout works better for your application goals.
+        - Stress tests
+          - to be confident that your application and infrastructure will scale automatically to meet the increased demand.
+          - critical that you monitor all the components of the system in order to identify whether there are any scale limitations.
+          - Every component of the system that's not able to scale out can turn into a bottleneck (such as active/passive network components or databases).
+          - verify that after the stress test is concluded, your infrastructure scales back down to its normal condition in order to keep your costs under control.
+        - Fault injection
+          - Your application should be resilient to infrastructure failures,
+          - introducing faults in the underlying infrastructure and observing how your application behaves is fundamental for increasing the trust in your redundancy mechanisms.
+          - example: ungracefully shutting down infrastructure components, degrading the performance of certain elements such as network equipment, or purposely introducing faults in the environment are ways of verifying that your application is going to continue to behave or react as expected, should these situations ever occur in real life.
+          - Chaos engineering: identify areas where faults may occur by purposefully making key pieces of infrastructure unavailable.
+        - Security tests
+          - routinely testing your application for security vulnerabilities.
+          - cross-site scripting or SQL injection.
+          - red team exercises: where security teams attempt to compromise your application.
+
+11. Performance efficiency
+    - scaling up(Vertical scaling): increase the capacity of a given instance. For example, to increase your processing capacity, you might increase a virtual machine from 1 vCPU and 3.5 GB of RAM to 2 vCPUs and 7 GB of RAM.
+    - scaling down: decrease the capacity of a given instance. For example, you might decrease a virtual machine's capacity from 2 vCPUs and 7 GB of RAM to 1 vCPU and 3.5 GB of RAM.
+    - scaling out(Horizontal scaling): process of adding more instances to support the load of your solution. For example, if your website front ends were hosted on virtual machines, you could increase the number of virtual machines if the level of load increased.
+    - scaling in: process of removing instances that are no longer needed to support the load of your solution.
+    - Autoscale
+      - set a minimum and maximum threshold of instances.
+      - scale based on specific metrics, like queue length or CPU utilization.
+      - scale based on schedules. e.g. weekdays between 5:00 PM and 7:00 PM.
+    - Throttling
+      - limit the number of requests from a source.
+      - to prevent the application from breaking.
+      - most frequently used in applications that expose API endpoints.
+      - limit the number of requests per user to 100 per minute.
+      - If any single customer exceeded this limit, you could respond with an HTTP 429 status code and include the wait time before another request can successfully be submitted.
+    - Optimize storage performance
+      - Optimize virtual machine storage performance
+      - SSD vs HDD 
+      - Premium vs standard etc.
+      - Optimize storage performance for your application
+        - Caching
+          - A cache typically stores data in memory and allows for fast retrieval.
+          - This data can be frequently accessed data, data that you specify from a database, or temporary data such as user state.
+          - By collocating this cache in the same region as your application and database, you reduce the overall latency between the two.
+          - Azure Cache for Redis is a caching service on Azure that stores data in memory. It's based on the open-source Redis cache and is a fully managed service offering by Microsoft. You'll select the performance tier that you require, then you'll configure your application to use the service.
+        - Polyglot persistence
+          - use of different data storage technologies to handle your storage requirements.
+            - Suppose that you store application assets in a blob store, 
+            - product reviews and recommendations in a NoSQL store, and 
+            - user profile or account data in a SQL database.
+
