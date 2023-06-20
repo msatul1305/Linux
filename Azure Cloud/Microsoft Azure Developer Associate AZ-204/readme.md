@@ -1,217 +1,96 @@
-1. Azure message queues
-   - Queue mechanisms
-     - Azure Service Bus Queues: fully managed enterprise integration message broker.
-       - Data is transferred between different applications and services using messages.
-         - A message is a container decorated with metadata, and contains data.
-         - Any format data: JSON, XML, Apache Avro, Plain Text. etc.
-       - supports queuing, publish/subscribe, and more advanced integration patterns.
-         - integrate applications or application components that may span multiple communication protocols, data contracts, trust domains, or network environments.
-           - when to use bus queues:
-             - Your solution needs to receive messages without having to poll the queue. 
-             - With Service Bus, you can achieve it by using a long-polling receive operation using the TCP-based protocols that Service Bus supports.
-             - guaranteed first-in-first-out (FIFO) ordered delivery.
-             - support automatic duplicate detection.
-             - process messages as parallel long-running streams
-               - messages are associated with a stream using the session ID property on the message
-             - messages that can exceed 64 KB but won't likely approach the 256-KB limit.
-           - common messaging scenarios
-             - Messaging: Transfer business data, such as sales or purchase orders, journals, or inventory movements.
-             - Decouple applications: Client and service don't have to be online at the same time.
-             - Topics and subscriptions: Enable 1:n relationships between publishers and subscribers.
-             - Message sessions: Implement workflows that require message ordering or message deferral.
-           - standard and premium tier.
-             - standard tier
-               - Variable throughput, Variable latency, Pay as you go variable pricing, not scalable, Message size up to 256 KB
-             - premium tier
-               - addresses common customer requests around scale, performance, and availability for mission-critical applications.
-               - recommended for production scenarios
-               - High throughput, Predictable performance, Fixed pricing, Ability to scale workload up and down, Message size up to 100 MB.
-               - Advanced features:
-                 - Message sessions: 
-                   - creates a first-in, first-out (FIFO) guarantee in Service Bus, 
-                   - create use sessions. Message sessions enable exclusive, ordered handling of unbounded sequences of related messages.
-                 - Autoforwarding: chains a queue or subscription to another queue or topic that is in the same namespace.
-                 - Dead-letter queue: A DLQ holds messages that can't be delivered to any receiver. Service Bus lets you remove messages from the DLQ and inspect them.
-                 - Scheduled delivery:
-                   - You can submit messages to a queue or topic for delayed processing. 
-                   - You can schedule a job to become available for processing by a system at a certain time.
-                 - Message deferral: 
-                   - A queue or subscription client can defer retrieval of a message until a later time. 
-                   - The message remains in the queue or subscription, but it's set aside.
-                 - Batching: Client-side batching enables a queue or topic client to delay sending a message for a certain period of time.
-                 - Transactions: 
-                   - groups two or more operations together into an execution scope.
-                   - Service Bus supports grouping operations against a single messaging entity within the scope of a single transaction.
-                   - A message entity can be a queue, topic, or subscription.
-                 - Filtering and actions:
-                   - Subscribers can define which messages they want to receive from a topic. 
-                   - These messages are specified in the form of one or more named subscription rules.
-                 - Autodelete on idle: 
-                   - enables you to specify an idle interval after which a queue is automatically deleted.
-                   - The minimum duration is 5 minutes.
-                 - Duplicate detection: 
-                   - An error could cause the client to have a doubt about the outcome of a send operation. 
-                   - Duplicate detection enables the sender to resend the same message, or for the queue or topic to discard any duplicate copies.
-                 - Security protocols:
-                   - Shared Access Signatures (SAS), 
-                   - Role Based Access Control (RBAC) and 
-                   - Managed identities for Azure resources.
-                 - Geo-disaster recovery: enables data processing to continue operating in a different region or datacenter.
-                 - Security: supports standard AMQP 1.0 and HTTP/REST protocols.
-           - Compliance with standards and protocols
-             - The primary wire protocol for Service Bus is Advanced Messaging Queueing Protocol (AMQP) 1.0, an open ISO/IEC standard. 
-             - It allows customers to write applications that work against Service Bus and on-premises brokers such as ActiveMQ or RabbitMQ. 
-             - The AMQP protocol guide provides detailed information in case you want to build such an abstraction.
-             - Service Bus Premium is fully compliant with the Java/Jakarta EE Java Message Service (JMS) 2.0 API.
-             - Fully supported Service Bus client libraries are available via the Azure SDK.
-               - Azure Service Bus for .NET
-               - Azure Service Bus libraries for Java
-               - Azure Service Bus provider for Java JMS 2.0
-               - Azure Service Bus Modules for JavaScript and TypeScript
-               - Azure Service Bus libraries for Python
-             - Service Bus queues, topics, and subscriptions
-               - Queues
-                 - First In, First Out (FIFO) message delivery
-                 - receivers typically receive and process messages in the order in which they were added to the queue.
-                 - only one message consumer receives and processes each message.
-                 - messages are stored durably in the queue
-                   - producers (senders) and consumers (receivers) don't have to process messages concurrently.
-                 - load-leveling
-                   - enables producers and consumers to send and receive messages at different rates.
-                 - provides an inherent loose coupling between the components.
-                 - can create queues using the Azure portal, PowerShell, CLI, or Resource Manager templates. 
-                 - Then, send and receive messages using clients written in C#, Java, Python, and JavaScript.
-                 - Receive modes
-                   - Receive and delete
-                     - marks the message as consumed and returns it to the consumer application.
-                     - scenario Issue
-                       - consumer issues the receive request and then crashes before processing it.
-                       - As Service Bus marks the message as consumed, the application begins consuming messages upon restart. 
-                         - It misses the message that it consumed before the crash.
-                   - Peek lock
-                     - receive operation becomes two-stage:
-                       - Finds the next message to be consumed, locks it to prevent other consumers from receiving it, and then, return the message to the application. 
-                       - After the application finishes processing the message, it requests the Service Bus service to complete the second stage of the receive process. Then, the service marks the message as consumed.
-                     - If the application is unable to process the message for some reason, it can request the Service Bus service to abandon the message.
-                     - Service Bus unlocks the message and makes it available to be received again, either by the same consumer or by another competing consumer.
-                     - there's a timeout associated with the lock. If the application fails to process the message before the lock timeout expires, Service Bus unlocks the message and makes it available to be received again.
-               - Topics and Subscriptions 
-                 - provide a one-to-many form of communication in a publish and subscribe pattern.
-                 - useful for scaling to large numbers of recipients.
-                 - Each published message is made available to each subscription registered with the topic.
-                 - Publisher sends a message to a topic and one or more subscribers receive a copy of the message, depending on filter rules set on these subscriptions. 
-                 - The subscriptions can use more filters to restrict the messages that they want to receive.
-                 - A topic subscription resembles a virtual queue that receives copies of the messages that are sent to the topic.
-                 - Creating a topic is similar to creating a queue
-                 - You can create topics and subscriptions using the Azure portal, PowerShell, CLI, or Resource Manager templates.
-                 - Then, send messages to a topic and receive messages from subscriptions using clients written in C#, Java, Python, and JavaScript.
-                 - Rules and actions
-                   - messages that have specific characteristics must be processed in different ways.
-                   - configure subscriptions to find messages that have desired properties and then perform certain modifications to those properties.
-                   - subscription filters
-                     - Service Bus subscriptions see all messages sent to the topic but you can only copy a subset of those messages to the virtual subscription queue
-                     - modifications are called filter actions.
-                     - When a subscription is created, you can supply a filter expression that operates on the properties of the message.
-                     - The properties can be both the system properties (for example, Label) and custom application properties (for example, StoreName.)
-                     - The SQL filter expression is optional in this case. 
-                     - Without a SQL filter expression, any filter action defined on a subscription is performed on all the messages for that subscription.
-                   - Service Bus message payloads and serialization
-                     - Messages carry a payload and metadata.
-                     - The metadata is in the form of key-value pair properties, and describes the payload, gives handling instructions to Service Bus and applications.
-                   - Message routing and correlation
-                     - To, ReplyTo, ReplyToSessionId, MessageId, CorrelationId, and SessionId,
-                     - Simple request/reply:
-                       - publisher sends a message into a queue and expects a reply from the message consumer.
-                       - publisher owns a queue to receive the replies.
-                       - address of that queue is contained in the ReplyTo property of the outbound message. 
-                       - When the consumer responds, it copies the MessageId of the handled message into the CorrelationId property of the reply message and 
-                       - delivers the message to the destination indicated by the ReplyTo property. 
-                       - One message can yield multiple replies, depending on the application context.
-                     - Multicast request/reply:
-                       - a publisher sends the message into a topic and multiple subscribers become eligible to consume the message.
-                       - Each of the subscribers might respond in the fashion described previously. 
-                       - If ReplyTo points to a topic, such a set of discovery responses can be distributed to an audience.
-                     - Multiplexing
-                       - enables multiplexing of streams of related messages through a single queue or subscription such that each session (or group) of related messages, 
-                       - identified by matching SessionId values,
-                     - Multiplexed request/reply:
-                       - enables multiplexed replies, allowing several publishers to share a reply queue.
-                       - By setting ReplyToSessionId, the publisher can instruct the consumer(s) to copy that value into the SessionId property of the reply message. 
-                       - The publishing queue or topic doesn't need to be session-aware. 
-                       - When the message is sent the publisher can wait for a session with the given SessionId to materialize on the queue by conditionally accepting a session receiver.
-                     - Routing inside a Service Bus namespace uses auto-forward chaining and topic subscription rules. 
-                     - Routing across namespaces can be performed using Azure LogicApps. 
-                     - The To property is reserved for future use. Applications that implement routing should do so based on user properties and not lean on the To property; 
-                     - however, doing so now won't cause compatibility issues.
-                   - Payload serialization
-                     - When in transit or stored inside of Service Bus, the payload is always an opaque, binary block. The ContentType property enables applications to describe the payload, with the suggested format for the property values being a MIME content-type description according to IETF RFC2045; for example, application/json;charset=utf-8.
-                     - Unlike the Java or .NET Standard variants, the .NET Framework version of the Service Bus API supports creating BrokeredMessage instances by passing arbitrary .NET objects into the constructor.
-                     - The legacy SBMP protocol serializes objects with the default binary serializer, or with a serializer that is externally supplied. The AMQP protocol serializes objects into an AMQP object. The receiver can retrieve those objects with the GetBody<T>() method, supplying the expected type. With AMQP, the objects are serialized into an AMQP graph of ArrayList and IDictionary<string,object> objects, and any AMQP client can decode them.
-                     - While this hidden serialization magic is convenient, if applications should take explicit control of object serialization and turn their object graphs into streams before including them into a message, they should do the reverse operation on the receiver side. While AMQP has a powerful binary encoding model, it's tied to the AMQP messaging ecosystem and HTTP clients have trouble decoding such payloads.
-               - Exercise: Send and receive message from a Service Bus queue by using .NET.
-                 - Using  Azure Cloud Shell
-                   - Create variables used in the Azure CLI commands. Replace <myLocation> with a region near you.
-                     ```
-                     myLocation=<myLocation> 
-                     myNameSpaceName=az204svcbus$RANDOM
-                     ```
-                   - Create Azure resources
-                     - Create a resource group to hold the Azure resources you're creating.
-                       - az group create --name az204-svcbus-rg --location $myLocation
-                     - Create a Service Bus messaging namespace. The following command creates a namespace using the variable you created earlier. The operation takes a few minutes to complete.
-                       ```
-                       az servicebus namespace create \
-                       --resource-group az204-svcbus-rg \
-                       --name $myNameSpaceName \
-                       --location $myLocation
-                       ```
-                     - Create a Service Bus queue
-                       ```
-                       az servicebus queue create --resource-group az204-svcbus-rg \
-                       --namespace-name $myNameSpaceName \
-                       --name az204-queue
-                       ```
-                   - Retrieve the connection string for the Service Bus Namespace
-                     - Open the Azure portal and navigate to the az204-svcbus-rg resource group.
-                     - Select the az204svcbus resource you created.
-                     - Select Shared access policies in the Settings section, then select the RootManageSharedAccessKey policy.
-                     - Copy the Primary Connection String from the dialog box that opens up and save it to a file, or leave the portal open and copy the key when needed.
-                   - Create console app to send messages to the queue
-                     - Open a local terminal and create, and change in to, a directory named az204svcbus and then run the command to launch Visual Studio Code.
-                       - code .
-                     - Open the terminal in Visual Studio Code by selecting Terminal > New Terminal in the menu bar and run the following commands to create the console app and add the Azure.Messaging.ServiceBus package.
-                       - dotnet new console
-                       - dotnet add package Azure.Messaging.ServiceBus
-                     - In Program.cs, add the following using statements at the top of the file after the current using statement.
-                       - using Azure.Messaging.ServiceBus;
-                     - Add the following variables to the code and set the connectionString variable to the connection string that you obtained earlier.
-                       // connection string to your Service Bus namespace
-                         string connectionString = "<CONNECTION STRING>"; 
-                       // name of your Service Bus topic 
-                       string queueName = "az204-queue";
-                     - Add the following code below the variables you just added. See code comments for details.
-                       - https://learn.microsoft.com/en-in/training/modules/discover-azure-message-queue/6-send-receive-messages-service-bus
-                     - Save the file and run the dotnet build command to ensure there are no errors.
-                     - Run the program using the dotnet run command and wait for the following confirmation message. Then press any key to exit the program.
-                   - Update project to receive messages to the queue
-                   - Clean up resources
+https://app.pluralsight.com/explore/certifications/topics/azure?trackId=670a6dc5-deec-40ff-a0f0-f41d900a38a6&examPrepId=06d2533c-d8b0-4f3b-9610-52f520045571
+https://app.pluralsight.com/library/courses/microsoft-azure-developer-introduction-az-204-exam/table-of-contents
+Microsoft Azure Developer: Introduction to the AZ-204 Exam by Matthew Kruczek
 
-     - Azure Queue storage: service for storing large numbers of messages
-       - part of the Azure Storage infrastructure.
-       - allow you to store large numbers of messages.
-       - access messages from anywhere in the world via authenticated calls using HTTP or HTTPS.
-       - A queue message can be up to 64 KB in size.
-       - A queue may contain millions of messages, up to the total capacity limit of a storage account.
-       - Queues are commonly used to create a backlog of work to process asynchronously.
-       - when to use queue storage:
-         - application must store over 80 gigabytes of messages in a queue.
-         - Your application wants to track progress for processing a message in the queue.
-         - require server side logs of all the transactions executed against your queues.
-       - The Queue service contains the following components:
-         - URL format: Queues are addressable using the URL format https://<storage account>.queue.core.windows.net/<queue>. For example, the following URL addresses a queue in the diagram above https://myaccount.queue.core.windows.net/images-to-download
-         - Storage account: All access to Azure Storage is done through a storage account.
-         - Queue: A queue contains a set of messages. All messages must be in a queue. The queue name must be all lowercase.
-         - Message: A message, in any format, of up to 64 KB. For version 2017-07-29 or later, the maximum time-to-live can be any positive number, or -1 indicating that the message doesn't expire. If this parameter is omitted, the default time-to-live is seven days.
-         - Create and manage Azure Queue Storage and messages by using .NET
-           - https://learn.microsoft.com/en-in/training/modules/discover-azure-message-queue/8-queue-storage-code-examples
-         - 
+1. Exam
+    - Topics
+        - ***Develop Azure Compute Solutions(25%-30%)***
+            - Implement IaaS Solution
+                - Provision VMs
+                - Configure, validate and deploy ARM templates
+                - Configure container images for solutions
+                - Publish an image to the Azure Container Registry
+                - Run containers by using Azure Container Instance
+            - Create Azure App Service Web Apps(PaaS solution)
+                - Create an Azure App Service Web App
+                - Enable diagnostic logging
+                - deploy code to a web app
+                - Configure web app settings
+                - Implement autoscaling rules, including scheduled autoscaling, and scaling by operational or system metrics
+            - Implement Azure Functions(API)
+                - Create and deploy Azure functions
+                - Implement input and output bindings for a function
+                - Implement function triggers by using data operations, timers, and webhooks.
+                - Implement Azure durable functions.
+                - Implement custom handlers
+        - ***Develop for Azure Storage(15%-20%)***
+            - Develop Solutions that use Cosmos DB Storage: Non-relational, NoSQL DB
+                - Select appropriate API and SDK for solution
+                    - Cassandra, MongoDB, Gremlin, Table etc.
+                - Implement partitioning schemes and partitioning keys
+                    - Primary key, compound key etc.
+                - Perform operations on data and Cosmos DB containers
+                - Set the appropriate consistency level for operations
+                    - Strong consistency level vs
+                    - bounded staleness
+                - Manage change feed notifications
+        - ***Implement Azure Security(20%-25%)***
+            - Implement user authentication and authorization - Workflow based
+                - Authenticate and Authorize users by using the Microsoft Identity platform
+                - Authenticate and Authorize users by using Azure Active Directory
+                - Create and implement shared access signatures
+            - Implement Secure Cloud Solutions
+                - Secure app configuration data by using the App Configuration and Azure Key Vault.
+                - Develop code that uses keys, secrets and certificates stored in Azure Key Vault
+                - Implement solution that interact with Microsoft Graph
+                    - Series of APIs that allows to connect to M365 subscription for both getting and setting data.
+        - ***Monitor, troubleshoot, and optimize Azure solutions(15%-20%)***
+            - Optimize
+                - Integrate Caching and Content Delivery within Solutions
+                    - Configure Cache and expiration policies for Azure Redis Cache
+                    - Implement secure and optimized application cache patterns including data sizing, connections, encryption, and expiration
+                - Instrument Solutions to Support Monitoring and Logging
+                    - Configure an app or service to use Application Insights
+                    - Analyze and troubleshoot solutions by using Azure Monitor
+                    - Implement Application Insights web tests and alerts
+        - ***Connect to and consume Azure Services, and third party services(15%-20%)***
+            - Implement API management
+                - Create an APIM instance
+                - Configure authentication for APIs
+                - Define policies for APIs
+            - Develop Event-Based Solutions
+                - Implement solutions that use Azure Event Grid: for more reactive-based programming
+                - Implement solutions that use Azure Event Hub: for more enterprise streaming-based scenarios.
+            - Develop Message-Based Solutions
+                - Implement solutions that use Azure Service Bus
+                - Implement solutions that use Azure Queue Storage Queues
+
+2. Implement IaaS Solution
+    - Provisioning and configuring Azure VMs
+        - Configure, validate, and deploy ARM(Azure Resource Manager) templates
+        - VM Components:
+            - deployed into resource groups.
+            - Contained in Azure regions.
+            - VM Size
+                - No. of CPU cores
+                - RAM size
+                - Disk - HDD vs SSD
+            - Network
+                - connection to internet
+                - connection to rest of resources
+                - Internal IP for internal communication via Azure Virtual Network(VNet)
+                - public IP address for internet.
+            - VM Images
+                - OS like windows or Linux. (Azure Marketplace Images)
+            - Storage/Virtual Disk
+                - Azure Virtual Disk(VHD)
+            - Methods to create Azure VM
+                - Azure Portal
+                - Azure CLI
+                - Azure PowerShell(AZ module)
+                - Azure ARM Templates
+                - Using APIs.
+    - Creating and running Containers in Azure
+        - Create container images for solutions using Docker
+        - Publish container image into Azure Container Registry
+        - Deploy and run containers in Azure Container Instances.
