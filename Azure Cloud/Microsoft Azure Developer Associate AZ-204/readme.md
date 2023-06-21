@@ -94,3 +94,20 @@ Microsoft Azure Developer: Introduction to the AZ-204 Exam by Matthew Kruczek
         - Create container images for solutions using Docker
         - Publish container image into Azure Container Registry
         - Deploy and run containers in Azure Container Instances.
+
+    - Creating VM programmatically:
+      - Azure CLI
+      - Azure Powershell(az module)
+      - ARM Templates
+      - Steps:
+        - Create a resource group
+        - Create VM
+        - Ensure remote access port is open
+        - retrieve the public IP address.
+
+
+- Using Azure CLI to deploy VM:
+    - create group:
+      - az group create --name "rgroup-name"  --location "centralus"
+      - az vm create --resource-group "rgroup-name" --name "atulvm2" --image "win2019datacenter"  or "Ubuntu2204"  --admin-username "atul" --authentication-type "ssh" --generate-ssh-keys
+      - SSH key files: 'C:\Users\msatu\.ssh\id_rsa', 'C:\Users\msatu\.ssh\id_rsa.pub'
