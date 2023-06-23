@@ -1,0 +1,101 @@
+- Docker -> Azure Container Registry(Build, store and Manage containers) -> Azure Container Instances(Run containers)
+- Kubernetes
+- Containers: package up binaries, libraries and other components of an application into a single deployable binary package called container image.
+- Running instance of image = container - generally one image contains one application running in it. - small and portable container.
+- Dockerfile: used to add set of instructions/commands used to build container image.
+- Common instructions in a dockerfile:
+  - copy compiled application into container image.
+  - which binary to run when container is started from image.
+  - copying configuration files
+  - setting env. variables
+- run dockerfile using: "docker build" command
+- Create a container image using docker for dotnetcore application
+  - first build and run the dotnet app
+    - dotnet build ./webapp
+    - dotnet run --project ./webapp
+    - curl http://localhost:5000 #check if working
+  - then, publish local dotnet build
+    - dotnet publish -c Release ./webapp
+  - Docker Build the container and tag it:
+    - docker build -t webappimage:v1 using the dockerfile found in /Linux/Docker/Dockerfile in this repo.
+    - to see thr output to console:
+      - docker build --progress plain -t webappimage:v1
+    - To clean up images and image cache: 
+      - docker rmi webappimage:v1 && docker builder prune --force && docker image prune --force
+  - Run and test container locally 
+    - docker run --name webapp --publish 8080:80 --detach webappimage:v1
+    - curl http://localhost:8080
+  - Stop and delete container
+    - docker stop webapp
+    - docker rm webapp
+  
+- Azure container registry(ACR):
+  - managed docker registry service based on open source docker registry.
+  - allows to build, store, and maintain container images. for deployments.
+  - ACR is key component of building a CI/CD pipeline
+    - can be integrated into source control system build container images when code is committed.
+  - Container Orchestrators like Kubernetes and serverless platforms like Azure Container Instance(ACI) can be configured to pull images from ACR
+  - ACR tasks can be used to streamline building, testing, pushing and deploying applications in azure. Images will automatially be published on code commit.
+  - Service tiers: Basic, Standard, Premium.
+  - ACR Authentication and security options:
+    - requires authentication for operations
+      - Azure Active directory identities: Users, Service Principals
+      - Service ACR admin account: disabled by default
+    - Orchestrators should use headless authentication(because they are unattended) for login into ACR.
+    - # This didn't work: do it again?
+    - To login use:
+      - az acr login or docker login [using username and password - Azure AD]
+      - ACR role based authentication:
+        - Owner(all), Contributor(Create/delete registry + change policies + rest all), Reader(Access Resource Manager, Pull Images), AcrPush(push and pull images), AcrPull(pull images), AcrDelete(delete image data), AcrImageSigner(sign images)
+  - Creating and authenticating to ACR:
+    - create a global and unique ACR name to access the ACR as this will create fully qualified domain name:
+      - ACR_NAME = 'psdemoacr'
+    - create acr
+      - az acr create --resource-group 'rgroup' --name $ACR_NAME --sku standard
+    - Login to ACR
+      - az acr login --name $ACR_NAME
+    - Push Image to ACR
+      - Using Docker Tools
+        - ACR_NAME = 'psdemoacr'
+        - ACR_LOGINSERVER = $(az acr show --name $ACR_NAME --query loginServer --output tsv)  #eg output = psdemoacr.azurecr.io
+        - Add alias to local container image using this login server and a new name and tag. This new tag tells docker when it needs to send the image when we execute docker push.
+          - docker tag webappimage:v1 $ACR_LOGINSERVER/webappimage:v1     #Syntax: docker tag "source_image"  "Loginserver/name:tag"
+        - docker push $ACR_LOGINSERVER/webappimage:v1
+        - Check if image is present in acr:
+          - az acr repository list --name $ACR_NAME --output table
+          - az acr repository show-tags --name $ACR_NAME --repository webappimage --output table
+      - Using ACR tasks
+        - reads the Dockerfile in the current working directory and then zip up all the resources and code and upload into ACR to build the container image to use.
+        - az acr build --image "webappimage:v1-acr-task" --registry $ACR_NAME .    #new name is used, "." is used to locate the dockerfile in pwd.
+
+- deploying Azure Container Instances:
+  - ACI gives a serverless PaaS to run containers in Azure without need to servers/VM.
+  - For full container orchestration: use Azure Kubernetes Service.
+  - Applications can be accessed via Internet or Azure virtual network for private, secure connections.
+    - can be combined with ExpressRoute or VPN gateway for access from other networks outside of Azure.
+  - Both windows and Linux containers can be run in ACI.
+  - default: 1 core, 1 gb ram can be varied as per need.
+  - Use Azure files for persistent storage.
+  - ACI also support scheduling of multi-group containers that share a host machine, storage, network and life-cycle.
+  - Container restart policy - tells what to do if running app inside container stops - restart always, restart on failure, restart never.
+- Deploying containers in ACI from container registries via
+  - Azure container registry
+  - docker hub etc.
+  - Public or private
+- Creating a service principal for ACI to pull from ACR:
+  - ACR_NAME = 'actual_acr_name_deployed_earlier'
+  - ACR_REGISTRY_ID = $(az acr show --name $ACR_NAME --query-id --output tsv)
+  - SP_NAME=acr-service-principal
+  - SP_PASSWD=$(az ad sp create-for-rbac --name http://$ACR_NAME-pull --scopes $ACR_REGISTRY_ID --role acrpull --query password --output tsv)  #create a password to be used for ACI.
+  - SP_APPID = $(az ad sp show --id http://$ACR_NAME-pull --query appId --output tsv)
+- Running container from ACR to ACI
+  - ACR_LOGINSERVER = $(az acr show --name $ACR_NAME --query loginServer --output tsv)
+  - az container create 
+    --resource-group rgroup 
+    --name "webappname" 
+    --dns-name-label "hostname_for_container(used for fully qualified domain)"  #eg. of dns name label = psdemo-webapp.cli.centralus.azurecontainer.io
+    --ports 80 --image $ACR_LOGINSERVER/webappimage:v1 
+    --registry-login-server $ACR_LOGINSERVER
+    --registry-username $SP_APPID
+    --registry-password $SP_PASSWD
+  

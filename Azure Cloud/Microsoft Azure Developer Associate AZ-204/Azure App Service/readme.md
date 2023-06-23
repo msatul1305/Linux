@@ -1,0 +1,30 @@
+- App Service
+  - http based service for hosting web apps
+  - web hosting 
+  - windows or linux
+  - Egs of web apps: ASP.net, APS.net core, Node.js, Python, PHP etc.
+- App service Plans
+  - Isolated and Non-Isolated
+  - Non-Isolated:
+    - not inside a virtual network
+    - can be accessed via internet
+    - Types:
+      - Free and shared(F1, D1): not for PROD apps, run on shared infrastructure
+      - Basic(B1,B2,B3): low traffic requirement apps, no autoscaling and traffic management.
+      - Standard(S1,S2,S3): for PROD workloads - price based on no. of instances run
+      - Premium v2(P1v2, P2v2, P3v2) - enhanced performance
+      - Premium v3(P1v3, P2v3, P3v3) - faster processor
+  - Isolated with App Service Environments(ASE):
+    - fully isolated and dedicated environment for running web apps
+    - environment is dedicated to your app and able to put in VNet.
+    - high scale, memory utilization
+    - secure network access
+    - control over network traffic
+    - app can connect to VPN to on-premise resources
+- Create Azure Service Web Apps
+  - App service plans
+  - App service environments
+  - create web app in portal
+  - create web app with CLI
+  - create web app with powershell
+  - create web app with ARM template

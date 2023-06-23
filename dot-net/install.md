@@ -1,0 +1,6 @@
+- Install dot-net in ubuntu
+  - download x64 binary of dot-net sdk from https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-7.0.304-linux-x64-binaries
+  - extract this binary in a folder and add it to the path.
+  - i.e.
+    - export DOTNET_ROOT=/path_to_folder/
+    - export $PATH=$PATH:/path_to_folder/
