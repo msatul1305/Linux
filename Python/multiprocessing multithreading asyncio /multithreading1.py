@@ -1,8 +1,8 @@
-#This is the older, simpler and manual way of creating and executing threads [Slower than concurrent.futures approach - python>3.2]
-
-#Basic multithreading using 
-#1. "threading" library
-#2. thread.start() and thread.join()
+# This is the older, simpler and manual way of creating and executing threads [Slower than concurrent.futures approach - python>3.2]
+# Corey Schafer: https://www.youtube.com/watch?v=IEEhzQoKtQU
+# Basic multithreading using
+# 1. "threading" library
+# 2. thread.start() and thread.join()
 
 
 import threading
@@ -21,10 +21,10 @@ threads_list = []
 for _ in range(10):
     t = threading.Thread(target=do_something, args=[1.5])
     t.start()
-    threads_list.append(t)  
-  
+    threads_list.append(t)
+
 for thread in threads_list:
-  thread.join()
+    thread.join()
 
 finish = time.perf_counter()
 
