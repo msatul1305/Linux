@@ -9,4 +9,6 @@
 - This funny tag syntax is neither a string nor HTML.It is called JSX, and it is a syntax extension to JavaScript.
 
 - React uses virtual DOM to update in real time and then update the real DOM later.
-- Virtual DOM vs real DOM?
+- Virtual DOM vs real DOM: https://www.youtube.com/watch?v=RquK3TImY9U
+  - React creates a copy of the real DOM called virtual DOM and check updates to it.
+  - If there is an update to virtual DOM, React syncs this ***only this updated component*** to the real DOM thus saving time. 
