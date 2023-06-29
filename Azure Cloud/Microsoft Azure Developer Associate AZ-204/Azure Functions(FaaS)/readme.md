@@ -1,0 +1,30 @@
+- Azure Functions
+  - serverless application platform: abstract servers
+  - run functions(small pieces of code) in cloud
+  - FaaS: Function as a Service
+  - Choice of programming languages: C#, Java, JavaScript, Python, PowerShell etc.
+  - Hosting choices: Service plan on Azure App Service
+    - Consumption plan:
+      - Serverless pricing
+      - bills only when functions are running
+      - automatic scaling
+      - Time limit for each function invocation: 5 min
+    - App Service plan:
+      - Traditional pricing model: monthly bills
+      - No time limit
+    - Premium plan:
+      - Faster
+      - Secure
+      - reserved instances
+      - Serverless automatic scaling
+    - Run Azure Functions on:
+      - Docker Container
+        - On-premise or on cloud
+      - Locally
+  - Development Environment choices: Azure portal, Visual Studio(c#), Azure Functions Core Tools(CLI, VS code)
+- Implement Azure Functions Skills
+  - Implement function triggers by using data operations, timers and webhooks
+  - Implement input and output bindings for a function
+  - Implement Azure Durable Functions
+- Create Azure function in Azure portal app
+  - Create a resource -> function app

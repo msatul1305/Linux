@@ -92,9 +92,23 @@
     - Enable Continuous Deployment
     - Disable Continuous Deployment
 - Scaling Azure App Service
-  - Vertical vs Horizontal scaling
-    - Vertical: adding resources
-    - Horizontal: adding extra VMs using load balancers
+  - Autoscale: available for standard, premium,and isolated tiers only.
+    - Vertical vs Horizontal scaling
+      - Vertical: adding resources: scale up v down
+      - Horizontal: adding extra VMs using load balancers - Scaling In(reducing VM count) vs OUT(adding more VM)
   - Manually scaling App Service
-  - Scaling on a schedule
+    - Scale up and scale out option in portal
+  - Scaling on a schedule: based on time. scale out at 9 am, scale back in at 10pm
+    - scale out -> custom autoscale
   - Implementing autoscaling in app service
+    - Autoscaling profile
+      - Autoscaling actions
+        - inc/dec no. of VMs.
+        - send email notification of scaling change
+        - ping a webhook as a notification to start some automated process
+      - Capacity settings: max, min and default no. of instances
+      - Rules: based on conditions
+      - Notifications: via Azure Monitor
+    - Designing Autoscaling Rules
+      - Metrics(resource/custom): CPU utilization, compute instances, memory pressure, etc.
+      - Time(schedule): 
