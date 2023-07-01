@@ -27,4 +27,25 @@
   - Implement input and output bindings for a function
   - Implement Azure Durable Functions
 - Create Azure function in Azure portal app
-  - Create a resource -> function app
+  - Create a resource -> function app -> deploy function app
+  - Open deployment -> Go to functions  -> create
+- Azure function triggers
+  - HTTP request Trigger(webhooks): runs in response to a web request. - use for APIs and webhooks
+    - trigger based on HTTP methods - e.g. GET, POST
+    - trigger based on Route/URL
+    - secured via authorization key
+      - Anonymous: no keyt required
+      - Function: key per function
+      - Admin: key per function app
+    - Create HTTP function trigger
+      - open function app -> create function
+      - [see create_functions.sh file for further detail.](create_functions.sh)
+  - Timer Trigger(scheduled tasks): create scheduled tasks(e.g. at 12 am every night)
+    - run scheduled tasks in the cloud.
+    - 
+  - Queue Trigger - run in response to a message on a queue
+  - Cosmos DB Trigger - run when a document is created or updated in cosmos db storage
+  - Blob Storage Trigger(data operation) - run when a new file is uploaded to blob storage.
+  - Other triggers:
+    - Event grid
+    - Microsoft Graph
