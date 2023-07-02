@@ -1,0 +1,14 @@
+- Visual Studio
+  - New project -> Azure functions -> HTTP Trigger
+  - Add NuGet reference to Microsoft.Azure.Webjobs.Extensions.DurableTask: To enable durable functions on function app
+  - Project -> Add new Item -> Azure Function -> Durable Function Orchestration template
+    - Creates 3 functions 
+      - Orchestration function
+        - uses Orchestration trigger
+        - CallActivityAsync("Name of activity function", "Input Data")
+        - Also returns the data(output of each function call)
+      - Activity function
+        - uses Activity Trigger: with input data as parameter to activity
+      - HTTP-triggered starter function
+        - starter = IDurableOrchestrationClient
+        - starter used to call StartNewAsync("name of orchestration", "Input Data") which starts a new durable functions orchestration

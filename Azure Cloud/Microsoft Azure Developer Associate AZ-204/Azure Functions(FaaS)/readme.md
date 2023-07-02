@@ -42,10 +42,82 @@
       - [see create_functions.sh file for further detail.](create_functions.sh)
   - Timer Trigger(scheduled tasks): create scheduled tasks(e.g. at 12 am every night)
     - run scheduled tasks in the cloud.
-    - 
+    - using CRON expression
+      - To run trigger function every 5 mins:
+        - 0 */5 * * * *
   - Queue Trigger - run in response to a message on a queue
   - Cosmos DB Trigger - run when a document is created or updated in cosmos db storage
   - Blob Storage Trigger(data operation) - run when a new file is uploaded to blob storage.
   - Other triggers:
     - Event grid
     - Microsoft Graph
+- Implementing Input and Output Bindings
+  - Binding
+    - collection of data within the function
+    - A function can have multiple I/O bindings.
+  - Input Bindings
+    - get data into functions
+    - read-access to data from external service to our function
+    - e.g. 
+      - Blob Storage binding: read contents of file in blob storage
+      - Cosmos db binding - look for document in Cosmos DB
+      - Microsoft Graph binding - access OneDrive
+  - Output Bindings
+    - send messages, add document to database
+    - write data to external service
+    - e.g. 
+      - Blob storage binding: create new file in blob storage
+      - Queue storage binding: Post a message to Queue
+      - Cosmos DB binding: create new document in Cosmos DB
+      - Others: Even Hub, Service Bus
+      - Connectors to 3rd party services: SendGrid(for sending emails), Twilio(for sending text messages) etc.
+  - Azure Functions and Core Tools
+    - Develop locally
+- Azure Durable Functions(C# and JavaScript)
+  - Extension to Azure Functions
+  - Used to create stateful, serverless workflows ("Orchestrations")
+  - 3 types of functions:
+    - Client("Starter Function")
+      - Initiate a new orchestration
+      - use any trigger
+    - Orchestrator Function
+      - Defines the steps in the workflow
+      - handle errors
+    - Activity Function
+      - Implement a step in the workflow
+      - use any bindings
+  - Orchestration Patterns  for durable functions
+    - Function Chaining
+      - Sequence of activity functions in specified order(Activity 1-> Activity 2->Activity 3)
+    - Fan-out Fan-in
+      - Multiple activities in parallel
+    - Asynchronous HTTP APIs
+      - used when we have an API that we need to pull repeatedly for progress.
+      - Orchestrator keeps on pulling whereas long-running function keeps on running.
+    - Monitor Process
+      - Do work/check status
+      - Poll and sleep
+    - Human Interaction
+      - Request Approval
+      - Process Aprroval
+      - Escalate
+- Custom Handlers
+  - We can create Azure functions in C#, Java, JavaScript, Python. PowerShell, etc.
+  - But for languages that are not current supported like Rust, Go
+  - and for runtime that are not current supported like Deno(an alternative JavaScript runtime), we use custom handlers.
+  - Trigger -> Functions Host -> Custom Handler(Web Server: runs function code) -> Target(Output bindings)
+  - Steps to create custom handler
+    - Create function app using ***function init*** selecting Custom as language
+    - Create Azure function using any trigger type e.g. HTTP Trigger
+    - Create a web server using custom language of choice
+    - Compile your custom handler e.g. go build handler.go
+    - update host.json file(defaultExecutablePath and enableForwardingHttpRequest)
+      - set defaultExecutablePath to name of the executable: e.g. handler.exe
+      - enableForwardingHttpRequest = True
+      - The web server would listen on /api/FunctionName
+    - Test locally(func start) or publish to Azure
+  - extensionBundle
+    - needed to support bindings and triggers
+
+
+Note: Azure Kubernetes Service(AKS) is out of scope for this certification exam.

@@ -7,5 +7,5 @@ func new
 # Run your function project locally
 func start
 # Deploy your code to Azure
-func azure functionapp publish "function_name"
+func azure functionapp publish "function_app_name"
 # get URL and try to run the function.
