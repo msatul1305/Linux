@@ -87,20 +87,24 @@
       - Implement a step in the workflow
       - use any bindings
   - Orchestration Patterns  for durable functions
-    - Function Chaining
+    - ***Function Chaining***
       - Sequence of activity functions in specified order(Activity 1-> Activity 2->Activity 3)
-    - Fan-out Fan-in
+    - ***Fan-out Fan-in***
       - Multiple activities in parallel
-    - Asynchronous HTTP APIs
+    - ***Asynchronous HTTP APIs***
+      - e.g. Multiple Image downloads, processing those images in parallel  
       - used when we have an API that we need to pull repeatedly for progress.
       - Orchestrator keeps on pulling whereas long-running function keeps on running.
-    - Monitor Process
-      - Do work/check status
+    - ***Monitor Process***
+      - Do work/check status when something is completed/when a specific condition is met.
       - Poll and sleep
-    - Human Interaction
+    - ***Human Interaction***
       - Request Approval
-      - Process Aprroval
+      - Process Approval
       - Escalate
+    - ***Aggregators***
+      - stateful entities
+      - aggregate data over period of time within a single function
 - Custom Handlers
   - We can create Azure functions in C#, Java, JavaScript, Python. PowerShell, etc.
   - But for languages that are not current supported like Rust, Go
@@ -120,4 +124,4 @@
     - needed to support bindings and triggers
 
 
-Note: Azure Kubernetes Service(AKS) is out of scope for this certification exam.
+
