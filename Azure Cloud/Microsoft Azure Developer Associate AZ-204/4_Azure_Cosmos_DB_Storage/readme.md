@@ -1,0 +1,98 @@
+- Azure Cosmos DB Storage
+  - Database types
+    - Relational databases
+      - SQL Server, MySQL, Postgres etc.
+      - low scalability with high amount of data like IOT and social media
+      - fixed schema
+      - table based structure
+      - vertical scaling
+      - ACID guarantees(atomicity, consistency, isolation and durability)
+      - Data normalization: no repetition of data: 1nf, 2nf 3nf, 4nf
+    - NoSQL
+      - distributed in nature
+      - Fluid schema
+      - Multiple structures
+        - Key-value stores
+        - graph databases
+          - used in 
+            - product recommendation engines
+            - social network relationship mapping
+        - document stores
+        - wide-column(2-d key value store)
+      - Horizontal scaling is possible using data partitioning
+      - provides BASE(basically available, Soft state, eventual consistency) semantics
+        - data is distributed
+        - hence, first data is distributed to current node and then to all other nodes i.e. soft state
+        - soft state: we don't know if the data is most recent or waiting to be updated 
+      - Non-normalized data: data is not optimized based on how its stored and to prevent repeating.
+        - Data is optimized based on how we read it
+  - COSMOS DB
+    - globally distributed, multi-model db service
+    - extremely low latency(single digit millisecond)
+    - provides SLA for throughput, latency, availability, and consistency.
+    - supports multi-region replication at any point
+    - provides five-nines of high-availability for both reads and writes(99.999% availability)
+    - Enables elastic scalability
+    - pricing is based on throughput provisioned
+    - supports multiple consistency options
+    - Features
+      - Integrated Analytics
+        - Spark
+      - Region Support
+      - Schema-agnostic
+        - property of a database of mapping a query issued with the user terminology and structure, automatically mapping it to the dataset vocabulary.
+      - Automatic Indexing(built-in)
+      - Supports multiple SDKs
+      - Organization of data example:
+        1. Cosmos DB account(SQL api)
+        2. Database(App1)
+           2.1. Container1
+              2.1.1. Item1
+              2.1.2. Item2
+           2.2. Container2
+        3. Database(App2)
+  - Creating cosmos DB containers
+    - Select appropriate API and SDK for a solution
+      - Selecting API:
+        - Cosmos DB can act like multiple types of databases
+        - Supported APIs:
+          - SQL
+            - Structured Query langugae
+            - JSON documents also supported
+            - Database Entity: Database
+            - Container Entity: Container
+          - Cassandra
+            - CQL(Cassandra Query Language)
+            - wide-column format(2-d key-value store)
+            - Database Entity: Keyspace
+            - Container Entity: Table
+          - MongoDB
+            - JSON document store
+            - Database Entity: Database
+            - Container Entity: Collection
+          - Gremlin
+            - graph db
+            - relationship between data is visible
+            - product recommendation engines, social networks, etc.
+            - Apache Tinkerpop's Gremlin language for querying relationships
+            - Database Entity: Database
+            - Container Entity: Graph
+          - Azure Table
+            - part of Azure Storage
+            - querying data using OData or LINQ queries
+            - Database Entity: Not Applicable
+            - Container Entity: Table
+        - Supported SDKs
+          - for SQL API
+            - Cosmos DB SDK
+          - for MongoDB, Cassandra Gremlin
+            - use current SDks for the API
+          - For Azure Table API
+            - use current Table Storage SDK
+    - Process of creating cosmos DB container
+      - Using portal
+      - using CLI: [create_container.sh](create_container.sh)
+    - Perform operations on data and cosmos DB containers
+    - Set appropriate consistency level for operations
+    - Implement partitioning schemes and partition keys
+    - Manage change feed notifications and server side execution
