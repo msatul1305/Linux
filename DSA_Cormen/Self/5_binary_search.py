@@ -1,21 +1,18 @@
 # list should be sorted for binary search
 l = [1, 5, 7, 9, 11, 15, 20]
-x = 10
+x = 5
 # find x
 p = 0
-q = len(l)
+q = len(l) -1
 n = len(l)
-def func(l, p,q,n):
-    c = 0
-    while p<=q and q>0:
+def func(l, p,q):
+    while p<=q:
         mid = int((p + q)/2)
         if l[mid]>x:
-            q = mid
+            q = mid -1
         elif l[mid]<x:
-            p = mid
+            p = mid +1
         elif l[mid] == x:
-            c = 1
             return mid
-    if c == 0:
-        return -1
-print(func(l,p,q,n))
+    return -1
+print(func(l,p,q))
