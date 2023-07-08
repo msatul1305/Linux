@@ -1,0 +1,2 @@
+- Memory management in py
+- Garbage Collection in py

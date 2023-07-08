@@ -9,3 +9,6 @@ ctrl + shift + - : collapse all blocks/functions/classes
 
 ctrl + t: pull latest changes from remote(git) for current branch 
 Multiple cursors - Alt + Shift + Click at target locations 
+
+ctrl + f4: close current file
+ctrl + tab -> next file

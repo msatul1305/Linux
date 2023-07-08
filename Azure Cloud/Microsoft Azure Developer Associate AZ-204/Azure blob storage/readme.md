@@ -1,0 +1,85 @@
+- Azure blob storage
+    - what is?
+      - BLOB: Binary Large OBject
+      - Object storage for cloud
+        - Store unstructured data
+          - Text files
+            - .txt, .html, .json, .log
+          - Binary files
+            - Images, Videos
+            - Zip files
+            - PDFs
+            - Virtual disks for VMs
+        - Accessible via 
+          - REST API over HTTP/HTTPS(recommended)
+          - portal
+          - CLI
+          - Powershell
+          - Azure Storage Client Library: for applications(uses REST API calls)
+            - .NET, Java, Python, Node.js
+    - Core concepts
+        - Blob types
+            - Block blob
+                - Images, videos, text files or PDF documents
+                - complete file/binary is replaced with new file
+            - Append blob
+                - log files
+                - append is required at end of file
+            - Page blob:
+                - provides random read/write access
+                - used for VHDs(Virtual disks)
+      - Storage accounts
+        - Data is always encrypted using storage service encryption(SSE)
+        - Types
+          - Storage V2(General purpose V2): default account
+            - supports Blob, files, queues, table
+            - blob supports block, append and page type blobs
+            - high throughput, recommended option
+            - Performance based
+              - Standard performance
+                - uses magnetic drives/HDD
+              - Premium performance
+                - uses SSDs
+                - supports only blob storage: only page type of blob(block and append not supported)
+                - not files, queues and table
+                - i.e. only used as virtual hard disks(VHDs)
+                - BlockBlobStorage account
+                  - To use block storage with premium performance
+                  - supports block and append blob types
+                  - for a lot of transactions with small objects
+                - File Storage account
+                  - file service with premium performance
+          - Storage(General purpose V1)
+            - old/legacy
+            - supports Blob, files, queues, table
+          - BlobStorage
+            - blob
+            - old/legacy
+      - Containers
+      - Replication strategies
+        - LRS
+        - ZRS
+        - GRS
+        - RA-GRS
+        - GZRS
+        - RA-GZRS
+    - Create storage account, container and blobs
+      - create storage account
+      - create blob container(for images and videos)
+      - store blobs in blob container
+      - via Portal
+        - Storage accounts -> Blob service -> add container -> upload
+    - Authorize Requests to blob storage
+      - Shared key(Storage account key/access key) - used in connection strings
+      - Shared Access Signatures(SAS) - tokens appended to blob URLs.
+        - Portal -> storage account -> storage container/blob -> generate SAS token and URL
+        - copy sas token and update URL-> https://storagename.net/path/file.jpg?Add_SAS_Token_here
+      - Azure Active Directory
+      - Anonymous public read access
+        - Portal -> storage account -> storage container/blob -> change access level -> blob/container(url?comp=list will list all files in container)
+    - Interact with data using appropriate SDK
+      - .Net
+    - Set and Retrieve properties and metadata
+    - Implement data archiving and retention
+      - Implement hot, cool and archive storage
+    - Move items in blob storage between storage accounts or containers

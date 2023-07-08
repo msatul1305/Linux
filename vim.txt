@@ -12,7 +12,6 @@
   a. Enter Visual Mode (shift + v)
   b. select text using arrow keys
   c. shift + <
-
 6. Search for text: /"search text"
 7. show line numbers: set nu
 8. Hide line numbers: set nu!
@@ -23,12 +22,10 @@ Shift+V to move to visual mode then select lines and press "d" to delete selecte
 12. Copy paste in vi editor: press i-> ctrl+shift+V
 Or
 Use :set paste to disable automated indenting etc.
-
-
-
-
-
-
-
-.vimrc file in home folder: To set default views of a vim editor 
-1. comments in .vimrc file: " this is a comment line
+13. Replace All:
+    :%s/foo/bar/g
+(Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.)
+14. For specific lines:
+    :6,10s/foo/bar/g
+15. .vimrc file in home folder: To set default views of a vim editor
+16. comments in .vimrc file: " this is a comment line

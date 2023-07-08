@@ -200,20 +200,33 @@ ARM Benefits
                    - 3 copies within a single location.(within 3 different racks)
                    - low cost
                    - protection against single disk failure
-                   - doesn't protect zone/regional failure/unavailability/outage.
+                   - doesn't protect zone/regional failure/unavailability/outage. 
+                   - hazards: fire, flood
                - ZRS: Zone redundant storage
                    - spans across 3 zones within a region. (eg. Chennai-east, west, north)
                    - protects against zone outage
                    - no protection against region wide outage
+                   - hazards: massive natural disaster, internet outage/ban in area.
+                   - not supported in all regions
+                     - the region must have 3 separate data centers for these kind of redundancy
            - Multiple region
-               - GRS: Geo-redundant storage
-                   - 3 copies in primary regional physical location(LRS) - (Chennai-east)
-                   - 3 copies in secondary(paired) regional physical location(LRS) - (Mumbai-east)
-                   - protects against primary region failure but no primary zone redundancy.
-               - GZRS: Geo-Zone-redundant storage
-                   - 3 copies in primary regional physical location(ZRS) - (Chennai-east, west, north)
-                   - 3 copies in secondary(paired) regional physical location(LRS) - (Mumbai-east)
-                   - protects against primary region failure but no primary zone redundancy.
+           - Note: read and write possible only from primary region(for GRS and GZRS)
+           - secondary region used for data backup, fail over is used to recover data(secondary becomes primary)
+           - fail-over takes about an hour
+           - To be able to always read from secondary region, use RA-GRS or RA-GZRS.
+             - GRS: Geo-redundant storage
+                 - 3 copies in primary regional physical location(LRS) - (Chennai-east)
+                 - 3 copies in secondary(paired) regional physical location(LRS) - (Mumbai-east)
+                 - protects against primary region failure but no primary zone redundancy.
+             - RA-GRS(Read-access geo-redundant storage)
+               - can read data from secondary as well
+               - to use secondary, add -secondary to url:
+                 - e.g. https://<storageaccname>-secondary.blob.core.windows.net
+             - GZRS: Geo-Zone-redundant storage
+                 - 3 copies in primary regional physical location(ZRS) - (Chennai-east, west, north)
+                 - async 3 copies in secondary(paired) regional physical location(LRS) - (Mumbai-east)
+                 - protects against primary region failure but no primary zone redundancy.
+             - RA-GZRS(Read-access Geo-Zone-redundant storage)
      - Moving data
        - AzCopy: CLI
            - for blobs and Azure file formats. 

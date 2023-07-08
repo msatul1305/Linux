@@ -94,5 +94,136 @@
       - using CLI: [create_container.sh](create_container.sh)
     - Perform operations on data and cosmos DB containers
     - Set appropriate consistency level for operations
+      - Data Consistency levels
+        - Distributed databases that rely on replication for high availability, low latency or both must make fundamental tradeoff between read consistency, availability, latency and throughput. 
+        - i.e. when we write a data to db, what value we get when we immediately do a read operation
+        - Eventual: Lower latency, Higher throughput, higher availability
+          - but low consistency i.e. if data is in America, it may take some time to be replicated to Asia
+          - No guarantee of order of data 
+          - No guarantee of reading of own write consistency
+        - Consistent prefix:
+          - updates are returned in order
+        - Session:
+          - Guarantees that a client session will read its own writes
+        - Bounded staleness:
+          - guarantees that a read has max. lag(either number of versions or time elapsed) [fairly recent version]
+        - Strong: Higher latency, Lower throughput, Lower availability
+          - Guarantees that we get most recent version of data
+      - Consistency levels for SQL APIs
+        - Account default
+        - Request-specific level
+          - override default for specific operations
+      - Consistency levels for other databases
+        - Gremlin and Azure Table API: account default consistency level
+        - Cassandra writes: account default consistency level
+        - Cassandra reads: client consistency mapped to cosmos db level
+        - Mongo DB: write - account default consistency level
+        - Mongo DB: read - cosmos db level mapping
+      - Throughput considerations
+        - Both strong and bounded staleness reads will consume twice RU's than normal as it need to query 2 replicas.
     - Implement partitioning schemes and partition keys
+      - Partitioning
+        - Logical partition
+          - set of items with same partition key.
+          - each partition = max. 20GB storage
+        - Physical partition
+          - distributing data and throughput across physical partitions
+          - Internally, one or more logical partitions are mapped to single physical partition.
+          - Entirely managed by Azure Cosmos DB
+          - ***Replica set***
+            - A physical partition contains multiple replicas of data known as replica set.
+            - makes storage durable and fault-tolerant
+            - managed by cosmos db
+        - Partition key
+          - managed by user
+          - helps in routing of data to correct partition
+          - primary key + partition key is used for searches
+          - key doesn't change for an item
+          - should have different value for each container
+          - Azure cosmos db uses hash-based partitioning to spread logical partitions across physical partitions.
+          - Azure cosmos db hashes the partition key value of an item.
+          - Then, it allocates the key space of partition key hashes evenly spread across physical partitions.
+        - Strategy considerations for partition
+          - HOT partition: throughput is evenly distributed across all physical partitions(e.g. total= 20k RU, each partition will have 10k RUs)
+          - Multi-item transactions require storage triggers or stored procedures
+          - minimize cross partition queries for heavier workloads(large storage or large throughput)
+          - decide on partition key strategy before creating container
+    - Cosmos DB performance
+      - Scaling in Traditional DB
+        - Vertical scaling: inc. CPU, RAM, disks storage etc.
+        - Horizontal scaling: inc. no.of VMs
+          - using concept of read replicas
+      - Scaling in cosmos DB
+        - Request Unit(RU): similar to vertical scaling
+          - increasing RU will inc CPU, RAM, IO etc. 
+          - 1 RU = 1 kb item read operation from a cosmos DB container
+        - Resources encapsulated in RU's
+          - Processing power(CPU)
+          - Memory
+          - IOPS(Input/Output Operations Per Second)
+        - Managing cosmos DB throughput
+          - Provisioned throughput(old): specific amount set by you that is needed
+            - for always on prod env
+            - can be configured at db or container level
+            - throughput is evenly distributed to partitions
+            - requires 10RU's per GB of storage
+            - requests will be rate limited(will not be completed once quota is over will ask to scale)
+            - Scaling
+              - manual scaling required by using RUs
+              - Autoscaling
+                - specify max. RU throughput and cosmos db will ensure data is available upto that throughput amount.
+                - but min. throughput = 10% of max.
+                - this is good for prod envs but for dev this much may not be used.
+              - Serverless
+                - pay for RU consumend and storage used
+                - ideal for on and off workloads like dev servers
+                - max . 5000 RU's
+              - Best practices:
+                - use partition strategy to evenly spread throughput on partitions
+                - provision throughput at container level for predictable performance
+                - use serverless account type for dev
+                - Understand link between consistency types and amount of RU's consumed.
     - Manage change feed notifications and server side execution
+      - Server side programming with cosmos DB
+        - executing code based on data change using stored procedures and triggers.
+      - Cosmos DB server-side concepts
+        - Stored procedures
+          - must be defined in JS
+          - executes on a single partition, and has access to that partition only
+          - partition key must be provided with the request to execute
+          - supports a transaction model i.e. if something fails rollback comes into picture 
+        - Triggers
+          - must be defined in JS
+          - can be executed either before(pre trigger) or after(post trigger) data is written to db
+          - pre triggers can handle data transformation and validation
+          - post triggers can handle data aggregation, change notifications etc.
+          - not guaranteed to execute
+            - error in pre or post trigger will result in data rollback
+        - User defined functions(UDFs)
+          - must be defined in JS
+          - define custom functions that can be leveraged in a query
+          - enables encapsulation of common logic in query conditions
+        - Change feed: execution occurs external to db engine
+          - react to data changes outside of cosmos data engine
+          - enables to notify of any insert or update on data
+          - deletes are not directly supported, but we can leverage soft-delete flag (e.g. setting "isDeleted" = True or setting TTL(Time to Life = low_value)) 
+          - A change will appear exactly once in change feed
+          - reading data from db will consume throughput
+          - partition updates will be in order, but between partitions no guarantee
+          - not supported only for Azure Table API
+          - Approaches to using change feed
+            - Using Azure functions
+              - set up a trigger to be tied to cosmos db
+              - has a built-in change feed processor
+            - Using Change Feed Processor
+              - run in any infra
+              - used to provision workers to deal with changes.
+              - manages the checkpoint of interactions with cosmos db so that data is not lost in the process.
+      - Server-side execution environment
+        - Stored procedures, triggers and User-defined functions(UDFs) are executed within the database engine
+        - supported when using SQL api
+        - supports Javascript
+        - can be created and managed via portal and via SDK
+- To create Cosmos DB trigger using Azure functions:
+  - Portal -> function app -> create new function
+  - add function -> Azure cosmos db trigger
