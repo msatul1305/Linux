@@ -99,6 +99,26 @@
         - C++
         - Android/iOS
     - Set and Retrieve properties and metadata
+      - properties and metadata exists on blob containers and on blobs
+      - these are set and retrieved via HTTP headers.
+      - Portal -> Storage container -> settings -> properties and metadata
+      - for Blob containers:
+        - Properties:
+          - System properties
+            - ETag(read only): entity tag(string identifier that changes everytime when blob container is updated)
+            - LastModified(read only): tells when the container was updated.
+          - User-defined metadata
+            - String-based key-value pairs stored on the container
+      - for Blobs:
+        - Properties:
+            - System properties
+                - ETag(read only): entity tag(string identifier that changes everytime when blob container is updated)
+                - LastModified(read only): tells when the container was updated.
+                - Content-Type: images/jpeg
+                - Content-Length
+                - x-ms-blob-type: block blob or append blob or page blob.
+            - User-defined metadata
+                - String-based key-value pairs stored on the container
     - Implement data archiving and retention
       - Implement hot, cool and archive storage
     - Move items in blob storage between storage accounts or containers
