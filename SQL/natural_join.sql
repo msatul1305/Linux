@@ -1,0 +1,3 @@
+SELECT *
+FROM table1
+NATURAL JOIN table2;

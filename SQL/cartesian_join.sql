@@ -1,0 +1,3 @@
+SELECT table1.column1 , table1.column2, table2.column1...
+FROM table1
+CROSS JOIN table2;

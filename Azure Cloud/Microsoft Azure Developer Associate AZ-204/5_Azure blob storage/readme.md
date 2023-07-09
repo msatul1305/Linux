@@ -55,14 +55,18 @@
           - BlobStorage
             - blob
             - old/legacy
+          - V2 supports all replication strategies: LRS, GRS, ZRS, RA-GRS, GZRS, RA-GZRS(default)
+            - RA-GZRS is default and is used in prod envs.
+          - Legacy(Storage(V1) and BlobStorage) supports only LRS, GRS, RA-GRS
+          - Premium performance(BlockBlob and File Storage) supports LRS, ZRS only
       - Containers
       - Replication strategies
         - LRS
         - ZRS
-        - GRS
-        - RA-GRS
-        - GZRS
-        - RA-GZRS
+        - GRS Geo-redundant storage
+        - RA-GRS Read-access geo-redundant storage
+        - GZRS 
+        - RA-GZRS Read-access Geo-Zone-redundant storage
     - Create storage account, container and blobs
       - create storage account
       - create blob container(for images and videos)
@@ -78,7 +82,22 @@
       - Anonymous public read access
         - Portal -> storage account -> storage container/blob -> change access level -> blob/container(url?comp=list will list all files in container)
     - Interact with data using appropriate SDK
-      - .Net
+      - Azure SDKs(https://azure.github.io/azure-sdk)
+        - .NET(https://github.com/Azure/azure-sdk-for-net)
+          - Collection of client libraries
+          - azure.<service-category>.<service-name>
+          - these client libraries are available as NuGet packages.
+          - For blob storage use Azure.Storage.Blobs NuGet package
+            - Contains:
+              - BlobServiceClient(for Blob Storage Account) - e.g. to list all containers in the storage account
+              - BlobContainerClient(for Images/Container) - e.g. to create a container or to list the blobs of a container.
+              - BlobClient(for blob) - e.g. upload/download a specific blob.
+          - for queue storage access, use Azure.Storage.Queue
+        - Java
+        - JavaScript/TypeScript
+        - Python
+        - C++
+        - Android/iOS
     - Set and Retrieve properties and metadata
     - Implement data archiving and retention
       - Implement hot, cool and archive storage

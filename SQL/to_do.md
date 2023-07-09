@@ -1,5 +1,2 @@
-- SQL Joins
-  - Inner Join
-  - Left Outer Join
-  - Right Outer Join 
-  - Full Outer Join
+- Combining aggregate and non-aggregate values in SQL using Joins and Over clause
+  - https://www.geeksforgeeks.org/combining-aggregate-and-non-aggregate-values-in-sql-using-joins-and-over-clause/?ref=lbp
