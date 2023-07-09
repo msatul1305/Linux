@@ -1,0 +1,3 @@
+- Run dot net applications:
+  - In current project folder, use cli
+    - ```dotnet run```

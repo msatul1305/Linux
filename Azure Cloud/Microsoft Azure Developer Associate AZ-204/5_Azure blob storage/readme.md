@@ -120,5 +120,46 @@
             - User-defined metadata
                 - String-based key-value pairs stored on the container
     - Implement data archiving and retention
-      - Implement hot, cool and archive storage
+      - Implement hot(default for blob storage), cool and archive storage
+        - Hot Access Tier: for frequently accessed data
+        - Cool Access Tier: for infrequently accessed data stored for at least 30 days
+        - Archive access tier: data not used for at least 180 days
+      - Hot and cool tiers are online tiers and can be set at storage account level, Archive is offline tier and can only be set at Block blob level
+      - Rehydrating: To access archive storage, we need to update it to hot/cool tier. This process is called rehydrating.
+        - takes several hours to complete
+      - Portal -> storage account -> blob -> change tier
+    - Lifecycle management of blobs
+      - portal -> storage account -> Blob service -> Lifecycle management -> Add rule -> e.g. move to cool storage if last accessed 15 days ago
+      - Azure runs the rule once per day
+    - Enabling soft delete for blobs
+      - Portal -> storage account -> Blob service -> data protection -> turn on safe delete for blobs
+      - also works for snapshots and versions of blob.
+        - Snapshot: read-only copy of blob at a specific point in time.(to save current state -> click on create snapshot in portal snapshot tab)
+        - Versions: create version of a file
+      - Leases
+        - if lease is on, blob can be changed only using the lease id
+        - turn on lease and get lease id:
+          - portal -> blob file -> Acquire lease
+      - Immutable blob storage
+        - Immutable => cannot be changed
+        - portal -> storage account -> blob -> settings -> access policy -> add policy for immutable blob storage
     - Move items in blob storage between storage accounts or containers
+      - steps
+        - copy items from source to target
+        - delete the source
+      - tools used to copy items in blob storage:
+        - Azure CLI: blobs and containers 
+          - [copy_blob.sh](copy_blob.sh)
+        - AzCopy
+          - [azcopy.sh](azcopy.sh)
+          - to get SAS:
+            - allow service: blob, file, queue, table 
+          - for local copy
+            - allow resource type: container, object 
+            - portal -> blob -> shared access signature -> enable, generate SAS and copy blob service SAS URL
+          - for container to container copy
+            - portal -> blob -> shared access signature
+            - Allow resource type: service, container, object -> copy blob service SAS URL
+        - .NET client library for blob storage
+        - set retrieve metadata using C#
+          - https://github.com/ps-interactive/lab_azure_set-retrieve-properties-metadata-azure-blob-storage.git
