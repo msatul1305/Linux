@@ -43,4 +43,19 @@
     print("Hi Interviewbit!")
     if __name__=="__main__":
     main()
+- swapcase function in Python?
+  - string = "GeeksforGeeks"
+    string.swapcase() ---> "gEEKSFORgEEKS"
+- floor a number in Python?
+  - floor(x) method: largest integer not greater than x. 
+  - ceil(x): smallest integer greater than or equal to x.
+- difference between a shallow copy and a deep copy?
+  - Shallow copy is used when a new instance type gets created and 
+  - it keeps values that are copied whereas deep copy stores values that are already copied. 
+  - A shallow copy has faster program execution whereas a deep copy makes it slow.
+- sorting technique is used by sort() and sorted() functions of python?
+  - Python uses the [Tim Sort](https://www.geeksforgeeks.org/timsort/) algorithm for sorting. 
+  - It’s a stable sorting whose worst case is O(N log N). 
+  - It’s a hybrid sorting algorithm, derived from merge sort and insertion sort,
+  - designed to perform well on many kinds of real-world data.
 - 

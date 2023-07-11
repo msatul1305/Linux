@@ -1,0 +1,2 @@
+- Group your skills into relevant categories, such as programming languages, tools, frameworks, or technologies.
+- 
