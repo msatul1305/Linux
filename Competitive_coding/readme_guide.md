@@ -1,0 +1,122 @@
+- A2oJ ladders
+- Order of practising algos
+  - Basics I
+    - pattern printing
+    - time complexity
+    - Linear search
+    - ***Circular array***
+    - Palindrome, Perfect no, armstrong no
+    - Hashing
+    - ***Prefix sum - 1D and 2D***
+    - ***Sliding window technique***
+  - Basics of number theory II
+    - Binary Search
+    - ***GCD using Euclidean algo, extended Euclidean algo***
+    - ***Linear Diphantine Equation***
+    - check prime in sqrt(n) complexity
+    - Sieve of Eratosthenes
+    - Segmented Sieve
+    - Find prime factorization in log(n)
+    - Euler Totient function
+    - Fermat Little Theorem
+    - Wilson's theorem
+  - Advanced number theory
+    - find x^n in log n
+    - modular arithmetic
+    - modular inverse of number
+    - modular exponentiation
+    - chinese remainder theorem
+    - Factorial modulo mod
+    - finding ncr and npr for queries in constant time
+    - Inclusion, Exclusion principle
+  - Sorting
+    - Basics
+      - Bubble sort, selection sort, Insertion sort
+  - Medium
+    - 2-pointer approach
+    - Bit manipulation(Left shift, right shift, set bit, MSB, LSB)
+    - power set of array/string
+    - no of subarrays which gives XOR as Zero
+    - Greedy algo
+      - Kadane's algo
+      - Job sequencing and activity selection problems
+    - Recursion
+      - Finding factorial
+      - sum of digits
+      - Binary search using recursion
+      - modular exponentiation
+      - finding subset with given sum
+      - Merge sort, Quick sort
+      - backtracking
+        - Sudoku
+        - N queen
+      - Meet in middle algo
+      - Divide and conquer
+      - Stack
+        - Next greater element
+        - Next smaller element
+        - Parenthesis problem
+      - Largest rectangular area in histogram
+      - Heap(Priority Queue)
+  - Hard(from cpalgorithms)
+    - Hashing on strings, collision
+      - Rabin Karp algo
+    - Prefix function
+    - KMP algo
+    - Z-function
+    - Manacher's algo
+    - Tree/Graphs representation: using adjacency list/matrix/vector
+    - DFS/BFS traversal in graph/tree
+    - Tree
+      - diameter of tree, height, level, 
+      - Euler Tour of tree
+      - Find LCA(The Lowest common ancestor) using Euler Tour
+      - Find LCA(the Lowest common ancestor) using binary lifting (log n time per query)
+      - Distance between 2 nodes
+      - subtree
+    - Graph
+      - Connected components
+      - Topological sort
+      - Cycle detection in graph
+      - Bipartite check
+      - Shortest connected component using Kosaraju's algo
+      - Dijkstra's algo for shortest path
+      - Bellman ford algo(for negative edges)
+      - Floyd Warshall algo
+      - Bridges in graph
+      - Articulation point in graph
+      - Minimum spanning tree using Krushkal's algo
+      - Prim's algo
+      - 0/1 BFS(Linear time Shortest path)
+    - DP(Atcoder, SPOJ, Codeforces)
+      - Standard
+        - Avoid iterative DP(for beginners)
+        - start with recursion, memorize solution
+        - LCS
+        - Knapsack
+      - Advanced
+        - recurrence for Digit DP
+        - DP with bit mask
+        - DP on trees(Rachit Jain)
+        - SOS DP
+    - Disjoint set, optimization
+      - Offline queries
+      - Problem: Colorful Arrays, SPOJ
+      - Kruskal's algo
+    - Sparse Table, Segment tree
+    - Fenwick tree
+    - Binary lifting on fenwick tree
+    - Matrix exponentiation
+    - Square root decomposition(use this instead of segment tree)
+    - Update and Query operations
+    - Mo's algo
+      - Solve - Powerful array: Codeforces
+    - Mo's algo on trees
+    - Segment trees(Range Queries, Point updates)
+    - Lazy propagation on segment trees
+  - Challenging Qs
+    - Sprague-Grundy Theorem(Gaurav Sen)
+    - Flows: Max flow, min flow(cpalgo)
+    - Heavy light decomposition(blog by Anudeep), path problems on trees
+    - Convex Hull algo(by Miao, codeforces)
+    - FFT/NTT

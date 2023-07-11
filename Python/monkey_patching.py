@@ -39,6 +39,3 @@ obj = A()
 # calling function "func" whose address got replaced
 # with function "monkey_f()"
 obj.hello()
-
-
-

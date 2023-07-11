@@ -1,0 +1,33 @@
+- https://www.interviewbit.com/python-interview-questions/
+- Pandas is an open-source, Python-based library used in data manipulation applications requiring high performance. 
+- The name is derived from “Panel Data” having multidimensional data. 
+- This was developed in 2008 by Wes McKinney and was developed for data analysis.)
+- Pandas are useful in performing 5 major steps of data analysis
+  - Load the data, 
+  - clean/manipulate it,
+  - prepare it, 
+  - model it, and 
+  - analyze the data.
+- pandas dataframe.
+  - 2D mutable and tabular structure for representing data labelled with axes - rows and columns.
+  - Syntax:
+  ```import pandas as pd ```
+  ```dataframe = pd.DataFrame( data, index, columns, dtype)```
+-  combine different pandas dataframes?
+  - stack the dataframes horizontally
+    - df1.append(df2)
+  - stack dataframes vertically
+    - pd.concat([df1, df2])
+  - extracting data from various dataframes having one or more common columns
+    - df1.join(df2)
+- create a series from the dictionary object in pandas
+  - One dimensional array capable of storing different data types is called a series
+  - [series_from_dictionary](series_from_dictionary.py)
+- identify and deal with missing values in a dataframe?
+  - identify if a dataframe has missing values by using the isnull() and isna() methods.
+    - missing_data_count=df.isnull().sum()
+  - handle missing values by either replacing the values in the column with 0 as follows:
+    - df[‘column_name’].fillna(0)
+  - Or by replacing it with the mean value of the column
+    - df[‘column_name’] = df[‘column_name’].fillna((df[‘column_name’].mean()))
+  - TODO: 54-59
