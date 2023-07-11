@@ -1,0 +1,23 @@
+- Leetcode topicwise
+  - -6700 questions in total(11/07/23)
+    - arrays: 1410
+    - String: 623
+    - Hash Table: 485
+    - DP: 438
+    - Math: 438
+    - Sorting: 326
+    - Greedy: 312
+    - DFS: 275
+    - DB: 229
+    - Binary Search: 227
+    - BFS: 218
+    - Tree: 215
+    - Matrix: 199
+    - 2 pointers: 171
+    - Binary Tree: 170
+    - Bit manipulation: 164
+    - Heap(Priority Q): 145
+    - Stack: 144
+    - Graph:130
+    - Prefix Sum: 129
+    - etc.
