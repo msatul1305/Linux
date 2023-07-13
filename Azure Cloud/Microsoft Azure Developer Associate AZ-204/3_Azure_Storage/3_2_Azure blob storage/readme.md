@@ -121,12 +121,27 @@
                 - String-based key-value pairs stored on the container
     - Implement data archiving and retention
       - Implement hot(default for blob storage), cool and archive storage
-        - Hot Access Tier: for frequently accessed data
-        - Cool Access Tier: for infrequently accessed data stored for at least 30 days
-        - Archive access tier: data not used for at least 180 days
+        - Hot Access Tier(Default)
+          - online storage
+          - for frequently accessed data
+          - high storage cost but low data access cost
+          - faster access and retrieval
+        - Cool Access Tier 
+          - online storage
+          - for infrequently accessed data stored for at least ***30 days***
+          - low storage cost, high data access cost
+        - Archive access tier:
+          - offline storage
+          - for very low frequency of data access
+          - data not used for at least ***180 days***
       - Hot and cool tiers are online tiers and can be set at storage account level, Archive is offline tier and can only be set at Block blob level
-      - Rehydrating: To access archive storage, we need to update it to hot/cool tier. This process is called rehydrating.
-        - takes several hours to complete
+      - Rehydrating
+        - To access archive storage, we need to update it to hot/cool tier. This process is called rehydrating.
+          - takes several hours to complete
+          - Standard Priority
+            - few minutes to 15 hours for data retrieval
+          - High priority
+            - In an hour data retrieval
       - Portal -> storage account -> blob -> change tier
     - Lifecycle management of blobs
       - portal -> storage account -> Blob service -> Lifecycle management -> Add rule -> e.g. move to cool storage if last accessed 15 days ago

@@ -25,8 +25,8 @@ if ini<len(l):
 #     def __init__(self, __x):
 #         pass
 # class B(A):
-#     def __init__(self, x):
-#         super.__init__(x)
+#     def __init__(self, __x):
+#         super().__init__(__x)
 #         pass
 #
 # obj = B(1)

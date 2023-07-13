@@ -94,21 +94,22 @@
       - using CLI: [create_container.sh](create_container.sh)
     - Perform operations on data and cosmos DB containers
     - Set appropriate consistency level for operations
-      - Data Consistency levels
+      - ***Data Consistency levels***
         - Distributed databases that rely on replication for high availability, low latency or both must make fundamental tradeoff between read consistency, availability, latency and throughput. 
         - i.e. when we write a data to db, what value we get when we immediately do a read operation
-        - Eventual: Lower latency, Higher throughput, higher availability
-          - but low consistency i.e. if data is in America, it may take some time to be replicated to Asia
-          - No guarantee of order of data 
-          - No guarantee of reading of own write consistency
-        - Consistent prefix:
-          - updates are returned in order
-        - Session:
-          - Guarantees that a client session will read its own writes
-        - Bounded staleness:
-          - guarantees that a read has max. lag(either number of versions or time elapsed) [fairly recent version]
-        - Strong: Higher latency, Lower throughput, Lower availability
-          - Guarantees that we get most recent version of data
+        - Types:
+          - ***Eventual***: Lower latency, Higher throughput, higher availability
+            - but low consistency i.e. if data is in America, it may take some time to be replicated to Asia
+            - No guarantee of order of data 
+            - No guarantee of reading of own write consistency
+          - ***Consistent prefix***:
+            - updates are returned in order
+          - ***Session***:
+            - Guarantees that a client session will read its own writes
+          - ***Bounded Staleness***
+            - guarantees that a read has max. lag(either number of versions or time elapsed) [fairly recent version]
+          - ***Strong***: Higher latency, Lower throughput, Lower availability
+            - Guarantees that we get most recent version of data
       - Consistency levels for SQL APIs
         - Account default
         - Request-specific level
