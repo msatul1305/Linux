@@ -1,0 +1,31 @@
+- Configuring Cache and Expiration policies in Azure CDN
+  - CDN: Content Delivery Network
+    - Globally distributed network
+    - Advantages of CDN
+      - Geographically located servers to help deliver internet content faster to users
+      - reduces asset load times, download and latency
+      - help reduces bandwidth costs of hosting provider by reducing content amount for origin server to handle
+      - increases availability and redundancy(create redundant copies all over the world)
+        - helps in network failures
+      - helps in protection from distributed denial-of-service(DDos) attacks
+    - Content types
+      - Static content
+        - Image files
+        - CSS files
+        - JS files
+      - Dynamic content
+        - anything that changes on user interaction
+          - Dashboard with graphs or tables
+          - search queries
+    - CDNs are used to deliver the ***static content***
+    - ***Point of presence servers***: static servers which copy static files from main web server as local copy
+    - Request-response lifecycle for CDN
+      - Initially, all endpoints are empty
+      - When a user requests for a webpage, it goes to origin server and stores local copy for next time
+  - Caching
+    - 
+  - creating a new CDN for a web app(already deployed in Azure)
+    - Portal -> create a resource -> web -> CDN
+    - Portal -> open web app -> +Endpoint -> origin type: webapp 
+- Configuring Cache and Expiration policies for Azure Redis Cache
+- Implementing Application Caching Patterns

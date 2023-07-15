@@ -1,0 +1,59 @@
+- Microsoft Graph
+  - https://docs.microsoft.com/en-us/graph/overview
+  - What is?
+    - gateway to data and intelligence in M365, win10 and enterprise mobility + security.
+    - can be used with
+      - Office 365
+      - Excel
+      - query Win 10
+      - Calendar
+      - enterprise mobility + security
+      - User's Mail
+    - provides unified programming model to access data.
+    - uses single endpoint, https://graph.microsoft.com to access data and insights in microsoft cloud
+    - use REST Api or SDK to access endpoints and build apps that support M365 scenarios
+    - Application that can be worked with graph:
+      - M365 core services/ office-365
+        - Bookings
+        - OneNote
+        - Teams
+        - Outlook and Exchange
+        - OneDrive
+        - SharePoint
+      - Enterprise mobility + security services
+        - Advanced Threat Analytics
+        - Advanced Threat Protection
+        - Azure Active Directory, Identity Manager and Intune
+      - win 10 services
+        - OS Activities
+        - Devices
+        - OS notifications
+        - Universal print functionality
+      - Dynamic 365 Business Central
+        - Management of financial data
+        - Management of projects
+        - Automation and securing of supply chain
+        - Optimization of operations
+        - Sales management
+        - Improved customer service
+    - Concrete app suggestions:
+      - look at meetings and provide profile info of attendees
+      - scan calendar and suggest fre time slots
+      - automated bot for Microsoft Teams
+      - alert if too much time spend on meetings
+  - Using Microsoft Graph(https://developer.microsoft.com/en-us/graph/graph-explorer)
+    - Using REST APIs
+    - Using Microsoft Graph SDKs
+      - Android
+      - Angular
+      - ASP.NET
+      - JavaScript
+      - Node.js
+      - Java
+      - PHP
+      - Python
+      - Ruby
+      - PowerShell
+      - Azure CLI
+  - Graph Explorer
+  - Use Microsoft Graph in .net app

@@ -1,0 +1,15 @@
+- appRoles
+- groupMembershipClaims
+  - e.g. ApplicationGroup
+    - gives the groups that have been assigned to the application 
+- optionalClaims
+- oauth2AllowImplicitFlow
+  - for javascript single page apps to generate implicit js tokens
+- oauth2permissions
+- signInAudience(who can sign-in?)
+  - type of microsoft accounts supported for your app
+  - e.g. 
+    - ***AzureADMyOrg***
+    - Azure AD tenant
+    - Multi tenant
+    - personal M account

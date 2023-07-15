@@ -44,10 +44,16 @@
             - User Delegation SAS
               - for Azure AD
               - user impersonation scope is used so that user's permissions matter when we access Azure Storage.
+              - works only* for blob storage
             - Service SAS
               - secured with storage account key
-              - delegates access to resource in ***only one*** of Azure Storage services either a Resource container or Blob storage or a Queue storage or Table storage or Azure Files.
+              - delegates access to resource in ***only one*** of Azure Storage services either:
+                - a Resource container or 
+                - Blob storage or 
+                - a Queue storage or 
+                - Table storage or 
             - Account SAS
+              - Azure Files.
               - secured with storage account key.
               - delegates access to resources in ***one or more*** storage services.
               - supports all services offered by User Delegation and Service SAS.
@@ -55,6 +61,7 @@
               - we can also delegate access to read, write operations on containers, tables, queues, file shares that are not permitted with a services SAS.
           - Other types:
             - Ad-Hoc SAS
+            - for user delegation/account type SAS
               - all info needed is available in the token itself.(permissions, start time, expire time, etc.)
             - Service SAS with Stored Access Policy
               - Portal -> Storage account -> container -> Access Policy
@@ -65,6 +72,7 @@
                 - defined on a specific resource container(as it is a service SAS)
                 - contains permissions and validity period
                 - available as a service level SAS only
+
     2. Data plane
        - Managing/Securing access to Azure Storage
        - 3 ways:
