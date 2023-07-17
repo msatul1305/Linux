@@ -1,0 +1,13 @@
+- Azure Monitor and Application Insights
+  - Azure Monitor structure
+    - [azure_monitor_structure](azure_monitor_structure.png)
+  - Azure Application Insights capabilities
+  - Configure Application Insights in Portal
+  - track issues and bugs
+  - Configure instrumentation with application insights in ASP.net core web apps
+  - Analyze log data and troubleshoot solutions
+- Implement Application Insights Web Test and Alerts
+  - test and receive automatic alerts when issue is detected
+- Implement code that handles transient faults
+  - Polly library
+  - Implement Retry Pattern and Circuit Breaker

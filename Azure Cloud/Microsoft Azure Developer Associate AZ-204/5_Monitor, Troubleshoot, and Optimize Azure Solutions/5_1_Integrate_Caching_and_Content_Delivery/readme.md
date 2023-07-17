@@ -196,3 +196,17 @@
       - Redis-benchmark -q -n 100000
       - cannot be used directly from Portal
       - need a VM that contains Redis CLI
+- Securing Redis Cache
+  - Encryption in transit
+    - security of messages sent between application and cache.
+    - Transport level security provided by TLS 1.2
+      - TLS 1.1 is also supported
+    - HTTP connections disabled by default
+  - Data at rest(Inside Redis Cache)
+    - in memory data is not encrypted
+    - no encryption at memory level
+    - Premium tiers
+      - we have option to enable data persistence
+      - data is backed up to Azure Storage Account
+        - Encryption is enabled for this data
+        - uses Microsoft managed keys by default for encryption
