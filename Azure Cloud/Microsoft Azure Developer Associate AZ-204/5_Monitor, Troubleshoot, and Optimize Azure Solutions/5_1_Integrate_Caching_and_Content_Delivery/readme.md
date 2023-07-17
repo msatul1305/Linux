@@ -22,10 +22,177 @@
     - Request-response lifecycle for CDN
       - Initially, all endpoints are empty
       - When a user requests for a webpage, it goes to origin server and stores local copy for next time
+      - The file is cached and remain cached until TTL(Time to live) specified by HTTP header expires.
+        - Default TTL: 7 days
   - Caching
-    - 
+    - process of copying ***frequently accessed data*** close to application.
+    - advantages:
+      - Improves response time
+      - improves performance and scalability(reduces load on application like web servers and db)
+      - helps make app more resilient(app remains stable and responsive even if db is unable as copy of data stored in redis/cache)
+    - caching useful if:
+      - data is repeatedly accessed
+      - data remains unchanged
+      - performance of data source:
+        - accessing cache is generally faster than accessing e.g. SQL data
+      - data contention
+        - if multiple sources/processes within the application is trying to access same data, caching is recommended
+      - physical location
+        - network latency is reduced if data is close to app(i.e. in redis cache) instead of far away server.
+    - Caching rules
+      - 3 types of caching rules within Azure CDN(only available for Azure CDN standard from Verizon and from Akamai profiles)
+        - ***Global*** caching rules
+          - we can set only one global caching rule per endpoint
+          - applied to all requests that the end point receives
+          - e.g. can be used to override http/cache headers that may have been sent by clients
+          - rules/options
+            - Bypass cache
+              - no caching of item even if caching headers are sent
+            - Override
+              - override cache headers
+              - e.g. override 3days
+            - Set if missing
+              - custom TTL is set
+            - Not set
+              - headers TTl will be used, won't change TTL value
+        - ***Custom***
+          - one or many rules
+          - rule for particular file extension or path within the app.
+          - custom rules are applied in order.
+          - overrides global rule
+          - e.g. setting an explicit cache duration for 30 mins for JS
+        - ***Query String***
+          - key value pair user queries
+          - rules:
+            - Ignore query strings(default)
+              - use only URL part and cache from server and keep local copy
+              - subsequent requests are served from local copy
+            - Bypass query strings
+              - request containing query strings are not cached at all by CDN and 
+              - are directly fetched from origin server.
+              - and is passed to the requesting client.
+             - cache every unique URL
+              - treats every request with a different URL as unique and updates cache again.
+              - has low hit ratio if url query params changes with every request
+      - Demo
+        - Portal -> cdn -> caching rules -> caching behaviour(global), Custom, query
+      - for Azure CDN from Microsoft
+        - use Standard rules engine
+      - for Azure CDN premium
+        - use premium rules engine
   - creating a new CDN for a web app(already deployed in Azure)
     - Portal -> create a resource -> web -> CDN
     - Portal -> open web app -> +Endpoint -> origin type: webapp 
 - Configuring Cache and Expiration policies for Azure Redis Cache
+  - Redis Cache
+    - Open-source caching system
+    - operates like an ***in-memory database***
+    - also a ***message broker***: publisher-subscriber model
+  - 5 Pricing Tiers in Azure Redis Cache
+    - 3 Standard
+      - Basic
+        - minimal feature set
+        - supports less throughput
+        - has high latency
+        - No SLA
+        - not for prod envs
+        - only used for testing and development.
+        - up-to 53 GB memory capacity is provided
+        - can have up-to 20k clients connected
+      - Standard
+        - gives 2 replicated nodes(primary and secondary)
+        - SLA: 99.9% availability
+        - up-to 53 GB memory capacity is provided
+        - can have up-to 20k clients connected
+      - Premium
+        - Enterprise grade redis cluster
+        - complete feature set
+          - high throughput
+          - low latency
+        - SLA: 99.95% availability
+        - up to 100 GB memory
+        - can have up-to 40k clients connected
+    - 2 Advanced/Enterprise tiers
+      - offers all functionality of premium tier + powerful enterprise-ready features like Redis Module
+      - Enterprise
+        - SLA: 99.99% availability
+        - massive + cost effective cache implementation
+      - Enterprise Flash
+        - uses fast, non-volatile flash storage
+  - we can scale up a redis cache(e.g. from basic to standard) but we ***can't scale down***.
+  - Managing Lifetime in Redis Cache
+    - no default expiry time
+    - data exists in cache until forcibly removed
+    - we must set TTL(Time to Live)/expiration policy e.g. 30 mins
+    - Calculating cache duration
+      - based on:
+        - rate of change of underlying data
+          - static data: e.g. list of countries - will almost never change
+            - can have long expiry time
+          - dynamic/volatile data: e.g. currency exchange
+            - will change several time a day
+            - should have low TTL
+        - risk of outdated data
+          - lower TTL should be used for dynamic data to match data change rate
+  - Setting expiration time for redis cache
+    - provide TTL value in StringSet method.
+    - e.g. _cache.StringSet("myKey", "my Value", new TimeSpan(3, 0, 0)); -> setting 3 hours as expiry time
+    - i.e. after 3 hours, key will be removed from cache
+  - Connecting web app to redis cache demo using StackExchange.Redis client
+  - Best practices for using Azure Redis Cache
+    - in-memory database: so, possibility of data loss
+    - always set expiry time
+    - add jitter to spread database load
+      - all objects must not expire at the same time
+      - expire time should be spread across objects
+      - jitter => varying expiry time
+    - avoid caching large objects(to avoid timeouts)
+      - break them down into separate smaller objects if needed and cache them individually
+    - redis must be in same region as the app
+      - if app is in diff regions, we must have redis in each of the region.
 - Implementing Application Caching Patterns
+  - used to increase application's performance, scalability and resilience.
+  - ***Cache-aside pattern***
+    - db query is costly and copying whole db to memory is also
+    - hence, we copy data into cache which is faster
+    - query is first checked in cache instead of db
+  - ***Content caching pattern***
+    - used for CDN to cache static content like Images, Templates and Style sheets.
+    - reduces load on server
+    - e.g. ASP.NET: Redis Output Cache Provider
+  - ***User Session Caching Pattern***
+    - allows for session storage within application
+    - e.g. maintain application state like shopping cart even if they close the browser
+    - uses session cookies or HTML local storage API
+      - limited data storage
+      - slow performance
+      - better solution:
+        - store data in db
+        - store pointer of the data in cookie
+    - Advanced Patterns
+      - ***Job and Message Queuing***
+        - for long-running tasks/operations
+      - ***Distributed Transactions***
+        - transaction: group of commands that need to be run against a back-end datastore that acts as a single atomic operation.
+          - every atomic transaction must all succeed or rolled back to initial state.
+          - redis cache helps perform distributed transactions as a group.
+  - Configuring Redis Cache for optimal size and performance
+    - so that we never over-provision
+    - 12 tiers for Azure Cache for Redis
+      - select based on no. of concurrent cached objects we need. [application dependent]
+      - size of cached objects
+      - no. of cache requests to be made to the cache.
+      - standard C3 tier can process 1 lakh requests per second
+        - drops to 90k requests per second for SSL connections
+      - Cache expiration policy
+        - for good cache hit ratio
+  - Benchmarking Redis Cache
+    - helps simulate load on redis cache instance
+    - using redis cli
+    - runs set of tests against your instance
+      - simulating a no. of connected clients
+      - to ensure cache is provisioned at correct scale.
+    - command
+      - Redis-benchmark -q -n 100000
+      - cannot be used directly from Portal
+      - need a VM that contains Redis CLI
