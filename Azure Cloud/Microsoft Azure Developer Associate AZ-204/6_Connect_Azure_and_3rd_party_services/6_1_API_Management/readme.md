@@ -1,0 +1,81 @@
+- Azure API Management
+  - [solution_architecture](solution_architecture.png)
+  - Azure service to create consistent, modern API gateways for existing back-end services.
+  - provides secure, scalable API Access for applications.
+  - How to design API integration in Azure
+  - Components of Azure API Management Service in Azure Cloud
+    - Azure API Management structure and its components
+      - 3 components
+        - API gateway
+          - sits between actual web api and client to provide layer of abstraction to user from actual api
+          - accepts API calls from client
+          - forwards/routes them back to backends(actual web api)
+          - it also verifies API keys, JWT tokens, certificates, and other credentials.
+          - enforces usage quotas and rate limits.
+          - it also caches backend responses.
+        - Azure Portal
+          - administrative interface to set up API program
+          - capabilities:
+            - define or import API schema
+            - set up policies like quotas or transformations on the APIs.
+            - package APIs into products
+            - Manage users that have access to APIs
+        - Developer portal
+          - web user interface to read API documentation
+          - capabilities:
+            - read API documentation
+            - create account and subscribe to get API keys
+            - try API via interactive console
+            - access analytics
+      - Versions and Revisions
+        - Versions:
+          - versions allow to present group of related APIs to developers.
+          - e.g. 
+            - https:API/v1
+            - https:API/v2
+        - Revisions:
+          - Revisions allow to make changes to API in controlled and safe way, without disturbing the consumers.
+          - e.g. https://api/all;rev=3
+        - each version can have multiple revisions.(just like non-versioned API)
+        - revisions can be used with or without versions.
+        - versions are used to separate API versions with breaking changes while revisions are used for minor and non-breaking changes to an API.
+    - Managing APIs with Products and Groups
+      - Each API in Azure API Management contains reference to back-end service that implements API and its operations.
+      - Operations in API management are highly configurable
+        - control over:
+          - URL mapping
+          - query and path parameters
+          - request and response content
+          - operation response caching
+          - rate limit quotas
+          - API restrictions
+      - API access
+        - Products and Groups
+          - Products
+            - how API are surfaced to developers, have one or more APIs, title, description and terms of use.
+            - can be open or protected
+              - protected products must be subscribed to before they can be used.
+              - developers have to first subscribe, get API key, then use key for API access.
+              - if product is ready to use by developers, it can be published
+              - subscription approval is configured at product level.
+                - Devs need this sub to access products.
+          - Groups
+            - used to manage visibility of products to the developers
+            - Administrators
+              - manage API management service instances, creating APIs, operations and products.
+            - Developers
+              - devs are granted access to dev portal and build applications that call operations of an API
+            - Guests
+              - Unauthenticated dev portal users with read-only access like ability to view APIs but not call them.
+            - Custom groups
+              - created by Admin
+              - in Azure Active Directory tenants
+          - Devs can be created or invited to join by admins or can sign up themselves from dev portal
+          - each dev can be a member of one or more group, can subscribe to products to that group
+  - Create Azure API Management Instance
+    - Configure Azure API Management in Azure Portal
+    - Integrate existing API application with API Management
+    - Setup access for developers
+  - Protect API from unauthorized use
+  - Implement policies like throttling, and caching
+
