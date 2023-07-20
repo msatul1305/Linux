@@ -205,6 +205,8 @@ eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
     /home/user/scripts/someScript.sh
     79. download a file from its URL: wget "URL"
 
+80. search for a pattern in a file and copy output contents to a new file: grep "your_pattern" source.txt > destination.txt 
+81. append content of a file into another file linux: cat source.txt >> destination.txt
 
 Less command:
 less is a program that lets us view text files. This is very handy since many of the files used to control and configure Linux are human readable.
