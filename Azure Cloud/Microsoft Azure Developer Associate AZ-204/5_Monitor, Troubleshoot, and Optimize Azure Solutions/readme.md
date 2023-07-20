@@ -1,0 +1,85 @@
+- Exam Alert: Monitor, Troubleshoot and Optimize Azure Solutions
+    - Azure Redis for Cache
+        - fully managed, in-memory cache
+        - enables high-performance and scalable architectures
+        - used to create cloud or hybrid deployments
+        - can handle millions of requests per second
+        - at sub-millisecond latency
+
+- Common use cases of Azure Redis Cache
+    - User session storage for distributed apps
+    - Database caching
+    - Content caching
+    - Distributed transactions
+    - Message broker: Pub-Sub model, Queue-based model.
+
+- Securing Redis Cache
+    - supports encryption by default
+    - encryption can be disabled using portal or API.
+    - Encryption in transit
+        - security of messages sent between application and cache.
+        - Transport level security provided by TLS 1.2
+            - TLS 1.1 is also supported(soon to be depreciated)
+        - HTTP connections disabled by default
+    - Data at rest(Inside Redis Cache)
+        - in memory data is not encrypted
+        - no encryption at memory level
+        - Premium tiers
+            - we have option to enable data persistence
+            - data is backed up to Azure Storage Account
+                - Encryption is enabled for this data
+                - uses Microsoft managed keys by default for encryption
+- Eviction Policy Azure Redis Cache
+    - volatile-lru(default): Least Recently used for values that have TTL
+    - allkeys-lru: Least Recently used for all data irrespective of TTL
+    - noeviction: donot remove any data from cache(could lead to problems)
+    - volatile-random: remove volatile randomly
+    - allkeys-random: remove any randomly
+    - volatile-ttl: volatile based on ttl
+
+    - Configuring Redis Cache for optimal size and performance
+        - so that we never over-provision
+        - 12 tiers for Azure Cache for Redis
+            - select based on no. of concurrent cached objects we need. [Application dependent]
+            - size of cached objects
+            - no. of cache requests to be made to the cache.
+            - Standard C3 tier can process 1 lakh requests per second
+                - drops to 90k requests per second for SSL connections
+            - Cache expiration policy
+                - for good cache hit ratio
+            - set maxmemory-reserved setting
+                - important when we are doing a lot of writes in the cache(write heavy loads)
+            - reuse client connections whenever possible
+            - Utilize Redis Pipelining
+            - store smaller values
+
+- Configure web server logging to file system.sh
+    - az webapp log config --name "webappname"
+      --resource-group "rgroup"
+      --web-server-logging filesystem
+
+- Configure app logging to Azure Blob Storage(Windows only).sh
+    - az webapp log config --name "webapp_name"
+      --resource-group "rgroup"
+      --application-logging azureblobstorage
+
+- Configure Docker Container Logging to the File System(Linux Only)
+    - az webapp log config --name "WebAppName"
+      --resource-group "rgroup"
+      --docker-container-logging filesystem
+- Tail logs from App Service App
+    - az webapp log tail --name "webappname" --resource-group "rgroup"
+
+- Tail and filter logs
+    - az webapp log tail --name "webappname" --resource-group "rgroup" --filter "Error"
+
+- Docker environment variables for app service
+    - problem:
+        - Container is not fully initialized before its health is evaluated and deemed unhealthy.
+        - use solution:
+            - ***WEBSITE_CONTAINER_START_TIME_LIMIT***
+                - sets amount of time platform waits before restarting the container.
+            - ***WEBSITES_ENABLE_APP_SERVICE_STORAGE***
+                - if value is not set or true, /home directory = shared across container instances and files will persist.
+                - ***WEBSITE_WEBDEPLOY_USE_SCM***
+                    - to deploy container-based web app using WebDeploy/MSDeploy, set it to False.

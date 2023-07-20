@@ -98,11 +98,11 @@
     - set up recurring test to monitor availability
     - check if each endpoint is available and can return data
     - types of tests
-      - URL ping test
+      - ***URL ping test***
         - for single URL/endpoint test
-      - custom track availability test
+      - ***custom track availability test***
         - sends availability of an app using TrackAvailability() method form SDK
-      - Multi-step web test
+      - ***Multi-step web test***
         - recording of sequence of web requests, which can be played back to test complex scenarios
     - Action group
       - collection of notification preferences defined by the owner of an Azure subscription.

@@ -97,29 +97,41 @@
         - No SLA
         - not for prod envs
         - only used for testing and development.
-        - up-to 53 GB memory capacity is provided
+        - Up-to 53 GB memory capacity is provided
         - can have up-to 20k clients connected
+        - Supports Azure Private Link
+        - doesn't support replication and failover.
       - Standard
         - gives 2 replicated nodes(primary and secondary)
         - SLA: 99.9% availability
         - up-to 53 GB memory capacity is provided
         - can have up-to 20k clients connected
       - Premium
-        - Enterprise grade redis cluster
+        - Enterprise grade Redis cluster
         - complete feature set
           - high throughput
           - low latency
         - SLA: 99.95% availability
         - up to 100 GB memory
         - can have up-to 40k clients connected
+        - supports Redis Data Persistence and Redis Cluster
+        - Adds support for passive Geo-Replication.
     - 2 Advanced/Enterprise tiers
       - offers all functionality of premium tier + powerful enterprise-ready features like Redis Module
       - Enterprise
-        - SLA: 99.99% availability
-        - massive + cost effective cache implementation
+        - SLA: 99.999% availability
+        - massive + cost-effective cache implementation
+        - adds support to RedisTimeSeries, RedisSearch and RedisBloom
+        - up to 100 GB storage
+        - supports active Geo-Replication instead of passive
+        - 50k to 200k client connections supported
       - Enterprise Flash
         - uses fast, non-volatile flash storage
-  - we can scale up a redis cache(e.g. from basic to standard) but we ***can't scale down***.
+        - up to 1.5 TB of cache size
+        - doesn't support RedisTimeSeries, RedisSearch and RedisBloom
+        - 50 to 120k client connections possible.
+  - We can scale up a Redis cache(e.g. from basic to standard) but we ***can't scale down***.
+  - All tiers support Azure Private Link.
   - Managing Lifetime in Redis Cache
     - no default expiry time
     - data exists in cache until forcibly removed
