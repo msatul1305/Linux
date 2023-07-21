@@ -1,0 +1,11 @@
+- Set up Visual Studio Code for running C++(Windows): https://www.youtube.com/watch?v=9VE7p-he4fA
+- https://www.youtube.com/watch?v=rgCJbsCSARM
+  - Extensions: Code Runner, C C++
+  - Install MinGW: https://sourceforge.net/projects/mingw/files/latest/download
+    - check mark on gcc-g++ and base
+    - Installation -> Apply changes
+    - Go to C:/MinGW/bin
+    - copy this path to environment variables path
+  - File -> Preferences -> Settings -> Extensions -> Run code configuration -> Run in Terminal
+  - File -> Preferences -> Settings -> Extensions -> C C++ -> Cpp standard -> latest gnu or c++
+  - Run code: ctrl + alt + n
