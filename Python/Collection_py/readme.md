@@ -15,7 +15,7 @@
    - generalization of stacks and queues
    - pronounced as "deck"
    - short for double-ended queue
-   - common methods: append(), pop(), popleft()
+   - common methods: append(), pop(), popleft(), 
 3. ChainMap
    - provided for quickly linking a number of mappings, so they can be treated as a single unit.
    - much faster than creating a new dictionary and running multiple update() calls.
