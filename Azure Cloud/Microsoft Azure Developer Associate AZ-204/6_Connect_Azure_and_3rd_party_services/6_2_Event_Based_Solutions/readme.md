@@ -1,0 +1,223 @@
+- Implement Azure Event Grid Solutions
+  - Event Types
+    - Application-to-application notifications
+      - ***Discrete***
+        - reports state changes and are actionable(Event Grid)
+      - ***Series***
+        - reports a condition, time-ordered, and analyzable (Event Hub)
+          - e.g. condition of an application: telemetry data
+    - Application-to-User notifications
+      - ***User notification***
+        - prompt user or device for their attention (Notification Hub)
+  - Azure Event Grid
+    - deals with discrete events
+    - Implements Event-based architecture(pub/sub model)
+    - Publishers emit events(state change) and subscribers consume them
+    - supports many subscriber to one publisher
+    - filter events
+    - scalable up and down
+    - pay for what you use
+    - Register Event Grid Provider
+      - [register_event_grid.sh](register_event_grid.sh)
+    - Demo
+      - Portal ->  Current Subscription(e.g . Free Trial) -> Resource Providers -> Microsoft.EventGrid
+  - Pub/Sub Concepts
+    - Event signifies something changed
+    - Publisher has no expectation of what happens next(by the subscribers)
+    - Subscriber determines what to do with that event
+  - Event Grid Terminology
+    - Events
+      - what happened
+      - smallest unit of data
+    - Publishers
+      - Where it happened
+      - App emits events
+    - Topics
+      - Endpoint
+      - collection of related events
+    - Subscriptions
+      - Event routing
+      - Event grid routes and filter events to handlers
+        - e.g. allow only blobs with JPEG or JPG extension to flow through 
+    - Handlers
+      - Event handling applications
+      - apps consume events
+  - Azure Event Publishers
+    - App configuration
+    - App Service
+    - Blob Storage
+    - Communication Services
+    - Container Registry
+    - Event Hubs
+    - IoT Hub
+    - Key Vault
+    - Machine Learning
+    - Maps
+    - Media Services
+    - Resource Groups
+    - Service Bus
+    - SignalR
+    - Subscriptions
+  - Event Grid can also accept non-azure Custom Topics
+    - User defined
+      - e.g. ASP.NET Core web API
+      - message will have same schema as Azure topics
+      - can send custom event data/info with message
+  - Event Handlers
+    - Azure Functions
+      - can receive events
+      - using specific Event Grid trigger function
+    - Event Hubs
+    - Azure Service Bus
+    - Azure Storage Queues
+    - custom Webhooks
+  - Workflow
+    - create topic
+    - send publisher events
+    - add subscriber info with filtering
+  - Every event has same metadata schema. The data property contains event specific info. 
+- Implement Azure Event Hubs
+  - Demo
+    - Portal -> Event grid system topics -> Add -> Topic type
+    - Portal -> Event grid system topic -> Add Event Subscription -> Event Grid Schema
+  - Demo
+    - Custom topics
+    - Invoke and consume with .NET SDK
+      - Portal -> Event grid topic -> Topic end point and access keys.
+  - Implement Azure Event Hubs Solutions
+    - helps implement solutions for large scale big data applications where events arrive at a time order fashion/manner using Azure event hubs
+    - Characteristics of Azure Event Hubs
+      - Event hub is an event ingestion and processing service and is scalable.
+      - Is a Scalable event processing service
+      - Useful for Big data scenarios
+      - can process Millions of events per second: IoT, banking, manufacturing etc.
+      - It decouples sending(producer) and receiving data(consumer)
+        - In case of Event grid, sender and receiver are dependent on each other.
+      - It has integration with Azure and non-Azure services
+      - It can capture events to Azure blob storage or data lake
+      - Example Scenarios for Event Hubs use cases
+        - Big data
+          - Telemetry data: get data from array of sensors to detect earthquake
+          - Data archival
+          - Transaction processing: millions of transactions per second.
+          - Anomaly detection
+      - Components of Event Hubs
+        - Namespace: container for Event Hubs(grouping of event hubs)
+        - Event Producer: Send data to Event Hubs
+        - Partitions: Bucket of messages
+        - Consumer groups: View of an Event Hub, e.g. current position where the application is while reading through partitions.
+        - Subscribers: Reads data from Event Hubs(consumers)
+      - Event Hub Namespaces
+        - Scoping container
+        - contains one or more event hubs
+        - options applied to namespace will apply to all event hubs inside it.
+        - Throughput units: prepurchased unit of capacity
+      - [event_hub.sh](event_hub.sh)
+      - Demo
+        - Portal -> Event Hubs -> Shared Access Policies
+      - Send Events to Event Hub
+        - Install .NET SDK
+          - via NuGet 
+          - controls communication
+        - Obtain connection info
+          - Namespace name and endpoint
+          - Endpoint will include key
+          - portal -> Event Hubs Namespace -> Event Hubs -> copy name
+          - portal -> Event Hubs Namespace -> Share Access Policy -> Policy -> connection string
+            - e.g. sb://namespace.servicebus.windows.net/sharedAccessKey=jhdbakgbldb
+        - Open Connection
+          - EventHubProducerClient
+          - Ok to cache this object
+        - Prepare data
+          - convert to binary
+          - size limitations apply.
+        - Send data
+          - Single or batch events
+            - packet size of communication is limited
+            - i.e. irrespective of we send one 1 mb data or a million events adding up to 1 mb cumulative.
+          - May specify a partition
+      - Read Events from Event Hub
+        - Install .NET SDK
+          - via NuGet 
+          - controls communication
+        - Obtain connection info
+          - Namespace name and endpoint
+          - Endpoint will include key
+          - portal -> Event Hubs Namespace -> Event Hubs -> copy name
+          - portal -> Event Hubs Namespace -> Share Access Policy -> Policy -> connection string
+            - e.g. sb://namespace.servicebus.windows.net/sharedAccessKey=jhdbakgbldb
+        - Open Connection
+          - EventHubConsumerClient or EventProcessorClient
+          - Ok to cache this object
+        - Retrieve data
+          - Connection remains open
+          - can specify partition, offset, date, and sequence number
+        - Decode data
+          - Returned event has metadata
+          - event body is binary
+        - Partitions
+          - like a bucket for event messages
+          - hold events time-ordered as they arrive
+          - events in a partition are not deleted once read
+            - stay in partition until retention period is not expired
+          - event hubs decides which partition events are sent to
+            - can specify partition with partition key
+          - max 32 partitions
+          - create as many as expected concurrent subscribers
+- Implement Azure Notification Hubs(ANH) solutions
+  - events meant for human consumption
+  - e.g. push notifications
+  - App to user messages
+  - send to multiple platforms - iOS, Android and Windows
+  - ANH provides abstraction over platform push notifications
+  - ANH features
+    - Cross-platform: different languages support including .NET etc.
+      - Front-end and back-end
+    - Multiple delivery formats
+      - Push to user e.g. email message
+      - Push to device
+      - Localization
+      - Silent push: no user notification on device(app-to-app event)
+    - Have Robust Telemetry
+      - errors, delivery successes
+    - Scalable
+      - send to tons of devices.
+  - Components of ANH
+    - Platform notification service(PNS)
+      - vendor specific e.g. Apple Push Notification services for iOS devices, Firebase for Android devices.
+    - Notification Hub
+      - communicates to PNS
+    - Namespace
+      - Regional collection of hubs
+  - Process
+    - Portal
+    - create namespace
+    - create notification hub
+  - Demo
+    - Portal -> Notification Hub -> create
+  - Namespace
+    - collection of notification hubs
+    - one or more notification hubs per namespace
+    - one namespace per application
+    - One hub for application environment
+      - prod notification hub
+      - dev notification hub etc.
+    - Credentials at namespace level
+    - Billing at namespace level
+  - Sending notification workflow
+    - Setup PNS
+      - Vendor specific
+      - Implement for each platform
+    - Setup ANH
+      - Create namespace and hub 
+      - through portal
+    - Map PNS to ANH
+      - apply keys
+        - portal -> notification hub -> Access policies -> DefaultSharedAccessSignature
+      - find from PNS
+    - Register devices
+      - use .net sdk
+      - web api backend
+    - Send pushes
+      - .net SDK via web API
+      - Targeted, silent, broadcast etc.

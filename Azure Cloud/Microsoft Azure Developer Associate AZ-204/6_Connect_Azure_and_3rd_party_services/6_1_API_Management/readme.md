@@ -1,4 +1,4 @@
-- Azure API Management
+- Azure API Management: github.com/Daniel-Krzyczkowski/Pluralsight
   - [solution_architecture](solution_architecture.png)
   - Azure service to create consistent, modern API gateways for existing back-end services.
   - provides secure, scalable API Access for applications.
@@ -74,8 +74,85 @@
           - each dev can be a member of one or more group, can subscribe to products to that group
   - Create Azure API Management Instance
     - Configure Azure API Management in Azure Portal
+      - portal -> create a resource -> API Management -> APIs -> Add a new API
     - Integrate existing API application with API Management
-    - Setup access for developers
-  - Protect API from unauthorized use
-  - Implement policies like throttling, and caching
-
+    - Setup access for developers using developer portal
+      - Portal -> API Management service -> Overview -> Developer Portal
+    - Publish developer portal
+      - Portal -> API Management service -> Portal overview -> Publish
+      - Portal -> API Management service -> Products -> Add API
+      - Products
+        - Starter
+          - Access doesn't require admin approval
+          - subscribers can run 5 calls per minute up to max 100 calls per week.
+        - Unlimited
+          - Access requires admin approval
+          - subscribers can have unlimited calls.
+  - Protect API from unauthorized use and improve performance with API Management\
+    - Concept of Azure API Management Securities and Policies
+      - Policies
+        - allow changing behaviour of API through configuration
+        - collection of statements executed sequentially on request or response of an API.
+        - example usages
+          - Format conversions from XML to JSON
+          - Restrict the amount of incoming calls
+          - Enforces existence and/or value of an HTTP header
+          - Cache responses according ro specified cache control config
+        - Categories of policies available in Azure API Management service
+          - Access Restriction Policy
+            - Limit call rate by key(calls per key e.g. 5 calls per minute)
+            - Validate JWT tokens(enforce existence and validity of JWT token in header or query parameter)
+            - Set usage quota by key(enforce renewable or lifetime call volume/bandwidth quota)
+            - check HTTP header presence(enforce existence/value of an HTTP header)
+            - Limit call rate by subscription(limit call rate per subscription)
+          - Advanced Policies
+            - Mock response
+              - return mock response directly to the caller
+            - Forward request
+              - forward request to backend service
+            - Retry
+              - retry at specific time intervals
+            - set request method
+              - allow changing HTTP method for a request
+            - trace
+              - add custom traces into API inspector output or Application Insights
+          - Transformation Policies
+            - Convert XML to JSON
+            - Convert JSON to XML
+            - Find and replace string in body
+            - set backend service
+            - set query string parameter
+              - Add, replace or delete request query string parameter
+          - Caching Policies
+            - Store responses to cache
+            - get previously stored responses from cache
+            - Remove fromm cache
+          - etc.
+        - Policy scope
+          - Global - for all APIs inside API Management
+          - Product scope - for all APIs under a product
+          - API scope - for single API
+          - Operation scope - for single operation
+        - Policy execution time [policy_structure_sample](policy_structure_sample.xml)
+          - Inbound policies: executes when a request is received from a client 
+          - Backend policies: executes before a request is forwarded to a managed service(backend)
+          - Outbound policies: executes when before a response is sent to a client
+          - On-Error policies: executes when an exception is raised 
+    - Configure API Management to accept client certificates
+      - Portal -> API management -> Security -> Certificates -> Add
+      - Portal -> API management -> APIs -> Policies for inbound processing (</>) -> add policy
+    - Protecting APIs from unauthorized access using keys and client certificate
+    - Use policies to change behaviour of API through configuration
+    - Implement policies like throttling, and caching
+      - Implement throttling to prevent resource exhaustion
+        - e.g. Inbound policy -> <rate-limit calls="5" renewal-period="10">  (max 5 times in 10s)
+      - Improve API performance using caching policy
+        - caching methods:
+          - Using internal cache provided by Azure API Management service
+            - e.g. 
+              - Inbound policy
+                - <cache-lookup 
+                  vary-by-developer="false" 
+                  vary-by-developer-groups="false" 
+                  caching-type="internal">
+          - Using Redis Cache

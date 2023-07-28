@@ -1,0 +1,48 @@
+- Develop Message-based Solutions
+  - Purpose of Application Messaging
+    - Traditional Architecture
+      - used one server which did all the processing like adding order to db, analytics etc.
+      - if server goes down, app will be down.
+    - Message-based Architecture
+      - User new order -> Order Queue(serverless) -> Order Fulfillment Service -> Post-Order Queue -> Analytics Ingestion Service
+      - data is not lost if any one service is down
+  - Messaging Benefits
+    - encourages application logic modularity
+    - Enables fault tolerance between modules
+  - Azure Queue Storage Queues
+    - Fully-managed service 
+    - part of Azure Storage suite
+    - enables to create durable and configurable message queues
+    - enables modularity and fault tolerance.
+    - Interaction and capabilities of Azure Queue services
+      - requires an Azure Storage Account(general-purpose v2)
+      - Queues created within a single storage account
+      - supports message up to 64 KiB(kibi bytes - 1024 bytes) in size
+        - configurable for days, months or don't expire.
+      - messages exist within single queue
+      - number of messages limited by size of storage account
+      - supports a configurable TTL per message(7 days default)
+      - supports data redundancy: LRS, ZRS, GRS, GZRS, RA-GRS, RA-GZRS
+    - Queue URL Structure
+      - https://storage_account_name.queue.core.windows.net/queue_name
+    - Queue security
+      - data in queues encrypted by default
+      - azure storage stored access policies can work with queues
+      - interaction with queue data done via HTTP or HTTPS
+      - supports following authorization approaches:
+        - Shared key
+        - Shared access signature(SAS)
+        - Azure AD
+    - Visibility Timeout(configurable)
+      - messages sent to consumers are not immediately deleted from Queue until consumer says I am done with it.
+      - However, msg will not be visible in queue again until a period of time called visibility timeout.
+      - it enables fault tolerance for the app.
+  - Scalability Limits for Queues
+      - single queue cannot have more than 500 TiB(Tibi Bytes)
+      - Single message cannot exceed 64 KiB(Kibi Bytes)
+      - A queue supports no more than 5 stored access policies
+      - A storage account can support upto 20k messages per second(1 KiB message)
+      - A single queue can support 2k messages per second(1 KiB message)
+  - Demo
+    - Portal -> Storage account -> Queues -> + Queue(name) -> + add message with TTL.
+  - Azure Service Bus

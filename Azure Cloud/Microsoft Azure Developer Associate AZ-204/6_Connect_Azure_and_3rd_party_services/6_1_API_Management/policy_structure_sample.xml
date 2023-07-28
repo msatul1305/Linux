@@ -1,0 +1,17 @@
+<policies>
+    <inbound>
+        <rate limit="5" renewal-period="10"/>
+        <cache-lookup vary-by-developer="false" must-revalidate="true"/>
+        <base />
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <cache-store duration="60" />
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>
