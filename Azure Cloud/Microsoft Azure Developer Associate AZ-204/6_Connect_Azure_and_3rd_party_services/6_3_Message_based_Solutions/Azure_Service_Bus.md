@@ -1,0 +1,58 @@
+- Azure Service Bus for Application Messaging
+  - Fully-managed enterprise Message Broker Service
+  - enables multiple nodes of messaging
+  - with integration for common messaging systems
+    - including Java Message Service(JMS).
+  - [Organization of Azure Service Bus](service_bus.png)
+    - Azure Service Bus -> Namespace -> Queue: Producer and Consumer 
+    - Azure Service Bus -> Namespace -> Topic: Publisher and multiple subscribers.
+  - Features of Azure Service Bus
+    - Supports HTTP/HTTPS and AMQP(Advanced Message Queuing Protocol) protocols
+    - Includes messages for both queues and topics
+    - Supports 3 different performance tiers:
+      - Basic
+        - supports only queue(not topics)
+      - Standard
+        - recommended option
+        - pay as you go
+        - throughput and latency is variable
+        - utilizes shared resources
+        - provides automatic scaling
+        - supports message up to 256 KB
+        - does not support geo-disaster recovery or availability zones.
+      - Premium
+        - prod
+        - redundancy 
+        - disaster recovery
+        - Fixed pricing based on messaging units 
+        - Fixed throughput based on messaging units
+        - utilizes dedicated resources
+        - requires configuration of scaling rules
+        - supports message up to 1 MB
+        - does support geo-disaster recovery or availability zones.
+    - Supports advanced configurability:
+      - Message Ordering
+        - process in order they were received
+      - Batching
+        - batch process multiple messages at one time
+      - ***DLQ: Dead-letter Queue***
+        - for both queue or topic 
+        - helps capture messages that were not processed during their lifetime
+        - and act accordingly with those messages
+      - Duplicate detection
+        - detect if the message is already being used by another process/consumer
+  - Service Bus URL Structure
+    - https://namespace.servicebus.windows.net/queue_or_topic_name
+  - Message Ordering
+    - FIFO order
+    - uses sessions to maintain FIFO
+    - supported in queues and topics
+      - but must be enabled first
+  - Scaling Azure Service Bus
+    - standard tier namespaces support partitioning of queues and topics
+    - partitioning is not supported in premium tier namespaces
+    - partitioning enables separate messaging stores and brokers for a single entity
+    - partitioning queues and topics can use a partition key to determine the partition.
+    - without a partition key, round-robin algo is used by Azure.
+- Selecting a Messaging solution
+  - 

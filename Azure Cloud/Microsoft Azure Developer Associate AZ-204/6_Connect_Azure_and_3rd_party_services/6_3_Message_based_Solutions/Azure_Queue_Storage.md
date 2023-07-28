@@ -45,4 +45,4 @@
       - A single queue can support 2k messages per second(1 KiB message)
   - Demo
     - Portal -> Storage account -> Queues -> + Queue(name) -> + add message with TTL.
-  - Azure Service Bus
+

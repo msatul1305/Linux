@@ -1,0 +1,4 @@
+- HTTP: Hyper Text Transfer Protocol
+- HTTPS: Hyper Text Transfer Protocol Secure
+- AMQP: Advanced Message Queuing Protocol
+  - open source published standard for asynchronous messaging by wire.
