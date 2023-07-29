@@ -1,0 +1,49 @@
+- ***SAP***
+  - System Analysis and Program development(SAP) in data processing
+  - 5 types of Product Offerings
+    - ERP: Enterprise Resource Planning
+      - supply chain management
+        - keep track of inventory
+        - analyse demand
+        - create projections of supply requirement 
+        - manage logistics etc.
+      - product lifecycle management
+      - human capital management
+      - financial management
+        - cut expenditures
+        - calculate taxes
+        - manage assets
+        - compliance with govt rules and regulations.
+      - customer relationship management etc.
+    - HANA
+      - upgraded version of SAP ERP
+      - with parallel processing capabilities
+      - operates on real-time analytics
+      - runs on in-house db and infrastructure managed by org
+      - self maintained
+    - HANA Cloud
+      - runs on cloud managed by SAP
+      - cloud: Azure or AWS
+      - low maintenance
+      - less flexibility and characterization
+    - last 2(similar to ERP)
+      - SAP business one
+      - SAP business ByDesign
+        These are similar to ERP but for small businesses.
+- ***Salesforce***
+  - provides CRM software: Customer Relationship Management Software
+  - in cloud
+  - can be accessed via mobile as well
+- ***CRM vs ERP***
+  - Businesses looking to automate core business processes typically look at two main software solutions, 
+    - enterprise resource planning (ERP) and customer relationship management (CRM). 
+    - ERP helps companies run successful businesses by connecting their financial and 
+      - operational systems to a central database
+    - while CRM helps manage how customers interact with their businesses.
+  - Both serve as vital data repositories. 
+  - ERP is primarily for financial data and the finance department, 
+  - while CRM is customer data used by the sales and customer service departments. 
+  - Nearly all growing companies, from small and midsize businesses (SMBs) to enterprises, 
+    - will eventually need both an ERP and a CRM system
+  - Some ERP systems include a CRM component, while others do not, 
+    - but CRM software systems do not include ERP components.

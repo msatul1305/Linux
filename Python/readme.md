@@ -1,4 +1,4 @@
-- most commonly used built-in modules in Python?
+- most commonly used built-in modules in Python
   - os 
   - math
   - sys 
@@ -53,9 +53,24 @@
   - Shallow copy is used when a new instance type gets created and 
   - it keeps values that are copied whereas deep copy stores values that are already copied. 
   - A shallow copy has faster program execution whereas a deep copy makes it slow.
-- sorting technique is used by sort() and sorted() functions of python?
+- sorting technique is used by sort() and sorted() functions of python
   - Python uses the [Tim Sort](https://www.geeksforgeeks.org/timsort/) algorithm for sorting. 
   - It’s a stable sorting whose worst case is O(N log N). 
   - It’s a hybrid sorting algorithm, derived from merge sort and insertion sort,
   - designed to perform well on many kinds of real-world data.
-- 
+  - sort() vs sorted()
+    - sort() sorts the current list
+    - syntax:
+      - list.sort()
+    - sorted returns a new list with sorted items
+      - syntax:
+        - new_list = sorted(list)
+- Important methods
+  - [sort](sort_py.py):  
+  - [sorted](sorted_py.py)
+  - [zip](zip_func.py)
+
+
+- Others
+  - * vs ** in function call: https://stackoverflow.com/questions/2921847/what-do-double-star-asterisk-and-star-asterisk-mean-in-a-function-call
+  - zip vs zip*: https://stackoverflow.com/questions/29139350/difference-between-ziplist-and-ziplist#:~:text=zip%20wants%20a%20bunch%20of,%2C5%2C6%5D%5D%20)%20.
