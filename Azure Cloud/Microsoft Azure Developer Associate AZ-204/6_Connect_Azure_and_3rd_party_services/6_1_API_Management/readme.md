@@ -156,3 +156,49 @@
                   vary-by-developer-groups="false" 
                   caching-type="internal">
           - Using Redis Cache
+- API Management Pricing tiers
+  - Consumption
+    - serverless
+    - pay per call to API management endpoint instead of per hour
+    - automatic scaling built-in
+    - shared hardware
+    - limited cache support
+    - have SLA
+    - usage is limited
+    - internal cache is not available
+    - only redis cache available
+  - Developer
+    - for testing and validation
+    - no SLA
+    - support for both cache type: Internal and Azure Redis Cache
+    - limited scale-out support
+    - provides a level of isolation but not complete isolation
+  - Basic
+    - has SLA
+    - has additional scale-out unit
+    - supports larger internal cache
+  - Standard
+    - has additional scale-out units
+    - have SLA
+    - larger internal cache
+    - adds in Azure AD integration
+  - Premium
+    - increased SLA
+    - larger cache
+    - more scale-out units
+    - provides multi-region deployments
+  - Isolated*
+    - premium tier + complete compute isolation
+- Controlling access to APIs
+  - Access restriction
+    - limit access to API
+      - check http header for existence and value
+      - limit call rate by subscription and key
+      - restrict by IP address
+      - usage quotas per key
+      - validate JWT
+  - authentication
+    - verify credentials of API caller
+      - Basic uth: username and password
+      - client certificate auth
+      - managed identity auth

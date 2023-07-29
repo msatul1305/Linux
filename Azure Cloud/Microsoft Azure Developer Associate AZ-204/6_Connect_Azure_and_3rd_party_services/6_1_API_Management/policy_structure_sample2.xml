@@ -1,0 +1,23 @@
+<policies>
+    <inbound>
+        <validate-jwt header-name="Authorization" failed-validation-error-message="unauthorized">
+        <openid-config url="https://login.mso.com/{aadtenant/well-known/openid-config}" />
+            <required-claims>
+                <claim name="aud">
+                    <value>{App ID of backend app}</value>
+                </claim>
+            </required-claims>
+        <base />
+        </validate-jwt>
+    </inbound>
+    <backend>
+        <base />
+    </backend>
+    <outbound>
+        <cache-store duration="60" />
+        <base />
+    </outbound>
+    <on-error>
+        <base />
+    </on-error>
+</policies>

@@ -1,11 +1,12 @@
 - Implement Azure Event Grid Solutions
   - Event Types
     - Application-to-application notifications
-      - ***Discrete***
+      - ***Discrete***(Azure Event Grid)
         - reports state changes and are actionable(Event Grid)
-      - ***Series***
+        - e.g. IoT sensor senses alarm and sends alert
+      - ***Series***(Azure Event Hub)
         - reports a condition, time-ordered, and analyzable (Event Hub)
-          - e.g. condition of an application: telemetry data
+          - e.g. condition of an application: telemetry data, temperature sensor
     - Application-to-User notifications
       - ***User notification***
         - prompt user or device for their attention (Notification Hub)

@@ -54,19 +54,6 @@
     - partitioning enables separate messaging stores and brokers for a single entity
     - partitioning queues and topics can use a partition key to determine the partition.
     - without a partition key, round-robin algo is used by Azure.
-- Selecting a Messaging solution
-  - Queue vs Service bus
-  - use Queue Storage if
-    - storage needs > 80 GB
-    - Logs needed for all transactions executed against the queue
-    - need to track progress of message processing
-  - use Service bus if:
-    - need support for receiving messages without polling(with AMQP 1.0)
-    - guarantee message ordering(FIFO)
-    - detect duplicate messages
-    - up to 256 KB size messages
-    - support topic based notifications(one to many)
-    - support publishing and consuming messages in batch
 - [Azure service_bus CLI Commands](service_bus.sh)
 - Demo
   - Portal -> Service Bus -> Add -> namespace -> standard tier -> Queues and Topics
@@ -77,8 +64,11 @@
     - subscription = dedicated queue for a subscriber with configuration options
     - Filters used to get messages based on condition:
       - Boolean filters
+        - specifies if all or none of the messages are selected 
       - SQL filters
+        - sql-like expression to evaluate against message properties
       - Correlation filters
+        - match against properties in the message
     - [topics_cli](topics_cli.sh)
 - Demo(topics)
   - Portal -> service bus namespace -> topics -> + Topic

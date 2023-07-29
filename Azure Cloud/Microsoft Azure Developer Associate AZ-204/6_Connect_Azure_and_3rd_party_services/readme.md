@@ -1,0 +1,13 @@
+- Event vs Messages
+    - Events
+      - lightweight notification of state change
+        - generally, does not include data that is changed
+      - publisher does not know or care how message is handled
+        - e.g. file upload
+          - system says we have new file but don't care about its usage by other system
+      - follows pub/sub model
+    - Messages
+      - app data from a source system to be consumed
+        - e.g. new purchase order
+      - message will be handled by a receiver
+      - can follow pub/sub or producer/consumer model

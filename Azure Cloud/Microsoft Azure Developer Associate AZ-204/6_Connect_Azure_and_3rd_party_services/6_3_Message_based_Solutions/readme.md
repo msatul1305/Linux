@@ -1,0 +1,15 @@
+- [Azure Queue Storage](Azure_Queue_Storage.md)
+- [Azure Service Bus](Azure_Service_Bus.md)
+- Selecting a Messaging solution
+    - Queue vs Service bus
+    - use Queue Storage if
+        - storage needs > 80 GB
+        - Logs needed for all transactions executed against the queue
+        - need to track progress of message processing
+    - use Service bus if:
+        - need support for receiving messages without polling(with AMQP 1.0)
+        - guarantee message ordering(FIFO)
+        - detect duplicate messages
+        - up to 256 KB size messages
+        - support topic based notifications(one to many)
+        - support publishing and consuming messages in batch
