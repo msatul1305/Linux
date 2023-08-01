@@ -1,18 +1,22 @@
+# List based approach of Queue
+# Limitations: cannot be used in a circular manner i.e. insertion to right and deletion from left only
+# i.e. even though storage is free from front, insertion occurs in back only.
 class Queue:
     def __init__(self, n):
-        self.q = []
+        self.q = [None] * n
         self.n = n
         self.front = -1
         self.back = -1
 
     def push(self, e):
-        if self.back == self.n:
+        if self.back == self.n - 1:
             print("Overflow")
         else:
             if self.front == -1:
                 self.front = 0
             self.back = self.back + 1
-            self.q.insert(self.back, e)
+            # self.q.insert(self.back, e)
+            self.q[self.back] = e
 
     def pop(self):
         if self.front == self.back and self.front != -1:
@@ -45,3 +49,5 @@ q.pop()
 print(q)
 q.pop()
 print(q)
+
+
