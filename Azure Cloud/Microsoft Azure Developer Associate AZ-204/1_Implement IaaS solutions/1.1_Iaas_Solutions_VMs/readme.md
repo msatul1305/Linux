@@ -19,22 +19,17 @@
                 - Azure Virtual Disk(VHD)
             - Methods to create Azure VM
                 - Azure Portal
-                - Azure CLI
-                - Azure PowerShell(AZ module)
-                - Azure ARM Templates
+                  - Portal -> Virtual Machines -> Create -> Azure Virtual Machine -> choose Image, Resource Group, Size, Username, password(or key), inbound ports(22 for SSH)
+                - [Azure CLI](cli_commands.sh)
+                - [Azure PowerShell](powershell_commands.ps1)
+                - [Azure ARM Templates](ARM_templates.json)
                 - Using APIs.
-    - Creating and running Containers in Azure
-        - Create container images for solutions using Docker
-        - Publish container image into Azure Container Registry
-        - Deploy and run containers in Azure Container Instances.
-
    - Creating VM programmatically:
-       - Azure CLI
-       - Azure Powershell(az module)
-       - ARM Templates
-       - Steps:
-           - Create a resource group
-           - Create VM
-           - Ensure remote access port is open
-           - retrieve the public IP address.
-
+     - [Azure CLI](cli_commands.sh)
+     - [Azure PowerShell](powershell_commands.ps1)
+     - [Azure ARM Templates](ARM_templates.json)
+     - Steps:
+         - Create a resource group
+         - Create VM
+         - Ensure remote access port is open
+         - retrieve the public IP address.

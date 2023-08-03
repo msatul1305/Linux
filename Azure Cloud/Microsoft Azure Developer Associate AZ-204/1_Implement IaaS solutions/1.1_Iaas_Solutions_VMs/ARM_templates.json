@@ -1,18 +1,15 @@
-- Using ARM templates to deploy VMs:
-    - JSON file (configuration file) to define resources.
-    - building block for automation
-    - Templates are submitted to ARM for provisioning
-    - Export ARM template from azure portal or write your own.
-    - Deploy from quickstart template library.
-    - ARM takes json as input converts it into REST API Operations.
-
-How to deploy custom ARM templates?
-        - Search for deploy -> Deploy a custom template -> select a template -> load file.
-
-    - Deploy ARM template via Powershell:
-        - New-AzResourceGroupDeployment -Name mydeployment -ResourceGroupName 'rgroup' -TemplateFile './template/template.json' -TemplateParameterFile './template/parameter.json'
-
-- ARM Template format:
+// Using ARM templates to deploy VMs:
+// JSON file (configuration file) to define resources.
+// building block for automation
+// Templates are submitted to ARM for provisioning
+// Export ARM template from azure portal or write your own.
+// Deploy from quickstart template library.
+// ARM takes json as input converts it into REST API Operations.
+// How to deploy custom ARM templates?
+// Search for deploy -> Deploy a custom template -> select a template -> load file.
+// Deploy ARM template via Powershell:
+// New-AzResourceGroupDeployment -Name mydeployment -ResourceGroupName 'rgroup' -TemplateFile './template/template.json' -TemplateParameterFile './template/parameter.json'
+// ARM Template format:
   {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json",
   "contentVersion": "", //for user's self versioning of templates
@@ -23,7 +20,7 @@ How to deploy custom ARM templates?
   "resources": [], //things to be deployed like vm, storage account, networking element etc.
   "outputs": {}, //return values from resources being deployed
   }
-- Example of ARM template:
+// Example of ARM template:
   {
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",

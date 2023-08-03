@@ -1,3 +1,7 @@
+- Creating and running Containers in Azure
+    - Create container images for solutions using Docker
+    - Publish container image into Azure Container Registry
+    - Deploy and run containers in Azure Container Instances.
 - Docker -> Azure Container Registry(Build, store and Manage containers) -> Azure Container Instances(Run containers)
 - Kubernetes
 - Containers: package up binaries, libraries and other components of an application into a single deployable binary package called container image.
