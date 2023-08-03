@@ -7,5 +7,41 @@
     - Go to C:/MinGW/bin
     - copy this path to environment variables path
   - File -> Preferences -> Settings -> Extensions -> Run code configuration -> Run in Terminal
-  - File -> Preferences -> Settings -> Extensions -> C C++ -> Cpp standard -> latest gnu or c++
+  - File -> Preferences -> Settings -> Extensions -> C, C++ -> Cpp standard -> latest gnu or c++
   - Run code: ctrl + alt + n
+- Glossary: https://www.daniweb.com/programming/software-development/tutorials/466177/understanding-c-from-source-to-binaries
+  - Header file: Contains C++ source code, and they are mostly used to make declarations, 
+    - i.e., they contain the stubs that tell the compiler about the "things" that exists (somewhere). 
+    - Usual extensions: .hpp, .h, or .hxx.
+  - Source file: Contains C++ source code, and they are exclusively used for definitions, i.e., the actual implementation of the "things" that make up the program or library. 
+    - Usual extensions: .cpp, .C, or .cxx (normally, .c is reserved for C source files, not C++).
+  - Translation unit (TU): A technical term for a source file, once the compiler has looked at all #include statements and substituted them for the header files they refer to.
+  - Object file: Simplest binary file which comes from the compilation of a single translation unit (TU) into executable code. 
+    - Usual extensions: .o or .obj (MSVC).
+  - Static library (or static-link library): A binary file which is very similar to an object file but is larger and 
+    - usually the product of many object files combined into one file for convenience. 
+    - The GNU stack refers to static libraries as archives, 
+    - i.e., collections of object files. Usual extensions: .a or .lib (MSVC).
+  - Import library: A special static library that is used by the MSVC toolset to make the static link 
+    - between a standalone executable and a dynamic-link library (DLL).
+  - Dynamic library (or dynamic-link library or shared object): A binary file also created from a set of object files, 
+    - but they are packaged as a standalone executable library (not a program). 
+    - Usual extensions: .so (POSIX) or .dll (Windows).
+  - Executable program: This is a type of binary file that can be started and executed, 
+    - i.e., it has an execution entry-point. In short, this is a program you can run. 
+    - Usual extensions: <nothing> (POSIX) or .exe (Windows).
+- Compilation of C/C++ code happens in three main steps (excl. linking), which could roughly be grouped under three terms:
+  - Pre-processing
+    - first major pass over the entire source code.
+    - anything in C/C++ code that begins with a # character is a pre-processor command.
+    - The pre-processor is mostly a glorified find-and-replace tool.
+  - Syntactic analysis
+    - parsing that checks language rules and builds an internal representation of the code.
+    - compiler tries to "understand" your code. 
+    - The language standard (e.g., C++ ISO Standard) describes how the compiler should interpret / understand the code.
+  - Code generation
+    - last big step in the compilation process, i.e., producing the binary code.
+    - Once the compiler has done syntactic analysis and performed some high-level optimizations, 
+    - it produces an early translation into a very simple language, usually referred to as Intermediate Language (IL), 
+    - which is usually somewhere between a C dialect and a kind of platform-independent pseudo-assembly language 
+    - (e.g., Comeau's IL is ANSI C, while GCC's IL looks more like an assembly language).
