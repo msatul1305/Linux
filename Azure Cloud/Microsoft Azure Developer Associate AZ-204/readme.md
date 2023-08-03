@@ -5,12 +5,10 @@ Microsoft Azure Developer: Introduction to the AZ-204 Exam by Matthew Kruczek
 1. Exam
     - Topics
         - ***Develop Azure Compute Solutions(25%-30%)***
-            - Implement IaaS Solution
-                - Provision VMs
-                - Configure, validate and deploy ARM templates
-                - Configure container images for solutions
-                - Publish an image to the Azure Container Registry
-                - Run containers by using Azure Container Instance
+            - Containerization
+              - Configure container images for solutions
+              - Publish an image to the Azure Container Registry
+              - Run containers by using Azure Container Instance 
             - Create Azure App Service Web Apps(PaaS solution)
                 - Create an Azure App Service Web App
                 - Enable diagnostic logging
@@ -64,3 +62,25 @@ Microsoft Azure Developer: Introduction to the AZ-204 Exam by Matthew Kruczek
             - Develop Message-Based Solutions
                 - Implement solutions that use Azure Service Bus
                 - Implement solutions that use Azure Queue Storage Queues
+- Exam Pointers
+    - Review Azure App Service
+        - capability of each tier
+        - order of steps to create and deploy application
+            - App service plan must be created before we can create an application
+        - deployment slots and slot swapping
+            - when to use auto swap and not
+            - initialization steps when doing auto swap
+        - Configure scaling and tiers
+        - which use cases require isolated tier
+        - process of deploying containers
+        - Accessing logs(Historical and real time)
+        - Review CLI commands
+        - ASE(Azure App Service Environment)
+        - Custom warm up for deployment slots
+            - proper warm up happens before slot deployment before getting into prod
+    - Review Azure functions
+        - configuration of I/O bindings
+        - Integrations with other services
+        - Durable functions uses cases best fit scenarios
+        - function metrics and logging info
+- Note: Azure Kubernetes Service(AKS) is out of scope for this certification exam, Also VM(IaaS)

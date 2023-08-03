@@ -1,4 +1,7 @@
-1. Implement IaaS Solution
+- Implement IaaS Solution(is out of scope now!)
+    - Provision VMs
+    - Configure, validate and deploy ARM templates
+- Implement IaaS Solution
     - Provisioning and configuring Azure VMs
         - Configure, validate, and deploy ARM(Azure Resource Manager) templates
         - VM Components:
@@ -33,3 +36,11 @@
          - Create VM
          - Ensure remote access port is open
          - retrieve the public IP address.
+  - Review IaaS
+      - Managed Identities(System and user)
+          - using powershell to get identity tokens and use them
+      - Backup and restore approaches
+      - Accelerated Networking
+          - directly connect your VNet to cloud VM
+      - When not to use a VM
+          - use Azure functions and Azure App Service instead to pay less?
