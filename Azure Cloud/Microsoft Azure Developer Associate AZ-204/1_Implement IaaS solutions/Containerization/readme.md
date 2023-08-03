@@ -51,7 +51,4 @@
   - Azure container registry
   - docker hub etc.
   - Public or private
-- [Creating a service principal for ACI to pull from ACR and Running container from ACR to ACI](acr.sh)
-
-
-  
+- [Creating a service principal for ACI to pull from ACR and Running container from ACR to ACI](aci.sh)
