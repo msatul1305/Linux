@@ -1,0 +1,12 @@
+- ACR
+  - how to configure supported images and artifacts?
+  - how to create a repository within a registry?
+  - how to manage the artifacts within a repository?
+- ACR tasks
+  - How to use ACR tasks to manage images and artifacts
+- ACI
+  - why use ACI?
+  - when we shouldn't use ACI? instead when to use AKS(Kubernetes)?
+    - ACI gives a serverless PaaS to run containers in Azure without need to servers/VM.
+    - For full container orchestration use AKS
+  - 

@@ -18,14 +18,25 @@
 - run dockerfile using: "docker build" command
 - Create a container image using docker for dotnetcore application
   - [Docker_CLI](docker.sh)
-- Azure container registry(ACR):
+- ***Azure container registry(ACR)***:
   - managed docker registry service based on open source docker registry.
   - allows to build, store, and maintain container images. for deployments.
   - ACR is key component of building a CI/CD pipeline
     - can be integrated into source control system build container images when code is committed.
-  - Container Orchestrators like Kubernetes and serverless platforms like Azure Container Instance(ACI) can be configured to pull images from ACR
+  - Use cases of ACR
+    - Scalable Container Orchestrators like Kubernetes, DCOS(Datacenter Operating System), Docker Swarm etc. 
+    - Within Azure Services: Azure Kubernetes(AKS), App Service, Azure Batch, Service Fabric etc.
+    - serverless platforms like Azure Container Instance(ACI) which can be configured to pull images from ACR
   - ACR tasks can be used to streamline building, testing, pushing and deploying applications in azure. Images will automatially be published on code commit.
-  - Service tiers: Basic, Standard, Premium.
+  - ACR Service tiers: 
+    - Basic
+    - Standard
+      - More storage
+      - More Image throughput
+    - Premium
+      - Standard + Geo-replication
+      - content trust for image tag signing
+      - supports private link with private endpoints
   - ACR Authentication and security options:
     - requires authentication for operations
       - Azure Active directory identities: Users, Service Principals
@@ -37,7 +48,30 @@
       - ACR role based authentication:
         - Owner(all), Contributor(Create/delete registry + change policies + rest all), Reader(Access Resource Manager, Pull Images), AcrPush(push and pull images), AcrPull(pull images), AcrDelete(delete image data), AcrImageSigner(sign images)
   - [Creating and authenticating to ACR](acr.sh)
-- deploying Azure Container Instances:
+  - ACR supported images and artifacts
+    - grouped in a repository, each image is a read-only snapshot of a Docker-compatible container
+    - ACR can include both Windows and Linux Images
+    - ACR also stores Helm charts and images built to Open Container initiative(OCI) Image Format Specification.
+- ***ACR Tasks***
+  - suite of features within ACR
+  - provides cloud-based container image building for Linux, Windows, and ARM
+  - can automate OS and framework patching for Docker containers
+  - Task scenarios
+    - Quick task
+      - commands
+        - build and push(without installing local docker engine)
+    - Automatically triggered task
+      - trigger task on source code update
+        - triggers container image build or a multistep task when source code is updated
+      - trigger on base image update
+        - track a dependency on base image when it builds an app image
+        - if base image is updated, ACR tasks will automatically build apps built from that image
+      - schedule a task
+        - setting up one or more triggers when we create or update the task
+    - Multi-step task
+      - build and push with multistep, multi-container based workloads
+      - configuring YAML file to define the tasks
+- ***deploying Azure Container Instances(ACI)***:
   - ACI gives a serverless PaaS to run containers in Azure without need to servers/VM.
   - For full container orchestration: use Azure Kubernetes Service.
   - Applications can be accessed via Internet or Azure virtual network for private, secure connections.
@@ -52,3 +86,67 @@
   - docker hub etc.
   - Public or private
 - [Creating a service principal for ACI to pull from ACR and Running container from ACR to ACI](aci.sh)
+- Features of ACI
+  - fast startup time
+    - containers cn start in seconds without need to provision and manage VMs.
+  - public IP connectivity and DNS name
+    - containers can be directly exposed to internet with an IP address and Fully Qualified domain name(FQDN)
+  - Hypervisor-level security
+    - Container apps are as isolated in a container as they would have been in a VM
+  - Custom Sizes
+    - container nodes can be **scaled dynamically** to match actual resource demands for an application
+  - Persistent storage
+    - containers support direct mounting of Azure File Shares
+  - Linux and windows containers 
+    - same API used for both
+  - Co-scheduled groups
+    - container instances supports scheduling of multi-container groups that share host machine resources
+  - Virtual network deployment
+    - Container Instances can be deployed in Azure virtual network
+- How to work with ACI: options to choose for
+  - Deployment
+    - 2 common ways to deploy multi-container group 
+      - ARM template: when we need to deploy additional azure service like azure file share
+      - YAML file: recommended when deployment contains only container instances
+  - Resource Allocation
+    - ACI allocates following resources to a ***container group***(combines resources for multiple containers?):
+      - CPU
+      - Memory
+      - GPUs(Optional)
+  - Networking
+    - container groups share IP address and port namespace on that IP
+  - Storage
+    - specify external volumes to mount within a container group
+    - map those volumes into specific paths within the individual containers in a group
+    - supported volumes of storages: Azure file-sharing secrets, an empty directory and a cloned git repo.
+  - Common Scenarios to use ACI
+    - useful for multi-container groups/scenarios 
+      - when we want to divide a single functional task into small no. of container images
+    - e.g. 
+      - a web app and a container pulling teh latest content from source control.
+      - an app container and a logging container 
+        - where logging container collects logs and metrics output by the main app
+        - and writes them to long-term storage
+      - an app container and a monitoring container 
+        - where monitoring container periodically makes a request to app container 
+          - to ensure its running and responding correctly 
+          - and raise an alert if not.
+      - a front-end container and a back-end container 
+        - front end serves a web app
+        - and back end runs a service to retrieve data
+- Using ***Azure Container Apps***
+  - it helps execute the application code packaged in any container
+  - and is open to runtime or programming model
+  - run microservices or containerized apps on serverless platform.
+  - sits between ACI and AKS.
+    - more functionality than ACI but simpler to implement than AKS.
+  - Uses:
+    - Deploy API endpoints
+    - Host background processing applications
+    - handle event-driven processing
+    - run microservices
+    - Build apps on Azure Container Apps to dynamically scale based on:
+      - HTTP Traffic
+      - Event-driven processing
+      - CPU or memory load
+      - Any KEDA-supported scaler

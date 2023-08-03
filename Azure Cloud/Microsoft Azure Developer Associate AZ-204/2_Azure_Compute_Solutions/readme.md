@@ -1,1 +1,8 @@
 - Exam Pointers
+  - Scaling in Azure App service happens at App Service Plan level rather than individual web app level
+    - i.e. if multiple web apps are hosted within an app service plan, they compete for resources within the plan.
+  - Deployment slots in Azure App Service?
+  - Steps for Enabling Diagnostic Logging for Windows vs Linux?
+  - how to write to logs from application code?
+  - when to use public certificates and when to use private certificates?
+  - 

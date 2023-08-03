@@ -1,0 +1,14 @@
+[
+  {
+    "name": "name1",
+    "value": "conn_str1",
+    "type": "SQLServer",
+    "slotSetting": false
+  },
+  {
+    "name": "name2",
+    "value": "conn_str2",
+    "type": "PostgreSQL",
+    "slotSetting": false
+  }
+]

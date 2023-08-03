@@ -3,7 +3,7 @@ ACR_NAME='actual_acr_name_deployed_earlier'
 ACR_REGISTRY_ID=$(az acr show --name $ACR_NAME --query-id --output tsv)
 # shellcheck disable=SC2034
 SP_NAME=acr-service-principal
-SP_PASSWD=$(az ad sp create-for-rbac --name http://$ACR_NAME-pull --scopes $ACR_REGISTRY_ID --role acrpull --query password --output tsv)  #create a password to be used for ACI.
+SP_PASSWD=$(az ad sp create-for-rbac --name http://$ACR_NAME-pull --scopes $ACR_REGISTRY_ID --role acrpull --query password --output tsv)  # create a password to be used for ACI.
 SP_APPID=$(az ad sp show --id http://$ACR_NAME-pull --query appId --output tsv)
 
 # Run container from ACR to ACI
