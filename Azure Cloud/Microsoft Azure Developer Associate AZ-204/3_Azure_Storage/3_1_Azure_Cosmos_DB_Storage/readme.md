@@ -6,7 +6,7 @@
       - fixed schema
       - table based structure
       - vertical scaling
-      - ACID guarantees(atomicity, consistency, isolation and durability)
+      - ACID guarantees(Atomicity, Consistency, Isolation and Durability)
       - Data normalization: no repetition of data: 1nf, 2nf 3nf, 4nf
     - NoSQL
       - distributed in nature
@@ -20,7 +20,7 @@
         - document stores
         - wide-column(2-d key value store)
       - Horizontal scaling is possible using data partitioning
-      - provides BASE(basically available, Soft state, eventual consistency) semantics
+      - provides BASE(Basically Available, Soft state, Eventual consistency) semantics
         - data is distributed
         - hence, first data is distributed to current node and then to all other nodes i.e. soft state
         - soft state: we don't know if the data is most recent or waiting to be updated 
@@ -56,30 +56,31 @@
       - Selecting API:
         - Cosmos DB can act like multiple types of databases
         - Supported APIs:
-          - SQL
-            - Structured Query langugae
+          - [SQL](sql.png)
+            - Structured Query language(SQL)
             - JSON documents also supported
             - Database Entity: Database
             - Container Entity: Container
-          - Cassandra
+          - [Cassandra](cassandra.png) 
             - CQL(Cassandra Query Language)
             - wide-column format(2-d key-value store)
+              - [cassandra2](cassandra2.png)
             - Database Entity: Keyspace
             - Container Entity: Table
-          - MongoDB
+          - [MongoDB](mongo.png)
             - JSON document store
             - Database Entity: Database
             - Container Entity: Collection
-          - Gremlin
+          - [Gremlin](gremlin.png)
             - graph db
             - relationship between data is visible
             - product recommendation engines, social networks, etc.
             - Apache Tinkerpop's Gremlin language for querying relationships
             - Database Entity: Database
             - Container Entity: Graph
-          - Azure Table
+          - [Azure Table](Azure_Table.png)
             - part of Azure Storage
-            - querying data using OData or LINQ queries
+            - querying data using OData or LINQ(Language Integrated Query) queries(C#)
             - Database Entity: Not Applicable
             - Container Entity: Table
         - Supported SDKs
@@ -107,7 +108,8 @@
           - ***Session***:
             - Guarantees that a client session will read its own writes
           - ***Bounded Staleness***
-            - guarantees that a read has max. lag(either number of versions or time elapsed) [fairly recent version]
+            - guarantees that a read has max. lag(either number of versions or time elapsed) 
+              - to get most recent value(fairly recent version)
           - ***Strong***: Higher latency, Lower throughput, Lower availability
             - Guarantees that we get most recent version of data
       - Consistency levels for SQL APIs
@@ -145,7 +147,7 @@
           - Azure cosmos db hashes the partition key value of an item.
           - Then, it allocates the key space of partition key hashes evenly spread across physical partitions.
         - Strategy considerations for partition
-          - HOT partition: throughput is evenly distributed across all physical partitions(e.g. total= 20k RU, each partition will have 10k RUs)
+          - HOT partition: throughput is evenly distributed across all physical partitions(e.g. if total= 20k RU(Request Units), each partition will have 10k RUs(Request Units))
           - Multi-item transactions require storage triggers or stored procedures
           - minimize cross partition queries for heavier workloads(large storage or large throughput)
           - decide on partition key strategy before creating container
@@ -155,13 +157,13 @@
         - Horizontal scaling: inc. no.of VMs
           - using concept of read replicas
       - Scaling in cosmos DB
-        - Request Unit(RU): similar to vertical scaling
+        - ***Request Unit(RU)***: similar to vertical scaling
           - increasing RU will inc CPU, RAM, IO etc. 
           - 1 RU = 1 kb item read operation from a cosmos DB container
-        - Resources encapsulated in RU's
-          - Processing power(CPU)
-          - Memory
-          - IOPS(Input/Output Operations Per Second)
+          - Resources encapsulated in RU's
+            - Processing power(CPU)
+            - Memory
+            - IOPS(Input/Output Operations Per Second)
         - Managing cosmos DB throughput
           - Provisioned throughput(old): specific amount set by you that is needed
             - for always on prod env
@@ -211,7 +213,7 @@
           - A change will appear exactly once in change feed
           - reading data from db will consume throughput
           - partition updates will be in order, but between partitions no guarantee
-          - not supported only for Azure Table API
+          - not supported for Azure Table API
           - Approaches to using change feed
             - Using Azure functions
               - set up a trigger to be tied to cosmos db
