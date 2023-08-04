@@ -4,15 +4,15 @@
   - FaaS: Function as a Service
   - Choice of programming languages: C#, Java, JavaScript, Python, PowerShell etc.
   - Hosting choices: Service plan on Azure App Service
-    - Consumption plan:
+    - ***Consumption plan***:
       - Serverless pricing
       - bills only when functions are running
       - automatic scaling
       - Time limit for each function invocation: 5 min
-    - App Service plan:
+    - ***App Service plan***:
       - Traditional pricing model: monthly bills
       - No time limit
-    - Premium plan:
+    - ***Premium plan***:
       - Faster
       - Secure
       - reserved instances
@@ -29,7 +29,7 @@
 - Create Azure function in Azure portal app
   - Create a resource -> function app -> deploy function app
   - Open deployment -> Go to functions  -> create
-- Azure function triggers
+- Azure function triggers(Triggers are what causes the function to run)
   - HTTP request Trigger(webhooks): runs in response to a web request. - use for APIs and webhooks
     - trigger based on HTTP methods - e.g. GET, POST
     - trigger based on Route/URL
@@ -52,7 +52,7 @@
     - Event grid
     - Microsoft Graph
 - Implementing Input and Output Bindings
-  - Binding
+  - Binding(helps to declaratively connect resources for both Input and Output).
     - collection of data within the function
     - A function can have multiple I/O bindings.
   - Input Bindings
@@ -138,3 +138,19 @@
   - can have one or more functions managed, deployed and scaled together
   - all functions in function app share same pricing plan, deployment method and runtime version.
   - function app helps to organize and manage functions collectively.
+- Triggers and Bindings
+  - C# and Java have inline methods in code
+    - decorating methods and parameters in C# class library/attributes
+    - decorating methods and parameters with Java annotations
+  - JS/PowerShell/Python/TypeScript
+    - update [functions.json](functions.json) file
+  - Binding Direction
+    - Triggers always have direction: "in"
+    - Input and Output bindings use "in" and "out" respectively
+    - some bindings support special direction "inout"
+      - i.e. use same binding for both Input and Output 
+      - use advanced editor via Integrate tab in portal for "inout"
+    - when using attributes in a class library to configure triggers and bindings,
+      - direction is ***provided*** in an attribute constructor
+        - or inferred from parameter type.
+- [JavaScript Example](js_example.js) for using triggers and bindings from [functions.json](functions.json)

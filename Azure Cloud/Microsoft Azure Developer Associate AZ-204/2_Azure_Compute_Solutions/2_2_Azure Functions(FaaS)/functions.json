@@ -1,3 +1,4 @@
+// Type 1
 {
   "disabled": false,
   "bindings": [
@@ -5,8 +6,28 @@
     {
       "type": "bindingType",
       "direction": "in",
-      "name": "myParamName",
+      "name": "myParamName"
       // ... more depending on binding
+    },
+    {
+      "dataType": "binary",
+      "type": "httpTrigger",
+      "name": "req",
+      "direction": "in"
+    },
+    {
+      "type": "queueTrigger",
+      "name": "order",
+      "direction": "in",
+      "queueName": "myqueue-items",
+      "connection": "STORAGE_ACCT_SETTING"
+    },
+    {
+      "type": "table",
+      "name": "$return",
+      "direction": "out",
+      "tableName": "outTable",
+      "connection": "STORAGE_ACCT_SETTING"
     }
   ]
 }
