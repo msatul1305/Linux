@@ -1,0 +1,12 @@
+{
+  "disabled": false,
+  "bindings": [
+    // ... bindings here
+    {
+      "type": "bindingType",
+      "direction": "in",
+      "name": "myParamName",
+      // ... more depending on binding
+    }
+  ]
+}

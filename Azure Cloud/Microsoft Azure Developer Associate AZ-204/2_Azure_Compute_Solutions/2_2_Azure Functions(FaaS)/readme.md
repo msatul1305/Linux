@@ -1,4 +1,4 @@
-- Azure Functions
+- [Azure Functions](azure_functions.png)
   - serverless application platform: abstract servers
   - run functions(small pieces of code) in cloud
   - FaaS: Function as a Service
@@ -22,7 +22,7 @@
         - On-premise or on cloud
       - Locally
   - Development Environment choices: Azure portal, Visual Studio(c#), Azure Functions Core Tools(CLI, VS code)
-- Implement Azure Functions Skills
+- Implement Azure Functions:
   - Implement function triggers by using data operations, timers and webhooks
   - Implement input and output bindings for a function
   - Implement Azure Durable Functions
@@ -34,7 +34,7 @@
     - trigger based on HTTP methods - e.g. GET, POST
     - trigger based on Route/URL
     - secured via authorization key
-      - Anonymous: no keyt required
+      - Anonymous: no key required
       - Function: key per function
       - Admin: key per function app
     - Create HTTP function trigger
@@ -73,7 +73,7 @@
       - Connectors to 3rd party services: SendGrid(for sending emails), Twilio(for sending text messages) etc.
   - Azure Functions and Core Tools
     - Develop locally
-- Azure Durable Functions(C# and JavaScript)
+- [Azure Durable Functions](create_durable_function_workflow_c%23.md) - C# and JavaScript
   - Extension to Azure Functions
   - Used to create stateful, serverless workflows ("Orchestrations")
   - 3 types of functions:
@@ -86,7 +86,7 @@
     - Activity Function
       - Implement a step in the workflow
       - use any bindings
-  - Orchestration Patterns  for durable functions
+  - Orchestration Patterns for durable functions
     - ***Function Chaining***
       - Sequence of activity functions in specified order(Activity 1-> Activity 2->Activity 3)
     - ***Fan-out Fan-in***
@@ -108,7 +108,8 @@
 - Custom Handlers
   - We can create Azure functions in C#, Java, JavaScript, Python. PowerShell, etc.
   - But for languages that are not current supported like Rust, Go
-  - and for runtime that are not current supported like Deno(an alternative JavaScript runtime), we use custom handlers.
+    - and for runtime that are not current supported like Deno(an alternative JavaScript runtime), 
+    - we use ***custom handlers***.
   - Trigger -> Functions Host -> Custom Handler(Web Server: runs function code) -> Target(Output bindings)
   - Steps to create custom handler
     - Create function app using ***function init*** selecting Custom as language
@@ -122,6 +123,18 @@
     - Test locally(func start) or publish to Azure
   - extensionBundle
     - needed to support bindings and triggers
-
-
-
+- Any Function contains 2 important pieces:
+  - Your code
+  - config: [functions.json](functions.json) file
+    - function.json file defines:
+      - function's triggers
+        - every function has one and only one trigger
+      - other config settings
+        - runtime uses this config to determine events to monitor and 
+        - pass data into and return data from function execution. 
+- Function app
+  - provides execution context in Azure in which functions run
+  - unit of deployment and management for the functions
+  - can have one or more functions managed, deployed and scaled together
+  - all functions in function app share same pricing plan, deployment method and runtime version.
+  - function app helps to organize and manage functions collectively.
