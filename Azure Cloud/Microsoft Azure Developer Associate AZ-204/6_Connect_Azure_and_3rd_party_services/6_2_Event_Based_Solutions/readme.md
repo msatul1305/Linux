@@ -2,7 +2,7 @@
   - Event Types
     - Application-to-application notifications
       - ***Discrete***(Azure Event Grid)
-        - reports state changes and are actionable(Event Grid)
+        - reports state changes and are actionable (Event Grid)
         - e.g. IoT sensor senses alarm and sends alert
       - ***Series***(Azure Event Hub)
         - reports a condition, time-ordered, and analyzable (Event Hub)
@@ -63,7 +63,7 @@
     - User defined
       - e.g. ASP.NET Core web API
       - message will have same schema as Azure topics
-      - can send custom event data/info with message
+      - can send custom event data/info with a message
   - Event Handlers
     - Azure Functions
       - can receive events
@@ -76,7 +76,7 @@
     - create topic
     - send publisher events
     - add subscriber info with filtering
-  - Every event has same metadata schema. The data property contains event specific info. 
+  - Every event has same metadata schema. The data property contains event-specific info. 
 - Implement Azure Event Hubs
   - Demo
     - Portal -> Event grid system topics -> Add -> Topic type
@@ -98,12 +98,12 @@
       - It can capture events to Azure blob storage or data lake
       - Example Scenarios for Event Hubs use cases
         - Big data
-          - Telemetry data: get data from array of sensors to detect earthquake
+          - Telemetry data: get data from an array of sensors to detect an earthquake
           - Data archival
           - Transaction processing: millions of transactions per second.
           - Anomaly detection
       - Components of Event Hubs
-        - Namespace: container for Event Hubs(grouping of event hubs)
+        - Namespace: container for Event Hubs (grouping of event hubs)
         - Event Producer: Send data to Event Hubs
         - Partitions: Bucket of messages
         - Consumer groups: View of an Event Hub, e.g. current position where the application is while reading through partitions.
@@ -128,7 +128,7 @@
             - e.g. sb://namespace.servicebus.windows.net/sharedAccessKey=jhdbakgbldb
         - Open Connection
           - EventHubProducerClient
-          - Ok to cache this object
+          - OK to cache this object
         - Prepare data
           - convert to binary
           - size limitations apply.
@@ -149,7 +149,7 @@
             - e.g. sb://namespace.servicebus.windows.net/sharedAccessKey=jhdbakgbldb
         - Open Connection
           - EventHubConsumerClient or EventProcessorClient
-          - Ok to cache this object
+          - OK to cache this object
         - Retrieve data
           - Connection remains open
           - can specify partition, offset, date, and sequence number
@@ -160,9 +160,9 @@
           - like a bucket for event messages
           - hold events time-ordered as they arrive
           - events in a partition are not deleted once read
-            - stay in partition until retention period is not expired
-          - event hubs decides which partition events are sent to
-            - can specify partition with partition key
+            - stay in partition until the retention period is not expired
+          - event hubs decide which partition events are sent to
+            - can specify partition with a partition key
           - max 32 partitions
           - create as many as expected concurrent subscribers
 - Implement Azure Notification Hubs(ANH) solutions
