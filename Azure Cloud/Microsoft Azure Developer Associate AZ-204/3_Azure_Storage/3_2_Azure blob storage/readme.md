@@ -31,28 +31,28 @@
       - Storage accounts
         - Data is always encrypted using storage service encryption(SSE)
         - Types
-          - Storage V2(General purpose V2): default account
+          - ***Storage V2(General purpose V2)***: default account
             - supports Blob, files, queues, table
             - blob supports block, append and page type blobs
             - high throughput, recommended option
             - Performance based
-              - Standard performance
+              - ***Standard performance***
                 - uses magnetic drives/HDD
-              - Premium performance
+              - ***Premium performance***
                 - uses SSDs
                 - supports only blob storage: only page type of blob(block and append not supported)
                 - not files, queues and table
                 - i.e. only used as virtual hard disks(VHDs)
-                - BlockBlobStorage account
+                - ***BlockBlobStorage account***
                   - To use block storage with premium performance
                   - supports block and append blob types
                   - for a lot of transactions with small objects
-                - File Storage account
+                - ***File Storage account***
                   - file service with premium performance
-          - Storage(General purpose V1)
+          - ***Storage(General purpose V1)***
             - old/legacy
             - supports Blob, files, queues, table
-          - BlobStorage
+          - ***BlobStorage***
             - blob
             - old/legacy
           - V2 supports all replication strategies: LRS, GRS, ZRS, RA-GRS, GZRS, RA-GZRS(default)
@@ -68,13 +68,14 @@
         - GZRS 
         - RA-GZRS Read-access Geo-Zone-redundant storage
     - Create storage account, container and blobs
-      - create storage account
+      - [create storage account](create_storage_account.ps1)
+        - [create storage account](create_storage_account.sh)
       - create blob container(for images and videos)
       - store blobs in blob container
       - via Portal
         - Storage accounts -> Blob service -> add container -> upload
     - Authorize Requests to blob storage
-      - Shared key(Storage account key/access key) - used in connection strings
+      - Shared key(Storage account key/access key) - used in [connection_strings](show_connection_string.ps1)
       - Shared Access Signatures(SAS) - tokens appended to blob URLs.
         - Portal -> storage account -> storage container/blob -> generate SAS token and URL
         - copy sas token and update URL-> https://storagename.net/path/file.jpg?Add_SAS_Token_here
@@ -85,7 +86,7 @@
       - Azure SDKs(https://azure.github.io/azure-sdk)
         - .NET(https://github.com/Azure/azure-sdk-for-net)
           - Collection of client libraries
-          - azure.<service-category>.<service-name>
+          - azure.service-category.service-name
           - these client libraries are available as NuGet packages.
           - For blob storage use Azure.Storage.Blobs NuGet package
             - Contains:
@@ -134,6 +135,7 @@
           - offline storage
           - for very low frequency of data access
           - data not used for at least ***180 days***
+      - [Set Access Tier](set_access_tier.sh)
       - Hot and cool tiers are online tiers and can be set at storage account level, Archive is offline tier and can only be set at Block blob level
       - Rehydrating
         - To access archive storage, we need to update it to hot/cool tier. This process is called rehydrating.
@@ -143,9 +145,11 @@
           - High priority
             - In an hour data retrieval
       - Portal -> storage account -> blob -> change tier
+      - [Transition blobs to cool and archive tiers](Transition_Blobs_to_Cool_and_Archive_Tiers.ps1)
     - Lifecycle management of blobs
       - portal -> storage account -> Blob service -> Lifecycle management -> Add rule -> e.g. move to cool storage if last accessed 15 days ago
       - Azure runs the rule once per day
+      - [setup lifecycle management](setup_lifecycle_management_policies.ps1)
     - Enabling soft delete for blobs
       - Portal -> storage account -> Blob service -> data protection -> turn on safe delete for blobs
       - also works for snapshots and versions of blob.
@@ -178,3 +182,4 @@
         - .NET client library for blob storage
         - set retrieve metadata using C#
           - https://github.com/ps-interactive/lab_azure_set-retrieve-properties-metadata-azure-blob-storage.git
+          - [metadata](metadata.ps1)

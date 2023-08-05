@@ -1,1 +1,5 @@
-az storage blob set-tier --account-key "acc_key" --account-name "acc-name" --container-name "cont_name" --name "file_name" --tier "Cool"
+az storage blob set-tier --account-key "acc_key"
+                         --account-name "acc-name"
+                         --container-name "cont_name"
+                         --name "file_name"
+                         --tier "Cool"

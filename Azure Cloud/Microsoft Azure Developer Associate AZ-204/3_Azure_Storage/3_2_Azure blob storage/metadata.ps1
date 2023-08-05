@@ -1,6 +1,7 @@
 $resourceGroup = 'pluralsight-resource-group'
 Get-AzResourceGroup
-$storageAccount =  Get-AzStorageAccount -Name <storage account name> -ResourceGroupName $resourceGroup
+$storageAccount =  Get-AzStorageAccount -Name <storage account name>
+                                        -ResourceGroupName $resourceGroup
 
 # list all containers in the storage account:
 Get-AzStorageContainer -Context $storageAccount.Context

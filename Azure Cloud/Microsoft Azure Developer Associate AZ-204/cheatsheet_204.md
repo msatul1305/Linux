@@ -2,10 +2,16 @@
   - Container Images(Docker) -> Azure Container Registry(ACR)
   - App Service -> App Service Plan
   - Azure Functions -> Function App 
-  - cosmos db?
+  - cosmos db hierarchy
+    - Accounts -> Databases -> Containers -> Items
+    - databases == namespace
   - blob storage -> Storage account
   - eventhubs -> namespace
   - queue -> storage
   - servicebus -> queue
   - topic -> servicebus
-  - 
+
+
+- Properties of blobs
+  - Blob Containers: Etag(Entity), Last Modified
+  - Blobs: Etag, LastModified, Content-Type, Content-Length, x-ms-blob-type

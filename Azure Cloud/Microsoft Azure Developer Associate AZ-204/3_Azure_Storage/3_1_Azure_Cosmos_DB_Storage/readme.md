@@ -101,7 +101,7 @@
         - Types:
           - ***Eventual***: Lower latency, Higher throughput, higher availability
             - but low consistency i.e. if data is in America, it may take some time to be replicated to Asia
-            - No guarantee of order of data 
+            - ***No guarantee of order of data writing in each replica*** 
             - No guarantee of reading of own write consistency
           - ***Consistent prefix***:
             - updates are returned in order
@@ -178,7 +178,7 @@
                 - but min. throughput = 10% of max.
                 - this is good for prod envs but for dev this much may not be used.
               - Serverless
-                - pay for RU consumend and storage used
+                - pay for RU consumed and storage used
                 - ideal for on and off workloads like dev servers
                 - max . 5000 RU's
               - Best practices:
@@ -209,11 +209,15 @@
         - Change feed: execution occurs external to db engine
           - react to data changes outside of cosmos data engine
           - enables to notify of any insert or update on data
-          - deletes are not directly supported, but we can leverage soft-delete flag (e.g. setting "isDeleted" = True or setting TTL(Time to Life = low_value)) 
+          - deletes are not directly supported(i.e. deletes don't appear in the change feed)
+            - but we can leverage soft-delete flag 
+            - (e.g. setting "isDeleted" = True or setting TTL(Time to Life = low_value)) 
+            - so that we get notifications on delete.(as it brings a change to the item)
           - A change will appear exactly once in change feed
           - reading data from db will consume throughput
           - partition updates will be in order, but between partitions no guarantee
           - not supported for Azure Table API
+          - It is enabled by default for all azure Cosmos DB accounts
           - Approaches to using change feed
             - Using Azure functions
               - set up a trigger to be tied to cosmos db
@@ -230,3 +234,15 @@
 - To create Cosmos DB trigger using Azure functions:
   - Portal -> function app -> create new function
   - add function -> Azure cosmos db trigger
+- Notes
+  - Containers are ***fundamental unit of scalability*** for cosmos DB
+    - containers are unit of scalability for both provisioned throughput and storage
+    - container is horizontally partitioned and then replicated across multiple regions.
+  - Cosmos db hierarchy
+    - Accounts -> Databases -> Containers -> Items
+    - One account can have one or multiple databases
+    - database == namespace
+  - Cosmos Items
+    - Document in a collection(Mongo)
+    - row in table(SQL)
+    - node or edge in graph(Gremlin)
