@@ -1,0 +1,26 @@
+- To return a person's profile
+  - GET https://graph.microsoft.com/v1.0/me?
+    - $select=displayName,givenName,surname,mail,userPrincipalName
+- To connect external data to Microsoft Graph(using Microsoft Graph connectors)
+  - Create a connector using ```/connectors``` endpoint
+  - define schema for external data source
+  - setup authentication
+  - push data indexing using ```/items``` endpoint
+  - search external data using ```/search/query``` endpoint
+- Send Data from Microsoft Graph to Azure resources(Using Microsoft Graph Data Connect)
+  - set up data connect environment
+    - create Azure Data Lake Storage Gen1/Gen2 or Azure Blob Storage account
+  - configure access control
+    - allow it to read data from Microsoft Graph.
+    - create a service principal with the required permissions in Azure Active Directory.
+  - create a data connector
+    - create a data connector using the ```/dataConnectors``` endpoint.
+  - define data pull query
+    - data pull query using the Microsoft Graph Data Connect query language
+  - run data pull job
+    - start a data pull job using the ```/dataConnectors/{id}/createPullJob``` endpoint.
+    - This initiates the process of extracting data from Microsoft Graph based on the defined query.
+  - monitor job status
+    - Use the ```/dataConnectors/{id}/pullJobs/{id}``` endpoint to get the status of the job.
+  - data processing in azure
+    - use Azure data services, such as Azure Data Factory, Azure Databricks, or Azure SQL Database, to process and analyze the data further.

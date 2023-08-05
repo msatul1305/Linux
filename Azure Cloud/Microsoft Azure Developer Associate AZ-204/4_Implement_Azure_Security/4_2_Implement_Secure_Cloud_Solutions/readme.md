@@ -2,7 +2,7 @@
   - Allows to securely store and access secrets like connection strings.
   - Types of secrets that can be stored in key vault:
     - Keys
-      - Cryptographic keys e.g. used in Azure Disk Encryption, Azure Storage Account Encryption at Rest(SSE)
+      - Cryptic keys e.g. used in Azure Disk Encryption, Azure Storage Account Encryption at Rest(SSE)
     - Secrets
       - sensitive info like DB connection strings, passwords
     - Certificates
@@ -15,8 +15,8 @@
     - Provision Azure Key Vault
       - Azure Portal
       - Programmatically
-        - PowerShell
-        - Azure CLI
+        - [PowerShell](key_vault.ps1)
+        - [Azure CLI](key_vault.sh)
         - REST API
         - ARM templates
   - Implementing and configuring Azure Key Vault
@@ -47,7 +47,7 @@
       - @Microsoft.KeyVault(VaultName=vname;SecretName=blobConnString;SecretVersion=dnjwabkdlawbjdbjh)
       - syntax 2
       - @Microsoft.KeyVault(SecretUri=https://vname.vault.azure.net/secrets/blobConnectionString/dnjwabkdlawbjdbjh)
-    - Protect Azure Key Vault using Soft delete and Purge Protection
+    - Protect Azure Key Vault using [Soft delete and Purge Protection](soft_delete_and_purge.ps1)
       - Soft delete
         - Allows recovery of deleted values and key vault objects(keys, secrets and certificates)
           - within 7 days to 90 days(configurable)

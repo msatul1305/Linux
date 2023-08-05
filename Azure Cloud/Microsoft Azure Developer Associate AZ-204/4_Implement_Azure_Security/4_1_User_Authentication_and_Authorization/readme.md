@@ -42,19 +42,20 @@
           - Portal -> Storage account -> Shared access signature -> update details -> generate SAS and connection string
           - Secure, Delegated access without sharing the key
           - 3 Types of SAS:
-            - User Delegation SAS
+            - ***User Delegation SAS***
               - for Azure AD
               - user impersonation scope is used so that user's permissions matter when we access Azure Storage.
-              - works only* for blob storage
-            - Service SAS
+              - works ***only for blob storage***
+            - ***Service SAS***
               - secured with storage account key
               - delegates access to resource in ***only one*** of Azure Storage services either:
                 - a Resource container or 
                 - Blob storage or 
                 - a Queue storage or 
                 - Table storage or 
-            - Account SAS
+            - ***Account SAS***
               - Azure Files.
+              - for ***entire storage account***
               - secured with storage account key.
               - delegates access to resources in ***one or more*** storage services.
               - supports all services offered by User Delegation and Service SAS.
@@ -96,7 +97,7 @@
     - Authentication: who you are?
     - Authorization: what you can do?
   - Authenticate using azure AD
-    - Microsoft Identity platform
+    - [Microsoft Identity Platform](microsoft_identity_platform.png)
       - Authentication service
         - Azure Active Directory(AAD)
           - Azure AD Connect
@@ -203,3 +204,32 @@
         - e.g. auth based on user's country 
       - [App Roles](appManifestAttributes.md)
         - roles defined at app level in tokens
+- Managed Identities
+  - simple and secure way for apps to authenticate when connecting to resources 
+    - that support Azure Active Directory(Azure AD)(part of Microsoft Entra) Authentication.
+  - types of managed identities
+    - System-assigned managed identities
+      - created as a part of Azure resource
+      - Shared life cycle with Azure resource that managed identity is created with
+      - when parent source is deleted, managed identity is also deleted
+      - can't be shared
+      - common use cases
+        - Workloads that are contained within a single Azure Resource
+        - Workloads for which we need independent identities 
+    - User-assigned managed identities
+      - Created as a stand-alone Azure resource
+      - independent life cycle
+      - must be explicitly deleted
+      - can be shared
+      - common use cases
+        - workloads that run on multiple resources and can share single identity
+        - workloads that need pre-authorization to a secure resource, as a part of provisioning flow.
+- Secured Access Signatures(SAS) Best Practices
+  - Always use HTTPS
+  - Apply minimum-required privileges
+  - set expiration time to smallest useful time
+  - most secure SAS is ***user delegation SAS***(used for blob storage only)
+  - SAS isn't always the correct solution
+    - When to use SAS
+      - when workload on the application is storage heavy, app can directly share SAS with user to access data instead. 
+    - when not to use SAS?

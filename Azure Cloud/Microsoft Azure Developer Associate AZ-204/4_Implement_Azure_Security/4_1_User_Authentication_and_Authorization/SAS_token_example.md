@@ -1,13 +1,15 @@
 - URL https://storagename.blob.core.windows.nety?
-    - signedVersion sv=2019-12-12&
-    - signedServices ss=bfqt& [signed service for blob, file, queue and table]
-    - signedResourceType srt=s& 
-    - signedPermission sp=rwdlacupx&  [read, write, delete, list(rwdla), create, update, process]
-    - signedExpiry  se=202..& 
-    - Signed Start st=date& 
-    - signedProtocol spr=https& 
-    - signature sig=dXxxXko;lawedkjlbhqwbewhikjvbrfklb%3d%3D
-- More details on parameters: https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas 
+    - sv=2019-12-12& # signedVersion(version of storage API to use)
+    - ss=bfqt& # signedServices [bfqt: blob, file, queue and table]
+    - srt=s& #signedResourceType
+    - sr=b  #storageResource*(type of storage being accessed. e.g. blob here)
+    - sp=rwdlacupx&  # signedPermission [read, write, delete, list, add(rwdla), create, update, process, execute(cupx)]
+    - se=2019-12-15T19:42:32Z&  # signedExpiry(date and time when access ends. e.g. 8 hours here)
+    - st=2019-12-15T11:42:32Z&  # Signed Start(date and time when access starts)
+    - spr=https&  # signedProtocol
+    - sig=dXxxXko;lawedkjlbhqwbewhikjvbrfklb%3d%3D  # signature(cryptographic)
+- More details on parameters: 
+  - https://docs.microsoft.com/en-us/rest/api/storageservices/create-account-sas 
 - Signature = HMAC computed over string to sign + key using SHA-256 algo + encoding in Base64
   - if key changes, signature will change.
 - Stored access policy example:
