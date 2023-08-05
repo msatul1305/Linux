@@ -6,6 +6,7 @@
     - Accounts -> Databases -> Containers -> Items
     - databases == namespace
   - blob storage -> Storage account
+  - SAS(Secured Access Signatures) -> Storage account
   - eventhubs -> namespace
   - queue -> storage
   - servicebus -> queue
