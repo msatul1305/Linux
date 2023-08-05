@@ -1,5 +1,10 @@
-$resourceGroup = 'pluralsight-resource-group'
+# set rgroup name
+$resourceGroup = 'rgroup'
+
+# get list of all rgroup
 Get-AzResourceGroup
+
+# get storage account
 $storageAccount =  Get-AzStorageAccount -Name <storage account name>
                                         -ResourceGroupName $resourceGroup
 

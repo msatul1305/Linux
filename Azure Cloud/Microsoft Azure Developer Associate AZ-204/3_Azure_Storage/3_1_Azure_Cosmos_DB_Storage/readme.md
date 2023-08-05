@@ -246,3 +246,16 @@
     - Document in a collection(Mongo)
     - row in table(SQL)
     - node or edge in graph(Gremlin)
+- Selecting Partition key
+  - partition key should align with data that is ***frequently accessed together*** in queries
+  - partition key should have ***high cardinality***
+    - Cardinality: no. of distinct values or unique values present in a set
+    - high cardinality => column has many distinct values each value occurring infrequently
+    - low cardinality => uneven distribution and uneven performance
+  - Even workload distribution
+  - smooth scaling and efficient management
+  - if data is frequently accessed together, use partition key that groups them together
+  - avoid using properties which have frequent updates
+  - avoid monotonically increasing properties e.g. timestamps
+  - Cost considerations: partition key must take less RU(Request Units)
+  - must be flexible for future changes in data and access

@@ -89,10 +89,19 @@
           - azure.service-category.service-name
           - these client libraries are available as NuGet packages.
           - For blob storage use Azure.Storage.Blobs NuGet package
-            - Contains:
-              - BlobServiceClient(for Blob Storage Account) - e.g. to list all containers in the storage account
-              - BlobContainerClient(for Images/Container) - e.g. to create a container or to list the blobs of a container.
-              - BlobClient(for blob) - e.g. upload/download a specific blob.
+            - Contains and example usage:
+              - ***BlobServiceClient***(for Blob Storage Account) 
+                - to list all containers in the storage account
+              - ***BlobContainerClient***(for Images/Container) 
+                - to create a container or to list the blobs of a container.
+              - ***BlobClient***(for blob) - 
+                - upload/download a specific blob.
+              - Others:
+                - ***BlobClientOptions***
+                  - provides client configuration options for connecting to Azure Blob Storage
+                - ***BlobUriBuilder***
+                  - to modify the contents of a Uri instance to point to different Azure Storage resources 
+                    - like an account, container, or blob
           - for queue storage access, use Azure.Storage.Queue
         - Java
         - JavaScript/TypeScript
@@ -120,6 +129,17 @@
                 - x-ms-blob-type: block blob or append blob or page blob.
             - User-defined metadata
                 - String-based key-value pairs stored on the container
+      - Using REST to set and Retrieve properties and metadata
+        - URI syntax to ***retrieve*** properties and metadata from containers and blobs
+          - From container
+            - GET/HEAD https://myacc.blob.core.windows.net/container_name?restype=container
+          - From blob
+            - GET/HEAD https://myacc.blob.core.windows.net/mycontainer/blob_name?comp=metadata
+        - URI syntax to ***set*** properties and metadata from containers and blobs
+        - From container
+            - PUT https://myacc.blob.core.windows.net/container_name?restype=container
+        - From blob
+            - PUT https://myacc.blob.core.windows.net/container_name/blob_name?comp=metadata
     - Implement data archiving and retention
       - Implement hot(default for blob storage), cool and archive storage
         - Hot Access Tier(Default)
@@ -183,3 +203,28 @@
         - set retrieve metadata using C#
           - https://github.com/ps-interactive/lab_azure_set-retrieve-properties-metadata-azure-blob-storage.git
           - [metadata](metadata.ps1)
+- Azure Blob Storage lifecycle policies
+  - [setup lifecycle management](setup_lifecycle_management_policies.ps1) 
+  - [policy.json](policy.json)
+    - each policy.json must have at least 1 rule, max 100 rules
+  - Each rule has several parameters:
+    - name - String
+    - enabled(optional) - Boolean
+    - type - enum
+    - definition - Object
+  - Each rule definition contains:
+    - filter set
+      - to limit rules to certain objects within a container 
+    - action set
+      - apply the tier or delete action to the filtered set of objects.
+- Static site hosting(using block blob storage account)
+  - Static => no web server is configured to render any content 
+  - Via Portal, CLI or Powershell
+  - Via portal
+    - Enable static web hosting
+      - portal -> Storage account -> Overview -> Capabilities -> static website -> enabled = true, default page = index.html, error = error.html
+    - Upload files
+      - portal -> Storage account -> Overview -> Upload -> upload blob -> select files and upload
+      - store your static web content in a storage container called ***$web***
+    - Enable metrics on static website pages
+      - portal -> Storage account -> Monitor -> Metrics

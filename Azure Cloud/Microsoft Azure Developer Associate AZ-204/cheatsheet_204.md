@@ -11,7 +11,6 @@
   - servicebus -> queue
   - topic -> servicebus
 
-
 - Properties of blobs
   - Blob Containers: Etag(Entity), Last Modified
   - Blobs: Etag, LastModified, Content-Type, Content-Length, x-ms-blob-type
