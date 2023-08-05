@@ -1,4 +1,4 @@
-- object -> Container(all objects inside a container are managed/follow rules by the container rules)
+- object -> Container (all objects inside a container are managed/follow rules by the container rules)
   - Container Images(Docker) -> Azure Container Registry(ACR)
   - App Service -> App Service Plan
   - Azure Functions -> Function App 
@@ -6,7 +6,8 @@
     - Accounts -> Databases -> Containers -> Items
     - databases == namespace
   - blob storage -> Storage account
-  - SAS(Secured Access Signatures) -> Storage account
+  - SAS (Secured Access Signatures) -> Storage account
+  - API -> API management
   - eventhubs -> namespace
   - queue -> storage
   - servicebus -> queue

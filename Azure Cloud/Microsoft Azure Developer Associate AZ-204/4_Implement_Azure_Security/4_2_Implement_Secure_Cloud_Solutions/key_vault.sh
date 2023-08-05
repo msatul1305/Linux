@@ -1,5 +1,4 @@
-az keyvault secret set --name
-                       --vault-name
+az keyvault secret set --name "key-vault-name"
                        [--description]
                        [--disabled {false, true}]
                        [--encoding {ascii, base64, hex, utf-16be, utf-16le, utf-8}]

@@ -16,6 +16,7 @@
         - Logs
           - events that occurred within the system.
           - e.g. exceptions thrown by app
+        - [monitor_log_metrics.png](monitor_log_metrics.png)
       - Functions
         - Insights
           - Application
@@ -38,14 +39,16 @@
           - Export APIs
  - Azure monitor data collection
     - data about performance and functionality of app's source code
-    - data about os on which app is running
+    - data about OS on which app is running
     - data of operations of Azure resources
       - e.g. performance of Azure web app/Azure SQL DB
     - data about operations of tenant-level Azure services, like AAD(Azure Active Directory).
     - can collect data from any REST client including on-premise solutions
-  - Azure Application Insights 
+  - [Azure Application Insights](app_insights.png) 
     - def: It is an extensible Application Performance Management(APM) service for developers and DevOps professionals
     - part of Azure Monitor
+    - can monitor applications running on the client side as well
+    - app is not necessary to be hosted in azure to be monitored
     - capabilities
       - check performance of server machines like CPU or memory usage
       - detect exceptions from app source code
@@ -98,12 +101,23 @@
     - set up recurring test to monitor availability
     - check if each endpoint is available and can return data
     - types of tests
-      - ***URL ping test***
+      - ***URL ping test(classic)***
         - for single URL/endpoint test
-      - ***custom track availability test***
+        - to validate if an endpoint is responding, and 
+          - measure performance associated with that response.
+      - ***Standard test***
+        - TLS/SSL certificate validity
+        - proactive lifetime check
+        - HTTP request verb
+        - custom headers
+      - ***Multistep web test(classic)***
+        - to test complex scenarios
+          - recording a sequence of web requests, 
+          - which can be played back
+      - ***custom TrackAvailability test***
+        - create a custom application to run availability tests
         - sends availability of an app using TrackAvailability() method form SDK
-      - ***Multi-step web test***
-        - recording of sequence of web requests, which can be played back to test complex scenarios
+      - ***Note: classic tests Standard and multistep web tests have been replaced by standard test and customTrackAvailability Test respectively.***
     - Action group
       - collection of notification preferences defined by the owner of an Azure subscription.
       - Azure uses it to notify users that an alert has been triggered.
@@ -112,7 +126,8 @@
         - Name: unique identifier of the group
         - Action: additional action like webhook
     - Configure Application Insights Availability tests and alerts in Azure portal
-      - portal -> app service -> 
+      - Availability Tests
+        - portal -> Application Insights -> Availability -> Monitoring -> + Add Test
       - setup tests
         - Applications Insights -> Availability -> Add test
       - Setup alerts
@@ -124,7 +139,7 @@
       - momentary loss of network connectivity to components and services
       - temporary unavailability of a service, or timeout when service is busy
     - challenges to transient faults
-      - it can have huge effect on perceived availability of an application. so, following challenges must be overcome by the app:
+      - it can have a huge effect on the perceived availability of an application. so, the following challenges must be overcome by the app:
         - app must be able to detect faults when they occur, and determine if faults are likely to be transient.
         - app must be able to retry the operation if fault is likely transient
         - app must use appropriate strategies for retries which must specify no. of times it should retry.
@@ -143,3 +158,5 @@
           - service is unavailable and can't respond to a request
           - we should avoid sending request for sometime
           - when circuit is opened, no request is sent until it is closed again.
+- [configure_app_insights_for_web_app.md](configure_app_insights_for_web_app.md)
+- [configure_app_insights_for_web_page.md](configure_app_insights_for_web_page.md)

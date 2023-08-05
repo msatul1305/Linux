@@ -1,0 +1,8 @@
+- CDN Endpoint configuration fields:
+  - Name
+  - Origin type
+  - Origin hostname
+  - Origin path
+  - Origin host header
+  - Protocol and Origin port
+  - Optimized for

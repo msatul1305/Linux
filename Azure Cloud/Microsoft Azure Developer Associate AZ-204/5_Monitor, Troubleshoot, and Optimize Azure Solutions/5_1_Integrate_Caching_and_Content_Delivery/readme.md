@@ -17,30 +17,31 @@
         - anything that changes on user interaction
           - Dashboard with graphs or tables
           - search queries
+      - [CDN.md](cdn.md)
     - CDNs are used to deliver the ***static content***
     - ***Point of presence servers***: static servers which copy static files from main web server as local copy
     - Request-response lifecycle for CDN
       - Initially, all endpoints are empty
       - When a user requests for a webpage, it goes to origin server and stores local copy for next time
       - The file is cached and remain cached until TTL(Time to live) specified by HTTP header expires.
-        - Default TTL: 7 days
+        - ***Default TTL: 7 days***
   - Caching
     - process of copying ***frequently accessed data*** close to application.
     - advantages:
       - Improves response time
       - improves performance and scalability(reduces load on application like web servers and db)
-      - helps make app more resilient(app remains stable and responsive even if db is unable as copy of data stored in redis/cache)
+      - helps make app more resilient(app remains stable and responsive even if db is down, as copy of data is stored in redis/cache)
     - caching useful if:
       - data is repeatedly accessed
       - data remains unchanged
-      - performance of data source:
-        - accessing cache is generally faster than accessing e.g. SQL data
+      - performance of a data source:
+        - accessing cache is generally faster than accessing e.g., SQL data
       - data contention
-        - if multiple sources/processes within the application is trying to access same data, caching is recommended
+        - if multiple sources/processes within the application are trying to access the same data, caching is recommended
       - physical location
         - network latency is reduced if data is close to app(i.e. in redis cache) instead of far away server.
     - Caching rules
-      - 3 types of caching rules within Azure CDN(only available for Azure CDN standard from Verizon and from Akamai profiles)
+      - 3 types of caching rules within Azure CDN (only available for an Azure CDN standard from Verizon and from Akamai profiles)
         - ***Global*** caching rules
           - we can set only one global caching rule per endpoint
           - applied to all requests that the end point receives
@@ -54,7 +55,7 @@
             - Set if missing
               - custom TTL is set
             - Not set
-              - headers TTl will be used, won't change TTL value
+              - headers TTL will be used, won't change TTL value
         - ***Custom***
           - one or many rules
           - rule for particular file extension or path within the app.
@@ -72,11 +73,11 @@
               - are directly fetched from origin server.
               - and is passed to the requesting client.
              - cache every unique URL
-              - treats every request with a different URL as unique and updates cache again.
-              - has low hit ratio if url query params changes with every request
+               - treats every request with a different URL as unique and updates cache again. 
+               - has low hit ratio if url query params changes with every request
       - Demo
         - Portal -> cdn -> caching rules -> caching behaviour(global), Custom, query
-      - for Azure CDN from Microsoft
+      - for Azure CDN from Microso~~~ft
         - use Standard rules engine
       - for Azure CDN premium
         - use premium rules engine
@@ -90,7 +91,7 @@
     - also a ***message broker***: publisher-subscriber model
   - 5 Pricing Tiers in Azure Redis Cache
     - 3 Standard
-      - Basic
+      - ***Basic***
         - minimal feature set
         - supports less throughput
         - has high latency
@@ -100,13 +101,14 @@
         - Up-to 53 GB memory capacity is provided
         - can have up-to 20k clients connected
         - Supports Azure Private Link
-        - doesn't support replication and failover.
-      - Standard
+        - doesn't support replication and fail over.
+      - ***Standard***
         - gives 2 replicated nodes(primary and secondary)
         - SLA: 99.9% availability
-        - up-to 53 GB memory capacity is provided
-        - can have up-to 20k clients connected
-      - Premium
+        - same as basic
+          - up-to 53 GB memory capacity is provided
+          - can have up-to 20k clients connected
+      - ***Premium***
         - Enterprise grade Redis cluster
         - complete feature set
           - high throughput
@@ -118,23 +120,23 @@
         - Adds support for passive Geo-Replication.
     - 2 Advanced/Enterprise tiers
       - offers all functionality of premium tier + powerful enterprise-ready features like Redis Module
-      - Enterprise
+      - ***Enterprise***
         - SLA: 99.999% availability
         - massive + cost-effective cache implementation
         - adds support to RedisTimeSeries, RedisSearch and RedisBloom
         - up to 100 GB storage
         - supports active Geo-Replication instead of passive
         - 50k to 200k client connections supported
-      - Enterprise Flash
-        - uses fast, non-volatile flash storage
+      - ***Enterprise Flash***
+        - uses fast, non-volatile ***flash storage***
         - up to 1.5 TB of cache size
         - doesn't support RedisTimeSeries, RedisSearch and RedisBloom
-        - 50 to 120k client connections possible.
+        - 50k to 120k client connections possible.
   - We can scale up a Redis cache(e.g. from basic to standard) but we ***can't scale down***.
-  - All tiers support Azure Private Link.
+  - ***All tiers support Azure Private Link.***
   - Managing Lifetime in Redis Cache
-    - no default expiry time
-    - data exists in cache until forcibly removed
+    - ***no default expiry time***
+    - i.e. data exists in cache until forcibly removed
     - we must set TTL(Time to Live)/expiration policy e.g. 30 mins
     - Calculating cache duration
       - based on:
@@ -147,24 +149,24 @@
         - risk of outdated data
           - lower TTL should be used for dynamic data to match data change rate
   - Setting expiration time for redis cache
-    - provide TTL value in StringSet method.
+    - provide TTL value in ***StringSet*** method.
     - e.g. _cache.StringSet("myKey", "my Value", new TimeSpan(3, 0, 0)); -> setting 3 hours as expiry time
     - i.e. after 3 hours, key will be removed from cache
-  - Connecting web app to redis cache demo using StackExchange.Redis client
+  - Connecting web app to redis cache demo using ***StackExchange.Redis client***
   - Best practices for using Azure Redis Cache
     - in-memory database: so, possibility of data loss
     - always set expiry time
     - add jitter to spread database load
-      - all objects must not expire at the same time
-      - expire time should be spread across objects
       - jitter => varying expiry time
+      - i.e. all objects must not expire at the same time
+      - expire time should be spread across objects
     - avoid caching large objects(to avoid timeouts)
-      - break them down into separate smaller objects if needed and cache them individually
+      - break them down into separate smaller objects and if needed, cache them individually
     - redis must be in same region as the app
       - if app is in diff regions, we must have redis in each of the region.
-- Implementing Application Caching Patterns
+- Implementing ***Application Caching Patterns***
   - used to increase application's performance, scalability and resilience.
-  - ***Cache-aside pattern***
+  - ***Cache-aside pattern/Data cache***
     - db query is costly and copying whole db to memory is also
     - hence, we copy data into cache which is faster
     - query is first checked in cache instead of db
@@ -190,8 +192,8 @@
           - redis cache helps perform distributed transactions as a group.
   - Configuring Redis Cache for optimal size and performance
     - so that we never over-provision
-    - 12 tiers for Azure Cache for Redis
-      - select based on no. of concurrent cached objects we need. [application dependent]
+    - 12* tiers for Azure Cache for Redis?*
+      - select based on no. of concurrent cached objects we need. (application dependent)
       - size of cached objects
       - no. of cache requests to be made to the cache.
       - standard C3 tier can process 1 lakh requests per second
@@ -202,12 +204,11 @@
     - helps simulate load on redis cache instance
     - using redis cli
     - runs set of tests against your instance
-      - simulating a no. of connected clients
-      - to ensure cache is provisioned at correct scale.
-    - command
-      - Redis-benchmark -q -n 100000
-      - cannot be used directly from Portal
-      - need a VM that contains Redis CLI
+      - simulating a no. of connected clients to ensure cache is provisioned at correct scale.
+        - command
+          - ```Redis-benchmark -q -n 100000```
+          - cannot be used directly from Portal
+          - need a VM that contains Redis CLI
 - Securing Redis Cache
   - Encryption in transit
     - security of messages sent between application and cache.
@@ -222,3 +223,21 @@
       - data is backed up to Azure Storage Account
         - Encryption is enabled for this data
         - uses Microsoft managed keys by default for encryption
+- Accessing a Redis cache from a client
+  - we need:
+    - host name
+      - public internet address of cache
+      - e.g. sportsresults.redis.cache.windows.net
+    - port
+    - access key for cache
+      - acts as password for cache
+      - two keys: primary or secondary
+  - These info can be retrieved in Azure Portal
+- [redis python](redis_python.py)
+- reload and purge cache content programmatically
+  - [reload_and_purge.py](reload_and_purge.py)
+  - [reload_and_purge.ps1](reload_and_purge.ps1)
+  - [reload_and_purge.sh](reload_and_purge.sh)
+- create CDN profile using CLI:
+  - ```az cdn profile create --name "CDN_profile_name" --resource-group "rgroup"```
+  - default CDN profile created: ***Standard Akamai***

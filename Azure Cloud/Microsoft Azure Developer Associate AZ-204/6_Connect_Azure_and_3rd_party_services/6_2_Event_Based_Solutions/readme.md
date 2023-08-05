@@ -12,16 +12,16 @@
         - prompt user or device for their attention (Notification Hub)
   - Azure Event Grid
     - deals with discrete events
-    - Implements Event-based architecture(pub/sub model)
+    - Implements Event-based architecture (pub/sub model)
     - Publishers emit events(state change) and subscribers consume them
-    - supports many subscriber to one publisher
+    - supports many subscribers to one publisher
     - filter events
     - scalable up and down
     - pay for what you use
     - Register Event Grid Provider
       - [register_event_grid.sh](register_event_grid.sh)
     - Demo
-      - Portal ->  Current Subscription(e.g . Free Trial) -> Resource Providers -> Microsoft.EventGrid
+      - Portal -> Current Subscription(e.g . Free Trial) -> Resource Providers -> Microsoft.EventGrid
   - Pub/Sub Concepts
     - Event signifies something changed
     - Publisher has no expectation of what happens next(by the subscribers)
@@ -112,7 +112,7 @@
         - Scoping container
         - contains one or more event hubs
         - options applied to namespace will apply to all event hubs inside it.
-        - Throughput units: prepurchased unit of capacity
+        - Throughput units: pre-purchased unit of capacity
       - [event_hub.sh](event_hub.sh)
       - Demo
         - Portal -> Event Hubs -> Shared Access Policies
@@ -169,14 +169,14 @@
   - events meant for human consumption
   - e.g. push notifications
   - App to user messages
-  - send to multiple platforms - iOS, Android and Windows
+  - send to multiple platforms—iOS, Android and Windows
   - ANH provides abstraction over platform push notifications
   - ANH features
     - Cross-platform: different languages support including .NET etc.
       - Front-end and back-end
     - Multiple delivery formats
-      - Push to user e.g. email message
-      - Push to device
+      - Push to a user e.g. email message
+      - Push to a device
       - Localization
       - Silent push: no user notification on device(app-to-app event)
     - Have Robust Telemetry
@@ -185,7 +185,7 @@
       - send to tons of devices.
   - Components of ANH
     - Platform notification service(PNS)
-      - vendor specific e.g. Apple Push Notification services for iOS devices, Firebase for Android devices.
+      - vendor-specific e.g. Apple Push Notification services for iOS devices, Firebase for Android devices.
     - Notification Hub
       - communicates to PNS
     - Namespace

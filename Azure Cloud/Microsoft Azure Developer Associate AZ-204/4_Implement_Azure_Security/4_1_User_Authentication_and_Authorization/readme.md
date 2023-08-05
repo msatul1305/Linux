@@ -17,8 +17,12 @@
                  - User
                  - group of users
                  - A Service(called Service Principal)
+                   - [service_principal.sh](service_principal.sh)
                    - username/password
                    - works as an automated headless process running behind the scenes.
+                   - A Service Principal in Microsoft Azure is a security identity used by applications, services, or automation tools to access specific Azure resources securely. It is a type of application identity that allows non-human entities (such as applications, scripts, or CI/CD pipelines) to authenticate and interact with Azure resources without the need for a user account or password.
+                   - When you create a Service Principal, you will typically receive credentials, such as a Client ID and a Client Secret, or a certificate, which can be used to authenticate the application or script as the Service Principal and obtain an access token from Azure Active Directory (Azure AD). This access token is then used to make authorized requests to Azure resources.
+                   - Using Service Principals instead of user accounts for automated tasks enhances security, as it allows you to manage access separately from user accounts and avoid the use of long-lived credentials.
                  - Managed Identity
                    - Service principal in disguise whose Credential is managed by Microsoft
             - Role definition
@@ -208,22 +212,37 @@
   - simple and secure way for apps to authenticate when connecting to resources 
     - that support Azure Active Directory(Azure AD)(part of Microsoft Entra) Authentication.
   - types of managed identities
-    - System-assigned managed identities
-      - created as a part of Azure resource
+    - ***System-assigned*** managed identities
+      - created as a part of Azure resource, tied to configuration store
       - Shared life cycle with Azure resource that managed identity is created with
       - when parent source is deleted, managed identity is also deleted
-      - can't be shared
+        - i.e. deleted if config store is deleted.
+      - A config store can have only one system-assigned identity.
+        - i.e. it can't be shared
+      - process
+        - when app is deployed on a vm,
+        - we can assign an identity to vm that has access to key vault.
+        - for system-managed identities, account needs VM Contributor role assignment
+          - no additional Azure AD role assignments are required
       - common use cases
         - Workloads that are contained within a single Azure Resource
         - Workloads for which we need independent identities 
-    - User-assigned managed identities
-      - Created as a stand-alone Azure resource
+    - ***User-assigned*** managed identities
+      - Created as a stand-alone Azure resource assigned to config store
       - independent life cycle
       - must be explicitly deleted
       - can be shared
       - common use cases
         - workloads that run on multiple resources and can share single identity
         - workloads that need pre-authorization to a secure resource, as a part of provisioning flow.
+      - workloads that run on multiple resources and can share a single identity.
+      - A config store can have multiple user-assigned identities.
+      - process:
+        - create user-assigned managed identity using ```az identity create```
+        - assign the identity to new VM.
+        - [user_assigned_identity](user_assigned_identity.sh)
+    - For both types of managed identity,
+      - if app is running within a VM, app will have to retrieve the identity token from a special URI starting with https://169.254.169.254.
 - Secured Access Signatures(SAS) Best Practices
   - Always use HTTPS
   - Apply minimum-required privileges
@@ -233,3 +252,29 @@
     - When to use SAS
       - when workload on the application is storage heavy, app can directly share SAS with user to access data instead. 
     - when not to use SAS?
+- Private endpoints vs Managed Identities
+  - Private Endpoints for Azure App Configuration
+    - configuring the firewall to block all connections to app configuration on public internet.
+    - Increase security for VNet ensuring data doesn't escape VNet.
+    - Securely connect to app configuration store from on-premises network that connect to the VNet
+      - using VPN or ExpressRoutes with private-peering
+
+- Azure Key Vault best practices
+  - Logging
+    - enable logging and alerts
+  - Use separate key vaults
+    - one vault per application per environment
+  - control access to your vault
+    - restrict key vault data as it is sensitive and business critical
+  - backup
+    - create regular backup of vault on update/delete/create of objects within a vault.
+  - recovery
+    - turn on soft-delete and purge protection to prevent force deletion of secrets.
+- To access Azure resources using service principals, we need 2 parameters:
+  - Directory ID
+  - Application ID
+- Uses of service principals:
+  - Automated Deployments: Continuous Integration and Continuous Deployment (CI/CD) pipelines can use Service Principals to deploy and manage Azure resources automatically. 
+  - Application Authentication: Service Principals can be used as application identities to access Azure resources securely from within an application. 
+  - PowerShell or Azure CLI Scripts: Service Principals can be used in scripts to automate resource management tasks. 
+  - Azure Virtual Machines: Service Principals can be assigned to virtual machines, allowing them to access other Azure resources without needing user credentials.
