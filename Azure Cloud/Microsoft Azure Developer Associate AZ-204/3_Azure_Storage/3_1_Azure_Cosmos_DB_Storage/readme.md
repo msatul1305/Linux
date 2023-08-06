@@ -97,7 +97,7 @@
     - Set appropriate consistency level for operations
       - ***Data Consistency levels***
         - Distributed databases that rely on replication for high availability, low latency or both must make fundamental tradeoff between read consistency, availability, latency and throughput. 
-        - i.e. when we write a data to db, what value we get when we immediately do a read operation
+        - i.e. when we write data to db, what value we get when we immediately do a read operation
         - Types:
           - ***Eventual***: Lower latency, Higher throughput, higher availability
             - but low consistency i.e. if data is in America, it may take some time to be replicated to Asia
@@ -106,12 +106,12 @@
           - ***Consistent prefix***:
             - updates are returned in order
           - ***Session***:
-            - Guarantees that a client session will read its own writes
+            - Guarantees that a client session will read its own writings.
           - ***Bounded Staleness***
-            - guarantees that a read has max. lag(either number of versions or time elapsed) 
+            - guarantees that a read has max. lag (either number of versions or time elapsed) 
               - to get most recent value(fairly recent version)
           - ***Strong***: Higher latency, Lower throughput, Lower availability
-            - Guarantees that we get most recent version of data
+            - Guarantees that we get the most recent version of data
       - Consistency levels for SQL APIs
         - Account default
         - Request-specific level
