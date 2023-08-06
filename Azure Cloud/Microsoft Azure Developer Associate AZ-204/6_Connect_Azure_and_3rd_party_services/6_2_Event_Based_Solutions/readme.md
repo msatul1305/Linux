@@ -65,7 +65,7 @@
       - message will have same schema as Azure topics
       - can send custom event data/info with a message
   - Event Handlers
-    - Azure Functions
+    - Azure Functions(Serverless code)
       - can receive events
       - using specific Event Grid trigger function
     - Event Hubs
@@ -77,7 +77,8 @@
     - send publisher events
     - add subscriber info with filtering
   - Every event has same metadata schema. The data property contains event-specific info. 
-- Implement Azure Event Hubs
+- Implement ***Azure Event Hubs***
+  - [Event Hub](event_hubs.png) 
   - Demo
     - Portal -> Event grid system topics -> Add -> Topic type
     - Portal -> Event grid system topic -> Add Event Subscription -> Event Grid Schema
@@ -86,8 +87,16 @@
     - Invoke and consume with .NET SDK
       - Portal -> Event grid topic -> Topic end point and access keys.
   - Implement Azure Event Hubs Solutions
-    - helps implement solutions for large scale big data applications where events arrive at a time order fashion/manner using Azure event hubs
+    - used for high-speed, high-volume event delivery  
+    - helps implement solutions for large scale big data applications 
+      - where events arrive at a time order fashion/manner using Azure event hubs
     - Characteristics of Azure Event Hubs
+      - Fully managed PaaS
+      - provides Real-time and batch processing
+        - using partitioned consumer model
+        - enabling multiple apps to process stream concurrently
+        - speed of processing can be controlled
+      - have a kafka endpoint to compute 
       - Event hub is an event ingestion and processing service and is scalable.
       - Is a Scalable event processing service
       - Useful for Big data scenarios
@@ -96,7 +105,11 @@
         - In case of Event grid, sender and receiver are dependent on each other.
       - It has integration with Azure and non-Azure services
       - It can capture events to Azure blob storage or data lake
-      - Example Scenarios for Event Hubs use cases
+      - It is scalable
+        - using Auto-inflate
+          - scale the number of throughput units
+      - has rich ecosystem
+        - Event Hubs for Apache Kafka ecosystems enables Apache Kafka clients and applications talk to Event Hubs      - Example Scenarios for Event Hubs use cases
         - Big data
           - Telemetry data: get data from an array of sensors to detect an earthquake
           - Data archival
@@ -135,7 +148,8 @@
         - Send data
           - Single or batch events
             - packet size of communication is limited
-            - i.e. irrespective of we send one 1 mb data or a million events adding up to 1 mb cumulative.
+            - i.e. irrespective of whether we send one event of 1 mb data or 
+              - a million events adding up to 1 mb cumulative.
           - May specify a partition
       - Read Events from Event Hub
         - Install .NET SDK

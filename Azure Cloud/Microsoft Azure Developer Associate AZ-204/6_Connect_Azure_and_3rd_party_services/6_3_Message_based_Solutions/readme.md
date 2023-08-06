@@ -2,14 +2,33 @@
 - [Azure Service Bus](Azure_Service_Bus.md)
 - Selecting a Messaging solution
     - Queue vs Service bus
+      - Queue = Producer-Consumer(one-to-one)
+      - Service Bus = Publisher-Subscriber(one-to-many)(broadcast)
     - use Queue Storage if
         - storage needs > 80 GB
-        - Logs needed for all transactions executed against the queue
-        - need to track progress of message processing
+        - Server side logs needed for all transactions executed against the queue
+        - app need to track progress of message processing
+          - i.e. if worker processing a queue crashes, another worker can continue where it left off.
     - use Service bus if:
-        - need support for receiving messages without polling(with AMQP 1.0)
+        - need support for receiving messages without polling (with AMQP 1.0)
+          - Polling: process of checking for new data or updates periodically. 
+            - It involves continuously sending requests or queries to a data source or server at regular intervals 
+            - to inquire if there are any updates or changes.
         - guarantee message ordering(FIFO)
         - detect duplicate messages
         - up to 256 KB size messages
-        - support topic based notifications(one to many)
+        - support topic-based notifications(one to many)
         - support publishing and consuming messages in batch
+- Events vs Messaging Services
+  - Event Grid
+    - Purpose: reactive programming
+    - Type: Event distribution(discrete)
+    - When to use: React to status changes
+  - Event Hubs
+      - Purpose: Big data pipeline
+      - Type: Event streaming(series)
+      - When to use: Telemetry and distributed data streaming
+  - Service Bus
+      - Purpose: High-value enterprise messaging
+      - Type: Message
+      - When to use: Order processing and financial transactions

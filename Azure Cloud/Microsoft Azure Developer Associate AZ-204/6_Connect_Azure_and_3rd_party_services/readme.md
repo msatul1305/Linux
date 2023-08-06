@@ -5,7 +5,7 @@
       - publisher does not know or care how message is handled
         - e.g. file upload
           - system says we have new file but don't care about its usage by other system
-      - follows pub/sub model
+      - follows a pub/sub model
     - Messages
       - app data from a source system to be consumed
         - e.g. new purchase order

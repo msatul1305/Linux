@@ -17,21 +17,25 @@
     - Interaction and capabilities of Azure Queue services
       - requires an Azure Storage Account(general-purpose v2)
       - Queues created within a single storage account
-      - supports message up to 64 KiB(kibi bytes - 1024 bytes) in size
+      - supports message up to 64 KiB(1 kibi Byte = 1024 bytes) in size
         - configurable for days, months or don't expire.
       - messages exist within single queue
-      - number of messages limited by size of storage account
+      - number of messages limited by size of the storage account
+        - single queue cannot have more than 500 TiB(Tibi Bytes)
+      - size of the message is also limited
+        - Single message cannot exceed 64 KiB(Kibi Bytes)
       - supports a configurable TTL per message(7 days default)
       - supports data redundancy: LRS, ZRS, GRS, GZRS, RA-GRS, RA-GZRS
     - Queue URL Structure
       - https://storage_account_name.queue.core.windows.net/queue_name
+    - [Queue_ClI](queue.sh)
     - Queue security
       - data in queues encrypted by default
       - azure storage stored access policies can work with queues
       - interaction with queue data done via HTTP or HTTPS
       - supports following authorization approaches:
         - Shared key
-        - Shared access signature(SAS)
+        - Shared access signature (SAS)
         - Azure AD
     - Visibility Timeout(configurable)
       - messages sent to consumers are not immediately deleted from Queue until consumer says I am done with it.
@@ -44,5 +48,10 @@
       - A storage account can support upto 20k messages per second(1 KiB message)
       - A single queue can support 2k messages per second(1 KiB message)
   - Demo
-    - Portal -> Storage account -> Queues -> + Queue(name) -> + add message with TTL.
-
+    - Portal -> Storage account -> Queues -> + Queue(name) -> + add a message with TTL.
+- Queue based load leveling
+  - load balancing with queues
+  - technique used to distribute processing tasks evenly across multiple workers or processing nodes in a distributed system
+  - goal is to optimize resource utilization, improve system performance, and prevent overload on individual components.
+  - As worker nodes retrieve tasks from the queue, they balance the workload across all available workers. 
+    - If there are more tasks in the queue than there are workers, the queue will keep the extra tasks in the order of submission until workers become available to process them.

@@ -7,28 +7,28 @@
     - Azure Service Bus -> Namespace -> Queue: Producer and Consumer 
     - Azure Service Bus -> Namespace -> Topic: Publisher and multiple subscribers.
   - Features of Azure Service Bus
-    - Supports HTTP/HTTPS and AMQP(Advanced Message Queuing Protocol) protocols
+    - Supports HTTP/HTTPS and AMQP (Advanced Message Queuing Protocol) protocols
     - Includes messages for both queues and topics
     - Supports 3 different performance tiers:
-      - Basic
+      - ***Basic***
         - supports only queue(not topics)
-      - Standard
+      - ***Standard***
         - recommended option
         - pay as you go
-        - throughput and latency is variable
+        - throughput and latency are variable
         - utilizes shared resources
         - provides automatic scaling
         - supports message up to 256 KB
         - does not support geo-disaster recovery or availability zones.
-      - Premium
-        - prod
-        - redundancy 
-        - disaster recovery
+      - ***Premium***
+        - for prod envs
+        - supports redundancy 
+        - provides disaster recovery
         - Fixed pricing based on messaging units 
         - Fixed throughput based on messaging units
-        - utilizes dedicated resources
+        - utilises dedicated resources
         - requires configuration of scaling rules
-        - supports message up to 1 MB
+        - supports message size up to 1 MB
         - does support geo-disaster recovery or availability zones.
     - Supports advanced configurability:
       - Message Ordering
@@ -50,7 +50,7 @@
       - but must be enabled first
   - Scaling Azure Service Bus
     - standard tier namespaces support partitioning of queues and topics
-    - partitioning is not supported in premium tier namespaces
+    - partitioning is ***not supported in premium tier namespaces***
     - partitioning enables separate messaging stores and brokers for a single entity
     - partitioning queues and topics can use a partition key to determine the partition.
     - without a partition key, round-robin algo is used by Azure.
@@ -60,7 +60,11 @@
 - Utilizing Azure Service Bus Topics
   - [Topics](topic.png)
     - multiple subscribers
-    - consumer creates a subscription to topic
+    - consumers subscribe to a topic based on the below filters
+    - sender publishes messages to the topic
+    - Asynchronously, receivers get their own copy of the message.
+    - subscriptions are independent
+      - i.e. it allows for many independent "taps" into a message stream
     - subscription = dedicated queue for a subscriber with configuration options
     - Filters used to get messages based on condition:
       - Boolean filters
@@ -72,3 +76,21 @@
     - [topics_cli](topics_cli.sh)
 - Demo(topics)
   - Portal -> service bus namespace -> topics -> + Topic
+- Premium vs Standard Tiers
+  - Premium
+    - High throughput
+    - Predictable performance
+    - fixed pricing
+    - ability to scale workload up and down
+    - messages up to 1 MB
+  - Standard
+    - Variable throughput
+    - variable latency
+    - pay as you go(variable pricing)
+    - no scaling
+    - messages up to 256 KB
+- Queue service components:
+  - URL format
+  - Storage
+  - Queue
+  - Message

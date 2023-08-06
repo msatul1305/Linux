@@ -8,11 +8,12 @@
   - blob storage -> Storage account
   - SAS (Secured Access Signatures) -> Storage account
   - API -> API management
+  - eventgrid -> ?
   - eventhubs -> namespace
-  - queue -> storage
+  - NotificationHub -> namespace
+  - queue -> storage (account)
   - servicebus -> queue
   - topic -> servicebus
-
 - Properties of blobs
   - Blob Containers: Etag(Entity), Last Modified
   - Blobs: Etag, LastModified, Content-Type, Content-Length, x-ms-blob-type
