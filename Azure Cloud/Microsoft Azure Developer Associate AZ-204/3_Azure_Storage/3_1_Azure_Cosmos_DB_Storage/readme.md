@@ -109,7 +109,7 @@
             - Guarantees that a client session will read its own writings.
           - ***Bounded Staleness***
             - guarantees that a read has max. lag (either number of versions or time elapsed) 
-              - to get most recent value(fairly recent version)
+              - to get most recent value(fairly recen;+t version)
           - ***Strong***: Higher latency, Lower throughput, Lower availability
             - Guarantees that we get the most recent version of data
       - Consistency levels for SQL APIs
