@@ -87,56 +87,60 @@ class Llist:
 
 
 def mergeTwoLists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-    new_lis = ListNode()
+    new_lis = ListNode(-1)
     head = new_lis
-    while list1.next is not None and list2.next is not None:
-        print(list1.val, list2.val)
+    while list1 and list2:
+        # print(list1.val, list2.val)
         if list1.val <= list2.val:
             new_lis.val = list1.val
             list1 = list1.next
-            new_lis.next = ListNode()
         elif list1.val > list2.val:
             new_lis.val = list2.val
             list2 = list2.next
-            new_lis.next = None
+        new_lis.next = ListNode(-1)
         new_lis = new_lis.next
-        head.next = new_lis
 
     while list1:
         new_lis.val = list1.val
         list1 = list1.next
-        new_lis.next = ListNode()
+        new_lis.next = ListNode(-1)
         new_lis = new_lis.next
     while list2:
         new_lis.val = list2.val
         list2 = list2.next
-        new_lis.next = ListNode()
+        new_lis.next = ListNode(-1)
         new_lis = new_lis.next
-    print(new_lis)
-    return new_lis
+    # print(new_lis)
+    curr = head
+    print(f"curr0: {curr}")
+    while curr.next.next:
+        print(f"curr1: {curr}")
+        curr = curr.next
+    print(f"curr2: {curr}")
+    curr.next = None
+    return head
 
-
-x1: ListNode = ListNode()
-x2 = ListNode()
+x1: ListNode = ListNode(-1)
+x2 = ListNode(-1)
 temp = None
 x1.val = 1
-x1.next = ListNode()
+x1.next = ListNode(-1)
 temp = x1.next
 # x1 = x1.next
 temp.val = 2
 # x1.next = temp
-temp.next = ListNode()
+temp.next = ListNode(-1)
 # x1 = x1.next
 temp.next.val = 4
 
 temp = None
 x2.val = 1
-x2.next = ListNode()
+x2.next = ListNode(-1)
 temp = x2.next
 # x1 = x1.next
 temp.val = 3
 # x1.next = temp
-temp.next = ListNode()
+temp.next = ListNode(-1)
 # x1 = x1.next
 temp.next.val = 4
 # print(x1)
