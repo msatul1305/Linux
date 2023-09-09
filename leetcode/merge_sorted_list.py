@@ -15,7 +15,7 @@ def merge_sort(a, m, b, n):
             k = k - 1
             i = i - 1
     while j>=0:
-        a[k] = b[j];
+        a[k] = b[j]
         j = j  - 1
         k = k - 1
 
