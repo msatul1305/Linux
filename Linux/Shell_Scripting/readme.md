@@ -1,0 +1,21 @@
+- [hello_world.sh](hello_world.sh)
+- The first line of the script is a special construct, called a ***shebang***, 
+  - given to the system indicating what program is to be used to interpret the script.
+- The second line is a comment. Bash ignores everything that appears after a "#" symbol. 
+- give the shell permission to execute our script
+  - chmod 755 hello_world
+- run
+  - ./hello_world.sh
+- the shell maintains a list of directories where executable files (programs) are kept, 
+- and only searches the directories on that list.
+- This list of directories is called our path
+  - echo $PATH
+- add directories to the path
+  - export PATH=$PATH:directory
+- A better way would be to edit our .bash_profile file to include the above command. 
+  - That way, it would be done automatically every time we log in.
+- each user has a specific directory for the programs they personally use. 
+  - This directory is called bin
+- If we move or copy our script into our new bin directory we'll be all set. Now we just have to type:
+  - hello_world
+  - and our script will run.

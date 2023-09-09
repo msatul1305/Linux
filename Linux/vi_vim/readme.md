@@ -1,0 +1,49 @@
+- "Vi" and "Vim" share many common commands because 
+  - Vim is an extended and improved version of Vi. 
+  - However, Vim adds numerous enhancements and features to the basic commands available in Vi. 
+  - Here is a list of common Vi/Vim commands and notes any differences between the two:
+- Navigation Commands:
+  - h: Move left.
+  - j: Move down.
+  - k: Move up.
+  - l: Move right.
+  - w: Move to the beginning of the next word.
+  - b: Move to the beginning of the previous word.
+  - e: Move to the end of the current word.
+  - 0: Move to the beginning of the line.
+  - $: Move to the end of the line.
+  - G: Move to the end of the file.
+  - gg: Move to the beginning of the file.
+  - <line_number>G: Move to a specific line number.
+- Editing Commands:
+  - i: Enter Insert mode before the cursor.
+  - I: Enter Insert mode at the beginning of the line. 
+  - a: Enter Insert mode after the cursor. 
+  - A: Enter Insert mode at the end of the line. 
+  - o: Open a new line below the current line and enter Insert mode. 
+  - O: Open a new line above the current line and enter Insert mode. 
+  - r: Replace the character under the cursor. 
+  - R: Enter Replace mode. 
+  - x: Delete the character under the cursor. 
+  - X: Delete the character to the left of the cursor. 
+  - dd: Delete the current line. 
+  - D: Delete from the cursor position to the end of the line. 
+  - yy: Yank (copy) the current line. 
+  - Y: Yank from the cursor position to the end of the line. 
+  - p: Paste the most recently yanked or deleted text after the cursor. 
+  - P: Paste the most recently yanked or deleted text before the cursor.
+- Exiting and Saving Commands:
+  - :w: Write (save) the file.
+  - :q: Quit.
+  - :q!: Quit without saving changes.
+  - :wq or ZZ: Write and quit.
+- Search and Replace Commands:
+  - /pattern: Search forward for "pattern". 
+  - ?pattern: Search backward for "pattern".
+  - :s/old/new: Replace "old" with "new" on the current line.
+  - :%s/old/new/g: Replace "old" with "new" globally in the file.
+- Other Common Commands:
+  - u: Undo the last change. 
+  - Ctrl-R: Redo (opposite of undo, same in Vi and Vim).
+  - :e filename: Edit a different file.
+  - :n: Edit the next file in a list (Vim-specific).

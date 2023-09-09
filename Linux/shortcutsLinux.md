@@ -1,0 +1,17 @@
+- Ubuntu general
+  - ctrl+alt+T: open terminal 
+  - shift+PrntScreen: take snip/ ScreenShot of specific part of screen.
+- Terminal
+  - ctrl+shift+c: copy 
+  - ctrl+shift+v: Paste
+- LibreOffice
+  - CTRL + ]: increase font size 
+  - CTRL + [: Decrease font size
+  - f5: slideshow from beginning
+  - shift+f5: Slideshow from current slide 
+- Shotwell
+  - ctrl+o: crop
+  - ctrl+shift+E: export 
+- Okular
+  - F6: open annotations (highlight and other options)
+
