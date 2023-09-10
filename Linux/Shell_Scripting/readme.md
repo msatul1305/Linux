@@ -19,3 +19,14 @@
 - If we move or copy our script into our new bin directory we'll be all set. Now we just have to type:
   - hello_world
   - and our script will run.
+- ENV variables
+  - startup -> env var for all users -> env var personal
+  - startup files
+    - Login shells
+      - /etc/profile	A global configuration script that applies to all users.
+      - ~/.bash_profile	A user's personal startup file. Can be used to extend or override settings in the global configuration script.
+      - ~/.bash_login	If ~/.bash_profile is not found, bash attempts to read this script.
+      - ~/.profile	If neither ~/.bash_profile nor ~/.bash_login is found, bash attempts to read this file. This is the default in Debian-based distributions, such as Ubuntu.
+      - Non-login shell
+        - /etc/bash.bashrc	A global configuration script that applies to all users.
+        - ~/.bashrc	A user's personal startup file. Can be used to extend or override settings in the global configuration script.

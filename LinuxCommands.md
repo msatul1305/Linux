@@ -167,3 +167,6 @@ using graphics.h library to run computer graphics programs
     - which nvcc
     - watch nvidia-smi
     - nvcc "file_name.cu" -o "output_file_name"
+94. cat /etc/group: display all the groups associated with the system
+95. pstree: display all processes in a tree format
+96. ssh-copy-id username@192.168.1.23: Set up passwordless SSH access to a remote host using an available key pair
