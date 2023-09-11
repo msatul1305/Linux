@@ -30,3 +30,18 @@
       - Non-login shell
         - /etc/bash.bashrc	A global configuration script that applies to all users.
         - ~/.bashrc	A user's personal startup file. Can be used to extend or override settings in the global configuration script.
+- update .bashrc
+  - vi .bashrc in home of current user e.g. /home/atul
+  - edit file
+  - quit
+  - source .bashrc to get edited updates in current terminal
+- Some Edits for .bashrc
+  - alias today='date +"%A, %B %-d, %Y"'
+  - alias l='ls -l'
+- Shell Functions
+    ```
+    today() {
+      echo -n "Today's date is: "
+      date +"%A, %B %-d, %Y"
+    }```
+- 

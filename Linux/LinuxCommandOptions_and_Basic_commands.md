@@ -11,10 +11,19 @@
     - chmod u+rwx,go-w file.txt
   - -b:
   - -c:
+    - e.g. ls -CF
+    - -c: multi-column output without sorting, arranges the file and directory names in columns to fit the terminal width, making the output more readable. It does not sort the entries alphabetically.
   - -d:
   - -e:
   - -f or --force: forcefully 
     - rm -f: remove without confirmation
+    - e.g. ls -CF
+      - -F: This option appends a character to the end of each entry to indicate its type:
+        - / for directories
+        - * for executable files 
+        - @ for symbolic links 
+        - | for FIFOs (named pipes)
+        - = for sockets
   - -g: group
     - chmod u+rwx,go-w file.txt
   - -h: human-readable format
@@ -232,4 +241,3 @@
             --full-time
         - echo -e "Inserting several blank lines\n\n\n"
         - echo -e "\aMy computer went \"beep\"."
-
