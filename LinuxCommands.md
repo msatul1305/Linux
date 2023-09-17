@@ -1,4 +1,10 @@
 1. df - Th: No of Partitions/My Computer of Linux
+   - df = Disk Free/Disk Full
+   - drive space
+   - -T: type of file
+   - -h: human readable
+   - commonly used to check the overall disk space usage on a system
+   - and to monitor the available space on different partitions or file systems.
 2. cd - change directory, md - make directory
 3. ls - list (ls -a: all files(show hidden files))
 4. pwd - present working directory
@@ -8,7 +14,14 @@
 8. mkdir: make directory
 9. su -i: change to root user
 10. su - "username": change current user
-11. useradd 
+11. sudo adduser mynewuser:
+    - create a new user 
+    - prompted to enter the new user's password and other information, such as their full name and additional details.
+    - new user account will be created along with /home directory
+    - To grant administrative privileges (sudo access) to the new user, add them to the sudo group.
+      - sudo usermod -aG sudo newusername
+    - switch to the new user account
+      - su - newusername
 12. ctrl+ d/logout/exit: logout
 13. DON'T USE: rm -rvf /
 14. touch: create a new file if the file is non-existing or update the timestamp if the file already exists
@@ -52,6 +65,9 @@
 39. du: disk utilisation (du -sh "foldername" - To show the total disk space usage of a specific directory without displaying subdirectory details)
     - -h: human readable form
     - -> To get list of all users and their storage usage: du -s | sort -nr
+      - -r: reversed
+      - -n: numeric sort
+    - Typical Usage: du is commonly used to identify large files or directories that are consuming a significant amount of disk space.
 40. /proc/cpuinfo (or) lscpu: get no of processors /cores
 41. yum -y update: update  
 42. kill "PID": kill a process using its pid
@@ -170,3 +186,19 @@ using graphics.h library to run computer graphics programs
 94. cat /etc/group: display all the groups associated with the system
 95. pstree: display all processes in a tree format
 96. ssh-copy-id username@192.168.1.23: Set up passwordless SSH access to a remote host using an available key pair
+97. uptime:  facts about the system, 
+    - including the length of time the system has been "up" (running) since its last re-boot,
+    - the number of users and recent system load. 
+    - o/p: 14:38:32 up  1:13,  0 users,  load average: 2.54, 1.12, 0.65
+98. date: Sat Sep 16 14:37:38 IST 2023
+99. time: used to measure the execution time of a command or a shell script
+    - It provides information about how long a process takes to run,
+    - including the real time, user CPU time, and system CPU time.
+    real    0m0.000s
+    user    0m0.000s
+    sys     0m0.000s
+    - e.g. time ls
+      - time ./scrip.sh
+100. today: Saturday, September 16, 2023
+101. sudo du -s /home/* | sort -nr: space each user is using in their home dir
+102. 
