@@ -239,6 +239,21 @@
       - The until command works exactly the same way, except the block of code is repeated as long as the specified command's exit status is false
       - [until.sh](until.sh)
       - [menu.sh](menu.sh)
+    - for
+      ```
+      for variable in words; do
+      commands
+      done
+      ```
+      ```
+      for i in word1 word2 word3; do
+      echo "$i"
+      done
+      ```
+    - [word_count_in_file.sh](word_count_in_file.sh)
+    - [check_file.sh](check_file.sh)
+    - compare the files in two directories and lists which files in the first directory are missing from the second.
+      - [file_comp.sh](file_comp.sh)
 - Arithmetic
   - [Arithmetic.sh](Arithmetic.sh)
 - Positional Parameters
@@ -254,5 +269,22 @@
   - Each time we invoke shift, it "shifts" all the positional parameters down by one. 
     - $2 becomes $1, $3 becomes $2, $4 becomes $3, and so on.
   - [shift.sh](shift.sh)
-- Getting an Option's Argument
-  - 
+  - [home_space.sh](home_space.sh)
+    - find 
+      - used to search for files or directories that meet specific criteria
+- Errors and Signals and Traps
+  - Checking the Exit Status
+    ```
+    [me@linuxbox]$  true; echo $?
+     0
+     [me@linuxbox]$ false; echo $?
+     1
+    ```
+    - $? contains the exit status of the last command executed. 
+      ```
+      if [ $# -gt 0 ]; then
+      echo "Your command line contains $# arguments"
+      ```
+      - $# contains command line arguments
+    - [check_exit_status.sh](check_exit_status.sh)
+    - 

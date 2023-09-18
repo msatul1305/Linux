@@ -34,6 +34,16 @@
     - ps -aux
 21. ifup ens33 and ifdown ens33: to connect/disconnect system to network
 22. wc: word count
+    - wc file.txt
+      - output: 10  50 300 file.txt
+        - The first number represents the line count (10 lines).
+        - The second number represents the word count (50 words).
+        - The third number represents the character count (300 characters).
+      - wc -l file.txt
+        - Count only the lines in a file:
+      - echo "This is a sample text." | wc
+        - Count lines, words, and characters from standard input (typing directly into the terminal)
+        - o/p: 1   5  23
 23. free /free -h: get ram status
 24. ssh vssut@10.208.34.9
 25. command | ps wc -l: count no of things in a list	
@@ -121,6 +131,7 @@ using graphics.h library to run computer graphics programs
 74. Open VS code in current folder: code .
 75. uname: know the UNIX machine name
     - uname -a: all info about unix machine
+    - o/p: Linux MSI 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
 76. create soft link between 2 files (-s => soft link): ln -s "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
 77. check all soft-links (ll => long list): ll -i
 78. Update soft-link: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
