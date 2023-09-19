@@ -287,4 +287,32 @@
       ```
       - $# contains command line arguments
     - [check_exit_status.sh](check_exit_status.sh)
-    - 
+    - [error_exit](error_exit.sh)
+      - 1>&2
+        - used to redirect standard output (stdout, file descriptor 1) to standard error (stderr, file descriptor 2). 
+        - '1': Represents the file descriptor for standard output (stdout).
+        - >: Is the redirection operator, which is used to change where a file descriptor's output goes. 
+        - '2': Represents the file descriptor for standard error (stderr).
+    - 'AND' and 'OR' Lists
+      - command1 && command2
+        - command2 is executed if, and only if, command1 returns an ***exit status of zero***.
+        ```
+          [me@linuxbox]$ true && echo "echo executed"
+          echo executed
+          [me@linuxbox]$ false && echo "echo executed"
+          [me@linuxbox]$
+        ```
+      - command1 || command2
+        - command2 is executed if, and only if, command1 returns a ***non-zero exit status.***
+      ```
+      [me@linuxbox]$ true || echo "echo executed"
+      [me@linuxbox]$ false || echo "echo executed"
+      echo executed
+      ```
+      - [error_handling](error_handling.sh)
+        - parameter expansion: variable name surrounded with curly braces (as with ${PROGNAME}) to separate it from the surrounding text.
+        - ${1:-"Unknown Error"} means that if parameter 1 ($1) is undefined, substitute the string "Unknown Error" in its place.
+    - Signals
+      - [signals.sh](signals.sh)
+      - [signals.md](../signals.md)
+      - 
