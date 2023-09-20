@@ -137,7 +137,10 @@ using graphics.h library to run computer graphics programs
 78. Update soft-link: ln -nfs "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
     - eg. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
 79. id: gives the user and group names of current user(UID or group id) in the server.
-80. file "filename.ext": to know the type of content in a file e.g. hello.cpp: ASCII text
+80. file "filename.ext": to know the type of content in a file 
+    - e.g. file hello.cpp: ASCII text
+      - file pic.jpg
+        - picture.jpg: JPEG image data, JFIF standard 1.01
 81. get ip from host: hostname -i
 82. get hostname from ip: nslookup "ip"
 83. Steps to create a permanent Bash alias:
@@ -212,4 +215,5 @@ using graphics.h library to run computer graphics programs
       - time ./scrip.sh
 100. today: Saturday, September 16, 2023
 101. sudo du -s /home/* | sort -nr: space each user is using in their home dir
-102. 
+102. cal: open calendar
+103. 

@@ -9,11 +9,15 @@
   - -a or --all: all
     - ls -a: show hidden files
     - chmod u+rwx,go-w file.txt
-  - -b:
+  - -A or --almost-all: 
+    - ls -A
+      - Like the -a option above except it does not list . (current directory) and .. (parent directory).
+  - -b: 
   - -c:
     - e.g. ls -CF
     - -c: multi-column output without sorting, arranges the file and directory names in columns to fit the terminal width, making the output more readable. It does not sort the entries alphabetically.
-  - -d:
+  - -d or --directory:
+    - ls -ld
   - -e:
   - -f or --force: forcefully 
     - rm -f: remove without confirmation
@@ -24,9 +28,13 @@
         - @ for symbolic links 
         - | for FIFOs (named pipes)
         - = for sockets
+  - -F or --classify: 
+    - ls -F
+      - append an indicator character to the end of each listed name. e.g. forward slash (/) if the name is a directory
   - -g: group
     - chmod u+rwx,go-w file.txt
-  - -h: human-readable format
+  - -h or --human-readable: human-readable format
+    - ll -h
   - -i or --interactive: prompt before executing
     - cp -i or mv -i: prompt before overwriting files
     - grep -i or grep --ignore-case: Ignore the case while searching
@@ -44,11 +52,14 @@
     - mkdir -p /path/to/new/dir: create parent directories if they don't exist
     - rmdir -p /path/to/empty/dir: remove parent dir if they become empty
   - -q:
-  - -r or -R or --recursive: recursive
+  - -r or -R or --recursive or --reverse: recursive
     - cp -r source_dir dest_dir
     - rm -r or rm -R
-  - -s:
-  - -t:
+    - ls -r
+  - -S(size): sort result by file size
+    - ls -S
+  - -t(time): sort by modification time
+    - ls -lt
   - -u: user  or update
     - chmod u+rwx,go-w file.txt (as user)
     - cp -u *.html destination (as update)
