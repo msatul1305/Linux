@@ -1,5 +1,8 @@
+- written in 1976 by Bill Joy, a University of California at Berkley 
+- student who later went on to co-found Sun Microsystems.
+- vi derives its name from the word “visual,” because it was intended to allow editing on a video terminal with a moving cursor.
 - "Vi" and "Vim" share many common commands because 
-  - Vim is an extended and improved version of Vi. 
+  - Vim is an extended and improved version of Vi written by Bram Moolenaar.
   - However, Vim adds numerous enhancements and features to the basic commands available in Vi. 
   - Here is a list of common Vi/Vim commands and notes any differences between the two:
 - Navigation Commands:
@@ -47,3 +50,30 @@
   - Ctrl-R: Redo (opposite of undo, same in Vi and Vim).
   - :e filename: Edit a different file.
   - :n: Edit the next file in a list (Vim-specific).
+- deleting text
+  - x The current character
+  - 3x The current character and the next two characters
+  - dd The current line
+  - 5dd The current line and the next four lines
+  - dW From the current cursor position to the beginning of the next word
+  - d$ From the current cursor location to the end of the current line
+  - d0 From the current cursor location to the beginning of the line
+  - d^ From the current cursor location to the first nonwhitespace character in the line
+  - dG From the current line to the end of the file
+  - d20G From the current line to the twentieth line of the file
+- Global Search-and-Replace
+  - : The colon character starts an ex command.
+  - % This specifies the range of lines for the operation. % is a shortcut meaning from the first line to the last line. Alternately,
+    - the range could have been specified 1,5 (since our file is five 
+    - lines long) or 1,$, which means “from line 1 to the last line in
+    - the file.” If the range of lines is omitted, the operation is performed only on the current line.
+  - s This specifies the operation. In this case, it’s substitution(search-and-replace).
+  - /Line/line/ This specifies the search pattern and the replacement text.
+  - g This means “global” in the sense that the search-and-replace is performed on every instance of the search string in the line. If 
+    - omitted, only the first instance of the search string on each line is replaced.
+- Switching Between Files
+  - To switch from one file to the next, use this ex command:
+    - :bn
+  - To move back to the previous file use the following:
+    - :bp
+  - 

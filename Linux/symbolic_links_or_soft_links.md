@@ -1,0 +1,38 @@
+- soft links
+  - special type of file that contains a text pointer to the referenced file or directory.
+  - same as a Windows shortcut
+  - if we write something to the symbolic link, the referenced file is written to.
+  - when we delete a symbolic link, only the link is deleted, not the file itself.
+  - If the file is deleted before the symbolic link, the link will continue to exist but will point to nothing.
+    - the link is said to be broken
+  - e.g. lrwxrwxrwx 1 root root 11 2007-08-11 07:34 libc.so.6 -> libc-2.6.so
+    - first letter of the listing is “l”
+    - called a symbolic link (also known as a soft link or symlink)
+    - file referenced by multiple names
+  - Creating a soft link 
+    - ln -s [target] [link_name]
+    - e.g. ln -s myfile.txt mylink
+      - lrwxrwxrwx  1 atul atul     10 Sep 23 12:56 mylink -> myfile.txt
+    - ln -nfs [target] [link_name]
+      - -n: no dereference
+       - used when you want to create a symbolic link to a directory but don't want the link to behave as if it's pointing to the contents of the directory.
+         - e.g. ln -nfs /path/to/mydir mylink
+      - -f: "force."
+      - -s: symbolic link/soft link
+      - create a symbolic link to a directory itself, rather than the directory's contents.
+- hard links
+  - allow files to have multiple names
+  - When we create a hard link, we create an additional directory entry for a file
+  - e.g. ```ln source_file link_name```
+  - creates multiple directory entries that point to the same underlying data blocks on the storage device. 
+  - Changes made to the source file or the hard link will affect both since they share the same data.
+  - limitations:
+    - A hard link cannot reference a file outside its own file system. 
+    - i.e. a link cannot reference a file that is not on the same disk partition as the link itself.
+    - A hard link may not reference a directory.
+  - A hard link is indistinguishable from the file itself. 
+  - Unlike a symbolic link, when we list a directory containing a hard link,
+  - we will see no special indication of the link.
+  - When a hard link is deleted, the link is removed but the contents of the file itself continue to exist 
+  - (i.e. its space is not deallocated) until all links to the file are deleted.
+  - 

@@ -1,0 +1,36 @@
+- Finding a Package in a Repository
+  - Debian 
+    - apt-get update 
+    - apt-cache search search_string 
+  - Red Hat 
+    - yum search search_string
+- Installing a Package from a Repository
+  - Debian 
+    - apt-get update 
+    - apt-get install package_name 
+  - Red Hat 
+    - yum install package_name
+- Installing a Package from a Package File
+  - Debian ```dpkg -i package_file```
+  - Red Hat ```rpm -i package_file```
+- Removing a Package 
+  - Debian apt-get remove package_name 
+  - Red Hat yum erase package_name
+- Updating Packages from a Repository
+  - Debian apt-get update; apt-get upgrade 
+  - Red Hat yum update
+- Upgrading a Package from a Package File
+  - Debian dpkg -i package_file
+  - Red Hat rpm -U package_file
+- Listing Installed Packages
+  - Debian dpkg -l
+  - Red Hat rpm -qa
+- Determining Whether a Package is Installed
+  - Debian dpkg -s package_name
+  - Red Hat rpm -q package_name
+- Displaying Information About an Installed Package
+  - Debian apt-cache show package_name
+  - Red Hat yum info package_name
+- Finding Which Package Installed a File
+  - Debian dpkg -S file_name
+  - Red Hat rpm -qf file_name

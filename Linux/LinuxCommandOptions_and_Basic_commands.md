@@ -13,13 +13,16 @@
     - ls -A
       - Like the -a option above except it does not list . (current directory) and .. (parent directory).
   - -b: 
-  - -c:
+  - -c(count:
+    - grep -c pattern file.txt
     - e.g. ls -CF
-    - -c: multi-column output without sorting, arranges the file and directory names in columns to fit the terminal width, making the output more readable. It does not sort the entries alphabetically.
+      - -c: multi-column output without sorting, arranges the file and directory names in columns to fit the terminal width, making the output more readable. It does not sort the entries alphabetically.
   - -d or --directory:
     - ls -ld
-  - -e:
-  - -f or --force: forcefully 
+  - -e: 
+    - Specify multiple patterns to search for.
+      - grep -e pattern1 -e pattern2 file.txt 
+  - -f or --force or follow: forcefully 
     - rm -f: remove without confirmation
     - e.g. ls -CF
       - -F: This option appends a character to the end of each entry to indicate its type:
@@ -28,6 +31,7 @@
         - @ for symbolic links 
         - | for FIFOs (named pipes)
         - = for sockets
+      - tail -f file.log
   - -F or --classify: 
     - ls -F
       - append an indicator character to the end of each listed name. e.g. forward slash (/) if the name is a directory
@@ -35,7 +39,7 @@
     - chmod u+rwx,go-w file.txt
   - -h or --human-readable: human-readable format
     - ll -h
-  - -i or --interactive: prompt before executing
+  - -i or --interactive or --ignore-case: prompt before executing
     - cp -i or mv -i: prompt before overwriting files
     - grep -i or grep --ignore-case: Ignore the case while searching
       - e.g. grep -i "pattern" file.txt
@@ -60,13 +64,15 @@
     - ls -S
   - -t(time): sort by modification time
     - ls -lt
-  - -u: user  or update
+  - -u: user or update
     - chmod u+rwx,go-w file.txt (as user)
     - cp -u *.html destination (as update)
       - it only copies files that either don't exist in the destination directory or 
       - have a newer modification timestamp than their counterparts in the destination directory. 
       - it performs an "update" copy, skipping files that are already up-to-date in the destination.
-  - -v:
+  - -v or --verbose
+    - cp -v
+      - Display informative messages as the copy is performed.
   - -w:
   - -x:
   - -y:
@@ -252,3 +258,20 @@
             --full-time
         - echo -e "Inserting several blank lines\n\n\n"
         - echo -e "\aMy computer went \"beep\"."
+- Backslash Escape Sequences
+  - Escape Sequence Meaning
+    - \a Bell (an alert that causes the computer to beep)
+    - \b Backspace
+    - \n Newline. On Unix-like systems, this produces a linefeed.
+    - \r Carriage return
+    - \t Tab
+- Alarm A bell: echo $'\a'
+- chmod symbolic notations
+  - u+x Add execute permission for the owner.
+  - u-x Remove execute permission from the owner.
+  - +x Add execute permission for the owner, group, and world. This is equivalent to a+x.
+  - o-rw Remove the read and write permissions from anyone besides the owner and group owner. 
+  - go=rw Set the group owner and anyone besides the owner to have read and write permission. 
+    - If either the group owner or the world previously had execute permission, it is removed.
+  - u+x,go=rx Add execute permission for the owner and set the permissions for the group and 
+    - others to read and execute. Multiple specifications may be separated by commas.

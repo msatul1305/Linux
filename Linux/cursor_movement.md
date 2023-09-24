@@ -1,0 +1,23 @@
+- Cursor Movement
+  - Ctrl-a Move cursor to the beginning of the line.
+  - Ctrl-e Move cursor to the end of the line.
+  - Ctrl-f Move cursor forward one character; same as the right arrow key.
+  - Ctrl-b Move cursor backward one character; same as the left arrow key.
+  - Alt-f Move cursor forward one word.
+  - Alt-b Move cursor backward one word.
+  - Ctrl-l Clear the screen and move the cursor to the top-left corner. 
+    - The clear command does the same thing.
+- Modifying Text
+  - Ctrl-d Delete the character at the cursor location.
+  - Ctrl-t Transpose (exchange) the character at the cursor location with the one preceding it.
+  - Alt-t Transpose the word at the cursor location with the one preceding it.
+  - Alt-l Convert the characters from the cursor location to the end of the word to lowercase.
+  - Alt-u Convert the characters from the cursor location to the end of the word to uppercase.
+- Cutting and Pasting (Killing and Yanking) Text
+  - Items that are cut are stored in a buffer (a temporary storage area in memory) called the kill-ring.
+  - Ctrl-k Kill text from the cursor location to the end of line.
+  - Ctrl-u Kill text from the cursor location to the beginning of the line.
+  - Alt-d Kill text from the cursor location to the end of the current word.
+  - Alt-Backspace: Kill text from the cursor location to the beginning of the current word.
+    - If the cursor is at the beginning of a word, kill the previous word. 
+  - Ctrl-y Yank text from the kill-ring and insert it at the cursor location.

@@ -1,0 +1,16 @@
+- less /etc/passwd
+  - Page Up or b Scroll back one page
+  - Page Down or space Scroll forward one page
+  - Up arrow Scroll up one line
+  - Down arrow Scroll down one line
+  - G Move to the end of the text file
+  - 1G or g Move to the beginning of the text file
+  - /characters Search forward to the next occurrence of characters
+  - n Search for the next occurrence of the previous search
+  - h Display help screen
+  - q Quit less
+- improved version of more
+  - less is more
+  - pager
+    - allow the easy viewing of long text documents in a page by page manner
+  - more program could only page forward, the less program allows paging both forward and backward
