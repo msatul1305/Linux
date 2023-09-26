@@ -53,13 +53,25 @@
   - This keeps things nice and clean :-)
 - /root: This is the superusers home directory.
 - /tmp:	/tmp is a directory in which programs can write their temporary files.
-- /dev:	The /dev directory is a special directory, 
-  - since it does not really contain files in the usual sense. 
-  - Rather, it contains devices that are available to the system. 
+- /dev:	The /dev directory is a special directory,
+  - contains devices that are available to the system. 
   - In Linux (like Unix), devices are treated like files. 
-  - You can read and write devices as though they were files. 
+  - we can read and write devices as though they were files. 
   - For example, /dev/fd0 is the first floppy disk drive, /dev/sda is the first hard drive. 
   - All the devices that the kernel understands are represented here.
+  - /dev/fd*: Floppy disk drives.
+  - /dev/hd*: IDE (PATA) disks on older systems. Typical motherboards contain two IDE connectors or channels, 
+    - each with a cable with two attachment points for drives. The first drive on the cable is
+    - called the master device, and the second is called the slave device. 
+    - The device names are ordered such that /dev/hda refers to the master device on the first channel, 
+    - /dev/hdb is the slave device on the first channel; /dev/hdc is the master device on the second channel, and so on.
+    - A trailing digit indicates the partition number on the device. For example, /dev/hda1 refers to the first partition
+    - on the first hard drive on the system, while /dev/hda refers to the entire drive.
+  - /dev/lp*: Printers.
+  - /dev/sd*: SCSI disks. On modern Linux systems, the kernel treats all disk like devices (including PATA/SATA hard disks, 
+  - flash drives, and USB mass storage devices such as portable music players and digital cameras) as SCSI disks.
+  - The rest of the naming system is similar to the older /dev/hd* naming scheme described above.
+  - /dev/sr*: Optical drives (CD/DVD readers and burners).
 - /proc: The /proc directory is also special. 
   - This directory does not contain files. 
   - In fact, this directory does not really exist at all. It is entirely virtual. 
@@ -79,13 +91,14 @@
   - This takes care of the hard drives, but we may also have devices that are considered temporary, 
   - such as optical disks and USB storage devices. Since these are removable, 
   - they do not stay mounted all the time. 
-  - The /media directory is used by the automatic device mounting mechanisms found in modern desktop oriented Linux distributions. 
+  - The /media directory is used by the automatic device-mounting mechanisms found in modern desktop oriented Linux distributions. 
   - To see what devices and mount points are used, type mount.
 - /lost+found: Each formatted partition or device using a Linux file system, 
   - such as ext4, will have this directory. It is used in the case of
   - a partial recovery from a file system corruption event.
-  - Unless something really bad has happened to our system, this directory will remain empty.
+  - Unless something terrible has happened to our system, this directory will remain empty.
 - /mnt On older Linux systems, the /mnt directory contains mount 
   - points for removable devices that have been mounted manually.
 - /opt: The /opt directory is used to install “optional” software.
   - This is mainly used to hold commercial software products that might be installed on the system.
+- Tip: Using the tail -f /var/log/messages technique is a great way to watch what the system is doing in near real-time.

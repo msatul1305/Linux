@@ -1,0 +1,80 @@
+- get my device ip
+  - ifconfig
+    - labeled as "eth0," "wlan0," or similar
+    - ifconfig | grep -oE 'inet (addr:)?([0-9]*\.){3}[0-9]*' | awk '{print $2}'
+  - ip addr show
+  - hostname -I
+- send message to network device
+  - ping <device_ip_or_hostname>
+  - Netcat
+    - echo "Your message" | nc -u -w1 <device_ip> <port>
+  - ssh
+    - ssh <username>@<device_ip_or_hostname>
+- open port 22
+  - Install SSH Server (if not already installed):
+    - sudo apt-get install openssh-server
+    - or sudo yum install openssh-server
+  - Start and Enable SSH Service:
+    - sudo systemctl start ssh
+    - sudo systemctl enable ssh
+    - on sysvinit systems:
+      - sudo service ssh start
+      - sudo chkconfig ssh on
+  - Allow SSH Through the Firewall:
+    - sudo ufw allow 22/tcp
+    - sudo ufw enable
+    - using firewalld
+      - sudo firewall-cmd --permanent --add-service=ssh
+      - sudo firewall-cmd --reload
+    - using iptables
+      - sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+      - sudo service iptables save
+  - Verify SSH Access:
+    - ssh username@your_server_ip
+- open port 22 mac
+  - check current firewall rules
+    - sudo pfctl -s rules
+  - Create a pf Configuration File:
+    - sudo nano /etc/pf.anchors/com.myssh
+    - add lines:
+      - rdr pass on lo0 inet proto tcp from any to any port 22 -> 127.0.0.1 port 22
+      - pass in inet proto tcp from any to any port 22
+    - Load the Configuration:
+      - sudo pfctl -e -f /etc/pf.anchors/com.myssh
+    - Verify the Rules:
+      - sudo pfctl -s rules
+    - Restart pfctl Service (optional):
+      - sudo pfctl -d
+      - sudo pfctl -e
+  - or
+    - Create a pf Configuration File (if needed):
+      - sudo nano /etc/pf.conf
+      - Add the following lines to allow incoming SSH (port 22) traffic:
+        - pass in proto tcp from any to any port 22
+      - Load the Configuration:
+        - sudo pfctl -e -f /etc/pf.conf
+      - Verify the Rules:
+          - sudo pfctl -s rules
+      - Restart pfctl Service (optional):
+          - sudo pfctl -d
+          - sudo pfctl -e
+    - now, do ssh
+    - check service is running:
+      - launchctl list | grep ssh
+      - start ssh service:
+        - sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist(done here)
+      - stop service
+        - sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+      - Restart a Service:
+        - sudo launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+        - sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+      - view service status and logs
+        - sudo launchctl list | grep ssh
+        - sudo tail -f /var/log/system.log | grep ssh
+- ssh remember passwdd
+  - Generate SSH Key Pair in local computer
+    - ssh-keygen -t rsa -b 4096
+  - Copy Your Public Key to the Remote Server:
+    - ssh-copy-id username@remote_server
+  - Test SSH Key Authentication:
+    - ssh username@remote_server
