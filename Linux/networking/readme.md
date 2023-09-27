@@ -78,3 +78,19 @@
     - ssh-copy-id username@remote_server
   - Test SSH Key Authentication:
     - ssh username@remote_server
+- enable ssh to mac with gui
+  - Install XQuartz (X11 for macOS):
+    - https://www.xquartz.org/
+  - Configure SSH:
+    - vi ~/.ssh/config
+    - Add lines in ssh:
+      - Host *
+        ForwardX11 yes
+        ForwardX11Trusted yes
+  - Restart SSH:
+    - sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
+    - sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
+  - Connect via SSH:
+    - ssh -X username@your_mac_ip_or_hostname
+  - Test GUI Applications:
+    - open -a Safari
