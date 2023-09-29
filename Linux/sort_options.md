@@ -1,0 +1,14 @@
+- Common sort Options
+    - Option Long Option Description
+    - -b --ignore-leading-blanks By default, sorting is performed on the entire line, 
+      - starting with the first character in the line. This option causes sort to ignore leading spaces in lines and
+      - calculates sorting based on the first non-whitespace character on the line.
+      - -f --ignore-case Make sorting case-insensitive.
+      - -n --numeric-sort Perform sorting based on the numeric evaluation of a string. Using this option allows sorting 
+      - to be performed on numeric values rather than alphabetic values.
+      - -r --reverse Sort in reverse order. Results are in descending rather than ascending order.
+      - -k --key=field1[,field2] Sort based on a key field located from field1 to field2 rather than the entire line.
+      - -m --merge Treat each argument as the name of a presorted file. Merge multiple files into a single sorted result 
+        - without performing any additional sorting.
+      - -o --output=file Send sorted output to file rather than standard output.
+      - -t --field-separator=char Define the field-separator character. By default fields are separated by spaces or tabs.

@@ -1,0 +1,10 @@
+- Common uniq Options
+  - Option Long Option Description
+  - -c --count Output a list of duplicate lines preceded by the number of times the line occurs.
+  - -d --repeated Output only repeated lines, rather than unique lines.
+  - -f n --skip-fields=n Ignore n leading fields in each line. Fields are separated by 
+    - whitespace as they are in sort; however, unlike sort, uniq has no option for setting an
+    - alternate field separator.
+  - -i --ignore-case Ignore case during the line comparisons.
+  - -s n --skip-chars=n Skip (ignore) the leading n characters of each line.
+  - -u --unique Output only unique lines. Lines with duplicates are ignored.
