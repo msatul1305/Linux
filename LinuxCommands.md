@@ -706,12 +706,28 @@ using graphics.h library to run computer graphics programs
      - convert the Post-Script file into a Portal Document Format (PDF)
      - ```ps2pdf ~/Desktop/foo/ps ~Desktop/ls.pdf```
 170. pr – Convert text files for printing
-171. lpr – Print files 
+     - e.g. ```ls /usr/bin | pr -3 -w 65 | head```
+171. lpr/lp: Print files
+     - ```ls /usr/bin | pr -3 | lpr```
+     - report would be sent to the system’s default printer
+     - To send the file to a different printer:
+       - ```lpr -P printer_name```
+     - printing 12 CPI and 8 LPI with a left margin of one half inch.
+       - ls /usr/bin | pr -4 -w 90 -l 88 | lp -o page-left=36 -o cpi=12 -o lpi=8
 172. a2ps – Format files for printing on a PostScript printer
-173. lpstat – Show printer status information
-174. lpq – Show printer queue status
+     - ASCII to PostScript(now, Anything to PostScript)
+     - prepare text files for printing on PostScript printers.
+     - ls /usr/bin | pr -3 -t | a2ps -o ~/Desktop/ls.ps -L 66
+173. lpstat -a: Show printer status information
+     - see a list of printers known to the system
+     - lpstat -s
+       - detailed description of the print system configuration
+174. ```lpq``` – Show printer queue status
+     - see the status of a printer queue
+     - view the status of the queue and the print jobs it contains
 175. lprm – Cancel print jobs
-176. display hardware device profile on your Linux system:
+     - ```cancel 603```
+176. display ***hardware device profile*** on your Linux system:
      - lscpu
        - information about the CPU (Central Processing Unit) and its characteristics.
      - lsusb
