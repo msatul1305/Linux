@@ -207,7 +207,7 @@ using graphics.h library to run computer graphics programs
 76. uname: know the UNIX machine name
     - uname -a: all info about unix machine
     - o/p: Linux MSI 5.15.90.1-microsoft-standard-WSL2 #1 SMP Fri Jan 27 02:56:13 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
-77. create soft link between 2 files (-s => soft link): ln -s "oldfiletobelinkedto" "newlinkfilenametobelinkedfrom"
+77. create soft link between 2 files (-s => soft link): ln -s /path/to/link soft_link_name
 78. check all soft-links (ll => long list): ll -i
 79. Update soft-link: ln -nfs "target" "linkname"
     - e.g. ln -nfs /home/botservice.2.1.0.py Botservice.prod.py
