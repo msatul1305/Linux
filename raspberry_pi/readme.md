@@ -1,0 +1,18 @@
+- logon to pi using VNC(Virtual Network Computer) - see and control the Raspberry Pi OS desktop from another computer
+   on your network using a VNC client;
+- Raspberry Pi Software Configuration Tool
+  - ```sudo raspi-config```
+- Interfaces tab 
+  - The Interfaces tab holds settings which control the hardware interfaces available on Raspberry Pi.
+    - Camera: Enables or disables the Camera Serial Interface (CSI), for use with a Raspberry Pi Camera Module.
+    - SSH: Enables/disables the Secure Shell (SSH) interface; it allows you to open a commandline interface on Raspberry Pi from another computer on your network using an SSH client.
+    - VNC: Enables/disables the Virtual Network Computing (VNC) interface; it allows you to view 
+      - the desktop on Raspberry Pi from another computer on your network using a VNC client.
+    - SPI: Enables or disables the Serial Peripheral Interface (SPI), used to control some hardware add-ons which connect to the GPIO pins.
+    - I2C: Enables or disables the Inter-Integrated Circuit (I²C) interface, used to control some hardware add-ons which connect to the GPIO pins.
+    - Serial Port: Enables or disables Raspberry Pi’s serial port, available on the GPIO pins.
+    - Serial Console: Enables or disables the serial console, a command-line interface available on the serial port. 
+      - This option is only available if the Serial Port setting above is set to Enabled.
+    - 1-Wire: Enables or disables the 1-Wire interface, used to control some hardware add-ons which connect to the GPIO pins.
+    - Remote GPIO: Enables or disables a network service which allows you to control Raspberry Pi’s GPIO pins from another computer on your network using the GPIO Zero library. 
+      - More information on remote GPIO is available from gpiozero.readthedocs.io.

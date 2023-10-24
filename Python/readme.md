@@ -1,3 +1,9 @@
+- history
+  - Named after the Monty Python comedy troupe
+  - hobby project created by Guido van Rossum and first released in 1991
+    - in the late 1980s while working at the Centrum Wiskunde & Informatica (CWI) in the Netherlands.
+    - language that was easy to read and write, with a clear and straightforward syntax.
+    - 
 - most commonly used built-in modules in Python
   - os 
   - math
