@@ -54,3 +54,6 @@
   - Create Bootable USB: UNetBootin
   - VSCODE Extensions
     - live server
+11. Vs code:
+   - The easiest way to install Visual Studio Code for Debian/Ubuntu based distributions is to download and install the .deb package (64-bit), either through the graphical software center if it's available, or through the command line with:
+   - sudo apt install ./<file>.deb
