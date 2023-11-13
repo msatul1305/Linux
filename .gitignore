@@ -1,4 +1,9 @@
-        .gitignore
-        .idea/
-        leetcode/__pycache__/
-        log/
+.gitignore
+.idea/
+leetcode/__pycache__/
+log/
+package-lock.json
+node_modules/*
+.idea/*
+images/*
+!images/.gitkeep

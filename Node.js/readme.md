@@ -1,17 +1,40 @@
-- Node.js
-  - open-source
-  - cross-platform
-  - JavaScript runtime environment
-  - runs the V8 JavaScript engine, the core of Google Chrome, outside the browser
-  - runs in a single process, without creating a new thread for every request.
-  - provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking
-  - libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
-  - When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem, 
-    - instead of blocking the thread and wasting CPU cycles waiting, 
-    - Node.js will resume the operations when the response comes back.
-  - allows Node.js to handle thousands of concurrent connections with a single server 
-    - without introducing the burden of managing thread concurrency, 
-    - which could be a significant source of bugs.
-  - An Example Node.js Application 
-    - [Server.js](server.js)
-  - 
+# Node.js
+
+- open-source
+- cross-platform
+- JavaScript runtime environment
+- runs the V8 JavaScript engine, the core of Google Chrome, outside the browser
+- runs in a single process, without creating a new thread for every request.
+- provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking
+- libraries in Node.js are written using non-blocking paradigms, making blocking behavior the exception rather than the norm.
+- When Node.js performs an I/O operation, like reading from the network, accessing a database or the filesystem,
+  - instead of blocking the thread and wasting CPU cycles waiting,
+  - Node.js will resume the operations when the response comes back.
+- allows Node.js to handle thousands of concurrent connections with a single server
+  - without introducing the burden of managing thread concurrency,
+  - which could be a significant source of bugs.
+- An Example Node.js Application
+  - [Server.js](server.js)
+- What is recommended to learn before diving deep with Node.js?
+  - Lexical Structure
+  - Expressions
+  - Data Types
+  - Classes
+  - Variables
+  - Functions
+  - this operator
+  - Arrow Functions
+  - Loops
+  - Scopes
+  - Arrays
+  - Template Literals
+  - Strict Mode
+  - ECMAScript 2015 (ES6) and beyond
+- Asynchronous Programming
+  - The following concepts are also key to understand programming, which is one of the fundamental parts of Node.js:
+    - Asynchronous programming and callbacks
+    - Timers
+    - Promises
+    - Async and Await
+    - Closures
+    - The Event Loop
