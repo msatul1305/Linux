@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 
 def longest_palindromic_arrangement(inp):
+    logging.info(inp)
     names = inp[1].split()
     pairs = inp[2:]
     logging.info(names)
