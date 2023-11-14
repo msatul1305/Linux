@@ -9,10 +9,9 @@ app = Flask(__name__)
 
 
 def longest_palindromic_arrangement(inp):
-    logging.info(inp)
+    logging.info(f'inp: {inp}')
     names = inp[1].split()
     pairs = inp[2:]
-    logging.info(names)
     data_dict = {}
     for i, name in enumerate(names):
         key, value = map(int, pairs[i].split())
@@ -44,13 +43,14 @@ def longest_palindromic_arrangement(inp):
 @app.route('/time-intervals', methods=['POST'])
 def file_reorganization():
     data = request.json
-    logging.info(f'data={data}')
+    # logging.info(f'data={data}')
     inputs = data.get('inputs', [])
-    logging.info(f'inputs: {inputs}')
+    # logging.info(f'inputs: {inputs}')
     results = []
     for input_str in inputs:
         result = longest_palindromic_arrangement(input_str)
         results.append(result)
+    logging.info(f'answer: {results}')
     return jsonify({"answer": results})
 
 
