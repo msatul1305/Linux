@@ -5,19 +5,26 @@ app = Flask(__name__)
 def max_risk_mitigated(inputs):
     results = []
     for input_data in inputs:
-        n, m = map(int, input_data[0].split())
-        costs = list(map(int, input_data[1].split()))
+        n, a = map(int, input_data[0].split())
+        a_values = list(map(int, input_data[1].split()))
+        results.append(calculate(n, a_values))
+    return results
 
-        max_risk = 0
-        for i in range(m):
-            for j in range(i + 1, m):
-                risk_mitigated = costs[j] - costs[i]
-                if risk_mitigated > 0:
-                    max_risk = max(max_risk, risk_mitigated)
+def calculate(strategies, input_values):
+    n = len(input_values)
+    max_diff_array = [0] * n
 
-        results.append(max_risk)
+    for i in range(n - 1, 0, -1):
+        max_diff = 0
+        for j in range(i - 1, -1, -1):
+            max_diff = max(max_diff, input_values[i] - input_values[j])
+        max_diff_array[i] = max_diff
 
-    return {"answer": results}
+    max_diff_array.sort(reverse=True)
+
+    result = sum(max_diff_array[:strategies])
+
+    return {"answer": result}
 
 @app.route('/risk-mitigation', methods=['POST'])
 def risk_mitigation():
