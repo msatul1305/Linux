@@ -48,8 +48,9 @@ def file_reorganization():
     inputs = data.get('inputs', [])
     logging.info(f'inputs: {inputs}')
     results = []
-    result = longest_palindromic_arrangement(inputs)
-    results.append(result)
+    for input_str in inputs:
+        result = longest_palindromic_arrangement(input_str)
+        results.append(result)
     return jsonify({"answer": results})
 
 
