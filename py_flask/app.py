@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-def max_risk_mitigated(inputs):
+def risk_mitigation(inputs):
     results = []
     for input_data in inputs:
         n, a = map(int, input_data[0].split())
@@ -24,16 +24,15 @@ def calculate(strategies, input_values):
 
     result = sum(max_diff_array[:strategies])
 
-    return {"answer": result}
+    return result
 
 @app.route('/risk-mitigation', methods=['POST'])
-def risk_mitigation():
-    try:
-        data = request.json['inputs']
-        result = max_risk_mitigated(data)
-        return jsonify(result)
-    except Exception as e:
-        return jsonify({"error": str(e)})
+def risk_mitigation_endpoint():
+    data = request.json
+    inputs = data.get('inputs', [])
+    results = risk_mitigation(inputs)
+
+    return jsonify({"answer": results})
 
 if __name__ == '__main__':
     app.run(debug=True)
