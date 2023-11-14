@@ -1,58 +1,48 @@
 from flask import Flask, request, jsonify
-import logging
-
-logging.basicConfig(level=logging.DEBUG,  # Set the logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-                          format='%(asctime)s - %(levelname)s - %(message)s')
-
 
 app = Flask(__name__)
 
+def get_time_intervals(inputs):
+    result = []
 
-def longest_palindromic_arrangement(inp):
-    logging.info(f'inp: {inp}')
-    names = inp[1].split()
-    pairs = inp[2:]
-    data_dict = {}
-    for i, name in enumerate(names):
-        key, value = map(int, pairs[i].split())
-        data_dict[name] = (key, value)
-    values = inp[2:2+int(inp[0])]
-    x = []
-    for val in values:
-        x.append(int(val.split(" ")[0]))
-        x.append(int(val.split(" ")[1]))
-    y = list(set(x))
-    y.sort()
-    lis = [f'{inp[0]}']
-    for k in range(len(y)-1):
-        op1 = f'{y[k]} {y[k+1]}'
-        count = 0
-        names = []
-        for key, val in data_dict.items():
-            if val[0] <= y[k] and val[1] >= y[k+1]:
-                count = count + 1
-                names.append(key)
-                names.sort()
-        listToStr = ' '.join([str(elem) for i, elem in enumerate(names)])
-        op2 = f'{count} {listToStr}'
-        op = f'{op1} {op2}'
-        lis.append(op)
-    return lis
+    for input_set in inputs:
+        n, *employee_names_and_shifts = input_set
+        n = int(n)
 
+        shifts = [(int(employee_names_and_shifts[i]), int(employee_names_and_shifts[i + 1]), employee_names_and_shifts[i + 2]) for i in range(0, len(employee_names_and_shifts), 3)]
+
+        time_intervals = set()
+        for _, end_time, _ in shifts:
+            time_intervals.add(_)
+            time_intervals.add(end_time)
+
+        time_intervals = sorted(list(time_intervals))
+
+        output_intervals = []
+        for i in range(len(time_intervals) - 1):
+            start_time, end_time = time_intervals[i], time_intervals[i + 1]
+            employees_at_desk = []
+
+            for employee_name, shift_start, shift_end in shifts:
+                if shift_start <= start_time < shift_end or shift_start < end_time <= shift_end:
+                    employees_at_desk.append(employee_name)
+
+            employees_at_desk.sort()
+            output_intervals.append((start_time, end_time, len(employees_at_desk), " ".join(employees_at_desk)))
+
+        result.append([len(output_intervals)] + output_intervals)
+
+    return {"answer": result}
 
 @app.route('/time-intervals', methods=['POST'])
-def file_reorganization():
-    data = request.json
-    # logging.info(f'data={data}')
-    inputs = data.get('inputs', [])
-    # logging.info(f'inputs: {inputs}')
-    results = []
-    for input_str in inputs:
-        result = longest_palindromic_arrangement(input_str)
-        results.append(result)
-    logging.info(f'answer: {results}')
-    return jsonify({"answer": results})
-
+def time_intervals():
+    try:
+        data = request.json
+        inputs = data["inputs"]
+        response = get_time_intervals(inputs)
+        return jsonify(response)
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,6 +1,6 @@
-inp = ["5", "Alice Bob Cacey Deepak Emma", "10 14", "11 12", "10 15", "12 16", "14 16"]
+# inp = ["5", "Alice Bob Cacey Deepak Emma", "10 14", "11 12", "10 15", "12 16", "14 16"]
 # inp = ["3", "Neil Angel Alok", "1 10", "7 9", "7 10"]
-
+inp = ['2', '15 16 1 Janet', '16 18 0 ', '18 20 1 Cody']
 names = inp[1].split()
 pairs = inp[2:]
 
