@@ -44,7 +44,9 @@ def longest_palindromic_arrangement(inp):
 @app.route('/time-intervals', methods=['POST'])
 def file_reorganization():
     data = request.json
+    logging.info(f'data={data}')
     inputs = data.get('inputs', [])
+    logging.info(f'inputs: {inputs}')
     results = []
     result = longest_palindromic_arrangement(inputs)
     results.append(result)
