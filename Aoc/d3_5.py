@@ -17,7 +17,7 @@ for x in inp:
     for val in y:
         # print(val)
         current_index = (i, j)
-        if val != '.' and not val.isdigit():
+        if val != '.' and not val.isdigit() and i<140 and j<140:
             symbol = val
             # print(symbol)
             index_of_symbol = (i, j)
@@ -32,6 +32,7 @@ for x in inp:
             eligible_indices.append((i+1, j+1))
         j = j + 1
     i = i + 1
+print(eligible_indices)
 # for items in eligible_indices:
 #     print(items)
 row = 0
@@ -41,15 +42,20 @@ with open(f, "r") as file:
     file_content = file.read()
 file_content = file_content.split("\n")
 # print(file_content)
+sm = 0
 new_file_content = ''
+current_num = False
 for i in range(rows):
     new_file_content += f'{i+1}: '
     for j in range(cols):
         # print(file_content[i][j])
+        if file_content[i][j].isdigit():
+            sm = sm*10 + int(file_content[i][j])
         if (i, j) not in eligible_indices:
             new_file_content += f'0'
         else:
             new_file_content+=f'{file_content[i][j]}'
+            current_num = True
     new_file_content+='\n'
 print(new_file_content)
 # ans = 850 + 329 + 13 + 871 + 816 + 697 +

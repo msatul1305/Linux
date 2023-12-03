@@ -1,6 +1,6 @@
 import re
 
-inp = open("d3.inp", "r")
+inp = open("d3_updated.inp", "r")
 # inp = open("d3_updated.inp", "r")
 sum = 0
 i = 0

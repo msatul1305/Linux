@@ -43,6 +43,8 @@ for i in range(rows):
         # print(file_content[i][j])
         if (i, j) in eligible_indices:
             new_file_content += f'A'
+        # elif file_content[i][j] == '.':
+        #     new_file_content += f'a'
         else:
             new_file_content += f'{file_content[i][j]}'
     new_file_content += '\n'
