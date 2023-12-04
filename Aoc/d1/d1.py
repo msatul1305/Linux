@@ -1,5 +1,5 @@
 inp = open("sample.inp", "r")
-# inp = open("d1.inp", "r")
+# inp = open("d4.inp", "r")
 sum = 0
 for x in inp:
     first = 0
