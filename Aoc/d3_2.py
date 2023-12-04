@@ -41,7 +41,7 @@ new_file_content = ''
 for i in range(rows):
     for j in range(cols):
         # print(file_content[i][j])
-        if (i, j) in eligible_indices:
+        if (i, j) in eligible_indices and file_content[i][j]!='.':
             new_file_content += f'A'
         # elif file_content[i][j] == '.':
         #     new_file_content += f'a'

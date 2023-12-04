@@ -1,6 +1,6 @@
 import re
 
-inp = open("d3_updated.inp", "r")
+inp = open("d3.inp", "r")
 # inp = open("d3_updated.inp", "r")
 sum = 0
 i = 0
@@ -19,8 +19,10 @@ for y in inp:
     d[i+1] = sum
     i = i + 1
 print(sum)
-output = 601371 - 62835
-print(output)  # 5538536 - too high
+output = 601371 - 75892
+# total - 601688
+#351775
+print(output)  # 525479
 # row1_sum = 4495
 # row2_sum = 3495
 # print(row1_sum + row2_sum)
