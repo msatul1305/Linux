@@ -2,6 +2,7 @@
    on your network using a VNC client;
 - Raspberry Pi Software Configuration Tool
   - ```sudo raspi-config```
+- Logon to pi with X-server enabled(for GUI) and in compressed format(for fast GUI): ```ssh -XC user@ip```
 - Interfaces tab 
   - The Interfaces tab holds settings which control the hardware interfaces available on Raspberry Pi.
     - Camera: Enables or disables the Camera Serial Interface (CSI), for use with a Raspberry Pi Camera Module.
