@@ -1,5 +1,5 @@
-# inp = open("d4.inp", "r")
-fil = "d4.inp"
+# inp = open("d5.inp", "r")
+fil = "d5.inp"
 inp = open(fil, "r")
 sm = 0
 lines = sum(1 for _ in open(fil))

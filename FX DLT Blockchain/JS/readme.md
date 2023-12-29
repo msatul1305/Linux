@@ -1,0 +1,36 @@
+- https://www.youtube.com/watch?v=hdI2bqOjy3c&list=WL&index=4&t=2s
+- JavaScript Crash Course For Beginners, Traversy Media
+- JavaScript
+  - High level, interpreted programming language
+  - conforms to ECMAScript specification
+    - Other ECMAScript
+    - Jscript
+    - acmeScript
+  - Multi-paradigm - OOPS, Functional/modular etc.
+  - runs on the client(browser) as well as on the server(Node.js)
+  - UI framework - React
+  - Mobile development: React Native, NativeScript, Ionic
+  - Desktop apps: electron JS
+  - Normal functions vs Arrow functions -> Introduced in ES6 or ES2015
+    - [normal.js](normal.js)
+    -  [arrow.js](arrow.js)
+  - JS promises vs Async Await
+    - .then() and .catch() methods
+    - https://www.youtube.com/watch?v=li7FzDHYZpc&list=WL&index=3&t=3s
+    - Roberts Dev Talk
+    - Promise
+      - object that represents the eventual completion(or failure) of an async operation and its resulting value
+      - async operations like:
+        - database reading
+        - API
+        - read file
+        - etc.
+      - [promise.js](promise.js)
+        - handle fullfilled(resolved) promises
+          - ```promise.then((result) => {})```
+        - handle failed(rejected) promises 
+          - ```promise.catch((error) => {})```
+      - await
+        - wait for a promise to complete
+        - can be used only inside an async function within regular js code.
+        - [await.js](await.js)
