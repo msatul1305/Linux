@@ -1,0 +1,9 @@
+# REMIX IDE
+
+Keyboard Shortcuts:
+    - CTRL + S: Compile the current contract
+    - CTRL + Shift + F : Open the File Explorer
+    - CTRL + Shift + A : Open the Plugin Manager\
+    - CTRL + SHIFT + S: Compile the current contract & Run an associated script
+Editor Keyboard Shortcuts:
+    - CTRL + Alt + F : Format the code in the current file
