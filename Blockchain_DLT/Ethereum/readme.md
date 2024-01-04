@@ -1,0 +1,98 @@
+# Ethereum(ETH)
+
+- ETH
+  - 2013-14
+  - Founder: Vitalik Buterin
+  - Ethereum programming language: Solidity
+    - uses smart contracts
+    - contract
+      - set of if and then(condition and action)
+      - Disadvantages of smart contracts:
+        - Self executing
+          - e.g. locking out tenant if they didn't pay their rent
+        - hence, it is not intelligent!
+        - i.e. letter strict
+        - Immutable
+          - once contract is deployed in the ethereum network, it cannot be edited or corrected even by its original author.
+        - made for complex contracts which are difficult to secure.
+        - DAO event:
+          - code is law: whatever written must be abided by
+          - used by hacker to drain DAO out of money using loopholes in the contract.
+  - Ethereum's currency: ETHER
+  - need to pay to deploy something on ethereum network
+  - Improvement in ETH:
+    - Ethereum classic(ETC): original ethereum
+    - Ethereum(ETH):
+      - forked from Ethereum
+      - code is no longer the law
+
+- ETHEREUM Wallets
+  - Also, called client
+  - holds private key to have control over the coins
+  - public ethereum address: can be used by people to send ETHER(ETH).
+  - Ethereum Accounts
+    - Externally Owned Account(EOA): Ethereum address + Private key
+      - ability to create contracts and trigger them
+      - controlled by the private key
+      - can send/receive ETH
+    - Contract account
+      - Accounts with code associated with them.
+      - no private key
+      - controlled by the code
+      - can send/receive ETH
+  - Ethereum transactions
+    - wraps messages inside them to transfer ETH from account to account
+    - uses of ETH transactions:
+      - transfer of value: i.e. money(send ETH between accounts)
+      - create contracts
+        - i.e. sending a transaction containing contract's code
+      - trigger contracts
+  - ETH wallets
+    - also called clients/nodes
+    - types:
+      - smart contract wallets:
+        - which allows contracts
+      - eth wallets
+        - only eth transfer
+        - no contracts
+    - types of clients/node
+      - Full client/node
+        - hold entire blockchain copy since inception
+        - need no 3rd party reliance for verifying transactions
+        - disadvantages:
+          - increased memory usage
+          - computer usage
+          - harder to operate
+        - e.g.
+          - Geth(Go Ethereum)
+            - developed by ethereum foundation
+          - Mist
+            - GUI
+          - Parity
+            - private company
+      - Light node
+        - similar to bitcoin's SPV wallets
+        - rely on 3rd party full nodes to get information when needed rather than holding full copy of the blockchain
+        - advantages:
+          - require less space
+          - can operate in mobile phones
+    - Hardware wallets
+      - safer
+      - costly
+      - not smart contracts not coins
+  - Transaction fees and GAS
+    - Gas = Miner's fee
+    - Gas <-> hours of labour to run a contract
+    - standard price of gas = 20 gigawei(Gwei) = 10^-9 ETH
+    - gas price fluctuates based on demand
+    - gas limit
+      - max gas to be used
+    - gas issues
+      - full amount to be paid beforehand
+      - if we overpay: we get refund of amount unused
+      - if we underpay: contract stops and no refund is made
+      - not enough gas for running code: transaction ignored - no miner will pick it up
+      - low gas bid: transaction may be delayed because miners will priotise high paid bids
+    - Eth fees
+      - gas used*gas bid(price) <-> hours of labor*wage per hour
+      - 

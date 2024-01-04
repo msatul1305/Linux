@@ -1,0 +1,27 @@
+# Bitcoin
+
+- Bitcoin(BTC)
+  - created by Satoshi Nakamoto
+  - mining algo used: SHA-256
+  - fork
+    - changing the rules/protocol
+    - Bitcoin block size = 1MB
+    - types:
+      - Soft forks
+        - flexible
+        - play well with original version
+      - Hard forks
+        - rigid
+        - doesn't work with original version
+      - when bitcoin fork occurs:
+        - Original botcoin balance = new bitcoin balance
+          - i.e. people will get same amount of new bitcoin to what they hold in original bitcoin at the point of forking.
+  - Bitcoin forks
+    - All are hard forks:
+    - Bitcoin cash(Bcash)
+      - block size = 8MB
+        - i.e. more transactions can be processed with each block
+    - Bitcoin gold
+    - Bitcoin diamond
+    - Dash
+    - 
