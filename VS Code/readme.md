@@ -1,0 +1,3 @@
+- open terminal: ctrl + `
+- open settings: ctrl + ,
+- 
