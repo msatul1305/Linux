@@ -1,3 +1,16 @@
+- https://code.visualstudio.com/docs/editor/codebasics
 - open terminal: ctrl + `
 - open settings: ctrl + ,
-- 
+- Zoom In: Ctrl+=
+  - (or)Use View > Appearance > Zoom In
+- Zoom Out: Ctrl+-
+  - (or)Use View > Appearance > Zoom Out
+- Multiple selections (multi-cursor)
+  - Alt+Click
+  - add more cursors:
+    - Ctrl+Alt+Down
+- Format Document (Shift+Alt+F)
+- Format Selection (Ctrl+K Ctrl+F) - Format the selected text.
+- Folding
+  - Fold All (Ctrl+K Ctrl+0)
+  - Unfold All (Ctrl+K Ctrl+J)
