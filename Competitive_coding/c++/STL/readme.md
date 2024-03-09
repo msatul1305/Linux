@@ -34,216 +34,16 @@
           - Bidirectional iterators: Supports reading and writing in both forward and backward directions. 
           - Random access iterators: Supports all operations of a bidirectional iterator and allows random access to elements using arithmetic operations.
 
-2. ainers with examples:
-   - ***std::vector***:
-   ```
-    #include <iostream>
-    #include <vector>
-
-    int main() {
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    
-        // Accessing elements
-        std::cout << "First element: " << numbers[0] << std::endl;
-        std::cout << "Size: " << numbers.size() << std::endl;
-    
-        // Modifying elements
-        numbers.push_back(6);
-        numbers[2] = 10;
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-        }
-        std::cout << std::endl;
-    
-        return 0;
-    }
-   ```
-   - ***std::list***:
-   ```
-     #include <iostream>
-     #include <list>
-
-    int main() {
-    std::list<int> numbers = {1, 2, 3, 4, 5};
-    
-        // Insertion and deletion
-        numbers.push_front(0);
-        numbers.insert(std::next(numbers.begin(), 3), 6);
-        numbers.pop_back();
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-        }
-        std::cout << std::endl;
-    
-        return 0;
-    }
-   ```
-   - ***std::deque***:
-   ```
-    #include <iostream>
-    #include <deque>
-
-    int main() {
-    std::deque<int> numbers = {1, 2, 3, 4, 5};
-    
-        // Insertion and deletion
-        numbers.push_front(0);
-        numbers.push_back(6);
-        numbers.pop_front();
-        numbers.pop_back();
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-        }
-        std::cout << std::endl;
-    
-        return 0;
-    }
-   ```
-   - ***std::set***:
-    ```  
-    #include <iostream>
-    #include <set>
-    int main() {
-      std::set<int> numbers = {5, 3, 1, 4, 2};
-        
-          // Insertion
-          numbers.insert(6);
-          numbers.insert(0);
-        
-          // Iterating over elements
-          for (const auto& number : numbers) {
-              std::cout << number << " ";
-          }
-          std::cout << std::endl;
-        
-          return 0;
-      }
-    ```
-
-    - ***std::multiset***:
-   ```
-      #include <iostream>
-      #include <set>
-    
-    int main() {
-    std::multiset<int> numbers = {5, 3, 1, 4, 2};
-    
-        // Insertion
-        numbers.insert(2);
-        numbers.insert(3);
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-     }
-     std::cout << std::endl;
-
-     return 0;
-    }
-    ```
-
-    - ***std::map***:
-   ```
-      #include <iostream>
-    #include <map>
-    
-    int main() {
-        std::map<std::string, int> ages;
-        ages["Alice"] = 25;
-        ages["Bob"] = 30;
-        ages["Charlie"] = 35;
-    
-        // Insertion
-        ages.insert(std::make_pair("Dave", 40));
-    
-        // Accessing elements
-        std::cout << "Bob's age: " << ages["Bob"] << std::endl;
-    
-        // Iterating over elements
-        for (const auto& entry : ages) {
-            std::cout << entry.first << ": " << entry.second << std::endl;
-        }
-    
-        return 0;
-    }
-    ```
-    - ***std::multimap***:
-   ```
-      #include <iostream>
-      #include <map>
-
-    int main() {
-    std::multimap<std::string, int> ages;
-    ages.insert(std::make_pair("Alice", 25));
-    ages.insert(std::make_pair("Bob", 30));
-    ages.insert(std::make_pair("Alice", 35));
-    
-        // Accessing elements
-        std::cout << "Alice's ages: ";
-        auto range = ages.equal_range("Alice");
-        for (auto it = range.first; it != range.second; ++it) {
-            std::cout << it->second << " ";
-        }
-        std::cout << std::endl;
-    
-        // Iterating over elements
-        for (const auto& entry : ages) {
-            std::cout << entry.first << ": " << entry.second << std::endl;
-        }
-    
-        return 0;
-    }
-    ```
-    - ***std::unordered_set***:
-    ```
-      #include <iostream>
-    #include <unordered_set>
-    
-    int main() {
-    std::unordered_set<int> numbers = {5, 3, 1, 4, 2};
-    
-        // Insertion
-        numbers.insert(6);
-        numbers.insert(0);
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-        }
-        std::cout << std::endl;
-    
-        return 0;
-    }
-    ```
-    - ***std::unordered_multiset***:
-   ```
-      #include <iostream>
-      #include <unordered_set>
-
-    int main() {
-    std::unordered_multiset<int> numbers = {5, 3, 1, 4, 2};
-    
-        // Insertion
-        numbers.insert(2);
-        numbers.insert(3);
-    
-        // Iterating over elements
-        for (const auto& number : numbers) {
-            std::cout << number << " ";
-        }
-        std::cout << std::endl;
-    
-        return 0;
-    }
-    ```
-
-
+2. examples:
+   - [vector](vector_stl.cpp)
+   - [list](list_stl.cpp)
+   - [deque](deque_stl.cpp)
+   - [set](set_stl.cpp)
+   - [multiset](multiset_stl.cpp)
+   - [map](map_stl.cpp)
+   - [multimap](multimap_stl.cpp)
+   - [unordered_set](unordered_set_stl.cpp)
+   - [unordered_multiset](unordered_multiset_stl.cpp)
 
 3. Overview of some commonly used algorithms in the STL:
     - Non-modifying sequence operations:
@@ -306,205 +106,35 @@
      - ***std::random_shuffle***: Randomly shuffles the elements in a range.
 
 
-Examples of each algorithm:
-    - explanation of each algorithm in the STL along with an example of how to use it:
-
-std::for_each:
-Description: Applies a function to each element in a range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-void printNumber(int number) {
-std::cout << number << " ";
-}
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-    std::for_each(numbers.begin(), numbers.end(), printNumber);
-
-    return 0;
-}
-```
-std::find:
-Description: Finds the first occurrence of a value in a range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-    auto it = std::find(numbers.begin(), numbers.end(), 3);
-    if (it != numbers.end()) {
-        std::cout << "Found at index: " << std::distance(numbers.begin(), it) << std::endl;
-    } else {
-        std::cout << "Not found" << std::endl;
-    }
-
-    return 0;
-}
-```
-std::count:
-Description: Counts the occurrences of a value in a range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5, 3};
-
-    int count = std::count(numbers.begin(), numbers.end(), 3);
-    std::cout << "Count: " << count << std::endl;
-
-    return 0;
-}
-```
-std::sort:
-Description: Sorts the elements in a range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-int main() {
-std::vector<int> numbers = {5, 3, 1, 4, 2};
-
-    std::sort(numbers.begin(), numbers.end());
-
-    for (const auto& number : numbers) {
-        std::cout << number << " ";
-    }
-    std::cout << std::endl;
-
-    return 0;
-}
-```
-std::transform:
-Description: Applies a function to each element in a range and stores the result in another range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-int square(int number) {
-return number * number;
-}
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-std::vector<int> squaredNumbers(numbers.size());
-
-    std::transform(numbers.begin(), numbers.end(), squaredNumbers.begin(), square);
-
-    for (const auto& number : squaredNumbers) {
-        std::cout << number << " ";
-    }
-    std::cout << std::endl;
-
-    return 0;
-}
-```
-std::accumulate:
-Description: Computes the sum of elements in a range.
-```
-#include <iostream>
-#include <vector>
-#include <numeric>
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-int sum = std::accumulate(numbers.begin(), numbers.end(), 0);
-std::cout << "Sum: " << sum << std::endl;
-
-return 0;
-}
-```
-7. `std::copy`:
-- Description: Copies elements from one range to another.
-  ```
-  #include <iostream>
-  #include <vector>
-  #include <algorithm>
-
-  int main() {
-      std::vector<int> source = {1, 2, 3, 4, 5};
-      std::vector<int> destination(source.size());
-
-      std::copy(source.begin(), source.end(), destination.begin());
-
-      for (const auto& number : destination) {
-          std::cout << number << " ";
-      }
-      std::cout << std::endl;
-
-      return 0;
-  }
-  ```
-8. `std::reverse`:
-- Description: Reverses the order of elements in a range.
-  ```
-  #include <iostream>
-  #include <vector>
-  #include <algorithm>
-
-  int main() {
-      std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-      std::reverse(numbers.begin(), numbers.end());
-
-      for (const auto& number : numbers) {
-          std::cout << number << " ";
-      }
-      std::cout << std::endl;
-
-      return 0;
-  }
-  ```
-9. `std::unique`:
-- Description: Removes consecutive duplicate elements in a range.
-- 
-  ```
-  #include <iostream>
-  #include <vector>
-  #include <algorithm>
-
-  int main() {
-      std::vector<int> numbers = {1, 2, 2, 3, 3, 4, 5, 5, 5};
-
-      auto it = std::unique(numbers.begin(), numbers.end());
-      numbers.erase(it, numbers.end());
-
-      for (const auto& number : numbers) {
-          std::cout << number << " ";
-      }
-      std::cout << std::endl;
-
-      return 0;
-  }
-  ```
-std::binary_search:
-Description: Checks if a specific value exists in a sorted range.
-```
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
-int main() {
-std::vector<int> numbers = {1, 2, 3, 4, 5};
-
-    bool found = std::binary_search(numbers.begin(), numbers.end(), 3);
-
-    if (found) {
-        std::cout << "Value found" << std::endl;
-    } else {
-        std::cout << "Value not found" << std::endl;
-    }
-
-    return 0;
-}
-```
+- Examples of each algorithm:
+  - explanation of each algorithm in the STL along with an example of how to use it:
+  - std::for_each:
+    - Description: Applies a function to each element in a range.
+    - [for_each](for_each_stl.cpp)
+  - std::find:
+    - Description: Finds the first occurrence of a value in a range.
+    - [find](find_stl.cpp)
+  - std::count:
+    - Description: Counts the occurrences of a value in a range.
+    - [count](count_stl.cpp)
+  - std::sort:
+    - Description: Sorts the elements in a range.
+    - [sort](sort_stl.cpp)
+  - std::transform:
+    - Description: Applies a function to each element in a range and stores the result in another range.
+    - [transform](transform_stl.cpp)
+  - std::accumulate:
+    - Description: Computes the sum of elements in a range.
+    - [accumulate](accumulate_stl.cpp)
+  - std::copy
+    - Description: Copies elements from one range to another.
+    - [copy](copy_stl.cpp)
+  - std::reverse
+    - Description: Reverses the order of elements in a range.
+    - [reverse](reverse_stl.cpp)
+  - std::unique:
+    - Description: Removes consecutive duplicate elements in a range.
+    - [unique](unique_stl.cpp)
+  - std::binary_search:
+    - Description: Checks if a specific value exists in a sorted range.
+    - [binary_search](binary_search_stl.cpp)
