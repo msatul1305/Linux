@@ -1,0 +1,37 @@
+- Shortcuts:
+  - ctrl + d: copy current line to new line
+  - ctrl + g: go to line number
+  - ctrl + y: yank/delete current line 
+  - ctrl + shift + n: open a file using search dialog box 
+  - ctrl + shift + f: find a word in files 
+  - ctrl + shift + - : collapse all blocks/functions/classes 
+  - ctrl + t: pull latest changes from remote(git) for current branch 
+  - Multiple cursors - Alt + Shift + Click at target locations 
+  - ctrl + f4: close current file 
+  - ctrl + tab -> next file
+- Return to the editor from the command-line terminal
+  - Alt + F12
+- Change the IDE appearance
+  - Ctrl + `
+- Switch between tabs
+  - Alt + -> 
+  - or Alt + <-
+  - Ctrl + Tab
+- Increase or decrease font size in all tabs
+  - Alt + Shift + .
+  - Alt + Shift + ,
+- comment and uncomment lines of code
+  - Ctrl + /(forward slash)
+- Code selection
+  - Ctrl + W
+- Select code according to capitalization
+  - Settings -> Editor | General | Smart Keys.
+  - Use "CamelHumps" words checkbox.
+- Move statements
+  - Ctrl + Shift + ↑
+- Code folding
+  - ctrl + -
+  - ctrl + +
+  - ctrl + shift + -
+  - To fold blocks of code, press Ctrl + Shift + .
+- 

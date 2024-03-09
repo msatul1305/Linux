@@ -76,7 +76,8 @@
      - ***std::is_sorted***: Checks if elements in a range are sorted in ascending order. 
      - ***std::binary_search***: Checks if a value exists in a sorted range using binary search. 
      - ***std::lower_bound***: Finds the lower bound position of a value in a sorted range. 
-     - ***std::upper_bound***: Finds the upper bound position of a value in a sorted range. 
+     - ***std::upper_bound***: Finds the upper bound position of a value in a sorted range.
+       - [upper_bounds_lower_bounds](upper_lower_bounds.cpp)
      - ***std::merge***: Merges two sorted ranges into a single sorted range. 
      - ***std::inplace_merge***: Merges two consecutive sorted ranges in place. 
    - Numeric algorithms:
