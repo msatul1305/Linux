@@ -1,0 +1,1 @@
+- website which collates data from all competitive coding and calculates total number of coding problems solved on them: https://www.stopstalk.com/
