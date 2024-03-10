@@ -35,17 +35,24 @@
           - Random access iterators: Supports all operations of a bidirectional iterator and allows random access to elements using arithmetic operations.
 
 2. examples:
+   - pairs
    - [vector](vector_stl.cpp)
    - [list](list_stl.cpp)
    - [deque](deque_stl.cpp)
+   - stack
+   - queue
    - [set](set_stl.cpp)
    - [multiset](multiset_stl.cpp)
    - [map](map_stl.cpp)
    - [multimap](multimap_stl.cpp)
+   - unordered map
    - [unordered_set](unordered_set_stl.cpp)
    - [unordered_multiset](unordered_multiset_stl.cpp)
+   - priority queue
+   - [striver_all](striver_all.cpp)
+ 
 
-3. Overview of some commonly used algorithms in the STL:
+4. Overview of some commonly used algorithms in the STL:
     - Non-modifying sequence operations:
       - ***std::all_of***: Checks if a condition is true for all elements in a range. 
       - ***std::any_of***: Checks if a condition is true for any element in a range. 
@@ -76,7 +83,9 @@
      - ***std::is_sorted***: Checks if elements in a range are sorted in ascending order. 
      - ***std::binary_search***: Checks if a value exists in a sorted range using binary search. 
      - ***std::lower_bound***: Finds the lower bound position of a value in a sorted range. 
+       - *the first element not less than x*
      - ***std::upper_bound***: Finds the upper bound position of a value in a sorted range.
+       - *the first element greater than x*
        - [upper_bounds_lower_bounds](upper_lower_bounds.cpp)
      - ***std::merge***: Merges two sorted ranges into a single sorted range. 
      - ***std::inplace_merge***: Merges two consecutive sorted ranges in place. 
@@ -139,3 +148,9 @@
   - std::binary_search:
     - Description: Checks if a specific value exists in a sorted range.
     - [binary_search](binary_search_stl.cpp)
+- Resources
+  - TakeUforward
+    - Learn C++ STL in 45 minutes | Containers | Algorithms | Comparators | Competitive Programming
+      - https://www.youtube.com/watch?v=zBhVZzi5RdU
+  - ChatGPT
+  - 
