@@ -1,3 +1,5 @@
+- Striver's Guide for Competitive Coding
+- https://youtu.be/zZOQVLll9u4?si=bb-FyeYaR8dQC77L
 - A2oJ ladders
 - Order of practising algos
   - Basics I
