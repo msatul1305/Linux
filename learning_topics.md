@@ -1,0 +1,2 @@
+- using vi to navigate between folders etc. (vi folder_name)
+- 
