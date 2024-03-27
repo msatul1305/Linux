@@ -746,3 +746,5 @@ using graphics.h library to run computer graphics programs
        - comprehensive hardware information
      - sudo dmidecode
        - detailed information about the system's hardware components from the DMI (Desktop Management Interface) tables.
+- list all available packages that can be installed RHEL 
+  - sudo yum list available 
