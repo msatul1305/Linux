@@ -1,0 +1,63 @@
+- UBS
+  - Products and offerings
+    - Wealth Management: Personalized investment advice, portfolio management, financial planning, estate planning, and wealth structuring services for high-net-worth individuals and families.
+    - Investment Banking: Mergers and acquisitions advisory, capital markets (equity and debt), restructuring, and strategic advisory services for corporate clients.
+    - Asset Management: Investment products and solutions across asset classes, including equities, fixed income, multi-asset, and alternative investments for institutional and retail clients.
+    - Retail Banking: Banking services such as savings accounts, mortgages, loans, and credit cards for individual clients.
+    - Digital Banking: Online banking, mobile banking apps, and digital investing platforms for convenient access to financial services.
+    - Sustainable Investing: Investment solutions that integrate environmental, social, and governance (ESG) factors to create positive impact.
+    - Philanthropy and Social Impact: Support for philanthropic projects and social impact initiatives through the UBS Optimus Foundation and other programs.   
+  - Initiatives
+    - UBS Optimus:
+      - UBS Optimus Foundation is the philanthropic arm of UBS, a global financial services company. The foundation focuses on driving positive social change by funding innovative projects that improve the lives of children and youth around the world. They work with a range of partners, including NGOs, governments, and other organizations, to address pressing issues such as education, health, and child protection. UBS Optimus Foundation aims to make a lasting impact and create a better future for generations to come.
+    - UBS Visionaris: This initiative supports social entrepreneurs in Latin America who are working to create positive social change in their communities.
+    - UBS Next: This initiative focuses on investing in sustainable and impact-driven companies that are addressing global challenges such as climate change, healthcare, and education.
+    - UBS Center for Global Economics and Sustainability: This research center focuses on advancing understanding and action on global economic and sustainability challenges.
+    - UBS Wealth Management's Sustainable Investing: UBS offers sustainable investing solutions to its clients, integrating environmental, social, and governance (ESG) factors into its investment decisions.
+  - Applications
+    - UBS Mobile Banking: Allows clients to manage their accounts, make payments, and access banking services on the go.
+    - UBS Access: Provides secure access to UBS's digital services, including online banking and digital investing platforms.
+    - UBS Safe: A secure messaging app for communicating with UBS client advisors and receiving important notifications.
+    - UBS Neo: An electronic trading platform for institutional clients, offering trading in equities, fixed income, currencies, and commodities.
+    - UBS Quotes: Provides real-time market data and quotes for clients to stay informed about market movements.
+    - UBS Advice: Offers personalized investment advice and financial planning recommendations based on client preferences and goals.
+    - UBS Mobile Banking: Manage accounts, make payments, and access banking services on mobile devices.
+    - UBS Access: Secure access to UBS's digital services, including online banking and digital investing platforms.
+    - UBS Safe: Secure messaging app for communicating with UBS client advisors and receiving important notifications.
+    - UBS Neo: Electronic trading platform for institutional clients, offering trading in equities, fixed income, currencies, and commodities.
+    - UBS Quotes: Real-time market data and quotes for clients to stay informed about market movements.
+    - UBS Advice: Personalized investment advice and financial planning recommendations based on client preferences and goals.
+    - UBS e-banking Switzerland: Online banking platform for clients in Switzerland.
+    - UBS e-banking Global: Online banking platform for international clients.
+    - UBS Paymit: Mobile payment app for making payments in Switzerland.
+    - UBS AssetLink: Platform for managing and analyzing investment portfolios.
+    - UBS KeyClub: Loyalty program app for UBS clients.
+    - UBS TWINT: Mobile payment app for making payments in Switzerland.
+    - UBS Neo FX: Foreign exchange trading platform for UBS clients.
+    - UBS Card Center: App for managing UBS credit cards.
+    - UBS Safe app: Provides a secure way to access and manage digital documents and files.
+    - UBS Digital Networks: A platform for clients to access UBS's insights, analysis, and thought leadership on various topics.
+    - UBS Asset Management Insights: Provides access to research, market insights, and investment strategies from UBS Asset Management.
+    - UBS Fund Gate: An online platform for accessing information about UBS investment funds.
+    - UBS Locator: Helps clients find UBS branches and ATMs.
+    - UBS Learn & Invest: A platform for clients to learn about investing and financial planning.
+    - UBS Risk Appetite Indicator: Provides insights into market risk and sentiment based on UBS's analysis.
+    - UBS Alumni Network: Connects former UBS employees and provides networking opportunities.
+    - UBS Events: Provides information about upcoming UBS events and conferences.
+    - UBS Real Estate App: Helps clients search for and evaluate real estate properties.
+    - UBS Neo Smart Execution: An execution platform for trading equities, fixed income, and FX.
+    - UBS Neo FinTech Innovation Lab: Supports collaboration with fintech startups to drive innovation in financial services.
+    - UBS My Way: A platform for clients to customize their banking and investing experience based on their preferences.
+    - UBS Relationship Pricing: Provides information about pricing and benefits based on the client's relationship with UBS.
+    - UBS Credit Card App: Manage UBS credit card accounts, view transactions, and make payments.
+    - UBS Research App: Access UBS's research reports, analysis, and insights on various markets and industries.
+    - UBS Wealth Management USA: A mobile app specifically for UBS clients in the United States, offering wealth management tools and services.
+    - UBS Virtual Assistant: An AI-powered virtual assistant to help clients with common banking and investing tasks.
+    - UBS One Source: A platform for managing employee stock plans for corporate clients.
+    - UBS FX Option Trader: A platform for trading foreign exchange options.
+    - UBS Financial Services App: Provides financial planning tools and services for clients.
+    - UBS Funds App: Allows clients to access information about UBS investment funds.
+    - UBS Real-Time: Provides real-time market data and news for clients.
+    - UBS Connect: A platform for clients to connect with UBS experts and advisors.
+    - UBS Art Collection: An app showcasing UBS's art collection and providing information about artists and artworks.
+    - UBS Wealth Management Americas: A mobile app specifically for UBS clients in the Americas, offering wealth management tools and services.  
