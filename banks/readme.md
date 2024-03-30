@@ -54,3 +54,33 @@
       - ICICI Bank
       - Punjab National Bank (PNB)
       - Axis Bank
+    - Switzerland
+      - UBS
+      - Credit Suisse
+      - Raiffeisen Group
+      - Zürcher Kantonalbank (ZKB)
+      - Julius Bär Group
+    - Singapore
+      - DBS Bank
+      - Oversea-Chinese Banking Corporation (OCBC)
+      - United Overseas Bank (UOB)
+      - Standard Chartered Bank (Singapore)
+      - Citibank Singapore
+    - Russia
+      - Sberbank
+      - VTB Bank
+      - Gazprombank
+      - Alfa-Bank
+      - Rosselkhozbank
+    - South Korea
+      - Kookmin Bank (KB)
+      - Shinhan Bank
+      - Hana Bank
+      - Woori Bank
+      - Industrial Bank of Korea
+    - Netherlands
+      - ING Group
+      - ABN AMRO
+      - Rabobank
+      - de Volksbank
+      - NIBC Bank
