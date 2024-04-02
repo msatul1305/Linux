@@ -1,0 +1,4 @@
+- outlook shortcuts
+  - find: ctrl + E
+  - mark as read: ctrl + q
+  - mark unread: ctrl + u
