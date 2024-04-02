@@ -34,4 +34,4 @@
   - ctrl + +
   - ctrl + shift + -
   - To fold blocks of code, press Ctrl + Shift + .
-- 
+- alt + 1: move focus from editor to file section
