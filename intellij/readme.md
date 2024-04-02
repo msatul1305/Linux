@@ -34,8 +34,12 @@
   - ctrl + +
   - ctrl + shift + -
   - To fold blocks of code, press Ctrl + Shift + .
+
+
+using keyboard to control
 - alt + 1: move focus from editor to file section
 - alt + 4: go to run terminal
 - alt + 5: debug terminal 
 - alt + 6: warnings tab
 - alt + 9: commit dock
+- ctrl + shift + f10: run current highlighted test
