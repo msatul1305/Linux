@@ -1,0 +1,3 @@
+- teams shortcuts
+  - ctrl + e: search
+  - ctrl + 
