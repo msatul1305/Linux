@@ -10,3 +10,6 @@
       - Replace IP_ADDRESS with your Windows machine's IP address:
       - export DISPLAY=IP_ADDRESS:0 
       - If you are using X410, the IP address should be localhost.
+
+- Allow VS code to open browser:
+  - 
