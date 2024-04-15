@@ -1,3 +1,4 @@
 - teams shortcuts
+  - get list of all shortcuts: ctrl + .
   - ctrl + e: search
-  - ctrl + 
+  - 
