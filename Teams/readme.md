@@ -1,3 +1,5 @@
 - teams shortcuts
+  - get list of all shortcuts: ctrl + .
   - ctrl + e: search
-  - ctrl + 
+  - ctrl + 2: navigate to list of people chat
+  - alt + shift + c: go to compose box
