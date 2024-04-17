@@ -8,7 +8,7 @@
   - ctrl + shift + - : collapse all blocks/functions/classes 
   - ctrl + t: pull latest changes from remote(git) for current branch 
   - Multiple cursors - Alt + Shift + Click at target locations 
-  - ctrl + f4: close current file 
+  - ctrl + F4: close current file 
   - ctrl + tab -> next file
 - Toggle between command-line terminal and editor
   - Alt + F12
@@ -35,3 +35,5 @@
     - Alt + F12
   - Refactor/Rename
     - Shift + F6
+- View current opened file in Project tree:
+  - Alt + F1, 1

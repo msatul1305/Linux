@@ -1,0 +1,50 @@
+- https://www.youtube.com/watch?v=NOreqPuX9Sg&t
+- Plugins
+  - Official gedit plugins
+    - /usr/share/gedit/plugins
+  - 3rd party plugins
+    - download and place in above directory(/usr/share/gedit/plugins)
+  - List of all available plugins
+    - Hamburger menu -> Preferences -> Plugins
+  - Show file browser in side panel
+    - Plugin settings -> File Browser Panel
+    - Hamburger -> View -> Side Panel
+- Embed a terminal
+  - sudo apt install gedit-plugin-terminal
+  - enable it from Preferences->Plugin -> Embedded Terminal
+  - enable bottom panel via Hamburger -> View -> Side Panel
+- Markdown preview
+  - https://github.com/maoschanz/gedit-plugin-markdown_preview?ref=itsfoss.com
+- Snippets
+  - Enable snippet plugin from preferences -> Snippets
+  - Hamburger -> Manage Snippets
+- Dark Mode
+  - Enable Dark mode at OS level
+  - fix currently highlighted line not displayed issue
+    - preferences -> fonts & colors -> change color scheme
+- Highlight occurrences of currently selected word
+  - Preferences -> Plugins -> Quick Highlight
+- Show Line Numbers
+  - Preferences -> View -> Display line numbers
+- create backup file before saving
+  - preferences -> editor -> file saving -> create backup before saving
+- Autosave files
+  - preferences -> editor -> autosave every <x> mins
+- smart autosave
+  - plugins -> smart autosave(saves every 10 mins(configurable))
+- Recommended plugins list
+  - gedit-plugin-code-comment
+  - gedit-plugin-code-git
+  - gedit-plugin-code-terminal
+  - gedit-plugin-word-completion
+- Other Imp plugins
+  - Code Comment
+  - Embedded terminal
+  - External Tools
+  - Git
+  - Snippets
+  - Word Completion
+- Search for all plugins available
+  - apt search gedit-plugin
+- Compile and build
+  - Preferences -> Manage External Tools -> Add script and keyboard shortcut
