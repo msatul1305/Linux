@@ -1,0 +1,14 @@
+- Change the IDE appearance
+    - Ctrl + `
+- Code selection
+  - Ctrl + W
+- Select code according to capitalization
+  - Settings -> Editor | General | Smart Keys.
+  - Use "CamelHumps" words checkbox.
+- using keyboard to control
+  - alt + 1: move focus from editor to file section
+  - alt + 4: go to run terminal
+  - alt + 5: debug terminal
+  - alt + 6: warnings tab
+  - alt + 9: commit dock
+  - ctrl + shift + f10: run current highlighted test

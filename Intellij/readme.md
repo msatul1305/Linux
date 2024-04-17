@@ -1,7 +1,8 @@
-- Shortcuts:
+- https://www.jetbrains.com/help/idea/mastering-keyboard-shortcuts.html
+- Most useful Shortcuts:
   - ctrl + d: copy current line to new line
   - ctrl + g: go to line number
-  - ctrl + y: yank/delete current line 
+  - ctrl + y: delete(yank) current line 
   - ctrl + shift + n: open a file using search dialog box 
   - ctrl + shift + f: find a word in files 
   - ctrl + shift + - : collapse all blocks/functions/classes 
@@ -9,37 +10,28 @@
   - Multiple cursors - Alt + Shift + Click at target locations 
   - ctrl + f4: close current file 
   - ctrl + tab -> next file
-- Return to the editor from the command-line terminal
+- Toggle between command-line terminal and editor
   - Alt + F12
-- Change the IDE appearance
-  - Ctrl + `
 - Switch between tabs
+  - Ctrl + Tab
   - Alt + -> 
   - or Alt + <-
-  - Ctrl + Tab
-- Increase or decrease font size in all tabs
+- Increase or decrease font size in editor
   - Alt + Shift + .
   - Alt + Shift + ,
 - comment and uncomment lines of code
   - Ctrl + /(forward slash)
-- Code selection
-  - Ctrl + W
-- Select code according to capitalization
-  - Settings -> Editor | General | Smart Keys.
-  - Use "CamelHumps" words checkbox.
 - Move statements
   - Ctrl + Shift + ↑
+  - Alt + Shift + ↑
 - Code folding
   - ctrl + -
   - ctrl + +
   - ctrl + shift + -
   - To fold blocks of code, press Ctrl + Shift + .
-
-
-using keyboard to control
-- alt + 1: move focus from editor to file section
-- alt + 4: go to run terminal
-- alt + 5: debug terminal 
-- alt + 6: warnings tab
-- alt + 9: commit dock
-- ctrl + shift + f10: run current highlighted test
+  - Make everything bigger
+    - Settings -> Zoom
+  - Open terminal
+    - Alt + F12
+  - Refactor/Rename
+    - Shift + F6

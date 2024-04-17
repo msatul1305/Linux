@@ -1,6 +1,6 @@
 .gitignore
 .idea/
-leetcode/__pycache__/
+Leetcode/__pycache__/
 log/
 package-lock.json
 node_modules/*

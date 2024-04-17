@@ -1,6 +1,6 @@
 from typing import Optional
 
-from leetcode.merge_ll import ListNode
+from Leetcode.merge_ll import ListNode
 
 
 class Solution:
