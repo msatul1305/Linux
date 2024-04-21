@@ -1,0 +1,8 @@
+- Keyboard shortcuts
+  - Navigate/Focus to tabs bar
+    - F6
+  - Move tabs
+    - Ctrl + Left arrow
+    - Ctrl + Right arrow
+  - Move Current tab
+    - Ctrl + Shift + PgUp/Down

@@ -1,0 +1,36 @@
+- RC files, also called "run commands" or "runtime configuration" files
+  - plaintext configuration files used by various software applications to customize their behavior.
+  - contain settings and options that are read and applied when the associated program is launched.
+  - Common examples:
+    - Bash Shell: .bashrc 
+      - shell script that Bash runs when started interactively. 
+      - allows users to customize their shell environment.
+    - Vim: .vimrc
+      - used by Vim to configure settings such as:
+        - key mappings,
+        - syntax highlighting,
+        - and indentation.
+    - Emacs: .emacs or .emacs.d/init.el 
+      - used to configure Emacs behavior, 
+      - such as custom key bindings, themes, and modes.
+    - Git: .gitconfig 
+      - an RC file used to configure Git settings,
+      - such as user information and aliases.
+    - GNU Screen: .screenrc 
+      - RC file used to configure GNU Screen, 
+      - a terminal multiplexer, 
+      - with settings like key bindings and window layouts.
+  - More Examples:
+    - X11: ~/.Xresources or ~/.Xdefaults 
+      - used to configure settings for the X Window System, 
+      - such as font rendering, colors, and window manager settings.
+    - OpenSSH: ~/.ssh/config
+      - RC file used to configure SSH client behavior, 
+      - such as setting up aliases for hosts, defining identity files, and specifying connection options.
+    - GNU Readline: ~/.inputrc 
+      - RC file used to configure the behavior of the GNU Readline library, 
+      - which provides line-editing and history capabilities for programs like Bash.
+    - Python: pycodestyle and pylintrc are used to configure Python code style and linting settings, respectively.
+    - MySQL: my.cnf is an RC file used to configure the MySQL database server, 
+      - including settings related to performance, security, and replication.
+

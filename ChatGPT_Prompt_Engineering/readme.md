@@ -1,0 +1,7 @@
+- ChatGPT
+  - Learn a topic
+    - teach me <topic>
+    - or
+    - start <topic> tutorial
+      - continue>next>more
+- 

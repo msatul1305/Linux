@@ -1,0 +1,18 @@
+- .bashrc file 
+  - script that Bash runs whenever it is started interactively. 
+  - initializes an interactive shell session.
+  - used to set up shell environment,
+    - define aliases,
+    - and customize your prompt.
+  - Basic example of .bashrc file:
+    - [bashrc_sample.sh](bashrc_sample.sh)
+    - This file would do the following:
+    - Set the prompt (PS1) to display the 
+      - username (\u), 
+      - hostname (\h),
+      - and current working directory (\w), 
+      - with colors for better readability. 
+    - Define two aliases: ll to list all files (ls -alF) and 
+      - cls to clear the screen (clear). 
+    - Add the bin directory in your home folder to the PATH environment variable, 
+      - allowing you to execute scripts and binaries stored there without specifying the full path. 

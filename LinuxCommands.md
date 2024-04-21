@@ -427,74 +427,75 @@ using graphics.h library to run computer graphics programs
 117. reboot: restart the computer or system
 118. bg: Place a job in the background
 119. fg: Place a job in the foreground
-120. vmstat:
+120. jobs: check all background processes running via the current terminal
+121. vmstat:
      - Outputs a snapshot of system resource usage including, memory, swap, and disk I/O. 
      - To see a continuous display, follow the command with a time delay (in seconds) for updates. 
      - example: vmstat 5. Terminate the output with Ctrl-c.
-121. xload: A graphical program that draws a graph showing system load over time.
-122. tload: Similar to the xload program but draws the graph in the terminal.
-123. mount: Mount a file system
+122. xload: A graphical program that draws a graph showing system load over time.
+123. tload: Similar to the xload program but draws the graph in the terminal.
+124. mount: Mount a file system
      - Entering the command without arguments will display a list of the file systems currently mounted
      - mount -t iso9660 /dev/sdc /mnt/cdrom
-124. sudo umount /mnt/"devicename" -> unmount the device
+125. sudo umount /mnt/"devicename" -> unmount the device
      - umount /dev/sdc
-125. fsck: (file system check)
+126. fsck: (file system check)
      - Check and repair a file system
      - sudo fsck /dev/sdb1
-126. fdisk: Manipulate disk partition table
-127. mkfs: (make file system)
+127. fdisk: Manipulate disk partition table
+128. mkfs: (make file system)
      - Create a file system
      - sudo mkfs -t ext4 /dev/sdb1
      - sudo mkfs -t vfat /dev/sdb1
-128. dd: (data definition) - could be (destroy disk) if not used properly
+129. dd: (data definition) - could be (destroy disk) if not used properly
      - Convert and copy a file
      - copies blocks of data from one place to another
      - Moving Data Directly to and from Devices
      - dd if=input_file of=output_file [bs=block_size [count=blocks]] 
      - copy the first drive to the second
        - dd if=/dev/sdb of=/dev/sdc
-129. genisoimage (mkisofs) – Create an ISO 9660 image file
-130. wodim (cdrecord): Write data to optical storage media 
-131. md5sum: Calculate an MD5 checksum 
-132. ping – Send a special network packet called ICMP ECHO_REQUEST to network hosts
+130. genisoimage (mkisofs) – Create an ISO 9660 image file
+131. wodim (cdrecord): Write data to optical storage media 
+132. md5sum: Calculate an MD5 checksum 
+133. ping – Send a special network packet called ICMP ECHO_REQUEST to network hosts
      - Most network devices receiving this packet will reply to it,
      - which allows the network connection to be verified
      - ```ping google.com```
      - ctrl + c prints performance statistics
      - A properly performing network will exhibit 0 percent packet loss.
-133. traceroute – Print the route packets trace to a network host
+134. traceroute – Print the route packets trace to a network host
      - i.e. lists all the “hops” network traffic takes to get from the local system to a specified host.
      - ```traceroute google.com```
      - ```sudo traceroute -TI google.com```:  see all network hops without *
      - For routers that do not provide identifying information (because of router configuration, network congestion, firewalls, etc.) 
        - we see asterisks as in the line for hop
-134. ip – Show / manipulate routing, devices, policy routing and tunnels
+135. ip – Show / manipulate routing, devices, policy routing and tunnels
      - ip a
-135. netstat – Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+136. netstat – Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
      - e.g. netstat -ie
      - netstat -r
        - -r option will display the kernel’s network routing table
        - This shows how the network is configured to send packets from network to network.
-136. ftp – Internet file transfer program(File Transfer Protocol)
+137. ftp – Internet file transfer program(File Transfer Protocol)
      - used to download files over the Internet.
      - FTP (in its original form) is not secure because it sends account names and passwords in cleartext.
      - ```lftp```: better ftp
        - by Alexander Lukyanov
        - features including multiple protocol support (including HTTP), 
          - automatic retry on failed downloads, background processes, tab completion of path names etc.
-137. wget – Non-interactive network downloader
+138. wget – Non-interactive network downloader
      - command-line program for file downloading
      - downloading content from both web and FTP sites.
      - e.g. wget http://linuxcommand.org/index.php
-138. rlogin: Unsecure Communication with Remote Hosts
+139. rlogin: Unsecure Communication with Remote Hosts
      - log in to remote hosts
      - transmits all their communications (including login names and passwords) in cleartext.
-139. telnet: Unsecure Communication with Remote Hosts
+140. telnet: Unsecure Communication with Remote Hosts
      - log in to remote hosts
      - transmits all their communications (including login names and passwords) in cleartext.
      - ```telnet ip port```
      - e.g. telnet 192.168.1.2 22
-140. ssh – Secure Communication with Remote Hosts
+141. ssh – Secure Communication with Remote Hosts
      - OpenSSH SSH client (remote login program) from the OpenBSD project
      - encrypts all of the communications between the local and remote hosts
      - authenticates that the remote host is who it says it is (thus preventing so-called man-in-the-middle attacks).
@@ -511,11 +512,11 @@ using graphics.h library to run computer graphics programs
        - PuTTY by Simon Tatham and team
          - http://www.chiark.greenend.org.uk/~sgtatham/putty/
        - Tectia
-141. scp: (secure copy)
+142. scp: (secure copy)
      - copy files across the network
      - copy a file named document.txt to local
        - scp username@host:document.txt .
-142. sftp: (secure replacement for ftp)
+143. sftp: (secure replacement for ftp)
      - uses an SSH encrypted tunnel
      - does not require an FTP server to be running on the remote host
      ``` 
@@ -525,8 +526,8 @@ using graphics.h library to run computer graphics programs
         sftp> get ubuntu-8.04-desktop-i386.iso
         sftp> bye
      ```
-143. xargs – Build and execute command lines from standard input
-144. stat – Display file or file system status
+144. xargs – Build and execute command lines from standard input
+145. stat – Display file or file system status
      - stat /home/atul
        ```
            File: /home/atul/
@@ -537,25 +538,25 @@ using graphics.h library to run computer graphics programs
            Modify: 2023-09-27 10:46:59.523082824 +0530
            Change: 2023-09-27 10:46:59.523082824 +0530
        ```
-145. gzip: Compress or expand files
+146. gzip: Compress or expand files
      - compress one or more files
      - replaces the original file with a compressed version of the original.
      - ```gzip foo.txt```
        - o/p: foo.txt.gz
        - [gzip_options.md](Linux/gzip_options.md)
-146. gunzip:
+147. gunzip:
      - restore compressed files to their original, uncompressed form
        - ```gunzip foo.txt```
        - or ```gunzip foo.txt.gz```
      - view the contents of a compressed text file, without decompressing
          - ```gunzip -c foo.txt | less```
          - or ```zcat foo.txt.gz | less```
-147. bzip2: A block sorting file compressor
+148. bzip2: A block sorting file compressor
      - by Julian Seward
      - similar to gzip but uses a different compression algorithm that achieves higher levels of compression at the cost of compression speed.
      - bzip2 foo.txt
        - o/p: foo.txt.bz2
-148. tar: 
+149. tar: 
      - tool for archiving files
      - syntax: ```tar mode[options] pathname...```
      - ```
@@ -568,14 +569,14 @@ using graphics.h library to run computer graphics programs
        ```
      - de-archive tar files:
        - ```tar xf ../playground.tar```
-149. zip: Package and compress files
+150. zip: Package and compress files
      - both a compression tool and an archiver
      - syntax: ```zip options zipfile file...```
      - e.g. ```zip -r playground.zip playground```
        - -r option for recursion
      - Extracting the contents of a zip file
        - ```unzip ../playground.zip```
-150. rsync: Remote file and directory synchronization
+151. rsync: Remote file and directory synchronization
      - Synchronizing Files and Directories
        - backup copy of a system involves keeping one or more directories synchronized with another directory (or directories) 
        - located on either on the local system or a remote system.
@@ -586,7 +587,7 @@ using graphics.h library to run computer graphics programs
      - e.g. ```rsync -av playground foo```
        - -a option (for archiving causes recursion and preservation of file attributes)
        - -v option (verbose output)
-151. cut: Remove sections from each line of files
+152. cut: Remove sections from each line of files
      - extract a section of text from a line and output the extracted section to standard output.
      - cut Selection Options
        - Option Long Option Description
@@ -599,16 +600,16 @@ using graphics.h library to run computer graphics programs
            - cut -f 3 distros.txt
          - different field delimiter rather than the tab character(if ':' is delimiter)
            - cut -d ':' -f 1 /etc/passwd | head
-152. paste: Merge lines of files
+153. paste: Merge lines of files
      - adds one or more columns of text to a file
      - read multiple files and combine the fields found in each file into a single stream on standard output
      - e.g. 
        - paste a file containing single column to another with multiple:
          - ```paste distros-dates.txt distros-versions.txt```
-153. join: Join lines of two files on a common field
+154. join: Join lines of two files on a common field
      - joins data from multiple files based on a shared key field.(primary key)
      - ```join distros-key-names.txt distros-key-vernums.txt | head```
-154. comm: Compare two sorted files line by line
+155. comm: Compare two sorted files line by line
      - ```comm file1.txt file2.txt```
      - produces three columns of output.
        - first column contains lines unique to the first file argument
@@ -617,7 +618,7 @@ using graphics.h library to run computer graphics programs
      - supports options in the form -n, where n is either 1, 2, or 3.
        - to specify which columns to suppress.
          - ```comm -12 file1.txt file2.txt```
-155. diff: Compare files line by line
+156. diff: Compare files line by line
      - more complex tool, supporting many output formats and the ability to process large collections of text files at once
      - ```diff file1.txt file2.txt```
      - diff Change Commands
@@ -644,12 +645,12 @@ using graphics.h library to run computer graphics programs
          - blank: This line is shared by both files.
          - -: This line was removed from the first file.
          - +: This line was added to the first file.
-156. patch: Apply a diff file to an original
+157. patch: Apply a diff file to an original
      - apply changes to text files
      - accepts output from diff and is generally used to convert older version files into newer versions
      - ```diff -Naur file1.txt file2.txt > patchfile.txt```
      - ```patch < diff_file```
-157. tr: Translate or delete characters
+158. tr: Translate or delete characters
      - echo "lowercase letters" | tr a-z A-Z
        - O/P: LOWERCASE LETTERS
      - echo "lowercase letters" | tr [:lower:] A
@@ -662,7 +663,7 @@ using graphics.h library to run computer graphics programs
        - repeating characters must be adjoining. If they are not, the squeezing will have no effect. 
        - echo "abcabcabc" | tr -s ab
          - abcabcabc
-158. sed: (Stream editor) for filtering and transforming text
+159. sed: (Stream editor) for filtering and transforming text
      - echo "front" | sed 's/front/back/'
        - output: “back” 
      - echo "front" | sed 's_front_back_'
@@ -673,61 +674,61 @@ using graphics.h library to run computer graphics programs
        - aaaBbbccc
      - echo "aaabbbccc" | sed 's/b/B/g'
        - aaaBBBccc
-159. aspell: Interactive spell checker
+160. aspell: Interactive spell checker
      - interactive spelling checker
      - successor to an earlier program named ispell
      - ability to intelligently check various types of text files, including HTML documents, C/C++ programs, email messages etc.
      - e.g. ```aspell check textfile```
-160. split: split files into pieces
-161. csplit: split files into pieces based on context 
-162. sdiff (side-by-side merge of file differences).
-163. nl – Number lines
+161. split: split files into pieces
+162. csplit: split files into pieces based on context 
+163. sdiff (side-by-side merge of file differences).
+164. nl – Number lines
      - ```nl distros.txt | head```
-164. fold – Wrap each line to a specified length
+165. fold – Wrap each line to a specified length
      - ```echo "The quick brown fox jumped over the lazy dog." | fold -w 12```
      - ```echo "The quick brown fox jumped over the lazy dog." | fold -w 12 -s```
-165. fmt – A simple text formatter
+166. fmt – A simple text formatter
      - fills and joins lines in text while preserving blank lines and indentation.
      - ```fmt -w 50 fmt-info.txt | head```
      - ```fmt -cw 50 fmt-info.txt | head```
      - ```fmt -w 50 -p '# ' fmt-code.txt```
-166. pr – Prepare text for printing
+167. pr – Prepare text for printing
      - ```pr -l 15 -w 65 distros.txt```
-167. printf – Format and print data
+168. printf – Format and print data
      - ```printf "I formatted the string: %s\n" foo```
      - ```printf "I formatted '%s' as a string.\n" foo```
      - ```printf "%d, %f, %o, %s, %x, %X\n" 380 380 380 380 380 380```
        - 380, 380.000000, 574, 380, 17c, 17C
      - ```printf "%s\t%s\t%s\n" str1 str2 str3```
      - ```printf "Line: %05d %15.3f Result: %+15d\n" 1071 3.14156295 32589```
-168. groff – A document-formatting system
+169. groff – A document-formatting system
      - zcat /usr/share/man/man1/ls.1.gz | groff -mandoc -T ascii | head
-169. ps2pdf:
+170. ps2pdf:
      - convert the Post-Script file into a Portal Document Format (PDF)
      - ```ps2pdf ~/Desktop/foo/ps ~Desktop/ls.pdf```
-170. pr – Convert text files for printing
+171. pr – Convert text files for printing
      - e.g. ```ls /usr/bin | pr -3 -w 65 | head```
-171. lpr/lp: Print files
+172. lpr/lp: Print files
      - ```ls /usr/bin | pr -3 | lpr```
      - report would be sent to the system’s default printer
      - To send the file to a different printer:
        - ```lpr -P printer_name```
      - printing 12 CPI and 8 LPI with a left margin of one half inch.
        - ls /usr/bin | pr -4 -w 90 -l 88 | lp -o page-left=36 -o cpi=12 -o lpi=8
-172. a2ps – Format files for printing on a PostScript printer
+173. a2ps – Format files for printing on a PostScript printer
      - ASCII to PostScript(now, Anything to PostScript)
      - prepare text files for printing on PostScript printers.
      - ls /usr/bin | pr -3 -t | a2ps -o ~/Desktop/ls.ps -L 66
-173. lpstat -a: Show printer status information
+174. lpstat -a: Show printer status information
      - see a list of printers known to the system
      - lpstat -s
        - detailed description of the print system configuration
-174. ```lpq``` – Show printer queue status
+175. ```lpq``` – Show printer queue status
      - see the status of a printer queue
      - view the status of the queue and the print jobs it contains
-175. lprm – Cancel print jobs
+176. lprm – Cancel print jobs
      - ```cancel 603```
-176. display ***hardware device profile*** on your Linux system:
+177. display ***hardware device profile*** on your Linux system:
      - lscpu
        - information about the CPU (Central Processing Unit) and its characteristics.
      - lsusb

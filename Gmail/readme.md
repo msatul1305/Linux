@@ -1,0 +1,8 @@
+- https://support.google.com/mail/answer/6594?hl=en&authuser=3#zippy=%2Ccompose-chat
+- Keyboard Shortcuts
+  - unselect/select conversation: x
+  - * + a : select all
+  - * + n: deselect all 
+  - o : open message/mail 
+  - Alt + backspace: go back to inbox from message 
+  - Shift + i : mark as read
