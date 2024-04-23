@@ -1,0 +1,17 @@
+@startuml
+class Car {
+  - make: string
+  - model: string
+  + drive(): void
+}
+
+class Engine {
+  - cylinders: int
+  - horsepower: int
+  + start(): void
+  + stop(): void
+}
+
+Car "1" *-- "1" Engine
+
+@enduml

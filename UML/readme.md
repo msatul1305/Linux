@@ -1,0 +1,30 @@
+- UMl(Unified Modeling Language)
+  - used for 
+    - visualizing, 
+    - specifying, 
+    - constructing, 
+    - and documenting the artifacts of software systems.
+  - overview of some key UML diagrams and concepts:
+    - Use Case Diagrams:
+      - depict the interactions between a system and its external users (actors) to describe the system's functionality. 
+    - Class Diagrams
+      - represent the static structure of a system, showing 
+        - classes, attributes, operations/methods, and relationships 
+        - between classes (like inheritance, association, aggregation, and composition). 
+      - used for designing and understanding the structure of a system.
+    - Sequence Diagrams:
+      - illustrate how objects interact in a particular scenario of a use case. 
+      - show the flow of messages between objects over time, highlighting the order of interactions and the objects involved.
+    - Activity Diagrams:
+      - visualize the flow of activities or actions within a system, showing the sequence of activities and decision points. 
+      - used to model the workflow in a system or a specific use case.
+    - State Machine Diagrams
+      - represent the states of an object and transitions between these states in response to events. 
+      - useful for modeling the behavior of objects that have different states during their lifetime.
+    - Component Diagrams
+      - show the components of a system
+        - their interfaces, dependencies, and relationships.
+        - used to visualize the physical components of a system and their interactions.
+    - Deployment Diagrams
+      - depict the physical deployment of software components in a system, 
+      - showing how software is installed on hardware nodes and how they are connected.
