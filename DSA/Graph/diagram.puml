@@ -1,17 +1,57 @@
 @startuml
-class Car {
-  - make: string
-  - model: string
-  + drive(): void
+class Node {
+  - id: String
+  - neighbors: Set<Node>
+  + getId(): String
+  + getNeighbors(): Set<Node>
 }
 
-class Engine {
-  - cylinders: int
-  - horsepower: int
-  + start(): void
-  + stop(): void
+class Edge {
+  - id: String
+  - source: Node
+  - target: Node
+  + getId(): String
+  + getSource(): Node
+  + getTarget(): Node
 }
 
-Car "1" *-- "1" Engine
+Node "A" {
+  neighbors = {B, C}
+}
 
+Node "B" {
+  neighbors = {A, D}
+}
+
+Node "C" {
+  neighbors = {A, E}
+}
+
+Node "D" {
+  neighbors = {B}
+}
+
+Node "E" {
+  neighbors = {C}
+}
+
+Edge "A-B" {
+  source = A
+  target = B
+}
+
+Edge "A-C" {
+  source = A
+  target = C
+}
+
+Edge "B-D" {
+  source = B
+  target = D
+}
+
+Edge "C-E" {
+  source = C
+  target = E
+}
 @enduml
