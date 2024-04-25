@@ -1,0 +1,7 @@
+- Basic operations
+    - Insertion: Adding a new element to the data structure.
+    - Deletion: Removing an element from the data structure.
+    - Traversal: Visiting all elements of the data structure.
+    - Search: Finding a specific element in the data structure.
+    - Access: Retrieving or updating the value of a specific element.
+    - Sorting: Arranging elements in a specific order (for structures where order matters).
