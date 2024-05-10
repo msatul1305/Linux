@@ -19,25 +19,22 @@ class Graph:
             print(f"Vertex {v1} not in graph")
 
     def delete_edge(self, v1, v2):
+        # if self.graph[v1]
         if any(v2 in item for item in self.graph[v1]):
             self.graph[v1].remove(v2)
 
+
     def delete_vertex(self, v):
-        if v in self.graph:
-            self.graph.pop(v)   # delete the vertex
-            # delete all associated edges with it
-            for vertex, edge in self.graph.items():
-                if v in edge:
-                    self.graph[vertex].remove(v)
+        pass
 
     def print_edge(self):
         # traversal => BFS/DFS
-        for vertex, edge in self.graph.items():
+        for item, edge in self.graph.items():
             if edge:
                 for e in edge:
-                    print(f'{vertex} --> {e}')
+                    print(f'{item} --> {e}')
             else:
-                print(f'{vertex}')
+                print(f'{item}')
 
 
 obj = Graph()
@@ -46,9 +43,7 @@ obj.add_edge('A', 'D')
 # obj.add_edge('K', 'L')
 obj.add_vertex('K')
 # obj.add_edge('K', 'A')
-obj.print_edge()
-print(f"before deletion: {obj.graph}")
-obj.delete_edge('K', 'C')
-obj.delete_vertex('B')
+# obj.print_edge()
 print(obj.graph)
-obj.print_edge()
+obj.delete_edge('A', 'B')
+print(obj.graph)

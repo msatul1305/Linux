@@ -1,0 +1,38 @@
+# Getting Started with Azure Data Workloads
+
+- Henry Been
+  - Netherlands
+  - Microsoft Azure
+- Types of Data
+  - Structured data
+    - predefined schema
+      - e.g. int for student ID, string for first and last name
+    - tabular format
+      - each table have primary key to uniquely identify each record
+        - e.g. ID
+      - Foreign key:
+        - reference to primary key in other table to establish relation between 2 tables
+    - each row = record
+      - adhere to description called
+    - column = name and data type of records
+    - each cell = field
+    - e.g.
+      - CRM(Customer Relations Management) Systems
+      - ERP(Enterprise Resource Planning) Systems
+      - Administrative systems
+  - Unstructured data
+    - NO predefined schema
+    - NO notion of fields,labels or types
+    - e.g
+      - Video
+      - Audio
+      - Images
+  - Semi-structured data
+    - NOT necessarily tabular
+    - yet has observable structure
+- Types of databases
+  - relational and non-relational databases
+- Data workloads
+  - Transactional and analytical workloads
+- Batch data and streaming data
+- services

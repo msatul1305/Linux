@@ -37,3 +37,5 @@
     - Shift + F6
 - View current opened file in Project tree:
   - Alt + F1, 1
+- Ctrl + click alternative from keyboard
+  - ctrl + b
