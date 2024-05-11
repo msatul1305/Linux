@@ -12,5 +12,9 @@
 - Format Document (Shift+Alt+F)
 - Format Selection (Ctrl+K Ctrl+F) - Format the selected text.
 - Folding
-  - Fold All (Ctrl+K Ctrl+0)
-  - Unfold All (Ctrl+K Ctrl+J)
+  - Ctrl+Shift+[: Fold (collapse) region
+  - Ctrl+Shift+]: Unfold (uncollapse) region
+  - Ctrl+K Ctrl+[: Fold (collapse) all subregions
+  - Ctrl+K Ctrl+]: Unfold (uncollapse) all subregions
+  - Ctrl+K Ctrl+0: Fold (collapse) all regions
+  - Ctrl+K Ctrl+J: Unfold (uncollapse) all regions
