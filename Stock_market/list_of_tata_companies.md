@@ -1,0 +1,24 @@
+- Tata Consultancy Services (TCS) - IT services, consulting, and business solutions. 
+- Tata Motors - Automotive manufacturing, including cars, trucks, buses, and defense vehicles. 
+- Tata Steel - Steel production and manufacturing. 
+- Tata Power - Power generation and distribution. 
+- Tata Chemicals - Chemical manufacturing and distribution. 
+- Tata Consumer Products - Consumer goods, including beverages and foods (e.g., Tata Tea, Tata Salt). 
+- Titan Company - Watches, jewelry, eye wear, and accessories. Taj Hotels - Hospitality and hotel services. 
+- Tata Communications - Telecommunications and networking services. 
+- Tata AIA Life Insurance - Life insurance and financial services. 
+- Tata Elxsi - Design and technology services. 
+- Tata Global Beverages - Beverage production and distribution. 
+- Tata Capital - Financial services and investment banking.
+- Trent - Retail (e.g., Westside, Zudio). 
+- Voltas - Air conditioning and engineering solutions. 
+- Tata Projects - Infrastructure and construction services. 
+- Tata Advanced Systems - Aerospace and defense. 
+- Tata Housing Development - Real estate development. 
+- Tata Hitachi Construction Machinery - Construction machinery manufacturing.
+- The Indian Hotels Company Limited
+- Tata Investment Corporation Limited
+- Tata Metaliks Limited
+- Nelco Limited
+- Tata Coffee Limited
+- Tata Technologies Limited

@@ -1,0 +1,5 @@
+- words
+  - A la carte
+    - restaurant menu having dishes listed separately
+      - rather than fixed dishes
+    - i.e., more choices within the same dish

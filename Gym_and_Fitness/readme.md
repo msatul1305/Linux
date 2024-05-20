@@ -1,0 +1,7 @@
+- US Navy Physical Fitness Test
+  - 1.5 mile run(2.414 km)
+    - men: 13.5 minutes or less
+    - women: 15.5 minutes or less
+- ![workout2](Gym2.png)
+- ![workout1](Gym1.png)
+- ![Diet](diet.png)

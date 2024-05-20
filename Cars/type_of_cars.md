@@ -1,0 +1,73 @@
+- Sedan: 
+  - A four-door car with a conventional trunk. 
+    - It's typically known for its comfortable ride and 
+    - ample passenger space. 
+  - Examples: Toyota Camry and Honda Accord.
+- Hatchback: 
+  - A car with a rear door that swings upward to provide access to a cargo area. 
+  - They often offer more cargo space than a sedan. 
+  - Examples:
+    - Volkswagen Golf and Ford Focus. 
+- SUV (Sport Utility Vehicle): 
+  - A larger vehicle that often offers off-road capabilities 
+  - a higher seating position, and ample cargo space. 
+  - Examples include the Toyota RAV4 and Ford Explorer. 
+- Crossover: A type of SUV that is built on a car platform, 
+  - offering a smoother ride than traditional SUVs. 
+  - Examples include the Honda CR-V and Subaru Outback. 
+- Coupe: A two-door car with a sporty design. 
+  - It often has a sloping roofline and is
+  - typically designed for style and performance. 
+  - Examples include the Ford Mustang and BMW 4 Series. 
+- Convertible: A car with a retractable roof,
+  - allowing it to be driven with the roof up or down.
+  - Examples: Mazda MX-5 Miata and the Porsche 911 Cabriolet. 
+- Minivan: A family-oriented vehicle with sliding side doors, 
+  - designed for maximum passenger and cargo space. 
+  - Examples include the Honda Odyssey and Chrysler Pacifica. 
+- Pickup Truck: A vehicle with a passenger cab and 
+- an open cargo area (bed) in the back. 
+- Examples include the Ford F-150 and Chevrolet Silverado. 
+- Station Wagon: A car with an extended rear cargo area, 
+- typically sharing its platform with a sedan. 
+- Examples include the Subaru Outback and Volvo V60. 
+- Electric Vehicle (EV): A car powered entirely by 
+- electric motors and batteries. 
+- Examples include the Tesla Model 3 and Nissan Leaf.
+- Hybrid: A car that uses a combination of internal combustion
+  - engine and electric motors for better fuel efficiency.
+  - Examples include the Toyota Prius and Honda Insight.
+- Luxury Car: A car that offers higher levels of comfort,
+  - equipment, amenities, quality, and performance. 
+  - Examples include the Mercedes-Benz S-Class and BMW 7 Series. 
+- Sports Car: A car designed for performance, speed, 
+  - and handling, often with a powerful engine and sleek design. 
+  - Examples include the Porsche 911 and Chevrolet Corvette.
+    Electric Car: Vehicles powered entirely by electric batteries. 
+  - Electric cars produce zero emissions and are becoming 
+  - increasingly popular due to their environmental benefits. 
+  - e.g.
+    - Tesla Model S
+    - Nissan Leaf
+    - Chevrolet Bolt EV
+- Hybrid Car: Cars that combine a gasoline engine 
+  - with an electric motor. 
+  - Hybrids offer improved fuel efficiency by using electric power 
+  - for low-speed driving and gasoline for higher speeds. 
+  - e.g. 
+    - Toyota Prius
+    - Honda Insight
+    - Ford Fusion Hybrid
+- Compact Car: Smaller vehicles that are easy to maneuver and park. 
+  - Compact cars are often more fuel-efficient and affordable.
+  - e.g.
+    - Honda Civic
+    - Toyota Corolla
+    - Volkswagen Jetta
+- Subcompact Car: Even smaller than compact cars, 
+  - subcompacts are designed for urban environments where space and 
+  - fuel efficiency are crucial.
+  - e.g.
+    - Honda Fit
+    - Ford Fiesta
+    - Chevrolet Sonic

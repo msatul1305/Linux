@@ -13,3 +13,9 @@
 
 - Allow VS code to open browser:
   - 
+
+- Windows path in WSl: 
+  - /mnt/c
+- WSL Path in windows:
+  - \\wsl$\Ubuntu\home\yourusername\file.txt
+  - \\wsl.localhost\Ubuntu\home\msatu\IdeaProjects\Linux

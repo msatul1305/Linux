@@ -1,3 +1,11 @@
+- Companies
+  - Atyeti
+  - ZS associates
+  - ZF Friedrichshafen AG(ZF Group)
+    - German company
+    - ZF = "Cogwheel Factory" 
+    - global technology company
+    - supplies system for cars, commercial vehicles, industrial tech
 - companies
   - sectors
     - Technology Companies: Companies like Google, Microsoft, Apple, Amazon, and Facebook are known for employing some of the best software developers in the world. These companies work on cutting-edge technologies and offer challenging projects.
@@ -110,8 +118,8 @@
     - SK Telecom Co., Ltd.: A South Korean telecommunications company providing wireless services.
     - Telecom Italia S.p.A.: An Italian telecommunications company operating in Italy and Brazil.
     - SoftBank Group Corp.: A Japanese multinational conglomerate holding company with investments in technology, energy, and financial services.
-   
-- Here's a list of some of the top companies in various sectors:
+
+- top companies across sectors(Global):
   - Technology:
     - Apple
     - Microsoft
@@ -161,7 +169,8 @@
     - Time Warner
     - Sony
 Please note that the list is not exhaustive, and rankings may vary based on different criteria and regions.
-- Here's a list of some of the top companies in various sectors in India:
+
+- top companies India across sectors:
   - Information Technology (IT):
     - Tata Consultancy Services (TCS)
     - Infosys
@@ -224,7 +233,7 @@ Please note that the list is not exhaustive, and rankings may vary based on diff
     - Reliance Power
 Please note that this list is not exhaustive and rankings may vary based on different criteria and sources.
 
-- Here's a list of some of the top companies in various sectors in the United States:
+- Top companies USA:
   - Technology:
     - Apple
     - Microsoft
@@ -303,7 +312,8 @@ Please note that this list is not exhaustive and rankings may vary based on diff
     - Mastercard
     - PayPal Holdings
     - American Express
-- Here's a list of some of the top companies in various sectors in the United Kingdom:
+
+- Top companies UK:
   - Technology:
     - Arm Holdings
     - Sage Group
@@ -376,6 +386,3 @@ Please note that this list is not exhaustive and rankings may vary based on diff
     - Just Eat Takeaway
     - Boohoo Group
     - Farfetch
-
-
-

@@ -1,0 +1,8 @@
+- People
+  - Paramahans Yogananda
+    - Indian-American monk, yogi and guru
+    - Meditation
+    - Kriya Yoga
+  - Arthur Schopenhauer
+    - German philosopher
+    - The World as Will and Representation

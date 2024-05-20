@@ -747,6 +747,8 @@ using graphics.h library to run computer graphics programs
        - comprehensive hardware information
      - sudo dmidecode
        - detailed information about the system's hardware components from the DMI (Desktop Management Interface) tables.
+178. launch chromium browser
+     - ```chromium-browser```
 - list all available packages that can be installed RHEL 
   - sudo yum list available
 - list of packages installed

@@ -1,0 +1,49 @@
+- Maruti Suzuki
+  - Swift VDi
+  - Ertiga VDi(minivan)
+  - Alto(Micro car)
+- Toyota
+  - Etios(Sedan)
+- Tata
+  - Nexon 8L
+  - Tiago
+  - Altroz(hatchback)
+    - petrol
+    - diesel
+    - i-Turbo
+    - iCNG
+  - Tigor
+  - Punch
+  - Nexon EV
+  - Harrier
+  - Safari
+    - 16L-28L
+  - New Safari
+    - Luxury
+- Hyundai
+  - Aura(6.5L)(Sedan)
+- Mahindra
+  - eVerito
+    - subcompact
+    - Sedan
+    - EV
+- Honda
+  - Amaze
+- Kia
+  - Carens
+  - Seltos
+    - SUV
+    - 11L-21L
+- Audi
+  - A3 Cabriolet 35 TFSI(Sedan)
+  - Q7 Quattro 45 TDI
+    - 72.22L
+- Mercedes-Benz
+  - GLA 220d 4MATIC
+    - diesel
+    - 56L
+- Ford
+  - Mustang
+    - Sports car
+    - Coupe
+    - 

@@ -1,3 +1,7 @@
+- https://github.com/facebook/react
+- React
+  - single-page
+  - server-rendered application
 1. Install NodeJS (node -v)
 2. Install create react app: npm install create-react-app
 3. Create new project: create-react-app-project-name

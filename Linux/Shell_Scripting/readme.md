@@ -314,5 +314,5 @@
         - ${1:-"Unknown Error"} means that if parameter 1 ($1) is undefined, substitute the string "Unknown Error" in its place.
     - Signals
       - [signals.sh](signals.sh)
-      - [signals.md](../signals.md)
+      - [signals.md](../others/signals.md)
       - 
