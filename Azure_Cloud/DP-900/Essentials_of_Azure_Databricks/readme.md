@@ -1,0 +1,16 @@
+- Essentials of Azure Databricks    ~ Ifedayo Bamikole
+  - Key Components of Azure Databricks
+    - Workspace
+      - Apache Spark interactive workspace
+        - for exploration and visualization
+    - Cluster
+      - Apache Spark Cluster
+        - can be created in seconds and autoscale and share across users 
+    - Notebook
+      - Apache Spark Notebooks
+        - used to read, write, query, explore and visualize datasets
+  - Data ingestion and processing
+  - Capabilities of Azure Databricks
+- Azure Databricks workspace
+  - what is it
+  - how data can be ingested in it

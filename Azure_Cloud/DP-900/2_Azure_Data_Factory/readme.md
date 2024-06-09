@@ -1,0 +1,206 @@
+- Azure Data Factory    ~ Emilio Melo
+  - Data Engineering
+    - ETL(Extract, Transform, Load) and ELT(Extract, Load, Transform)
+      - sources of data
+        - L.O.B: Line of business
+        - CRM
+        - ERP
+          - SAP, Dynamics
+        - Social networks
+        - IoT devices
+    - Data warehouse
+      - stores the transformed data
+      - e.g. Azure Synapse Analytics
+        - work on ELT method
+          - transforms the data after the LOAD
+  - What is Azure Data Factory(ADF)
+    - Cloud-based
+      - PaaS Service
+        - Serverless 
+        - no upfront costs, scalable, automatic patching, high availability
+    - data integration service
+      - consolidated data from multiple sources into common view
+    - allows orchestrating and automate data movement and
+      - ADF has over 90 different connections
+        - e.g. Azure SQl
+        - SQL server
+    - data transformation
+      - can call other services like:
+        - Databricks
+        - HDInsight
+        - Azure Functions
+      - mapping data flows
+        - allows code-free transformations
+          - like joining
+          - splitting
+          - or aggregating data
+  - considerations for ADF
+    - Versions of ADF
+      - V1
+        - works on JSON interface
+      - V2
+        - graphical interface
+    - Build options
+      - Powershell
+      - .NET
+      - Python
+      - REST APIs
+      - ARM
+    - Highly integrated
+      - DevOps
+        - managing code
+      - KeyVault
+        - storing secrets/credentials
+      - Azure Monitor
+        - monitoring
+      - Azure Automation
+        - start and stop runtimes
+      - Databricks and HDInsight
+        - advanced analytics
+    - No data storage
+      - need to persist data by the end
+    - Security standard
+      - HTTP/TLS connection
+      - data traffic is encrypted
+  - How is ADF related to Azure and other on-premises Microsoft offering?
+    - >200 services in Azure
+    - Different Use cases and Azure offerings
+      - one time data Migration
+        - DMA: Data Migration Assistant
+        - DMS: Data Migration System
+      - File Migration
+        - Databox
+        - Azure File Sync
+      - ADF
+        - used for batch-processing and periodic data loading
+      - Data Streaming
+        - Event Hubs
+        - IoT Hubs
+        - Stream Analytics
+      - Transformations
+        - Data factory can help mapping of simple data flows
+        - for complex transformations
+          - use external compute service
+            - like Databricks
+  - How Data Factory can be used for automation, transformation and orchestration of data workflows
+  - Essential components like 
+    - pipelines
+      - logical grouping of activities needed to perform a unit of work
+        - can be created 
+          - Graphically
+          - Programmatically
+            - via code
+      - stages
+        - deployment
+        - scheduling
+    - activities
+      - steps performed on data like:
+        - copy
+        - move
+        - transform
+        - enrich etc.
+      - types of activities
+        - Data Movement
+          - e.g. copy
+          - there is no move operation => do copy + delete
+          - copy supports 87 different data stores
+            - including SQL server, Quickbooks, Concur, ODB or HTTP
+        - Data Transformation
+          - mapping data flow activity on ADF
+          - 13 options externally
+            - HDInsight
+              - Hive
+              - Hadoop streaming
+              - Spark
+              - Pig
+              - MapReduce
+              - Databricks
+              - Azure services
+                - Machine Learning
+                - Functions
+                - batches
+                - Data lake analytics
+                - SqL server 
+                - Azure Synapse Analytics
+        - Data Control
+          - For Each
+          - Set or Append variable
+          - Until and Wait
+     - integration runtimes
+      - computing infrastructure of ADF
+        - 4 main capabilities
+          - Data Flow Execution
+            - execution of data flow activities
+          - Data Movement execution
+            - execution of data movement activities
+              - e.g.copy
+          - Dispatch of Activities
+            - dispatch and monitoring of activities
+            - to other computing environments like HDInsights or Databricks
+          - SSIS package execution
+      - 3 types of run times on Data Factory
+        - Azure Integration Runtime(Azure IR)
+          - data movement between public endpoints
+            - cloud-based services including AWS, GCP or Azure
+            - SaaS resources like Salesforce, SAP
+            - Mapping dataflows
+          - new ADF resource => Azure IR AutoResolveIntegrationRuntime is created automatically
+        - Self-Hosted IR
+          - connection to Private and on premises resources like SQL server
+        - Azure-SSIS IR
+          - for executing SSIS packages
+          - it creates VM for SQL server execution
+    - linked services
+      - like connection strings
+      - gives source of data from external resources
+        - e.g. files => blob storage or data lake
+        - SQL tables => SQL server/Cosmos DB/Azure SQL connection strings 
+      - Types of linked services
+        - Data Stores
+          - e.g. SQL server
+          - AzureSQL
+          - Cosmos db etc.
+        - External Compute Services
+          - ADF dispatches the results to these services
+          - e.g. Azure ML
+          - HDInsight
+          - Databricks
+          - SQL databases etc.
+    - datasets
+      - representation of data
+      - data structure of data inside a data store
+        - files or 
+        - SQL tables
+      - e.g. table, query stored procedures
+        - files
+    - triggers
+      - power switch
+      - when to execute the pipeine
+        - e.g. 8 a.m.
+      - Types of triggers
+        - Schedule
+          - ON/AT (date, time)
+        - Tumbling Window
+          - periodic data processing
+          - e.g. every 2 hours
+        - Event-Based
+          - fired based on events(file arrival)
+  - Data factory elements relationship
+    - Activity consumes or produce datasets
+    - activity runs on linked service
+    - pipline is a logical group of activities
+- Polybase
+  - allows running SQL commands on external files
+    - present in Azure Data Lake
+    - or Azure Blob Storage
+- Massive Parallel Processing(MPP) systems
+  - e.g. Synapse Analytics
+    - distributes the load to different nodes for faster processing
+- SQL server Integration Services(SSIS)
+  - precursor to Azure Data Factory
+  - mature technology(20+ years)
+  - limitations:
+    - less cloud connectors
+    - limited scalability
+      - depends on on-prem servers' performance 
+- can have up to 800 data factories in the same Azure subscription.
