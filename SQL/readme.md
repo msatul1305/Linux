@@ -1,5 +1,7 @@
 - https://www.geeksforgeeks.org/sql-join-set-1-inner-left-right-and-full-joins/
 - ***SQL JOINs***
+  - ![SQLJoins](sql_joins.png) 
+  - ![Joins](joins.png) 
   - ```INNER JOIN```: intersection of 2 tables
   - ```LEFT (Outer) JOIN```: complete left table + intersection
   - ```RIGHT (Outer) JOIN```: intersection + complete right table 
