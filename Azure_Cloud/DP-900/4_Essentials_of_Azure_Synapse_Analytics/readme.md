@@ -79,8 +79,38 @@
             - using pipelines and control flow activities
   - Processing data
     - with dedicated SQL pool and apache spark tools
+      - Dedicated SQL Pool
+        - earlier known as Azure SQL Data Warehouse
+        - Like SQL server db
+          - with Massive Parallel Processing (MPP) architecture
+          - elastically scalable compute and storage separately
+          - pause or resume service to save cost
+        - MPP architecture
+          - Control Node
+            - brain of dedicated SQL pool
+          - Multiple Compute Nodes
+            - provides computational power
+          - Azure Storage
+            - data split in chunks called distributions
+        - working
+          - User -> Query -> control node (break query into smaller queries)-> compute node -> run queries against distributions in parallel -> compute nodes combine output -> control node (result)-> user
+        - Use cases
+          - build Reliable Data Model
+            - in SQL environment
+            - create tables, views, and procedures
+            - insert, update and delete data in tables
+          - build Analytical Reports
+            - using T-SQL
+        - Component
+          - Polybase
+            - allow read and write data stored in external storage
+            - using T-SQL commands
+            - supports Azure Blob Storage and Data Lake Store
+            - allows multiple compute nodes to parallely process files
+            - supports formats like CSV, Parquet etc.
   - Transforming Data 
     - with Synapse Spark Pool
+      - 
   - Querying data
     - using serverless SQL tool
 - modern data warehouse
