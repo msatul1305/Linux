@@ -56,29 +56,29 @@
       - Selecting API:
         - Cosmos DB can act like multiple types of databases
         - Supported APIs:
-          - [SQL](sql.png)
+          - ![SQL](sql.png)
             - Structured Query language(SQL)
             - JSON documents also supported
             - Database Entity: Database
             - Container Entity: Container
-          - [Cassandra](cassandra.png) 
+          - ![Cassandra](cassandra.png) 
             - CQL(Cassandra Query Language)
             - wide-column format(2-d key-value store)
-              - [cassandra2](cassandra2.png)
+              - ![cassandra2](cassandra2.png)
             - Database Entity: Keyspace
             - Container Entity: Table
-          - [MongoDB](mongo.png)
+          - ![MongoDB](mongo.png)
             - JSON document store
             - Database Entity: Database
             - Container Entity: Collection
-          - [Gremlin](gremlin.png)
+          - ![Gremlin](gremlin.png)
             - graph db
             - relationship between data is visible
             - product recommendation engines, social networks, etc.
             - Apache Tinkerpop's Gremlin language for querying relationships
             - Database Entity: Database
             - Container Entity: Graph
-          - [Azure Table](Azure_Table.png)
+          - ![Azure Table](Azure_Table.png)
             - part of Azure Storage
             - querying data using OData or LINQ(Language Integrated Query) queries(C#)
             - Database Entity: Not Applicable

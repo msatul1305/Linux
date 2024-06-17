@@ -101,7 +101,7 @@
     - Authentication: who you are?
     - Authorization: what you can do?
   - Authenticate using azure AD
-    - [Microsoft Identity Platform](microsoft_identity_platform.png)
+    - ![Microsoft Identity Platform](microsoft_identity_platform.png)
       - Authentication service
         - Azure Active Directory(AAD)
           - Azure AD Connect

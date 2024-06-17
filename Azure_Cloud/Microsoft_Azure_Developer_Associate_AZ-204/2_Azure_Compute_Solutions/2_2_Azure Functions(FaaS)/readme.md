@@ -1,4 +1,4 @@
-- [Azure Functions](azure_functions.png)
+- ![Azure Functions](azure_functions.png)
   - serverless application platform: abstract servers
   - run functions(small pieces of code) in cloud
   - FaaS: Function as a Service

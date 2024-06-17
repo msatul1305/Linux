@@ -78,7 +78,7 @@
     - add subscriber info with filtering
   - Every event has same metadata schema. The data property contains event-specific info. 
 - Implement ***Azure Event Hubs***
-  - [Event Hub](event_hubs.png) 
+  - ![Event Hub](event_hubs.png) 
   - Demo
     - Portal -> Event grid system topics -> Add -> Topic type
     - Portal -> Event grid system topic -> Add Event Subscription -> Event Grid Schema

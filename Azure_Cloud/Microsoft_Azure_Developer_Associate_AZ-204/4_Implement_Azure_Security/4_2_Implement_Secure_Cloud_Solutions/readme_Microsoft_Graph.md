@@ -1,4 +1,4 @@
-- [Microsoft Graph](microsoft_graph.png)
+- ![Microsoft Graph](microsoft_graph.png)
   - https://docs.microsoft.com/en-us/graph/overview
   - What is?
     - gateway to data and intelligence in M365, win10 and enterprise mobility + security.

@@ -3,7 +3,7 @@
   - enables multiple nodes of messaging
   - with integration for common messaging systems
     - including Java Message Service(JMS).
-  - [Organization of Azure Service Bus](service_bus.png)
+  - ![Organization of Azure Service Bus](service_bus.png)
     - Azure Service Bus -> Namespace -> Queue: Producer and Consumer 
     - Azure Service Bus -> Namespace -> Topic: Publisher and multiple subscribers.
   - Features of Azure Service Bus
@@ -58,7 +58,7 @@
 - Demo
   - Portal -> Service Bus -> Add -> namespace -> standard tier -> Queues and Topics
 - Utilizing Azure Service Bus Topics
-  - [Topics](topic.png)
+  - ![Topics](topic.png)
     - multiple subscribers
     - consumers subscribe to a topic based on the below filters
     - sender publishes messages to the topic

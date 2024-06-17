@@ -1,6 +1,6 @@
 - Azure Monitor and Application Insights
   - Azure Monitor structure
-    - [azure_monitor_structure](azure_monitor_structure.png)
+    - ![azure_monitor_structure](azure_monitor_structure.png)
     - Sources -> Data Store -> Functions of Monitor
       - Sources
         - App
@@ -16,7 +16,7 @@
         - Logs
           - events that occurred within the system.
           - e.g. exceptions thrown by app
-        - [monitor_log_metrics.png](monitor_log_metrics.png)
+        - ![monitor_log_metrics.png](monitor_log_metrics.png)
       - Functions
         - Insights
           - Application
@@ -44,7 +44,7 @@
       - e.g. performance of Azure web app/Azure SQL DB
     - data about operations of tenant-level Azure services, like AAD(Azure Active Directory).
     - can collect data from any REST client including on-premise solutions
-  - [Azure Application Insights](app_insights.png) 
+  - ![Azure Application Insights](app_insights.png) 
     - def: It is an extensible Application Performance Management(APM) service for developers and DevOps professionals
     - part of Azure Monitor
     - can monitor applications running on the client side as well

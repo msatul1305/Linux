@@ -1,11 +1,11 @@
 - Azure API Management: github.com/Daniel-Krzyczkowski/Pluralsight
-  - [solution_architecture](solution_architecture.png)
+  - ![solution_architecture](solution_architecture.png)
   - Azure service to create consistent, modern API gateways for existing back-end services.
   - provides secure, scalable API Access for applications.
   - How to design API integration in Azure
   - Components of Azure API Management Service in Azure Cloud
     - Azure API Management structure and its components
-      - [api](api.png)
+      - ![api](api.png)
       - 3 components
         - API gateway
           - sits between actual web api and client to provide a layer of abstraction to user from actual api
