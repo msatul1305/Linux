@@ -110,12 +110,61 @@
             - supports formats like CSV, Parquet etc.
   - Transforming Data 
     - with Synapse Spark Pool
-      - 
+      - Spark
+        - open-source, in-memory analytics engine
+        - cluster
+        - distributed data processing
+          - structured
+          - unstructured
+          - semi-structured
+        - languages
+          - spark sql
+          - python
+          - scala
+          - C#
+        - Integration with synapse services
+          - Data Lake
+          - dedicated SQL pool
+          - synapse pipelines etc
+        - use cases
+          - batch processing
+            - clean and transform large volume of data
+          - Stream processing
+          - machine learning
+            - MLLIb
+            - External libs
+            - Azure ML
+      - Synapse Spark Pool
+        - also called Spark Cluster
+        - Azure Portal -> Synapse Analytics -> Apache Spark pools
   - Querying data
     - using serverless SQL tool
+      - distributed data processing system that allows
+      - to run federated queries on a variety of sources
+      - using T-SQL
+      - uses distributed SQL Engine called Polaris
+        - Control Node
+        - Compute Nodes
+        - Data Sources
+          - Data Lake
+          - CosmosDB
+          - Spark Tables
+      - process
+        - user -> queries control node -> compute nodes -> run query on data sources
+      - uses
+        - faster, ad-hoc data discovery and exploration without resource provisioning
+        - Data transformation
+        - Build Logical data warehouse
+          - for PowerBI
+      - Azure Portal -> Synapse Analytics -> SQL pools
 - modern data warehouse
   - ![Data Warehouse](Data_Warehouse.png)
 - Using Synapse
   - ![using synapse](using_synapse.png)
 - mapping data flow example:
   - ![mapping data flow](mapping_data_flow.png)
+- Dedicate SQL pool vs. Serverless SQL pool
+  - similar architecture: control node + compute nodes + data sources
+  - but in Serverless
+    - no provisioning of resources required
+    - auto scale on demand

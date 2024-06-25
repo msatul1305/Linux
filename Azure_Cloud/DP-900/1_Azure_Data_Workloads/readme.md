@@ -20,6 +20,7 @@
       - CRM(Customer Relations Management) Systems
       - ERP(Enterprise Resource Planning) Systems
       - Administrative systems
+      - SQL
   - Unstructured data
     - NO predefined schema
     - NO notion of fields, labels or types
@@ -38,7 +39,7 @@
     - yet it has observable structure
     - e.g.
       - Log files: timestamp + info
-      - data export formats like: XML, CSV etc.
+      - data export formats like: XML, CSV, JSON etc.
 - Types of databases
   - relational and non-relational databases
     - Relational databases
@@ -67,7 +68,7 @@
           - more features
           - more complex
     - Non-relational databases
-      - data not stored in tables but in collections or containers
+      - data is not stored in tables but in collections or containers
       - dont enforce schema
       - collections store:
         - arbitrary snippets of data
