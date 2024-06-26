@@ -44,13 +44,15 @@
   - relational and non-relational databases
     - Relational databases
       - stores structured data in tables
+      - transaction management system
+      - scales vertically (e.g., adding 8GB ram instead of 4GB)
       - SQL: Structured Query Language
         - read, write data
         - declarative language
           - i.e., we don't write instructions on how to execute a query
           - we just describe the intended result
             - DB converts it into series of operations to execute
-        - schema
+        - strict schema
           - describes tables, fields, field types, and relations between tables
           - specified at the time of creation
           - enforced on write
@@ -64,16 +66,24 @@
         - MySQL
           - free, open-source SQL db
           - easy to install, manage, learn 
-        - PostgresSQL
+        - PostgreSQL
           - more features
           - more complex
+        - SQL Server
+        - MariaDB
     - Non-relational databases
       - data is not stored in tables but in collections or containers
-      - dont enforce schema
+      - dont enforce schema: schema-agnostic
+      - used in IoT Apps, real-time analytics
+      - scales horizontally (e.g., add another 4 gb ram parallel to exisiting)
       - collections store:
         - arbitrary snippets of data
           - like XML or JSON
       - Types of non-relational DBs
+        - Table Storage
+        - Blob Storage
+        - File Storage
+        - Cosmos DB
         - Document DB
           - stores small documents in XML or JSON
         - Wide-column stores

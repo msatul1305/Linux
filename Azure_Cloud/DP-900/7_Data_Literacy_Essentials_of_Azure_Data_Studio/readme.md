@@ -1,0 +1,88 @@
+- Data Literacy: Essentials of Azure Data Studio
+  - Azure Data Studio
+    - lightweight
+    - cross-platform tool
+      - Windows, macOS, Linux
+    - open-source
+      - GitHub
+    - multi-database tool
+      - SQL server
+      - PostgreSQL
+      - SQL Server Big Data Cluster
+      - Azure SQL DB
+      - Azure Managed Instance
+      - Azure Database for PostgreSQL
+      - Azure Synapse Analytics
+      - Azure Data Explorer (Kusto)
+    - to connect multiple databases
+    - edit and run queries
+    - main components and features
+      - keyboard-focused tool built on top of vscode
+      - SQL query editor (code snippets, IntelliSense)
+      - Integrated Terminal (Bash, Powershell)
+      - Data export (CSV, JSON, XML, Excel)
+      - Customizable dashboards, extensions, color themes
+      - Source code control integration with git
+      - Components
+        - connections
+          - DB connections
+          - server groups
+            - categorize connections
+            - assign color to each group
+        - dashboards
+          - display custom properties like:
+            - performance data
+            - widgets to connected db
+        - object explorer
+          - tables, views
+        - query editor
+          - edit and run SQL query
+        - query results viewer
+            - displays written data in grid,
+            - visualize data in chart,
+            - export to JSON
+        - notebooks
+          - open source data format
+          - has live code, code results, text, images etc.
+          - e.g., Jupyter notebooks with Python
+          - SQL notebooks
+        - extensions
+          - e.g., PostgreSQL
+      - Other components
+        - Command Palette
+          - ctrl + shift + p or F1
+        - Integrated Terminal
+        - Source Control
+          - git
+        - Accounts
+        - Settings
+        - Deployment Wizard
+    - DB development features
+      - generate scripts of database objects
+      - import flat files
+        - text files into db tables
+      - compare schema of 2 DBs
+      - manage SQL db projects
+    - process
+      - connect to DB
+      - Query DB
+      - Visualize data
+      - Export data
+    - use cases
+    - SQL notebooks and extensions
+  - Azure Data Studio vs SQL data studio
+    - SQL data studio
+      - windows only
+      - use SQL data studio when you need:
+        - database management
+        - manage DB security
+        - wizard experience, table designers
+    - Azure Data Studio
+      - cross-platform
+      - use Azure Data Studio when you need to:
+        - run and edit queries
+        - don't need database management
+        - use scripts for administrative tasks
+        - need quick data charting
+        - use (Jupyter) notebooks
+        - work on Linux or macOS

@@ -175,7 +175,7 @@
     - DDL
       - Data Definition Language
       - create and modify database objects
-      - CREATE, ALTER, DROP, RENAME
+      - CREATE, ALTER, DROP, RENAME -> table, view, procedure, function
       - CREATE
         - `CREATE DATABASE db_name`
         - `USE db_name`
@@ -190,7 +190,7 @@
     - DML
       - Data Manipulation Language
       - manipulate rows
-      - READ, INSERT, UPDATE, DELETE, SELECT
+      - READ, INSERT, UPDATE, DELETE, SELECT, MERGE
       - INSERT
         - `INSERT INTO table_name (col1, col2 ... )
         VALUES (val1, 'val2', ...), (val1, 'val2', ...), (...)`
@@ -203,6 +203,7 @@
       - DELETE
         - `DELETE from table_name
         WHERE id=condition`
+      - MERGE
     - Azure Solutions for SQL
       - Azure Data Studio
       - SSMS

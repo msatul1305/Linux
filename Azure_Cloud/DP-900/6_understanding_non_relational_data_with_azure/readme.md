@@ -1,0 +1,151 @@
+- understanding_non_relational_data_with_azure
+  - Non-relational data
+    - Azure Table Storage
+      - scalable key-value store in the cloud
+      - items = rows
+      - fields = columns
+      - no relationship keys or stored procedures
+      - denormalized data
+        - all data stored in single row
+      - grouping of related rows based on the partition key
+      - advantages
+        - simple to scale
+        - semi-structured data
+        - no complex relationship
+        - fast row insertion
+        - fast data retrival
+        - high-availability in single region
+          - data copied multiple time into single region
+        - Use cases
+          - supports large volume of data (100s of TBs)
+            - e-commerce applications
+          - fast access to denormalized data
+          - simple structure, no joins
+          - IoT Systems
+          - Event logging
+          - performance monitoring
+          - fast analysis of data based on time or datetime
+            - store partition by time
+            - store partition by type
+          - proper security and role-based access required to be maintained
+      - Azure portal -> storage account -> Tables -> +Table -> Storage explorer -> Tables -> Add
+        - partition_key = p1, row_key=r1
+        - Add property ...
+    - Azure Blob Storage
+      - binary large object
+      - blobs
+        - block blob
+          - set of blocks
+          - the size of each block can vary but have max 100 MB
+          - used to store discrete large blob that changes ***infrequently***        
+        - page blob
+          - organized as a collection of fixed sizes, 512-byte pages
+          - optimized to support random reads and writes
+          - Azure uses page blobs to implement virtual disk storage for virtual machines
+        - Append blob
+          - block blob optimized to support append operations
+          - not possible to update or delete existing blobs
+          - can only append new blob at the end of previous blob
+      - Container groups related blobs
+        - container provides a way for grouping of various blobs
+        - also provides security measures for read and write
+      - 3 tier access
+        - HOT
+        - COLD
+        - ARCHIVE
+      - Advantages of blob storage
+        - data is redundant (3 times in region)
+        - versioning
+        - soft delete
+        - snapshot
+          - read-only version of blob
+        - change feed
+          - read-only records of all updates made to the blob
+          - for audit and analysis of change in the blob object
+      - use cases of Azure Blob Storage
+        - Serving images/docs from browser
+        - Streaming audio and video
+        - Storing data for backups and store
+      - Azure portal -> Storage account -> containers -> +container -> name -> upload 
+    - Azure File Storage
+      - create file shares in the cloud and access from anywhere
+      - it uses Server Message Block 3.0(SMB) protocol
+      - supports Azure Active Directory (AAD)
+      - 2 tiers
+        - Standard - HDD
+        - Premium - SSD
+      - Advantages
+        - high capacity
+          - 1 TB max file size
+          - 100 TB data in 1 account
+          - 2000 concurrent connection
+        - Supports Azure File Sync, AzCopy
+        - High throughput
+        - data encryption at rest
+      - Use cases
+        - migration of existing application to cloud
+        - data sharing across on-premises and cloud
+        - hosting high-availability workload data
+        - up to 300 MBPS throughput per single file share
+        - encryption in transit also available
+      - Azure portal -> storage account -> File shares -> +File Share -> name -> Quota 1 GB -> upload.
+    - Azure Cosmos DB
+      - multi-model noSQL db
+      - stores data as a partitioned set of documents
+        - document = collection of files identified by a key
+        - supports JavaScript Object Notation (JSON)
+        - supports APIs like:
+          - SQL, Table, MongoDB, Cassandra, Gremlin
+        - highly scalable
+        - Advantages
+          - high availability 99.999% SLA
+          - replication across regions
+          - <10-ms latencies for read-write
+          - certified for international compliance standards
+          - encryption at rest and in motion
+            - data is always secure
+          - provides role-level authorization
+          - adheres to strict security standards
+        - Use cases
+          - Frequent bursts of large activities (IoT)
+          - Single digit latency (gaming db)
+          - Elastically scaled up or down (eCommerce)
+        - Azure portal -> Azure Cosmos DB -> create account -> new container -> db id, container id, partition key
+  - Advantages and challenges in implementing non-relational workloads on data stores
+  - How Time series work with CSV, JSON
+    - Time Series Data
+      - set of values organized by time
+      - use cases
+        - historical trends
+        - real-time alerts
+        - predictive modeling
+      - use cases
+        - represents how an asset progresses over time
+        - helps to detect anomalies
+        - visualize trends
+        - compare historical trends
+      - Example
+        - IoT data
+        - Stock market
+        - server performance metrics
+          - CPU
+          - I/O time
+        - predicting weather forecast
+      - Challenges
+        - high volume
+        - requires high-speed storage
+      - Azure
+        - Azure Time Series Insights
+          - fully managed
+          - manages time series data
+          - stream processing
+          - data store
+          - analytics
+          - reporting
+          - schema adaptive
+          - no preprocessing required
+          - Examples
+            - https://tsiclientsample.azurewebsites.net
+          - Azure portal -> Time Series Insight environments -> create TSIE
+  - JSON and CSV
+    - consumed in Azure Data Lakes
