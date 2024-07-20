@@ -6,3 +6,9 @@
     - Search: Finding a specific element in the data structure.
     - Access: Retrieving or updating the value of a specific element.
     - Sorting: Arranging elements in a specific order (for structures where order matters).
+- TO DO
+  - [ ] Binary search tree
+    - [ ] deletion of node
+      - [ ] from leaf
+      - [ ] from root
+      - [ ] from the middle
