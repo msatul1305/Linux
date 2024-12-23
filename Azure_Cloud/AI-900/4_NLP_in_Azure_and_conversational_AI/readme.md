@@ -1,0 +1,4 @@
+- NLP in Azure and conversational AI
+  - Text analytics
+  - translation
+  - language understanding
