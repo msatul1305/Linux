@@ -176,3 +176,20 @@ Focus: Global health policies, pandemic response.
 Members: Global humanitarian network.
 Focus: Disaster relief, humanitarian aid.
 
+
+QUAD (Quadrilateral Security Dialogue) 🇮🇳🇺🇸🇯🇵🇦🇺
+QUAD is a strategic alliance between India, the United States, Japan, and Australia focused on security, economic cooperation, and a free & open Indo-Pacific region.
+
+🔹 QUAD Members (4 Countries)
+🇮🇳 India
+🇺🇸 United States
+🇯🇵 Japan
+🇦🇺 Australia
+🔹 Key Objectives
+✅ Security & Defense – Counter China’s influence in the Indo-Pacific
+✅ Maritime Cooperation – Freedom of navigation & preventing dominance
+✅ Technology & Trade – 5G, AI, semiconductors, supply chains
+✅ Climate Change – Green energy & sustainable development
+✅ Health & Vaccine – Global vaccine distribution (COVID-19 response)
+
+
