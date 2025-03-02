@@ -1,18 +1,161 @@
 - AI in Azure
-  - key concepts of AI in ML
-  - Anomaly detection
-  - Computer Vision
-  - NLP
-  - Conversational AI
-- Microsoft Azure Products
-  - Azure ML
-  - Azure Cognitive Services
-    - Vision APIs
-      - Computer Vision
-      - Custom Vision
-      - face and form recognizer
-    - Sppech APis
-      - Speech service
-    - Labguage
-  - Azure Bot Services
-- 
+    - key concepts of AI in ML
+    - Anomaly detection
+    - Computer Vision
+    - NLP
+    - Conversational AI
+- ***Microsoft Azure Products***
+    1. ***Azure ML***
+        - cloud based platform for creating, managing and publishing ML models
+        - Interpret model, quantify data, Influence predictions
+        - Features provided:
+            - Automated ML
+                - for non-experts to quickly create effective ML model from data
+            - Azure Machine Learning designer
+                - GUI
+                - no code development
+            - Data and compute management
+                - cloud based data storage
+                - and compute resources
+                - used to run data experiment at large scale
+            - Pipelines
+                - define pipeline to orchestrate model training, deployment and management tasks
+    2. ***Azure Cognitive Services***
+        - Vision APIs
+            - Computer Vision
+            - Custom Vision
+            - Face and form recognizer
+        - Speech APIs
+            - Speech service
+        - Language APIs
+            - Q&A Maker
+                - build a knowledge base of Q&As that can form basis between user and AI
+            - LUIS: Language understanding
+            - Decision APIs
+                - Anomaly detector
+    3. ***Azure Bot Services***
+        - platform for creating, publishing and managing bots
+        - Bot Framework
+            - Dispatch
+            - Language understanding
+            - QnA
+            - Vision
+            - Speech
+    4. ***Computer Vision Services***
+        - Computer Vision
+            - Analyze images in video and extract descriptions, tags, objects and text
+        - Custom Vision
+            - train custom image classification
+            - and object detection model using own images
+        - Face Service
+            - build face detection and facial recognition solutions
+        - Form Recognizer
+            - extract information from scanned forms and invoices
+    5. ***NLP Services***
+        - Text Analytics
+            - Analyze text documents
+            - extract key phrases
+            - detect entities like places, dates and people
+            - evaluate sentiment
+                - if document is positive or negative
+        - Translator text
+            - translate>60 languages
+        - Speech
+            - recognize and synthesize speech
+            - translate spoken languages
+        - LUIS(Language Understanding Intelligent Service)
+            - train language model to understand spoken or text based command
+- AI
+    - creation of software that imitates human behaviours and capabilities
+- Machine Learning
+    - make the machine learn
+    - teach computer model to make predications and draw conclusions from data
+- Anomaly detection
+    - detect errors/unusual activity in system
+    - analyze data over time and identify unusual changes
+- Example Scenarios use case
+    - Identify and catalog different species of flowers
+        - collect sample of flowers
+        - label sample with correct species
+        - process labelled data using an algorithm
+        - and find relationship between feature of samples and labelled species
+            - e.g. roses are red
+        - results of algorithm encapsulated in a model
+        - Finally, predict species for new items
+    - Azure ML Service can be used
+- Computer Vision
+    - Visual processing
+        - Use cases
+            - Image Classification
+                - classify Images into categories
+                - Traffic monitoring solution
+                    - type of vehicle: taxi/bus/car etc.
+    - Object Detection
+    - Semantic Segmentation
+        - classify individual pixels in an image
+            - e.g. vehicle classification based on colors
+    - Face detection
+        - form of object detection
+            - locates human face in an image
+        - can be combined with classification and geometry analysis
+            - to get age, emotional state and recognition of face
+    - OCR(Optical Character Recognition)
+        - detect and read text in image
+            - e.g. read text in road signs/storefronts
+                - scanned documents/invoices/forms
+    - Form processing
+        - read and save information from standard documents
+            - invoices, tax documents
+        - review, extract, organize and save data automatically
+- NLP
+    - create AI to understand written and spoken language
+    - analyze and interpret text, documents, email messages etc.
+    - interpret spoken language and synthesize speech response
+    - Translate written phrases between languages
+    - interpret commands and determine appropriate actions
+    - e.g.
+        - Starship Commander
+            - VR game in science fiction world
+                - interact with in-game characters and starship systems
+- Conversational AI
+    - AI converses with humans
+    - bots
+        - customer support
+        - reservation system for restaurants, airlines, cinemas, etc.
+        - health care consultations, self-diagnosis
+        - home automation and personal digital assistance(PDAs)
+- Guiding principles for responsible AI development
+    - 6 principles
+        - Fairness
+            - treat all people fairly
+                - e.g. Loan from bank
+                    - no gender, ethnicity bias
+        - Reliability and Safety
+            - rigorous testing and deployment management
+            - e.g.
+                - autonomous vehicle
+                - diagnose patient symptoms and recommend prescriptions
+        - Privacy and security
+            - filter personal information
+            - run models locally on the device
+            - Aspects
+              - Data origin and Lineage
+                - Public vs private data sets
+              - Data use
+                - Internal vs external
+              - Data corruption considerations
+                - anomaly detection, changes in data
+        - Inclusiveness
+            - empower everyone,
+            - benefit all regardless of physical ability, gender, sexual orientation, ethnicity etc.
+        - Transparency
+          - systems should be understandable
+          - users must be aware of 
+            - purpose of the system, 
+            - how it works and 
+            - its limitations 
+          - users must understand behaviour of the AI systems
+            - Interoperability
+            - Intelligibility
+        - Accountability
+          - people should be accountable

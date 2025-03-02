@@ -1,2 +1,16 @@
 - Computer Vision on Azure
-  - 
+  - computer systems perceive the world visually using camera, Images and Videos
+  - Cognitive Services in Azure
+-   - Computer Vision Services
+- ***Azure Computer Vision Services***
+  - 2 Cognitive Services
+    - Computer Vision
+      - Form recognizer
+        - extracts key-value pairs and tables from documents
+        - read text in images
+        - receipt processing
+      - Face detector
+        - recognize and detect face in images
+    - Custom Vision
+      - train custom image classification and 
+      - object detection models using own images

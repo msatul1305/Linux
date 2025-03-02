@@ -1,0 +1,15 @@
+- Solutions architect in AI and ML
+- AI Engineer associate
+    - analysis of requirements fot AI solutions
+    - recommendation for tools and technologies for designing the solution
+- Data Engineer
+- Data Scientist
+    - AI
+    - ML
+    - Data Science
+    - Analyse, process and model data
+    - Visualise and deliver innovation, improve customer experience, grow revenue, stay ahead of competition
+- AI developer
+- IOT specialist
+- Business Intelligent Analyst
+- 

@@ -1,4 +1,10 @@
-- NLP in Azure and conversational AI
+- Natural Language Processing(NLP) in Azure and conversational AI
+  - NLP =>
+    - Enables computer to interpret written and spoken language and respond
+    - Applications that can see, hear, speak with and understand users
   - Text analytics
   - translation
   - language understanding
+  - Conversational AI
+    - dialogue between users and AI agents
+  - 

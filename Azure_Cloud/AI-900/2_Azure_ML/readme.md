@@ -1,3 +1,76 @@
 - Azure ML
-  - Create and Publish Model without writing code
-  - Azure services
+    - Create and Publish Model without writing code
+    - Azure services to keep network safe, secure and trusted
+    - predictive ML models
+- Microsoft Azure Machine Learning Service
+    - cloud based service
+    - help data scientists:
+        - prepare data
+        - train models
+        - publish predictive services
+        - monitor usage
+    - Topics
+        - Deploy Predictive Model
+        - Create Regression Model
+        - Create Classification model
+        - Create Clustering model
+- Use case example
+    - Bicycle rental company
+        - ***Regression Model***
+            - Features(what data we use to predict): x
+                - weather condition
+                - Temperature
+                - Season detail
+            - Labels(what we want to predict): y
+                - number of bicycles rented
+        - Model => f(x)=y
+    - Health clinic
+        - ***Classification model***(classify into categories)
+            - takes measurement from patients
+                - Features(x)
+                    - Blood Pressure
+                    - Glucose level
+                    - Weight
+                    - Height
+                - Labels(y)
+                    - Diabetic or Non-Diabetic
+    - Flower shop
+        - ***Clusterization***(grouping data based on similarities) - Unsupervised learning
+            - Features
+                - measurement of flower
+                - petal count
+            - Label is unknown(we do not know output)
+- Training methodology
+    - Data Ingestion
+    - Prepare data
+    - pre-process data
+        - Feature selection
+        - data cleaning
+            - remove outliers and errors
+            - replace missing values with suitable values
+        - Feature engineering
+            - derive new features from existing
+        - Normalize numeric features so they are on the same scale
+    - prepare model
+        - using algorithm
+            - to fit input data and predict features
+- Regression model
+    - Supervised Machine Learning model
+        - train model using data
+            - data
+                - feature and
+                - known values for labels
+    - train and publish using Azure Machine Learning Designer(GUI) - drag and drop
+        - train regression model
+        - use for inferencing
+        - deploy regression model as a service
+    - Use case example
+        - Automobile industry
+            - Features
+                - Engine Size
+                - No of seats
+                - Mileage
+            - Labels
+                - Likely Selling Price
+- Classification
+  - using Azure ML Designer
