@@ -73,4 +73,17 @@
             - Labels
                 - Likely Selling Price
 - Classification
+  - Supervised Machine Learning Technique
+  - e.g. Two-Class Logistic Regression
+  - train ML model to predict which category or class an item belongs to
+    - e.g. Health clinic uses 
+      - Features: characteristics of patient
+        - like age, weight, blood pressure
+      - Label: Predict Diabetic or Non-Diabetic
+        - if patient is at risk of diabetes
   - using Azure ML Designer
+- Compute Targets
+  - Compute Instances: Development workstations that data scientists can use to work with data and models.
+  - Compute Clusters: Scalable clusters of virtual machines for on-demand processing of experiment code. 
+  - Inference Clusters: Deployment targets for predictive services that use your trained models.
+  - Attached Compute: Links to existing Microsoft Azure compute resources, such as Virtual Machines or Azure Databricks cluster

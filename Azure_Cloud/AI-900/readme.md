@@ -116,4 +116,5 @@
             - identify common characteristics of conversational AI solutions
             - Identify Azure services for conversational AI
             - identify capabilities of the QnA Maker service
-            - identify capabilities of the Azure Bot service 
+            - identify capabilities of the Azure Bot service
+- [machine-learning-algorithm-cheat-sheet](machine-learning-algorithm-cheat-sheet.png)
