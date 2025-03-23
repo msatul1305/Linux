@@ -21,12 +21,14 @@
     - predict daily rental demand
 - Used in
     - Healthcare
-    - Financial management
+    - Banking and finance
+      - Financial management
     - Environment Protection
     - Sustainable Farming to adapt to climate change
     - Telecommunications
     - Traffic monitoring
-    -
+    - Police work
+    - Automated Transport
 - Microsoft Azure solutions
   - Azure ML
   - Azure Cognitive Services

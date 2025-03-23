@@ -87,3 +87,21 @@
   - Compute Clusters: Scalable clusters of virtual machines for on-demand processing of experiment code. 
   - Inference Clusters: Deployment targets for predictive services that use your trained models.
   - Attached Compute: Links to existing Microsoft Azure compute resources, such as Virtual Machines or Azure Databricks cluster
+-  different classification algorithms
+  - Two-Class Decision Forest
+  - Two-Class Logistic Regression
+  - Two-Class Support Vector Machine
+  - Two-Class Neural Network
+  - Two-Class Boosted Decision Tree
+  - Two-Class Averaged Perceptron
+- Clustering
+  - group similar items into clusters based on their features
+  - e.g. Size of Penguin
+    - group based on similarity/characteristics/features
+  - Unsupervised Machine Learning algorithm
+  - No previously known cluster values or labels to train model
+  - When evaluating a clustering model, what metrics can you visualize in the Evaluate results section?
+    - Average distance to other center
+    - Average distance to cluster center
+    - Number of points
+    - Maximal distance to cluster center

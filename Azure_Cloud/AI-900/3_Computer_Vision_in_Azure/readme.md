@@ -4,13 +4,44 @@
 -   - Computer Vision Services
 - ***Azure Computer Vision Services***
   - 2 Cognitive Services
-    - Computer Vision
-      - Form recognizer
+    - ***Computer Vision***
+      - ***Form recognizer***
         - extracts key-value pairs and tables from documents
         - read text in images
         - receipt processing
-      - Face detector
+      - ***Face detector***
         - recognize and detect face in images
-    - Custom Vision
-      - train custom image classification and 
+      - Use cases
+        - interpret images and suggest captions
+        - Suggest tags for images
+        - categorize images
+        - identify objects in images
+        - detect faces in images
+        - recognize celebrities and landmarks in images
+        - read text in images
+    - ***Custom Vision***
+      - train custom image classification
       - object detection models using own images
+- Image Analysis with Azure
+  - Image Classification
+    - classes to which an image belongs are known
+    - e.g. classify images of flowers based on:
+      - Features:
+        - measurements of petals, stem, sepals etc.
+      - Label:
+        - Species of flower
+    - Uses Supervised ML:
+      - Deep Learning
+      - Convolutional Neural Networks
+      - Patterns in Pixels
+    - Use cases for Image Classification
+      - Product identification
+        - Visual searches for specific products
+        - online searches
+        - searching in store in mobile
+      - Disaster Investigation
+        - evaluating infrastructure from disaster preparation efforts
+        - e.g. aerial surveillance and classification of bridges
+      - Medical diagnosis
+        - evaluating images from x-rays, MRIs, CT scans
+        - and classify specific issues as cancerous tumors or other medical conditions

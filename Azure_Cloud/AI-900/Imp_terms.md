@@ -1,0 +1,46 @@
+- ROC curve
+  - Received Operating Characteristic curve
+- Precision-recall curve
+- Lift curve
+- confusion matrix
+  - tabulation of the predicted and actual value counts for each possible class. 
+  - It is used to evaluate the performance of a classification model.
+  - It is a 2x2 matrix
+    - True Positive(TP)
+      - both the predicted and actual values were 1
+    - True Negative(TN)
+      - both the predicted and the actual values were 0
+    - False Positive(FP)
+    - False Negative(FN)
+    - Accuracy = (TP+TN)/(TP+TN+FP+FN)
+      - The ratio of correct predictions (true positives + true negatives) to the total number of predictions. 
+      - In other words, what proportion of diabetes predictions did the model get right?
+      - not good for imbalanced data
+        - Suppose that only 3% of the population is diabetic. 
+        - You could create a model that always predicts 0 and 
+        - it would be 97% accurate
+    - Precision = TP/(TP+FP)
+      -  The fraction of positive cases correctly identified 
+      - (the number of true positives divided by the number of true positives plus false positives).
+      - In other words, out of all the patients that the model predicted as having diabetes, how many are actually diabetic?
+    - Recall(True positive rate) = TP/(TP+FN)
+      - The fraction of the cases classified as positive that are actually positive 
+      - (the number of true positives divided by the number of true positives plus false negatives). 
+      - In other words, out of all the patients who actually have diabetes, how many did the model identify?
+    - F1 Score = 2*(Recall * Precision) / (Recall + Precision)
+      - An overall metric that essentially combines precision and recall.
+    - Specificity = TN/(TN+FP)
+    - Sensitivity = TP/(TP+FN)
+    - Type I error = FP/(FP+TN)
+    - Type II error = FN/(FN+TP)
+    - False Positive Rate = FP/(FP+TN)
+    - False Negative Rate = FN/(FN+TP)
+    - True Positive Rate = TP/(TP+FN)
+    - True Negative Rate = TN/(TN+FP)
+    - Confusion matrix is used to calculate these metrics
+    - AUC
+      - Area under the curve
+      - The larger the area under the curve (which can be any value from 0 to 1), the better the model is performing - this is the AUC metric listed with the other metrics below.
+    - Threshold slider
+      - The threshold slider is used to adjust the threshold for classification.
+    - 
