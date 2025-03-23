@@ -45,3 +45,137 @@
       - Medical diagnosis
         - evaluating images from x-rays, MRIs, CT scans
         - and classify specific issues as cancerous tumors or other medical conditions
+- Object Detection in Azure
+  - Using Custom Vision cognitive service
+  - Use cases
+    - Evaluating safety of a building
+      - looking for Fire extinguishers and emergency equipments in buildings
+    - Software for self-driving cars
+      - detecting pedestrians, other vehicles, and road signs
+    - Medical imaging
+      - detecting specific organs in medical images
+    - Manage stock levels for inventory management
+      - detecting items on shelves
+    - Help preserve wildlife
+      - detecting animals in the wild
+  - Steps for working Model:
+    - Upload Images and Tag them
+    - Train the model based on tagged and uploaded images
+    - Publish the model
+    - use to generate predictions
+  - To use model, client application developers need:
+    - Project ID
+    - Model Name
+    - Prediction Endpoint URL
+    - Prediction Key
+- Face cognitive service
+  - Face detection
+    - detect and analyze faces in images
+  - Uses
+    - identify facial landmarks
+      - Eyebrows, eyes, nose, mouth, and chin etc.
+    - Perceive age, emotional state
+    - Facial recognition 
+      - Identify known individuals
+      - Use cases of facial recognition
+        - Security
+          - Access control
+          - Surveillance
+        - Smart Phones
+          - Unlocking phones
+          - Personalization
+          - Customized marketing
+          - Personalized services
+        - Social Media
+          - Tagging friends in photos
+          - Personalization
+          - Customized marketing
+          - Personalized services
+        - Intelligent monitoring
+          - Monitoring patient health
+          - Monitoring student engagement
+          - Tracking attendance
+          - Detecting driver's face in automobile to determine 
+            - if driver is looking at the road
+            - or looking at mobile
+            - or showing signs of tiredness
+        - Advertising
+          - Personalized marketing
+          - Customized marketing
+          - Personalized services
+        - Missing persons
+          - using public cameras to identify missing persons
+          - Solving crimes
+        - Identity Validation
+          - used at ports of entry kiosks to permit special entry
+        - Personalization
+          - Customized marketing
+          - Personalized services
+        - Healthcare
+          - Patient identification
+          - Monitoring patient health
+        - Law enforcement
+          - Identifying suspects
+          - Solving crimes
+        - Education
+          - Monitoring student engagement
+          - Tracking attendance
+  - Azure services
+    - Computer Vision
+      - Face detection and basic face analysis
+        - like determining age
+    - Video indexer
+      - Face detection and face tracking in videos
+    - Face
+      - pre-built algorithms for face detection and face recognition
+      - Functionalities supported:
+        - Face detection
+        - Face verification
+        - find similar faces
+        - group faces based on similarity and 
+        - identify people
+      - attributes detected
+        - Age
+        - Blur
+        - Emotion
+        - Facial hair
+        - Smile
+        - Head pose
+        - Makeup
+        - Hair type and color
+        - Glasses
+        - Visual Noise in the image
+        - Occulusion: whether face is partially hidden
+        - Exposure
+      - Considerations to improve accuracy of face detection
+        - Image format
+          - JPEG, PNG, GIF, BMP(Bitmap)
+        - Image size
+          - 1KB to 6MB
+        - Face size
+          - Minimum detectable: 36x36 pixels
+          - Maximum detectable: 4096x4096 pixels
+    - OCR
+      - Optical Character Recognition
+      - MRC: 
+        - Machine Reading Comprehension
+          - Read text in images
+          - use Semantic Analysis to understand the context of the text
+      - APIs
+        - OCR API
+          - designed for quick extraction of small amounts of text from images
+          - operates synchronously and can recognize text in numerous languages
+        - Read API
+          - uses latest recognition model
+          - optimized for images having significant amount of text or noise
+          - scanned documents with a lot of text
+          - works asynchronously
+          - Steps
+            - submit image to API and retrieve operation ID in response
+            - use operation ID to check status of operation and wait for completion
+            - retrieve result of operation
+            - Result Hierarchy
+              - Page
+              - Line
+              - Word
+
