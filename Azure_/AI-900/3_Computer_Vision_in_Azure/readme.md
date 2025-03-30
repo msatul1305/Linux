@@ -120,62 +120,81 @@
         - Education
           - Monitoring student engagement
           - Tracking attendance
-  - Azure services
-    - Computer Vision
-      - Face detection and basic face analysis
-        - like determining age
-    - Video indexer
-      - Face detection and face tracking in videos
-    - Face
-      - pre-built algorithms for face detection and face recognition
-      - Functionalities supported:
-        - Face detection
-        - Face verification
-        - find similar faces
-        - group faces based on similarity and 
-        - identify people
-      - attributes detected
-        - Age
-        - Blur
-        - Emotion
-        - Facial hair
-        - Smile
-        - Head pose
-        - Makeup
-        - Hair type and color
-        - Glasses
-        - Visual Noise in the image
-        - Occulusion: whether face is partially hidden
-        - Exposure
-      - Considerations to improve accuracy of face detection
-        - Image format
-          - JPEG, PNG, GIF, BMP(Bitmap)
-        - Image size
-          - 1KB to 6MB
-        - Face size
-          - Minimum detectable: 36x36 pixels
-          - Maximum detectable: 4096x4096 pixels
-    - OCR
-      - Optical Character Recognition
-      - MRC: 
-        - Machine Reading Comprehension
-          - Read text in images
-          - use Semantic Analysis to understand the context of the text
-      - APIs
-        - OCR API
-          - designed for quick extraction of small amounts of text from images
-          - operates synchronously and can recognize text in numerous languages
-        - Read API
-          - uses latest recognition model
-          - optimized for images having significant amount of text or noise
-          - scanned documents with a lot of text
-          - works asynchronously
-          - Steps
-            - submit image to API and retrieve operation ID in response
-            - use operation ID to check status of operation and wait for completion
-            - retrieve result of operation
-            - Result Hierarchy
-              - Page
-              - Line
-              - Word
-
+- Azure services
+  - Computer Vision
+    - Face detection and basic face analysis
+      - like determining age
+  - Video indexer
+    - Face detection and face tracking in videos
+  - Face
+    - pre-built algorithms for face detection and face recognition
+    - Functionalities supported:
+      - Face detection
+      - Face verification
+      - find similar faces
+      - group faces based on similarity and 
+      - identify people
+    - attributes detected
+      - Age
+      - Blur
+      - Emotion
+      - Facial hair
+      - Smile
+      - Head pose
+      - Makeup
+      - Hair type and color
+      - Glasses
+      - Visual Noise in the image
+      - Occulusion: whether face is partially hidden
+      - Exposure
+    - Considerations to improve accuracy of face detection
+      - Image format
+        - JPEG, PNG, GIF, BMP(Bitmap)
+      - Image size
+        - 1KB to 6MB
+      - Face size
+        - Minimum detectable: 36x36 pixels
+        - Maximum detectable: 4096x4096 pixels
+  - OCR
+    - Optical Character Recognition
+    - MRC: 
+      - Machine Reading Comprehension
+        - Read text in images
+        - use Semantic Analysis to understand the context of the text
+    - APIs
+      - OCR API
+        - designed for quick extraction of small amounts of text from images
+        - operates synchronously and can recognize text in numerous languages
+      - Read API
+        - uses latest recognition model
+        - optimized for images having significant amount of text or noise
+        - scanned documents with a lot of text
+        - works asynchronously
+        - Steps
+          - submit image to API and retrieve operation ID in response
+          - use operation ID to check status of operation and wait for completion
+          - retrieve result of operation
+          - Result Hierarchy
+            - Page
+            - Line
+            - Word
+  - Receipt Analysis
+    - ***form recognizer service***
+      - data extraction from receipts, invoices, etc.
+      - OCR + Predictive Models to interpret the data like
+        - Field names
+        - Tables
+        - Field types
+      - to detect specific fields in receipts like
+        - date
+        - telephone number
+        - address
+        - totals etc
+    - Factors to improve accuracy
+      - images must be JPEG, PNG, BMP. PDF or TIFF
+      - File size must less than 50MB
+      - Image size must be between 50x50 and 10000x10000 pixels
+      - PDF Size
+        - 17x17 inches
+    - Free Tier
+      - 200 pages

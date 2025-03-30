@@ -1,0 +1,34 @@
+- Natural Language Processing(NLP) in Azure and conversational AI
+  - NLP =>
+    - Enables computer to interpret written and spoken language and respond
+    - Applications that can see, hear, speak with and understand users
+    - interpret and operate with written and spoken language as efficiently as humans.
+    - 
+  - Text analytics
+  - translation
+  - language understanding
+  - Conversational AI
+    - dialogue between users and AI agents
+- Services
+  - Natural language processing
+  - Microsoft Azure tools and services
+  - Conversational AI use cases
+  - Conversational AI services
+- Text and speech processing
+  - Text analytics service 
+    - use the Text Analytics service for text analysis
+    - describe speech recognition and synthesis
+    - use the Speech cognitive service in Microsoft Azure.
+- Automated translation capabilities
+  - Translator Text
+  - Speech cognitive services
+- conversational AI
+  - Build a Bot with QnA Maker
+  - Microsoft Azure Bot Service
+- use cases:
+  - Virtual assistants and chatbots
+  - Detecting anti-social activity on social media
+  - National security 
+  - Spam detection 
+  - Accessibility to support social inclusion 
+  - Targeted marketing
