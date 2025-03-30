@@ -32,3 +32,391 @@
   - Spam detection 
   - Accessibility to support social inclusion 
   - Targeted marketing
+- Text Analytics service
+  - performs analysis of text
+  - Evaluate different aspects document or phrase
+    - to gain insight into context of the text
+  - sentiment analysis
+    - Key phrase extraction
+    - named entity recognition
+    - language detection
+  - Techniques used to build text analyzing software
+    - Statistical analysis of terms used in the text
+      - word frequency count
+        - multi term phrases called n grams
+        - n-grams
+          - n=1 => unigrams
+          - n=2 => bigrams
+          - n=3 => trigrams
+      - Normalizing words before counting them
+        - Stemming 
+          - reduce words to their root form
+            - e.g. "running" => "run"
+        - limmatisation
+          - reduce words to their base form
+            - e.g. "better" => "good"
+      - Linguistic structure rules
+        - breaking sentences into tree like structure
+          - noun phrase
+            - nouns, verbs and adjectives
+      - encoding words and terms as numeric features
+        - classify text document based on terms it contains
+          - Positive, Negative or neutral
+      - Vectorized model to capture semantic relationships between words
+        - assigning locations in n-dimensional space
+          - words with similar meaning are close to each other
+            - e.g. plant and flower together, skateboard far away
+  - Azure service
+    - Text analytics cognitive service
+      - pretrained machine learning models
+        - can determine the language of the text or doc
+        - e.g. French or English
+        - sentiment analysis
+          - determine if the text is positive, negative or neutral
+        - extract key phrases
+          - identify important terms in the text to get main talking point
+  - Applications
+    - Social Media Feed Analyzer
+      - detect sentiment around political campaign or product
+    - Document search application
+      - extract key phrases from documents to summarize main subject matter 
+    - Tool to extract brand information
+      - for identification purposes
+- Azure Services
+  - Language detection service
+    - identify language 
+      - can submit multiple documents
+      - returns:
+        - language name
+          - e.g. "English"
+        - ISO 639-1 code
+          - e.g. "en" for English
+        - score
+          - confidence level of the language detection
+            - 0.0 to 1.0
+            - 1.0 is most confident
+    - e.g. restaurant reviews
+      - "The food was great and the service was excellent"
+        - English
+          - 0.99
+      - "La nourriture était excellente et le service était excellent"
+        - French
+          - 0.98
+    - Ambiguous language
+      - return vala NaN(Not a Number)
+  - Sentiment analysis
+    - determine if the text is positive, negative or neutral
+      - e.g. "The food was great and the service was excellent"
+        - Positive
+          - 0.99
+      - "The food was terrible and the service was awful"
+        - Negative
+          - 0.1
+      - "The food was okay and the service was average"
+        - Neutral
+          - 0.50
+  - Key phrase extraction
+    - identify important terms in the text to get main talking point
+      - e.g. "The food was great and the service was excellent"
+        - Key phrases
+          - food
+          - great
+          - service
+          - excellent
+      - "The food was terrible and the service was awful"
+        - Key phrases
+          - food
+          - terrible
+          - service
+          - awful
+      - "The food was okay and the service was average"
+        - Key phrases
+          - food
+          - okay
+          - service
+          - average
+    - Entity recognition
+      - identify and classify entities in the text
+        - e.g. "The food was great and the service was excellent"
+          - Entities
+            - food
+              - type: product
+            - service
+              - type: service
+            - great
+              - type: quality
+            - excellent
+              - type: quality
+- Recognize and Synthesize Speech
+  - Speech recognition
+    - convert spoken language into text
+      - e.g. "The food was great and the service was excellent"
+        - Text
+          - The food was great and the service was excellent
+      - "La nourriture était excellente et le service était excellent"
+        - Text
+          - La nourriture était excellente et le service était excellent
+  - Speech synthesis
+    - Accept vocal commands and provide spoken responses
+      - Commands
+        - Turn off the lights
+      - Question
+        - Will it rain today?
+    - Capabilities:
+      - Speech recognition
+        - detect and interpret spoken inputs
+      - Speech synthesis
+        - generate spoken output
+    - Models:
+      - Acoustic Models
+        - convert audio signal/sound waves into phonemes
+          - Phonemes
+            - Representation of specific sound
+              - e.g. "a" in "cat"
+      - Language model
+        - maps phonemes to words
+          - using statistical algorithms
+            - to predict most probable sequence of words based on phonemes
+    - recognised words are converted to text
+    - Uses:
+      - Providing closed captions for recoded or live videos  
+      - creating transcripts of phone calls
+      - Automated notes dictation
+      - determining intended user input for further processing
+- Speech Synthesis
+  - Reverse of speech recognition
+    - Vocalizing data
+    - i.e. convert text into spoken language(speech)
+    - required info:
+      - Text to be spoken
+      - Voice to be used to vocalize the speech
+    - working:
+      - tokenize the text to break it down into individual words
+      - assign phonetic sounds to each word
+      - break the phoenetic transcription into prosodic units
+        - e.g. phrases, clauses or sentences, syllables etc.
+      - create phonemes to be converted to audio format
+      - synthesize the audio
+        - using a speech synthesizer
+        - apply a voice
+          - Pitch
+          - Timbre
+        - Generate audio waveform
+        - Output to speaker/ Written to file
+  - Uses:
+    - Generating spoken responses to user input
+    - creating voicemail menus for telephone systems
+    - reading emails or text messages aloud in hands-free scenarios
+    - broadcasting announcements in public locations like railway stations or airports
+- Azure Services
+  - Speech Cognitive Service
+    - Speech Recognition
+    - Speech Synthesis
+  - APIs
+    - Speech-to-Text API(Speech to text)
+      - real-time transcription
+        - real time audio stream
+          - microphone
+          - audio file
+        - Model
+          - Universal Language Model
+          - Optimized for:
+            - Conversational speech
+            - Dictation
+          - Custom model
+            - Create and train
+            - acoustics
+            - language
+            - pronunciation
+      - batch transcription
+        - Point to audio files using:
+          - Shared access signatures(SAS) URL
+          - asynchronously receive transcription results
+          - scheduled on best effort basis
+    - Text-to-Speech API
+      - voice to be used can be selected
+        - e.g. "en-US-JennyNeural"
+      - Standard voices
+      - Neural voices
+      - Custom voice
+    - Supports variety of languages
+      - e.g. English, French, Spanish, German, Italian, Japanese, Chinese etc.
+- Translate speech and text
+  - Machine translation
+    - Old approach
+      - Literal translation
+        - word for word translation
+          - e.g. "The food was great and the service was excellent"
+            - "La nourriture était excellente et le service était excellent"
+      - Limitation
+        - no direct corresponding word
+        - context may be lost
+          - e.g. Turn off the lights and close the lights
+    - Semantic translation
+      - Sematic => relationship between words
+      - Grammar and colloquialism must be followed
+        - Colloquialism
+          - informal language
+            - e.g. "I am going to the store"
+      - New approach
+        - meaning of the text is translated
+          - e.g. "The food was great and the service was excellent"
+            - "La nourriture était excellente et le service était excellent"
+      - Limitation
+        - requires large amount of data
+          - to train the model
+- Azure services
+  - Translator Text Service
+    - text-to-text translation
+    - Easy to integrate
+      - into applications
+      - websites
+      - tools
+      - Solutions
+    - Uses neural machine translation(NMT)
+      - deep learning techniques
+      - analyzes semantic context of the text and
+      - renders more accurate and complete translations
+    - supports translations between more than 60 languages
+    - from and to translation language must be specified
+      - using ISO 6939-1 code
+        - e.g. "en" for English
+        - e.g. "fr" for French
+        - e.g. "zh" for Chinese
+        - e.g. "hi" for Hindi
+    - Supports cultural extension using 3166-1 culture code
+      - e.g. en-US for US English
+      - e.g. en-GB for British English
+      - e.g. fr-CA for Canadian French
+    - Can use one from and multiple to languages
+      - e.g. "en" to "fr", "de", "es"
+      - to translate a source language simultaneously into multiple target languages
+    - Optional Configurations
+    - Custom translation
+      - profanity filtering
+        - marking translated text as profane
+        - omitting it from results
+    - selective translation
+      - tag contents so that it is not translated
+        - e.g. HTML tags
+        - e.g. Brand names
+        - words and phrases that should not be translated
+  - Speech Service
+    - speech-to-speech translation
+    - speech-to-text translation
+      - transcribe speech from audio source to text
+    - Text-to-speech translation
+      - generate spoken audio from text to speech
+  - Use cases
+    - Real-time closed captioning for speech 2-way translation of spoken conversation
+    - One source language and one or more target languages
+    - translate speech into over 60 languages
+  - Source language formart
+    - extended language and culture code format
+      - es-US for American Spanish
+      - for localized pronunciation and linguistic idioms
+  - Target language format
+    - 2 character language code
+      - e.g. "en" for English
+      - e.g. "fr" for French
+      - e.g. "de" for German
+- Language understanding service
+  - create applications that understand language
+  - Identify key features like Intents and utterances
+  - Build and publish Natural language Machine Learning Model
+  - Use cases:
+    - Customer Support Applications
+    - Reservation systems
+    - home automation etc. 
+  - Azure Services
+    - LUIS(Language Understanding)
+      - Language Understanding Intelligent Service
+  - 3 core concepts
+    - Utterances
+      - user input that app needs to interpret
+        - e.g. "I want to book a flight"
+        - e.g. "Book a flight"
+        - e.g. "I want to book a hotel"
+        - Home automation
+          - Turn on the lights
+          - Turn off the fan
+    - Entities
+      - word or phrase inside the utterance that we want to extract
+        - Fan
+        - Light
+    - Intents
+      - purpose or goal of the utterance(most likely intent)
+      - task or action user wants to perform
+        - e.g. "I want to book a flight"
+          - Intent: BookFlight
+        - Home automation
+          - Turn on the lights
+            - Intent: TurnOnLights
+      - Weather forecast
+        - Intent: GetWeatherForecast
+        - Entity: Location, datetime, 
+          - e.g. "New York"
+          - e.g. "Los Angeles"
+      - Default: None intent
+        - donot map to any intents
+        - fallback
+        - provide generic response
+  - steps for training the language model
+    - define entities, intents and utterances
+    - publish the model
+    - Azure service
+      - language understanding
+        - Options
+          - Authoring
+          - Prediction
+          - Both
+  - Types of entities
+    - Machine learned
+      - LUIS automatically identifies and extracts entities from utterances
+        - e.g. "I want to book a flight to New York"
+          - Entity: New York
+    - List entities
+      - hierarchical of lists and sub lists
+      - e.g. 
+        - List -> device
+          - Sublist
+            - Light/Lamp
+            - Fan
+    - regex entities
+      - Regular expression that describes a pattern
+      - e.g. [0-9]{3}-[0-9]{3}-[0-9]{4}
+        - Phone number: 3 digits, hyphen, 3 digits, hyphen, 4 digits
+    - Pattern.any entities
+      - used with pattern to define complex entities
+      - that may be hard to extract from sample utterances
+  - Train the model
+  - Publish the model
+- Q&A maker knowledge base
+  - using Azure bot service spot in Azure
+  - Bots
+    - AI agents
+      - Automated support channel
+      - e.g. chat interface
+    - can work across multiple channels
+      - e.g. Email, social media, voice calls etc.
+    - manages conversations using combination of:
+      - natural language
+      - constrained option responses
+        - to guide user to resolution
+    - based on existing FAQ documentation
+  - Azure Services
+    - QnA Maker
+      - Cognitive service
+        - create and publish knowledge base
+          - with built-in natural language processing capabilities
+    - Azure bot service
+      - develoing, publishing and managing bots
+  - Steps involved:
+    - knowledge base
+      - create 
+      - train
+      - publish
+      - manage
+    - using code rest API or SDK
+    - or using QnA Maker portal
+    - 
