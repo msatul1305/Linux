@@ -411,12 +411,48 @@
           - with built-in natural language processing capabilities
     - Azure bot service
       - develoing, publishing and managing bots
-  - Steps involved:
-    - knowledge base
-      - create 
-      - train
-      - publish
-      - manage
-    - using code rest API or SDK
-    - or using QnA Maker portal
-    - 
+    - Steps involved:
+      - knowledge base using QnA Maker (using web portal)
+        - create 
+        - train
+        - test
+          - built in test portal
+          - submit questions and get answers
+        - publish
+          - client access via REST API
+          - needs:
+            - Knowledge Base ID
+            - Knowledge Base Endpoint
+            - Knowledge Base Authorization key
+        - delivery
+          - creating as custom bot using Microsoft Bot Framework SDK
+            - write code to control conversation flow
+            - and integrate with QnA Maker Knowledge base
+          - using Automatic bot creation functionality of QnA Maker
+            - create a bot for the knowledge base and
+            - publish it as Azure Bot Service Application
+        - Manage
+          - Extend and configure bot functionality
+            - adding custom code
+            - Test bot in interactive test interface
+            - configure login analytics and
+            - integrate with other Azure services
+          - Edit bot code in Azure portal
+            - or download the source code and edit locally
+            - republishing the bot directly to Azure
+          - Connect bot to multiple channels
+            - via web chat, email, teams, etc.
+          - User can submit questions to the bot from any of these channels
+            - and get answers from the knowledge base
+      - using code
+        - QnA Maker rest API or SDK
+      - or using QnA Maker portal
+      - Define Questions and Answers pairs
+        - generated from FAQ document or web page
+        - Imported from predefined chitchat datasource
+        - entered and edited manually
+        - Alternate base questions/phrases with same meaning
+          - e.g. "What is the return policy?"
+            - "What is the refund policy?"
+            - "How do I return an item?"
+        - 
