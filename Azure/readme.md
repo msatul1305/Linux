@@ -1,0 +1,38 @@
+- Azure Certification pathways
+  - Beginner
+    - AZ-900
+      - foundational knowledge on cloud services.
+    - AI-900
+      - foundational knowledge of common ML and AI workloads
+    - DP-900
+      - foundational knowledge of cloud data services
+  - Intermediate
+    - DP-100
+      - data science and machine learning to implement and run machine learning workloads on Azure; using Azure Machine Learning Service.
+    - AZ-220
+      - developers who want to specialize in IoT
+      - managing the device lifecycle–set up, configuration, and maintenance–using cloud services and other tools
+      - implement designs for Azure IoT solutions including device topology, connectivity, debugging, and security, as well as solutions to manage, monitor, and transform IoT-related data pipelines.
+      - deploy Azure IoT Edge components and configure device networking on the edge.
+    - AZ-140
+      - Azure administrators
+      - planning, delivering, and managing virtual desktop experiences and remote apps, for any device, on Azure.
+      - virtualization, networking, identity, storage, backups, resilience, and disaster recovery.
+      - Azure portal and Azure Resource Manager (ARM) templates 
+      - PowerShell and Azure Command-Line Interface (CLI)
+    - AZ-104
+      - Microsoft Certified Azure Administrator Associate
+    - AZ-204
+      - Microsoft Certified Azure Developer Associate
+    - AI-100
+      - Microsoft Certified AI Engineer Associate
+    - DP-100
+      - Microsoft Certified Azure Data Science Associate
+    - DP-200
+      - Microsoft Certified Data Engineer Associate
+    - AZ-500
+      - Microsoft Certified Azure Security Engineer Associate
+    - AZ-400
+      - Microsoft Devops Engineer Expert
+    - AZ-303, AZ-304
+      - Microsoft Certified Azure Solutions Architect Expert
