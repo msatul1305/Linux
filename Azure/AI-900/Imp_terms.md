@@ -55,6 +55,18 @@
   - laplace filter
   - other kinds of filter
     - use to create blurring, sharpening, color inversion, and other effects.
-- softmax function
+- softmax function(Gen AI, transformers)
+  - used within the attention function
+  - over the scaled dot-product of the vectors, 
+  - to create a probability distribution with possible outcomes.
+  - softmax function's output includes which keys are closest to the query.
+  - The key with the highest probability is selected
+  - and the associated value is the output of the attention function.
 - conversational language understanding (CLU)
   - turn devices on and off based on speech
+- Recurrent Neural Networks (RNNs)
+  - multiple sequential steps
+  - Each step takes an input and a hidden state
+  - Imagine the input at each step to be a new word. 
+  - Each step also produces an output.
+  - The hidden state can serve as a memory of the network, storing the output of the previous step and passing it as input to the next step.
