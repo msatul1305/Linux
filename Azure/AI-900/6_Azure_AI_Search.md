@@ -1,0 +1,50 @@
+- Azure AI Search
+  - extract data from various structured, semi-structured, and non-structured documents.
+  - Platform as a Service (PaaS) solution
+  - programmable search engine built on Apache Lucene
+    - open-source software library
+  - Data from any source
+    - in JSON format
+    - auto crawling support for selected data sources in Azure
+  - Multiple options for search and analysis
+    - vector search, full text, and hybrid search.
+  - AI enrichment: 
+    - has Azure AI capabilities built in for image and text analysis from raw content.
+  - Linguistic analysis: 
+    - offers analysis for 56 languages to intelligently handle phonetic matching or language-specific linguistics. 
+    - Natural language processors available in Azure AI Search are also used by Bing and Office. 
+  - Configurable user experience: 
+    - has options for query syntax including vector queries, 
+    - text search, 
+    - hybrid queries, 
+    - fuzzy search, 
+    - autocomplete, 
+    - geo-search filtering based on proximity to a physical location, etc.
+  - Azure scale, security, and integration: 
+    - at the data layer, machine learning layer, and with Azure AI services and Azure OpenAI.
+- search index
+  - create a search index by moving data through the following indexing pipeline:
+    - Start with a data source
+      - storage location of your original data artifacts, such as PDFs, video files, and images.
+      - files in Azure Storage, or text in a database such as Azure SQL Database or Azure Cosmos DB.
+    - Indexer
+      - automates a portion of data ingestion and exports the original file type to JSON (in an action called JSON serialization).
+    - Document cracking
+      - opens files and extracts content.
+    - Enrichment
+      - implements Azure AI on your original data to extract more information.
+      - adding and combining skills in a skillset
+        - using text translation or Optical Character Recognition (OCR), or custom skills
+        - Example: adding captions to a photo and evaluating text sentiment
+      - sent to knowledge store
+        - persists output from an AI enrichment pipeline in tables and blobs in Azure Storage for independent analysis or downstream processing.
+    - Push to index
+      - serialized JSON data populates the search index.
+    - The result is a populated search index
+      - explored through queries
+      - search engine looks for that information in the search index.
+      - search index structure similar to a table, known as the index schema
+        - contains a set of fields and field attributes
+        - fields store searchable text
+        - field attributes allow for actions such as filtering and sorting.
+    - [json-index-example.png](json-index-example.png)

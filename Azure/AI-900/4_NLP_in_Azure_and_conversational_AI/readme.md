@@ -310,8 +310,8 @@
   - Use cases
     - Real-time closed captioning for speech 2-way translation of spoken conversation
     - One source language and one or more target languages
-    - translate speech into over 60 languages
-  - Source language formart
+    - translate speech into over 90 languages
+  - Source language format
     - extended language and culture code format
       - es-US for American Spanish
       - for localized pronunciation and linguistic idioms

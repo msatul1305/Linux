@@ -32,6 +32,7 @@
         - Species of flower
     - Uses Supervised ML:
       - Deep Learning
+        - e.g. Neural networks
       - Convolutional Neural Networks
       - Patterns in Pixels
     - Use cases for Image Classification
@@ -198,3 +199,18 @@
         - 17x17 inches
     - Free Tier
       - 200 pages
+- Convolutional Neural Networks(CNNs)
+  - type of deep learning architecture
+  - use filters to extract numeric feature maps from images
+  - and then feed the feature values into a deep learning model to generate a label prediction
+  - image classification
+  - feature maps are created
+- Microsoft Florence model
+  - Multi-modal models
+  - model is trained using a large volume of captioned images, with no fixed labels. 
+  - image encoder extracts features from images based on pixel values and combines them with text embeddings created by a language encoder
+- Azure AI Translator
+  - uses a Neural Machine Translation (NMT) model for translation
+  - analyzes the semantic context of the text and renders a more accurate and complete translation as a result.
+  - supports text-to-text translation between more than 130 languages.
+  - using ISO 639-1 language codes(en) or 3166-1 cultural code(en-US)

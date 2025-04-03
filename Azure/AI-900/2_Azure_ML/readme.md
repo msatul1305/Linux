@@ -72,6 +72,34 @@
                 - Mileage
             - Labels
                 - Likely Selling Price
+    - Regression evaluation metrics
+      - Mean Absolute Error (MAE)
+        - indicates by how many items each prediction was wrong. 
+        - for example, -3 and +3 both indicate a variance of 3
+        - i.e. It doesn't matter if the prediction was over or under the actual value
+        - it takes all discrepancies between predicted and actual labels into account equally
+      - Mean Squared Error (MSE)
+        - produce a metric that "amplifies" larger errors by squaring the individual errors and 
+        - calculating the mean of the squared values.
+        - squares the error values
+      - Root Mean Squared Error (RMSE)
+        - to measure the error in terms of the number of items back from MSE
+        - compare the discrepancy between the predicted and actual values in order to evaluate the model.
+      - Coefficient of determination or R-squared (R2)
+        - measures the proportion of variance in the validation results 
+        - that can be explained by the model, as opposed to some anomalous aspect of the validation data 
+        - for example
+          - a day with a highly unusual number of ice creams sales because of a local festival
+        - It compares the sum of squared differences between predicted and actual labels 
+          - with the sum of squared differences between the actual label values and the mean of actual label values, 
+          - like this:
+            - R2 = 1- ∑(y-ŷ)2 ÷ ∑(y-ȳ)2
+            - where:
+              - y = actual label value
+              - ŷ = predicted label value
+              - ȳ = mean of actual label values
+        - result is a value between 0 and 1 that describes the proportion of variance explained by the model.
+        - 
 - Classification
   - Supervised Machine Learning Technique
   - e.g. Two-Class Logistic Regression
@@ -94,6 +122,22 @@
   - Two-Class Neural Network
   - Two-Class Boosted Decision Tree
   - Two-Class Averaged Perceptron
+- multiclass classification model
+  - One-vs-Rest (OvR) algorithms 
+    - train a binary classification function for each class
+    - each calculating the probability that the observation is an example of the target class.
+    - Each function calculates the probability of the observation being a specific class compared to any other class.
+    - f0(x) = P(y=0 | x)
+      f1(x) = P(y=1 | x)
+      f2(x) = P(y=2 | x)
+    - Each algorithm produces a sigmoid function that calculates a probability value between 0.0 and 1.0.
+    - produces the highest probability output.
+  - Multinomial algorithms
+    - creates a single function that returns a multivalued output.
+    - The output is a vector (an array of values) that contains the probability distribution 
+      - for all possible classes - with a probability score for each class 
+      - which when totaled add up to 1.0
+      - e.g. [0.2, 0.3, 0.5]
 - Clustering
   - group similar items into clusters based on their features
   - e.g. Size of Penguin
@@ -101,7 +145,14 @@
   - Unsupervised Machine Learning algorithm
   - No previously known cluster values or labels to train model
   - When evaluating a clustering model, what metrics can you visualize in the Evaluate results section?
-    - Average distance to other center
     - Average distance to cluster center
-    - Number of points
+      - How close, on average, each point in the cluster is to the centroid of the cluster.
+    - Average distance to other center
+      - How close, on average, each point in the cluster is to the centroid of all other clusters.
     - Maximal distance to cluster center
+      - The furthest distance between a point in the cluster and its centroid.
+    - Number of points
+    - Silhouette
+      - A value between -1 and 1 that summarizes the ratio of distance 
+        - between points in the same cluster and points in different clusters 
+        - (The closer to 1, the better the cluster separation).

@@ -1,3 +1,4 @@
+- [Confusion-matrix-and-performance-evaluation-metrics.png](Confusion-matrix-and-performance-evaluation-metrics.png)
 - ROC curve
   - Received Operating Characteristic curve
 - Precision-recall curve
@@ -43,4 +44,17 @@
       - The larger the area under the curve (which can be any value from 0 to 1), the better the model is performing - this is the AUC metric listed with the other metrics below.
     - Threshold slider
       - The threshold slider is used to adjust the threshold for classification.
-    - 
+- loss function
+  - To evaluate the aggregate difference between predicted and actual label values
+- Multi-service resource
+  - the AI service resource created in the Azure portal that provides access to a bundle of AI services.
+- Single-service resource
+  - a resource created in the Azure portal that provides access to a single Azure AI service, such as Speech, Vision, Language, etc. Each Azure AI service has a unique key and endpoint.
+- convolutional filtering.
+  - filter is convolved across the image
+  - laplace filter
+  - other kinds of filter
+    - use to create blurring, sharpening, color inversion, and other effects.
+- softmax function
+- conversational language understanding (CLU)
+  - turn devices on and off based on speech
