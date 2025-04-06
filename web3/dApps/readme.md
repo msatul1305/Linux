@@ -1,0 +1,7 @@
+- Decentralized Applications (dApps)
+  - run on a blockchain network, not hosted on a single server.
+  - Use smart contracts to operate.
+  - Examples
+    - Uniswap (trading)
+    - Audius (music streaming)
+    - Mirror.xyz (publishing platform)

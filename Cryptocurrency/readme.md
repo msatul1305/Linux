@@ -1,0 +1,14 @@
+- Cryptocurrency
+  - based on blockchain technology
+  - digital or virtual currencies
+  - secured by cryptography
+  - decentralized
+  - not controlled by any central authority
+  - peer-to-peer transactions
+  - enables secure and transparent transactions
+- Examples
+  - Bitcoin
+  - Ethereum
+  - Solana
+  - Polkadot
+  - Cardano

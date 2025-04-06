@@ -1,0 +1,4 @@
+-  Non-Fungible Tokens (NFTs)
+  - Unique digital assets stored on a blockchain.
+  - Used in art, music, gaming, real estate, and identity management.
+  - Example platforms: OpenSea, Rarible, Foundation.

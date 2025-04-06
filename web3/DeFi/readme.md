@@ -1,0 +1,9 @@
+- Decentralized Finance (DeFi)
+  - inancial services without banks: 
+    - borrowing, lending, trading—all without intermediaries.
+  - built on blockchain technology, primarily Ethereum.
+  - Protocols
+    - Aave, 
+    - Compound, 
+    - Curve, and 
+    - MakerDAO are key players.

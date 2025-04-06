@@ -1,0 +1,7 @@
+- Metaverse Integration
+  - Web 3.0 enables virtual worlds where users can own digital assets and land.
+  - Powered by blockchain and NFTs.
+  - Examples
+    - Decentraland (virtual real estate)
+    - The Sandbox (user-generated content)
+    - Axie Infinity (play-to-earn gaming)

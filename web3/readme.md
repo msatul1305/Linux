@@ -1,0 +1,57 @@
+- Web 1.0	
+  - 1990s–2000s	Read-only websites (static pages).
+- current model (Web 2.0)
+  - large corporations control most of the data and platforms 
+  - like Google, Facebook, Amazon
+  - Interactive, social, user-generated content.
+- web3
+  - next generation of the internet 
+  - Decentralized, trustless, blockchain-driven.
+  - built on decentralized technologies like blockchain
+  - aim
+    - Remove intermediaries (no central authorities like Google, Meta)
+    - Use cryptocurrencies and tokens as native payment layers
+    - Let users own their data, identity, and digital assets 
+- key Web3 ideas:
+  - Decentralized apps (dApps)
+  - Decentralized Finance (DeFi)
+  - Smart contracts (self-executing code on blockchains)
+  - DAOs (decentralized autonomous organizations)
+  - NFTs, DeFi, etc.
+- Key Features
+  - Decentralization
+    - No central authority—data is distributed across the network (like blockchain).
+  - Blockchain-based
+    - Uses blockchain for secure, transparent transactions and data management.
+  - User ownership
+    - Users own their data and digital assets (e.g., NFTs, tokens).
+  - Smart Contracts
+    - Code that runs automatically on blockchains when conditions are met.
+  - Cryptocurrency
+    - Digital currencies like Ethereum are often used for transactions and access.
+  - Semantic Web
+    - Machines can understand data more intelligently (like relationships and context).
+  - AI and Machine Learning
+    - More intelligent applications that can offer personalized experiences.
+- Web 3.0 Applications:
+  - Ethereum (blockchain platform)
+  - Metamask (crypto wallet)
+  - Uniswap (decentralized exchange)
+  - IPFS (distributed file storage)
+  - Decentraland (virtual world using blockchain)
+  - Lens Protocol (Web3 social network)
+- Key concepts
+  - Wallet	
+    - blockchain wallet (like MetaMask or Phantom) stores your crypto and 
+      - digital identity.
+  - Tokenomics
+    - The economical design of a crypto/token project, 
+      - involving supply, distribution, and use cases.
+  - DAO (Decentralized Autonomous Organization)
+    - community-led organization with no centralized leadership, governed by smart contracts and token votes.
+  - Interoperability	
+    - Connecting different blockchain networks so they can share information (e.g., Cosmos, Polkadot). 
+  - Zero-Knowledge Proofs
+    - Cryptographic method that allows someone to prove a statement without revealing the actual data. 
+    - Helps with privacy.
+- 
