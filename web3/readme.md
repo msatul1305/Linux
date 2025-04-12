@@ -54,4 +54,29 @@
   - Zero-Knowledge Proofs
     - Cryptographic method that allows someone to prove a statement without revealing the actual data. 
     - Helps with privacy.
-- 
+- languages
+  - Solidity
+    - Ethereum smart contracts
+    - C++-like syntax
+    - statically typed
+    - compiled to EVM bytecode
+  - Rust
+    - Solana smart contracts
+    - C++-like syntax
+    - statically typed
+    - compiled to native code
+  - Hardhat framework
+    - Ethereum smart contracts
+    - C++-like syntax
+    - statically typed
+    - compiled to EVM bytecode
+  - Libraries
+    - ethers.js
+      - JavaScript library for interacting with Ethereum
+      - Provides a simple API for sending transactions, querying balances, etc.
+    - web3.js
+      - JavaScript library for interacting with Ethereum
+      - Provides a simple API for sending transactions, querying balances, etc.
+    - ethers-rs
+      - Rust library for interacting with Ethereum
+      - Provides a simple API for sending transactions, querying balances, etc.

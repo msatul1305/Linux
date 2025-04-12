@@ -1,0 +1,2 @@
+- import this in python to get the Zen of Python
+- learn vim : `vimtutor`

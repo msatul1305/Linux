@@ -1,0 +1,205 @@
+- programming languages
+- There are over 700 programming languages: https://en.wikipedia.org/wiki/List_of_programming_languages
+- ranking: https://www.tiobe.com/tiobe-index/
+- Open source : https://en.wikipedia.org/wiki/List_of_open-source_programming_languages
+  - General Purpose Languages
+    - Python – Easy-to-read, great for scripting, data science, and automation. 
+    - Java – Widely used, object-oriented, portable across platforms.
+    - C – Low-level, procedural, fast; used in OS and embedded systems. 
+    - C++ – C with object-oriented features; used in gaming, simulations. 
+    - C# – Microsoft’s modern language; used in Windows and game development (Unity). 
+    - Go (Golang) – Simple, fast, with native concurrency; popular in cloud dev. 
+    - Rust – Safe systems programming with no garbage collection. 
+    - Swift – For macOS/iOS apps; concise and fast. 
+    - Kotlin – Modern alternative to Java for Android. 
+    - D – Systems-level language with high-level features.
+  - Web Development
+    - JavaScript – Essential for client-side web interactivity. 
+    - TypeScript – Adds static types to JavaScript. 
+    - PHP – Server-side scripting; runs WordPress and more. 
+    - Ruby – Known for web dev with Ruby on Rails. 
+    - Elixir – Functional, built for scalability (Phoenix framework). 
+    - Erlang – Telecom-grade concurrency; real-time systems. 
+    - Dart – Optimized for frontend (Flutter apps). 
+    - CoffeeScript – Syntactic sugar over JavaScript. 
+    - Hack – PHP variant developed by Facebook. 
+    - Haxe – Multi-platform toolkit for apps and games.
+  - Data Science & AI
+    - R – Built for statistical computing and graphics. 
+    - Julia – High-performance for scientific computing. 
+    - MATLAB – Matrix-based language for engineering and simulations. 
+    - SAS – Statistical analysis, heavily used in business. 
+    - Prolog – Logic programming, AI research.
+  - Functional Languages
+    - Haskell – Purely functional, lazy evaluation. 
+    - OCaml – Functional + imperative; fast compilation. 
+    - F# – Functional-first, .NET-based. 
+    - Lisp – Powerful macros and symbolic processing. 
+    - Scheme – Minimalist Lisp dialect. 
+    - Clojure – Modern Lisp on JVM. 
+    - Elm – Functional, safe front-end web development. 
+    - Nim – Fast, expressive language with Python-like syntax.
+  - Scripting & Automation
+    - Bash – Unix shell scripting. 
+    - PowerShell – Microsoft’s task automation language. 
+    - Perl – Powerful text-processing and scripting. 
+    - Tcl – Simple scripting, often embedded. 
+    - Lua – Lightweight scripting for games and embedded systems. 
+    - AWK – Pattern scanning and processing. 
+    - Groovy – Scripting for the Java platform. 
+    - Zsh – Advanced shell with scripting capabilities. 
+    - Fish – User-friendly shell with scripting.
+  - Systems & Low-Level
+    - Assembly (x86, ARM) – Very low-level hardware-specific code. 
+    - VHDL – Hardware description language. 
+    - Verilog – Used for modeling electronic systems. 
+    - Fortran – Legacy scientific computing language. 
+    - Ada – Designed for safety-critical systems. 
+    - COBOL – Still used in banking and legacy systems. 
+    - Modula-2 – Successor of Pascal, modular systems. 
+    - Pascal – Teaching language, strong typing.
+  - Game Development
+    - GDScript – Scripting for the Godot engine. 
+    - HaxeFlixel – Game dev with Haxe. 
+    - TorqueScript – Scripting for the Torque Game Engine. 
+    - AngelScript – Embedded scripting, similar to C++. 
+    - UnrealScript – Older scripting language for Unreal Engine. 
+    - DarkBASIC – Game-oriented BASIC dialect.
+  - Educational / Experimental
+    - Scratch – Visual language for beginners. 
+    - Blockly – Google’s block-based coding tool. 
+    - Logo – Turtle graphics and logic for teaching. 
+    - Alice – 3D programming for teaching. 
+    - Smalltalk – OOP pioneer; highly dynamic. 
+    - Etoys – Educational, visual Smalltalk environment. 
+    - Blockly – Google’s block-based teaching tool. 
+    - PicoLisp – Minimalist Lisp dialect.
+  - Cross-Platform / Multi-Paradigm
+    - Vala – Modern language for GNOME. 
+    - Crystal – Ruby-like syntax, compiled and fast. 
+    - Zig – Safe and performant, alternative to C. 
+    - Red – Compact and runs on many platforms. 
+    - Rebol – Expressive, compact language. 
+    - Io – Minimalist prototype-based OO language. 
+    - Nimrod (Nim) – Expressive, compiles to C. 
+    - Pony – Actor-based, safe concurrent language.
+  - Esoteric / Fun
+    - Brainfuck – Minimal, unreadable, Turing-complete. 
+    - Whitespace – Only uses spaces, tabs, and newlines. 
+    - Befunge – 2D code execution. 
+    - Piet – Code is a picture. 
+    - LOLCODE – Meme-based programming syntax. 
+    - Chef – Code looks like cooking recipes. 
+    - Shakespeare – Code reads like a play.
+  - DSLs & Special-Purpose
+    - SQL – Query language for relational databases. 
+    - GraphQL – Query language for APIs. 
+    - HTML/CSS – Markup/styling, not programming but essential for the web. 
+    - VCL – Varnish Configuration Language. 
+    - Sed – Stream editor language. 
+    - Make – Build automation scripting. 
+    - XSLT – XML transformations. 
+    - Q# – Microsoft’s quantum computing language. 
+    - Solidity – Smart contracts for Ethereum. 
+    - Vyper – Pythonic Ethereum contract language.
+  - Academic / Theoretical
+    - Mercury – Logic-functional hybrid. 
+    - Agda – Dependently-typed functional language. 
+    - Coq – Interactive proof assistant with a functional core. 
+    - Idris – Functional language with dependent types. 
+    - Eiffel – Design-by-contract focused OOP. 
+    - ML – MetaLanguage; basis for OCaml and SML. 
+    - Standard ML – Strict functional programming. 
+    - Turing – Designed for teaching programming. 
+    - Chapel – Parallel programming for HPC. 
+    - Forth – Stack-based; used in embedded systems. 
+    - J – Array programming, successor to APL.
+- Languages and repositories:
+  - Go: https://github.com/golang/go
+  - Swift: https://github.com/swiftlang/swift
+  - Typescript: https://github.com/microsoft/TypeScript
+  - Rust: https://github.com/rust-lang/rust
+  - Python: https://github.com/python/cpython
+  - JDK: https://github.com/openjdk/jdk
+  - Roslyn: https://github.com/dotnet/roslyn
+  - php: https://github.com/php/php-src
+  - CPP: https://github.com/cplusplus/draft
+  - Powershell: https://github.com/PowerShell/PowerShell
+  - scala: https://github.com/scala/scala
+  - Kotlin: https://github.com/JetBrains/kotlin
+  - Bash: https://github.com/bminor/bash
+  - Dart: https://github.com/dart-lang/sdk
+- India
+  - Kojo
+    - Developer: Lalit Pant, from India 
+    - Type: Educational programming language & environment 
+    - Purpose: Designed to help kids learn programming, math, and logic using a Scala-based environment. 
+    - Features: Visual programming, turtle graphics, and integration with music and geometry. 
+  - Vedic Programming Language (VPL) (experimental)
+    - Inspiration: Based on Vedic Mathematics concepts 
+    - Status: Not widely adopted, mostly academic or research-based 
+    - Use: Aimed at creating efficient algorithms using ancient Indian math principles 
+    - Fun fact: Some educational institutions explored this for teaching optimization and logic. 
+  - Bharat Programming Language (proposed)
+    - There have been discussions in the Indian developer community about creating an 
+      - Indian-language-based programming language — 
+      - especially one with syntax in Hindi or other native languages. 
+      - Some experimental projects tried this but haven't gone mainstream yet. 
+  - Sandesha 
+    - Purpose: Messaging protocol implementation using SOAP 
+    - Developed at: Indian Institute of Technology (IIT), involvement in Apache Axis2 
+    - Not a language, but shows India's involvement in protocol/tool development. 
+  - Bonus: Experimental Languages in Indian Languages 
+    - Several GitHub projects and hackathons have tried creating programming languages 
+      - that use Hindi/Tamil/Bengali syntax — mainly for fun or accessibility. 
+    - Examples:
+      - "BhaiLang" – a humorous pseudo-language with Hindi-English syntax (fun project, check it out on GitHub)
+      - "Sanskrit-based programming" ideas in academic papers
+- India’s contributions
+  - Apache Hadoop – Co-created by Arun Murthy, Indian origin. 
+  - Apache Ambari – Indian engineers at Hortonworks.
+  - Communities
+    - INDIAai
+    - FOSS United
+- Applications of languages
+  - C
+    - Description
+      - statically typed, procedural, compiled language
+      - Bell Labs, Dennis Ritchie, 1972
+      - for UNIX operating system building
+      - platform-dependent
+      - No garbage collection
+        - code needs to be managed its own memory
+      - Compiler:
+        - GNU C Compiler (GCC)
+    - OS: Linux, Windows, macOS kernels
+    - Databases: MySQL, PostgreSQL
+    - Interpreters: Python, Ruby
+    - Embedded systems: Arduino, Raspberry Pi
+    - Developer tools: Vim, Git
+  - C++
+    - Unreal Engine (C++)
+  - C#
+    - Game engines: Unity (C#)
+  - Python
+    - 1991, Guido van Rossum
+    - frameworks: Django, Flask
+  - Java
+    - Definition
+      - James Gosling, Sun Microsystems, 1990
+      - platform-independent bytecode instead of machine code like C/C++
+        - run in any os without recompilation
+          - using Java Virtual Machine (JVM)
+      - Garbage collection
+      - Object-oriented
+      - both compiled and interpreted at the same time
+      - Machine needs JRE (Java Runtime Environment) to run
+    - Web Apps
+      - Spring, JavaServer Faces (JSF)
+      - JavaServer Pages (JSP)
+    - Big Data
+      - Apache Hadoop, Apache Spark
+    - Mobile Apps
+      - Android development (Java/Kotlin)
+    - Mars controller NASA Maestro Rover
+    - 
