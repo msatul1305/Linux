@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# bfs.py
+# 20_bfs.py
 
 # Introduction to Algorithms, Fourth edition
 # Linda Xiao and Tom Cormen
