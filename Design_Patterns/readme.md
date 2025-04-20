@@ -1,0 +1,29 @@
+- Pattern: Use Case(GPT)
+    - Creational Patterns
+        - Purpose: Deal with object creation in a flexible, reusable way.
+            - Singleton: Ensure a class has only one instance (e.g., DB connection, logger).
+            - Factory Method: Create objects without specifying the exact class.
+            - Abstract Factory: Create families of related objects (UI themes, OS drivers).
+            - Builder: Construct complex objects step-by-step (e.g., creating a PDF or pizza).
+            - Prototype: Clone existing objects instead of creating new ones from scratch.
+    - Structural Patterns
+        - Purpose: Deal with class and object composition (how objects work together).
+            - Adapter: Convert one interface into another (e.g., legacy code integration).
+            - Decorator: Add behavior to objects at runtime without modifying them.
+            - Facade: Provide a simplified interface to a complex system.
+            - Composite: Treat a group of objects as a single object (e.g., UI hierarchy).
+            - Bridge: Separate abstraction from implementation to vary both independently.
+            - Proxy: Control access to another object (e.g., lazy loading, security).
+            - Flyweight: Optimize memory usage by sharing objects.
+    - Behavioral Patterns
+        - Purpose: Deal with object interaction and responsibilities.
+            - Observer: Notify multiple objects when one changes (e.g., UI event listeners).
+            - Strategy: Swap algorithms or logic at runtime (e.g., different sort strategies).
+            - Command: Encapsulate a request as an object (e.g., undo/redo).
+            - State: Allow an object to change its behavior when its state changes.
+            - Template Method: Define skeleton of an algorithm, letting subclasses fill in details.
+            - Mediator: Centralize communication between classes (e.g., chatroom).
+            - Iterator Access: elements of a collection without exposing the underlying structure.
+            - Chain of Responsibility: Pass a request along a chain of handlers (e.g., logging, validation).
+            - Visitor: Add new operations to a class without changing it.
+            - Interpreter: Build a language interpreter (e.g., regex, DSLs).

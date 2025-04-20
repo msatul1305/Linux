@@ -1,0 +1,26 @@
+- OOPS concepts - Object-Oriented Programming Structure/System
+    - Encapsulation
+        - localize changes required for particular class/object
+        - divide parts that change frequently vs static parts
+    - Polymorphism
+    - Data Hiding, Abstraction
+    - Inheritance
+    - Loose Coupling
+    - Interface
+        - define behaviour of inheriting classes
+    - Delegation
+        - hand over responsibility of particular task to another class or method
+    - Composition
+        - use behaviour from a family of other classes,
+        - and to change that behaviour at runtime
+    - Aggregation
+        - one class is used as part of another class,
+        - but still exists outside that other class
+- OOAD concepts - Object-oriented analysis and design
+    - write use cases
+        - identify all nouns = classes
+        - identify all verbs = methods
+        - identify all properties = data/variables
+- Features of good OO program
+    - Flexible
+    - Reusable
