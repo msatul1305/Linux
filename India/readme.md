@@ -24,7 +24,7 @@
                         - It is attributed to the sage Sushruta and consists of six sections, covering various surgical
                           techniques, anatomy, and treatment of diseases.
                         - The text is considered one of the earliest works on surgery in the world.
-                - Upanishads
+                - Upanishads / Advaita
             - Smriti("that which is remembered")
                 - Puranas
                 - Itihasa(History)
@@ -108,6 +108,8 @@
                     - Sankaracharya
                     - Guru Gaudapada
                     - Mandukya Karika
+                    - Sri Mahavatar Guruji
+                    - Alexandar the Great
             - More
                 - Vaiseshika
                     - Vaisesika is one of the six orthodox schools of Hindu philosophy, founded by the sage Kanada.
@@ -116,6 +118,22 @@
                     - The Vaisesika system emphasizes empirical observation and logical reasoning in understanding the
                       universe.
                     - It also discusses the concept of atoms and their role in the formation of matter.
+                - Taittiriya Aranyaka
+                    - The Taittiriya Aranyaka is a text associated with the Taittiriya branch of the Yajurveda.
+                    - It consists of philosophical discussions, rituals, and hymns related to the performance of
+                      sacrifices.
+                    - The text emphasizes the importance of knowledge and self-realization in spiritual practice.
+                    - It also discusses the nature of Brahman and the relationship between the individual soul (Atman) and
+                      Brahman.
+                    - The Taittiriya Aranyaka is divided into three sections: Brahmananda Valli, Dhrigdarshana Valli, and
+                      Shiksha Valli.
+                    - The Brahmananda Valli discusses the nature of Brahman and the ultimate reality.
+                    - The Dhrigdarshana Valli focuses on the nature of perception and knowledge.
+                    - The Shiksha Valli discusses the importance of phonetics and pronunciation in the study of the Vedas.
+                    - The Taittiriya Aranyaka is considered an important text in the study of Vedanta and the philosophy of
+                      self-realization.
+                    - The text emphasizes the importance of meditation and self-discipline in spiritual practice.
+                    - It also discusses the concept of the five sheaths (pancha koshas) that cover the true self (Atman).
                 - Crescograph
                     - The Crescograph is an instrument invented by Jagdish Chandra Bose to measure the growth of plants.
                     - It uses a sensitive lever mechanism to record minute changes in the growth of plant tissues.
