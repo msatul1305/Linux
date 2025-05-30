@@ -1,0 +1,8 @@
+- Agentic AI
+  - Python libraries for building agentic AI systems
+    - autogen
+    - agno
+    - langgraph
+    - llama_index
+    - pydantic
+- 
