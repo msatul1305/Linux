@@ -2,6 +2,7 @@
   - Python libraries for building agentic AI systems
     - autogen
     - agno
+      - PhiData
     - langgraph
     - llama_index
     - pydantic

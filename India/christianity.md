@@ -1,0 +1,22 @@
+- Bible
+  - Jewish(Old Testament)
+    - Judaism
+    - Hebrews
+    - Hebrew bible or Tanakh
+    - Proverbs, Genesis Psalms, Kings, Chronicles, Isaiah
+  - Christian(New Testament)
+    - 27 books
+      - Matthew
+      - Mark
+      - Luke
+      - John
+      - Acts
+      - Romans
+      - I & II Corinthians
+      - Timothy
+      - James
+      - Revelations
+  - 4 Gospels
+  - The Acts of the apostles
+  - epistles
+
