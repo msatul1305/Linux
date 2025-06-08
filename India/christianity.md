@@ -19,4 +19,3 @@
   - 4 Gospels
   - The Acts of the apostles
   - epistles
-

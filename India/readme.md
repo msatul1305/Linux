@@ -4,6 +4,8 @@
             - Shruti("that which is heard")
                 - Vedas
                     - Samaveda
+                      - writings on musical science
+                      - [music.md](indian_music.md)
                     - Rigveda
                     - Yajurveda
                     - Atharvaveda
@@ -111,6 +113,8 @@
                     - Sri Mahavatar Guruji
                     - Alexandar the Great
                     - Dabru Ballav
+                    - Ram Gopal Mazumdar
+                    - James L. Lynn
             - More
                 - Vaiseshika
                     - Vaisesika is one of the six orthodox schools of Hindu philosophy, founded by the sage Kanada.
@@ -152,6 +156,14 @@
                 - It emphasizes the importance of self-realization, the unity of all religions, and the need for
                   social
                   reform.
+    - Chants
+      - Sat Tat Aum
+        - "Sat Tat Atum" is a Sanskrit phrase that can be translated as "That is the ultimate truth."
+        - It is often used in spiritual contexts to emphasize the importance of recognizing the ultimate reality or
+          truth.
+        - The phrase reflects the idea that the ultimate truth transcends all dualities and distinctions.
+        - It is associated with various philosophical and spiritual traditions in India, including Vedanta and
+
 - Astrology
     - Vedic Astrology
         - Jyotish

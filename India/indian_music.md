@@ -1,0 +1,88 @@
+- Sama Veda
+  - writings on musical science
+- Foundation of Hindu music
+  - Ragas(fixed melodic scales)
+    - 6 basic ragas
+      - Raga Malkauns
+      - Raga Bhimpalasi
+      - Raga Yaman
+      - Raga Bageshree
+      - Raga Darbari Kanada
+      - Raga Todi
+    - 6 basic branch out to 126 derivative raginis wives and putras(sons)
+    - Each raga has min 5 notes
+      - leading note(vadi or king)
+      - secodary note(samvadi or prime minister)
+      - helping notes(anuvadi, attendants)
+      - dissonant notes(vivadi, enemies)
+    - melodic modes
+    - each raga has:
+      - specific mood and time of day, 
+      - season, 
+      - a presiding deity who bestows a particular potency
+      - and emotion
+    - E.g.
+      - Hindole Raga
+        - played in dawn in the spring
+          - evokes the mood of universal love
+          - presided by the goddess Durga
+        - Deepaka Raga
+          - played in the evening in the summer
+            - evokes the mood of love and passion, arouse compassion
+            - presided by the goddess Lakshmi
+        - Megha Raga
+          - played in the midday in the rainy season
+            - evokes the mood of love and longing
+            - presided by the goddess Saraswati
+        - Bhairava Raga
+          - played in the mornings in the autumn(August, September, October)
+            - to acheive tranquility and peace
+            - evokes the mood of devotion and renunciation
+            - presided by the god Shiva
+        - Sri Raga
+          - played in the autumn twilights
+            - attain pure love
+            - evokes the mood of love and longing
+            - presided by the goddess Parvati
+        - Malkounsa Raga
+          - played in the midnights in the winter
+            - for valor and courage
+            - evokes the mood of love and longing
+            - presided by the goddess Saraswati
+  - Indian music divides octave into 22 srutis(demi-semitones)
+    - shrutis
+    - 12 semitones in western music
+    - each of 7 basic notes of the octave is associated with a color and natural cry of a brid or beast
+      - Do(C)
+        - green
+        - peacock
+      - Re(D)
+        - red
+        - skylark
+      - Mi(E)
+        - golden
+        - goat
+      - Fa
+        - yellowish white
+        - heron
+      - Sol(G)
+        - black
+        - Nightingale
+      - La(A)
+        - yellow
+        - horse
+      - Si(B)
+        - combination of all colors
+        - elephant
+    - Western: 3 scales
+      - Major
+      - Harmonic
+      - Melodic minor
+    - Indian: 72 thatas or scales
+    - 120 talas(time-measures)
+    - Bharata
+      - isolated 32 kinds of tala in the song of lark
+- People
+  - Miyan Tansen
+    - court musician of Mughal emperor Akbar
+    - 16th century
