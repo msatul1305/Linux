@@ -1,0 +1,10 @@
+- Buddhism
+  - Noble Eightfold Path
+    - Right Understanding/Ideals
+    - Right Intent/Motive
+    - Right Speech
+    - Right Action
+    - Right means of Livelihood
+    - Right Effort
+    - Right Mindfulness/Remembrance(of the self)
+    - Right Concentration/Realization(Samadhi)

@@ -1,0 +1,13 @@
+- Astrology
+    - Vedic Astrology
+        - Jyotish
+            - Lagna
+                - Lagna is the first house in a horoscope and represents the self, personality, and physical body.
+            - Nakshatra
+                - Nakshatras are lunar mansions or constellations that play a significant role in Vedic astrology.
+            - Dasha
+                - Dashas are planetary periods that indicate the timing of events in a person's life.
+            - Bhava
+                - Bhavas are the twelve houses in a horoscope that represent different aspects of life.
+            - Graha
+                - Grahas are planets that influence a person's life and personality.

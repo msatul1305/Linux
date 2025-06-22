@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# dfs.py
+# 1_dfs_2methods.py
 
 # Introduction to Algorithms, Fourth edition
 # Linda Xiao and Tom Cormen
