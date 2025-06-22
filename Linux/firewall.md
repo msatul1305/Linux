@@ -1,0 +1,17 @@
+- check if tcp forwarding is enabled rhel 7 azure
+  - `grep AllowTcpForwarding /etc/ssh/sshd_config`
+    - AllowTcpForwarding yes
+  - Restart the SSH service
+    - `sudo systemctl restart centrify-sshd`
+    - or
+    - `sudo systemctl restart sshd`
+  - check active services:
+    - `ps -ef | grep sshd`
+      - Look for the config file in use. You might see something like:
+      - /usr/sbin/sshd -D -f /etc/centrifydc/ssh/sshd_config
+    - `systemctl | grep ssh`
+    - `sshd -T`
+  - Test TCP forwarding
+    - On your local machine, try:
+      - `ssh -L 8888:localhost:80 youruser@yourserver`
+      - Then open your browser at http://localhost:8888 to check if it forwards to port 80 on the remote server.
