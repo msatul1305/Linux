@@ -8,3 +8,28 @@
     - Right Effort
     - Right Mindfulness/Remembrance(of the self)
     - Right Concentration/Realization(Samadhi)
+- Buddha and gospel of Buddhism
+  - Buddha's life
+    - Birth
+    - Enlightenment
+    - First Sermon
+    - Death
+  - Four Noble Truths
+    - Suffering exists
+    - Cause of suffering is desire
+    - Suffering can be overcome
+    - Path to overcoming suffering is the Eightfold Path
+  - Three Marks of Existence
+    - Impermanence (Anicca)
+    - Suffering (Dukkha)
+    - Non-self (Anatta)
+  - Five Precepts
+    - Do not kill
+    - Do not steal
+    - Do not commit adultery
+    - Do not lie
+    - Do not consume intoxicants
+- Dalai Lama
+  - Role in Tibetan Buddhism
+  - Teachings and philosophy
+  - Global influence

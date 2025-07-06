@@ -1,0 +1,9 @@
+- Scientists
+  - Albert Einstein
+  - Isaac Newton
+  - Charles Darwin
+  - Marie Curie
+  - Galileo Galilei
+  - Nikola Tesla
+  - Stephen Hawking
+  - Ada Lovelace

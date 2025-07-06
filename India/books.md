@@ -100,3 +100,31 @@
                   reality.
                 - The Bhagavad Gita is considered one of the most important texts in Hindu philosophy and
                   spirituality.
+    - Ramayana
+        - Valmiki Ramayana
+            - The Valmiki Ramayana is an ancient Indian epic that narrates the life of Lord Rama, his wife Sita,
+              and his loyal companion Hanuman.
+            - It consists of seven Kandas (books) and is written in Sanskrit.
+            - The epic explores themes of duty, righteousness, devotion, and the struggle between good and evil.
+            - It is divided into seven Kandas: Bala Kanda, Ayodhya Kanda, Aranya Kanda, Kishkindha Kanda,
+              Sundara Kanda, Yuddha Kanda, and Uttara Kanda.
+            - The Valmiki Ramayana is considered one of the two major Sanskrit epics of ancient Indian literature,
+              the other being the Mahabharata.
+    - Mahabharata
+        - Vyasa Mahabharata
+            - The Vyasa Mahabharata is an ancient Indian epic that narrates the Kurukshetra War and the fates of the
+              Kaurava and Pandava princes.
+            - It is attributed to the sage Vyasa and consists of 18 Parvas (books).
+            - The epic explores themes of duty, righteousness, justice, and the complexities of human relationships.
+            - It includes the Bhagavad Gita, a philosophical discourse between Lord Krishna and Prince Arjuna.
+            - The Vyasa Mahabharata is considered one of the two major Sanskrit epics of ancient Indian literature,
+              the other being the Ramayana.
+        - Characters
+          - Krishna
+            - Krishna is a major deity in Hinduism, worshipped as the eighth avatar of Vishnu.
+            - He is known for his divine playfulness, wisdom, and teachings in the Bhagavad Gita.
+            - Krishna is often depicted as
+          - Arjuna
+            - Arjuna is one of the central characters in the Mahabharata, a prince and a skilled archer.
+            - He is known for his moral dilemmas and his dialogue with Lord Krishna in the Bhagavad Gita.
+        - 
