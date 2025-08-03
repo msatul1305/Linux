@@ -1,0 +1,43 @@
+- Himalaya
+  - Badrinath
+  - Kedarnath
+  - Amarnath
+  - Pashupatinath
+- 4 Dham
+- 12 Jyotirlinga
+  - Somnath, Gujarat
+  - Mallikarjuna, Srisailam, Andhra Pradesh
+  - Mahakaleshwar, Ujjain, Madhya Pradesh
+  - Omkareshwar, Mandhata island, Madhya Pradesh
+  - Kedarnath, Uttarakhand
+  - Bhimashankar, Pune, Maharashtra
+  - Kashi Vishwanath, Uttar Pradesh
+  - Trimbak, Nashik, Maharashtra
+  - Vaidyanath, Deoghar, Jharkhand
+  - Nageshwar, Dwarka, Gujarat
+  - Ramanathaswamy, Rameswaram, Tamil Nadu
+  - Grishneshwar, Aurangabad, Maharashtra
+- Golden Temple, Amritsar
+- Ajmer Sharif Dargah
+- Hampi
+- Khajuraho
+- Ranthambore National Park
+- Ranthambore Fort
+- Ranthambore Tiger Reserve
+- 51 Shakti Peeths
+  - Kamakhya, Assam
+  - Kalighat, Kolkata
+  - Vaishno Devi, Jammu and Kashmir
+  - Jwalamukhi, Himachal Pradesh
+  - Chintpurni, Himachal Pradesh
+  - Kangra Maa Brajeshwari, Himachal Pradesh
+  - Vishalakshi, Varanasi, Uttar Pradesh
+  - Kanyakumari, Tamil Nadu
+  - Amarnath, Jammu and Kashmir
+  - Srisailam, Andhra Pradesh
+  - Tarapith, West Bengal
+  - Naina Devi, Himachal Pradesh
+  - Kamakhya, Assam
+  - Bhairavi Temple, Chhattisgarh
+  - Shridevi, Karnataka
+  - Hinglaj Mata, Sindh, Pakistan

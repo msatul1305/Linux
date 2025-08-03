@@ -680,6 +680,223 @@
                       quantum mechanics and relativity for our understanding of reality.
                     - He emphasizes the importance of scientific inquiry in uncovering the fundamental nature of the
                       universe.
+                - danda swami
+                    - Danda Swami, also known as Dandapani Swami, is a title given to ascetic monks in Hinduism who
+                      practice
+                      severe austerities and renunciation.
+                    - The term "danda" refers to a staff or stick, symbolizing authority and discipline.
+                    - Danda Swamis are often associated with the Shaiva tradition and are known for their commitment to
+                      spiritual practices and self-discipline.
+                - Swami Trailanga
+                    - Swami Trailanga, also known as Trailanga Swami, was a revered Hindu saint and yogi who lived in
+                      India
+                      during the 19th century.
+                    - He is known for his extraordinary spiritual powers, including the ability to remain in a state of
+                      deep meditation for extended periods.
+                    - Trailanga Swami is often associated with the city of Varanasi (Kashi) and is considered a
+                      manifestation of divine consciousness.
+                - Dr. John Howard Northrup
+                    - Dr. John Howard Northrup was an American physicist and inventor known for his contributions to the
+                      field of electrical engineering and radio technology.
+                    - He is recognized for his work on the development of radio communication systems and wireless
+                      technologies.
+                    - Northrup's inventions and innovations have had a significant impact on the advancement of modern
+                      communication systems.
+                - Omar Khayyam
+                    - Omar Khayyam was a Persian mathematician, astronomer, and poet, best known for his contributions
+                      to
+                      mathematics and his collection of quatrains (rubaiyat).
+                    - He made significant advancements in algebra and geometry, particularly in solving cubic equations.
+                    - Khayyam's poetry reflects his philosophical reflections on life, love, and the nature of existence,
+                      and
+                      he is celebrated as one of the greatest Persian poets.
+                - Edward Fitzgerald
+                    - Edward Fitzgerald was an English poet and translator, best known for his translation of Omar
+                      Khayyam's
+                      "Rubaiyat" into English.
+                    - His translation, published in 1859, popularized Khayyam's poetry in the Western world and is
+                      considered a classic of English literature.
+                    - Fitzgerald's translation captures the essence of Khayyam's philosophical reflections on life,
+                      love,
+                      and the fleeting nature of existence.
+                - Agastya
+                    - Agastya is a revered sage in Hindu mythology and is considered one of the seven great sages
+                      (Saptarishi).
+                    - He is known for his wisdom, knowledge of Ayurveda, and contributions to various fields, including
+                      literature, philosophy, and spirituality.
+                    - Agastya is often associated with the southern Indian region and is believed to have played a
+                      significant role in spreading Vedic knowledge and culture.
+                - Edward Young
+                    - Edward Young was an English poet and playwright, best known for his poem "Night Thoughts," which
+                      explores themes of mortality, the nature of existence, and the search for meaning in life.
+                    - His works often reflect a deep sense of introspection and philosophical contemplation.
+                    - Young's poetry has had a lasting impact on English literature and continues to be studied for its
+                      exploration of existential themes.
+                - Yoga Vasistha
+                    - Yoga Vasishtha is an ancient Indian text attributed to the sage Vasishtha, which presents a
+                      philosophical discourse on the nature of reality, consciousness, and the path to self-realization.
+                    - The text is structured as a dialogue between Lord Rama and Sage Vasishtha, exploring various
+                      concepts of yoga, meditation, and the nature of the mind.
+                    - Yoga Vasishtha emphasizes the importance of self-inquiry, detachment from worldly desires, and the
+                      realization of one's true nature as the ultimate goal of spiritual practice.
+                - Kutastha
+                    - Kutastha is a Sanskrit term that refers to the eternal, unchanging aspect of consciousness or the
+                      true self (Atman) in Hindu philosophy.
+                    - It is often associated with the concept of the witness consciousness, which observes the changing
+                      phenomena of the mind and body without being affected by them.
+                    - The realization of Kutastha is considered a key aspect of spiritual awakening and self-realization in
+                      various yogic traditions.
+                - Kutastha Chaitanya
+                    - Kutastha Chaitanya refers to the pure, unchanging consciousness that exists beyond the fluctuations
+                      of the mind and senses.
+                    - It is often described as the eternal witness or observer of all experiences, remaining unaffected by
+                      the transient nature of the material world.
+                    - Realizing Kutastha Chaitanya is considered a significant step towards achieving self-realization and
+                      liberation (moksha) in Hindu philosophy.
+                - Shri Bhupendra Nath Sanyal
+                    - Shri Bhupendra Nath Sanyal was an Indian yogi and spiritual teacher known for his contributions to
+                      the
+                      practice of Kriya Yoga.
+                    - He is recognized for his teachings on meditation, self-realization, and the importance of spiritual
+                      discipline.
+                    - Sanyal's teachings emphasize the integration of physical, mental, and spiritual practices for
+                      holistic
+                      development and enlightenment.
+                - Art of Living
+                    - The Art of Living is a spiritual and humanitarian organization founded by Sri Sri Ravi Shankar in
+                      1981.
+                    - It focuses on promoting peace, well-being, and personal development through various programs,
+                      including
+                      yoga, meditation, and stress relief techniques.
+                    - The organization emphasizes the importance of service to society and the cultivation of a positive
+                      mindset for individual and collective transformation.
+                - Swami Bhaskarananda Saraswati, Benaras
+                    - Swami Bhaskarananda Saraswati was an Indian monk and spiritual teacher known for his teachings on
+                      Vedanta and the practice of meditation.
+                    - He is recognized for his efforts in promoting spiritual education and self-realization through
+                      various
+                      retreats and workshops.
+                    - Swami Bhaskarananda's teachings emphasize the importance of self-inquiry, detachment from worldly
+                      desires, and the realization of one's true nature as the ultimate goal of spiritual practice.
+                - Balananda Brahmachari
+                    - Balananda Brahmachari was an Indian yogi and spiritual teacher known for his contributions to the
+                      practice of Kriya Yoga and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual
+                      discipline.
+                    - Balananda Brahmachari's teachings emphasize the integration of physical, mental, and spiritual
+                      practices for holistic development and enlightenment.
+                - Maharaj Iswari Narayan Sinha Bahadur
+                    - Maharaj Iswari Narayan Sinha Bahadur was an Indian nobleman and spiritual leader known for his
+                      contributions to the promotion of Hindu philosophy and spirituality.
+                    - He is recognized for his efforts in preserving and disseminating ancient Indian texts and
+                      teachings.
+                    - Maharaj Iswari Narayan Sinha Bahadur's legacy includes his commitment to social reform, education,
+                      and the upliftment of marginalized communities in India.
+                - Maharaj Jotindra Mohan Thakur
+                    - Maharaj Jotindra Mohan Thakur was an Indian spiritual leader and social reformer known for his
+                      efforts in promoting education, social justice, and the upliftment of marginalized communities.
+                    - He is recognized for his contributions to the development of various educational institutions and
+                      cultural organizations in India.
+                    - Maharaj Jotindra Mohan Thakur's teachings emphasize the importance of compassion, service to
+                      humanity,
+                      and the pursuit of knowledge for personal and societal transformation.
+                - Pachanan Bhattacharya
+                    - Pachanan Bhattacharya was an Indian philosopher, social reformer, and spiritual leader known for
+                      his
+                      contributions to the Brahmo Samaj and the promotion of rational thought and ethical conduct.
+                    - He is recognized for his efforts in advocating for social justice, education, and the upliftment of
+                      marginalized communities in India.
+                    - Pachanan Bhattacharya's teachings emphasize the importance of reason, compassion, and the pursuit
+                      of
+                      truth in spiritual practice.
+                - Pandit Madan Mohan Malaviya
+                    - Pandit Madan Mohan Malaviya was an Indian educationist, politician, and social reformer known for
+                      his
+                      contributions to the Indian independence movement and the establishment of Banaras Hindu University
+                      (BHU).
+                    - He played a significant role in promoting education, social justice, and the revival of Hindu
+                      culture
+                      and spirituality.
+                    - Malaviya's legacy includes his commitment to the upliftment of marginalized communities and his
+                      efforts in fostering national unity and cultural pride.
+                - Sri Kalpacharya Swai Beshundasji
+                    - Sri Kalpacharya Swai Beshundasji was an Indian saint and spiritual leader known for his teachings on
+                      meditation, self-realization, and the importance of spiritual discipline.
+                    - He is recognized for his efforts in promoting the practice of Kriya Yoga and the integration of
+                      physical,
+                      mental, and spiritual practices for holistic development.
+                    - Sri Kalpacharya's teachings emphasize the importance of self-inquiry, detachment from worldly
+                      desires,
+                      and the realization of one's true nature as the ultimate goal of spiritual practice.
+                - Hippocrates
+                    - Hippocrates was an ancient Greek physician often referred to as the "Father of Medicine."
+                    - He is best known for the Hippocratic Corpus, a collection of medical texts that laid the
+                      foundation for
+                      modern medical ethics and practice.
+                    - Hippocrates emphasized the importance of observation, diagnosis, and treatment based on empirical
+                      evidence,
+                      and he is credited with establishing the principles of clinical medicine.
+                  - Massia medica
+                    - The term "Massia medica" refers to the medical practices and teachings of Hippocrates and his
+                      followers.
+                    - It encompasses the principles of diagnosis, treatment, and ethical conduct in medicine, emphasizing
+                      the
+                      importance of observation and empirical evidence in medical practice.
+                    - The Hippocratic Oath, attributed to Hippocrates, is a foundational document in medical ethics that
+                      continues to guide the practice of medicine today.
+                - Sri Ananda Mohan Lahiri
+                    - Sri Ananda Mohan Lahiri was an Indian yogi and spiritual teacher known for his contributions to the
+                      practice of Kriya Yoga and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual
+                      discipline.
+                    - Sri Ananda Mohan Lahiri's teachings emphasize the integration of physical, mental, and spiritual
+                      practices for holistic development and enlightenment.
+                - Caxlyle's Sartor Resartus
+                    - "Sartor Resartus" is a philosophical work by Thomas Carlyle, published in 1836-1837.
+                    - The title translates to "The Tailor Re-tailored," and the book explores themes of self-discovery,
+                      spirituality, and the nature of reality.
+                    - It is presented as a fictional commentary on the life and philosophy of a tailor named Diogenes
+                      Teufelsdröckh, who undergoes a transformative journey of self-realization.
+                - Maxmuller
+                    - Friedrich Max Müller was a German philologist
+                - Kidderpore
+                    - Kidderpore is a locality in Kolkata, India, known for its historical significance and cultural
+                      heritage.
+                    - It is home to various educational institutions, temples, and cultural centers that reflect the rich
+                      history of the region.
+                    - Kidderpore has a diverse community and is known for its vibrant atmosphere and cultural events.
+                - Galli-Garcia
+                    - Galli-Garcia is a term that may refer to a specific location or cultural reference, but it is not
+                      widely recognized in historical or cultural contexts.
+                    - It could potentially be a misspelling or a lesser-known term related to a specific region or
+                      community.
+                - Emma Lazarus
+                    - Emma Lazarus was an American poet and activist best known for her poem "The New Colossus," which is
+                      inscribed on the pedestal of the Statue of Liberty.
+                    - Her poetry often addressed
+                - Walt Whitman
+                    - Walt Whitman was an American poet, essayist, and journalist, best known for his collection of
+                      poems titled "Leaves of Grass."
+                    - He is considered one of the most influential poets in American literature and is known for his
+                      celebration of individuality, nature, and the human spirit.
+                    - Whitman's poetry often explores themes of democracy, equality, and the interconnectedness of all
+                      living beings.
+                - Luther Burbank
+                    - Luther Burbank was an American botanist, horticulturist, and pioneer in agricultural science,
+                      known for his work in plant breeding and the development of new plant varieties.
+                    - He is recognized for his contributions to agriculture, including the creation of numerous fruit,
+                      vegetable, and ornamental plant varieties that are still widely cultivated today.
+                    - Burbank's innovative techniques in plant breeding and his emphasis on sustainable agriculture have
+                      had a lasting impact on modern horticulture.
+                - Daniel Hunting
+                    - Daniel Huntington was an American painter known for his portraits and historical scenes.
+                    - He was a prominent member of the National Academy of Design and served as its president.
+                    - Huntington's works often depicted themes of American history, culture, and spirituality.
+                - Dr. Julian Haxley
+                    - Dr. Julian Huxley was a British evolutionary biologist, eugenicist, and writer known for his
+                      contributions to the field of biology and his advocacy for science and rationalism.
+                    - He was a prominent figure in the early 20th century and played a significant role in promoting
+                      evolutionary theory and the understanding of human evolution.
             - Ashrams
                 - Ranikhet cave
                     - The Ranikhet cave is a historical site located in the Ranikhet region of Uttarakhand, India.
@@ -759,6 +976,13 @@
                     - The Encinitas center also features beautiful gardens and a serene atmosphere conducive to
                       spiritual
                       practice.
+                - Mohamandal hermitage, Benaras
+                    - The Mahamandal Hermitage in Benaras (Varanasi) is a spiritual retreat associated with the
+                      teachings of
+                      Paramahansa Yogananda.
+                    - It serves as a center for meditation, self-realization, and the practice of Kriya Yoga.
+                    - The hermitage is known for its tranquil environment and is frequented by spiritual seekers and
+                      devotees.
             - More mentioned things
                 - Vaiseshika
                     - Vaisesika is one of the six orthodox schools of Hindu philosophy, founded by the sage Kanada.
@@ -948,7 +1172,51 @@
                     - The phrase is often used in the context of meditation, prayer, and spiritual practices that
                       promote
                       inner peace and harmony.
-                -
+                - Upanishad stages of spiritual development
+                  - Siddha (perfected being)
+                    - The Upanishads are ancient Indian texts that form the philosophical basis of Hinduism, exploring
+                      concepts such as Brahman (the ultimate reality) and Atman (the individual soul).
+                    - They describe various stages of spiritual development, including the attainment of Siddha, which
+                      refers to a perfected being who has achieved self-realization and union with Brahman.
+                    - Siddhas are often revered as enlightened masters who possess profound spiritual knowledge and
+                      powers.
+                  - Jivana Mukta (liberated while living)
+                    - The concept of Jivan Mukta refers to an individual who has attained liberation (moksha) while
+                      still
+                      living in the physical body.
+                    - Such individuals are free from the cycle of birth and death and experience a state of eternal
+                      bliss
+                      and
+                      union with the divine.
+                  - Paramukta (highest liberated being)
+                    - Paramukta refers to the highest state of liberation, where an individual transcends all
+                      limitations
+                      and
+                      experiences complete unity with Brahman.
+                    - This state is considered the ultimate goal of spiritual practice in Hindu philosophy, representing
+                      the
+                      realization of one's true nature as eternal and divine.
+              - Arya Mission
+                  - The Arya Mission is a spiritual and social reform movement founded by Swami Dayananda Saraswati in
+                    the late 19th century.
+                  - It aims to promote the teachings of the Vedas, advocate for social justice, and uplift marginalized
+                    communities in India.
+                  - The Arya Mission emphasizes the importance of education, rational thought, and ethical conduct in
+                    spiritual practice.
+              - Sambhavi Mahamudra
+                  - Sambhavi Mahamudra is a yogic practice taught by Sadhguru Jaggi Vasudev, the founder of the Isha
+                    Foundation.
+                  - It involves a combination of meditation, breath control, and energy activation techniques to enhance
+                    spiritual growth and well-being.
+                  - The practice is designed to help individuals experience inner peace, clarity of mind, and a deeper
+                    connection with their true self.
+              - Kaya Kalpa
+                  - Kaya Kalpa is an ancient Indian practice that focuses on rejuvenation and longevity through various
+                    yogic and Ayurvedic techniques.
+                  - It involves a combination of dietary practices, herbal remedies, meditation, and physical exercises
+                    to promote overall health and vitality.
+                  - The practice is believed to help individuals achieve a state of physical and mental well-being,
+                    enhancing their quality of life and longevity.
             - Places
                 - Lincoln library of essential information
                     - The Lincoln Library of Essential Information is a comprehensive reference library that provides
@@ -974,6 +1242,46 @@
                       influences.
                     - It is a significant cultural landmark and attracts visitors interested in history and
                       architecture.
+              - Dasaswamedh Ghat
+                  - Dasaswamedh Ghat is one of the most famous ghats (riverfront steps) on the banks of the Ganges
+                    River in
+                    Varanasi, India.
+                  - It is believed to be the site where Lord Shiva performed a sacrifice (yajna) to bring back his
+                    consort
+                    Sati.
+                  - The ghat is known for its spiritual significance and is a popular destination for pilgrims and
+                    tourists,
+                    especially during the evening Ganga Aarti ceremony.
+              - Ranikhet, Uttarakhand
+                  - Ranikhet is a hill station located in the Almora district of Uttarakhand, India.
+                  - It is known for its scenic beauty, lush greenery, and pleasant climate, making it a popular
+                    tourist
+                    destination.
+                  - Ranikhet is also home to several historical sites, temples, and military establishments, including
+                    the
+                    Kumaon Regiment Centre.
+              - Nandadevi
+                  - Nanda Devi is the second-highest mountain in India, located in the Garhwal Himalayas of Uttarakhand.
+                  - It is considered one of the most sacred peaks in Hinduism and is associated with the goddess Nanda
+                    Devi,
+                    who is worshipped as a manifestation of the divine feminine.
+                  - The Nanda Devi National Park, a UNESCO World Heritage Site, surrounds the mountain and is known for
+                    its
+                    rich biodiversity and stunning landscapes.
+              - Drongiri Mountains
+                  - The Drongiri Mountains, also known as the Dronagiri Range, are a part of the Garhwal Himalayas in
+                    Uttarakhand, India.
+                  - They are known for their rugged terrain, scenic beauty, and trekking opportunities.
+                  - The range is home to several peaks, including Nanda Devi and Trishul, and is a popular destination
+                    for
+                    adventure enthusiasts and nature lovers.
+              - Gogash river
+                  - The Gogash River is a river in the Kumaon region of Uttarakhand, India.
+                  - It is known for its pristine waters and scenic surroundings, making it a popular spot for
+                    trekking,
+                    fishing, and nature walks.
+                  - The river is also significant in local folklore and is associated with various myths and legends.
+              - 
     - Swami Vivekananda
         - Complete Works of Swami Vivekananda
             - The Complete Works of Swami Vivekananda is a collection of the writings and speeches of Swami

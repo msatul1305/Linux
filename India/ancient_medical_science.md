@@ -1,0 +1,9 @@
+- 8 branches
+  - Salya (Surgery)
+  - Saskya (Diseases above the neck)
+  - Karachikitsa (Medicinal proper)
+  - Shutavidya (Diseases of the head/Mental diseases)
+  - Kaumara (Pediatrics/care of infancy)
+  - Agada (Toxicology)
+  - Rasayana (Longetivity)
+  - Vagikarana (Tonics)
