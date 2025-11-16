@@ -897,6 +897,338 @@
                       contributions to the field of biology and his advocacy for science and rationalism.
                     - He was a prominent figure in the early 20th century and played a significant role in promoting
                       evolutionary theory and the understanding of human evolution.
+                - Theresa Neumann of Konnersreuth
+                    - Theresa Neumann was a German Catholic mystic and stigmatist known for her reported visions and
+                      miraculous healings.
+                    - She gained widespread attention for her spiritual experiences and was considered a living saint by
+                      many of her followers.
+                - Friedrich Ritter von Laua
+                    - Friedrich Ritter von Laua was a German physician and scientist known for his contributions to the
+                      field of medicine and his research on various medical conditions.
+                    - He is recognized for his work in advancing medical knowledge and improving healthcare practices.
+                - Sir T.Vijayaraghavachari
+                    - Sir T. Vijayaraghava was an Indian civil servant and administrator known for his contributions to
+                      the
+                      development of public administration in India.
+                    - He played a significant role in various government initiatives and reforms during his career.
+                - Maharaja H.H. Sri Krisha Narasinghraj Wadiyar Bahadur
+                    - Maharaja H.H. Sri Krishnaraj Wadiyar Bahadur was the ruler of the Kingdom of Mysore in India,
+                      known for his
+                      patronage of arts, culture, and education.
+                    - He played a significant role in promoting the development of Mysore and its cultural heritage.
+                - King Vishnuvardhana
+                    - King Vishnuvardhana was a prominent ruler of the Hoysala Empire in South India during the 12th
+                      century.
+                    - He is known for his military conquests, administrative reforms, and patronage of art and culture.
+                    - Vishnuvardhana played a significant role in expanding the Hoysala Empire and promoting Hinduism in
+                      the region.
+                - King Asoka
+                    - King Asoka, also known as Ashoka the Great, was an Indian emperor of the Maurya Dynasty who ruled
+                      from
+                      268 to 232 BCE.
+                    - He is renowned for his conversion to Buddhism and his efforts to spread Buddhist teachings across
+                      India
+                      and beyond.
+                    - Asoka is credited with promoting non-violence, social welfare, and religious tolerance during his
+                      reign.
+                - Chandragupta Maurya
+                    - Chandragupta Maurya was the founder of the Maurya Empire in ancient India and ruled from 321 to
+                      297 BCE.
+                    - He is known for unifying most of the Indian subcontinent under his rule and establishing a strong
+                      centralized government.
+                    - Chandragupta's reign marked the beginning of a significant period in Indian history, characterized
+                      by
+                      political stability, economic prosperity, and cultural development.
+                - Alexander the Great
+                    - Alexander the Great was a Macedonian king and military commander who created one of the largest
+                      empires
+                      in ancient history, stretching from Greece to Egypt and into northwest India.
+                    - He is known for his military genius, strategic prowess, and efforts to spread Greek culture and
+                      influence
+                      throughout his empire.
+                    - Alexander's conquests had a lasting impact on the regions he conquered, leading to cultural
+                      exchanges
+                      and the spread of Hellenistic civilization.
+                - Macedonian garrison
+                    - The Macedonian garrison refers to the military forces stationed by Alexander the Great in various
+                      regions of his empire, including parts of India.
+                    - These garrisons were established to maintain control over conquered territories and ensure the
+                      stability
+                      of the empire.
+                    - The presence of Macedonian garrisons in India facilitated cultural exchanges and interactions between
+                      Greek
+                      and Indian civilizations.
+                - Seleucus Nicator
+                    - Seleucus Nicator was a Macedonian general and one of Alexander the Great's most trusted commanders.
+                    - After Alexander's death, Seleucus established the Seleucid Empire, which encompassed a vast territory
+                      in
+                      the Near East, including parts of India.
+                    - He is known for his military prowess, administrative skills, and efforts to consolidate and expand
+                      his
+                      empire.
+                - Megasthenes
+                    - Megasthenes was an ancient Greek historian and diplomat who served as an ambassador to the court of
+                      Chandragupta Maurya in India.
+                    - He is known for his work "Indica," which provides valuable insights into the geography, culture, and
+                      society of ancient India during the Maurya period.
+                    - Megasthenes' writings are considered an important source of information about ancient India and its
+                      interactions with the Hellenistic world.
+                - Arrian
+                    - Arrian was a Greek historian and military commander known for his works on the campaigns of Alexander
+                      the
+                      Great.
+                    - He is best known for his book "Anabasis Alexandri," which provides a detailed account of Alexander's
+                      conquests and military strategies.
+                    - Arrian's writings are considered one of the most reliable sources of information about Alexander the
+                      Great
+                      and his empire.
+                - Diodorus Siculus
+                    - Diodorus Siculus was an ancient Greek historian known for his work "Bibliotheca Historica," a
+                      comprehensive
+                      history of the world from mythological times to his own era.
+                    - His writings provide valuable insights into various historical events, including the campaigns of
+                      Alexander
+                      the Great and the interactions between Greek and Indian civilizations.
+                    - Diodorus' work is considered an important source of information about ancient history and culture.
+                - Plutarch
+                    - Plutarch was an ancient Greek biographer and essayist known for his work "Parallel Lives," a series of
+                      biographies
+                      comparing the lives of notable Greeks and Romans.
+                    - His writings provide valuable insights into the character, virtues, and achievements of historical
+                      figures,
+                      including Alexander the Great.
+                    - Plutarch's work is considered an important source of information about ancient history and culture.
+                - Strabo
+                    - Strabo was an ancient Greek geographer, historian, and philosopher known for his work "Geographica,"
+                      a
+                      comprehensive
+                      description of the known world during his time.
+                    - His writings provide valuable insights into the geography, culture, and history of various regions,
+                      including
+                      India.
+                    - Strabo's work is considered an important source of information about ancient geography and cultural
+                      interactions.
+                - Dr. J.W.M. Crindle
+                    - Dr. J.W.M. Crindle was a British historian and scholar known for his contributions to the study of
+                      ancient
+                      Indian history and culture.
+                    - He is recognized for his research on the interactions between Greek and Indian civilizations during
+                      the
+                      Hellenistic period.
+                    - Crindle's work has provided valuable insights into the historical context of ancient India and its
+                      connections
+                      with the wider world.
+                - Onesikrites
+                    - Onesikritos was an ancient Greek historian and writer known for his works on the history and culture
+                      of
+                      India.
+                    - He is believed to have traveled to India and documented various aspects of Indian society, religion,
+                      and
+                      customs.
+                    - Onesikritos' writings provide valuable insights into the interactions between Greek and Indian
+                      civilizations
+                      during the Hellenistic period.
+                - Diogenes Laertius
+                    - Diogenes Laertius was an ancient Greek biographer and historian known for his work "Lives and Opinions
+                      of
+                      Eminent Philosophers."
+                    - His writings provide valuable insights into the lives, teachings, and philosophies of various ancient
+                      Greek
+                      philosophers.
+                    - Diogenes Laertius' work is considered an important source of information about ancient philosophy and
+                      its
+                      development.
+                - Dandamis
+                    - The Dandamis were a group of ascetic monks in ancient India known for their austere lifestyle and
+                      spiritual
+                      practices.
+                    - They were often associated with the Shaiva tradition and were known for their commitment to
+                      renunciation,
+                      meditation, and self-discipline.
+                    - The Dandamis played a significant role in the spiritual and philosophical landscape of ancient India.
+                - God Zeus
+                    - Zeus is the king of the gods in ancient Greek mythology, known for his power, authority, and role as the
+                      ruler
+                      of Mount Olympus.
+                    - He is associated with thunder, lightning, and the sky, and is often depicted wielding a thunderbolt.
+                    - Zeus plays a central role in many Greek myths and legends, serving as a symbol of divine authority and
+                      justice.
+                - Hades
+                    - Hades is the god of the underworld in ancient Greek mythology, responsible for overseeing the realm of the
+                      dead.
+                    - He is often depicted as a stern and somber figure, ruling over the souls of the deceased and maintaining
+                      order
+                      in the afterlife.
+                    - Hades is also associated with wealth and the hidden treasures of the earth, as he governs the riches found
+                      beneath
+                      the surface.
+                - Kalyana / Swami Spines / Kalanos
+                    - Kalanos was an ancient Indian philosopher and ascetic who accompanied Alexander the Great during his
+                      campaigns
+                      in India.
+                    - He is known for his teachings on self-discipline, renunciation, and the pursuit of spiritual knowledge.
+                    - Kalanos' interactions with Alexander and his followers provided valuable insights into Indian philosophy
+                      and
+                      spirituality during the Hellenistic period.
+                - Creative India, Denoy Kumar Sarkar
+                    - "Creative India" is a book by Denoy Kumar Sarkar that explores the rich cultural heritage and artistic
+                      traditions
+                      of India.
+                    - The book highlights various aspects of Indian art, literature, music, and architecture, showcasing the
+                      creativity
+                      and diversity of Indian culture.
+                    - Sarkar's work emphasizes the importance of preserving and promoting India's artistic legacy for future
+                      generations.
+                - India culture theses, S.V. Venatesvara Rao
+                    - "India Culture Theses" is a scholarly work by S.V. Venatesvara Rao that examines various aspects of Indian
+                      culture,
+                      including its history, traditions, and social practices.
+                    - The book provides an in-depth analysis of the cultural diversity and complexity of India, highlighting its
+                      unique
+                      contributions to global civilization.
+                    - Rao's work emphasizes the importance of understanding and appreciating India's cultural heritage in a
+                      global
+                      context.
+                - Sravantolagola
+                    - Sravantolagola is a sacred site in Karnataka, India, known for its historical and religious significance.
+                    - It is associated with the Jain tradition and is home to several ancient temples and monuments dedicated
+                      to
+                      Jain Tirthankaras.
+                    - Sravantolagola attracts pilgrims and tourists alike, who come to explore its rich cultural heritage and
+                      spiritual ambiance.
+                - Comateswara
+                    - Comateswara is a historical temple located in India, known for its architectural beauty and religious
+                      significance.
+                    - The temple is dedicated to Lord Shiva and is a popular destination for devotees and tourists.
+                    - Comateswara temple showcases intricate carvings and sculptures, reflecting the rich cultural heritage of
+                      the
+                      region.
+                - Thayumanavar temple
+                    - Thayumanavar Temple is a Hindu temple located in Tamil Nadu, India, dedicated to Lord Shiva.
+                    - The temple is named after the saint Thayumanavar, who is revered for his spiritual teachings and
+                      devotion to
+                      Lord Shiva.
+                    - The temple is known for its beautiful architecture, intricate carvings, and vibrant festivals that
+                      attract
+                      devotees from all over.
+                - Travancore
+                    - Travancore was a princely state in southern India, known for its rich cultural heritage, art, and
+                      architecture.
+                    - It played a significant role in the history of Kerala and was known for its progressive administration
+                      and
+                      social reforms.
+                    - Travancore is also famous for its temples, palaces, and traditional art forms such as Kathakali and
+                      Mohiniyattam.
+                - Palika Dynasty
+                    - The Palika Dynasty was a historical ruling dynasty in India, known for its contributions to art, culture,
+                      and
+                      architecture.
+                    - The dynasty played a significant role in the political and cultural landscape of the region during its
+                      reign.
+                    - The Palika Dynasty is remembered for its patronage of the arts and its efforts to promote cultural
+                      development.
+                - Manu
+                  - Lawgiver
+                    - Manu is a legendary figure in Hindu mythology, considered the first lawgiver and the author of the
+                      Manusmriti,
+                      an ancient legal text that outlines the principles of dharma (righteousness) and social order.
+                    - He is believed to have established the foundations of Hindu law and ethics, providing guidelines for
+                      personal
+                      conduct, social responsibilities, and governance.
+                    - Manu's teachings continue to influence Hindu philosophy and legal traditions to this day.
+                - Nietzsche
+                    - Friedrich Nietzsche was a German philosopher
+                - Sir C.V. Raman
+                    - Sir C.V. Raman was an Indian physicist and Nobel laureate known for his groundbreaking work in the field
+                      of
+                      light scattering, particularly the discovery of the Raman effect.
+                    - He made significant contributions to the understanding of the interaction of light with matter, which has
+                      had
+                      important applications in various scientific fields.
+                    - Raman's work earned him the Nobel Prize in Physics in 1930, making him the first Asian to receive this
+                      prestigious
+                      award.
+                - Sadasiva Brahman, Nerur
+                    - Sadasiva Brahman is a concept in Hindu philosophy that refers to the eternal, unchanging aspect of
+                      consciousness
+                      or the true self (Atman).
+                    - It is often associated with the idea of the supreme reality (Brahman) that transcends the physical world
+                      and
+                      remains constant amidst the changing phenomena of the mind and body.
+                    - The realization of Sadasiva Brahman is considered a key aspect of spiritual awakening and self-realization
+                      in
+                      various yogic traditions.
+                - Raja of Pudukkottai
+                    - The Raja of Pudukkottai was the ruler of the princely state of Pudukkottai in Tamil Nadu, India.
+                    - The royal family played a significant role in the cultural and political history of the region.
+                    - The Raja of Pudukkottai was known for his patronage of arts, culture, and education, contributing to the
+                      development
+                      of the state.
+                - Sri Sadasivedra Saraswati Swamiji, Nerur
+                    - Sri Sadasivedra Saraswati Swamiji was an Indian spiritual leader and teacher known for his contributions to
+                      the
+                      practice of Kriya Yoga and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual
+                      discipline.
+                    - Sri Sadasivedra Saraswati Swamiji's teachings emphasize the integration of physical, mental, and spiritual
+                      practices for holistic development and enlightenment.
+                - Jagadguru Sri Shankaracharya, Srihari Math
+                    - Jagadguru Sri Shankaracharya was an Indian philosopher and theologian who is credited with reviving and
+                      consolidating
+                      the Advaita Vedanta school of Hindu philosophy.
+                    - He established several monastic centers (mathas) across India and played a significant role in promoting
+                      Hinduism
+                      and its teachings.
+                    - Shankaracharya's teachings emphasize the non-dual nature of reality, the unity of the individual soul (Atman)
+                      with
+                      the supreme reality (Brahman), and the importance of self-realization through knowledge and meditation.
+                - Sri Ramana Maharshi, Arunachala, Tiruvannamalai
+                    - Sri Ramana Maharshi was an Indian sage and spiritual teacher known for his teachings on self-inquiry and
+                      the
+                      practice of meditation.
+                    - He is recognized for his emphasis on the question "Who am I?" as a means to attain self-realization and
+                      inner
+                      peace.
+                    - Ramana Maharshi's teachings have had a profound impact on spiritual seekers worldwide, inspiring many to
+                      explore
+                      the path of self-discovery and enlightenment.
+                - Swami Sakananda Saraswati, Varanasi
+                    - Swami Sakananda Saraswati was an Indian spiritual leader and teacher known for his contributions to the
+                      practice
+                      of Kriya Yoga and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual
+                      discipline.
+                    - Swami Sakananda Saraswati's teachings emphasize the integration of physical, mental, and spiritual practices
+                      for
+                      holistic development and enlightenment.
+                - Hiranyaloka
+                    - Hiranyaloka was an ancient Indian sage and philosopher known for his contributions to the development of
+                      Indian
+                      philosophy and spirituality.
+                    - He is recognized for his teachings on the nature of reality, consciousness, and the pursuit of spiritual
+                      knowledge.
+                    - Hiranyaloka's teachings have had a lasting impact on various philosophical traditions in India, inspiring
+                      many
+                      seekers on the path of self-realization.
+                - Miss Madoleine Slade
+                    - Miss Madeleine Slade, also known as Mirabehn, was a British
+                - Sri Aurobindo Ghose, Pondicherry
+                    - Sri Aurobindo Ghose was an Indian philosopher, yogi, and spiritual leader known for his teachings on
+                      integral yoga and spiritual evolution.
+                    - He is recognized for his efforts to promote spiritual awakening and the transformation of human
+                      consciousness.
+                    - Sri Aurobindo's teachings emphasize the integration of spiritual practice with everyday life, aiming to
+                      bring
+                      about a higher state of being and collective evolution.
+                - Babasaheb Deshmukh
+                    - Babasaheb Deshmukh was an Indian social reformer and politician known for his contributions to the
+                      upliftment
+                      of marginalized communities and the promotion of social justice.
+                    - He played a significant role in advocating for the rights of Dalits and other disadvantaged groups in
+                      India.
+                    - Babasaheb Deshmukh's legacy includes his commitment to education, social equality, and the empowerment
+                      of
+                      marginalized communities.
             - Ashrams
                 - Ranikhet cave
                     - The Ranikhet cave is a historical site located in the Ranikhet region of Uttarakhand, India.
@@ -1217,6 +1549,25 @@
                     to promote overall health and vitality.
                   - The practice is believed to help individuals achieve a state of physical and mental well-being,
                     enhancing their quality of life and longevity.
+                - Jujitsu
+                    - Jujitsu, also spelled jujutsu or jiu-jitsu, is a traditional Japanese martial art that focuses on
+                      close combat and self-defense techniques.
+                    - It emphasizes the use of joint locks, throws, and grappling techniques to subdue an opponent,
+                      often
+                      utilizing their own energy against them.
+                    - Jujitsu has influenced the development of various modern martial arts, including Brazilian Jiu-Jitsu
+                      and
+                      mixed martial arts (MMA).
+                - Maurya Dynasty
+                    - The Maurya Dynasty was an ancient Indian empire that existed from approximately 322 to 185 BCE.
+                    - It was founded by Chandragupta Maurya and reached its peak under the rule of Emperor Ashoka the
+                      Great.
+                    - The Maurya Dynasty is known for its significant contributions to Indian culture, administration,
+                      and
+                      the spread of Buddhism.
+                    - The empire established a centralized government, promoted trade and commerce, and built an extensive
+                      network of roads and infrastructure.
+                - 
             - Places
                 - Lincoln library of essential information
                     - The Lincoln Library of Essential Information is a comprehensive reference library that provides
@@ -1281,6 +1632,40 @@
                     trekking,
                     fishing, and nature walks.
                   - The river is also significant in local folklore and is associated with various myths and legends.
+              - Eichstätt
+                  - Eichstätt is a town in Bavaria, Germany, known for its historical significance and cultural
+                    heritage.
+                  - It is home to various architectural landmarks, including the Eichstätt Cathedral and the Willibald
+                    sburg
+                    Castle.
+                  - Eichstätt has a rich history dating back to the Roman era and is known for its vibrant cultural
+                    scene.
+              - Chamundi Temple
+                  - The Chamundi Temple is a Hindu temple located on Chamundi Hill in Mysore, Karnataka, India.
+                  - It is dedicated to the goddess Chamundi, a fierce form of the goddess Durga, and is an important
+                    pilgrimage site for devotees.
+                  - The temple is known for its intricate architecture, vibrant festivals, and panoramic views of the
+                    city
+                    of Mysore.
+              - Krishnasagar Dam
+                  - The Krishnasagar Dam, also known as the Krishna Raja Sagara Dam, is a masonry dam located in
+                    Karnataka,
+                    India.
+                  - It was built across the Kaveri River and serves as a major source of irrigation and drinking water
+                    for
+                    the surrounding regions.
+                  - The dam is also known for its scenic beauty and is a popular tourist destination, with the nearby
+                    Brindavan
+                    Gardens attracting visitors for their musical fountain shows and lush greenery.
+              - Kolar Gold Mines
+                  - The Kolar Gold Mines are a group of gold mines located in the Kolar district of Karnataka, India.
+                  - They were once among the deepest and most productive gold mines in the world, with mining
+                    operations
+                    dating back to the late 19th century.
+                  - The mines have a rich history and have contributed significantly to India's gold production over
+                    the
+                    years.
+                  - However, due to declining gold reserves and economic viability, the mines were closed in 2001.
               - 
     - Swami Vivekananda
         - Complete Works of Swami Vivekananda

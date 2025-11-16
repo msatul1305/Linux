@@ -280,3 +280,12 @@
             - This translation of the Upanishads, one of the foundational texts of Indian philosophy, offers a clear and
               accessible version of these ancient scriptures.
             - The Upanishads explore profound philosophical concepts such as the nature of the self (Atman), the
+    - 4 classes    goals    Gunas
+      - Sudras     Kama     Tamas
+      - Vaishyas   Artha    Tamas-Rajas
+      - Kshatriyas Dharma   Rajas-Sattva
+      - Brahmins   Moksha   Sattva
+    - Yajnas
+      - Bhuta Yajna: Service to all living beings
+      - Pitri Yajna: Reverence and offerings to ancestors
+      - Nri Yajna: Service to fellow human beings

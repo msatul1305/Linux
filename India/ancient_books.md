@@ -127,4 +127,11 @@
           - Arjuna
             - Arjuna is one of the central characters in the Mahabharata, a prince and a skilled archer.
             - He is known for his moral dilemmas and his dialogue with Lord Krishna in the Bhagavad Gita.
-        - 
+    - Purana Samhita
+        - The Purana Samhita is a collection of ancient Indian texts that narrate the history, mythology, and
+          cosmology of Hinduism.
+        - It consists of 18 major Puranas, each focusing on different deities, legends, and teachings.
+        - The Puranas cover various topics such as creation, genealogies of gods and sages, and religious practices.
+        - They are written in a narrative style and often include stories, hymns, and rituals.
+        - The Purana Samhita is considered an important source of Hindu mythology and religious traditions.
+    - 
