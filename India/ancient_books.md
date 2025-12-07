@@ -134,4 +134,4 @@
         - The Puranas cover various topics such as creation, genealogies of gods and sages, and religious practices.
         - They are written in a narrative style and often include stories, hymns, and rituals.
         - The Purana Samhita is considered an important source of Hindu mythology and religious traditions.
-    - 
+- The wisdom of the east

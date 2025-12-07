@@ -1229,6 +1229,204 @@
                     - Babasaheb Deshmukh's legacy includes his commitment to education, social equality, and the empowerment
                       of
                       marginalized communities.
+                - Pariah
+                    - The term "Pariah" refers to a social group in India that has historically been marginalized and
+                      discriminated
+                      against.
+                    - Pariahs were often considered "untouchables" in the traditional caste system and faced social exclusion
+                      and
+                      discrimination.
+                    - Efforts have been made in modern times to promote social equality and upliftment of marginalized groups,
+                      including
+                      the Pariahs, through education, social reforms, and affirmative action policies.
+                - Chares P. Steinmetz
+                    - Charles P. Steinmetz was a German-American electrical engineer and inventor known for his contributions to
+                      the
+                      development of alternating current (AC) electrical systems.
+                    - He made significant advancements in the understanding of electrical phenomena and played a key role in
+                      the
+                      growth of the electrical industry in the United States.
+                    - Steinmetz's work has had a lasting impact on modern electrical engineering and technology.
+                - Roger W. Babson
+                    - Roger W. Babson was an American entrepreneur, economist, and author known for his contributions to the field
+                      of
+                      economics and business.
+                    - He founded Babson College, an institution dedicated to entrepreneurship education and business studies.
+                    - Babson's work emphasized the importance of innovation, entrepreneurship, and practical business skills in
+                      economic
+                      development.
+                - President Wilson
+                    - President Woodrow Wilson was the 28th President of the United States, serving from 1913 to 1921.
+                    - He is known for his leadership during World War I and his efforts to promote international peace and
+                      cooperation
+                      through the establishment of the League of Nations.
+                    - Wilson's presidency was marked by significant domestic reforms, including the introduction of progressive
+                      policies
+                      aimed at improving social welfare and economic regulation.
+                - William Pennington
+                    - William Pennington was an American politician who served as the 13th Governor of New Jersey and later as the
+                      Speaker
+                      of the United States House of Representatives.
+                    - He played a significant role in state and national politics during his career, advocating for various
+                      legislative
+                      initiatives and reforms.
+                    - Pennington's contributions to public service and governance have left a lasting impact on the political
+                      landscape
+                      of New Jersey and the United States.
+                - Pennsylvania
+                    - Pennsylvania is a state located in the northeastern region of the United States, known for its rich history,
+                      diverse
+                      culture, and significant contributions to American society.
+                    - It played a crucial role in the founding of the United States, being home to key events such as the signing
+                      of
+                      the Declaration of Independence and the drafting of the U.S. Constitution.
+                    - Pennsylvania is also known for its vibrant cities, picturesque landscapes, and cultural landmarks, making it
+                      a
+                      popular destination for tourists and residents alike.
+              Franklin D. Roosevelt
+                    - Franklin D. Roosevelt was the 32nd President of the United States, serving from 1933 to 1945.
+                    - He is known for his leadership during the Great Depression and World War II, implementing the New Deal
+                      programs
+                      to promote economic recovery and social welfare.
+                    - Roosevelt's presidency was marked by significant domestic and international challenges, and he is remembered
+                      for
+                      his efforts to strengthen the U.S. economy and promote global peace and cooperation.
+                - Lao Tzu
+                    - Lao Tzu was an ancient Chinese philosopher and writer, traditionally considered the author of the Tao Te Ching
+                      and
+                      the founder of Taoism.
+                    - His teachings emphasize living in harmony with the Tao (the Way), advocating simplicity, humility, and
+                      compassion.
+                    - Lao Tzu's philosophy has had a profound influence on Chinese culture and spirituality, as well as on
+                      various
+                      philosophical traditions worldwide.
+                - Master of Galilee
+                    - The Master of Galilee is a title often associated with Jesus Christ, referring to his origins in the region of
+                      Galilee
+                - Nirmala Devi
+                    - Nirmala Devi was an Indian spiritual leader and teacher known for her contributions to the practice of Kriya Yoga
+                      and
+                      meditation.
+                    - She is recognized for her teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Nirmala Devi's teachings emphasize the integration of physical, mental, and spiritual practices for holistic
+                      development
+                      and enlightenment.
+                  - Anandamayi Ma
+                      - Anandamayi Ma was an Indian spiritual leader and mystic known for her teachings on self-realization and divine love.
+                      - She is revered for her spiritual wisdom, compassion, and ability to inspire devotion among her followers.
+                      - Anandamayi Ma's teachings emphasize the importance of surrender to the divine, meditation, and the cultivation of
+                        inner
+                        peace.
+                - Amiyo Kumar Ghose
+                    - Amiyo Kumar Ghose was an Indian spiritual leader and teacher known for his contributions to the practice of Kriya
+                      Yoga
+                      and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Amiyo Kumar Ghose's teachings emphasize the integration of physical, mental, and spiritual practices for holistic
+                      development
+                      and enlightenment.
+                - Amiyo Bose
+                    - Amiyo Bose was an Indian spiritual leader and teacher known for his contributions to the practice of Kriya Yoga and
+                      meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Amiyo Bose's teachings emphasize the integration of physical, mental, and spiritual practices for holistic development
+                      and
+                      enlightenment.
+                - Giri Bala
+                    - Giri Bala was an Indian spiritual leader and teacher known for her contributions to the practice of Kriya Yoga and
+                      meditation.
+                    - She is recognized for her teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Giri Bala's teachings emphasize the integration of physical, mental, and spiritual practices for holistic development
+                      and
+                      enlightenment.
+                - Sthiti Lal Nundy
+                    - Sthiti Lal Nundy was an Indian spiritual leader and teacher known for his contributions to the practice of Kriya Yoga
+                      and
+                      meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Sthiti Lal Nundy's teachings emphasize the integration of physical, mental, and spiritual practices for holistic
+                      development
+                      and enlightenment.
+                - H.H Sir Bijay Chand Mahtab
+                    - H.H Sir Bijay Chand Mahtab was an Indian royal and spiritual leader known for his contributions to the practice of
+                      Kriya Yoga
+                      and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - H.H Sir Bijay Chand Mahtab's teachings emphasize the integration of physical, mental, and spiritual practices for
+                      holistic
+                      development and enlightenment.
+                  - Maharaja of Burdwan
+                      - The Maharaja of Burdwan was the ruler of the princely state of Burdwan in West Bengal, India.
+                      - The royal family played a significant role in the cultural and political history of the region.
+                      - The Maharaja of Burdwan was known for his patronage of arts, culture, and education, contributing to the
+                        development
+                        of the state.
+                - Lambodar Dey
+                    - Lambodar Dey was an Indian spiritual leader and teacher known for his contributions to the practice of Kriya Yoga
+                      and
+                      meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Lambodar Dey's teachings emphasize the integration of physical, mental, and spiritual practices for holistic development
+                      and
+                      enlightenment.
+                - William L. Laurence
+                    - William L. Lawrence was an American author and journalist known for his contributions to literature and journalism.
+                    - He wrote extensively on various topics, including politics, culture, and social issues.
+                    - Lawrence's work has been recognized for its insightful analysis and engaging storytelling.
+                - The Bremen
+                    - The Bremen is a historic city in northern Germany known for its rich cultural heritage, architecture, and maritime
+                      history.
+                    - It is famous for its medieval old town, including the iconic Bremen Town Hall and the Roland statue, both of which are
+                      UNESCO World Heritage Sites.
+                    - Bremen has a vibrant cultural scene, with numerous museums, theaters, and festivals celebrating its history and traditions.
+                - Yogacharya Dickinson
+                    - Yogacharya Dickinson was an American spiritual teacher and practitioner of yoga known for his contributions to the
+                      practice
+                      of Kriya Yoga and meditation.
+                    - He is recognized for his teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Yogacharya Dickinson's teachings emphasize the integration of physical, mental, and spiritual practices for holistic
+                      development
+                      and enlightenment.
+                - Sistter Gyanamata
+                    - Sister Gyanamata was an Indian spiritual leader and teacher known for her contributions to the practice of Kriya Yoga
+                      and
+                      meditation.
+                    - She is recognized for her teachings on self-realization, inner peace, and the importance of spiritual discipline.
+                    - Sister Gyanamata's teachings emphasize the integration of physical, mental, and spiritual practices for holistic
+                      development
+                      and enlightenment.
+                - Zend Avesta
+                    - The Zend Avesta is the primary collection of sacred texts of Zoroastrianism, an ancient religion founded by the prophet
+                      Zoroaster
+                      in ancient Persia.
+                    - The texts are written in the Avestan language and contain hymns, prayers, rituals, and teachings that form the basis of
+                      Zoroastrian
+                      beliefs and practices.
+                    - The Zend Avesta is divided into several sections, including the Yasna, Visperad, Vendidad, and Yashts, each serving a
+                      specific
+                      religious purpose.
+                - Encinitas Hermitage
+                    - The Encinitas Hermitage is a spiritual retreat located in Encinitas, California, associated with the teachings of
+                      Paramahansa
+                      Yogananda.
+                    - It serves as a center for meditation, self-realization, and the practice of Kriya Yoga.
+                    - The hermitage is known for its tranquil environment and is frequented by spiritual seekers and devotees.
+                - Mr. Alvin Hunsicker
+                    - Mr. Alvin Hunsicker was an American spiritual teacher and practitioner of Kriya Yoga known for his contributions to the
+                      practice
+                      of meditation and self-realization.
+                    - He is recognized for his teachings on inner peace, spiritual discipline, and the integration of physical, mental, and
+                      spiritual
+                      practices.
+                    - Mr. Hunsicker's teachings have inspired many seekers on the path of self-discovery and enlightenment.
+                - Dr. M.W. Lewis
+                    - Dr. M.W. Lewis was an American scholar and researcher known for his contributions to the study of spirituality and
+                      meditation.
+                    - He conducted extensive research on the effects of meditation on mental and physical health, contributing to the
+                      understanding
+                      of its benefits.
+                    - Dr. Lewis's work has been influential in promoting the practice of meditation and its integration into modern wellness
+                      practices.
             - Ashrams
                 - Ranikhet cave
                     - The Ranikhet cave is a historical site located in the Ranikhet region of Uttarakhand, India.
@@ -1315,6 +1513,8 @@
                     - It serves as a center for meditation, self-realization, and the practice of Kriya Yoga.
                     - The hermitage is known for its tranquil environment and is frequented by spiritual seekers and
                       devotees.
+                - SRF Center, Boston
+                - SRFC, London
             - More mentioned things
                 - Vaiseshika
                     - Vaisesika is one of the six orthodox schools of Hindu philosophy, founded by the sage Kanada.
