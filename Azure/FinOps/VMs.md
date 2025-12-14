@@ -1,0 +1,50 @@
+- https://app.pluralsight.com/library/courses/azure-costs-managing-compute/table-of-contents
+- [VM](VM.png)
+- [Storage](Storage.png)
+- VM considerations
+  - Basics
+    - OS: Linux or Windows
+    - Purpose/Environment:
+      - Development,
+      - Testing,
+      - Production
+    - Region: e.g., East US, West Europe
+    - Tier: 
+      - General Purpose
+      - Compute Optimized
+      - Memory Optimized
+      - Storage Optimized
+  - Category
+    - compute-optimized
+    - memory-optimized
+    - storage-optimized
+    - general-purpose
+    - GPU
+    - high-performance compute (HPC)
+  - Specific Instance
+    - Series: e.g., D-series, E-series, F-series
+    - Storage Type: 
+      - Standard HDD
+      - Standard SSD
+      - Premium SSD
+      - Ultra Disk
+    - compute-to-memory ratio
+  - Scaling Options
+    - Vertical Scaling (Resize)
+      - Change VM size to adjust CPU, memory, and storage resources
+    - Horizontal Scaling
+      - Use Virtual Machine Scale Sets (VMSS) to add or remove VM instances based on demand
+  - Savings Options
+    - Pay-as-you-go
+      - No upfront commitment, pay for what you use
+    - Reserved Instances
+      - Commit to a 1-year or 3-year term for significant cost savings
+    - Spot Instances
+      - Utilize unused Azure capacity at a discounted rate for non-critical workloads
+- Scaling Strategies
+  - Manual Scaling(Steady state)
+    - Adjust the number of VM instances based on anticipated demand
+  - Autoscaling(Variable, Known patterns)
+    - Configure rules to automatically scale VM instances based on metrics like CPU usage or memory consumption
+  - Vm scale sets(High scalability, High availability)
+    - Deploy and manage a set of identical VMs that can automatically scale in or out based on demand

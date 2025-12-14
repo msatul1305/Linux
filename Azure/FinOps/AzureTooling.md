@@ -1,0 +1,16 @@
+- Azure Cost Management and Billing Tools
+  - Azure Cost Management
+    - Comprehensive tool for tracking, allocating, and optimizing cloud spending
+    - Features include cost analysis, budgeting, and recommendations for cost savings
+  - Azure Pricing Calculator
+    - Tool for estimating costs of Azure services based on configurations and usage patterns
+    - Helps in planning and budgeting for cloud resources
+  - Azure Advisor
+    - Personalized recommendations for optimizing Azure resources
+    - Focuses on cost savings, performance improvements, security enhancements, and reliability
+  - Azure Budgets
+    - Allows setting spending thresholds and receiving alerts when approaching or exceeding budgets
+    - Helps in proactive cost management and avoiding unexpected expenses
+  - Azure Resource Tags
+    - Enables categorization of resources for better cost allocation and reporting
+    - Facilitates chargeback to departments or projects based on resource usage

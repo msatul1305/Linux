@@ -1,0 +1,200 @@
+- https://app.pluralsight.com/library/courses/azure-basic-cost-optimization/table-of-contents
+  - Joseph Lowery
+  - Factors affecting cost in Azure(OpEx)
+    - Resource types
+      - VM sizes
+      - Storage types
+      - Database tiers
+      - Networking options
+      - Specialized services
+        - AI and Machine Learning
+        - IoT
+        - Analytics
+    - Resource configurations
+    - Resource locations(Geography/Regions)
+      - infrastructure costs by region
+      - demand
+      - regional regulations
+      - Expensive region: North America, Western Europe
+      - Cheaper region: Asia Pacific, South America, Eastern Europe
+      - Cross-region data transfer costs
+    - Resource usage patterns(Consumption)
+      - Peak vs off-peak usage
+      - Seasonal variations
+      - Long-term trends
+      - Factors
+        - Compute hours
+        - Storage capacity
+        - Network bandwidth
+        - Data transfer volumes
+        - API calls
+    - Subscription and pricing models
+      - Pay-as-you-go
+      - Reserved instances
+      - Spot instances
+      - Enterprise agreements
+      - Dev/Test subscriptions
+      - Savings plans
+    - Maintenance and support costs
+      - Support plans
+      - SLA requirements
+      - Monitoring and management tools
+      - Backup and disaster recovery solutions
+      - Security services
+      - Compliance requirements
+      - Third-party integrations
+      - Upgrades and updates
+- Microsoft Azure Cost Management and Billing
+  - https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/
+  - Overview of Azure Cost Management and Billing
+  - Key features and capabilities
+    - Cost analysis
+    - Budgets and alerts
+      - Set Budgets
+      - Receive alerts when spending exceeds thresholds
+    - Recommendations for cost optimization
+      - Resize or shut down underutilized resources
+    - Cost allocation and chargeback
+    - Pricing calculator
+  - Setting up Azure Cost Management and Billing
+    - Accessing the service
+    - Configuring cost management settings
+    - Linking subscriptions and billing accounts
+  - Best practices for using Azure Cost Management and Billing
+    - Regularly reviewing cost reports
+    - Setting up budgets and alerts
+    - Implementing cost-saving recommendations
+    - Using tags for resource organization and cost allocation
+      - chargeback to different departments or projects based on resource usage
+  - Power BI integration for advanced cost analysis
+    - Connecting Power BI to Azure Cost Management data
+    - Creating custom reports and dashboards
+- Azure Cost Management Process
+  - Resource usage calculated
+    - for all resources in the subscription
+  - Credit and discounts applied
+  - Invoice generated
+  - Anomalies identified
+    - daily
+    - Azure Advisor cost recommendations
+      - cost savings insights for subscriptions and resource groups
+  - Cost allocation tagged
+    - apply tag
+  - Alerts triggered
+    - when spending exceeds budget thresholds
+  - Reports created
+    - cost analysis reports
+- Azure Pricing Calculator
+  - https://azure.microsoft.com/en-us/pricing/calculator/
+  - Overview of Azure Pricing Calculator
+  - Key features and capabilities
+    - Service selection
+    - Configuration options
+    - Real-time Cost estimation
+      - configure resource parameters like size, region, and forecasted usage
+      - takes into account pricing tiers, discounts, and offers
+      - compare different configurations side by side and pricing models
+    - Exporting and sharing estimates
+  - Using Azure Pricing Calculator
+    - Selecting services
+    - Configuring service parameters
+    - Reviewing cost estimates
+    - Exporting estimates to Excel or sharing via link
+  - Best practices for using Azure Pricing Calculator
+    - Regularly updating estimates based on changing requirements
+    - Comparing different configurations for cost optimization
+    - Using estimates for budgeting and planning purposes
+- Pricing calculator vs Total Cost of Ownership(TCO) calculator
+  - Pricing calculator
+    - focuses on cloud expenses
+      - estimates for specific Azure services and configurations for new deployments or expansions
+    - estimates the cost of specific Azure services based on selected configurations and usage patterns
+      - Virtual Machine types and sizes
+      - Storage options
+      - Database services
+      - Networking components
+    - helps users understand potential expenses associated with deploying and running workloads in Azure
+    - focuses on operational expenses(OpEx)
+  - TCO calculator
+    - compares the total cost of ownership between on-premises infrastructure and Azure cloud services
+    - need to provide on-premises infrastructure details
+      - number of servers and server specifications
+      - storage capacity
+      - networking equipment
+      - software licenses
+      - personnel costs
+    - considers both capital expenses(CapEx) and operational expenses(OpEx)
+    - helps organizations evaluate the financial benefits of migrating to Azure
+    - includes factors like hardware costs, software licensing, maintenance, power and cooling, real estate, and personnel costs
+- Reserved Instances vs Savings Plans
+  - Reserved Instances(RIs)
+    - commitment to use specific VM sizes in a particular region for a one- or three-year term
+    - provide significant cost savings compared to pay-as-you-go pricing
+    - applicable to specific VM families and sizes
+    - upto 72% discount compared to pay-as-you-go rates
+    - offer flexibility to change the instance size within the same VM family
+    - can be exchanged or canceled with certain conditions
+    - best suited for predictable workloads with consistent usage patterns
+  - Savings Plans
+    - for compute services only
+      - i.e. Virtual Machines, Azure Functions, and Azure Container Instances
+    - commitment to a consistent amount of compute usage (measured in $/hour) for a one- or three-year term
+    - provide cost savings for all compute instances combined
+      - i.e. across a broader range of VM sizes, families, and regions
+    - upto 65% discount compared to pay-as-you-go rates
+    - offer more flexibility than RIs, allowing users to switch between different VM types and regions without losing the discount
+    - applicable to both Windows and Linux VMs
+    - best suited for workloads with variable or unpredictable usage patterns
+  - Both
+    - are mutually exclusive
+    -  cannot be exchanged or canceled or used for non-compute services without penalties
+- Azure Hybrid Benefit
+  - Overview of Azure Hybrid Benefit
+    - licensing benefit that allows users to use their existing on-premises Windows Server and SQL Server licenses with Software Assurance to save on Azure costs
+  - Key features and benefits
+    - Cost savings
+      - significant cost savings on Azure Virtual Machines and SQL Database services
+    - Flexibility
+      - use existing licenses in Azure or on-premises environments
+    - Simplified licensing management
+      - manage licenses through a single portal
+  - Using Azure Hybrid Benefit
+    - Eligibility requirements
+      - valid Software Assurance coverage for 
+        - Windows Server or 
+        - SQL Server licenses
+    - Applying the benefit to Azure resources
+      - during the creation of new VMs or SQL Databases, or by updating existing resources to enable the benefit
+  - Best practices for using Azure Hybrid Benefit
+    - Regularly reviewing license usage and compliance
+    - Combining with other cost-saving measures, such as Reserved Instances or Savings Plans
+  - reserved VM Cost savings upto 80%
+- Azure Budgets
+  - Set financial thresholds for Azure spending
+  - Create budgets at different scopes
+    - management group
+    - subscription
+    - resource group levels
+    - services
+  - often set for resource groups
+  - Do not automatically stop services when budget is exceeded
+    - only notified
+  - Provides cost analysis and forecasting tools based on previous usage
+  - Cost Alerts
+    - notify when spending reaches certain percentages of the budget
+      - e.g., 50%, 75%, 90%, and 100%
+    - Set up to 5 thresholds per budget
+    - Create budgets at various scopes
+      - management group
+      - subscription
+      - resource group levels
+      - collection of resources across multiple resource groups
+    - Thresold alerts activated within an hour of daily cost evaluation
+    - Standard response: 
+      - email
+      - Azure Action Group
+        - text message
+        - voice messages
+        - webhook activating an external system
+        - calling azure function for full-on automated response
+          - including shutting down or deallocating resources

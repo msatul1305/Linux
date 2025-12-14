@@ -1,0 +1,128 @@
+- Understanding Azure Cost Drivers by Amy Coughlin
+- [DetermineAzureCompute.png](DetermineAzureCompute.png)
+- FinOps Phases
+  - Inform
+    - gather data on who need which cloud services and why
+    - understanding how the services are billed
+  - Optimize
+    - analyze usage patterns and identify cost-saving opportunities
+    - right-sizing resources, eliminating unused services, and leveraging discounts
+  - Operate
+    - run, log and monitor cloud services efficiently
+- Cost Drivers in Azure
+  - Compute
+    - Virtual Machines (VMs)
+    - App Services
+    - Azure Kubernetes Service (AKS)
+    - Functions
+  - Storage
+    - Blob Storage
+    - Disk Storage
+    - File Storage
+    - Archive Storage
+  - Networking
+    - Data Transfer (egress and ingress)
+      - mostly outbound data transfer (egress) incurs costs
+    - Virtual Network (VNet) Peering
+    - Load Balancers
+    - VPN Gateways
+  - Databases
+    - Azure SQL Database
+    - Cosmos DB
+      - Billing units are called Request Units (RUs) per second
+    - Azure Database for MySQL/PostgreSQL
+  - Other Services
+    - AI and Machine Learning services
+    - Analytics services (e.g., Azure Synapse Analytics)
+    - IoT services
+  - Charge Per API calls or per execution
+    - Some services charge based on the number of API calls made
+    - Examples include Azure Cognitive Services and Azure Maps
+    - Logic Apps
+    - Functions
+  - Licensing and Software Costs
+    - Some Azure services require additional licensing fees
+    - Examples include Windows Server licenses for VMs and SQL Server licenses for databases
+  - Deployment region
+    - Costs can vary significantly based on the Azure region where resources are deployed
+    - Factors influencing regional costs include infrastructure costs, demand, and regional regulations
+  - Operational Costs
+    - Monitoring and management tools
+    - Backup and disaster recovery solutions
+    - Security services
+    - Support plans
+    - Compliance requirements
+  - Security and Compliance
+    - Implementing security measures and compliance requirements can add to costs
+    - Examples include Azure Security Center and Azure Policy
+    - Enhanced security like Defender may cost additional fees
+- Controlling Cost at resource creation
+  - Tags
+    - Examples of tags
+      - Environment: Production, Staging, Development
+      - Owner/Department: HR, Finance, IT, Marketing
+      - Project: ProjectA, ProjectB
+  - Azure Policy
+    - what is allowed and not allowed in the subscription
+    - e.g.
+      - limit the type and size of VMs that can be created
+  - Using IaC (Infrastructure as Code) to deploy resources
+    - Use IaC tools like 
+      - Azure Resource Manager (ARM) templates, 
+      - Terraform, or 
+      - Bicep to 
+      - define and deploy resources consistently
+    - Benefits include version control, repeatability, and easier management of resource configurations
+- Business impact of Good Cost Management
+    - Operational Efficiency gains and right-sized resource utilization
+    - Scalability, Flexibility and Customer experience
+    - Risk management and Compliance adherence
+    - Innovation and agile development
+    - Data-Driven Decision-Making and cost predictability
+- 15 ways to reduce overspend in Azure
+  - using Tags
+  - utilizing Azure Cost Management tool
+    - Budgeting, Cost Management, and biling tools
+    - Budgeting rules
+  - Identifying idle resources
+  - Right-sizing resources for development and testing
+  - understanding pricing models
+  - using reserved instances for predictable workloads
+  - Donot overprovision resources
+    - Scale up or scale out as needed
+    - adequate scaling practices
+  - optimize database costs
+    - automatic scaling
+    - performance tuning recommendations
+      - Azure Advisor
+      - Azure SQL Analytics
+  - optimize networking costs
+    - Keep in mind Data egress charges
+    - Dont use VPN gateways or ExpressRoute for large data transfers
+  - Licensing cost
+    - Windows Server
+    - SQL Server
+  - monitoring of third party apps
+  - Monitor Azure updates and changes
+    - Price and model changes
+  - Governance policies and Policy Management
+    - enforce tagging policies
+    - resource creation policies
+  - Engaging teams in cost management
+    - FinOps practices
+- Azure Cost Management and Billing Dashboard
+  - Cost Analysis
+    - Analyze costs by resource, resource group, service, location, and tags
+    - Identify spending trends and patterns over time
+  - Budgets and Alerts
+    - Set budgets for subscriptions or resource groups
+    - Receive alerts when spending exceeds predefined thresholds
+  - Recommendations
+    - Get cost-saving recommendations based on usage patterns
+    - Identify underutilized resources that can be resized or shut down
+  - Cost Allocation and Chargeback
+    - Use tags to allocate costs to different departments or projects
+    - Generate reports for chargeback purposes
+  - Power BI Integration
+    - Connect Power BI to Azure Cost Management data for advanced reporting
+    - Create custom reports and dashboards tailored to organizational needs

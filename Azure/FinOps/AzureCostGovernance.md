@@ -1,0 +1,43 @@
+- https://app.pluralsight.com/library/courses/azure-cost-governance/table-of-contents
+- FinOps(what you do)
+  - operational framework that combines financial management with cloud operations
+  - aims to optimize cloud spending while maximizing business value
+  - i.e.
+    - Cost Management
+    - Cost Optimization
+- Cloud Governance(How you do it)
+    - framework of policies, processes, and controls
+    - ensures effective management of cloud resources and costs
+    - i.e.
+      - Policies
+      - Controls
+      - Guidelines
+- Azure Cost Governance Overview
+  - Importance of Cost Governance in Azure
+    - Preventing cost overruns
+    - Ensuring efficient resource utilization
+    - Aligning costs with business objectives
+  - Key Components of Azure Cost Governance
+    - Budgeting and Forecasting
+      - Setting budgets for different teams or projects
+      - Using Azure Cost Management to monitor spending against budgets
+    - Cost Allocation and Tagging
+      - Implementing a tagging strategy for resources
+      - Allocating costs based on tags for better visibility
+    - Monitoring and Reporting
+      - Utilizing Azure Cost Management and Billing tools
+      - Generating reports to track spending patterns and identify anomalies
+    - Policy Enforcement
+      - Using Azure Policy to enforce cost-related policies
+      - Preventing the creation of expensive resources without approval
+  - Best Practices for Effective Cost Governance
+    - Regularly reviewing and updating budgets
+    - Educating teams about cost management practices
+    - Leveraging automation for cost optimization tasks
+    - Engaging stakeholders in cost governance processes
+- Tools and Services for Azure Cost Governance
+    - Tagging
+    - Azure Cost Management and Billing
+    - Azure Policy
+    - Azure Advisor
+    - Third-party FinOps tools

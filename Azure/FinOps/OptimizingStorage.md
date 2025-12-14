@@ -1,0 +1,149 @@
+- https://app.pluralsight.com/library/courses/azure-costs-optimizing-storage/table-of-contents
+- [StorageRedundancy](StorageRedundancy.png)
+- Azure Storage Family
+  - Blob Storage
+    - Object storage for unstructured data
+    - Tiers: Hot, Cool, Archive
+    - Use Cases
+      - Storing documents, images, videos, backups, and logs
+      - Data lakes for big data analytics
+      - Serving static content for web applications
+    - Semi-structured data
+      - Json documents
+      - XML files
+    - Provides most opportunity for cost optimization
+      - multifaceteted approach to storage infrastructure
+        - Standard vs Premium performance tiers
+        - Access tiers (Hot, Cool, Cold and Archive)
+        - Different types of operations (read, write, list, delete)
+        - Data redundancy options (LRS, GRS, RA-GRS, ZRS)
+  - Disk Storage
+    - Managed disks for VMs
+    - Types: Standard HDD, Standard SSD, Premium SSD, Ultra Disk
+  - Azure File Storage(Azure Files)
+    - Fully managed file shares in the cloud
+    - SMB and NFS protocols supported
+    - like a network drive in on-premises environments
+  - Queue Storage
+    - Message queuing for communication between application components
+    - When use Queue Storage over Azure Service Bus or Azure Event Hub
+      - Decoupling application components
+      - Load leveling
+      - Asynchronous processing
+  - Azure Table Storage
+    - NoSQL key-value store for semi-structured data
+- Factors to Consider for Cost Optimization
+  - Access Patterns
+    - Frequency of data access (Hot, Cool, Archive tiers)
+    - Read vs write operations
+  - Data Redundancy Options
+    - Locally Redundant Storage (LRS)
+      - Storage account located in a
+        - single data center
+        - single region
+        - 3 copies of data within that region
+    - Geo-Redundant Storage (GRS)
+      - protection from regional outages
+      - replicates data to a secondary region hundreds of miles away from the primary region
+      - 6 total copies of data (3 in primary region, 3 in secondary region)
+      - costs more than LRS
+      - longer recovery times in case of failover
+      - suitable for applications requiring high availability and disaster recovery
+    - Read-Access Geo-Redundant Storage (RA-GRS)
+      - No downside if primary region goes down
+      - read access to data in secondary region
+      - ideal for read-heavy workloads requiring high availability across regions
+      - additional cost compared to GRS
+    - Zone-Redundant Storage (ZRS)
+      - 3 copies of data 
+        - but across multiple availability zones within a region
+      - protects against data center failures within a region
+      - typically more expensive than LRS but less than GRS
+      - suitable for applications requiring high availability without cross-region replication
+    - GZRS (Geo-Zone-Redundant Storage)
+      - combines benefits of ZRS and GRS
+      - replicates data across multiple availability zones in primary region and to a secondary region
+      - highest level of durability and availability
+      - incurs higher costs
+      - ideal for mission-critical applications requiring maximum resilience
+  - Performance Tiers
+    - Standard vs Premium storage options
+  - Data Lifecycle Management
+    - Implementing policies to transition data between access tiers based on usage patterns
+- Tiers for blob storage
+  - Hot
+    - frequently accessed data
+    - highest storage costs
+    - lowest access costs
+    - retrieval times are the fastest: seconds or milliseconds
+  - Cool
+    - Monthly accessed data
+    - early deletion penalties
+      - data must be stored for a minimum of 30 days to avoid early deletion charges
+      - (i.e.30 days minimum storage duration charge to be levied)
+  - Cold
+    - Quarterly accessed data
+    - early deletion penalties
+      - data must be stored for a minimum of 90 days to avoid early deletion charges
+  - Archive
+    - for compliance or historical data that is rarely accessed
+    - lowest storage costs
+    - retrieval costs are the highest
+    - data retrieval can take several minutes and hours
+    - rehydrating
+      - data must be rehydrated to an online tier (Hot or Cool) before it can be accessed
+    - early deletion penalties
+      - data must be stored for a minimum of 180 days to avoid early deletion charges
+- Automation to optimize storage costs
+  - Azure Blob Storage Lifecycle Management(move data between blob tiers)
+    - automated policies to transition blobs between access tiers based on age or last accessed time
+    - helps optimize storage costs by ensuring data is stored in the most cost-effective tier based on usage patterns
+    - example policy
+      - move blobs to Cool tier after 30 days of inactivity
+      - move blobs to Archive tier after 90 days of inactivity
+      - delete blobs after 365 days
+    - offers ability to manage automatic deletion of data
+  - Azure Storage Tasks
+    - automate manual or scheduled operations to manage and maintain storage accounts
+    - includes tasks such as data migration, backup, and replication
+    - not specifically focused on cost optimization through tiering
+    - can move data between tiers
+    - can manage delete as a task
+- Azure Storage Metrics Categories
+  - Capacity Metrics
+    - Total storage used across all storage accounts
+    - Number of blobs, files, tables, and queues
+  - Transaction Metrics
+    - Number of read, write, delete operations
+    - i.e. movement, operations, latency, availability
+    - Success and failure rates
+    - Ingress:
+      - Data coming in
+      - mostly free
+    - Egress:
+      - Data going out
+      - incurs cost
+    - Latency Metrics
+      - Time taken for read and write operations
+    - Availability Metrics
+      - Uptime and accessibility of storage services
+    - Redundancy Metrics
+      - Status of data replication across regions or zones
+  - Blob Metrics
+    - Capacity - blob storage used
+    - blob container count and blob count
+    - container counts(no of blobs in containers)
+    - provisioned size
+  - Cost Metrics
+    - Estimated costs based on storage usage and access patterns
+- Azure Cost Management and Billing
+  - Azure Monitor
+    - Monitor storage
+  - Azure Cost Management and billing
+    - analyze storage costs
+  - Set budgets and alerts for storage spending
+  - Identify cost-saving opportunities through detailed usage reports
+  - Do
+    - Select appropriate redundancy options based on application requirements
+    - Implement lifecycle management policies to transition data between access tiers
+    - 
