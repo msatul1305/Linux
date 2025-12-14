@@ -41,3 +41,16 @@
     - Azure Policy
     - Azure Advisor
     - Third-party FinOps tools
+- Workbook
+  - Define Cost Governance Policies
+  - Implement Tagging Strategy
+  - Set Up Budgets and Alerts
+  - Monitor and Report Costs
+  - Review and Optimize Costs Regularly
+- Exports
+  - allow the capture of datasets related to cost management
+  - exported to Azure storage accounts, Event Hubs, or Log Analytics
+- Initiatives
+  - logical grouping of related Azure resources/policy rules/definitions
+    - e.g. bundling all cost related rules into a single initiative
+  - help manage and enforce policies across multiple resources
