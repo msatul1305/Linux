@@ -54,3 +54,14 @@
   - logical grouping of related Azure resources/policy rules/definitions
     - e.g. bundling all cost related rules into a single initiative
   - help manage and enforce policies across multiple resources
+- Azure Log Quering Language
+  - Kusto Query Language (KQL)
+  - used to query and analyze data in Azure Monitor, Log Analytics, and Application Insights
+  - powerful tool for extracting insights from large datasets
+  - cost management data can be queried using KQL to identify trends, anomalies, and optimization opportunities
+  - example KQL query to analyze cost data
+    ```kql
+    CostManagementResources
+    | summarize TotalCost = sum(Cost) by ResourceGroup, bin(Timestamp, 1d)
+    | order by TotalCost desc
+    ```
