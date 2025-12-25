@@ -36,3 +36,11 @@
       - Microsoft Devops Engineer Expert
     - AZ-303, AZ-304
       - Microsoft Certified Azure Solutions Architect Expert
+- SKU = Stock Keeping Unit
+  - A unique identifier for each distinct product and service that can be purchased.
+  - Used for inventory management, pricing, and tracking sales.
+  - In cloud services like Azure, SKUs represent different configurations or tiers of services.
+  - Examples:
+    - Virtual Machines: Different SKUs for various sizes and capabilities (e.g., Standard_DS1_v2, Standard_F4s).
+    - Storage Accounts: Different SKUs based on performance and redundancy options (e.g., Standard_LRS, Premium_ZRS).
+    - Databases: Different SKUs for database services based on performance levels (e.g., Basic, Standard, Premium).

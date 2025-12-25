@@ -1,0 +1,544 @@
+- Machine Learning(GeeksforGeeks)
+  - branch of Artificial Intelligence that focuses on developing models and algorithms
+  - Problem Statement
+    - Project Objectives
+    - Output Expectations
+    - Success Criteria
+  - Data Collection
+    - collection of datasets used as raw data to train model
+  - Data Preprocessing
+    - Data Cleaning
+      - resolve issues like:
+        - Missing Values
+        - Duplicate Data
+        - Outliers
+          - Outlier Detection Methods
+            - Z-Score Method
+            - IQR (Interquartile Range) Method
+              - range between the first quartile (Q1) and the third quartile (Q3) in a dataset.
+              - IQR = Q3(75th percentile) - Q1(25th percentile)
+              - 
+            - Visualization Techniques
+              - Box Plots
+              - Scatter Plots
+        - Inconsistent Data
+        - Irrelevant Data
+    - Sampling Data
+    - Dimensionality Reduction
+      - Tools:
+        - OpenRefine
+        - Trifacta Wrangler
+        - TIBCO Clarity
+        - Cloudingo
+        - IBM InfoSphere QualityStage
+    - Data Preprocessing Techniques
+      - Normalization(Min-Max Scaling)
+        - Rescales features between 0 and 1.
+        - useful when the data does not follow a Gaussian distribution.
+        - sensitive to outliers, as extreme values can significantly affect the scaling.
+        - Good for algorithms like k-NN and neural networks.
+      - Standardization
+      - Encoding Categorical Variables
+    - Data Transformation
+  - Data Exploration: uncover insights, patterns, and relationships within the data
+    - Descriptive Statistics
+    - Data Visualization
+    - Correlation Analysis
+    - EDA: Exploratory Data Analysis
+      - visualize data 
+      - understand main features,
+      - find patterns and 
+      - discover how parts of data are connected.
+      - Types of EDA
+        - Univariate Analysis
+          - analyze single variable and
+          - understand its distribution and characteristics.
+          - e.g. histograms are used to show data distribution, 
+            - box plots to detect outliers and understand data spread and 
+            - bar charts for categorical data.
+        - Bivariate Analysis
+          - explore relationship between two variables
+          - identify correlations or associations.
+          - Key techniques
+            - Scatter Plots
+            - Correlation Coefficients
+              - Pearson’s Correlation for linear relationships between continuous variables
+              - Spearman’s Rank Correlation
+            - Cross-tabulations or Contingency Tables
+            - Heatmaps
+            - Line Graphs
+            - Covariance Analysis
+              - measures how two variables change together
+        - Multivariate Analysis
+          - examine interactions among three or more variables
+          - uncover complex relationships and patterns.
+          - techniques
+            - Pair Plots
+              - relationship between multiple variables at once
+            - 3D Scatter Plots
+            - Principal Component Analysis (PCA)
+              - linear technique that reduces the dimensionality of data by 
+              - transforming the original features into a smaller set of uncorrelated features 
+              - called principal components.
+            - Cluster Analysis
+            - Multivariate Regression
+            - Spatial Analysis
+              - used for geographical data by using maps
+              - and spatial plotting
+            - Time Series Analysis
+              - analyze data points collected or recorded at specific time intervals.
+              - Techniques
+                - Line Plots
+                - Seasonal Decomposition
+                - Autocorrelation Analysis
+                - Moving Averages
+                - ARIMA Models
+                  - ARIMA (AutoRegressive Integrated Moving Average)
+                  - used for forecasting and understanding time series data.
+    - Time Series Analysis
+      - Concepts
+        - Trend
+          - direction in which a time series is moving
+        - Seasonality
+          - repetitive patterns or cycles that occur at regular intervals
+        - Moving Averages
+          - smooth out short-term fluctuations and highlight longer-term trends
+        - Noise
+          - irregular and unpredictable components
+        - Differencing
+          - make the difference in values of a specified interval.
+        - Stationarity time series
+          - statistical properties such as mean, variance and autocorrelation remain constant over time.
+        - Order of Differencing
+          - number of times the time series data needs to be differenced to achieve stationarity.
+        - Autocorrelation Function (ACF)
+          - quantify the degree of similarity between a time series and a lagged version of itself.
+        - Resampling
+          - changing the frequency of the data observations.
+        - Cyclic Patterns
+        - Irregular Components
+        - Decomposition Methods
+          - Additive Decomposition
+          - Multiplicative Decomposition
+      - Types
+        - Continuous Time Series
+          - Data recorded at regular intervals with a continuous range of values 
+          - like temperature, stock prices, Sensor Data, etc.
+        - Discrete Time Series
+          - recorded at specific time points like counts of events, categorical statuses, etc.
+  - Feature Engineering: selecting only relevant variables(features)
+    - create new feature or transform existing features
+    - Feature Creation
+      - generating new features from domain knowledge or by observing patterns in the data.
+      - Interaction Features
+      - Polynomial Features
+    - Feature Transformation
+      - Normalization & Scaling
+      - Encoding
+      - Mathematical transformations
+        - e.g. logarithmic transformations for skewed data
+    - Feature Selection: choosing only the most useful input features
+      - Filter Methods
+        - evaluate each feature independently with target variable
+        - Based on statistical measures like correlation.
+        - Common Filter Techniques
+          - Information Gain: 
+            - Measures reduction in entropy when a feature is used.
+          - Chi-square test: 
+            - Checks the relationship between categorical features.
+          - Fisher’s Score: 
+            - Ranks features based on class separability.
+          - Pearson’s Correlation Coefficient: 
+            - Measures linear relationship between two continuous variables.
+          - Variance Threshold: 
+            - Removes features with very low variance.
+          - Mean Absolute Difference: 
+            - Similar to variance threshold but uses absolute differences.
+          - Dispersion ratio: 
+            - Ratio of arithmetic mean to geometric mean; 
+            - higher values indicate useful features.
+      - Wrapper Methods
+        - greedy algorithms that train algorithm
+        - use different combination of features and compute relation between these subset features and target variable
+        - Common Wrapper Techniques
+          - Forward Selection
+            - start with no features
+            - add features one by one based on model performance improvement.
+          - Backward Elimination
+            - start with all features
+            - remove least significant features iteratively.
+          - Recursive Feature Elimination (RFE)
+            - recursively removes least important features
+        - Select based on model performance.
+      - Embedded Methods
+        - Feature selection integrated within model training.
+        - Combine the benefits of both filter and wrapper methods
+        - Common Embedded Techniques
+          - Lasso Regression (L1 Regularization)
+            - Keeps only features with non-zero coefficients.
+            - adds penalty equal to the absolute value of the magnitude of coefficients.
+            - can shrink some coefficients to zero, effectively performing feature selection.
+          - Ridge Regression (L2 Regularization)
+            - adds penalty equal to the square of the magnitude of coefficients.
+            - does not perform feature selection but helps in reducing multicollinearity.
+          - Elastic Net
+            - combines L1 and L2 regularization
+            - balances between feature selection and coefficient shrinkage.
+          - Decision Trees and Random Forests
+            - provide feature importance scores based on how much each feature contributes to 
+              - reducing impurity.
+          - Gradient Boosting Machines (GBM)
+            - similar to Random Forests
+            - can be used to assess feature importance.
+            - pick features that reduce prediction error the most.
+    - Feature Scaling: 
+      - standardize the range of independent variables or features of data.
+      - Scaling Techniques
+        - Absolute Maximum Scaling
+          - rescales each feature by dividing all values by the maximum absolute value of that feature
+          - feature values fall within the range of -1 to 1
+          - highly sensitive to outliers
+        - Min-Max Scaling(Normalization)
+          - transforms by subtracting the minimum value and 
+          - dividing by the difference between the maximum and minimum values.
+          - rescales the values to a specified range, typically between 0 and 1.
+          - preserving the original distribution shape 
+          - but is still affected by outliers
+        - Vector Normalization
+          - scales each data sample (row) such that its vector length (Euclidean norm) is 1
+          - focuses on the direction of data points rather than magnitude
+        - Standardization (Z-score Normalization)
+          - transforms the values to have a mean of 0 and a standard deviation of 1.
+          - centers the data around the mean and scales it based on the standard deviation.
+          - useful when the data follows a Gaussian distribution.
+          - less sensitive to outliers compared to Min-Max Scaling.
+          - preserves the shape of the original distribution of the data.
+          - subtracting the mean and scales them by dividing by the standard deviation
+          - normal distribution often benefits models like linear regression, 
+            - logistic regression and neural networks by improving convergence speed and stability.
+          - Z = (X - μ) / σ
+            - X = Data
+              μ = Mean value of X
+              σ = Standard deviation of X
+        - Robust Scaling
+          - uses the median and interquartile range (IQR) instead of the mean and standard deviation
+          - transformation robust to outliers and skewed distributions.
+          - suitable when the dataset contains extreme values or noise.
+          - Reduces influence of outliers by centering on median
+    - Feature Extraction
+      - transforming raw data into a simplified and informative set of features or attributes.
+      - reduces data complexity and highlights the most relevant information
+      - Techniques
+        - Statistical Methods
+          - Mean: average value of a dataset.
+          - Median: middle value when data is ordered.
+          - Mode: most frequently occurring value.
+          - Standard Deviation: measure of data dispersion around the mean.
+          - corelation and covariance: measure relationships between variables.
+          - Regression Analysis: understand relationships between dependent and independent variables.
+          - Variance: measure of data spread.
+          - Skewness: measure of data asymmetry.
+          - Kurtosis: measure of data "tailedness".
+        - Dimensionality Reduction Techniques
+          - Principal Component Analysis (PCA)
+            - select variables that account for most of the data’s variation
+            - reduces dimensionality while preserving important information
+          - Linear Discriminant Analysis (LDA)
+            - find the best combination of features to separate different classes
+          - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+            - reduce high-dimensional data into two or three dimensions
+          - UMAP (Uniform Manifold Approximation and Projection)
+            - similar to t-SNE but faster and scalable
+            - preserves both local and global data structure
+        - Independent Component Analysis (ICA)
+          - separates a multivariate signal into additive, independent components
+          - useful in signal processing and image analysis.
+        - Aggregation & Combination
+          - Summing or averaging features
+        - for Text Data
+          - Bag of Words (BoW)
+            - Represents a document by counting word frequencies, ignoring word order,
+            - useful for basic text classification.
+          - Term Frequency-Inverse Document Frequency (TF-IDF)
+            - Adjust word importance based on frequency
+            - in a specific document compared to all documents
+            - highlighting unique terms.
+          - Word Embeddings (Word2Vec, GloVe)
+        - Signal Processing Methods: used for analyzing time-series, audio and sensor data
+          - Fourier Transform
+            - convert signal from the time domain to the frequency domain to analyze its frequency components.
+          - Wavelet Transform
+            - analyzes signals that vary over time, 
+            - offering both time and frequency information for non-stationary signals.
+          - Short-Time Fourier Transform (STFT)
+        - Image Processing Methods
+          - Histogram of Oriented Gradients (HOG)
+            - finds the distribution of intensity gradients or edge directions in an image
+            - used in object detection and recognition tasks.
+            - feature descriptor for object detection in images
+            - captures edge and gradient structures.
+          - Convolutional Neural Networks (CNN) Features
+            - learn hierarchical features from images through layers of convolutions, 
+            - ideal for classification and detection tasks.
+          - Scale-Invariant Feature Transform (SIFT)
+            - detects and describes local features in images
+            - robust to scale, rotation, and illumination changes.
+          - Speeded-Up Robust Features (SURF)
+            - faster alternative to SIFT for detecting and describing image features.
+      - tools for Feature Extraction
+        - TensorFlow / Keras
+        - PyTorch
+        - NLTK(Natural Language Toolkit)
+        - FeatureTools
+        - Tsfresh
+        - OpenCV
+        - Scikit-Image
+    - step includes 
+      - Data Cleaning
+        - handling missing values,
+        - correct errors or inconsistencies
+      - Data Transformation
+        - raw data into a format suitable for modeling including scaling, normalization and encoding.
+      - scaling numbers,
+      - creating new features
+      - or combining existing ones.
+    - Feature Engineering Techniques
+      - One-Hot Encoding
+        - convert categorical variables into binary indicators
+      - Binning
+        - transform continuous variables into discrete bins
+        - e.g labels = ['0-20', '21-40', '41-60', '61+']
+      - Text Data Preprocessing
+        - removing stop-words
+          - filtering out commonly occurring words that
+          - provide no or very little semantic value to text analysis.
+            - e.g. "is", "the", "and"
+          - Categories of Stopwords
+            - Standard Stopwords
+              - articles("a", "the"),
+              - conjunctions ("and", "but")
+              - and prepositions ("in", "on")
+            - Domain-Specific Stopwords
+            - Contextual Stopwords
+              - Words with extremely high frequency
+            - Numerical Stopwords
+              - Digits, punctuation marks and single characters
+        - Stemming
+          - reducing words to their root form
+          - remove prefixes and suffixes.
+            - e.g. "running", "runner", and "ran" to "run"
+          - Stemming Algorithms
+            - Porter Stemmer
+              - rule-based algorithm
+              - removes common morphological and inflectional endings from words in English.
+              - suffix EED to EE
+                - 'agreed' → 'agree'
+              - suffix ED or ING to null
+                - e.g 'playing' → 'play', 'played' → 'play'
+              - suffix ATION to ATE
+                - e.g 'relational' → 'relate'
+              - suffix TIONAL to TION
+                - e.g 'conditional' → 'condition'
+              - suffix FUL to null
+                - e.g 'hopeful' → 'hope'
+            - Snowball Stemmer(Porter2)
+              - enhanced version of the Porter Stemmer
+              - supports multiple languages(multilingual stemmer)
+              - Example:
+                - 'running' → 'run'
+                - 'quickly' → 'quick'
+            - Lancaster Stemmer
+              - more aggressive and faster than other stemmers.
+              - also more destructive and may lead to excessively shortened stems
+            - Regexp Stemmer
+              - Regular Expression Stemmer
+              - allows users to define custom rules using regular expressions (regex).
+              - 'running' → 'runn'
+                Custom rule: r'ing$' removes the suffix ing.
+            - Krovetz Stemmer
+              - more linguistically accurate
+              - preserve meaning more effectively
+              - steps like converting plural forms to singular and removing ing from past-tense verbs.
+              - 'children' → 'child'
+        - Lemmatization
+          - Reduces words to their base form (lemma) ensuring a valid word.
+          - Considers the word's meaning and context to return the base form.
+          - Always produces a valid word.
+          - Example: "Better" → "good"
+          - Considers the context and part of speech.
+        - Vectorizing text data
+          - transform human language into a format that machines can comprehend and process
+          - numerical representations 
+            - enable computers to perform tasks such as 
+              - sentiment analysis, 
+              - machine translation and 
+              - information retrieval
+          - Vectors are numerical representations of words, phrases or entire documents.
+          - Techniques
+            - One Hot Encoding
+              - each word is represented by a vector with a high bit corresponding to 
+              - the word’s index in the vocabulary 
+              - all other bits set to zero.
+            - Bag of Words (BoW)
+              - converts text into a vector
+              - representing the frequency of words, disregarding grammar and word order.
+              - Ignores the order and context of words.
+              - Results in high-dimensional and sparse matrices.
+            - Term Frequency-Inverse Document Frequency (TF-IDF)
+              - extension of BoW that weighs the frequency of words by their importance across documents.
+              - reduces the weight of common words and increases the weight of rare but significant words.
+              - TF(t,d)=
+                Total number of terms in document d/Number of times term t appears in document d
+              - IDF(t)= log_e(Total number of documents/Number of documents with term t in it)
+            - Count Vectorizer
+              - represents text by counting the occurrences of each word in a document.
+              - similar to BoW but focuses on raw counts rather than binary presence.
+              - converts a collection of text documents to a matrix of token counts
+            - Word Embeddings (Word2Vec, GloVe)
+              - dense vector representations of words in a continuous vector space
+              - semantically similar words are located closer to each other.
+            - Image Embeddings
+              - transforms images into numerical representations
+              - Convolutional Neural Networks (CNNs)
+                - extract high-level features from images
+                - represent them as dense vectors.
+      - Feature Splitting
+        - Divide single feature into multiple sub-features,
+        - uncovering valuable insights
+      - Feature Engineering tools
+        - FeatureTools
+        - Tsfresh
+        - Pandas
+        - NumPy
+        - TPOT
+        - DataRobot
+        - Alteryx
+        - H2O.ai
+  - Model Selection
+    - Choosing appropriate algorithms based on:
+      - Problem Type
+      - Data Characteristics
+      - Computational Resources
+  - Model Training
+    - Process
+      - Iterative training
+      - Optimization
+      - Validation
+  - Model Types
+    - Supervised Learning
+      - Trains models on labeled data to predict or classify new, unseen data.
+    - Unsupervised Learning
+      - Finds patterns or groups in unlabeled data, like clustering or dimensionality reduction.
+    - Reinforcement Learning
+      - Learns through trial and error to maximize rewards, ideal for decision-making tasks.
+    - Self-Supervised Learning
+      - Utilizes large amounts of unlabeled data by 
+        - generating own labels from the data itself
+    - Semi-Supervised Learning
+      - Combines a small amount of labeled data with a large amount of unlabeled data
+  - Model Evaluation
+    - Cross-Validation
+    - Performance Metrics
+    - Metrics
+    - features like:
+      - Accuracy
+        - ratio of correctly predicted instances to the total instances in a dataset.
+      - Precision
+        - ratio of true positive predictions to the total predicted positives.
+      - Recall
+        - Recall (Sensitivity) is the ratio of true positive predictions to the total actual positives.
+      - F1-Score
+        - F1-Score is the harmonic mean of Precision and Recall, providing a balance between the two metrics.
+      - ROC-AUC
+        - ROC-AUC (Receiver Operating Characteristic - Area Under the Curve) 
+        - measures a model's ability to distinguish between classes, 
+        - with higher values indicating better performance.
+  - Hyperparameter Model Tuning
+    - Grid Search
+    - Random Search
+    - Bayesian Optimization
+  - Model Deployment
+    - Containerization
+      - Docker
+      - Kubernetes
+    - Cloud Services
+      - AWS SageMaker
+      - Google AI Platform
+      - Microsoft Azure ML
+  - Model Monitoring and Maintenance
+    - Model Drift Detection
+    - Performance Monitoring
+    - Monitoring issues like:
+      - Data Drift
+        - Data Drift occurs when the 
+        - statistical properties of the input data change over time, 
+        - leading to a decline in model performance.
+      - Concept Drift
+        - Concept Drift refers to changes in the 
+        - underlying relationships between input features and target variables over time,
+        - which can result in decreased model accuracy.
+  - Algorithms
+    - Regression
+      - Linear Regression
+      - Logistic Regression
+      - Polynomial Regression
+    - Decision Trees
+      - Classification Trees
+      - Regression Trees
+      - Pruning Techniques
+    - Ensemble Methods
+      - Bagging
+      - Boosting
+      - Stacking
+    - Support Vector Machines (SVM)
+      - Linear SVM
+      - Non-linear SVM
+      - Kernel Functions
+    - Neural Networks
+      - Feedforward Neural Networks
+      - Convolutional Neural Networks (CNN)
+      - Recurrent Neural Networks (RNN)
+  - Tools and Frameworks
+    - Programming Languages
+      - Python
+      - R
+      - Julia
+    - Libraries
+      - Scikit-learn
+      - TensorFlow
+      - PyTorch
+    - Platforms
+      - Google Colab
+      - Jupyter Notebooks
+      - Azure Machine Learning Studio
+  - Applications/Use cases
+    - Image Recognition
+    - Natural Language Processing (NLP)
+    - Recommendation Systems
+    - Fraud Detection
+    - Predictive Analytics
+  - True Positive
+    - When the model correctly predicts the positive class.
+  - True Negative
+    - when the model correctly predicts the negative class.
+  - False Positive
+    - when the model incorrectly predicts the positive class for a negative instance.
+  - False Negative
+    - when the model incorrectly predicts the negative class for a positive instance.
+  - Overfitting
+    - when a model learns the training data too well, 
+    - capturing noise and details that do not generalize to new data.
+  - underfitting
+    - when a model is too simple to capture the underlying patterns in the data,
+    - resulting in poor performance on both training and new data.
+- Acronyms
+  - ML: Machine Learning
+  - AI: Artificial Intelligence
+  - CNN: Convolutional Neural Networks
+  - RNN: Recurrent Neural Networks
+  - SVM: Support Vector Machines
+  - AWS: Amazon Web Services
+  - NLP: Natural Language Processing
+  - EDA: Exploratory Data Analysis
+  - ROC-AUC: Receiver Operating Characteristic - Area Under the Curve
+  - 
