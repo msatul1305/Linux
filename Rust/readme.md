@@ -4,3 +4,57 @@
     - ownership
     - references
     - mutable references
+- Rust basics
+  - variables
+  - data types
+  - functions
+  - control flow
+- Advanced Rust
+  - lifetimes
+  - traits
+  - generics
+  - macros
+- Rust ecosystem
+  - Cargo
+  - crates.io
+  - Rustfmt
+- Rust tooling
+  - Clippy
+  - Rust Analyzer
+  - Debugging with GDB
+- Web development with Rust
+  - Rocket
+  - Actix
+  - Yew
+- Systems programming with Rust
+  - Embedded Rust
+  - Operating systems
+  - Networking
+- Concurrency in Rust
+  - Threads
+  - Async/Await
+  - Channels
+- Testing in Rust
+  - Unit tests
+  - Integration tests
+  - Mocking
+  - Benchmarking
+  - Property-based testing
+  - Code coverage
+  - Test-driven development (TDD)
+  - Continuous integration (CI) for Rust projects
+  - Performance testing
+  - Fuzz testing
+  - Documentation testing
+  - Test organization and best practices
+  - Using testing frameworks and libraries
+  - Debugging test failures
+  - Testing asynchronous code
+  - Testing with different Rust editions
+  - Cross-platform testing
+  - Security testing
+  - Testing with feature flags
+  - Test data management
+  - Integration with CI/CD pipelines
+  - Code quality tools for testing
+  - Mocking external dependencies

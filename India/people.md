@@ -1427,6 +1427,168 @@
                       of its benefits.
                     - Dr. Lewis's work has been influential in promoting the practice of meditation and its integration into modern wellness
                       practices.
+                - Mr. Goodwin J. Knight
+                    - Mr. Goodwin J. Knight was an American politician who served as the 31st Governor of California from 1953 to 1959.
+                    - He played a significant role in state politics and was known for his efforts to promote economic development and
+                      social welfare.
+                    - Knight's contributions to public service and governance have left a lasting impact on the political landscape of
+                      California.
+                - Mr. M.R. Ahuja
+                    - Mr. M.R. Ahuja was an Indian spiritual teacher and practitioner of Kriya Yoga known for his contributions to the practice
+                      of
+                      meditation and self-realization.
+                    - He is recognized for his teachings on inner peace, spiritual discipline, and the integration of physical, mental, and
+                      spiritual
+                      practices.
+                    - Mr. Ahuja's teachings have inspired many seekers on the path of self-discovery and enlightenment.
+                - Dr. Lloyd Kennelly
+                    - Dr. Lloyd Kennelly was an American scholar and researcher known for his contributions to the study of spirituality and
+                      meditation.
+                    - He conducted extensive research on the effects of meditation on mental and physical health, contributing to the
+                      understanding
+                      of its benefits.
+                    - Dr. Kennelly's work has been influential in promoting the practice of meditation and its integration into modern wellness
+                      practices.
+                - Francis Thompson
+                    - Francis Thompson was an English poet and writer known for his spiritual and mystical poetry.
+                    - His most famous work, "The Hound of Heaven," explores themes of divine pursuit and the soul's longing for union
+                      with
+                      God.
+                    - Thompson's poetry is characterized by its rich imagery, emotional depth, and exploration of spiritual themes.
+                - Philosopher Kant
+                    - Immanuel Kant was an 18th-century German philosopher known for his contributions to epistemology, ethics, and metaphysics.
+                    - His most influential work, "Critique of Pure Reason," explores the nature of human knowledge and the limits of
+                      reason.
+                    - Kant's ethical philosophy, particularly his concept of the categorical imperative, has had a profound impact on moral
+                      philosophy.
+                - King Solomon
+                    - King Solomon was a biblical figure known for his wisdom, wealth, and building projects, including the construction of
+                      the First Temple in Jerusalem.
+                    - He is traditionally credited with authoring several biblical texts, including Proverbs, Ecclesiastes, and the Song of
+                      Solomon.
+                    - Solomon's reign is often depicted as a period of prosperity and cultural flourishing
+                - Ophir
+                    - Ophir is a region mentioned in the Bible, known for its wealth and abundance of gold, silver, and precious stones.
+                    - It is often associated with King Solomon's trade expeditions, which brought great riches
+                - Megasthenes
+                    - Megasthenes was an ancient Greek historian and diplomat who served as an ambassador to the court of Chandragupta
+                      Maurya
+                      in India.
+                    - He is known for his work "Indica," which provides valuable insights into the geography, culture, and society of ancient
+                      India.
+                    - Megasthenes' writings are considered an important source of information about India during the Mauryan period.
+                - Pliny the Elder
+                    - Pliny the Elder was a Roman author, naturalist, and philosopher known for his encyclopedic work "Natural History."
+                    - His writings cover a wide range of topics, including geography, biology, astronomy, and mineralogy.
+                    - Pliny's work has been influential in the development of scientific knowledge and remains a valuable resource for understanding
+                      ancient Roman culture and natural history.
+                - Fa-Hsien
+                    - Fa-Hsien was a Chinese Buddhist monk and traveler who journeyed to India in the 4th century CE to obtain Buddhist scriptures.
+                    - His travelogue, "Record of the Buddhist Kingdoms," provides valuable insights into the geography, culture, and religious practices
+                      of ancient India.
+                    - Fa-Hsien's writings are considered an important source of information about Buddhism and its spread in India during that period.
+                - Samuel Beal
+                    - Samuel Beal was a British scholar and translator known for his contributions to the study of Buddhism and Chinese literature.
+                    - He translated several important Buddhist texts from Chinese to English, making them accessible to Western audiences.
+                    - Beal's work has been influential in promoting the understanding of Buddhist philosophy and culture in the West.
+                - Truber, London and Thomas Watter's On Yuan Chwang, Travels in India
+                    - Truber, London, and Thomas Watters were scholars and translators known for their contributions to the study of Chinese
+                      literature
+                      and philosophy.
+                    - They translated several important Chinese texts into English, making them accessible to Western audiences.
+                    - Their work has been influential in promoting the understanding of Chinese culture and philosophy in the West.
+                - Columbus
+                    - Christopher Columbus was an Italian explorer and navigator who completed four voyages across the Atlantic Ocean,
+                      opening
+                      the way for the widespread European exploration and colonization of the Americas.
+                    - His expeditions, sponsored by the Catholic Monarchs of Spain, were significant in establishing contact between Europe
+                      and
+                      the New World.
+                    - Columbus's voyages had a profound impact on world history, leading to the exchange of goods, cultures, and ideas between
+                      the
+                      Old and New Worlds.
+                    - In search of a westward route to Asia, Columbus instead encountered the Americas, which were previously unknown to Europeans.
+                - Vijaynagar empire
+                    - The Vijayanagar Empire was a powerful South Indian kingdom that existed from the 14th to the 17th century.
+                    - It was known for its rich cultural heritage, architectural achievements, and contributions to art, literature, and
+                      music.
+                    - The empire played a significant role in resisting invasions from northern kingdoms and promoting Hindu culture and
+                      traditions.
+                - Razzak(Arabian Ambassador)
+                    - Razzak was an Arabian ambassador who visited the Vijayanagar Empire during its height.
+                    - His accounts provide valuable insights into the culture, politics, and society of the empire during that period.
+                    - Razzak's writings are considered an important source of information about the Vijayanagar Empire and its interactions with
+                      foreign
+                      powers.
+                - Turkish Baber
+                    - Babur was a Turkish-Mongol conqueror and the founder of the Mughal Empire in India.
+                    - He is known for his military prowess and strategic acumen, which enabled him to establish a powerful empire in the Indian
+                      subcontinent.
+                    - Babur's memoirs, known as the Baburnama, provide valuable insights into his life, conquests, and the cultural landscape of
+                      India
+                      during his reign.
+                - Kabir
+                    - Kabir was a 15th-century Indian mystic poet and saint known for his devotional poetry and teachings that emphasized the
+                      unity
+                      of all religions.
+                    - His verses, written in vernacular languages, challenged religious orthodoxy and promoted a message of love, compassion, and
+                      spiritual
+                      awakening.
+                    - Kabir's teachings have had a lasting impact on Indian spirituality and continue to inspire seekers across different faiths.
+                - Milton, Paradise Lost
+                    - "Paradise Lost" is an epic poem written by the English poet John Milton, first published in 1667.
+                    - The poem explores themes of temptation, free will, and redemption through the biblical story of the Fall of
+                - Brother Lawrence
+                    - Brother Lawrence was a 17th-century French monk known for his teachings on the practice of the presence of God.
+                    - His writings emphasize the importance of cultivating a constant awareness of God's presence in everyday life.
+                    - Brother Lawrence's teachings have had a significant influence on Christian spirituality and contemplative practices.
+                - Lao-tzu
+                    - Lao-tzu was an ancient Chinese philosopher and writer, traditionally considered the author of the Tao Te Ching
+                      and
+                      the founder of Taoism.
+                    - His teachings emphasize living in harmony with the Tao (the Way), advocating simplicity, humility, and compassion.
+                    - Lao-tzu's philosophy has had a profound influence on Chinese culture and spirituality, as well as on various
+                      philosophical
+                      traditions worldwide.
+                - Tirthkaras
+                    - Tirthkaras are spiritual teachers and enlightened beings in Jainism who have attained liberation and help others
+                      cross
+                      the cycle of birth and death (samsara).
+                    - There are 24 Tirthkaras in Jain tradition, with Lord Mahavira being the last and most well-known.
+                    - Tirthkaras are revered for their teachings on non-violence (ahimsa), truth (satya), and self-discipline (aparigraha).
+                - Samsara
+                    - Samsara is a concept in Hinduism, Buddhism, and Jainism that refers to the cycle of birth, death, and rebirth.
+                    - It is characterized by the continuous flow of life and the experiences of pleasure and pain.
+                    - The ultimate goal in these traditions is to attain liberation (moksha or nirvana) from samsara through spiritual practice
+                      and
+                      self-realization.
+                - Hebrew Prophets
+                    - Hebrew prophets were individuals in ancient Israel who were believed to have been chosen by God to deliver divine messages and guidance to the
+                      people.
+                    - They played a significant role in shaping the religious and moral values of the Hebrew people.
+                - Dante's Divine Comedy
+                    - "The Divine Comedy" is an epic poem written by the Italian poet Dante Alighieri in the early 14th century.
+                    - The poem is divided into three parts: Inferno (Hell), Purgatorio (Purgatory), and Paradiso (Paradise).
+                    - It explores themes of sin, redemption, and the journey of the soul towards God.
+                    - "The Divine Comedy" is considered one of the greatest works of world literature and has had a profound influence on Western culture and thought.
+                - Pilate
+                    - Pontius Pilate was a Roman governor of Judea during the time of Jesus Christ.
+                - Mr. Harry T. Rowe
+                    - Mr. Harry T. Rowe was an American spiritual teacher and practitioner of Kriya Yoga known for his contributions to the practice
+                      of meditation and self-realization.
+                    - He is recognized for his teachings on inner peace, spiritual discipline, and the integration of physical, mental, and spiritual
+                      practices.
+                    - Mr. Rowe's teachings have inspired many seekers on the path of self-discovery and enlightenment.
+                - Swami Sivananda, founder of the Divine Life Society
+                    - Swami Sivananda was an Indian spiritual leader and founder of the Divine Life Society, known for his teachings on yoga,
+                      meditation,
+                      and self-realization.
+                    - He emphasized the importance of a balanced approach to spiritual practice, integrating physical, mental, and spiritual disciplines.
+                    - Swami Sivananda's teachings have had a significant impact on the global spread of yoga and spirituality.
+                - Dr. Wendell Thomas
+                    - Dr. Wendell Thomas was an American scholar and researcher known for his contributions to the study of spirituality and meditation.
+                    - He conducted extensive research on the effects of meditation on mental and physical health, contributing to the understanding of its benefits.
+                    - Dr. Thomas's work has been influential in promoting the practice of meditation and its integration into modern wellness practices.
             - Ashrams
                 - Ranikhet cave
                     - The Ranikhet cave is a historical site located in the Ranikhet region of Uttarakhand, India.
@@ -1866,7 +2028,50 @@
                     the
                     years.
                   - However, due to declining gold reserves and economic viability, the mines were closed in 2001.
+              - Sopara, Bombay
+                - Sopara, also known as Suppara, is an ancient port city located in the present-day state of Maharashtra, India.
+                - It was a significant trading hub in ancient times, facilitating commerce between India and other regions, including
+                  the
+                  Middle East and Southeast Asia.
+                - Sopara is mentioned in various historical texts and inscriptions, highlighting its importance as a center of trade and
+                  culture.
+              - Diamond harbor
+                - Diamond Harbour is a town located in the South 24 Parganas district of West Bengal, India.
+                - It is situated on the eastern bank of the Hooghly River and serves as a gateway to the Sundarbans,
+                  the
+                  largest mangrove forest in the world.
+                - Diamond Harbour is known for its scenic beauty, historical significance, and as a popular tourist
+                  destination.
+              - Mojave Desert
+                - The Mojave Desert is a vast arid region located in the southwestern United States, primarily in
+                  southeastern
+                  California and parts of Nevada, Arizona, and Utah.
+                - It is known for its unique desert landscapes, diverse flora and fauna, and iconic landmarks such as
+                  Joshua
+                  Tree National Park and Death Valley.
+                - The Mojave Desert is also home to various Native American tribes and has a rich cultural history.
               - 
+            - Books
+              - Rig-Vedic India, Abhinas Chandra Das
+                  - "Rig-Vedic India" is a scholarly work by Abhinas Chandra Das that explores the ancient civilization
+                    of
+                    India during the Rigvedic period.
+                  - The book delves into various aspects of Vedic culture, society, religion, and philosophy as
+                    depicted in
+                    the Rigveda, one of the oldest sacred texts of Hinduism.
+                  - It provides insights into the early development of Indian civilization and its contributions to
+                    world
+                    heritage.
+              - Buddhist record of Western World, Samuel Beal
+                  - "Buddhist Record of the Western World" is a translation and compilation of ancient Buddhist texts
+                    by
+                    Samuel Beal, a British scholar and orientalist.
+                  - The book provides valuable insights into the spread of Buddhism from India to the Western world,
+                    particularly
+                    through the travels of Buddhist monks and scholars.
+                  - It includes accounts of various Buddhist teachings, practices, and historical events, making it an
+                    important
+                    resource for understanding the history and development of Buddhism.
     - Swami Vivekananda
         - Complete Works of Swami Vivekananda
             - The Complete Works of Swami Vivekananda is a collection of the writings and speeches of Swami

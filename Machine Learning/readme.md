@@ -176,14 +176,18 @@
         - Common Embedded Techniques
           - Lasso Regression (L1 Regularization)
             - Keeps only features with non-zero coefficients.
-            - adds penalty equal to the absolute value of the magnitude of coefficients.
+            - adds penalty equal to the absolute value of the magnitude of coefficients to prevent overfitting.
             - can shrink some coefficients to zero, effectively performing feature selection.
+            - J(λ) = Loss + λ * Σ|coefficients|
           - Ridge Regression (L2 Regularization)
             - adds penalty equal to the square of the magnitude of coefficients.
+            - penalize large coefficient in linear regression equation
             - does not perform feature selection but helps in reducing multicollinearity.
-          - Elastic Net
+            - J(λ) = Loss + λ * Σ(coefficients)²
+          - Elastic Net Regression
             - combines L1 and L2 regularization
             - balances between feature selection and coefficient shrinkage.
+            - J(λ1, λ2) = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
           - Decision Trees and Random Forests
             - provide feature importance scores based on how much each feature contributes to 
               - reducing impurity.
@@ -437,26 +441,150 @@
     - Semi-Supervised Learning
       - Combines a small amount of labeled data with a large amount of unlabeled data
   - Model Evaluation
+    - Regularization Techniques: prevent overfitting by adding penalty to model complexity
+      - L1 Regularization (Lasso): Least Absolute Shrinkage and Selection Operator regression
+        - add the absolute value of magnitude of the coefficient as a penalty term to the loss function(L)
+        - L = Loss + λ * Σ|coefficients|
+        - can shrink some coefficients to zero, effectively performing feature selection.
+      - L2 Regularization (Ridge)
+        - add the squared magnitude of the coefficient as a penalty term to the loss function(L).
+        - handle multicollinearity by shrinking the coefficients of correlated features instead of eliminating them.
+        - L = Loss + λ * Σ(coefficients)²
+      - Elastic Net Regression
+        - combines L1 and L2 regularization
+        - add the absolute norm of the weights as well as the squared measure of the weights
+        - balances between feature selection and coefficient shrinkage.
+        - L = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
+      - Dropout 
+    - Confusion Matrix
+      - True Positive
+          - When the model correctly predicts the positive class.
+      - True Negative
+          - when the model correctly predicts the negative class.
+      - False Positive
+          - when the model incorrectly predicts the positive class for a negative instance.
+      - False Negative
+          - when the model incorrectly predicts the negative class for a positive instance.
     - Cross-Validation
+      - how well model performs on unseen data while preventing overfitting
+      - Train model on some parts and test it on the remaining part of dataset
+      - Techniques
+        - Holdout Validation
+          - 50% data for training and 50% for testing.
+        - LOOCV (Leave One Out Cross Validation)
+          - model is trained on the entire dataset except for one data point which is used for testing.
+          - repeated for each data point in the dataset.
+          - computationally expensive for large datasets.
+        - K-Fold Cross-Validation
+          - split the dataset into k equal-sized folds.
+          - train model on k-1 folds and tested on the remaining fold.
+          - process is repeated k times, with each fold used as the test set once.
+          - final performance is averaged over all k iterations.
+          - k should be greater than or equal to 5 and less than or equal to 10.
+        - Stratified K-Fold Cross-Validation
+          - ensures each fold of the cross-validation process has the same class distribution as the full dataset.
+          - important for imbalanced datasets
+        - Leave-One-Out Cross-Validation (LOOCV)
+        - Shuffle Split Cross-Validation
     - Performance Metrics
     - Metrics
     - features like:
       - Accuracy
         - ratio of correctly predicted instances to the total instances in a dataset.
+        - can be misleading when one class is more dominant over the other
+        - Accuracy = (TP + TN) / (TP + TN + FP + FN)
       - Precision
         - ratio of true positive predictions to the total predicted positives.
+        - measures the accuracy of positive predictions.
+        - important in scenarios where false positives are costly.
+        - like spam detection, fraud detection etc.
+        - Precision = TP / (TP + FP)
       - Recall
         - Recall (Sensitivity) is the ratio of true positive predictions to the total actual positives.
+        - measures how how good the model is at predicting positives.
+        - important in scenarios where false negatives are costly.
+        - like disease diagnosis, safety-critical systems etc.
+        - Recall = TP / (TP + FN)
       - F1-Score
-        - F1-Score is the harmonic mean of Precision and Recall, providing a balance between the two metrics.
-      - ROC-AUC
+        - F1-Score is the harmonic mean of Precision and Recall, 
+        - providing a balance between the two metrics.
+        - useful when dealing with imbalanced datasets
+        - where one class is significantly more prevalent than the other.
+        - F1 = 2 * (Precision * Recall) / (Precision + Recall)
+      - Specificity(True Negative Rate)
+        - ratio of true negative predictions to the total actual negatives.
+        - measures how well the model identifies negative instances.
+        - important in scenarios where false positives are costly.
+        - like spam detection, fraud detection etc.
+        - Specificity = TN / (TN + FP)
+        - 1 - Specificity = False Positive Rate (FPR)
+      - Type I Error (False Positive Rate)
+        - occurs when the model incorrectly predicts the positive class for a negative instance.
+        - Type I Error Rate = FP / (FP + TN)
+      - Type II Error (False Negative Rate)
+        - occurs when the model incorrectly predicts the negative class for a positive instance.
+        - Type II Error Rate = FN / (FN + TP)
+      - Mean Absolute Error (MAE)
+        - average of the absolute differences between predicted and actual values.
+        - provides a straightforward measure of prediction accuracy.
+        - MAE = (1/n) * Σ|predicted - actual|
+      - Mean Squared Error (MSE)
+        - average of the squared differences between predicted and actual values.
+        - penalizes larger errors more than MAE.
+        - MSE = (1/n) * Σ(predicted - actual)²
+      - Root Mean Squared Error (RMSE)
+        - square root of the average of the squared differences between predicted and actual values.
+        - provides an interpretable measure of prediction accuracy in the same units as the target variable.
+        - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
+      - R-squared (Coefficient of Determination)
+        - indicates the proportion of variance in the dependent variable that can be explained by the independent variables.
+        - R² = 1 - (SS_res / SS_tot)
+          - SS_res = Σ(actual - predicted)²
+          - SS_tot = Σ(actual - mean(actual))²
+      - ROC-AUC Curve
         - ROC-AUC (Receiver Operating Characteristic - Area Under the Curve) 
+        - Check how well a binary classification model works
+        - how well the model separates the positive cases like people with a disease from the 
+        - negative cases like people without the disease at different threshold level.
         - measures a model's ability to distinguish between classes, 
         - with higher values indicating better performance.
-  - Hyperparameter Model Tuning
-    - Grid Search
-    - Random Search
+        - True Positive Rate (TPR) vs False Positive Rate (FPR)
+          - True Positive Rate (TPR) = TP / (TP + FN) = Recall
+          - False Positive Rate (FPR) = FP / (FP + TN) = 1 - Specificity
+  - Hyperparameter Model Tuning: optimize model performance by finding the best hyperparameters
+    - Grid Search CV
+      - brute-force approach
+      - train model using all possible combinations of specified hyperparameter values to 
+      - find the best-performing setup.
+      - slow and uses a lot of computer power
+      - exhaustively searches through a specified subset of hyperparameters
+      - evaluates model performance for each combination
+      - computationally expensive for large hyperparameter spaces
+      - example:
+        - Tuning Logistic Regression with GridSearchCV
+    - Random Search CV
+      - randomly samples hyperparameter combinations from a given range
+      - evaluates model performance for each combination
+      - more efficient than Grid Search for large hyperparameter spaces
+      - Example:
+        - Tuning Random Forest with RandomizedSearchCV
+        - Tuning Decision Tree with RandomizedSearchCV
     - Bayesian Optimization
+      - treats hyperparameter tuning like a mathematical optimization problem and 
+      - learns from past results to decide what to try next.
+      - builds a probabilistic model(surrogate function) of the objective function
+      - uses it to select the most promising hyperparameter combinations to evaluate
+      - balances exploration and exploitation
+      - P(score(y)∣hyperparameters(x))
+      - surrogate function models the relationship between hyperparameters x and the score y.
+      - surrogate models used in Bayesian optimization include:
+        - Gaussian Processes
+        - Random Forests
+        - Tree-structured Parzen Estimators (TPE)
+    - Genetic Algorithms
+      - inspired by the process of natural selection
+      - iteratively evolves a population of hyperparameter combinations
+      - selects the best-performing combinations for the next generation
   - Model Deployment
     - Containerization
       - Docker
@@ -480,20 +608,314 @@
   - Algorithms
     - Regression
       - Linear Regression
+        - assumes that there is a linear relationship between the input and output
+        - relationship represented by a straight line.
+        - uses the equation of a line: Y = mX + b
+          - Y = predicted value (output)
+          - m = slope of the line (coefficient)
+          - X = input feature
+          - b = y-intercept (constant term)
+        - Simple Linear Regression
+          - involves a single independent variable to predict a dependent variable.
+          - equation: Y = β0 + β1X1
+            - Y = predicted value
+            - β0 = intercept
+            - β1 = coefficient for the feature
+            - X1 = input feature
+        - Multiple Linear Regression
+          - involves two or more independent variables to predict a dependent variable.
+          - equation: Y = β0 + β1X1 + β2X2 + ... + βnXn
+            - Y = predicted value
+            - β0 = intercept
+            - β1, β2, ..., βn = coefficients for each feature
+            - X1, X2, ..., Xn = input features
+          - Multicollinearity
+            - occurs when two or more independent variables in a regression model are highly correlated.
+            - can lead to unstable coefficient estimates and make it difficult to assess the individual effect of each predictor.
+            - Detection Methods
+              - Variance Inflation Factor (VIF)
+                - quantifies how much the variance of a regression coefficient is increased due to multicollinearity.
+                - VIF = 1 / (1 - R²)
+                  - R² = coefficient of determination from regressing the predictor against all other predictors.
+                - A VIF value greater than 5 or 10 indicates high multicollinearity.
+              - Correlation Matrix
+                - examines pairwise correlations between independent variables.
+                - high correlation coefficients (e.g., above 0.8 or below -0.8) suggest multicollinearity.
+              - Condition Index
+                - assesses the sensitivity of the regression estimates to small changes in the data.
+                - values above 30 indicate potential multicollinearity issues.
+            - Remedies
+              - Remove one of the correlated variables
+              - Combine correlated variables into a single predictor using techniques like Principal Component Analysis (PCA)
+              - Regularization methods like Ridge Regression or Lasso Regression
+        - Polynomial Regression
+          - models the relationship between the independent variable and dependent variable as an nth degree polynomial.
+          - captures non-linear relationships by introducing polynomial terms of the independent variable.
+        - use cases
+          - House prices forcasting based on features like size, location, and number of bedrooms.
+          - Sales forcasting based on advertising spend and market trends.
+          - Estimating the impact of temperature on electricity consumption.
+          - Stock price prediction based on historical data and market indicators.
+          - Medical risk prediction based on patient health metrics.
+        - Minimizing the error
+          - Ordinary Least Squares (OLS)
+            - minimizes the sum of squared differences between observed and predicted values.
+            - Residuals = Observed - Predicted
+            - Cost Function (SSE) = Σ(Residuals)²
+          - Hypothesis in Linear Regression
+            - represents the predicted output based on input features and model parameters.
+            - Single linear Regression Hypothesis:
+              - h(X) = β0 + β1X1
+                - h(X) = predicted value
+                - β0 = intercept
+                - β1 = coefficient for the feature
+                - X1 = input feature
+            - Multiple linear Regression Hypothesis:
+              - h(X) = β0 + β1X1 + β2X2 + ... + βnXn
+                - h(X) = predicted value
+                - β0 = intercept
+                - β1, β2, ..., βn = coefficients for each feature
+                - X1, X2, ..., Xn = input features
+        - Cost Function
+          - Mean Squared Error (MSE)
+            - MSE = (1/n) * Σ(predicted - actual)²
+          - Root Mean Squared Error (RMSE)
+            - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
+          - Mean Absolute Error (MAE)
+            - MAE = (1/n) * Σ|predicted - actual|
+        - Gradient Descent
+            - find best fit line for the data
+            - iterative optimization algorithm
+            - minimizes the cost function by updating model parameters in the direction of the steepest descent.
+            - minimize the prediction error 
+            - start with random model parameters and
+            - repeatedly adjust them to reduce the difference between predicted and actual values.
+            - cost function = MSE = (1/n) * Σ(predicted - actual)²
+            - Gradient computation:
+              - for MSE cost function, the gradient with respect to βj is:
+                - (∂/∂βj) * MSE = (2/n) * Σ(predicted - actual) * Xj
+                  - Xj = input feature corresponding to βj
+              - update rule:
+                  - βj = βj - α * (∂/∂βj) * Cost Function
+                      - βj = model parameter (coefficient)
+                      - α = learning rate (step size)
+                      - (∂/∂βj) * Cost Function = gradient of the cost function with respect to βj
+        - Gradient Descent Variants for Linear Regression
+          - Batch Gradient Descent
+          - Stochastic Gradient Descent (SGD)
+          - Mini-Batch Gradient Descent
+        - Evaluation Metrics for Linear Regression
+          - R-squared (Coefficient of Determination)
+            - indicates how much variation the developed model can explain or capture
+            - R² = 1 - (SS_res / SS_tot)
+              - SS_res = Σ(actual - predicted)²
+              - SS_tot = Σ(actual - mean(actual))²
+          - Residual Standard Error (RSE)
+            - measures the average amount that the observed values deviate from the predicted values.
+            - RSE = sqrt(SS_res / (n - p - 1))
+              - SS_res = Σ(actual - predicted)²
+              - n = number of observations
+              - p = number of predictors
+          - Residual sum of squares (RSS)
+            - RSS = Σ(actual - predicted)²
+          - Total sum of squares (TSS)
+            - TSS = Σ(actual - mean(actual))²
+          - Adjusted R-squared Error
+            - Adjusted R² = 1 - [(1 - R²)(n - 1) / (n - p - 1)]
+              - n = number of observations
+              - p = number of predictors
+          - Mean Absolute Error (MAE)
+            - MAE = (1/n) * Σ|predicted - actual|
+          - Mean Squared Error (MSE)
+            - average of the squared differences between the actual and predicted values for all the data points
+            - gives higher weight to larger errors.
+            - MSE = (1/n) * Σ(predicted - actual)²
+          - Root Mean Squared Error (RMSE)
+            - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
       - Logistic Regression
+        - Used when the output is a "yes or no" type answer
+        - helps in predicting categories like pass/fail or spam/not spam.
+        - predicts binary outcomes (0 or 1) based on input features.
+        - used for classification problems
+        - uses the logistic function (sigmoid function) to model the probability of the positive class.
+        - Logistic Function (Sigmoid Function)
+          - S curve
+          - S(t) = 1 / (1 + e^(-t))
+            - S(t) = predicted probability of the positive class
+            - e = Euler's number (approximately 2.71828)
+            - t = linear combination of input features and model parameters
+          - Likelihood function for Logistic Regression
+            - L(β) = Π P(y_i | X_i; β)
+              - P(y_i | X_i; β) = S(X_i * β) if y_i = 1
+              - P(y_i | X_i; β) = 1 - S(X_i * β) if y_i = 0
+              - y_i = actual label (0 or 1)
+              - X_i = input features for the i-th instance
+              - β = model parameters (coefficients)
+          - Log likelihood function
+            - LL(β) = Σ [y_i * log(S(X_i * β)) + (1 - y_i) * log(1 - S(X_i * β))]
+          - Gradient of the Log Likelihood
+            - ∂LL(β) / ∂β = Σ (y_i - S(X_i * β)) * X_i
+        - Odds and Log-Odds
+          - Odds = P / (1 - P)
+            - P = probability of the positive class
+          - Log-Odds (Logit) = log(P / (1 - P))
+        - Cost Function
+          - Logistic Regression uses the Log Loss (Cross-Entropy Loss) as its cost function.
+          - Log Loss(cost) = -[y * log(p) + (1 - y) * log(1 - p)]
+            - y = actual label (0 or 1)
+            - p = predicted probability of the positive class
+        - Model Training
+          - Maximum Likelihood Estimation (MLE)
+            - finds the model parameters that maximize the likelihood of observing the given data.
+        - Types of Logistic Regression
+          - Binary Logistic Regression
+            - Two classes (0 and 1)
+            - e.g. spam detection, disease diagnosis etc.
+          - Multinomial Logistic Regression
+            - more than two classes without any order
+            - e.g. classifying types of fruits (apple, banana, orange)
+          - Ordinal Logistic Regression
+            - more than two classes with a specific order
+            - e.g. rating scales (poor, average, good, excellent)
       - Polynomial Regression
     - Decision Trees
-      - Classification Trees
-      - Regression Trees
-      - Pruning Techniques
+      - supervised learning algorithm used for both classification and regression tasks
+      - tree-like model of decisions and their possible consequences.
+      - splits data into subsets based on feature values
+      - recursively partitions the data to create a tree structure.
+      - like a flowchart to help make decisions based on input features.
+      - Components
+        - Root Node
+        - branches: attribute values/outcomes of a test
+        - Internal Nodes: attribute tests
+        - Leaf Nodes: Final decision o predictions(class labels or continuous values)
+      - Applications
+        - Customer Segmentation
+        - Fraud Detection
+        - Medical Diagnosis
+        - Loan Approval
+      - Splitting Criteria
+        - Gini Index/Impurity
+          - measures how often a randomly chosen element would be incorrectly labeled 
+          - if it was randomly labeled according to the distribution of labels in the subset.
+          - i.e. attribute with a lower Gini index should be preferred
+          - IGini = 1 - Σ(p_i)²
+            - p_i = proportion of instances belonging to class i
+        - Information Gain
+          - it tells how useful a question (or feature) is for splitting data into groups.
+          - measures how much the uncertainty decreases after the split.
+          - Information Gain = Entropy(Parent) - Weighted Average * Entropy(Children)
+        - Mean Squared Error (MSE) for regression tasks
+        - Gain(G, A) = Entropy(G) - Σ (|G_v| / |G|) * Entropy(G_v)
+          - G = dataset before the split
+          - A = feature used for splitting
+          - G_v = subset of G where feature A has value v
+      - Decision Tree Algorithms
+        - ID3 (Iterative Dichotomiser 3)
+          - greedily choosing the feature that maximizes the information gain at each node
+          - uses entropy as the splitting criterion
+          - Entropy measures impurity in the dataset
+          - Entropy(S) = - Σ p_i * log2(p_i)
+            - p_i = proportion of instances belonging to class i
+          - Information Gain
+            - IG(S, A) = Entropy(S) - Σ (|S_v| / |S|) * Entropy(S_v)
+              - S = dataset before the split
+              - A = feature used for splitting
+              - S_v = subset of S where feature A has value v
+          - it recursively splits the dataset using the feature with the highest information gain 
+          - until all examples in a node belong to the same class or no features remain to split.
+          - prone to overfitting
+        - C4.5
+          - modified version of information gain called the gain ratio
+          - to reduce the bias towards features with many values
+          - Gain Ratio = Information Gain / Split Information
+            - Split Information = - Σ (|S_v| / |S|) * log2(|S_v| / |S|)
+          - handles both continuous and categorical features
+          - manages missing values effectively
+          - prunes the tree after creation to reduce overfitting
+          - struggles with large datasets and high-dimensional data and noisy datasets.
+        - CART (Classification and Regression Trees)
+          - for both classification and regression tasks
+          - uses Gini impurity as the splitting criterion for classification tasks
+          - which measures the impurity(likelihood of incorrect classification) of a dataset.
+          - Gini Impurity = 1 - Σ(p_i)²
+            - p_i = proportion of instances belonging to class i
+          - for regression tasks, it uses Mean Squared Error (MSE) to minimize the variance within each node.
+          - produces binary trees, where each internal node has exactly two children.
+          - employs cost-complexity pruning to avoid overfitting
+          - handles both numerical and categorical data effectively.
+          - uses cost-complexity pruning after tree construction to reduce overfitting
+          - builds binary trees
+        - CHAID (Chi-squared Automatic Interaction Detector)
+          - uses chi-square tests to determine the best splits especially for categorical variables.
+          - chi-square tests
+            - find relationship between two entities.
+            - used to determine whether observed frequencies differ significantly from expected frequencies
+            - under given hypothesis.
+            - Applications
+              - feature selection
+              - goodness of fit testing
+              - independence testing
+              - A/B testing and feature evaluation
+              - Feature selection in machine learning
+              - Database Query Optimization
+                - test if actual row counts per partition match the expected uniform distribution.
+                - Uneven distribution (χ² significance) suggests a poor sharding strategy.
+              - NLP
+                - Evaluate word frequency distributions in texts.
+          - recursively splits the data based on the feature that shows the most significant association with the target variable.
+          - can create multi-way splits, allowing nodes to have more than two children.
+          - handles both categorical and continuous features
+          - Chi-square statistic (χ²)
+            - χ² = Σ (O_i - E_i)² / E_i
+              - O_i = observed frequency for category i
+              - E_i = expected frequency for category i
+          - Classification: 
+            - assign a class label to new data points by following the tree from the root to a leaf node
+            - with leaf node’s class label being assigned to data. 
+          - Regression
+            - predicts the target variable by averaging the values at the leaf node.
+        - MARS (Multivariate Adaptive Regression Splines)
+          - extension of the CART algorithm
+          - uses splines to model non-linear relationships between variables
+          - constructs a piecewise linear model where the relationship between the input and output variables
+          - but with variable slopes at different points, known as knots.
+          - automatically selects and positions these knots based on the data distribution and the need to capture non-linearities.
+          - Basis Functions
+            - h(x) = max(0, x - t) or h(x) = max(0, t - x)
+              - t = knot location
+          - Knot function
+            - points where the slope of the piecewise linear function changes.
+        - Conditional Inference Trees
+          - uses statistical tests to choose splits based on the relationship between features and the target variable.
+          - use permutation tests to select the feature that best splits the data while minimizing bias.
+          - follows recursive approach
+          - At each node it evaluates the statistical significance of potential splits 
+          - using tests like the Chi-squared test for categorical features and 
+          - the F-test for continuous features.
+      - Types
+        - Classification Trees
+        - Regression Trees
+        - Pruning Techniques
     - Ensemble Methods
       - Bagging
       - Boosting
       - Stacking
     - Support Vector Machines (SVM)
-      - Linear SVM
-      - Non-linear SVM
-      - Kernel Functions
+      - used for both classification and regression tasks
+      - finds the optimal hyperplane that separates different classes in the feature space.
+      - aims to maximize the margin between the hyperplane and the nearest data points from each class
+      - Support Vectors
+        - data points closest to the hyperplane
+        - influence the position and orientation of the hyperplane.
+      - Hyperplane
+        - decision boundary that separates different classes in the feature space.
+      - Margin
+        - distance between the hyperplane and the nearest data points from each class.
+      - Types
+        - Linear SVM
+        - Non-linear SVM
+        - Kernel Functions
     - Neural Networks
       - Feedforward Neural Networks
       - Convolutional Neural Networks (CNN)
@@ -517,20 +939,40 @@
     - Recommendation Systems
     - Fraud Detection
     - Predictive Analytics
-  - True Positive
-    - When the model correctly predicts the positive class.
-  - True Negative
-    - when the model correctly predicts the negative class.
-  - False Positive
-    - when the model incorrectly predicts the positive class for a negative instance.
-  - False Negative
-    - when the model incorrectly predicts the negative class for a positive instance.
   - Overfitting
     - when a model learns the training data too well, 
     - capturing noise and details that do not generalize to new data.
   - underfitting
     - when a model is too simple to capture the underlying patterns in the data,
     - resulting in poor performance on both training and new data.
+- Supervised Learning
+  - Classification
+    - goal is to predict discrete labels or categories
+    - e.g. spam detection, image recognition, sentiment analysis etc.
+  - Regression
+    - aim to predict continuous numerical values
+    - e.g. house price prediction, stock price forecasting, temperature prediction etc.
+  - Algorithms
+    - Linear Regression
+      - predict numbers using a straight line.
+      - helps find the relationship between input and output.
+      - uses the equation of a line: Y = mX + b
+        - Y = predicted value (output)
+        - m = slope of the line (coefficient)
+        - X = input feature
+        - b = y-intercept (constant term)
+    - Logistic Regression
+    - Decision Trees
+    - Random Forest
+    - Support Vector Machines (SVM)
+    - Neural Networks
+- Unsupervised Learning
+  - Clustering
+  - Dimensionality Reduction
+- Reinforcement Learning
+  - Q-Learning
+  - Deep Q-Networks (DQN)
+  - Policy Gradient Methods
 - Acronyms
   - ML: Machine Learning
   - AI: Artificial Intelligence

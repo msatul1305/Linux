@@ -1,0 +1,68 @@
+- AZ-104: Microsoft Azure Administrator
+  - Azure Administrator Overview
+    - Introduction to Azure Administration
+    - Key Responsibilities of an Azure Administrator
+  - Managing Azure Subscriptions and Resources
+    - Creating and Managing Azure Subscriptions
+    - Resource Groups and Role-Based Access Control (RBAC)
+    - Azure Resource Manager (ARM) Overview
+  - Implementing and Managing Storage
+    - Azure Storage Accounts
+    - Blob Storage, File Shares, and Queues
+    - Managing Data with Azure Storage Explorer
+  - Configuring and Managing Virtual Networks
+    - Virtual Network (VNet) Fundamentals
+    - Subnets, Network Security Groups (NSGs), and Route Tables
+    - VPN Gateway and ExpressRoute
+  - Managing Identities with Azure Active Directory
+    - Azure AD Overview
+    - Managing Users and Groups
+    - Implementing Multi-Factor Authentication (MFA)
+  - Implementing and Managing Virtual Machines (VMs)
+    - Creating and Configuring VMs
+    - VM Scaling and Availability Sets
+    - VM Backup and Recovery
+  - Managing Azure Kubernetes Service (AKS)
+    - AKS Overview
+    - Deploying and Managing AKS Clusters
+    - Scaling and Upgrading AKS
+    - Monitoring AKS Clusters
+  - Implementing and Managing Azure App Services
+    - Creating and Configuring App Services
+    - Deploying Web Apps and APIs
+    - Scaling and Monitoring App Services
+  - Managing Azure SQL Databases
+    - Creating and Configuring Azure SQL Databases
+    - Implementing High Availability and Disaster Recovery
+    - Monitoring and Performance Tuning
+  - Monitoring and Backing Up Azure Resources
+    - Azure Monitor Overview
+    - Configuring Alerts and Action Groups
+    - Azure Backup and Site Recovery
+  - Implementing Security and Compliance
+    - Azure Security Center Overview
+    - Implementing Security Policies and Compliance Standards
+    - Managing Azure Firewall and DDoS Protection
+  - Automating Azure Administration Tasks
+    - Introduction to Azure Automation
+    - Creating and Managing Runbooks
+    - Using Azure CLI and PowerShell for Automation
+    - Implementing Infrastructure as Code (IaC) with ARM Templates and Terraform
+    - Using Azure DevOps for Continuous Integration and Continuous Deployment (CI/CD)
+    - Monitoring and Managing Automation Jobs
+  - Best Practices for Azure Automation
+    - Integrating Azure Automation with Other Azure Services
+    - Security Considerations for Automation
+    - Cost Management and Optimization Strategies
+    - Troubleshooting Common Automation Issues
+    - Scaling Automation Solutions
+    - Using Managed Identities with Azure Automation
+    - Version Control for Automation Scripts
+    - Scheduling and Triggering Automation Tasks
+  - Reporting and Analytics for Automation
+    - Case Studies and Real-World Scenarios
+    - Staying Updated with Azure Automation Features and Updates
+    - Community Resources and Support for Azure Automation
+    - Future Trends in Azure Automation
+    - Hands-on Labs and Practice Exercises
+ 
