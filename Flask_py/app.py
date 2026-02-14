@@ -311,6 +311,45 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def preview_scenarios() -> dict[str, Any]:
+    return {
+        "scenarios": [
+            {
+                "name": "Risk-Off Shock",
+                "description": "Equities and crypto pull back while bonds/FX cushion portfolio.",
+                "portfolio_value": 100000,
+                "drift_threshold": 0.02,
+                "turnover_limit": 0.15,
+                "transaction_cost_bps": 12,
+                "assets": [
+                    {"asset": "Mutual Fund", "target_weight": 0.25, "current_weight": 0.23, "market_return": -0.012, "price": 42},
+                    {"asset": "ETF", "target_weight": 0.20, "current_weight": 0.24, "market_return": -0.024, "price": 95},
+                    {"asset": "Stocks", "target_weight": 0.20, "current_weight": 0.22, "market_return": -0.031, "price": 130},
+                    {"asset": "Commodity", "target_weight": 0.10, "current_weight": 0.11, "market_return": 0.007, "price": 77},
+                    {"asset": "FX", "target_weight": 0.10, "current_weight": 0.08, "market_return": 0.004, "price": 1.2},
+                    {"asset": "Crypto", "target_weight": 0.15, "current_weight": 0.12, "market_return": -0.055, "price": 26000},
+                ],
+            },
+            {
+                "name": "Risk-On Rally",
+                "description": "Growth assets outperform and optimizer reduces concentration risk.",
+                "portfolio_value": 100000,
+                "drift_threshold": 0.02,
+                "turnover_limit": 0.25,
+                "transaction_cost_bps": 10,
+                "assets": [
+                    {"asset": "Mutual Fund", "target_weight": 0.25, "current_weight": 0.21, "market_return": 0.010, "price": 42},
+                    {"asset": "ETF", "target_weight": 0.20, "current_weight": 0.19, "market_return": 0.018, "price": 95},
+                    {"asset": "Stocks", "target_weight": 0.20, "current_weight": 0.23, "market_return": 0.026, "price": 130},
+                    {"asset": "Commodity", "target_weight": 0.10, "current_weight": 0.09, "market_return": 0.011, "price": 77},
+                    {"asset": "FX", "target_weight": 0.10, "current_weight": 0.08, "market_return": 0.003, "price": 1.2},
+                    {"asset": "Crypto", "target_weight": 0.15, "current_weight": 0.20, "market_return": 0.061, "price": 26000},
+                ],
+            },
+        ]
+    }
+
+
 def multi_agent_blueprint() -> dict[str, Any]:
     return {
         "agents": [
@@ -348,6 +387,11 @@ def rebalance_endpoint():
         return jsonify(generate_rebalance_plan(data))
     except ValidationError as exc:
         return jsonify({"error": str(exc), "metadata": _response_metadata()}), 400
+
+
+@app.route("/api/preview-scenarios", methods=["GET"])
+def preview_scenarios_endpoint():
+    return jsonify(preview_scenarios())
 
 
 @app.route("/api/multi-agent-blueprint", methods=["GET"])

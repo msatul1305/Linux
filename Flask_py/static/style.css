@@ -27,6 +27,14 @@ body {
   margin-bottom: 16px;
 }
 
+.preview-strip {
+  border: 1px solid #dbeafe;
+  background: #f8fbff;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
 label {
   display: flex;
   flex-direction: column;
@@ -34,7 +42,8 @@ label {
   color: #334155;
 }
 
-input {
+input,
+select {
   margin-top: 4px;
   padding: 8px;
   border: 1px solid #cbd5e1;
@@ -94,6 +103,16 @@ th {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
+}
+
+.api-preview {
+  background: #0b1220;
+  color: #cde3ff;
+  border-radius: 10px;
+  padding: 12px;
+  max-height: 320px;
+  overflow: auto;
+  font-size: 12px;
 }
 
 @media (max-width: 900px) {

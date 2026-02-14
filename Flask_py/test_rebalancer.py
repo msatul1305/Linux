@@ -60,6 +60,13 @@ class RebalancerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn("error", response.get_json())
 
+    def test_preview_scenarios_endpoint(self):
+        response = self.client.get("/api/preview-scenarios")
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertIn("scenarios", data)
+        self.assertGreaterEqual(len(data["scenarios"]), 1)
+
     def test_health_endpoint(self):
         response = self.client.get("/api/health")
         self.assertEqual(response.status_code, 200)

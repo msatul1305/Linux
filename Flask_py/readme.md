@@ -88,6 +88,9 @@ Open http://127.0.0.1:5000
 ### `GET /api/health`
 Basic health/status endpoint with metadata.
 
+### `GET /api/preview-scenarios`
+Returns curated market scenarios for one-click dashboard preview/demo mode.
+
 ### `GET /api/multi-agent-blueprint`
 Returns deployable multi-agent orchestration + governance template.
 
