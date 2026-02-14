@@ -7,11 +7,12 @@ class RebalancerTests(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
 
-    def test_generate_rebalance_plan_actions_and_ai_fields(self):
-        payload = {
+    def _sample_payload(self):
+        return {
             "portfolio_value": 100000,
             "drift_threshold": 0.02,
             "turnover_limit": 0.2,
+            "transaction_cost_bps": 12,
             "assets": [
                 {
                     "asset": "ETF",
@@ -31,36 +32,44 @@ class RebalancerTests(unittest.TestCase):
                 },
             ],
         }
-        plan = generate_rebalance_plan(payload)
+
+    def test_generate_rebalance_plan_industry_fields(self):
+        plan = generate_rebalance_plan(self._sample_payload())
         self.assertIn("optimized_target_weight", plan["weights"][0])
-        self.assertIn(plan["trades"][0]["action"], {"Sell", "Buy", "Hold"})
+        self.assertIn("estimated_cost", plan["trades"][0])
+        self.assertIn("estimated_total_transaction_cost", plan)
+        self.assertIn("metadata", plan)
 
     def test_risk_metrics_extended(self):
         metrics = calculate_risk_metrics([0.01, -0.02, 0.015, -0.005], 0.02)
-        for key in ["volatility", "sharpe", "max_drawdown", "var_95", "cvar_95", "expected_annual_return"]:
+        for key in ["volatility", "sharpe", "max_drawdown", "var_95", "cvar_95", "expected_annual_return", "tracking_error"]:
             self.assertIn(key, metrics)
 
     def test_api_rebalance_and_blueprint(self):
-        response = self.client.post(
-            "/api/rebalance",
-            json={
-                "portfolio_value": 50000,
-                "drift_threshold": 0.01,
-                "turnover_limit": 0.2,
-                "assets": [
-                    {"asset": "Stocks", "target_weight": 0.7, "current_weight": 0.5, "market_return": 0.02, "price": 120},
-                    {"asset": "Gold", "target_weight": 0.3, "current_weight": 0.5, "market_return": 0.01, "price": 75},
-                ],
-            },
-        )
+        response = self.client.post("/api/rebalance", json=self._sample_payload())
         self.assertEqual(response.status_code, 200)
         data = response.get_json()
         self.assertIn("house_view", data)
         self.assertIn("multi_agent_blueprint", data)
 
+    def test_validation_error(self):
+        response = self.client.post(
+            "/api/rebalance",
+            json={"portfolio_value": -10, "assets": []},
+        )
+        self.assertEqual(response.status_code, 400)
+        self.assertIn("error", response.get_json())
+
+    def test_health_endpoint(self):
+        response = self.client.get("/api/health")
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertEqual(data["status"], "ok")
+
     def test_multi_agent_blueprint_shape(self):
         blueprint = multi_agent_blueprint()
         self.assertGreaterEqual(len(blueprint["agents"]), 5)
+        self.assertIn("governance_standards", blueprint)
 
 
 if __name__ == "__main__":

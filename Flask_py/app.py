@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import random
+from datetime import datetime, timezone
 from math import sqrt
 from statistics import mean, stdev
 from typing import Any
@@ -10,6 +11,10 @@ from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
 TRADING_DAYS = 252
+
+
+class ValidationError(ValueError):
+    """Raised when incoming payload violates contract."""
 
 
 def risk_mitigation(inputs):
@@ -49,6 +54,39 @@ def _normalize_weights(raw_weights: list[float]) -> list[float]:
     return [w / total for w in raw_weights]
 
 
+def _validate_payload(payload: dict[str, Any]) -> None:
+    assets = payload.get("assets")
+    if not isinstance(assets, list) or not assets:
+        raise ValidationError("'assets' must be a non-empty array.")
+
+    drift_threshold = _safe_float(payload.get("drift_threshold", 0.02), 0.02)
+    turnover_limit = _safe_float(payload.get("turnover_limit", 0.2), 0.2)
+    portfolio_value = _safe_float(payload.get("portfolio_value", 0.0), 0.0)
+
+    if not (0 <= drift_threshold <= 0.5):
+        raise ValidationError("'drift_threshold' must be between 0 and 0.5.")
+    if not (0 < turnover_limit <= 1.0):
+        raise ValidationError("'turnover_limit' must be between 0 (exclusive) and 1.")
+    if portfolio_value <= 0:
+        raise ValidationError("'portfolio_value' must be greater than 0.")
+
+    for idx, asset in enumerate(assets):
+        if not isinstance(asset, dict):
+            raise ValidationError(f"assets[{idx}] must be an object.")
+        name = str(asset.get("asset", "")).strip()
+        if not name:
+            raise ValidationError(f"assets[{idx}].asset is required.")
+
+        for field in ("target_weight", "current_weight"):
+            val = _safe_float(asset.get(field), -1.0)
+            if val < 0:
+                raise ValidationError(f"assets[{idx}].{field} must be >= 0.")
+
+        price = _safe_float(asset.get("price", 100.0), 100.0)
+        if price <= 0:
+            raise ValidationError(f"assets[{idx}].price must be > 0.")
+
+
 def calculate_risk_metrics(portfolio_returns: list[float], risk_free_rate: float = 0.0) -> dict[str, float]:
     if not portfolio_returns:
         return {
@@ -58,6 +96,7 @@ def calculate_risk_metrics(portfolio_returns: list[float], risk_free_rate: float
             "var_95": 0.0,
             "cvar_95": 0.0,
             "expected_annual_return": 0.0,
+            "tracking_error": 0.0,
         }
 
     volatility = stdev(portfolio_returns) * sqrt(TRADING_DAYS) if len(portfolio_returns) > 1 else 0.0
@@ -79,6 +118,10 @@ def calculate_risk_metrics(portfolio_returns: list[float], risk_free_rate: float
     tail = [ret for ret in sorted_returns if ret <= var_95]
     cvar_95 = mean(tail) if tail else var_95
 
+    benchmark = mean(portfolio_returns)
+    active = [r - benchmark for r in portfolio_returns]
+    tracking_error = stdev(active) * sqrt(TRADING_DAYS) if len(active) > 1 else 0.0
+
     return {
         "volatility": round(volatility, 4),
         "sharpe": round(sharpe, 4),
@@ -86,6 +129,7 @@ def calculate_risk_metrics(portfolio_returns: list[float], risk_free_rate: float
         "var_95": round(abs(var_95), 4),
         "cvar_95": round(abs(cvar_95), 4),
         "expected_annual_return": round(avg_return * TRADING_DAYS, 4),
+        "tracking_error": round(tracking_error, 4),
     }
 
 
@@ -143,11 +187,12 @@ def _generate_house_view(assets: list[dict[str, Any]]) -> dict[str, Any]:
             "Time-series ensemble (Momentum + Mean Reversion + EWMA)",
             "Regime classifier (bull / bear / sideways) using volatility + trend features",
             "Transaction-cost-aware optimizer with reinforcement learning for execution",
+            "Production upgrade: XGBoost/LightGBM alpha model with SHAP explainability and model monitoring",
         ],
     }
 
 
-def _run_monte_carlo(portfolio_return: float, volatility: float, n_sims: int = 500, horizon_days: int = 30) -> dict[str, float]:
+def _run_monte_carlo(portfolio_return: float, volatility: float, n_sims: int = 1000, horizon_days: int = 30) -> dict[str, float]:
     rng = random.Random(42)
     end_values = []
     for _ in range(n_sims):
@@ -169,24 +214,22 @@ def _run_monte_carlo(portfolio_return: float, volatility: float, n_sims: int = 5
     }
 
 
+def _response_metadata() -> dict[str, Any]:
+    return {
+        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "version": "v2-industry-standard",
+    }
+
+
 def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
+    _validate_payload(payload)
+
     assets = payload.get("assets", [])
     portfolio_value = _safe_float(payload.get("portfolio_value", 100000), 100000)
     threshold = _safe_float(payload.get("drift_threshold", 0.02), 0.02)
     risk_free_rate = _safe_float(payload.get("risk_free_rate", 0.02), 0.02)
     turnover_limit = _safe_float(payload.get("turnover_limit", 0.2), 0.2)
-
-    if not assets:
-        return {
-            "portfolio_value": portfolio_value,
-            "drift_threshold": threshold,
-            "weights": [],
-            "trades": [],
-            "risk_metrics": calculate_risk_metrics([], risk_free_rate=risk_free_rate),
-            "house_view": _generate_house_view([]),
-            "monte_carlo": {"expected_terminal_value": 1.0, "probability_of_loss": 0.0, "worst_5pct_terminal_value": 1.0},
-            "multi_agent_blueprint": multi_agent_blueprint(),
-        }
+    transaction_cost_bps = _safe_float(payload.get("transaction_cost_bps", 10), 10)
 
     target_weights = _normalize_weights([_safe_float(a.get("target_weight")) for a in assets])
     current_weights = _normalize_weights([_safe_float(a.get("current_weight")) for a in assets])
@@ -196,6 +239,7 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
 
     weights, trades, market_returns = [], [], []
     gross_turnover = 0.0
+    total_cost = 0.0
 
     for i, asset in enumerate(assets):
         name = asset.get("asset", f"Asset {i + 1}")
@@ -210,15 +254,17 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
         capped_trade_weight = max(-max_trade_weight, min(max_trade_weight, desired_trade_weight))
         gross_turnover += abs(capped_trade_weight)
 
-        direction = "Hold"
-        if drift > threshold:
-            direction = "Sell"
-        elif drift < -threshold:
-            direction = "Buy"
+        if abs(capped_trade_weight) <= threshold:
+            direction = "Hold"
+        else:
+            direction = "Buy" if capped_trade_weight > 0 else "Sell"
 
-        price = max(0.01, _safe_float(asset.get("price", 100.0), 100.0))
+        price = _safe_float(asset.get("price", 100.0), 100.0)
         trade_value = capped_trade_weight * portfolio_value
         trade_units = trade_value / price
+
+        execution_cost = abs(trade_value) * (transaction_cost_bps / 10000)
+        total_cost += execution_cost
 
         weights.append(
             {
@@ -239,6 +285,7 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
                 "trade_value": round(abs(trade_value), 2),
                 "signed_trade_value": round(trade_value, 2),
                 "trade_units": round(trade_units, 4),
+                "estimated_cost": round(execution_cost, 2),
             }
         )
 
@@ -253,26 +300,34 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
         "portfolio_value": portfolio_value,
         "drift_threshold": threshold,
         "turnover_used": round(gross_turnover, 4),
+        "estimated_total_transaction_cost": round(total_cost, 2),
         "weights": weights,
         "trades": trades,
         "risk_metrics": risk_metrics,
         "house_view": house_view,
         "monte_carlo": monte_carlo,
         "multi_agent_blueprint": multi_agent_blueprint(),
+        "metadata": _response_metadata(),
     }
 
 
 def multi_agent_blueprint() -> dict[str, Any]:
     return {
         "agents": [
-            {"name": "Market Data Agent", "role": "Ingests prices, returns, macro, sentiment, and validates data quality."},
-            {"name": "Forecast Agent", "role": "Runs ML forecasts (ensemble/time-series/regime)."},
-            {"name": "Risk Agent", "role": "Computes VaR/CVaR/drawdown and checks policy limits."},
-            {"name": "Rebalance Optimizer Agent", "role": "Builds target weights under turnover/cost/sector constraints."},
-            {"name": "Execution Agent", "role": "Generates child orders and simulates slippage."},
-            {"name": "Supervisor Agent", "role": "Orchestrates other agents, resolves conflicts, and approves final plan."},
+            {"name": "Market Data Agent", "role": "Ingests prices, returns, corporate actions, macro, sentiment and validates quality."},
+            {"name": "Forecast Agent", "role": "Runs ML forecasts, confidence intervals and drift monitors."},
+            {"name": "Risk Agent", "role": "Computes VaR/CVaR/drawdown and validates hard limits."},
+            {"name": "Rebalance Optimizer Agent", "role": "Constructs targets under turnover/cost/sector/concentration constraints."},
+            {"name": "Execution Agent", "role": "Generates child orders with slippage and venue routing heuristics."},
+            {"name": "Supervisor Agent", "role": "Orchestrates agents, resolves conflicts, signs-off final plan."},
         ],
         "orchestration": "Supervisor -> Data -> Forecast -> Risk -> Optimizer -> Execution -> Supervisor Approval",
+        "governance_standards": [
+            "Model Risk Management: versioning, challenger models, and periodic backtesting",
+            "Pre-trade controls: exposure, leverage, and concentration checks",
+            "Post-trade surveillance and execution quality TCA",
+            "Audit trail for inputs, model outputs, and decisions",
+        ],
     }
 
 
@@ -281,10 +336,18 @@ def dashboard():
     return render_template("index.html")
 
 
+@app.route("/api/health", methods=["GET"])
+def health_endpoint():
+    return jsonify({"status": "ok", "service": "smart-portfolio-rebalancer", "metadata": _response_metadata()})
+
+
 @app.route("/api/rebalance", methods=["POST"])
 def rebalance_endpoint():
     data = request.json or {}
-    return jsonify(generate_rebalance_plan(data))
+    try:
+        return jsonify(generate_rebalance_plan(data))
+    except ValidationError as exc:
+        return jsonify({"error": str(exc), "metadata": _response_metadata()}), 400
 
 
 @app.route("/api/multi-agent-blueprint", methods=["GET"])

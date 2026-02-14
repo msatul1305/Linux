@@ -1,18 +1,21 @@
-## Smart Portfolio Rebalancer - Hackathon Edition
+## Smart Portfolio Rebalancer - Best-in-Class Hackathon Edition
 
-A full-stack Flask MVP for mutual funds / ETF / stocks / commodity / FX / crypto portfolios that:
-- monitors drift from target allocation,
-- recommends trades under turnover constraints,
-- calculates advanced risk metrics,
-- and includes an AI + multi-agent architecture blueprint.
+Production-inspired Flask MVP for multi-asset portfolios (Mutual Fund, ETF, Stocks, Commodity, FX, Crypto) with institutional controls, AI forecasting, and multi-agent orchestration.
 
-## Features
+## What is now industry-standard in this version
+- **Strict API validation** with deterministic 400 error responses for bad payloads.
+- **Governance-aware outputs**: metadata timestamps/versioning and model-governance blueprint.
+- **Execution realism**: turnover limits, trade units, and estimated transaction cost (bps).
+- **Advanced risk analytics**: Volatility, Sharpe, Max Drawdown, VaR95, CVaR95, Expected Annual Return, Tracking Error.
+- **Stress testing**: Monte Carlo loss probability and downside percentile terminal value.
+- **Operational endpoint**: `/api/health` for deployment monitoring.
 
-### Core Portfolio Engine
-- Input: target weights, current weights, market returns, prices.
-- Drift calculator and buy/sell/hold recommendation.
-- Turnover-aware trade sizing and trade units.
-- Optimized AI target weights based on model confidence.
+## Core Features
+### Rebalancing Engine
+- Input portfolio weights + market returns.
+- Drift calculation from target allocation.
+- Buy/Sell/Hold recommendations with threshold + turnover constraints.
+- AI-assisted optimized targets using a confidence-weighted ensemble.
 
 ### Risk Engine
 - Volatility (annualized)
@@ -21,31 +24,37 @@ A full-stack Flask MVP for mutual funds / ETF / stocks / commodity / FX / crypto
 - VaR (95%)
 - CVaR (95%)
 - Expected annual return
-- Monte Carlo probability of loss (30-day horizon)
+- Tracking error
+- Monte Carlo probability of loss
 
-### ML Layer (MVP + Proposed Upgrade Path)
-Current MVP uses a dependency-light ensemble:
-1. Momentum model (recent rolling mean)
-2. Mean-reversion model
+### ML Layer (MVP + Scalable upgrade path)
+Current dependency-light ensemble:
+1. Momentum (short window mean)
+2. Mean-reversion (long/short relation)
 3. EWMA signal
-4. Confidence score from return dispersion
+4. Confidence scoring via return dispersion
 
-Recommended hackathon extensions:
-- **XGBoost / LightGBM** for cross-asset return forecasting with features (macro, vol, momentum, valuation).
-- **Temporal Fusion Transformer (TFT)** for multi-horizon forecasting.
-- **Regime-switching HMM** to detect bull/bear/sideways states.
-- **RL allocator (PPO/SAC)** for dynamic rebalancing with transaction costs.
+Recommended production upgrades:
+- **XGBoost/LightGBM** alpha models + SHAP explainability
+- **Temporal Fusion Transformer** for multi-horizon forecasts
+- **Regime classifier** (HMM or deep sequence model)
+- **RL allocator** (PPO/SAC) with transaction-cost-aware reward design
 
-### Multi-Agent Solution
-The app ships with a practical orchestrated agent design:
-1. Market Data Agent
-2. Forecast Agent
-3. Risk Agent
-4. Rebalance Optimizer Agent
-5. Execution Agent
-6. Supervisor Agent
+### Multi-Agent Design
+- Market Data Agent
+- Forecast Agent
+- Risk Agent
+- Rebalance Optimizer Agent
+- Execution Agent
+- Supervisor Agent
 
 Flow: `Supervisor -> Data -> Forecast -> Risk -> Optimizer -> Execution -> Supervisor Approval`
+
+Governance standards included:
+- model versioning / challengers / backtesting
+- pre-trade risk controls
+- post-trade TCA surveillance
+- audit trail requirements
 
 ## Run
 ```bash
@@ -53,16 +62,16 @@ cd Flask_py
 pip install -r requirements.txt
 python app.py
 ```
-
 Open http://127.0.0.1:5000
 
 ## API
-### POST `/api/rebalance`
+### `POST /api/rebalance`
 ```json
 {
   "portfolio_value": 100000,
   "drift_threshold": 0.02,
   "turnover_limit": 0.2,
+  "transaction_cost_bps": 10,
   "assets": [
     {
       "asset": "ETF",
@@ -76,8 +85,11 @@ Open http://127.0.0.1:5000
 }
 ```
 
-### GET `/api/multi-agent-blueprint`
-Returns a production-ready multi-agent orchestration template.
+### `GET /api/health`
+Basic health/status endpoint with metadata.
+
+### `GET /api/multi-agent-blueprint`
+Returns deployable multi-agent orchestration + governance template.
 
 ## Tests
 ```bash
