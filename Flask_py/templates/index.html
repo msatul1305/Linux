@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Portfolio Rebalancer</title>
+  <title>Smart Portfolio Rebalancer - Hackathon Edition</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="container">
-    <h1>Asset Management - Smart Portfolio Rebalancer</h1>
-    <p class="subtitle">Monitor drift, generate trade recommendations, and review risk metrics.</p>
+    <h1>🚀 Smart Portfolio Rebalancer (Hackathon Edition)</h1>
+    <p class="subtitle">Institutional-grade drift monitoring, AI-augmented weight optimization, and multi-agent orchestration blueprint.</p>
 
     <section class="controls">
-      <label>Portfolio Value ($)
-        <input id="portfolioValue" type="number" value="100000" min="1000" step="1000">
-      </label>
-      <label>Drift Threshold (%)
-        <input id="driftThreshold" type="number" value="2" min="0" step="0.1">
-      </label>
+      <label>Portfolio Value ($)<input id="portfolioValue" type="number" value="100000" min="1000" step="1000"></label>
+      <label>Drift Threshold (%)<input id="driftThreshold" type="number" value="2" min="0" step="0.1"></label>
+      <label>Turnover Limit (%)<input id="turnoverLimit" type="number" value="20" min="1" step="1"></label>
       <button id="addRowBtn" type="button">Add Asset</button>
-      <button id="runBtn" type="button">Run Rebalance</button>
+      <button id="runBtn" type="button">Run AI Rebalance</button>
     </section>
 
     <section>
@@ -27,11 +24,7 @@
       <table id="assetTable">
         <thead>
           <tr>
-            <th>Asset</th>
-            <th>Target Weight (%)</th>
-            <th>Current Weight (%)</th>
-            <th>Market Return (%)</th>
-            <th>Action</th>
+            <th>Asset</th><th>Target %</th><th>Current %</th><th>Market Return %</th><th>Price</th><th>Action</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -39,50 +32,65 @@
     </section>
 
     <section>
-      <h2>Drift & Trade Suggestions</h2>
+      <h2>Rebalance Recommendations</h2>
       <table id="resultTable">
         <thead>
           <tr>
-            <th>Asset</th>
-            <th>Target</th>
-            <th>Current</th>
-            <th>Drift</th>
-            <th>Recommendation</th>
-            <th>Trade Value ($)</th>
+            <th>Asset</th><th>Current %</th><th>Target %</th><th>AI Target %</th><th>Drift %</th><th>Forecast %</th><th>Action</th><th>Trade $</th><th>Units</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
+      <p><strong>Turnover Used:</strong> <span id="turnoverUsed">-</span></p>
     </section>
 
     <section class="metrics">
       <h2>Risk Metrics</h2>
-      <div class="metric-card">Volatility: <span id="volatility">-</span></div>
-      <div class="metric-card">Sharpe Ratio: <span id="sharpe">-</span></div>
-      <div class="metric-card">Max Drawdown: <span id="drawdown">-</span></div>
+      <div class="metric-card">Volatility <span id="volatility">-</span></div>
+      <div class="metric-card">Sharpe <span id="sharpe">-</span></div>
+      <div class="metric-card">Max Drawdown <span id="drawdown">-</span></div>
+      <div class="metric-card">VaR 95 <span id="var95">-</span></div>
+      <div class="metric-card">CVaR 95 <span id="cvar95">-</span></div>
+      <div class="metric-card">Expected Annual Return <span id="expRet">-</span></div>
+      <div class="metric-card">MC Prob. of Loss <span id="mcLoss">-</span></div>
+    </section>
+
+    <section class="insights-grid">
+      <div>
+        <h2>ML House View</h2>
+        <p><strong>Top Conviction Buys:</strong> <span id="convictionBuys">-</span></p>
+        <p><strong>Risk Reduction Candidates:</strong> <span id="riskReduction">-</span></p>
+        <ul id="modelsList"></ul>
+      </div>
+      <div>
+        <h2>Multi-Agent Architecture</h2>
+        <ol id="agentList"></ol>
+        <p><strong>Flow:</strong> <span id="agentFlow">-</span></p>
+      </div>
     </section>
   </div>
 
   <script>
     const defaultRows = [
-      { asset: 'Mutual Fund', target_weight: 25, current_weight: 23, market_return: 1.5 },
-      { asset: 'ETF', target_weight: 20, current_weight: 24, market_return: 2.2 },
-      { asset: 'Stocks', target_weight: 20, current_weight: 18, market_return: -0.8 },
-      { asset: 'Commodity', target_weight: 10, current_weight: 12, market_return: 1.2 },
-      { asset: 'FX', target_weight: 10, current_weight: 8, market_return: 0.4 },
-      { asset: 'Crypto', target_weight: 15, current_weight: 15, market_return: 3.1 }
+      { asset: 'Mutual Fund', target_weight: 25, current_weight: 23, market_return: 1.5, price: 42 },
+      { asset: 'ETF', target_weight: 20, current_weight: 24, market_return: 2.2, price: 95 },
+      { asset: 'Stocks', target_weight: 20, current_weight: 18, market_return: -0.8, price: 130 },
+      { asset: 'Commodity', target_weight: 10, current_weight: 12, market_return: 1.2, price: 77 },
+      { asset: 'FX', target_weight: 10, current_weight: 8, market_return: 0.4, price: 1.2 },
+      { asset: 'Crypto', target_weight: 15, current_weight: 15, market_return: 3.1, price: 26000 }
     ];
 
     const tbody = document.querySelector('#assetTable tbody');
     const resultBody = document.querySelector('#resultTable tbody');
 
-    function addRow(data = { asset: '', target_weight: 0, current_weight: 0, market_return: 0 }) {
+    function addRow(data = { asset: '', target_weight: 0, current_weight: 0, market_return: 0, price: 100 }) {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td><input type="text" value="${data.asset}"></td>
         <td><input type="number" value="${data.target_weight}" step="0.1"></td>
         <td><input type="number" value="${data.current_weight}" step="0.1"></td>
         <td><input type="number" value="${data.market_return}" step="0.1"></td>
+        <td><input type="number" value="${data.price}" step="0.01"></td>
         <td><button type="button" class="danger">Remove</button></td>
       `;
       row.querySelector('button').addEventListener('click', () => row.remove());
@@ -92,27 +100,28 @@
     function collectPayload() {
       const assets = [...tbody.querySelectorAll('tr')].map((row) => {
         const inputs = row.querySelectorAll('input');
+        const m = parseFloat(inputs[3].value || 0) / 100;
         return {
           asset: inputs[0].value || 'Unknown Asset',
           target_weight: parseFloat(inputs[1].value || 0) / 100,
           current_weight: parseFloat(inputs[2].value || 0) / 100,
-          market_return: parseFloat(inputs[3].value || 0) / 100
+          market_return: m,
+          price: parseFloat(inputs[4].value || 100),
+          historical_returns: [m*0.2, m*0.5, -m*0.4, m*0.8, m]
         };
       });
 
       return {
         portfolio_value: parseFloat(document.getElementById('portfolioValue').value || 100000),
         drift_threshold: parseFloat(document.getElementById('driftThreshold').value || 2) / 100,
+        turnover_limit: parseFloat(document.getElementById('turnoverLimit').value || 20) / 100,
         assets
       };
     }
 
     async function runRebalance() {
-      const payload = collectPayload();
       const response = await fetch('/api/rebalance', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload())
       });
       const data = await response.json();
 
@@ -120,25 +129,50 @@
       data.weights.forEach((weight, idx) => {
         const trade = data.trades[idx];
         const row = document.createElement('tr');
-        row.innerHTML = `
-          <td>${weight.asset}</td>
-          <td>${(weight.target_weight * 100).toFixed(2)}%</td>
-          <td>${(weight.current_weight * 100).toFixed(2)}%</td>
-          <td>${(weight.drift * 100).toFixed(2)}%</td>
+        row.innerHTML = `<td>${weight.asset}</td>
+          <td>${(weight.current_weight*100).toFixed(2)}%</td>
+          <td>${(weight.target_weight*100).toFixed(2)}%</td>
+          <td>${(weight.optimized_target_weight*100).toFixed(2)}%</td>
+          <td>${(weight.drift*100).toFixed(2)}%</td>
+          <td>${(weight.forecast_return*100).toFixed(2)}%</td>
           <td>${trade.action}</td>
           <td>${trade.trade_value.toLocaleString()}</td>
-        `;
+          <td>${trade.trade_units.toLocaleString()}</td>`;
         resultBody.appendChild(row);
       });
 
-      document.getElementById('volatility').textContent = `${(data.risk_metrics.volatility * 100).toFixed(2)}%`;
+      document.getElementById('turnoverUsed').textContent = `${(data.turnover_used*100).toFixed(2)}%`;
+      document.getElementById('volatility').textContent = `${(data.risk_metrics.volatility*100).toFixed(2)}%`;
       document.getElementById('sharpe').textContent = data.risk_metrics.sharpe.toFixed(2);
-      document.getElementById('drawdown').textContent = `${(data.risk_metrics.max_drawdown * 100).toFixed(2)}%`;
+      document.getElementById('drawdown').textContent = `${(data.risk_metrics.max_drawdown*100).toFixed(2)}%`;
+      document.getElementById('var95').textContent = `${(data.risk_metrics.var_95*100).toFixed(2)}%`;
+      document.getElementById('cvar95').textContent = `${(data.risk_metrics.cvar_95*100).toFixed(2)}%`;
+      document.getElementById('expRet').textContent = `${(data.risk_metrics.expected_annual_return*100).toFixed(2)}%`;
+      document.getElementById('mcLoss').textContent = `${(data.monte_carlo.probability_of_loss*100).toFixed(2)}%`;
+
+      document.getElementById('convictionBuys').textContent = data.house_view.top_conviction_buys.join(', ');
+      document.getElementById('riskReduction').textContent = data.house_view.risk_reduction_candidates.join(', ');
+
+      const modelsList = document.getElementById('modelsList');
+      modelsList.innerHTML = '';
+      data.house_view.proposed_models.forEach((m) => {
+        const li = document.createElement('li');
+        li.textContent = m;
+        modelsList.appendChild(li);
+      });
+
+      const agentList = document.getElementById('agentList');
+      agentList.innerHTML = '';
+      data.multi_agent_blueprint.agents.forEach((agent) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${agent.name}</strong>: ${agent.role}`;
+        agentList.appendChild(li);
+      });
+      document.getElementById('agentFlow').textContent = data.multi_agent_blueprint.orchestration;
     }
 
     document.getElementById('addRowBtn').addEventListener('click', () => addRow());
     document.getElementById('runBtn').addEventListener('click', runRebalance);
-
     defaultRows.forEach(addRow);
     runRebalance();
   </script>
