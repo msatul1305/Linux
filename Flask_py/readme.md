@@ -104,28 +104,30 @@ gunicorn --workers 2 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT wsgi:app
   - `HOST=0.0.0.0`
 
 
-### Option D: GitLab CI Review Apps (auto preview per branch)
-A ready-to-use `.gitlab-ci.yml` is added at repo root to run tests, build/push container, and deploy a per-branch review app.
+### Option D: GitHub Actions Preview Deploy (auto preview per branch)
+This repo includes GitHub workflows for CI and preview deployment:
+- `.github/workflows/ci.yml` for tests and compile checks.
+- `.github/workflows/deploy-preview.yml` for building/pushing image to GHCR and deploying preview branch environments.
 
-Required GitLab CI variables:
+Required GitHub Secrets:
 - `PREVIEW_HOST` - VM/server hostname running Docker + Traefik.
 - `PREVIEW_USER` - SSH user for deploy host.
-- `PREVIEW_SSH_KEY` - private key (masked/protected variable).
+- `PREVIEW_SSH_KEY` - private key for deployment host.
 - `PREVIEW_BASE_URL` - base domain for previews (example: `preview.yourdomain.com`).
 
 Generated preview URL pattern:
 ```text
-https://<CI_ENVIRONMENT_SLUG>.<PREVIEW_BASE_URL>
+https://<branch-slug>.<PREVIEW_BASE_URL>
 ```
 Example:
 ```text
-https://review-feature-rebalancer.preview.yourdomain.com
+https://feature-rebalancer.preview.yourdomain.com
 ```
 
-Troubleshooting (GitLab shows "No deployments"):
-- This repo now includes `review_status` job that always registers a review environment deployment for each branch.
-- If live hosting variables are missing, GitLab still records a deployment and links to pipeline URL.
-- Configure `PREVIEW_HOST`, `PREVIEW_USER`, `PREVIEW_SSH_KEY`, and `PREVIEW_BASE_URL` to enable real public preview URLs.
+Troubleshooting (no live preview deployment):
+- Verify all required GitHub secrets are set.
+- Ensure preview host has Docker + Traefik and can pull images from GHCR.
+- CI still runs via `ci.yml` even if deploy secrets are not present.
 
 ## API
 ### `POST /api/rebalance`
