@@ -91,6 +91,25 @@ gunicorn --workers 2 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT wsgi:app
   - `PORT` (provided by platform)
   - `HOST=0.0.0.0`
 
+
+### Option D: GitLab CI Review Apps (auto preview per branch)
+A ready-to-use `.gitlab-ci.yml` is added at repo root to run tests, build/push container, and deploy a per-branch review app.
+
+Required GitLab CI variables:
+- `PREVIEW_HOST` - VM/server hostname running Docker + Traefik.
+- `PREVIEW_USER` - SSH user for deploy host.
+- `PREVIEW_SSH_KEY` - private key (masked/protected variable).
+- `PREVIEW_BASE_URL` - base domain for previews (example: `preview.yourdomain.com`).
+
+Generated preview URL pattern:
+```text
+https://<CI_ENVIRONMENT_SLUG>.<PREVIEW_BASE_URL>
+```
+Example:
+```text
+https://review-feature-rebalancer.preview.yourdomain.com
+```
+
 ## API
 ### `POST /api/rebalance`
 ```json

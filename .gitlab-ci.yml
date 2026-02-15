@@ -1,0 +1,95 @@
+stages:
+  - test
+  - build
+  - review
+
+variables:
+  APP_DIR: Flask_py
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+
+unit_tests:
+  stage: test
+  image: python:3.12-slim
+  before_script:
+    - cd "$APP_DIR"
+    - pip install --upgrade pip
+    - pip install -r requirements.txt
+  script:
+    - python -m unittest test_rebalancer.py
+    - python -m py_compile app.py test_rebalancer.py wsgi.py
+
+build_container:
+  stage: build
+  image: docker:27.3.1
+  services:
+    - docker:27.3.1-dind
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+    DOCKER_TLS_CERTDIR: ""
+  script:
+    - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA" "$APP_DIR"
+    - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+    - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+
+review_app:
+  stage: review
+  image: alpine:3.20
+  needs:
+    - build_container
+  before_script:
+    - apk add --no-cache openssh-client
+  script:
+    - test -n "$PREVIEW_HOST"
+    - test -n "$PREVIEW_USER"
+    - test -n "$PREVIEW_SSH_KEY"
+    - eval "$(ssh-agent -s)"
+    - echo "$PREVIEW_SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - ssh-keyscan -H "$PREVIEW_HOST" >> ~/.ssh/known_hosts
+    - export REVIEW_CONTAINER="rebalancer-${CI_COMMIT_REF_SLUG}"
+    - export PREVIEW_URL="https://${CI_ENVIRONMENT_SLUG}.${PREVIEW_BASE_URL}"
+    - |
+      ssh "$PREVIEW_USER@$PREVIEW_HOST" "
+      docker pull $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA &&
+      docker rm -f $REVIEW_CONTAINER || true &&
+      docker run -d --name $REVIEW_CONTAINER \
+      --restart unless-stopped \
+      -e HOST=0.0.0.0 -e PORT=8000 \
+      --label traefik.enable=true \
+      --label traefik.http.routers.$REVIEW_CONTAINER.rule=Host\\\`${CI_ENVIRONMENT_SLUG}.${PREVIEW_BASE_URL}\\\` \
+      --label traefik.http.services.$REVIEW_CONTAINER.loadbalancer.server.port=8000 \
+      $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+      "
+    - echo "Preview deployed at: $PREVIEW_URL"
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: https://$CI_ENVIRONMENT_SLUG.$PREVIEW_BASE_URL
+    on_stop: stop_review_app
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+
+stop_review_app:
+  stage: review
+  image: alpine:3.20
+  before_script:
+    - apk add --no-cache openssh-client
+  script:
+    - test -n "$PREVIEW_HOST"
+    - test -n "$PREVIEW_USER"
+    - test -n "$PREVIEW_SSH_KEY"
+    - eval "$(ssh-agent -s)"
+    - echo "$PREVIEW_SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh && chmod 700 ~/.ssh
+    - ssh-keyscan -H "$PREVIEW_HOST" >> ~/.ssh/known_hosts
+    - export REVIEW_CONTAINER="rebalancer-${CI_COMMIT_REF_SLUG}"
+    - ssh "$PREVIEW_USER@$PREVIEW_HOST" "docker rm -f $REVIEW_CONTAINER || true"
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    action: stop
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+      when: manual
