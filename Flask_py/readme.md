@@ -56,6 +56,7 @@ Flow: `Supervisor -> Data -> Forecast -> Risk -> Optimizer -> Execution -> Super
 
 ### UI Architecture View + Tandem Demo Preview
 The dashboard now includes:
+- **Asset drilldown interactions**: click an asset class row to view exact holdings, per-holding predictions, and rebalancing action details.
 - visual multi-agent architecture cards (all agents + roles)
 - orchestration flow banner
 - tandem handoff timeline cards (step-by-step)
@@ -194,6 +195,13 @@ Returns a full timeline showing how each agent works in tandem and what output e
 
 ### `GET /api/multi-agent-blueprint`
 Returns deployable multi-agent orchestration + governance template.
+
+### `asset_drilldown` response block
+`POST /api/rebalance` now returns `asset_drilldown` keyed by asset class with:
+- holdings list
+- per-holding predicted return
+- implied units/notional
+- trade action and cost summary
 
 ## Tests
 ```bash

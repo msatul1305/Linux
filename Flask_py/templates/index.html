@@ -58,6 +58,19 @@
 
       <article class="glass panel"><h2>🌌 Allocation Ring</h2><div class="ring-wrap"><div class="ring" id="allocationRing"></div><ul id="allocationLegend" class="legend"></ul></div></article>
 
+      <article class="glass panel">
+        <h2>🔎 Asset Drilldown</h2>
+        <div class="drilldown-head">
+          <strong id="drilldownAssetName">Select an asset</strong>
+          <span id="drilldownSummary">Click any asset row to view holdings, prediction, and rebalancing details.</span>
+        </div>
+        <table id="drilldownTable">
+          <thead><tr><th>Holding</th><th>Weight</th><th>Last Price</th><th>Pred Return</th><th>Implied Units</th><th>Rebalance</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </article>
+
+
       <article class="glass panel"><h2>🏗️ Multi-Agent Architecture</h2><div id="agentArchitecture" class="architecture-grid"></div><div id="agentFlow" class="flow"></div></article>
 
       <article class="glass panel"><h2>🤖 AI Copilot Brief</h2><pre id="copilotPreview" class="json-box">Generate copilot brief for executive summary...</pre></article>
@@ -79,6 +92,8 @@
     ];
 
     let scenarioData = [];
+    let latestPlan = null;
+    let selectedAsset = null;
     const tbody = document.querySelector('#assetTable tbody');
     const resultBody = document.querySelector('#resultTable tbody');
 
@@ -161,6 +176,40 @@
       });
     }
 
+
+
+    function renderDrilldown(assetName = null) {
+      const head = document.getElementById('drilldownAssetName');
+      const summary = document.getElementById('drilldownSummary');
+      const body = document.querySelector('#drilldownTable tbody');
+      body.innerHTML = '';
+      if (!latestPlan || !latestPlan.asset_drilldown) {
+        head.textContent = 'Select an asset';
+        summary.textContent = 'Run rebalance to view holdings and predictions.';
+        return;
+      }
+
+      const keys = Object.keys(latestPlan.asset_drilldown || {});
+      const chosen = assetName && latestPlan.asset_drilldown[assetName] ? assetName : (keys[0] || null);
+      if (!chosen) {
+        head.textContent = 'No asset details available';
+        summary.textContent = '-';
+        return;
+      }
+
+      selectedAsset = chosen;
+      const details = latestPlan.asset_drilldown[chosen];
+      head.textContent = `${chosen} Holdings`;
+      const sm = details.summary || {};
+      summary.textContent = `Action: ${sm.trade_action || 'Hold'} • Forecast: ${((sm.forecast_return || 0) * 100).toFixed(2)}% • Drift: ${((sm.drift || 0) * 100).toFixed(2)}% • Trade: $${(sm.trade_value || 0).toLocaleString()}`;
+
+      (details.holdings || []).forEach((h) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${h.holding}</td><td>${((h.holding_weight || 0) * 100).toFixed(2)}%</td><td>${h.last_price}</td><td>${((h.predicted_return || 0) * 100).toFixed(2)}%</td><td>${h.implied_units.toLocaleString()}</td><td>${h.rebalance_action}</td>`;
+        body.appendChild(row);
+      });
+    }
+
     async function loadArchitecture() {
       const response = await fetch('/api/multi-agent-blueprint');
       const data = await response.json();
@@ -206,11 +255,14 @@
       const data = await response.json();
       document.getElementById('latency').textContent = `${Math.round(performance.now()-t0)} ms`;
       document.getElementById('apiPreview').textContent = JSON.stringify(data, null, 2);
+      latestPlan = data;
       resultBody.innerHTML = '';
       (data.weights || []).forEach((weight, idx) => {
         const trade = data.trades[idx];
         const row = document.createElement('tr');
         row.innerHTML = `<td>${weight.asset}</td><td>${(weight.current_weight*100).toFixed(2)}%</td><td>${(weight.target_weight*100).toFixed(2)}%</td><td>${(weight.optimized_target_weight*100).toFixed(2)}%</td><td>${(weight.drift*100).toFixed(2)}%</td><td>${(weight.forecast_return*100).toFixed(2)}%</td><td>${badge(trade.action)}</td><td>${trade.trade_value.toLocaleString()}</td><td>${trade.estimated_cost.toLocaleString()}</td>`;
+        row.style.cursor = 'pointer';
+        row.addEventListener('click', () => renderDrilldown(weight.asset));
         resultBody.appendChild(row);
       });
       renderRing(data.weights || []);
@@ -220,6 +272,7 @@
       document.getElementById('sharpe').textContent = (data.risk_metrics?.sharpe || 0).toFixed(2);
       document.getElementById('drawdown').textContent = `${((data.risk_metrics?.max_drawdown || 0) * 100).toFixed(2)}%`;
       document.getElementById('mcLoss').textContent = `${((data.monte_carlo?.probability_of_loss || 0) * 100).toFixed(2)}%`;
+      renderDrilldown(selectedAsset);
     }
 
     async function runCopilotBrief() {

@@ -88,6 +88,70 @@ def _validate_payload(payload: dict[str, Any]) -> None:
             raise ValidationError(f"assets[{idx}].price must be > 0.")
 
 
+def _default_holdings_for_asset(asset_name: str, price: float) -> list[dict[str, Any]]:
+    presets = {
+        "Mutual Fund": [("Bluechip Basket", 0.45), ("Midcap Growth", 0.35), ("Defensive Value", 0.20)],
+        "ETF": [("S&P 500 ETF", 0.50), ("Nasdaq ETF", 0.30), ("Quality ETF", 0.20)],
+        "Stocks": [("AAPL", 0.35), ("MSFT", 0.33), ("NVDA", 0.32)],
+        "Commodity": [("Gold", 0.55), ("Silver", 0.25), ("Energy Basket", 0.20)],
+        "FX": [("USDINR", 0.40), ("EURUSD", 0.35), ("GBPUSD", 0.25)],
+        "Crypto": [("BTC", 0.60), ("ETH", 0.30), ("SOL", 0.10)],
+    }
+    rows = presets.get(asset_name, [(f"{asset_name} Core", 0.50), (f"{asset_name} Growth", 0.30), (f"{asset_name} Tactical", 0.20)])
+    return [
+        {
+            "holding": h,
+            "holding_weight": round(w, 4),
+            "last_price": round(price * (0.85 + idx * 0.08), 4),
+        }
+        for idx, (h, w) in enumerate(rows)
+    ]
+
+
+def _build_asset_drilldown(asset: dict[str, Any], weight: dict[str, Any], trade: dict[str, Any], portfolio_value: float) -> dict[str, Any]:
+    name = weight.get("asset", "Unknown")
+    price = max(0.01, _safe_float(asset.get("price", 100.0), 100.0))
+    holdings = asset.get("holdings")
+    if not isinstance(holdings, list) or not holdings:
+        holdings = _default_holdings_for_asset(name, price)
+
+    enriched_holdings = []
+    for row in holdings:
+        holding_name = row.get("holding", "Unknown Holding")
+        holding_weight = _safe_float(row.get("holding_weight", 0.0), 0.0)
+        last_price = max(0.01, _safe_float(row.get("last_price", price), price))
+        implied_notional = portfolio_value * max(0.0, weight.get("current_weight", 0.0)) * max(0.0, holding_weight)
+        implied_units = implied_notional / last_price
+        enriched_holdings.append(
+            {
+                "holding": holding_name,
+                "holding_weight": round(holding_weight, 4),
+                "last_price": round(last_price, 4),
+                "implied_notional": round(implied_notional, 2),
+                "implied_units": round(implied_units, 4),
+                "predicted_return": round(weight.get("forecast_return", 0.0) * (0.8 + holding_weight), 4),
+                "rebalance_action": trade.get("action", "Hold"),
+            }
+        )
+
+    return {
+        "asset": name,
+        "summary": {
+            "current_weight": weight.get("current_weight", 0.0),
+            "target_weight": weight.get("target_weight", 0.0),
+            "optimized_target_weight": weight.get("optimized_target_weight", 0.0),
+            "forecast_return": weight.get("forecast_return", 0.0),
+            "forecast_confidence": weight.get("forecast_confidence", 0.0),
+            "drift": weight.get("drift", 0.0),
+            "trade_action": trade.get("action", "Hold"),
+            "trade_value": trade.get("trade_value", 0.0),
+            "trade_units": trade.get("trade_units", 0.0),
+            "estimated_cost": trade.get("estimated_cost", 0.0),
+        },
+        "holdings": enriched_holdings,
+    }
+
+
 def calculate_risk_metrics(portfolio_returns: list[float], risk_free_rate: float = 0.0) -> dict[str, float]:
     if not portfolio_returns:
         return {
@@ -239,6 +303,7 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
     forecast_map = {item["asset"]: item for item in house_view["asset_forecasts"]}
 
     weights, trades, market_returns = [], [], []
+    drilldown = {}
     gross_turnover = 0.0
     total_cost = 0.0
 
@@ -290,6 +355,7 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
             }
         )
 
+        drilldown[name] = _build_asset_drilldown(asset, weights[-1], trades[-1], portfolio_value)
         market_returns.append(_safe_float(asset.get("market_return", 0.0), 0.0))
 
     portfolio_return = sum(w * r for w, r in zip(current_weights, market_returns))
@@ -308,6 +374,7 @@ def generate_rebalance_plan(payload: dict[str, Any]) -> dict[str, Any]:
         "house_view": house_view,
         "monte_carlo": monte_carlo,
         "multi_agent_blueprint": multi_agent_blueprint(),
+        "asset_drilldown": drilldown,
         "metadata": _response_metadata(),
     }
 

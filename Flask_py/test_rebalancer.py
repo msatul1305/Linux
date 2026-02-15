@@ -40,6 +40,8 @@ class RebalancerTests(unittest.TestCase):
         self.assertIn("estimated_cost", plan["trades"][0])
         self.assertIn("estimated_total_transaction_cost", plan)
         self.assertIn("metadata", plan)
+        self.assertIn("asset_drilldown", plan)
+        self.assertGreaterEqual(len(plan["asset_drilldown"]), 1)
 
     def test_risk_metrics_extended(self):
         metrics = calculate_risk_metrics([0.01, -0.02, 0.015, -0.005], 0.02)
@@ -52,6 +54,7 @@ class RebalancerTests(unittest.TestCase):
         data = response.get_json()
         self.assertIn("house_view", data)
         self.assertIn("multi_agent_blueprint", data)
+        self.assertIn("asset_drilldown", data)
 
     def test_validation_error(self):
         response = self.client.post(

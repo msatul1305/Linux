@@ -162,3 +162,10 @@ th { background: rgba(30,41,59,.75); }
 .timeline-card { border:1px solid var(--line); background: rgba(2,6,23,.55); border-radius:10px; padding:8px; }
 .timeline-head { font-size:12px; color:#a5b4fc; font-weight:700; }
 .timeline-obj { font-size:12px; color:#cbd5e1; margin-top:4px; }
+
+
+.drilldown-head { display:grid; gap:4px; margin-bottom:8px; }
+.drilldown-head strong { font-size:14px; }
+.drilldown-head span { color: var(--muted); font-size:12px; }
+#drilldownTable tbody tr { transition: background .2s ease; }
+#drilldownTable tbody tr:hover { background: rgba(56,189,248,.08); }
