@@ -51,6 +51,18 @@ Recommended production upgrades:
 
 Flow: `Supervisor -> Data -> Forecast -> Risk -> Optimizer -> Execution -> Supervisor Approval`
 
+
+### Multi-Agent Tandem Demo (How agents work together)
+The new tandem simulation endpoint demonstrates all agents in sequence on the same payload:
+1. **Market Data Agent** ingests and validates assets.
+2. **Forecast Agent** generates forecast + confidence snapshot.
+3. **Risk Agent** computes risk metrics and risk flags.
+4. **Rebalance Optimizer Agent** produces constrained trade plan.
+5. **Execution Agent** builds staged execution queue.
+6. **Supervisor Agent** approves/escalates with final narrative.
+
+This gives a transparent, step-by-step handoff trace for demos and architecture reviews.
+
 Governance standards included:
 - model versioning / challengers / backtesting
 - pre-trade risk controls
@@ -144,6 +156,9 @@ Returns curated market scenarios for one-click dashboard preview/demo mode.
 
 ### `POST /api/ai-copilot/insights`
 Returns an executive-ready AI copilot brief with top actions, risk flags, execution playbook, and cutting-edge model stack recommendations.
+
+### `POST /api/multi-agent/tandem-demo`
+Returns a full timeline showing how each agent works in tandem and what output each handoff produces.
 
 ### `GET /api/multi-agent-blueprint`
 Returns deployable multi-agent orchestration + governance template.

@@ -68,6 +68,13 @@ class RebalancerTests(unittest.TestCase):
         self.assertIn("narrative", data)
         self.assertIn("cutting_edge_model_stack", data)
 
+    def test_multi_agent_tandem_demo_endpoint(self):
+        response = self.client.post("/api/multi-agent/tandem-demo", json=self._sample_payload())
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertIn("timeline", data)
+        self.assertGreaterEqual(len(data["timeline"]), 6)
+
     def test_preview_scenarios_endpoint(self):
         response = self.client.get("/api/preview-scenarios")
         self.assertEqual(response.status_code, 200)

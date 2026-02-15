@@ -407,6 +407,81 @@ def generate_ai_copilot_insights(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def simulate_multi_agent_tandem(payload: dict[str, Any]) -> dict[str, Any]:
+    plan = generate_rebalance_plan(payload)
+    copilot = generate_ai_copilot_insights(payload)
+
+    ingest_assets = [w.get("asset") for w in plan.get("weights", [])]
+    forecast_snapshot = [{
+        "asset": w.get("asset"),
+        "forecast_return": w.get("forecast_return"),
+        "confidence": w.get("forecast_confidence"),
+    } for w in plan.get("weights", [])]
+
+    prioritized = sorted(plan.get("trades", []), key=lambda t: t.get("trade_value", 0), reverse=True)[:3]
+    execution_queue = [
+        {
+            "asset": t.get("asset"),
+            "action": t.get("action"),
+            "notional": t.get("trade_value"),
+            "estimated_cost": t.get("estimated_cost"),
+        }
+        for t in prioritized
+    ]
+
+    timeline = [
+        {
+            "step": 1,
+            "agent": "Market Data Agent",
+            "objective": "Ingest portfolio state, normalize schema, validate feeds",
+            "output": {"assets_loaded": len(ingest_assets), "asset_list": ingest_assets},
+        },
+        {
+            "step": 2,
+            "agent": "Forecast Agent",
+            "objective": "Generate confidence-weighted alpha signals",
+            "output": {"forecast_snapshot": forecast_snapshot[:5]},
+        },
+        {
+            "step": 3,
+            "agent": "Risk Agent",
+            "objective": "Run risk checks and policy validation",
+            "output": {"risk_metrics": plan.get("risk_metrics", {}), "risk_flags": copilot.get("risk_flags", [])},
+        },
+        {
+            "step": 4,
+            "agent": "Rebalance Optimizer Agent",
+            "objective": "Construct constrained target weights and trades",
+            "output": {
+                "turnover_used": plan.get("turnover_used"),
+                "estimated_total_transaction_cost": plan.get("estimated_total_transaction_cost"),
+                "top_rebalance_actions": copilot.get("top_actions", []),
+            },
+        },
+        {
+            "step": 5,
+            "agent": "Execution Agent",
+            "objective": "Prepare staged execution queue",
+            "output": {"execution_queue": execution_queue, "playbook": copilot.get("execution_playbook", [])},
+        },
+        {
+            "step": 6,
+            "agent": "Supervisor Agent",
+            "objective": "Approve and publish coordinated decision",
+            "output": {
+                "final_narrative": copilot.get("narrative"),
+                "decision": "APPROVED" if len(copilot.get("risk_flags", [])) <= 2 else "REVIEW_REQUIRED",
+                "metadata": _response_metadata(),
+            },
+        },
+    ]
+
+    return {
+        "orchestration": multi_agent_blueprint().get("orchestration"),
+        "timeline": timeline,
+    }
+
+
 def multi_agent_blueprint() -> dict[str, Any]:
     return {
         "agents": [
@@ -459,6 +534,14 @@ def ai_copilot_insights_endpoint():
     except ValidationError as exc:
         return jsonify({"error": str(exc), "metadata": _response_metadata()}), 400
 
+
+@app.route("/api/multi-agent/tandem-demo", methods=["POST"])
+def multi_agent_tandem_demo_endpoint():
+    data = request.json or {}
+    try:
+        return jsonify(simulate_multi_agent_tandem(data))
+    except ValidationError as exc:
+        return jsonify({"error": str(exc), "metadata": _response_metadata()}), 400
 
 @app.route("/api/multi-agent-blueprint", methods=["GET"])
 def multi_agent_blueprint_endpoint():

@@ -38,6 +38,7 @@
         <button id="addRowBtn" type="button">Add Asset</button>
         <button id="runBtn" type="button" class="primary">Run AI Rebalance</button>
         <button id="copilotBtn" type="button" class="secondary">Generate Copilot Brief</button>
+        <button id="tandemBtn" type="button">Run Tandem Demo</button>
       </div>
       <p id="scenarioDescription" class="scenario-note"></p>
     </section>
@@ -83,6 +84,12 @@
       <article class="glass panel">
         <h2>🤖 AI Copilot Brief</h2>
         <pre id="copilotPreview" class="json-box">Generate copilot brief for executive summary...</pre>
+      </article>
+
+
+      <article class="glass panel">
+        <h2>🛰️ Multi-Agent Tandem Demo</h2>
+        <pre id="tandemPreview" class="json-box">Run tandem demo to see every agent handoff in sequence...</pre>
       </article>
 
       <article class="glass panel full">
@@ -230,20 +237,30 @@
       document.getElementById('copilotPreview').textContent = JSON.stringify(data, null, 2);
     }
 
+    async function runTandemDemo() {
+      const response = await fetch('/api/multi-agent/tandem-demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload()) });
+      const data = await response.json();
+      document.getElementById('tandemPreview').textContent = JSON.stringify(data, null, 2);
+    }
+
+
     document.getElementById('addRowBtn').addEventListener('click', () => addRow());
     document.getElementById('runBtn').addEventListener('click', runRebalance);
     document.getElementById('copilotBtn').addEventListener('click', runCopilotBrief);
+    document.getElementById('tandemBtn').addEventListener('click', runTandemDemo);
     document.getElementById('loadScenarioBtn').addEventListener('click', async () => {
       const idx = parseInt(document.getElementById('scenarioSelect').value || '0', 10);
       applyScenario(idx);
       await runRebalance();
       await runCopilotBrief();
+      await runTandemDemo();
     });
 
     defaultRows.forEach(addRow);
     loadScenarios().then(async () => {
       await runRebalance();
       await runCopilotBrief();
+      await runTandemDemo();
     });
   </script>
 </body>
