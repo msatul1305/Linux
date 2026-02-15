@@ -57,13 +57,39 @@ Governance standards included:
 - post-trade TCA surveillance
 - audit trail requirements
 
-## Run
+## Local Run
 ```bash
 cd Flask_py
 pip install -r requirements.txt
 python app.py
 ```
 Open http://127.0.0.1:5000
+
+## Host & Deploy (Production-Style)
+
+### Option A: Docker (recommended)
+```bash
+cd Flask_py
+docker build -t smart-portfolio-rebalancer .
+docker run -p 8000:8000 -e PORT=8000 -e HOST=0.0.0.0 smart-portfolio-rebalancer
+```
+Open http://localhost:8000
+
+### Option B: Docker Compose
+```bash
+cd Flask_py
+docker compose up --build
+```
+
+### Option C: PaaS (Render / Railway / Fly.io / Heroku-like)
+- App entrypoint is production-ready via `Procfile` + `wsgi.py`.
+- Start command:
+```bash
+gunicorn --workers 2 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT wsgi:app
+```
+- Ensure environment variables:
+  - `PORT` (provided by platform)
+  - `HOST=0.0.0.0`
 
 ## API
 ### `POST /api/rebalance`
@@ -102,4 +128,5 @@ Returns deployable multi-agent orchestration + governance template.
 ```bash
 cd Flask_py
 python -m unittest test_rebalancer.py
+python -m py_compile app.py test_rebalancer.py wsgi.py
 ```

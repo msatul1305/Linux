@@ -1,5 +1,6 @@
 import unittest
 
+import wsgi
 from app import app, calculate_risk_metrics, generate_rebalance_plan, multi_agent_blueprint
 
 
@@ -79,6 +80,9 @@ class RebalancerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         data = response.get_json()
         self.assertEqual(data["status"], "ok")
+
+    def test_wsgi_exposes_app(self):
+        self.assertIsNotNone(wsgi.app)
 
     def test_multi_agent_blueprint_shape(self):
         blueprint = multi_agent_blueprint()

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import random
 from datetime import datetime, timezone
 from math import sqrt
@@ -472,4 +473,6 @@ def risk_mitigation_endpoint():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    host = os.getenv("HOST", "0.0.0.0")
+    port = int(os.getenv("PORT", "5000"))
+    app.run(host=host, port=port, debug=False)

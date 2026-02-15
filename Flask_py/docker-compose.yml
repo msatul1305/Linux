@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  rebalancer:
+    build: .
+    container_name: smart-portfolio-rebalancer
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - HOST=0.0.0.0
+    restart: unless-stopped
