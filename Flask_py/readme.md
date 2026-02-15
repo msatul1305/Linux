@@ -53,6 +53,17 @@ Flow: `Supervisor -> Data -> Forecast -> Risk -> Optimizer -> Execution -> Super
 
 
 ### Multi-Agent Tandem Demo (How agents work together)
+
+### UI Architecture View + Tandem Demo Preview
+The dashboard now includes:
+- visual multi-agent architecture cards (all agents + roles)
+- orchestration flow banner
+- tandem handoff timeline cards (step-by-step)
+- raw tandem JSON preview for auditability
+- scenario demo cards for one-click showcase runs
+
+This makes demos immediately understandable for non-technical stakeholders while preserving technical detail for engineers.
+
 The new tandem simulation endpoint demonstrates all agents in sequence on the same payload:
 1. **Market Data Agent** ingests and validates assets.
 2. **Forecast Agent** generates forecast + confidence snapshot.
