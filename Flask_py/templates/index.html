@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Portfolio Copilot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="bg-orb orb-1"></div><div class="bg-orb orb-2"></div><div class="bg-orb orb-3"></div>
+
+  <main class="app-shell">
+    <header class="hero glass">
+      <div>
+        <p class="eyebrow">CUTTING EDGE • MULTI AGENT • AI NATIVE</p>
+        <h1>⚡ Quantum Portfolio Copilot</h1>
+        <p class="subtitle">A cinematic rebalancing cockpit with explainable AI, full multi-agent architecture, and live tandem demos.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span>Mode</span><strong>LIVE PREVIEW</strong></div>
+        <div class="stat"><span>Engine</span><strong>Copilot vNext</strong></div>
+        <div class="stat"><span>Latency</span><strong id="latency">-- ms</strong></div>
+      </div>
+    </header>
+
+    <section class="control-panel glass">
+      <div class="control-grid">
+        <label>Portfolio Value ($)<input id="portfolioValue" type="number" value="100000" min="1000" step="1000"></label>
+        <label>Drift Threshold (%)<input id="driftThreshold" type="number" value="2" min="0" step="0.1"></label>
+        <label>Turnover Limit (%)<input id="turnoverLimit" type="number" value="20" min="1" step="1"></label>
+        <label>Tx Cost (bps)<input id="txCost" type="number" value="10" min="0" step="1"></label>
+        <label>Scenario<select id="scenarioSelect"></select></label>
+      </div>
+      <div class="btn-row">
+        <button id="loadScenarioBtn" type="button">Load Scenario</button>
+        <button id="addRowBtn" type="button">Add Asset</button>
+        <button id="runBtn" type="button" class="primary">Run AI Rebalance</button>
+        <button id="copilotBtn" type="button" class="secondary">Generate Copilot Brief</button>
+        <button id="tandemBtn" type="button">Run Tandem Demo</button>
+      </div>
+      <p id="scenarioDescription" class="scenario-note"></p>
+      <div id="demoCards" class="demo-cards"></div>
+    </section>
+
+    <section class="kpi-grid">
+      <article class="kpi glass"><span>Turnover Used</span><strong id="turnoverUsed">-</strong></article>
+      <article class="kpi glass"><span>Total Tx Cost</span><strong id="txCostTotal">-</strong></article>
+      <article class="kpi glass"><span>Volatility</span><strong id="volatility">-</strong></article>
+      <article class="kpi glass"><span>Sharpe</span><strong id="sharpe">-</strong></article>
+      <article class="kpi glass"><span>Max Drawdown</span><strong id="drawdown">-</strong></article>
+      <article class="kpi glass"><span>MC Loss Prob.</span><strong id="mcLoss">-</strong></article>
+    </section>
+
+    <section class="layout-grid">
+      <article class="glass panel"><h2>🎯 Portfolio Field Editor</h2><table id="assetTable"><thead><tr><th>Asset</th><th>Target %</th><th>Current %</th><th>Return %</th><th>Price</th><th>Action</th></tr></thead><tbody></tbody></table></article>
+
+      <article class="glass panel"><h2>🧠 Rebalance Intelligence</h2><table id="resultTable"><thead><tr><th>Asset</th><th>Current %</th><th>Target %</th><th>AI %</th><th>Drift</th><th>Forecast</th><th>Action</th><th>Trade $</th><th>Cost</th></tr></thead><tbody></tbody></table></article>
+
+      <article class="glass panel"><h2>🌌 Allocation Ring</h2><div class="ring-wrap"><div class="ring" id="allocationRing"></div><ul id="allocationLegend" class="legend"></ul></div></article>
+
+      <article class="glass panel">
+        <h2>🔎 Asset Drilldown</h2>
+        <div class="drilldown-head">
+          <strong id="drilldownAssetName">Select an asset</strong>
+          <span id="drilldownSummary">Click any asset row to view holdings, prediction, and rebalancing details.</span>
+        </div>
+        <table id="drilldownTable">
+          <thead><tr><th>Holding</th><th>Weight</th><th>Last Price</th><th>Pred Return</th><th>Implied Units</th><th>Rebalance</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </article>
+
+
+      <article class="glass panel"><h2>🏗️ Multi-Agent Architecture</h2><div id="agentArchitecture" class="architecture-grid"></div><div id="agentFlow" class="flow"></div></article>
+
+      <article class="glass panel"><h2>🤖 AI Copilot Brief</h2><pre id="copilotPreview" class="json-box">Generate copilot brief for executive summary...</pre></article>
+
+      <article class="glass panel">
+        <h2>🏆 Winning Idea Scorecard</h2>
+        <ul class="winning-list">
+          <li><strong>Business Impact:</strong> Converts portfolio drift into precise, actionable trades with cost controls.</li>
+          <li><strong>Innovation:</strong> Multi-agent AI + explainable copilot + holding-level drilldown in one product.</li>
+          <li><strong>Trust & Risk:</strong> VaR/CVaR/Drawdown/Monte Carlo + policy-aligned execution trail.</li>
+          <li><strong>Demo WOW:</strong> One-click scenarios, tandem timeline, architecture map, and live payload transparency.</li>
+          <li><strong>Deployability:</strong> Docker + GitHub Actions + GitLab CI preview-ready from day one.</li>
+        </ul>
+      </article>
+
+
+      <article class="glass panel"><h2>🛰️ Tandem Handoff Timeline</h2><div id="tandemTimelineCards" class="timeline-cards"></div><pre id="tandemPreview" class="json-box">Run tandem demo to see every agent handoff in sequence...</pre></article>
+
+      <article class="glass panel full"><h2>📦 Live API Payload Preview</h2><pre id="apiPreview" class="json-box">Run a scenario to preview the API response...</pre></article>
+    </section>
+  </main>
+
+  <script>
+    const defaultRows = [
+      { asset: 'Mutual Fund', target_weight: 25, current_weight: 23, market_return: 1.5, price: 42 },
+      { asset: 'ETF', target_weight: 20, current_weight: 24, market_return: 2.2, price: 95 },
+      { asset: 'Stocks', target_weight: 20, current_weight: 18, market_return: -0.8, price: 130 },
+      { asset: 'Commodity', target_weight: 10, current_weight: 12, market_return: 1.2, price: 77 },
+      { asset: 'FX', target_weight: 10, current_weight: 8, market_return: 0.4, price: 1.2 },
+      { asset: 'Crypto', target_weight: 15, current_weight: 15, market_return: 3.1, price: 26000 }
+    ];
+
+    let scenarioData = [];
+    let latestPlan = null;
+    let selectedAsset = null;
+    const tbody = document.querySelector('#assetTable tbody');
+    const resultBody = document.querySelector('#resultTable tbody');
+
+    function clearRows() { tbody.innerHTML = ''; }
+    function addRow(data = { asset: '', target_weight: 0, current_weight: 0, market_return: 0, price: 100 }) {
+      const row = document.createElement('tr');
+      row.innerHTML = `<td><input type="text" value="${data.asset}"></td><td><input type="number" value="${data.target_weight}" step="0.1"></td><td><input type="number" value="${data.current_weight}" step="0.1"></td><td><input type="number" value="${data.market_return}" step="0.1"></td><td><input type="number" value="${data.price}" step="0.01"></td><td><button type="button" class="danger">Remove</button></td>`;
+      row.querySelector('button').addEventListener('click', () => row.remove());
+      tbody.appendChild(row);
+    }
+
+    function collectPayload() {
+      const assets = [...tbody.querySelectorAll('tr')].map((row) => {
+        const i = row.querySelectorAll('input');
+        const m = parseFloat(i[3].value || 0) / 100;
+        return { asset: i[0].value || 'Unknown Asset', target_weight: parseFloat(i[1].value || 0) / 100, current_weight: parseFloat(i[2].value || 0) / 100, market_return: m, price: parseFloat(i[4].value || 100), historical_returns: [m*0.2,m*0.5,-m*0.4,m*0.8,m] };
+      });
+      return { portfolio_value: parseFloat(document.getElementById('portfolioValue').value || 100000), drift_threshold: parseFloat(document.getElementById('driftThreshold').value || 2) / 100, turnover_limit: parseFloat(document.getElementById('turnoverLimit').value || 20) / 100, transaction_cost_bps: parseFloat(document.getElementById('txCost').value || 10), assets };
+    }
+
+    function renderRing(weights = []) {
+      const ring = document.getElementById('allocationRing');
+      const legend = document.getElementById('allocationLegend');
+      legend.innerHTML = '';
+      if (!weights.length) { ring.style.background = 'conic-gradient(#334155 0 360deg)'; return; }
+      const palette = ['#38bdf8', '#a78bfa', '#34d399', '#f59e0b', '#f472b6', '#f97316', '#60a5fa'];
+      let start = 0;
+      const slices = [];
+      weights.forEach((w, idx) => {
+        const pct = (w.current_weight || 0) * 100;
+        const end = start + pct * 3.6;
+        const color = palette[idx % palette.length];
+        slices.push(`${color} ${start}deg ${end}deg`);
+        start = end;
+        const li = document.createElement('li');
+        li.innerHTML = `<span style="background:${color}"></span>${w.asset} ${pct.toFixed(1)}%`;
+        legend.appendChild(li);
+      });
+      ring.style.background = `conic-gradient(${slices.join(',')})`;
+    }
+
+    function renderDemoCards() {
+      const wrap = document.getElementById('demoCards');
+      wrap.innerHTML = '';
+      scenarioData.forEach((scenario, idx) => {
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'demo-card';
+        card.innerHTML = `<strong>${scenario.name}</strong><span>${scenario.description}</span>`;
+        card.addEventListener('click', async () => {
+          applyScenario(idx);
+          await runRebalance();
+          await runCopilotBrief();
+          await runTandemDemo();
+        });
+        wrap.appendChild(card);
+      });
+    }
+
+    function renderArchitecture(blueprint) {
+      const grid = document.getElementById('agentArchitecture');
+      grid.innerHTML = '';
+      (blueprint.agents || []).forEach((agent, idx) => {
+        const item = document.createElement('div');
+        item.className = 'agent-card';
+        item.innerHTML = `<div class="agent-step">${idx + 1}</div><h3>${agent.name}</h3><p>${agent.role}</p>`;
+        grid.appendChild(item);
+      });
+      document.getElementById('agentFlow').textContent = `Flow: ${blueprint.orchestration || '-'}`;
+    }
+
+    function renderTimelineCards(timeline = []) {
+      const wrap = document.getElementById('tandemTimelineCards');
+      wrap.innerHTML = '';
+      timeline.forEach((node) => {
+        const card = document.createElement('div');
+        card.className = 'timeline-card';
+        card.innerHTML = `<div class="timeline-head">Step ${node.step} • ${node.agent}</div><div class="timeline-obj">${node.objective}</div>`;
+        wrap.appendChild(card);
+      });
+    }
+
+
+
+    function renderDrilldown(assetName = null) {
+      const head = document.getElementById('drilldownAssetName');
+      const summary = document.getElementById('drilldownSummary');
+      const body = document.querySelector('#drilldownTable tbody');
+      body.innerHTML = '';
+      if (!latestPlan || !latestPlan.asset_drilldown) {
+        head.textContent = 'Select an asset';
+        summary.textContent = 'Run rebalance to view holdings and predictions.';
+        return;
+      }
+
+      const keys = Object.keys(latestPlan.asset_drilldown || {});
+      const chosen = assetName && latestPlan.asset_drilldown[assetName] ? assetName : (keys[0] || null);
+      if (!chosen) {
+        head.textContent = 'No asset details available';
+        summary.textContent = '-';
+        return;
+      }
+
+      selectedAsset = chosen;
+      const details = latestPlan.asset_drilldown[chosen];
+      head.textContent = `${chosen} Holdings`;
+      const sm = details.summary || {};
+      summary.textContent = `Action: ${sm.trade_action || 'Hold'} • Forecast: ${((sm.forecast_return || 0) * 100).toFixed(2)}% • Drift: ${((sm.drift || 0) * 100).toFixed(2)}% • Trade: $${(sm.trade_value || 0).toLocaleString()}`;
+
+      (details.holdings || []).forEach((h) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${h.holding}</td><td>${((h.holding_weight || 0) * 100).toFixed(2)}%</td><td>${h.last_price}</td><td>${((h.predicted_return || 0) * 100).toFixed(2)}%</td><td>${h.implied_units.toLocaleString()}</td><td>${h.rebalance_action}</td>`;
+        body.appendChild(row);
+      });
+    }
+
+    async function loadArchitecture() {
+      const response = await fetch('/api/multi-agent-blueprint');
+      const data = await response.json();
+      renderArchitecture(data);
+    }
+
+    async function loadScenarios() {
+      const response = await fetch('/api/preview-scenarios');
+      const payload = await response.json();
+      scenarioData = payload.scenarios || [];
+      const select = document.getElementById('scenarioSelect');
+      select.innerHTML = '';
+      scenarioData.forEach((scenario, idx) => {
+        const opt = document.createElement('option');
+        opt.value = String(idx);
+        opt.textContent = scenario.name;
+        select.appendChild(opt);
+      });
+      renderDemoCards();
+      if (scenarioData.length > 0) applyScenario(0);
+    }
+
+    function applyScenario(index) {
+      const scenario = scenarioData[index];
+      if (!scenario) return;
+      document.getElementById('portfolioValue').value = scenario.portfolio_value;
+      document.getElementById('driftThreshold').value = scenario.drift_threshold * 100;
+      document.getElementById('turnoverLimit').value = scenario.turnover_limit * 100;
+      document.getElementById('txCost').value = scenario.transaction_cost_bps;
+      document.getElementById('scenarioDescription').textContent = scenario.description;
+      clearRows();
+      scenario.assets.forEach((a) => addRow({ asset: a.asset, target_weight: a.target_weight * 100, current_weight: a.current_weight * 100, market_return: a.market_return * 100, price: a.price }));
+    }
+
+    function badge(action) {
+      const c = action === 'Buy' ? 'buy' : action === 'Sell' ? 'sell' : 'hold';
+      return `<span class="pill ${c}">${action}</span>`;
+    }
+
+    async function runRebalance() {
+      const t0 = performance.now();
+      const response = await fetch('/api/rebalance', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload()) });
+      const data = await response.json();
+      document.getElementById('latency').textContent = `${Math.round(performance.now()-t0)} ms`;
+      document.getElementById('apiPreview').textContent = JSON.stringify(data, null, 2);
+      latestPlan = data;
+      resultBody.innerHTML = '';
+      (data.weights || []).forEach((weight, idx) => {
+        const trade = data.trades[idx];
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${weight.asset}</td><td>${(weight.current_weight*100).toFixed(2)}%</td><td>${(weight.target_weight*100).toFixed(2)}%</td><td>${(weight.optimized_target_weight*100).toFixed(2)}%</td><td>${(weight.drift*100).toFixed(2)}%</td><td>${(weight.forecast_return*100).toFixed(2)}%</td><td>${badge(trade.action)}</td><td>${trade.trade_value.toLocaleString()}</td><td>${trade.estimated_cost.toLocaleString()}</td>`;
+        row.style.cursor = 'pointer';
+        row.addEventListener('click', () => renderDrilldown(weight.asset));
+        resultBody.appendChild(row);
+      });
+      renderRing(data.weights || []);
+      document.getElementById('turnoverUsed').textContent = `${((data.turnover_used || 0) * 100).toFixed(2)}%`;
+      document.getElementById('txCostTotal').textContent = `$${(data.estimated_total_transaction_cost || 0).toFixed(2)}`;
+      document.getElementById('volatility').textContent = `${((data.risk_metrics?.volatility || 0) * 100).toFixed(2)}%`;
+      document.getElementById('sharpe').textContent = (data.risk_metrics?.sharpe || 0).toFixed(2);
+      document.getElementById('drawdown').textContent = `${((data.risk_metrics?.max_drawdown || 0) * 100).toFixed(2)}%`;
+      document.getElementById('mcLoss').textContent = `${((data.monte_carlo?.probability_of_loss || 0) * 100).toFixed(2)}%`;
+      renderDrilldown(selectedAsset);
+    }
+
+    async function runCopilotBrief() {
+      const response = await fetch('/api/ai-copilot/insights', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload()) });
+      const data = await response.json();
+      document.getElementById('copilotPreview').textContent = JSON.stringify(data, null, 2);
+    }
+
+    async function runTandemDemo() {
+      const response = await fetch('/api/multi-agent/tandem-demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload()) });
+      const data = await response.json();
+      document.getElementById('tandemPreview').textContent = JSON.stringify(data, null, 2);
+      renderTimelineCards(data.timeline || []);
+    }
+
+    document.getElementById('addRowBtn').addEventListener('click', () => addRow());
+    document.getElementById('runBtn').addEventListener('click', runRebalance);
+    document.getElementById('copilotBtn').addEventListener('click', runCopilotBrief);
+    document.getElementById('tandemBtn').addEventListener('click', runTandemDemo);
+    document.getElementById('loadScenarioBtn').addEventListener('click', async () => {
+      const idx = parseInt(document.getElementById('scenarioSelect').value || '0', 10);
+      applyScenario(idx);
+      await runRebalance();
+      await runCopilotBrief();
+      await runTandemDemo();
+    });
+
+    defaultRows.forEach(addRow);
+    Promise.all([loadScenarios(), loadArchitecture()]).then(async () => {
+      await runRebalance();
+      await runCopilotBrief();
+      await runTandemDemo();
+    });
+  </script>
+</body>
+</html>
