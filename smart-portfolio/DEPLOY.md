@@ -41,7 +41,24 @@ If you prefer to stay purely on GitHub.
     -   Source: `GitHub Actions`.
     -   Use the "Static HTML" workflow.
 
-## Option 3: Manual / Local Presentation
+## Option 3: Docker (Containerized)
+Ideal for deploying to AWS ECS, DigitalOcean, Azure, or running locally in an isolated environment.
+
+1.  **Build and Run**:
+    Run the following command in the root of your project:
+    ```bash
+    docker-compose up --build
+    ```
+
+2.  **Access the App**:
+    Open [http://localhost:8080](http://localhost:8080) to see your app running in a container.
+
+3.  **Deployment**:
+    - Push your code (including `Dockerfile` and `docker-compose.yml`) to your repo.
+    - Connect your repo to your cloud provider's container service.
+    - Alternatively, pull the code on a VPS and run `docker-compose up -d`.
+
+## Option 4: Manual / Local Presentation
 If internet fails, you can run the localized production build:
 
 1.  Run `npm run build`.
