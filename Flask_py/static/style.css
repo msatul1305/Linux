@@ -169,3 +169,8 @@ th { background: rgba(30,41,59,.75); }
 .drilldown-head span { color: var(--muted); font-size:12px; }
 #drilldownTable tbody tr { transition: background .2s ease; }
 #drilldownTable tbody tr:hover { background: rgba(56,189,248,.08); }
+
+
+.winning-list { margin:0; padding-left:18px; display:grid; gap:8px; color:#cbd5e1; }
+.winning-list li { line-height:1.4; font-size:13px; }
+.winning-list strong { color:#e2e8f0; }

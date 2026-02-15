@@ -81,6 +81,15 @@ Governance standards included:
 - post-trade TCA surveillance
 - audit trail requirements
 
+
+## Why this is a winning hackathon idea
+1. **Real pain, real buyers:** Portfolio drift and risk-limit breaches are daily institutional problems.
+2. **Decision speed:** Converts market movement to executable buy/sell guidance in seconds.
+3. **Differentiated AI:** Combines forecasting, explainability, and a multi-agent orchestration model.
+4. **Trust layer:** Risk analytics + execution cost + tandem timeline create auditability, not black-box outputs.
+5. **Demo power:** Interactive architecture, scenario cards, and holding-level drilldown make judges instantly understand value.
+6. **Production path:** Deployable on Docker/GitHub/GitLab with minimal friction.
+
 ## Local Run
 ```bash
 cd Flask_py
