@@ -129,6 +129,25 @@ Troubleshooting (no live preview deployment):
 - Ensure preview host has Docker + Traefik and can pull images from GHCR.
 - CI still runs via `ci.yml` even if deploy secrets are not present.
 
+
+### Option E: GitLab CI Preview Deploy (also supported)
+GitLab support is also included via root `.gitlab-ci.yml`.
+
+Required GitLab CI variables:
+- `PREVIEW_HOST`
+- `PREVIEW_USER`
+- `PREVIEW_SSH_KEY`
+- `PREVIEW_BASE_URL`
+
+Preview URL pattern:
+```text
+https://<CI_ENVIRONMENT_SLUG>.<PREVIEW_BASE_URL>
+```
+
+Notes:
+- `review_status` always registers deployment records so GitLab does not show “No deployments”.
+- `review_app` deploys live preview when secrets are configured.
+
 ## API
 ### `POST /api/rebalance`
 ```json
