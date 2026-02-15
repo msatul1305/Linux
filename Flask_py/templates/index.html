@@ -18,6 +18,7 @@
       <label>Tx Cost (bps)<input id="txCost" type="number" value="10" min="0" step="1"></label>
       <button id="addRowBtn" type="button">Add Asset</button>
       <button id="runBtn" type="button">Run AI Rebalance</button>
+      <button id="copilotBtn" type="button">Generate AI Copilot Brief</button>
     </section>
 
     <section class="preview-strip">
@@ -80,6 +81,11 @@
         <ol id="agentList"></ol>
         <p><strong>Flow:</strong> <span id="agentFlow">-</span></p>
       </div>
+    </section>
+
+    <section>
+      <h2>AI Copilot Briefing</h2>
+      <pre id="copilotPreview" class="api-preview">Generate copilot brief for executive summary...</pre>
     </section>
 
     <section>
@@ -236,8 +242,18 @@
       document.getElementById('agentFlow').textContent = data.multi_agent_blueprint?.orchestration || '-';
     }
 
+    async function runCopilotBrief() {
+      const response = await fetch('/api/ai-copilot/insights', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(collectPayload())
+      });
+      const data = await response.json();
+      document.getElementById('copilotPreview').textContent = JSON.stringify(data, null, 2);
+    }
+
+
     document.getElementById('addRowBtn').addEventListener('click', () => addRow());
     document.getElementById('runBtn').addEventListener('click', runRebalance);
+    document.getElementById('copilotBtn').addEventListener('click', runCopilotBrief);
     document.getElementById('loadScenarioBtn').addEventListener('click', () => {
       const idx = parseInt(document.getElementById('scenarioSelect').value || '0', 10);
       applyScenario(idx);
@@ -245,7 +261,10 @@
     });
 
     defaultRows.forEach(addRow);
-    loadScenarios().then(runRebalance);
+    loadScenarios().then(async () => {
+      await runRebalance();
+      await runCopilotBrief();
+    });
   </script>
 </body>
 </html>

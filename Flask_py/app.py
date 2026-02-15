@@ -350,6 +350,62 @@ def preview_scenarios() -> dict[str, Any]:
     }
 
 
+def _asset_priority_signal(weight_entry: dict[str, Any], trade_entry: dict[str, Any]) -> float:
+    return abs(weight_entry.get("drift", 0.0)) * 0.45 + abs(weight_entry.get("forecast_return", 0.0)) * 0.35 + abs(weight_entry.get("forecast_confidence", 0.0)) * 0.20
+
+
+def generate_ai_copilot_insights(payload: dict[str, Any]) -> dict[str, Any]:
+    plan = generate_rebalance_plan(payload)
+
+    ranked = []
+    for weight, trade in zip(plan.get("weights", []), plan.get("trades", [])):
+        ranked.append({
+            "asset": weight["asset"],
+            "priority_score": round(_asset_priority_signal(weight, trade), 4),
+            "action": trade.get("action", "Hold"),
+            "reason": f"Drift {weight.get('drift', 0.0):.2%}, forecast {weight.get('forecast_return', 0.0):.2%}, confidence {weight.get('forecast_confidence', 0.0):.2f}",
+        })
+
+    ranked.sort(key=lambda x: x["priority_score"], reverse=True)
+    top_actions = ranked[:3]
+
+    risk = plan.get("risk_metrics", {})
+    risk_flags = []
+    if risk.get("var_95", 0) > 0.03:
+        risk_flags.append("VaR95 elevated above 3%")
+    if risk.get("max_drawdown", 0) > 0.08:
+        risk_flags.append("Max drawdown above 8%")
+    if plan.get("turnover_used", 0) > 0.18:
+        risk_flags.append("Turnover approaching governance cap")
+    if not risk_flags:
+        risk_flags.append("Risk posture within configured guardrails")
+
+    narrative = (
+        "AI Copilot Summary: Rebalance favors assets with highest drift and strongest confidence-weighted return signal. "
+        f"Top focus assets: {', '.join([x['asset'] for x in top_actions]) if top_actions else 'None'}. "
+        f"Portfolio estimated transaction cost is ${plan.get('estimated_total_transaction_cost', 0):,.2f}."
+    )
+
+    return {
+        "narrative": narrative,
+        "top_actions": top_actions,
+        "risk_flags": risk_flags,
+        "execution_playbook": [
+            "Stage 1: Execute high-liquidity ETF/FX legs first for rapid risk normalization",
+            "Stage 2: Execute equity/commodity slices using TWAP scheduling",
+            "Stage 3: Execute crypto rebalance in smaller child orders with slippage guard",
+        ],
+        "cutting_edge_model_stack": [
+            "Temporal Fusion Transformer (multi-horizon forecasts)",
+            "N-BEATS/N-HiTS (time-series specialists)",
+            "Graph Neural Networks for cross-asset dependency modeling",
+            "RL (PPO/SAC) for transaction-cost-aware dynamic allocation",
+            "LLM Copilot layer for natural-language portfolio intelligence",
+        ],
+        "metadata": _response_metadata(),
+    }
+
+
 def multi_agent_blueprint() -> dict[str, Any]:
     return {
         "agents": [
@@ -392,6 +448,15 @@ def rebalance_endpoint():
 @app.route("/api/preview-scenarios", methods=["GET"])
 def preview_scenarios_endpoint():
     return jsonify(preview_scenarios())
+
+
+@app.route("/api/ai-copilot/insights", methods=["POST"])
+def ai_copilot_insights_endpoint():
+    data = request.json or {}
+    try:
+        return jsonify(generate_ai_copilot_insights(data))
+    except ValidationError as exc:
+        return jsonify({"error": str(exc), "metadata": _response_metadata()}), 400
 
 
 @app.route("/api/multi-agent-blueprint", methods=["GET"])

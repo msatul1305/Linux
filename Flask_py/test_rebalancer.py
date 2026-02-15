@@ -60,6 +60,13 @@ class RebalancerTests(unittest.TestCase):
         self.assertEqual(response.status_code, 400)
         self.assertIn("error", response.get_json())
 
+    def test_ai_copilot_insights_endpoint(self):
+        response = self.client.post("/api/ai-copilot/insights", json=self._sample_payload())
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
+        self.assertIn("narrative", data)
+        self.assertIn("cutting_edge_model_stack", data)
+
     def test_preview_scenarios_endpoint(self):
         response = self.client.get("/api/preview-scenarios")
         self.assertEqual(response.status_code, 200)

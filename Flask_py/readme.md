@@ -3,6 +3,7 @@
 Production-inspired Flask MVP for multi-asset portfolios (Mutual Fund, ETF, Stocks, Commodity, FX, Crypto) with institutional controls, AI forecasting, and multi-agent orchestration.
 
 ## What is now industry-standard in this version
+- **AI Copilot Briefing** endpoint with explainable top-priority actions and risk flags for PM/IC workflows.
 - **Strict API validation** with deterministic 400 error responses for bad payloads.
 - **Governance-aware outputs**: metadata timestamps/versioning and model-governance blueprint.
 - **Execution realism**: turnover limits, trade units, and estimated transaction cost (bps).
@@ -90,6 +91,9 @@ Basic health/status endpoint with metadata.
 
 ### `GET /api/preview-scenarios`
 Returns curated market scenarios for one-click dashboard preview/demo mode.
+
+### `POST /api/ai-copilot/insights`
+Returns an executive-ready AI copilot brief with top actions, risk flags, execution playbook, and cutting-edge model stack recommendations.
 
 ### `GET /api/multi-agent-blueprint`
 Returns deployable multi-agent orchestration + governance template.

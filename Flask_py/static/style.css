@@ -120,3 +120,8 @@ th {
     grid-template-columns: 1fr;
   }
 }
+
+
+button#copilotBtn {
+  background: #0f766e;
+}
