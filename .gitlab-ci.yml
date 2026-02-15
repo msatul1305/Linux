@@ -34,6 +34,21 @@ build_container:
     - docker build -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA" "$APP_DIR"
     - echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
     - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
+
+# Always creates a deployment record so GitLab won't show "No deployments".
+review_status:
+  stage: review
+  image: alpine:3.20
+  script:
+    - echo "Review environment registered for branch: $CI_COMMIT_REF_SLUG"
+    - echo "If PREVIEW_* variables are configured, review_app will publish a live URL."
+  environment:
+    name: review/$CI_COMMIT_REF_SLUG
+    url: $CI_PROJECT_URL/-/pipelines/$CI_PIPELINE_ID
+  rules:
+    - if: '$CI_COMMIT_BRANCH'
 
 review_app:
   stage: review
@@ -43,9 +58,11 @@ review_app:
   before_script:
     - apk add --no-cache openssh-client
   script:
-    - test -n "$PREVIEW_HOST"
-    - test -n "$PREVIEW_USER"
-    - test -n "$PREVIEW_SSH_KEY"
+    - |
+      if [ -z "$PREVIEW_HOST" ] || [ -z "$PREVIEW_USER" ] || [ -z "$PREVIEW_SSH_KEY" ] || [ -z "$PREVIEW_BASE_URL" ]; then
+        echo "PREVIEW_* variables are not configured. Skipping live host deploy."
+        exit 0
+      fi
     - eval "$(ssh-agent -s)"
     - echo "$PREVIEW_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh
@@ -78,9 +95,11 @@ stop_review_app:
   before_script:
     - apk add --no-cache openssh-client
   script:
-    - test -n "$PREVIEW_HOST"
-    - test -n "$PREVIEW_USER"
-    - test -n "$PREVIEW_SSH_KEY"
+    - |
+      if [ -z "$PREVIEW_HOST" ] || [ -z "$PREVIEW_USER" ] || [ -z "$PREVIEW_SSH_KEY" ]; then
+        echo "PREVIEW_HOST/PREVIEW_USER/PREVIEW_SSH_KEY missing; nothing to stop."
+        exit 0
+      fi
     - eval "$(ssh-agent -s)"
     - echo "$PREVIEW_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh && chmod 700 ~/.ssh

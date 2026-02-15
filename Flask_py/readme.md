@@ -110,6 +110,11 @@ Example:
 https://review-feature-rebalancer.preview.yourdomain.com
 ```
 
+Troubleshooting (GitLab shows "No deployments"):
+- This repo now includes `review_status` job that always registers a review environment deployment for each branch.
+- If live hosting variables are missing, GitLab still records a deployment and links to pipeline URL.
+- Configure `PREVIEW_HOST`, `PREVIEW_USER`, `PREVIEW_SSH_KEY`, and `PREVIEW_BASE_URL` to enable real public preview URLs.
+
 ## API
 ### `POST /api/rebalance`
 ```json
