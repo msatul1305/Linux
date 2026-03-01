@@ -39,7 +39,107 @@
     - Airflow
   - Data Lakes
   - Data Warehouses
-  - ETL (Extract, Transform, Load)
+    - e.g. 
+      - Hadoop Datalake on parquet files in AWS environment
+      - Amazon Redshift, 
+      - Google BigQuery, 
+      - Snowflake, 
+      - Microsoft Azure Synapse Analytics, 
+      - Teradata, Oracle Exadata, 
+      - IBM Db2 Warehouse, 
+      - SAP HANA, 
+      - Vertica, 
+      - Greenplum, 
+      - Netezza, 
+      - Cloudera Data Warehouse, 
+      - Apache Hive, 
+      - Apache Impala, 
+      - Apache Drill
+  - ETL (Extract, Transform, Load) or ELT (Extract, Load, Transform)
+    - get data from one data store to another,
+    - typically involves three main steps:
+      - Extract: 
+        - The process of retrieving data from various source systems,
+      - Transform: 
+        - The process of cleaning, 
+          - enriching, and 
+          - transforming the data into a format suitable for analysis and reporting,
+        - common transformations include: 
+          - union, 
+          - join, 
+          - filter, 
+          - sort, 
+          - aggregate, 
+          - pivot, 
+          - unpivot,  
+          - regex, and
+          - more complex transformations such as:
+            - Data Cleaning
+            - Data Enrichment
+            - Data Aggregation
+            - Data Filtering
+            - Data Sorting
+            - Data Joining
+            - Data Splitting
+            - Data Validation
+            - Data Standardization
+            - Data Normalization
+            - Data Denormalization
+            - Data Masking
+            - Data Anonymization
+            - Data Encryption
+      - Load: The process of loading the transformed data into a target data store, such as a data warehouse or data lake.
+    - ETL tools include:
+      - Informatica PowerCenter
+      - Syncsort DMX and DMX-h
+        - h=hadoop
+      - Microsoft SQL Server Integration Services (SSIS)
+      - Apache NiFi
+      - Open Source ETL Tools
+        - Talend Open Studio
+        - Pentaho Data Integration (PDI)
+        - JasperETL
+        - CloverETL
+        - Kettle
+        - Apache Camel
+      - Python or Java pipelines using libraries such as:
+        - Pandas
+        - NumPy
+        - PySpark
+        - Apache Beam
+        - Apache Airflow
+      - IBM Infosphere DataStage
+      - Oracle Data Integrator (ODI)
+      - AWS Glue
+      - Google Cloud Dataflow
+      - Apache Airflow
+      - Apache Spark
+      - Apache Flink
+      - Apache Beam
+      - Apache Kafka Connect
+      - Apache NiFi
+      - Apache Sqoop
+      - Apache Oozie
+      - Apache Pig
+      - Apache Hive
+      - Apache Impala
+      - Apache Drill
+      - Apache HBase
+      - Apache Cassandra
+      - Apache MongoDB
+      - Apache Redis
+      - Apache Neo4j
+      - Apache GraphX
+      - Apache Presto
+    - connect to source databses using:
+      - JDBC (Java Database Connectivity)
+      - ODBC (Open Database Connectivity)
+      - REST API (Application Programming Interface)
+      - File-based connectors (e.g., CSV, JSON, XML)
+      - Cloud-based connectors (e.g., AWS S3, Google Cloud Storage, Azure Blob Storage)
+      - Custom connectors developed using programming languages such as Java, Python, or Scala.
+  - OLTP (Online Transaction Processing)
+  - OLAP (Online Analytical Processing)
   - Data Science
   - Machine Learning
   - Deep Learning
@@ -53,6 +153,9 @@
       - usability, 
       - integrity, and 
       - security of the data used in an organization.
+    - Add data governance checkpoints in SDLC especially at:
+      - data transformation,
+      - reporting
     - Examples of data governance practices include:
       - Corporate Glossary
         - Terminology management system that 
@@ -67,7 +170,9 @@
         - snake_case
         - kebab-case
       - Data Classification
-      - Change Management
+      - Change Management policy for data
+        - process for managing changes to data, 
+          - including how changes are proposed, reviewed, approved, and implemented.
         - Documentation of changes made to data, 
           - including the reason for the change, 
           - the person responsible for the change, and 
@@ -97,6 +202,12 @@
         - Data Loss Prevention (DLP)
         - Compliance
           - PCI DSS
+            - Payment Card Industry Data Security Standard (PCI DSS) 
+            - set of security standards designed to ensure that all companies that 
+              - accept, 
+              - process, 
+              - store or 
+              - transmit credit card information maintain a secure environment.
           - HIPAA
           - GDPR
           - CCPA
@@ -154,6 +265,52 @@
   - Data Security
   - Data Privacy
   - Data Quality
+    - naming conventions,
+    - data validation,
+      - Data Type Validation
+      - Range Validation
+      - Format Validation
+      - Uniqueness Validation
+      - Referential Integrity Validation
+      - Consistency Validation
+      - Completeness Validation
+      - Accuracy Validation
+      - Timeliness Validation
+    - Data Lineage
+      - Process of tracking and documenting the flow of data from its origin to its destination, 
+        - including all transformations, processes, and 
+        - systems that the data passes through along the way.
+      - Data Lineage provides visibility into the data's journey, 
+        - allowing organizations to understand where the data came from,
+        - how it has been transformed, and
+        - where it is being used.
+    - data cleansing,
+    - data profiling,
+      - profile data to understand its structure,
+      - content, and
+      - quality,
+      - identify data quality issues and
+      - make informed decisions about how to improve the data.
+    - data enrichment,
+    - data scoring,
+      - score data based on predefined criteria to assess its quality, 
+        - reliability, or relevance for specific use cases.
+      - Data scoring can be used to prioritize data for analysis,
+        - identify high-quality data for decision-making, and
+        - improve the overall quality of the data used in an organization.
+    - Data statistics
+      - Descriptive Statistics
+      - Inferential Statistics
+      - Predictive Statistics
+      - Prescriptive Statistics
+      - Data Distribution
+      - Data Central Tendency
+      - Data Variability
+      - Data Correlation
+      - Data Regression Analysis
+      - Data Hypothesis Testing
+      - Data Sampling Techniques
+      - Data Visualization Techniques
   - Data Integration
   - Data Management
   - Data Architecture
@@ -494,14 +651,26 @@
       - describes the characteristics, structure, and context of data, 
       - making it easier to understand, manage, and use the data effectively. 
       - Examples of metadata include:
-        - Data Type: Describes the type of data (e.g., string, integer, date).
-        - Data Source: Indicates where the data originated from (e.g., database, file, API).
-        - Data Owner: Identifies the person or team responsible for the data.
-        - Data Steward: Identifies the person or team responsible for managing the data.
-        - Data Quality: Provides information about the quality of the data (e.g., accuracy, completeness, consistency).
-        - Data Usage: Describes how the data is used within the organization (e.g., reporting, analytics, operational processes).
-        - Data Security: Indicates the security classification of the data (e.g., confidential, public, internal).
-        - Data Retention: Specifies how long the data should be retained and when it should be archived or deleted.
+        - Data Type: Describes the type of data 
+          - (e.g., string, integer, date).
+        - Data Source: Indicates where the data originated from 
+          - (e.g., database, file, API).
+        - Data Owner: 
+          - Identifies the person or team responsible for the data.
+        - Data Steward: 
+          - Identifies the person or team responsible for managing the data.
+        - Data Quality: 
+          - Provides information about the quality of the data 
+          - (e.g., accuracy, completeness, consistency).
+        - Data Usage: 
+          - Describes how the data is used within the organization 
+          - (e.g., reporting, analytics, operational processes).
+        - Data Security: 
+          - Indicates the security classification of the data 
+          - (e.g., confidential, public, internal).
+        - Data Retention: 
+          - Specifies how long the data should be retained and 
+          - when it should be archived or deleted.
     - Big Data
     - Real-Time Data
     - Historical Data
@@ -576,8 +745,13 @@
       - Business Intelligence: Data warehouses provide a centralized repository of data that can be used for reporting, analysis, and decision-making activities.
       - Data Analytics: Data warehouses enable organizations to perform complex analytics and gain insights from their data, such as customer behavior analysis, sales forecasting, and market research.
       - Data Integration: Data warehouses can integrate data from multiple sources, providing a unified view of the organization's data assets and enabling cross-functional analysis.
-      - Data Governance: Data warehouses can support data governance initiatives by providing a centralized repository for data management, quality control, and compliance activities.
-      - Data Archiving: Data warehouses can serve as a long-term storage solution for historical data, allowing organizations to retain and access data for regulatory compliance, auditing, and historical analysis purposes.
+      - Data Governance: 
+        - Data warehouses can support data governance initiatives by providing a centralized repository 
+        - for data management, quality control, and compliance activities.
+      - Data Archiving: 
+        - Data warehouses can serve as a long-term storage solution for historical data, 
+        - allowing organizations to retain and access data for regulatory compliance, auditing, 
+        - and historical analysis purposes.
   - Data Model Terminology: Logical Model vs Physical Model
     - Entity: Table
     - Attribute: Column
@@ -597,5 +771,96 @@
     - Trigger
     - Schema
   - Database Administration
-    - DBA
-    - 
+    - DBA: Database Administrator
+    - responsibilities of DBA include:
+      - Database Installation and Configuration
+      - Database Security Management
+      - Database Backup and Recovery
+      - Database Performance Tuning
+      - Database Monitoring and Maintenance
+      - Database User Management
+      - Database Capacity Planning
+      - Database Upgrades and Patching
+      - Database Troubleshooting and Issue Resolution
+      - Database Documentation and Reporting
+      - Database Compliance and Auditing
+        - log database activities,
+          - login attempts,
+            - failed login attempts,
+          - data changes, and
+          - access to sensitive data,
+        - monitor database access and usage, and
+        - ensure compliance with regulatory requirements and organizational policies.
+        - employ principles of least privilege and 
+          - role-based access control (RBAC) to restrict access to sensitive data and database resources, 
+          - ensuring that users only have the necessary permissions to perform their job functions.
+      - Database Disaster Recovery Planning
+      - Database High Availability and Replication
+      - Database Automation and Scripting
+      - Database Change Management
+      - Database Vendor Management
+      - Database Training and Support
+      - Database Architecture and Design
+      - Database Development and Testing
+      - Database Data Modeling and Schema Design
+        - reducing joins,
+        - combining tables,
+        - denormalization,
+      - Database Query Optimization
+      - Database Indexing and Partitioning
+    - Ways to write SQL code:
+      - SQL Clients
+      - Integrated Development Environments (IDEs)
+      - Command-Line Interfaces (CLIs)
+      - Database Management Tools
+      - Data Visualization Tools
+      - Business Intelligence Tools
+      - Cloud-Based Database Services
+    - DAO: Data Access Object
+      - design pattern that provides an abstract interface to a database or other persistence mechanism. 
+      - encapsulates the logic for accessing and manipulating data, 
+      - allowing for separation of concerns and improved maintainability of the application code.
+      - typically includes methods for performing CRUD (Create, Read, Update, Delete) operations on the underlying data store, 
+      - as well as methods for managing database connections and transactions.
+      - Benefits of using a DAO include:
+        - Abstraction: DAOs provide a layer of abstraction between the application code and the underlying data store, allowing for flexibility and ease of maintenance.
+        - Reusability: DAOs can be reused across different parts of the application, reducing code duplication and improving consistency.
+        - Testability: DAOs can be easily tested in isolation, allowing for better unit testing and improved code quality.
+      - SQL can be stored in form of:
+        - Embedded SQL in application code
+          - dedicated class as DAO (Data Access Object) or Repository
+          - needs to be compiled and deployed with the application code
+          - e.g. CustomerDAO.java, OrderDAO.java, ProductDAO.java, etc.
+          - needs downtime for changes and updates
+          - Prone to SQL injection attacks
+          - Dynamic SQL
+          - Network latency, as the SQL code is executed on the application server and requires communication with the database server, which can lead to slower performance compared to stored procedures.
+        - Stored Procedures
+          - Dedicated by function or business logic
+          - Executable on the database server(RDBMS)
+          - e.g. CustomerDAO, OrderDAO, ProductDAO, etc.
+          - can be called from application code or other stored procedures
+          - no need to compile and deploy with the application code, 
+          - as they are stored and executed on the database server
+          - no downtime
+          - Less prone to SQL injection attacks, 
+            - as the SQL code is stored and executed on the database server, 
+            - rather than being embedded in the application code.
+          - Not dynamic, as they are precompiled and stored on the database server, 
+            - which can limit their flexibility and adaptability to changing business requirements.
+          - preferred method: access database objects through stored procedures, 
+            - as it provides better security, maintainability, and performance compared to embedding SQL in application code. 
+            - By using stored procedures, you can centralize your database logic, 
+              - making it easier to manage and update as needed, 
+              - without requiring changes to the application code.
+          - offers layer of abstraction between the application code and the database, 
+            - allowing for better separation of concerns and improved maintainability of the application code. 
+            - By encapsulating the database logic within stored procedures, you can reduce the risk of SQL injection attacks and improve the overall security of your application. 
+            - Additionally, stored procedures can be optimized for performance, 
+              - as they are precompiled and stored on the database server, 
+              - which can lead to faster execution times compared to embedding SQL in application code.
+          - processed on the database server, 
+            - which can reduce network latency and improve performance compared to embedding SQL in application code, 
+            - as the SQL code is executed directly on the database server, 
+            - rather than requiring communication between the application server and the database server. 
+            - This can lead to faster execution times and improved overall performance of your application.
