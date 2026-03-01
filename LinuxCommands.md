@@ -109,6 +109,8 @@
     -  which ls
       - /usr/bin/ls
 48. watch:
+    - Run a command repeatedly and see live updates.
+    - watch -n 1 "ls -lh"
 49. history -c: clears the history of commands
 50. sudo apt-get install "program name"/ sudo apt install "program, name"- install applications
 51. sudo remove "programName" - Uninstall a program
@@ -323,6 +325,9 @@ using graphics.h library to run computer graphics programs
     - nvcc "file_name.cu" -o "output_file_name"
 95. cat /etc/group: display all the groups associated with the system
 96. pstree: display all processes in a tree format
+97. tree
+    - Show directory structure beautifully.
+    - tree -L 2: limit the depth of the directory tree to 2 levels
 97. ssh-copy-id username@192.168.1.23: Set up passwordless SSH access to a remote host using an available key pair
 98. uptime:  facts about the system, 
     - including the length of time the system has been "up" (running) since its last re-boot,
@@ -406,6 +411,8 @@ using graphics.h library to run computer graphics programs
      - chgrp mygroup myfile.txt
 114. passwd:
      - Change a user's password
+     - command to update the password for a user:
+       - `passwd atul` (will prompt for new password and update shadow file)
 115. exit: 
      - logout and close shell
 116. shutdown [options] [time] [message]
@@ -749,16 +756,411 @@ using graphics.h library to run computer graphics programs
        - detailed information about the system's hardware components from the DMI (Desktop Management Interface) tables.
 178. launch chromium browser
      - ```chromium-browser```
-- list all available packages that can be installed RHEL 
+179. list all available packages that can be installed RHEL 
   - sudo yum list available
-- list of packages installed
-  - Debian-based systems (e.g., Ubuntu):
-    - dpkg --get-selections
-    - Using apt:
-      - apt list --installed
-  - Red Hat-based systems (e.g., RHEL, CentOS):
-    - rpm -qa
-    - dnf/yum list installed
-  - Generic:
-    - ls /var/lib/dpkg/info for Debian
-    - ls /var/lib/rpm for Red Hat
+    - list of packages installed
+      - Debian-based systems (e.g., Ubuntu):
+        - dpkg --get-selections
+        - Using apt:
+          - apt list --installed
+      - Red Hat-based systems (e.g., RHEL, CentOS):
+        - rpm -qa
+        - dnf/yum list installed
+      - Generic:
+        - ls /var/lib/dpkg/info for Debian
+        - ls /var/lib/rpm for Red Hat
+180. Clear local cache/apt repo
+     - Debian/Ubuntu: sudo apt-get clean
+     - RHEL7-/CentOS: sudo yum clean all
+     - RHEL8+/Fedora: sudo dnf clean all
+181. get hardware information about the system:
+     - lscpu
+     - lsusb
+     - lspci
+     - lsblk
+     - free -h
+     - df -h
+     - inxi -Fxz
+     - hwinfo
+     - sudo dmidecode
+     - get hardware device profile of system
+       - lshw
+182. update repositories and packages:
+     - Debian/Ubuntu: sudo apt-get update && sudo apt-get upgrade
+     - RHEL7-/CentOS: sudo yum update
+     - RHEL8+/Fedora: sudo dnf update
+183. install a package:
+     - Debian/Ubuntu: sudo apt-get install package_name
+     - RHEL7-/CentOS: sudo yum install package_name
+     - RHEL8+/Fedora: sudo dnf install package_name
+184. remove a package:
+     - Debian/Ubuntu: sudo apt-get remove package_name
+     - RHEL7-/CentOS: sudo yum remove package_name
+     - RHEL8+/Fedora: sudo dnf remove package_name
+185. search for a package:
+     - Debian/Ubuntu: apt-cache search package_name
+     - RHEL7-/CentOS: yum search package_name
+     - RHEL8+/Fedora: dnf search package_name
+186. list installed packages:
+     - Debian/Ubuntu: dpkg --get-selections or apt list --installed
+     - RHEL7-/CentOS: rpm -qa or yum list installed
+     - RHEL8+/Fedora: rpm -qa or dnf list installed
+187. check for package updates:
+     - Debian/Ubuntu: apt list --upgradable
+     - RHEL7-/CentOS: yum check-update
+     - RHEL8+/Fedora: dnf check-update
+188. view package details:
+     - Debian/Ubuntu: apt-cache show package_name
+     - RHEL7-/CentOS: yum info package_name
+     - RHEL8+/Fedora: dnf info package_name
+189. View all currently set env variables:
+     - printenv
+     - env
+190. Add new users to the system:
+     - sudo adduser username (Ubuntu)
+     - sudo useradd username (RHEL/CentOS)
+191. Change user password:
+     - sudo passwd username
+192. Delete a user:
+     - sudo deluser username (Ubuntu)
+     - sudo userdel username (RHEL/CentOS)
+193. List all users:
+     - cat /etc/passwd
+     - cut -d: -f1 /etc/passwd
+194. List all groups:
+     - cat /etc/group
+     - cut -d: -f1 /etc/group
+195. Add a user to a group:
+     - sudo usermod -aG groupname username
+     - Add new user to one or more groups cent os
+       - sudo useradd -G group1,group2 username
+      - Add new user to one or more groups ubuntu
+        - sudo adduser username group1
+        - sudo adduser username group2
+196. Remove a user from a group:
+     - sudo gpasswd -d username groupname
+197. Check group membership of a user:
+     - groups username
+     - id username
+198. Change file permissions:
+     - chmod 755 filename
+     - chmod u=rwx,g=rx,o=rx filename
+199. Change file ownership:
+     - sudo chown username:groupname filename
+200. View file permissions and ownership:
+     - ls -l filename
+     - stat filename
+201. Enable or disable a service:
+     - systemctl start service_name
+     - systemctl stop service_name
+     - systemctl enable service_name
+     - systemctl disable service_name
+     - systemctl status service_name
+202. View running processes:
+     - ps aux
+     - top
+     - htop
+203. Kill a process:
+     - kill PID
+     - kill -9 PID
+     - pkill process_name
+     - killall process_name
+204. View system logs:
+     - journalctl
+     - tail -f /var/log/syslog (Debian/Ubuntu)
+     - tail -f /var/log/messages (RHEL/CentOS)
+205. Check disk usage:
+     - df -h
+     - du -sh /path/to/directory
+206. Check memory usage:
+     - free -h
+     - top
+     - htop
+207. Check CPU usage:
+     - top
+     - htop
+     - mpstat
+208. Check network status:
+     - ifconfig
+     - ip a
+     - netstat -tuln
+     - ss -tuln
+209. Check open ports:
+     - netstat -tuln
+     - ss -tuln
+210. Check firewall status:
+     - sudo ufw status (Debian/Ubuntu)
+     - sudo firewall-cmd --state (RHEL/CentOS)
+     - sudo systemctl status firewalld (RHEL/CentOS)
+211. Enable or disable firewall:
+     - sudo ufw enable (Debian/Ubuntu)
+     - sudo ufw disable (Debian/Ubuntu)
+     - sudo systemctl start firewalld (RHEL/CentOS)
+     - sudo systemctl stop firewalld (RHEL/CentOS)
+212. Check SELinux status:
+     - sestatus
+     - getenforce
+213. Enable or disable SELinux:
+     - sudo setenforce 1 (enable)
+     - sudo setenforce 0 (disable)
+     - To make the change permanent, edit the /etc/selinux/config file and set SELINUX=enforcing or SELINUX=permissive or SELINUX=disabled
+214. Check system uptime:
+     - uptime
+     - who -b
+215. Check system load:
+     - uptime
+     - top
+     - htop
+216. Check system time and date:
+     - date
+     - timedatectl
+217. Set system time and date:
+     - sudo timedatectl set-time "YYYY-MM-DD HH:MM:SS"
+     - sudo timedatectl set-timezone Timezone
+     - e.g.
+       - sudo timedatectl set-time "2023-09-27 20:00:00"
+       - sudo timedatectl set-timezone Asia/Kolkata
+     - sudo date -s "YYYY-MM-DD HH:MM:SS"
+218. Check system hostname:
+     - hostname
+     - hostnamectl
+219. Set system hostname:
+     - sudo hostnamectl set-hostname new_hostname
+     - sudo hostname new_hostname
+220. Check system architecture:
+     - uname -m
+     - arch
+     - lscpu | grep Architecture
+221. Check kernel version:
+     - uname -r
+     - cat /proc/version
+     - lsb_release -a
+222. Check Linux distribution:
+     - lsb_release -a
+     - cat /etc/os-release
+     - cat /etc/issue
+     - cat /etc/*-release
+223. Check system information:
+     - inxi -Fxz
+     - lshw
+     - hwinfo
+     - sudo dmidecode
+224. Check system resource usage:
+     - top
+     - htop
+     - vmstat
+     - iostat
+     - free -h
+     - df -h
+225. Check system performance:
+     - top
+     - htop
+     - vmstat
+     - iostat
+     - sar
+     - mpstat
+226. Check system processes:
+     - ps aux
+     - top
+     - htop
+     - pgrep process_name
+     - pidof process_name
+227. Check system services:
+     - systemctl list-units --type=service
+     - systemctl status service_name
+     - service --status-all
+228. Check system users:
+     - cat /etc/passwd
+     - cut -d: -f1 /etc/passwd
+     - getent passwd
+229. Check system groups:
+     - cat /etc/group
+     - cut -d: -f1 /etc/group
+     - getent group
+230. Check system environment variables:
+     - printenv
+     - env
+     - set
+231. Enable Kernel Modules:
+     - sudo modprobe module_name
+232. List Loaded Kernel Modules:
+     - lsmod
+233. Remove a Kernel Module:
+     - sudo modprobe -r module_name
+234. Check Kernel Messages:
+     - dmesg
+235. Check System Boot Time:
+     - who -b
+236. Check System Reboot History:
+     - last reboot
+237. Check System Shutdown History:
+     - last shutdown
+238. Check System Login History:
+     - last
+239. Check System Failed Login Attempts:
+     - lastb
+240. Check System Uptime:
+     - uptime
+241. Encrypt a file using GPG:
+     - gpg -c filename
+242. Decrypt a file using GPG:
+     - gpg filename.gpg
+243. Generate a GPG key pair:
+     - gpg --full-generate-key
+244. List GPG keys:
+     - gpg --list-keys
+245. Export a GPG public key:
+     - gpg --export -a "User Name" > public_key.asc
+246. Import a GPG public key:
+     - gpg --import public_key.asc
+247. Sign a file using GPG:
+     - gpg --sign filename
+248. Verify a GPG signature:
+     - gpg --verify filename.sig
+249. Create a GPG detached signature:
+     - gpg --detach-sign filename
+250. Verify a GPG detached signature:
+     - gpg --verify filename.sig filename
+251. Delete package with configuration files:
+     - Debian/Ubuntu: sudo apt-get purge package_name
+     - RHEL7-/CentOS: sudo yum remove package_name --remove-leaves
+     - RHEL8+/Fedora: sudo dnf remove package_name --remove-leaves
+252. Dump socket statistics(ss):
+     - ss -s
+253. Allow only command-line access to a user:
+     - sudo usermod -s /usr/sbin/nologin username
+     - sudo usermod -s /bin/false username
+     - Allow only command-line access to a user using systemctl
+       - sudo systemctl disable --now username.service
+       - sudo systemctl mask --now username.service
+     - sudo isolate multi-user.target
+       - used for isolating a user to a specific target (runlevel) in systemd, 
+       - such as multi-user.target, which is commonly used for command-line access.
+254. tac command
+  - reverse of cat command
+  - ```tac filename```
+  - read file in reverse order, starting from the last line and ending with the first line.
+255. rev command
+  - reverse the characters in each line of a file
+  - ```rev filename```
+  - ```echo "Hello World" | rev```
+    - output: "dlroW olleH"
+256. nl command
+  - number lines of a file
+  - ```nl filename```
+  - ```echo -e "Line 1\nLine 2\nLine 3"
+257. yes command
+  - output a string repeatedly until killed
+  - ```yes "Hello World"```
+    - output: "Hello World" repeated indefinitely
+  - ```yes | head -n 5```
+    - output: "y" repeated 5 times
+258. factor command
+  - factor a number into its prime factors
+  - ```factor 60```
+    - output: "60: 2 2 3 5"
+  - ```factor 100```
+    - output: "100: 2 2 5 5"
+259. seq command
+  - print a sequence of numbers
+  - ```seq 1 10```
+    - output: "1 2 3 4 5 6 7 8 9 10"
+  - ```seq 0 2 10```
+    - output: "0 2 4 6 8 10"
+260. Repeat last command.
+     - ```!!```
+     - ```!n``` (where n is the command number in history)
+261. Repeat last command starting with a specific string.
+     - ```!string```
+     - e.g. ```!ls``` will repeat the last command that starts with "ls"
+262. Repeat last command with a specific string replaced.
+     - ```^old^new```
+     - e.g. ```^foo^bar``` will repeat the last command, replacing the first occurrence of "foo" with "bar"
+263. Display the last command with a specific string replaced, without executing it.
+     - ```echo !!:s/old/new/```
+     - e.g. ```echo !!:s/foo/bar/``` will display the last command with the first occurrence of "foo" replaced by "bar", but will not execute the command.
+264. Display the last command with all occurrences of a specific string replaced, without executing it.
+     - ```echo !!:gs/old/new/```
+     - e.g. ```echo !!:gs/foo/bar/``` will display the last command with all occurrences of "foo" replaced by "bar", but will not execute the command.
+265. lsof
+     - list open files
+     - see which process is using a specific file or port
+     - ```lsof -i :80```
+     - ```lsof -u username```
+     - ```lsof -p PID```
+     - ```lsof +c 0```
+     - ```lsof -nP```
+     - ```lsof -r 5```
+     - ```lsof -iTCP -sTCP:LISTEN```
+     - ```lsof -iUDP```
+     - ```lsof -i :80 -sTCP:LISTEN```
+     - ```lsof -i :80 -sTCP:ESTABLISHED```
+     - ```lsof -i :80 -sTCP:TIME_WAIT```
+266. Find top 5 biggest files:
+     - du -ah . | sort -rh | head -5
+266. strace
+     - trace system calls and signals
+     - ```strace -p PID```
+     - ```strace -e trace=file command```
+     - ```strace -e trace=network command```
+     - ```strace -e trace=process command```
+     - ```strace -e trace=memory command```
+     - ```strace -e trace=signal command```
+     - ```strace -e trace=desc command```
+     - ```strace -e trace=ipc command```
+     - ```strace -e trace=all command```
+     - ```strace -o output.txt command```
+     - ```strace -c command```
+     - ```strace -f command```
+     - ```strace -ff command```
+267. ltrace
+     - trace library calls
+     - ```ltrace -p PID```
+     - ```ltrace command```
+     - ```ltrace -e function command```
+     - ```ltrace -e 'function1|function2' command```
+     - ```ltrace -o output.txt command```
+     - ```ltrace -c command
+268. time
+     - measure the execution time of a command
+     - ```time command```
+     - ```/usr/bin/time -v command```
+     - ```/usr/bin/time -f "Time: %E, CPU: %P, Memory: %M KB" command```
+     - ```/usr/bin/time -o output.txt command```
+269. nice
+     - run a command with a modified scheduling priority
+     - Range: -20 to 19 
+     - Default: 0 
+     - Lower value → Higher priority (-20)
+     - Higher value → Lower priority (19)
+     - ```nice command```
+     - ```nice -n 10 command```
+     - ```nice -n -10 command```
+     - Check Nice Value of Running Process
+       - ps -o pid,comm,nice -p PID
+       - ps -o pid,ni,cmd -p 1234
+     - Change Priority of Running Process (renice)
+       - renice 15 -p 1234
+     - Only root can set negative values (increase priority)
+270. ionice
+     - set or get the I/O scheduling class and priority of a process
+     - I/O Scheduling Classes:
+       - Class 0: None (no I/O scheduling)
+       - Class 1: Real-time (highest priority)
+       - Class 2: Best-effort (default)
+       - Class 3: Idle (lowest priority)
+     - ```ionice -c 2 -n 0 command```
+     - ```ionice -c 2 -n 7 command```
+     - ```ionice -c 1 command```
+271. chrt
+     - manipulate real-time attributes of a process
+     - Scheduling Policies:
+       - SCHED_FIFO: First In, First Out (real-time)
+       - SCHED_RR: Round Robin (real-time)
+       - SCHED_OTHER: Default Linux time-sharing
+       - SCHED_BATCH: For batch processing
+       - SCHED_IDLE: For very low priority tasks
+     - ```chrt -f 99 command```
+     - ```chrt -r 50 command```
+     - ```chrt -o command```
+272. 

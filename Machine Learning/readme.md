@@ -912,10 +912,355 @@
         - decision boundary that separates different classes in the feature space.
       - Margin
         - distance between the hyperplane and the nearest data points from each class.
+      - Objective Function
+        - maximize the margin while minimizing classification errors.
+        - Optimization Problem
+          - Minimize: (1/2) * ||w||² + C * Σ ξ_i
+            - w = weight vector defining the hyperplane
+            - C = regularization parameter balancing margin maximization and error minimization
+            - ξ_i = slack variables allowing for misclassification of data points
+          - Subject to: y_i * (w · x_i + b) ≥ 1 - ξ_i, for all i
+            - y_i = class label of data point i (+1 or -1)
+            - x_i = feature vector of data point i
+            - b = bias term
+      - Hinge Loss
+        - Hinge loss is used to measure the error in SVM classification.
+      - Hinge Loss Function
+        - L(y, f(x)) = max(0, 1 - y * f(x))
+          - y = actual class label (+1 or -1)
+          - f(x) = predicted value from the SVM model
+      - Langrange Multipliers
+        - used to solve constrained optimization problems in SVMs.
+        - transform the constrained optimization problem into an unconstrained one
+        - by introducing additional variables (Lagrange multipliers) for each constraint.
+        - L(w, b, α) = (1/2) * ||w||² - Σ α_i [y_i * (w · x_i + b) - 1]
+          - α_i = Lagrange multiplier for data point i
+      - Dual problem for SVM
+        - Maximize: W(α) = Σ α_i - (1/2) * Σ Σ α_i * α_j * y_i * y_j * (x_i · x_j)
+          - Subject to: Σ α_i * y_i = 0 and α_i ≥ 0 for all i
+      - SVM Decision Boundary
+        - f(x) = w · x + b
+          - w = weight vector defining the hyperplane
+          - x = input feature vector
+          - b = bias term
+      - Use cases:
+        - Binary classification
+          - Spam vs Non-Spam
+          - Cat vs Dog
       - Types
         - Linear SVM
+          - uses linear boundary to separate classes
         - Non-linear SVM
-        - Kernel Functions
+          - uses Kernel functions to transform data into higher dimensions
+          - Kernel Functions
+            - Kernel: function transforms the input data into a higher-dimensional space
+              - allows SVM to find a linear separating hyperplane in that space.
+              - Common Kernel Functions
+                - Linear Kernel
+                  - for linearly separable data
+                - Polynomial Kernel
+                  - for non-linear data
+                - Radial Basis Function (RBF) Kernel
+                  - for complex non-linear data
+                  - transforms data into space based on distance from a center point
+                  - ideal for spherical or circular relationships
+                - Sigmoid Kernel
+                  - for certain types of non-linear data
+                  - mimics neural network behavior using sigmoid activation function
+    - K-NN (K-Nearest Neighbors)
+      - Find closest data points(neighbours) to make predictions
+      - used for classification and regression tasks
+      - find k nearest data points in the training set and 
+        - make predictions based on majority class (classification) or average value (regression) of those neighbors.
+      - Also called Lazy Learner Algorithm
+        - because it does not learn a model during training phase
+        - simply stores the training data and makes predictions during the testing phase.
+      - based on proximity and majority voting (for classification) or averaging (for regression).
+      - Boundary
+        - shape of the decision boundary is determined by the distribution of training data points.
+      - Voronoi Diagram
+        - partitioning of a space into regions based on distance to a specific set of points.
+        - each region contains all points closer to one particular point than to any other.
+        - helps visualize how K-NN classifies new data points based on proximity to training data.
+      - What is k?
+        - number of nearest neighbors to consider when making predictions.
+      - How to choose k?
+        - Experiment with different k values using cross-validation
+        - choose the one that gives the best performance on validation data.
+        - if data has lot of outliers, choose larger k to smooth out predictions.
+      - Methods to choose k
+        - Cross-Validation
+          - k-fold cross-validation
+            - dividing the dataset into k parts
+            - k value chosen is the one that gives the highest average accuracy during these tests.
+        - Elbow Method
+          - Draw/plot accuracy vs different k values
+          - look for the "elbow" point where accuracy starts to level off
+          - choose k at this point to balance accuracy and complexity.
+      - Steps to implement K-NN
+        - Choose the number of neighbors (k)
+        - Calculate the distance between the new data point and all training data points
+        - Sort the distances and select the k nearest neighbors
+        - For classification: use majority voting to determine the class label
+        - For regression: calculate the average of the k nearest neighbors' values
+      - Distance Metrics: distance calculation to identify nearest neighbors
+        - Euclidean Distance
+          - shortest path between two points in multi-dimensional space
+          - d(p, q) = sqrt(Σ (p_i - q_i)²)
+            - p and q are two points
+            - p_i and q_i are the coordinates of points p and q in each dimension
+        - Manhattan Distance
+          - total absolute difference between coordinates of two points
+          - d(p, q) = Σ |p_i - q_i|
+          - Also called Taxi-cab distance or L1 norm
+          - otal distance you would travel if you could only move along horizontal and vertical lines like a grid or city streets.
+        - Minkowski Distance
+          - family of distance metrics that includes both Euclidean and Manhattan distances as special cases.
+          - d(p, q) = (Σ |p_i - q_i|^p)^(1/p)
+            - p = order of the norm
+            - when p = 2, it becomes Euclidean distance
+            - when p = 1, it becomes Manhattan distance
+        - Hamming Distance
+      - Choosing the value of k
+        - small k: sensitive to noise, captures local patterns
+        - large k: smooths out predictions, captures global patterns
+      - Weighted K-NN
+        - closer neighbors have more influence on the prediction
+      - Applications of K-NN
+        - Image Recognition
+        - Recommender Systems
+          - Movie recommendations
+          - Product recommendations
+        - Medical Diagnosis
+        - Fraud Detection
+          - Spam detection
+            - comparing new emails to known spam and non-spam examples.
+        - Customer Segmentation
+          - Customer behavior analysis
+        - Anomaly Detection
+        - Speech Recognition
+          - Match spoken words to known patterns to convert them into text.
+      - Impact of K on decision boundary
+        - small k: complex, wiggly decision boundary
+        - large k: smoother, simpler decision boundary
+    - Naive Bayes
+      - predicts the category of a data point using probability
+      - based on Bayes' Theorem
+        - formula in probability theory used to update the probability of a hypothesis (\(A\)) based on new evidence (\(B\))
+        - Formula:
+          - P(A|B) = (P(B|A) * P(A)) / P(B)
+            - P(A|B) = posterior probability of hypothesis A given evidence B
+            - P(B|A) = likelihood of evidence B given hypothesis A
+            - P(A) = prior probability of hypothesis A
+            - P(B) = prior probability of evidence B
+      - Assumes independence between features
+      - Used for classification tasks
+      - Used mostly in high-dimensional text classification
+      - Naive assumption
+        - assumes that all features are independent of each other given the class label.
+        - simplifies the computation of probabilities
+        - allows the model to make predictions efficiently even with high-dimensional data.
+      - Assumptions
+        - Feature Independence
+          - assumes that all features are independent of each other given the class label.
+        - Class Conditional Independence
+          - assumes that the presence or absence of a feature is independent of the presence or absence of any other feature, given the class label.
+        - Discrete Features have multinomial distribution
+          - assumes that features follow a multinomial distribution, especially in text classification tasks.
+        - Features are equally important
+          - assumes that all features contribute equally to the final prediction.
+        - No missing data
+          - assumes that there are no missing values in the dataset.
+        - Naive Bayes for continuous features
+          - assumes that continuous features follow a Gaussian (normal) distribution within each class.
+          - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
+            - P(x|C) = probability of feature x given class C
+            - μ_C = mean of feature x for class C
+            - σ_C² = variance of feature x for class C
+      - Types of Naive Bayes Classifiers
+        - Gaussian Naive Bayes
+          - continuous features
+          - assumes that features follow a normal (Gaussian) distribution or 
+          - Normal Distribution within each class.
+          - i.e. Bell curve symmetric about the mean of the feature
+          - it assumes likelihood follows Gaussian distribution
+            - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
+              - P(x|C) = probability of feature x given class C
+              - μ_C = mean of feature x for class C
+              - σ_C² = variance of feature x for class C
+        - Multinomial Naive Bayes
+          - for discrete data and text classification problems
+          - Used to represent the frequencies of words or events in documents.
+          - assumes that features represent counts or frequencies of events.
+          - assumes each word or feature is independent of the others
+          - commonly used for text classification tasks like spam detection and sentiment analysis.
+          - [Multinomial.png](Multinomial.png)
+          - Maximum Likelihood Estimation (MLE)
+            - estimates the probabilities of features given the class labels based on their observed frequencies in the training data.
+            - [MLE](MLE.png)
+          - Laplace Smoothing
+            - technique used to handle zero probabilities in Multinomial Naive Bayes.
+            - adds a small constant (usually 1) to the count of each feature
+            - ensures that no feature has a probability of zero.
+            - P(w|C) = (count(w, C) + 1) / (Σ count(w', C) + V)
+              - P(w|C) = probability of word w given class C
+              - count(w, C) = count of word w in documents of class C
+              - V = total number of unique words in the vocabulary
+        - Bernoulli Naive Bayes
+          - deals with binary/boolean features
+          - assumes that features are binary (0 or 1), indicating the presence or absence of an event.
+          - commonly used for document classification tasks where the presence or absence of words is important
+          - for classification of binary features such as 'Yes' or 'No', '1' or '0', 'True' or 'False' etc
+          - P(x|C) = P(w|C)^x * (1 - P(w|C))^(1 - x)
+            - P(x|C) = probability of feature x given class C
+            - P(w|C) = probability of word w given class C
+            - x = binary feature (0 or 1)
+          - Bernoulli Distribution
+            - models the probability of a binary outcome (success/failure) for a single trial.
+            - P(X = k) = p^k * (1 - p)^(1 - k)
+              - k = outcome (0 or 1)
+              - p = probability of success (1)
+        - Complement Naive Bayes
+          - variant of Multinomial Naive Bayes
+          - designed to handle imbalanced datasets better.
+            - reduce the bias towards the majority class
+          - focuses on the complement of each class
+          - estimates probabilities based on instances not belonging to the class.
+          - often used in text classification tasks with imbalanced class distributions.
+          - Formula
+            - P(w|C) = (count(w, ¬C) + 1) / (Σ count(w', ¬C) + V)
+              - P(w|C) = probability of word w given class C
+              - count(w, ¬C) = count of word w in documents not belonging to class C
+              - V = total number of unique words in the vocabulary
+          - e.g. CNB estimates probabilities for Apples using Bananas' data (complement) and vice versa
+      - Applications
+        - Spam Detection
+        - Sentiment Analysis
+        - Document/Text Classification/Categorization
+        - Credit Scoring
+        - Medical Diagnosis
+        - Weather Prediction
+    - Random Forest
+      - uses decision trees as base learners
+      - each tree looks at a random subset of data and 
+        - the results are combined by voting for classification or averaging for regression
+        - to make a final prediction.
+      - ensemble learning method
+        - Method that combines multiple models to improve overall performance.
+      - combines multiple decision trees(forest) to improve predictive performance and reduce overfitting.
+      - builds multiple decision trees during training
+      - merges their predictions to make a final prediction.
+      - Ensemble Methods
+        - Bagging (Bootstrap Aggregating)
+          - models are trained independently in parallel
+          - results are combined to make a final prediction.
+          - creates multiple subsets of the training data by sampling with replacement
+          - trains a decision tree on each subset
+          - combines their predictions through majority voting (classification) or averaging (regression).
+          - Bagging Algorithms
+            - Bootstrap Sampling
+              - randomly samples the training data with replacement to create 'N' multiple subsets.
+              - each subset is used to train a separate decision tree.
+            - Base Model Training
+              - trains a decision tree on each bootstrap sample independently in parallel.
+            - Prediction Aggregation
+              - combines predictions from multiple models to make a final prediction.
+              - majority voting for classification tasks
+              - averaging for regression tasks.
+            - Out of Bag Evaluation
+              - estimates model performance using data points not included in the bootstrap samples for each tree.
+              - provides an unbiased estimate of the model's accuracy without needing a separate validation set.
+        - Boosting
+          - train models one after another
+          - each model tries to correct the errors of the previous one.
+          - combines their predictions to make a final prediction.
+          - Algorithms
+            - AdaBoost (Adaptive Boosting)
+              - sequentially trains weak learners (usually decision stumps)
+              - each learner focuses more on the misclassified instances from the previous learners.
+              - combines their predictions through weighted voting (classification) or weighted averaging (regression).
+              - Weight Update
+                - increases the weights of misclassified instances
+                - decreases the weights of correctly classified instances
+                - so that subsequent learners focus more on the difficult cases.
+            - Gradient Boosting
+              - builds models sequentially
+              - each new model tries to correct the residual errors of the combined previous models.
+              - uses gradient descent to minimize a specified loss function.
+              - Loss Function Optimization
+                - minimizes a specified loss function (e.g., Mean Squared Error for regression, Log Loss for classification)
+                - using gradient descent to optimize model predictions.
+            - XGBoost (Extreme Gradient Boosting)
+              - optimized implementation of gradient boosting
+              - designed for speed and performance
+              - includes regularization techniques to prevent overfitting.
+              - Regularization
+                - includes L1 (Lasso) and L2 (Ridge) regularization terms in the objective function
+                - helps prevent overfitting by penalizing complex models.
+            - LightGBM (Light Gradient Boosting Machine)
+              - gradient boosting framework that uses tree-based learning algorithms
+              - designed for efficiency and scalability
+              - uses histogram-based algorithms to speed up training and reduce memory usage.
+              - Histogram-based Splitting
+                - uses histogram-based algorithms to find optimal split points
+                - speeds up training and reduces memory usage.
+            - CatBoost (Categorical Boosting)
+              - gradient boosting library that handles categorical features natively
+              - reduces the need for extensive data preprocessing.
+              - Categorical Feature Handling
+                - natively handles categorical features
+                - reduces the need for extensive data preprocessing.
+        - Stacking(Stacked Generalization)
+          - combines predictions from multiple models (base learners)
+          - uses a meta-model to learn how to best combine these predictions for improved accuracy.
+          - Meta Model
+            - model that learns to combine predictions from base learners.
+      - Feature Randomness
+        - at each split in a decision tree, a random subset of features is selected
+        - helps create diverse trees and reduces correlation between them.
+      - Out-of-Bag (OOB) Error Estimation
+        - estimates model performance using data points not included in the bootstrap samples for each tree.
+        - provides an unbiased estimate of the model's accuracy without needing a separate validation set.
+      - Feature Importance
+        - measures the contribution of each feature to the model's predictions
+        - helps identify the most relevant features for the target variable.
+      - Use Cases
+        - Classification Tasks
+        - Regression Tasks
+        - Anomaly Detection
+        - Feature Selection
+      - Applications
+        - Credit Scoring
+        - Fraud Detection
+        - Medical Diagnosis
+        - Stock Market Prediction
+      - out of Bag Scoring
+        - method to estimate the performance of Random Forest models
+      - Out of Bag (OOB) Error
+        - estimate of the model's prediction error
+        - calculated using data points not included in the bootstrap samples for each tree.
+      - Hyperparameters
+        - Number of Trees (n_estimators)
+          - Default: 100
+        - Maximum Depth of Trees (max_depth)
+          - Default: None (nodes are expanded until all leaves are pure or contain less than min_samples_split samples)
+        - Minimum Samples to Split a Node (min_samples_split)
+          - Minimum number of samples required to split an internal node
+          - Default: 2
+        - Minimum Samples per Leaf (min_samples_leaf)
+          - Default: 1
+        - Number of Features to Consider at Each Split (max_features)
+          - Default max features:
+            - for classification: sqrt(total number of features)
+            - for regression: total number of features / 3
+        - Max Leaf Nodes (max_leaf_nodes)
+          - Default: None (unlimited)
+        - Max Samples (max_samples)
+          - Default: None (use all samples)
+      - Hyperparameter Tuning
+        - Grid Search
+        - Random Search
+        - Bayesian Optimization
     - Neural Networks
       - Feedforward Neural Networks
       - Convolutional Neural Networks (CNN)
