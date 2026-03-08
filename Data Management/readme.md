@@ -175,6 +175,36 @@
         - tracking and documenting the flow of data from its origin to its destination, 
           - including all transformations, processes, and 
           - systems that the data passes through along the way.
+        - Detect PII Data
+          - Sensitive PII
+            - personally identifiable information
+              - e.g.
+              - Full Name
+              - SSN - Social Security Number
+              - Driving License
+              - Financial Information
+              - Credit Cards
+              - Passport information
+              - Medical Records
+              - Email
+              - Phone number
+              - Biometric information
+            - Non-sensitive PII
+              - Gender
+              - Date of Birth
+              - Race
+              - Place of Birth
+              - Religion
+          - quasi identifiers
+            - Date of birth
+            - race
+        - Fine Grain security controls
+          - authorization
+            - RBAC
+            - Group membership
+        - Audit Logs
+          - audit trail
+            - record of events and changes of IT devices
       - Data Auditing
         - track activities related to data, such as data access, data changes, and data usage
         - logs must be securely stored and protected from unauthorized access or tampering.
@@ -721,6 +751,35 @@
         - Data Retention: 
           - Specifies how long the data should be retained and 
           - when it should be archived or deleted.
+      - metadata management best practices
+        - Define metadata strategy
+          - based on long term business strategy
+        - Link metadata management with digital transformation
+        - Establish Scope and Ownership
+          - Identify use cases for metadata
+          - Define rules of metadata creators, consumers and managers
+        - Prioritise data assets
+          - Identify key functionalities
+        - Choose tool with intelligent optimization, data discovery and use case analysis
+        - Adopt metadata standards
+          - uniform usage and interpretations with vendors and customers
+          - interoperable data
+      - Benefits of metadata management
+        - Artifacts tracking
+        - Tracking the lineage
+        - Model Parameters Analysis
+        - highlight data quality and data privacy issues
+        - use data relationships to identify new features for enriching data science models
+      - MLMD database
+        - library for recording and retrieving metadata
+        - part of TensorFlow extended(TFX)
+        - registers the following metadata in Metadata store database
+          - artifacts generated through components or steps in ML pipeline
+          - executions of these components
+          - metadata about pipelines and associate lineage information
+        - Shows DAG(Directed Acyclic Graph) of all executions
+        - supports SQLLite, inmemory and disk and MySQL
+        - 
     - Big Data
     - Real-Time Data
     - Historical Data
@@ -1482,7 +1541,97 @@
       - Post release Monitor releases closely after deployment to identify and address any issues or incidents that may arise, allowing for prompt resolution and minimizing the impact on business operations.
   - Data Normalization
     - prime attribute vs non-prime attribute
-    - Normalization forms:
+    - Normalization forms(rules for databases):
       - 1NF
+        - each column contains only atomic values
+          - i.e. no multi-valued attributes
+        - No repeating groups in an individual table
+        - separate table for each set of related data
+        - each set of related data should be identified with a key
+        - e.g.
+          - Customer Database
+            - Customer_info
+            - Sales_Data
+            - Exclude:
+              - Sales_Items
+                - Item_names, price, quantity from customer table
+              - Put sales details in sales table
       - 2NF
-      - 
+        - already in 1NF + below:
+        - tackles partial dependencies
+        - No prime-attributes relies solely on segment of primary key
+        - all attributes are dependent on entire primary key rather than part of it
+        - values of the columns are interdependent
+        - e.g.
+          - Customer Information DB
+            - Customer related data
+              - First_name, Last_name, address, city, state, zip_code 
+              - customer_id
+      - 3NF
+        - already in 2NF + below:
+          - removal of fields independent of key
+          - non-prime attributes are not dependent on other non-prime attributes
+          - tacles transitive functional dependencies (indirect dependencies)
+          - e.g.
+            - Customer DB
+              - state or country of an individual
+                - can be same for multiple individuals
+                - dont rely on key for unique identification
+                - dont store in customer data
+              - create separate tables for states and countries
+      - 4NF
+      - 5NF
+      - Advantages of Normalization
+        - reduces redundancies
+          - eliminates duplicate entries
+          - prevent inefficiencies and inconsistencies
+        - simplifies data management
+          - reduces complexity
+          - minimizes risk of error
+        - enhances scalability and performance
+          - reduces redundancy
+          - organizes data efficiently
+          - ensures databases handle increasing volumes effectively
+  - Data Validation Techniques
+    - Only numeric values accepted for phone number
+    - Data lies within the range
+    - confirm primary keys and foreign keys are valid
+      - e.g. incorrect product id must not be allowed
+    - ensure data values adhere to predefined domain values
+      - e.g. green, blue and red options only
+  - Data Refining
+    - remove incorrect, irrelevant or incomplete elements
+    - remove typos
+    - convert data into consistent formats
+      - e.g. DD-MM-YYYY
+    - Identify and Remove duplicates
+    - Summarise and consolidate data
+      - Monthly
+      - Quarterly
+    - Expand data with additional information
+      - e.g. mapping user with ip for advertisement
+  - Data Validation Tools
+    - Data Profiling
+      - Identify Missing Values
+      - Identify Outliers
+      - Identify Other Data Anomalies
+      - Tools
+        - OpenRefine
+          - open source
+        - Trifacta Wrangler
+          - data wrangling
+          - data cleasing and transformation
+        - Ataccama
+        - Atlan
+    - Data Quality Management
+      - Informatica EDQ(Enterprise Data Quality)
+      - IBM Infosphere Information Governance Catalog
+    - ELT
+    - Data Visualisation tools
+      - Tableau
+      - Microsoft PowerBI
+- ERPs and CRMs
+  - ERP
+    - Enterprise Resource Planning
+  - CRM
+    - Customer Relation Management

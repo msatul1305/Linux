@@ -306,6 +306,20 @@
       - scaling numbers,
       - creating new features
       - or combining existing ones.
+    - Feature Engineering Types
+      - Imputation
+        - replace missing values
+      - Handling Outliers
+        - anomalies in data
+      - Binning
+        - categorise data
+      - Log Transform
+        - normalization
+      - One-hot encoding
+        - categorical attributes
+      - Grouping operations
+      - Scaling
+        - e.g. weight and height may have different metrics
     - Feature Engineering Techniques
       - One-Hot Encoding
         - convert categorical variables into binary indicators
@@ -551,7 +565,8 @@
         - True Positive Rate (TPR) vs False Positive Rate (FPR)
           - True Positive Rate (TPR) = TP / (TP + FN) = Recall
           - False Positive Rate (FPR) = FP / (FP + TN) = 1 - Specificity
-  - Hyperparameter Model Tuning: optimize model performance by finding the best hyperparameters
+  - Hyperparameter Model Tuning:
+    - optimize model performance by finding the best hyperparameters 
     - Grid Search CV
       - brute-force approach
       - train model using all possible combinations of specified hyperparameter values to 
@@ -1180,9 +1195,11 @@
               - each learner focuses more on the misclassified instances from the previous learners.
               - combines their predictions through weighted voting (classification) or weighted averaging (regression).
               - Weight Update
-                - increases the weights of misclassified instances
+                - assigns equal weights to all training samples initially
+                - increases the weights of misclassified instances, reducing bias and variance
                 - decreases the weights of correctly classified instances
                 - so that subsequent learners focus more on the difficult cases.
+                - but it is sensitive to noisy data and outliers
             - Gradient Boosting
               - builds models sequentially
               - each new model tries to correct the residual errors of the combined previous models.
@@ -1206,6 +1223,8 @@
                 - speeds up training and reduces memory usage.
             - CatBoost (Categorical Boosting)
               - gradient boosting library that handles categorical features natively
+              - employs symmetric decision trees and 
+              - a unique encoding method that considers target values
               - reduces the need for extensive data preprocessing.
               - Categorical Feature Handling
                 - natively handles categorical features
@@ -1313,6 +1332,87 @@
     - Neural Networks
 - Unsupervised Learning
   - Clustering
+    - groups similar data points together into clusters
+    - based on their characteristics, without using any labeled data
+    - discovery of natural groupings and hidden patterns in complex datasets.
+    - Similarity Measures: 
+      - Euclidean distance,
+      - Cosine Similarity
+      - Manhattan Distance
+    - Use cases
+      - Customer Segmentation: group customers with similar shopping habits
+      - Anomaly Detection: Identifying outliers or fraudulent activities in finance, network security and sensor data.
+      - Image Segmentation: Dividing images into meaningful parts for object detection, medical diagnostics or computer vision tasks.
+      - Recommendation Systems: Clustering user preferences to recommend movies, products or content tailored to different groups. 
+      - Market Basket Analysis: Discovering products frequently bought together to optimize store layouts and promotions.
+    - Types of clustering
+      - Hard Clustering
+        - each data point strictly belongs to exactly one cluster
+        - no overlap is allowed
+        - Use cases: 
+          - Market segmentation, 
+          - customer grouping, 
+          - document clustering.
+      - Soft Clustering
+        - assigns each data point a probability or degree of membership to multiple clusters simultaneously
+        - allowing data points to partially belong to several groups.
+        - e.g.
+          - A data point may have a 70% membership in Cluster 1 and 30% in Cluster 2, 
+          - reflecting uncertainty or overlap in group characteristics.
+    - Clustering Methods
+      - Centroid-based Clustering (Partitioning Methods)
+        - organizes data points around central prototypes called centroids
+        - each cluster is represented by the mean (or medoid) of its members
+        - number of clusters is specified in advance
+        - algorithm allocates points to the nearest centroid
+        - Algos
+          - K-Means clustering
+            - Iteratively assigns points to nearest centroid
+            - recalculates centroids to minimize intra-cluster variance
+          - K-medoids
+            - uses actual data points (medoids) as centers, robust to outliers.
+      - Density-based Clustering (Model-based Methods)
+        - defines clusters as contiguous regions of high data density separated by areas of lower density
+        - identify clusters of arbitrary shapes
+        - does not require predefining the number of clusters
+        - Algos
+          - DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+            - Groups points with sufficient neighbors
+            - labels sparse points as noise.
+          - OPTICS (Ordering Points To Identify Clustering Structure)
+            - Extends DBSCAN to handle varying densities
+      - Connectivity-based Clustering (Hierarchical Clustering)
+        - builds nested groupings of data by evaluating how data points are connected to their neighbors.
+        - creates a dendrogram a tree-like structure that reflects relationships at various granularity levels
+        - does not require specifying cluster numbers in advance
+        - but can be computationally intensive
+        - Algos
+          - Agglomerative (Bottom-up)
+            - Start with each point as a cluster
+            - iteratively merge the closest clusters.
+          - Divisive (Top-down)
+            - Start with one cluster
+            - iteratively split into smaller clusters.
+      - Distribution-based Clustering
+        - assumes data is generated from a mixture of probability distributions, 
+        - such as Gaussian distributions and assigns points to clusters based on statistical likelihood
+        - supports clusters with flexible shapes and overlaps
+        - but requires specifying the number of distributions.
+        - Algos
+          - Gaussian Mixture Model (GMM)
+            - Fits data as a weighted mixture of Gaussian distributions; 
+            - assigns data points based on likelihood.
+      - Fuzzy Clustering
+        - extends traditional methods by allowing each data point to belong to multiple clusters 
+        - with varying degrees of membership.
+        - captures ambiguity and soft boundaries in data
+        - particularly useful when the clusters overlap or boundaries are not clear-cut.
+        - Algos
+          - Fuzzy C-Means: 
+            - Similar to K-means but with fuzzy memberships updated iteratively.
+  - Associate Rule Mining
+    - discover interesting relationships or associations between variables in large datasets.
+    - often used in market basket analysis to find products that are frequently bought together.
   - Dimensionality Reduction
 - Reinforcement Learning
   - Q-Learning
@@ -1328,4 +1428,34 @@
   - NLP: Natural Language Processing
   - EDA: Exploratory Data Analysis
   - ROC-AUC: Receiver Operating Characteristic - Area Under the Curve
-  - 
+- Data Quality
+  - GIGO: Garbage In, Garbage Out
+  - enrich dataset
+    - data from diverse sources and catalog
+  - Metrics to measure data quality
+    - Ratio of data to errors
+    - no of empty values
+    - Data transformation error rates
+    - Amount of dark data
+      - information not useful
+- Pickle File
+  - serialized version of python model
+    - can be unpackaged for further usage
+  - used for:
+    - save feature engineered data into binary format
+    - and reload it while model training
+    - save final ML model as pickle file after achieving high accuracy
+  - Versioning of pickle file
+- ML lifecycle
+  - Pipeline Development
+    - Gathering Data
+      - transforming row into cleanse data
+    - Data Preparation
+    - Data Wragling
+    - Analyze Data
+  - Training Phase
+    - Train Model
+    - Test Model
+  - Inference Phase
+    - Deployment
+    - retraining model
