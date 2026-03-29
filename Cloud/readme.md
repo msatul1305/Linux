@@ -1,0 +1,218 @@
+- ISO and uses
+  - ISO 9001:
+    - quality management system standard 
+    - ensure they meet customer and regulatory requirements. 
+    - It focuses on continuous improvement and customer satisfaction.
+  - ISO 27001:
+    - information security management system standard that helps organizations manage and 
+    - protect their information assets. 
+    - managing sensitive company information, 
+    - ensuring its confidentiality, integrity, and availability.
+  - ISO 14001:
+    - environmental management system standard 
+    - minimize their environmental impact. 
+    - manage environmental responsibilities in a systematic manner, 
+    - contributing to sustainability.
+  - ISO 45001:
+    - occupational health and safety management system standard 
+    - create a safe and healthy work environment. 
+    - managing occupational health and safety risks and improving overall workplace safety.
+  - ISO 50001:
+    - energy management system standard 
+    - improve their energy performance. 
+    - manage energy use and reduce their energy consumption, 
+    - leading to cost savings and environmental benefits.
+- Cloud computing and uses
+  - Cloud computing 
+    - delivery of computing services over the internet, 
+    - allowing users to access and store data and applications on remote servers 
+    - rather than on local devices. 
+    - It offers 
+      - scalability, flexibility, and cost-efficiency for businesses and individuals.
+    - uses 
+      - data storage, 
+      - software development, and
+      - hosting applications. 
+      - access resources on-demand, 
+      - collaborate remotely, 
+      - scale their operations without the need for significant upfront investments in infrastructure.
+      - supports the growth of technologies such as 
+        - artificial intelligence, 
+        - big data analytics, 
+        - Internet of Things (IoT).
+- Firewall and uses
+  - Firewall 
+    - network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. 
+    - It acts as a barrier between a trusted internal network and untrusted external networks, such as the internet. 
+    - uses 
+      - protect against unauthorized access, 
+      - prevent cyberattacks, 
+      - filter out malicious traffic, 
+      - enforce security policies, 
+      - monitor network activity for potential threats.
+  - port forwarding 
+    - technique used to allow external devices to access services on a private network. 
+    - It involves forwarding incoming traffic from a specific port on the router to a designated device or service within the internal network. 
+    - uses 
+      - hosting servers, 
+      - remote desktop access, 
+      - online gaming, 
+      - accessing security cameras, 
+      - enabling communication between devices across different networks.
+  - VPN (Virtual Private Network) 
+    - secure and private network connection that allows users to access the internet or a private network securely. 
+    - It creates an encrypted tunnel between the user's device and the VPN server, 
+    - masking the user's IP address and providing anonymity online. 
+    - uses 
+      - protect sensitive data, 
+      - bypass geo-restrictions, 
+      - access blocked websites, 
+      - enhance online privacy, 
+      - secure remote work connections.
+  - Dynamic Content Filtering 
+    - technique used to analyze and filter web content in real-time based on predefined rules and policies. 
+    - It allows organizations to control and restrict access to certain types of content, such as websites, applications, or specific keywords. 
+    - uses 
+      - enhance security by blocking malicious or inappropriate content, 
+      - enforce acceptable use policies, 
+      - improve productivity by restricting access to non-work-related sites, 
+      - protect against data leaks by filtering sensitive information from being transmitted over the network.
+- Patch Management Systems
+  - Types of patch management systems 
+    - manual patch management
+      - Manual patch management involves the process of manually identifying, downloading, and installing patches for software applications and operating systems. 
+      - This approach requires IT administrators to regularly check for updates, assess their relevance and compatibility, and then apply them to the systems. 
+      - It can be time-consuming and prone to human error, but it allows for greater control over the patching process and can be suitable for smaller organizations with limited resources.
+    - automated patch management
+      - Automated patch management refers to the use of software tools and systems to automatically identify, download, and install patches for software applications and operating systems. 
+      - This approach streamlines the patching process by reducing the need for manual intervention, allowing IT administrators to schedule and manage patches more efficiently. 
+      - Automated patch management can help ensure that systems are kept up-to-date with the latest security patches and updates, reducing the risk of vulnerabilities and improving overall system security.
+    - cloud-based patch management
+      - Cloud based patch management is a method of managing and deploying software patches and updates using cloud computing technology. 
+      - It allows organizations to centrally manage and distribute patches to their systems and applications from a cloud-based platform. 
+      - This approach offers benefits such as scalability, flexibility, and remote accessibility, making it easier for organizations to keep their systems up-to-date and secure without the need for on-premises infrastructure.
+    - integrated patch management
+      - Integrated patch management refers to the seamless integration of patch management processes and tools into an organization's overall IT infrastructure and operations. 
+      - This approach involves incorporating patch management into existing IT workflows, such as change management and vulnerability management, to ensure that patches are applied in a timely and efficient manner. 
+      - Integrated patch management can help organizations maintain a more secure and up-to-date IT environment by streamlining the patching process and reducing the risk of vulnerabilities.
+    - scheduled patch management
+      - Scheduled patch management is a method of managing and deploying software patches and updates according to a predetermined schedule. 
+      - This approach allows organizations to plan and coordinate patching activities in advance, ensuring that patches are applied consistently and at appropriate times to minimize disruption to users and systems. 
+      - Scheduled patch management can help organizations maintain a regular patching cadence, reducing the risk of vulnerabilities and improving overall system security.
+    - on-demand patch management
+      - On-demand patch management refers to the process of applying software patches and updates as needed, rather than following a predetermined schedule. 
+      - This approach allows organizations to respond quickly to emerging threats and vulnerabilities by applying patches as soon as they become available. 
+      - On-demand patch management can help organizations stay ahead of potential security risks and ensure that their systems are protected against the latest threats, but it may require more resources and attention to ensure that patches are applied in a timely manner.
+    - proactive patch management
+      - Proactive patch management is a strategic approach to managing software patches and updates that focuses on anticipating and addressing potential vulnerabilities before they can be exploited. 
+      - This approach involves regularly monitoring for new vulnerabilities, assessing their potential impact, and applying patches proactively to mitigate risks. 
+      - Proactive patch management can help organizations stay ahead of emerging threats and reduce the likelihood of security breaches by ensuring that systems are consistently updated and protected against known vulnerabilities.
+    - Reactive patch management
+      - Reactive patch management refers to the process of applying software patches and updates in response to identified vulnerabilities or security incidents. 
+      - This approach involves monitoring for security threats and applying patches as needed to address vulnerabilities that have been exploited or are at risk of being exploited. 
+      - Reactive patch management can help organizations respond quickly to emerging threats and mitigate risks, but it may also leave systems vulnerable if patches are not applied in a timely manner or if new vulnerabilities are not identified and addressed promptly.
+- Types of cloud
+  - Virtual Private Cloud (VPC)
+    - A virtual private cloud (VPC) is a private, isolated section of a public cloud infrastructure that allows organizations to create and manage their own virtual network. 
+    - It provides a secure and scalable environment for hosting applications and services while maintaining control over network configurations and security settings. 
+    - VPCs are commonly used for hosting web applications, databases, and other workloads that require a high level of security and customization.
+- Network Time Protocol (NTP)
+  - Network Time Protocol (NTP) is a protocol used to synchronize the clocks of computer systems over a network. 
+  - It allows devices to maintain accurate time by communicating with a reference time source, such as an atomic clock or a GPS receiver. 
+  - NTP is essential for ensuring that timestamps on logs, transactions, and other time-sensitive data are consistent across all systems in a network, which is crucial for troubleshooting, security, and overall system performance.
+  - NTP works by using a hierarchical system of time sources, where devices can synchronize with higher-level time servers that are more accurate and reliable.
+  - NTP can be used in various applications, including:
+    - Synchronizing time across servers and devices in a data center or cloud environment.
+    - Ensuring accurate timestamps for logging and auditing purposes.
+    - Coordinating time-sensitive operations, such as scheduled tasks and automated processes.
+    - Improving security by ensuring that time-based authentication mechanisms, such as Kerberos, function correctly.
+    - Maintaining accurate time for financial transactions and other critical applications that require precise timing.
+    - Enabling accurate timekeeping for distributed systems and applications that rely on synchronized clocks for proper functioning.
+    - Facilitating time-based analytics and monitoring by ensuring that data from different sources is accurately timestamped and can be correlated effectively.
+    - Supporting time-sensitive applications, such as online gaming, video streaming, and real-time communication, where accurate time synchronization is essential for optimal performance and user experience.
+    - Ensuring compliance with regulatory requirements that mandate accurate timekeeping for certain industries, such as finance and healthcare.
+    - Providing a reliable time source for devices and applications that do not have access to an external time source, such as those in isolated or secure environments.
+    - Enabling accurate timekeeping for scientific research and experiments that require precise timing for data collection and analysis.
+    - Improving overall system performance and reliability by ensuring that all devices and applications are synchronized to a common time source, reducing the likelihood of errors and inconsistencies caused by time discrepancies.
+- System Time Protocol (STP)
+  - System Time Protocol (STP) is a protocol used to synchronize the clocks of computer systems within a local area network (LAN). 
+  - It is designed to provide accurate time synchronization for devices that are connected to the same network, allowing them to maintain consistent time across all systems. 
+  - STP works by using a master-slave architecture, where one device acts as the master clock and other devices synchronize their clocks to the master. 
+  - This protocol is commonly used in environments where accurate timekeeping is essential, such as in financial institutions, telecommunications networks, and data centers. 
+  - STP can help ensure that timestamps on logs, transactions, and other time-sensitive data are consistent across all systems in a network, which is crucial for troubleshooting, security, and overall system performance.
+- Differential Backup
+  - Differential backup is a type of backup strategy that involves copying only the data that has changed since the last full backup. 
+  - This means that each differential backup contains all the changes made since the last full backup, allowing for faster backups and restores compared to incremental backups. 
+  - Differential backups are typically used in conjunction with full backups, where a full backup is performed periodically (e.g., weekly) and differential backups are performed more frequently (e.g., daily) to capture changes in between full backups. 
+  - This approach can help reduce storage requirements and backup times while still providing a reliable way to restore data in case of loss or corruption.
+- Types of firewalls
+  - Packet-filtering firewall
+    - A packet-filtering firewall is a type of network security device that monitors and controls incoming and outgoing network traffic based on predetermined security rules. 
+    - It operates at the network layer of the OSI model and examines each packet of data to determine whether it should be allowed or blocked based on criteria such as source and destination IP addresses, port numbers, and protocol types. 
+    - Packet-filtering firewalls are commonly used to protect networks from unauthorized access and to enforce security policies by filtering out potentially harmful traffic.
+  - Stateful inspection firewall
+    - A stateful inspection firewall, also known as a dynamic packet-filtering firewall, is a type of network security device that monitors and controls incoming and outgoing network traffic based on the state of active connections. 
+    - It operates at the network and transport layers of the OSI model and keeps track of the state of each connection, allowing it to make more informed decisions about whether to allow or block traffic. 
+    - Stateful inspection firewalls are more advanced than packet-filtering firewalls and can provide better security by allowing or blocking traffic based on the context of the connection, rather than just individual packets.
+  - Proxy firewall
+    - A proxy firewall, also known as an application-level gateway, is a type of network security device that acts as an intermediary between a user's device and the internet. 
+    - It operates at the application layer of the OSI model and intercepts all incoming and outgoing traffic, allowing it to analyze and filter traffic based on specific application-level protocols, such as HTTP, FTP, or SMTP. 
+    - Proxy firewalls can provide enhanced security by inspecting the content of the traffic and blocking potentially harmful requests, as well as by hiding the internal network's IP addresses from external sources.
+  - Next-generation firewall (NGFW)
+    - A next-generation firewall (NGFW) is an advanced type of network security device that combines traditional firewall capabilities with additional features such as intrusion prevention, application awareness, and deep packet inspection. 
+    - NGFWs operate at multiple layers of the OSI model and can provide more comprehensive security by analyzing traffic in greater detail and allowing or blocking traffic based on a wider range of criteria, including application-level protocols, user identity, and behavior patterns. 
+    - NGFWs are designed to address the evolving threat landscape and provide better protection against modern cyber threats, such as advanced malware, ransomware, and targeted attacks.
+  - Unified Threat Management (UTM) firewall
+    - A unified threat management (UTM) firewall is a type of network security device that combines multiple security features and functions into a single appliance. 
+    - UTM firewalls typically include features such as firewall protection, intrusion detection and prevention, antivirus and anti-malware capabilities, content filtering, and virtual private network (VPN) support. 
+    - UTM firewalls are designed to provide comprehensive security for small to medium-sized businesses by offering a simplified and cost-effective solution for managing multiple security functions in one device. 
+    - They can help organizations protect against a wide range of threats while reducing the complexity and overhead associated with managing multiple security appliances.
+- Software Defined Storage (SDS)
+  - Software-defined storage (SDS) is a storage architecture that separates the storage hardware from the software that manages it. 
+  - SDS allows organizations to manage and provision storage resources using software, rather than relying on specific hardware configurations. 
+  - This approach provides greater flexibility, scalability, and cost-efficiency, as it enables organizations to use commodity hardware and easily scale storage capacity as needed. 
+  - SDS can be used in various environments, including data centers, cloud computing, and virtualized environments, to provide efficient and agile storage solutions that meet the demands of modern applications and workloads.
+- RAID
+  - RAID (Redundant Array of Independent Disks)
+    - data storage technology that combines multiple physical disk drives into a single logical unit 
+    - for improved performance, redundancy, or both.
+  - RAID levels include:
+    - RAID 0: 
+      - Striped set without parity, providing improved performance but no redundancy.
+    - RAID 1: 
+      - Mirrored set, providing redundancy by duplicating data across two or more disks.
+    - RAID 5: 
+      - Striped set with distributed parity, 
+      - providing a balance of performance and redundancy by distributing parity information 
+      - across all disks.
+    - RAID 6: 
+      - Striped set with double distributed parity, 
+      - providing enhanced redundancy by allowing for the failure of two disks without data loss.
+    - RAID 10: 
+      - A combination of RAID 1 and RAID 0, 
+      - providing both improved performance and redundancy by mirroring and 
+      - striping data across multiple disks.
+  - RAID is commonly used in data centers, servers, and storage systems to improve performance and ensure data availability in case of disk failures. It can help organizations protect their data and maintain business continuity by providing redundancy and fault tolerance, while also improving read and write performance for applications that require high-speed access to data.
+- Hypervisor
+  - A hypervisor, 
+    - also known as a virtual machine monitor (VMM), 
+    - is a software layer that allows multiple virtual machines (VMs) 
+    - to run on a single physical host. 
+  - It abstracts the underlying hardware and provides each VM with its own virtualized environment,
+  - including CPU, memory, storage, and network resources. 
+  - Hypervisors can be classified into two main types: 
+    - Type 1 (bare-metal) hypervisors, which run directly on the host's hardware, and 
+    - Type 2 (hosted) hypervisors, which run on top of an existing operating system.
+  - Hypervisor Functions:
+    - Resource Allocation: Hypervisors manage and allocate physical resources such as CPU, memory, and storage to each virtual machine, ensuring that they have the necessary resources to operate effectively.
+    - Isolation: Hypervisors provide isolation between virtual machines, preventing them from interfering with each other and ensuring that any issues or failures in one VM do not affect others.
+    - Virtualization: Hypervisors enable the creation of virtual machines that can run different operating systems and applications on the same physical hardware, allowing for greater flexibility and efficiency in resource utilization.
+    - Management: Hypervisors offer management tools and interfaces that allow administrators to create, configure, monitor, and manage virtual machines, making it easier to deploy and maintain virtualized environments.
+    - Security: Hypervisors can provide security features such as access controls, encryption, and network segmentation to protect virtual machines and the underlying host from unauthorized access and potential threats.
+    - Memory ballooning: 
+      - Hypervisors can dynamically adjust the amount of memory allocated to virtual machines
+      - based on their current needs, allowing for more efficient use of memory resources.
+    - Live migration: Hypervisors can enable the live migration of virtual machines from one physical host to another without downtime, allowing for load balancing, maintenance, and disaster recovery.
+    - Snapshots: Hypervisors can create snapshots of virtual machines, allowing administrators to capture the state of a VM at a specific point in time and revert back to it if needed, which is useful for testing and troubleshooting.
+    - Virtual networking: Hypervisors can create virtual networks that allow virtual machines to communicate with each other and with the outside world, providing network connectivity and isolation as needed.
+    - Storage virtualization: Hypervisors can abstract and manage storage resources, allowing virtual machines to access and utilize storage in a flexible and efficient manner, such as through virtual disks or shared storage pools.

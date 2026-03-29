@@ -32,5 +32,8 @@
       - which provides line-editing and history capabilities for programs like Bash.
     - Python: pycodestyle and pylintrc are used to configure Python code style and linting settings, respectively.
     - MySQL: my.cnf is an RC file used to configure the MySQL database server, 
-      - including settings related to performance, security, and replication.
-
+      - including settings related to performance, security, and replication. 
+- file that is executed when a user logs in to the system. 
+  - used to set environment variables and run commands that should be executed for all users.
+    - ~/.profile
+- 

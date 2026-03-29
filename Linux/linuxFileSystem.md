@@ -18,6 +18,11 @@
     - /etc/init.d
       - This directory contains the scripts that start various system services at boot time.
     - /etc/crontab - automated jobs
+    - /etc/services - network services and their port numbers
+    - /etc/group - group information for users
+      - e.g. http 80/tcp, https 443/tcp, ssh 22/tcp, 8080/tcp
+    - /etc/login.defs - password aging and other login related settings
+    - /etc/shadow - encrypted password information for users
 - /bin, /usr/bin:	These two directories contain most of the programs for the system. 
   - The /bin directory has the essential programs that the system requires to operate, 
   - while /usr/bin contains applications for the system's users.
@@ -57,7 +62,9 @@
   - contains devices that are available to the system. 
   - In Linux (like Unix), devices are treated like files. 
   - we can read and write devices as though they were files. 
-  - For example, /dev/fd0 is the first floppy disk drive, /dev/sda is the first hard drive. 
+  - For example, 
+    - /dev/fd0 is the first floppy disk drive, 
+    - /dev/sda is the first hard drive. 
   - All the devices that the kernel understands are represented here.
   - /dev/fd*: Floppy disk drives.
   - /dev/hd*: IDE (PATA) disks on older systems. Typical motherboards contain two IDE connectors or channels, 
@@ -68,10 +75,24 @@
     - A trailing digit indicates the partition number on the device. For example, /dev/hda1 refers to the first partition
     - on the first hard drive on the system, while /dev/hda refers to the entire drive.
   - /dev/lp*: Printers.
-  - /dev/sd*: SCSI disks. On modern Linux systems, the kernel treats all disk like devices (including PATA/SATA hard disks, 
-  - flash drives, and USB mass storage devices such as portable music players and digital cameras) as SCSI disks.
+  - /dev/sd*: SCSI disks. 
+    - On modern Linux systems, the kernel treats all disk like devices (including PATA/SATA hard disks, 
+    - flash drives, and USB mass storage devices such as portable music players and digital cameras) 
+    - as SCSI disks.
   - The rest of the naming system is similar to the older /dev/hd* naming scheme described above.
-  - /dev/sr*: Optical drives (CD/DVD readers and burners).
+  - /dev/sr*: 
+    - Optical drives (CD/DVD readers and burners).
+  - /dev/null(Black hole file): A special device that discards all data written to it. 
+    - It is often used to suppress output from commands or to provide an empty input source.
+  - /dev/tty: 
+    - Represents terminal devices. 
+    - Each terminal session is associated with a /dev/tty entry, 
+    - allowing for input and output operations.
+  - /dev/random and /dev/urandom: 
+    - These are special devices that provide random data. 
+    - /dev/random provides high-quality random data
+    - but may block if there is not enough entropy, 
+    - while /dev/urandom provides non-blocking random data.
 - /proc: The /proc directory is also special. 
   - This directory does not contain files. 
   - In fact, this directory does not really exist at all. It is entirely virtual. 
@@ -102,3 +123,46 @@
 - /opt: The /opt directory is used to install “optional” software.
   - This is mainly used to hold commercial software products that might be installed on the system.
 - Tip: Using the tail -f /var/log/messages technique is a great way to watch what the system is doing in near real-time.
+- /etc/shadow: This file contains the encrypted password information for users. 
+  - It is only readable by the superuser, and is used by the system to verify user passwords when they log in. 
+  - The /etc/passwd file contains a placeholder for the password, but the actual encrypted password is stored in /etc/shadow for security reasons.
+- /etc/login.defs: This file contains settings related to user login, such as password aging policies and other login-related configurations. 
+  - It defines how long passwords are valid, when they expire, and other related settings that help manage user accounts and security.
+- inodes:
+  - inode (index node) is a data structure that stores metadata about a file
+  - but not the file name and not the actual file content.
+  - stores:
+    - File type (regular file, directory, symlink, etc.)
+    - File size 
+    - Owner (UID)
+    - Group (GID)
+    - Permissions (rwx)
+    - Timestamps:
+      - atime (last access)
+      - mtime (last modification)
+      - ctime (metadata change)
+    - Number of hard links 
+    - Pointers to actual data blocks on disk
+  - Examples:
+    - ls -i file.txt
+      - 123456 file.txt
+      - 123456 is the inode number for file.txt
+    - df -i
+      - hard link creates same inode number for multiple file names
+      - ln file.txt link.txt
+  - Linux identifies files internally by inode number, not filename.
+  - Even if you rename a file, The inode number stays the same.
+  - Inode Exhaustion Problem 
+    - Sometimes you may see:No space left on device 
+    - But disk space is available!
+    - Reason: All inodes are used up.
+    - Common case:
+      - Too many small files 
+      - /tmp filled with tiny files
+    - Check
+      - df -i
+      - Shows inode usage
+    - Solution:
+      - Delete unnecessary files to free inodes
+      - Clean up /tmp
+      - Use a filesystem with more inodes if needed (e.g. ext4 with higher inode ratio)

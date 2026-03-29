@@ -1,0 +1,5 @@
+| Directory | What It Contains                   | Primary Purpose               | Used By              | Auto-Created                        | Example                     |
+|-----------|------------------------------------|-------------------------------|----------------------|-------------------------------------|-----------------------------|
+| `/dev`    | Device files representing hardware | Interface to hardware devices | Kernel & system      | Yes                                 | `/dev/sda`, `/dev/null`     |
+| `/mnt`    | Empty directory for manual mounts  | Temporary/manual mounting     | System administrator | No                                  | `sudo mount /dev/sdb1 /mnt` |
+| `/media`  | Mount points for removable media   | Auto-mounting USB, CD, etc.   | Desktop environment  | Yes (subdirs created automatically) | `/media/atul/MyUSB`         |

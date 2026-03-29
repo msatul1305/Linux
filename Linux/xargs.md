@@ -1,0 +1,14 @@
+- xargs command
+  - used to build and execute command lines from standard input
+  - often used in combination with other commands that produce output, such as find, grep, or ls
+  - syntax: `xargs [options] [command]`
+  - example: `find . -name "*.txt" | xargs rm` (find all .txt files and delete them)
+  - options:
+    - `-n`: specify the maximum number of arguments to be used per command line
+    - `-p`: prompt the user before executing each command line
+    - `-0`: input items are terminated by a null character instead of whitespace (useful for handling filenames with spaces)
+    - `-I {}`: replace occurrences of {} in the command with the input item
+  - xargs is a powerful tool for processing large lists of items and can help avoid issues with command line length limits when dealing with many files or arguments.
+  - example commands:
+    - `ls | xargs -n 1 echo` (list files and echo each filename on a new line)
+    - `grep "pattern" file.txt | xargs -I {} echo "Found: {}"` (search for a pattern in a file and print each match with a prefix)

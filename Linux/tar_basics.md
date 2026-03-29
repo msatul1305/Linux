@@ -1,0 +1,31 @@
+- tar command
+    - tar -cf archive.tar file1.txt
+        - c: create a new archive
+        - f: specifies the name of the archive file
+    - tar -xf archive.tar
+        - x: extract the contents of the archive
+        - f: specifies the name of the archive file
+    - tar -cvf archive.tar file1 file2
+        - c: create a new archive
+        - v: verbose mode, shows the files being archived
+        - f: specifies the name of the archive file
+    - tar -xvf archive.tar
+        - x: extract the contents of the archive
+        - v: verbose mode, shows the files being extracted
+        - f: specifies the name of the archive file
+    - tar -tvf archive.tar
+        - t: list the contents of the archive
+        - v: verbose mode, shows the files in the archive
+        - f: specifies the name of the archive file
+    - tar -cvzf archive.tar.gz file1 file2
+        - z: compress the archive using gzip
+    - tar -xvzf archive.tar.gz
+        - z: decompress the archive using gzip
+    - tar -cvjf archive.tar.bz2 file1 file2
+        - j: compress the archive using bzip2
+    - tar -xvjf archive.tar.bz2
+        - j: decompress the archive using bzip2
+    - tar -cvJf archive.tar.xz file1 file2
+        - J: compress the archive using xz
+    - tar -xvJf archive.tar.xz
+        - J: decompress the archive using xz
