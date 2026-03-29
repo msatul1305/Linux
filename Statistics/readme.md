@@ -1,0 +1,35 @@
+- Statistics: https://www.geeksforgeeks.org/maths/statistics/
+  - Descriptive Statistics
+    - Measures of Central Tendency
+      - Mean
+      - Median
+      - Mode
+    - Measures of Variability/Dispersion
+      - Range
+      - Variance
+      - Standard Deviation
+    - Graphical Representations
+      - Histograms
+      - Box Plots
+      - Scatter Plots
+  - Inferential Statistics
+    - Hypothesis Testing
+      - Null Hypothesis
+      - Alternative Hypothesis
+      - p-value
+    - Confidence Intervals
+      - Margin of Error
+      - Confidence Level
+  - Regression Analysis
+    - Linear Regression
+    - Multiple Regression
+    - Logistic Regression
+  - Probability
+    - Probability Distributions
+      - Normal Distribution
+      - Binomial Distribution
+      - Poisson Distribution
+    - Bayes' Theorem
+      - Prior Probability
+      - Likelihood
+      - Posterior Probability

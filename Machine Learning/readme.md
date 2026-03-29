@@ -1,1461 +1,2728 @@
 - Machine Learning(GeeksforGeeks)
-  - branch of Artificial Intelligence that focuses on developing models and algorithms
-  - Problem Statement
-    - Project Objectives
-    - Output Expectations
-    - Success Criteria
-  - Data Collection
-    - collection of datasets used as raw data to train model
-  - Data Preprocessing
-    - Data Cleaning
-      - resolve issues like:
-        - Missing Values
-        - Duplicate Data
-        - Outliers
-          - Outlier Detection Methods
-            - Z-Score Method
-            - IQR (Interquartile Range) Method
-              - range between the first quartile (Q1) and the third quartile (Q3) in a dataset.
-              - IQR = Q3(75th percentile) - Q1(25th percentile)
-              - 
-            - Visualization Techniques
-              - Box Plots
-              - Scatter Plots
-        - Inconsistent Data
-        - Irrelevant Data
-    - Sampling Data
-    - Dimensionality Reduction
-      - Tools:
-        - OpenRefine
-        - Trifacta Wrangler
-        - TIBCO Clarity
-        - Cloudingo
-        - IBM InfoSphere QualityStage
-    - Data Preprocessing Techniques
-      - Normalization(Min-Max Scaling)
-        - Rescales features between 0 and 1.
-        - useful when the data does not follow a Gaussian distribution.
-        - sensitive to outliers, as extreme values can significantly affect the scaling.
-        - Good for algorithms like k-NN and neural networks.
-      - Standardization
-      - Encoding Categorical Variables
-    - Data Transformation
-  - Data Exploration: uncover insights, patterns, and relationships within the data
-    - Descriptive Statistics
-    - Data Visualization
-    - Correlation Analysis
-    - EDA: Exploratory Data Analysis
-      - visualize data 
-      - understand main features,
-      - find patterns and 
-      - discover how parts of data are connected.
-      - Types of EDA
-        - Univariate Analysis
-          - analyze single variable and
-          - understand its distribution and characteristics.
-          - e.g. histograms are used to show data distribution, 
-            - box plots to detect outliers and understand data spread and 
-            - bar charts for categorical data.
-        - Bivariate Analysis
-          - explore relationship between two variables
-          - identify correlations or associations.
-          - Key techniques
-            - Scatter Plots
-            - Correlation Coefficients
-              - Pearson’s Correlation for linear relationships between continuous variables
-              - Spearman’s Rank Correlation
-            - Cross-tabulations or Contingency Tables
-            - Heatmaps
-            - Line Graphs
-            - Covariance Analysis
-              - measures how two variables change together
-        - Multivariate Analysis
-          - examine interactions among three or more variables
-          - uncover complex relationships and patterns.
-          - techniques
-            - Pair Plots
-              - relationship between multiple variables at once
-            - 3D Scatter Plots
-            - Principal Component Analysis (PCA)
-              - linear technique that reduces the dimensionality of data by 
-              - transforming the original features into a smaller set of uncorrelated features 
-              - called principal components.
-            - Cluster Analysis
-            - Multivariate Regression
-            - Spatial Analysis
-              - used for geographical data by using maps
-              - and spatial plotting
-            - Time Series Analysis
-              - analyze data points collected or recorded at specific time intervals.
-              - Techniques
-                - Line Plots
-                - Seasonal Decomposition
-                - Autocorrelation Analysis
+    - branch of Artificial Intelligence that focuses on developing models and algorithms
+    - Problem Statement
+        - Project Objectives
+        - Output Expectations
+        - Success Criteria
+    - Data Collection
+        - collection of datasets used as raw data to train model
+    - Data Preprocessing
+        - Data Cleaning
+            - resolve issues like:
+                - Missing Values
+                - Duplicate Data
+                - Outliers
+                    - Outlier Detection Methods
+                        - Z-Score Method
+                        - IQR (Interquartile Range) Method
+                            - range between the first quartile (Q1) and the third quartile (Q3) in a dataset.
+                            - IQR = Q3(75th percentile) - Q1(25th percentile)
+                            -
+                        - Visualization Techniques
+                            - Box Plots
+                            - Scatter Plots
+                - Inconsistent Data
+                - Irrelevant Data
+        - Sampling Data
+        - Dimensionality Reduction
+            - Tools:
+                - OpenRefine
+                - Trifacta Wrangler
+                - TIBCO Clarity
+                - Cloudingo
+                - IBM InfoSphere QualityStage
+        - Data Preprocessing Techniques
+            - Normalization(Min-Max Scaling)
+                - Rescales features between 0 and 1.
+                - useful when the data does not follow a Gaussian distribution.
+                - sensitive to outliers, as extreme values can significantly affect the scaling.
+                - Good for algorithms like k-NN and neural networks.
+            - Standardization
+            - Encoding Categorical Variables
+        - Data Transformation
+    - Data Exploration: uncover insights, patterns, and relationships within the data
+        - Descriptive Statistics
+        - Data Visualization
+        - Correlation Analysis
+        - EDA: Exploratory Data Analysis
+            - visualize data
+            - understand main features,
+            - find patterns and
+            - discover how parts of data are connected.
+            - Types of EDA
+                - Univariate Analysis
+                    - analyze single variable and
+                    - understand its distribution and characteristics.
+                    - e.g. histograms are used to show data distribution,
+                        - box plots to detect outliers and understand data spread and
+                        - bar charts for categorical data.
+                - Bivariate Analysis
+                    - explore relationship between two variables
+                    - identify correlations or associations.
+                    - Key techniques
+                        - Scatter Plots
+                        - Correlation Coefficients
+                            - Pearson’s Correlation for linear relationships between continuous variables
+                            - Spearman’s Rank Correlation
+                        - Cross-tabulations or Contingency Tables
+                        - Heatmaps
+                        - Line Graphs
+                        - Covariance Analysis
+                            - measures how two variables change together
+                - Multivariate Analysis
+                    - examine interactions among three or more variables
+                    - uncover complex relationships and patterns.
+                    - techniques
+                        - Pair Plots
+                            - relationship between multiple variables at once
+                        - 3D Scatter Plots
+                        - Principal Component Analysis (PCA)
+                            - linear technique that reduces the dimensionality of data by
+                            - transforming the original features into a smaller set of uncorrelated features
+                            - called principal components.
+                        - Cluster Analysis
+                        - Multivariate Regression
+                        - Spatial Analysis
+                            - used for geographical data by using maps
+                            - and spatial plotting
+                        - Time Series Analysis
+                            - analyze data points collected or recorded at specific time intervals.
+                            - Techniques
+                                - Line Plots
+                                - Seasonal Decomposition
+                                - Autocorrelation Analysis
+                                - Moving Averages
+                                - ARIMA Models
+                                    - ARIMA (AutoRegressive Integrated Moving Average)
+                                    - used for forecasting and understanding time series data.
+        - Time Series Analysis
+            - Concepts
+                - Trend
+                    - direction in which a time series is moving
+                - Seasonality
+                    - repetitive patterns or cycles that occur at regular intervals
                 - Moving Averages
-                - ARIMA Models
-                  - ARIMA (AutoRegressive Integrated Moving Average)
-                  - used for forecasting and understanding time series data.
-    - Time Series Analysis
-      - Concepts
-        - Trend
-          - direction in which a time series is moving
-        - Seasonality
-          - repetitive patterns or cycles that occur at regular intervals
-        - Moving Averages
-          - smooth out short-term fluctuations and highlight longer-term trends
-        - Noise
-          - irregular and unpredictable components
-        - Differencing
-          - make the difference in values of a specified interval.
-        - Stationarity time series
-          - statistical properties such as mean, variance and autocorrelation remain constant over time.
-        - Order of Differencing
-          - number of times the time series data needs to be differenced to achieve stationarity.
-        - Autocorrelation Function (ACF)
-          - quantify the degree of similarity between a time series and a lagged version of itself.
-        - Resampling
-          - changing the frequency of the data observations.
-        - Cyclic Patterns
-        - Irregular Components
-        - Decomposition Methods
-          - Additive Decomposition
-          - Multiplicative Decomposition
-      - Types
-        - Continuous Time Series
-          - Data recorded at regular intervals with a continuous range of values 
-          - like temperature, stock prices, Sensor Data, etc.
-        - Discrete Time Series
-          - recorded at specific time points like counts of events, categorical statuses, etc.
-  - Feature Engineering: selecting only relevant variables(features)
-    - create new feature or transform existing features
-    - Feature Creation
-      - generating new features from domain knowledge or by observing patterns in the data.
-      - Interaction Features
-      - Polynomial Features
-    - Feature Transformation
-      - Normalization & Scaling
-      - Encoding
-      - Mathematical transformations
-        - e.g. logarithmic transformations for skewed data
-    - Feature Selection: choosing only the most useful input features
-      - Filter Methods
-        - evaluate each feature independently with target variable
-        - Based on statistical measures like correlation.
-        - Common Filter Techniques
-          - Information Gain: 
-            - Measures reduction in entropy when a feature is used.
-          - Chi-square test: 
-            - Checks the relationship between categorical features.
-          - Fisher’s Score: 
-            - Ranks features based on class separability.
-          - Pearson’s Correlation Coefficient: 
-            - Measures linear relationship between two continuous variables.
-          - Variance Threshold: 
-            - Removes features with very low variance.
-          - Mean Absolute Difference: 
-            - Similar to variance threshold but uses absolute differences.
-          - Dispersion ratio: 
-            - Ratio of arithmetic mean to geometric mean; 
-            - higher values indicate useful features.
-      - Wrapper Methods
-        - greedy algorithms that train algorithm
-        - use different combination of features and compute relation between these subset features and target variable
-        - Common Wrapper Techniques
-          - Forward Selection
-            - start with no features
-            - add features one by one based on model performance improvement.
-          - Backward Elimination
-            - start with all features
-            - remove least significant features iteratively.
-          - Recursive Feature Elimination (RFE)
-            - recursively removes least important features
-        - Select based on model performance.
-      - Embedded Methods
-        - Feature selection integrated within model training.
-        - Combine the benefits of both filter and wrapper methods
-        - Common Embedded Techniques
-          - Lasso Regression (L1 Regularization)
-            - Keeps only features with non-zero coefficients.
-            - adds penalty equal to the absolute value of the magnitude of coefficients to prevent overfitting.
-            - can shrink some coefficients to zero, effectively performing feature selection.
-            - J(λ) = Loss + λ * Σ|coefficients|
-          - Ridge Regression (L2 Regularization)
-            - adds penalty equal to the square of the magnitude of coefficients.
-            - penalize large coefficient in linear regression equation
-            - does not perform feature selection but helps in reducing multicollinearity.
-            - J(λ) = Loss + λ * Σ(coefficients)²
-          - Elastic Net Regression
-            - combines L1 and L2 regularization
-            - balances between feature selection and coefficient shrinkage.
-            - J(λ1, λ2) = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
-          - Decision Trees and Random Forests
-            - provide feature importance scores based on how much each feature contributes to 
-              - reducing impurity.
-          - Gradient Boosting Machines (GBM)
-            - similar to Random Forests
-            - can be used to assess feature importance.
-            - pick features that reduce prediction error the most.
-    - Feature Scaling: 
-      - standardize the range of independent variables or features of data.
-      - Scaling Techniques
-        - Absolute Maximum Scaling
-          - rescales each feature by dividing all values by the maximum absolute value of that feature
-          - feature values fall within the range of -1 to 1
-          - highly sensitive to outliers
-        - Min-Max Scaling(Normalization)
-          - transforms by subtracting the minimum value and 
-          - dividing by the difference between the maximum and minimum values.
-          - rescales the values to a specified range, typically between 0 and 1.
-          - preserving the original distribution shape 
-          - but is still affected by outliers
-        - Vector Normalization
-          - scales each data sample (row) such that its vector length (Euclidean norm) is 1
-          - focuses on the direction of data points rather than magnitude
-        - Standardization (Z-score Normalization)
-          - transforms the values to have a mean of 0 and a standard deviation of 1.
-          - centers the data around the mean and scales it based on the standard deviation.
-          - useful when the data follows a Gaussian distribution.
-          - less sensitive to outliers compared to Min-Max Scaling.
-          - preserves the shape of the original distribution of the data.
-          - subtracting the mean and scales them by dividing by the standard deviation
-          - normal distribution often benefits models like linear regression, 
-            - logistic regression and neural networks by improving convergence speed and stability.
-          - Z = (X - μ) / σ
-            - X = Data
-              μ = Mean value of X
-              σ = Standard deviation of X
-        - Robust Scaling
-          - uses the median and interquartile range (IQR) instead of the mean and standard deviation
-          - transformation robust to outliers and skewed distributions.
-          - suitable when the dataset contains extreme values or noise.
-          - Reduces influence of outliers by centering on median
-    - Feature Extraction
-      - transforming raw data into a simplified and informative set of features or attributes.
-      - reduces data complexity and highlights the most relevant information
-      - Techniques
-        - Statistical Methods
-          - Mean: average value of a dataset.
-          - Median: middle value when data is ordered.
-          - Mode: most frequently occurring value.
-          - Standard Deviation: measure of data dispersion around the mean.
-          - corelation and covariance: measure relationships between variables.
-          - Regression Analysis: understand relationships between dependent and independent variables.
-          - Variance: measure of data spread.
-          - Skewness: measure of data asymmetry.
-          - Kurtosis: measure of data "tailedness".
-        - Dimensionality Reduction Techniques
-          - Principal Component Analysis (PCA)
-            - select variables that account for most of the data’s variation
-            - reduces dimensionality while preserving important information
-          - Linear Discriminant Analysis (LDA)
-            - find the best combination of features to separate different classes
-          - t-Distributed Stochastic Neighbor Embedding (t-SNE)
-            - reduce high-dimensional data into two or three dimensions
-          - UMAP (Uniform Manifold Approximation and Projection)
-            - similar to t-SNE but faster and scalable
-            - preserves both local and global data structure
-        - Independent Component Analysis (ICA)
-          - separates a multivariate signal into additive, independent components
-          - useful in signal processing and image analysis.
-        - Aggregation & Combination
-          - Summing or averaging features
-        - for Text Data
-          - Bag of Words (BoW)
-            - Represents a document by counting word frequencies, ignoring word order,
-            - useful for basic text classification.
-          - Term Frequency-Inverse Document Frequency (TF-IDF)
-            - Adjust word importance based on frequency
-            - in a specific document compared to all documents
-            - highlighting unique terms.
-          - Word Embeddings (Word2Vec, GloVe)
-        - Signal Processing Methods: used for analyzing time-series, audio and sensor data
-          - Fourier Transform
-            - convert signal from the time domain to the frequency domain to analyze its frequency components.
-          - Wavelet Transform
-            - analyzes signals that vary over time, 
-            - offering both time and frequency information for non-stationary signals.
-          - Short-Time Fourier Transform (STFT)
-        - Image Processing Methods
-          - Histogram of Oriented Gradients (HOG)
-            - finds the distribution of intensity gradients or edge directions in an image
-            - used in object detection and recognition tasks.
-            - feature descriptor for object detection in images
-            - captures edge and gradient structures.
-          - Convolutional Neural Networks (CNN) Features
-            - learn hierarchical features from images through layers of convolutions, 
-            - ideal for classification and detection tasks.
-          - Scale-Invariant Feature Transform (SIFT)
-            - detects and describes local features in images
-            - robust to scale, rotation, and illumination changes.
-          - Speeded-Up Robust Features (SURF)
-            - faster alternative to SIFT for detecting and describing image features.
-      - tools for Feature Extraction
-        - TensorFlow / Keras
-        - PyTorch
-        - NLTK(Natural Language Toolkit)
-        - FeatureTools
-        - Tsfresh
-        - OpenCV
-        - Scikit-Image
-    - step includes 
-      - Data Cleaning
-        - handling missing values,
-        - correct errors or inconsistencies
-      - Data Transformation
-        - raw data into a format suitable for modeling including scaling, normalization and encoding.
-      - scaling numbers,
-      - creating new features
-      - or combining existing ones.
-    - Feature Engineering Types
-      - Imputation
-        - replace missing values
-      - Handling Outliers
-        - anomalies in data
-      - Binning
-        - categorise data
-      - Log Transform
-        - normalization
-      - One-hot encoding
-        - categorical attributes
-      - Grouping operations
-      - Scaling
-        - e.g. weight and height may have different metrics
-    - Feature Engineering Techniques
-      - One-Hot Encoding
-        - convert categorical variables into binary indicators
-      - Binning
-        - transform continuous variables into discrete bins
-        - e.g labels = ['0-20', '21-40', '41-60', '61+']
-      - Text Data Preprocessing
-        - removing stop-words
-          - filtering out commonly occurring words that
-          - provide no or very little semantic value to text analysis.
-            - e.g. "is", "the", "and"
-          - Categories of Stopwords
-            - Standard Stopwords
-              - articles("a", "the"),
-              - conjunctions ("and", "but")
-              - and prepositions ("in", "on")
-            - Domain-Specific Stopwords
-            - Contextual Stopwords
-              - Words with extremely high frequency
-            - Numerical Stopwords
-              - Digits, punctuation marks and single characters
-        - Stemming
-          - reducing words to their root form
-          - remove prefixes and suffixes.
-            - e.g. "running", "runner", and "ran" to "run"
-          - Stemming Algorithms
-            - Porter Stemmer
-              - rule-based algorithm
-              - removes common morphological and inflectional endings from words in English.
-              - suffix EED to EE
-                - 'agreed' → 'agree'
-              - suffix ED or ING to null
-                - e.g 'playing' → 'play', 'played' → 'play'
-              - suffix ATION to ATE
-                - e.g 'relational' → 'relate'
-              - suffix TIONAL to TION
-                - e.g 'conditional' → 'condition'
-              - suffix FUL to null
-                - e.g 'hopeful' → 'hope'
-            - Snowball Stemmer(Porter2)
-              - enhanced version of the Porter Stemmer
-              - supports multiple languages(multilingual stemmer)
-              - Example:
-                - 'running' → 'run'
-                - 'quickly' → 'quick'
-            - Lancaster Stemmer
-              - more aggressive and faster than other stemmers.
-              - also more destructive and may lead to excessively shortened stems
-            - Regexp Stemmer
-              - Regular Expression Stemmer
-              - allows users to define custom rules using regular expressions (regex).
-              - 'running' → 'runn'
-                Custom rule: r'ing$' removes the suffix ing.
-            - Krovetz Stemmer
-              - more linguistically accurate
-              - preserve meaning more effectively
-              - steps like converting plural forms to singular and removing ing from past-tense verbs.
-              - 'children' → 'child'
-        - Lemmatization
-          - Reduces words to their base form (lemma) ensuring a valid word.
-          - Considers the word's meaning and context to return the base form.
-          - Always produces a valid word.
-          - Example: "Better" → "good"
-          - Considers the context and part of speech.
-        - Vectorizing text data
-          - transform human language into a format that machines can comprehend and process
-          - numerical representations 
-            - enable computers to perform tasks such as 
-              - sentiment analysis, 
-              - machine translation and 
-              - information retrieval
-          - Vectors are numerical representations of words, phrases or entire documents.
-          - Techniques
-            - One Hot Encoding
-              - each word is represented by a vector with a high bit corresponding to 
-              - the word’s index in the vocabulary 
-              - all other bits set to zero.
-            - Bag of Words (BoW)
-              - converts text into a vector
-              - representing the frequency of words, disregarding grammar and word order.
-              - Ignores the order and context of words.
-              - Results in high-dimensional and sparse matrices.
-            - Term Frequency-Inverse Document Frequency (TF-IDF)
-              - extension of BoW that weighs the frequency of words by their importance across documents.
-              - reduces the weight of common words and increases the weight of rare but significant words.
-              - TF(t,d)=
-                Total number of terms in document d/Number of times term t appears in document d
-              - IDF(t)= log_e(Total number of documents/Number of documents with term t in it)
-            - Count Vectorizer
-              - represents text by counting the occurrences of each word in a document.
-              - similar to BoW but focuses on raw counts rather than binary presence.
-              - converts a collection of text documents to a matrix of token counts
-            - Word Embeddings (Word2Vec, GloVe)
-              - dense vector representations of words in a continuous vector space
-              - semantically similar words are located closer to each other.
-            - Image Embeddings
-              - transforms images into numerical representations
-              - Convolutional Neural Networks (CNNs)
-                - extract high-level features from images
-                - represent them as dense vectors.
-      - Feature Splitting
-        - Divide single feature into multiple sub-features,
-        - uncovering valuable insights
-      - Feature Engineering tools
-        - FeatureTools
-        - Tsfresh
-        - Pandas
-        - NumPy
-        - TPOT
-        - DataRobot
-        - Alteryx
-        - H2O.ai
-  - Model Selection
-    - Choosing appropriate algorithms based on:
-      - Problem Type
-      - Data Characteristics
-      - Computational Resources
-  - Model Training
-    - Process
-      - Iterative training
-      - Optimization
-      - Validation
-  - Model Types
-    - Supervised Learning
-      - Trains models on labeled data to predict or classify new, unseen data.
-    - Unsupervised Learning
-      - Finds patterns or groups in unlabeled data, like clustering or dimensionality reduction.
-    - Reinforcement Learning
-      - Learns through trial and error to maximize rewards, ideal for decision-making tasks.
-    - Self-Supervised Learning
-      - Utilizes large amounts of unlabeled data by 
-        - generating own labels from the data itself
-    - Semi-Supervised Learning
-      - Combines a small amount of labeled data with a large amount of unlabeled data
-  - Model Evaluation
-    - Regularization Techniques: prevent overfitting by adding penalty to model complexity
-      - L1 Regularization (Lasso): Least Absolute Shrinkage and Selection Operator regression
-        - add the absolute value of magnitude of the coefficient as a penalty term to the loss function(L)
-        - L = Loss + λ * Σ|coefficients|
-        - can shrink some coefficients to zero, effectively performing feature selection.
-      - L2 Regularization (Ridge)
-        - add the squared magnitude of the coefficient as a penalty term to the loss function(L).
-        - handle multicollinearity by shrinking the coefficients of correlated features instead of eliminating them.
-        - L = Loss + λ * Σ(coefficients)²
-      - Elastic Net Regression
-        - combines L1 and L2 regularization
-        - add the absolute norm of the weights as well as the squared measure of the weights
-        - balances between feature selection and coefficient shrinkage.
-        - L = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
-      - Dropout 
-    - Confusion Matrix
-      - True Positive
-          - When the model correctly predicts the positive class.
-      - True Negative
-          - when the model correctly predicts the negative class.
-      - False Positive
-          - when the model incorrectly predicts the positive class for a negative instance.
-      - False Negative
-          - when the model incorrectly predicts the negative class for a positive instance.
-    - Cross-Validation
-      - how well model performs on unseen data while preventing overfitting
-      - Train model on some parts and test it on the remaining part of dataset
-      - Techniques
-        - Holdout Validation
-          - 50% data for training and 50% for testing.
-        - LOOCV (Leave One Out Cross Validation)
-          - model is trained on the entire dataset except for one data point which is used for testing.
-          - repeated for each data point in the dataset.
-          - computationally expensive for large datasets.
-        - K-Fold Cross-Validation
-          - split the dataset into k equal-sized folds.
-          - train model on k-1 folds and tested on the remaining fold.
-          - process is repeated k times, with each fold used as the test set once.
-          - final performance is averaged over all k iterations.
-          - k should be greater than or equal to 5 and less than or equal to 10.
-        - Stratified K-Fold Cross-Validation
-          - ensures each fold of the cross-validation process has the same class distribution as the full dataset.
-          - important for imbalanced datasets
-        - Leave-One-Out Cross-Validation (LOOCV)
-        - Shuffle Split Cross-Validation
-    - Performance Metrics
-    - Metrics
-    - features like:
-      - Accuracy
-        - ratio of correctly predicted instances to the total instances in a dataset.
-        - can be misleading when one class is more dominant over the other
-        - Accuracy = (TP + TN) / (TP + TN + FP + FN)
-      - Precision
-        - ratio of true positive predictions to the total predicted positives.
-        - measures the accuracy of positive predictions.
-        - important in scenarios where false positives are costly.
-        - like spam detection, fraud detection etc.
-        - Precision = TP / (TP + FP)
-      - Recall
-        - Recall (Sensitivity) is the ratio of true positive predictions to the total actual positives.
-        - measures how how good the model is at predicting positives.
-        - important in scenarios where false negatives are costly.
-        - like disease diagnosis, safety-critical systems etc.
-        - Recall = TP / (TP + FN)
-      - F1-Score
-        - F1-Score is the harmonic mean of Precision and Recall, 
-        - providing a balance between the two metrics.
-        - useful when dealing with imbalanced datasets
-        - where one class is significantly more prevalent than the other.
-        - F1 = 2 * (Precision * Recall) / (Precision + Recall)
-      - Specificity(True Negative Rate)
-        - ratio of true negative predictions to the total actual negatives.
-        - measures how well the model identifies negative instances.
-        - important in scenarios where false positives are costly.
-        - like spam detection, fraud detection etc.
-        - Specificity = TN / (TN + FP)
-        - 1 - Specificity = False Positive Rate (FPR)
-      - Type I Error (False Positive Rate)
-        - occurs when the model incorrectly predicts the positive class for a negative instance.
-        - Type I Error Rate = FP / (FP + TN)
-      - Type II Error (False Negative Rate)
-        - occurs when the model incorrectly predicts the negative class for a positive instance.
-        - Type II Error Rate = FN / (FN + TP)
-      - Mean Absolute Error (MAE)
-        - average of the absolute differences between predicted and actual values.
-        - provides a straightforward measure of prediction accuracy.
-        - MAE = (1/n) * Σ|predicted - actual|
-      - Mean Squared Error (MSE)
-        - average of the squared differences between predicted and actual values.
-        - penalizes larger errors more than MAE.
-        - MSE = (1/n) * Σ(predicted - actual)²
-      - Root Mean Squared Error (RMSE)
-        - square root of the average of the squared differences between predicted and actual values.
-        - provides an interpretable measure of prediction accuracy in the same units as the target variable.
-        - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
-      - R-squared (Coefficient of Determination)
-        - indicates the proportion of variance in the dependent variable that can be explained by the independent variables.
-        - R² = 1 - (SS_res / SS_tot)
-          - SS_res = Σ(actual - predicted)²
-          - SS_tot = Σ(actual - mean(actual))²
-      - ROC-AUC Curve
-        - ROC-AUC (Receiver Operating Characteristic - Area Under the Curve) 
-        - Check how well a binary classification model works
-        - how well the model separates the positive cases like people with a disease from the 
-        - negative cases like people without the disease at different threshold level.
-        - measures a model's ability to distinguish between classes, 
-        - with higher values indicating better performance.
-        - True Positive Rate (TPR) vs False Positive Rate (FPR)
-          - True Positive Rate (TPR) = TP / (TP + FN) = Recall
-          - False Positive Rate (FPR) = FP / (FP + TN) = 1 - Specificity
-  - Hyperparameter Model Tuning:
-    - optimize model performance by finding the best hyperparameters 
-    - Grid Search CV
-      - brute-force approach
-      - train model using all possible combinations of specified hyperparameter values to 
-      - find the best-performing setup.
-      - slow and uses a lot of computer power
-      - exhaustively searches through a specified subset of hyperparameters
-      - evaluates model performance for each combination
-      - computationally expensive for large hyperparameter spaces
-      - example:
-        - Tuning Logistic Regression with GridSearchCV
-    - Random Search CV
-      - randomly samples hyperparameter combinations from a given range
-      - evaluates model performance for each combination
-      - more efficient than Grid Search for large hyperparameter spaces
-      - Example:
-        - Tuning Random Forest with RandomizedSearchCV
-        - Tuning Decision Tree with RandomizedSearchCV
-    - Bayesian Optimization
-      - treats hyperparameter tuning like a mathematical optimization problem and 
-      - learns from past results to decide what to try next.
-      - builds a probabilistic model(surrogate function) of the objective function
-      - uses it to select the most promising hyperparameter combinations to evaluate
-      - balances exploration and exploitation
-      - P(score(y)∣hyperparameters(x))
-      - surrogate function models the relationship between hyperparameters x and the score y.
-      - surrogate models used in Bayesian optimization include:
-        - Gaussian Processes
-        - Random Forests
-        - Tree-structured Parzen Estimators (TPE)
-    - Genetic Algorithms
-      - inspired by the process of natural selection
-      - iteratively evolves a population of hyperparameter combinations
-      - selects the best-performing combinations for the next generation
-  - Model Deployment
-    - Containerization
-      - Docker
-      - Kubernetes
-    - Cloud Services
-      - AWS SageMaker
-      - Google AI Platform
-      - Microsoft Azure ML
-  - Model Monitoring and Maintenance
-    - Model Drift Detection
-    - Performance Monitoring
-    - Monitoring issues like:
-      - Data Drift
-        - Data Drift occurs when the 
-        - statistical properties of the input data change over time, 
-        - leading to a decline in model performance.
-      - Concept Drift
-        - Concept Drift refers to changes in the 
-        - underlying relationships between input features and target variables over time,
-        - which can result in decreased model accuracy.
-  - Algorithms
-    - Regression
-      - Linear Regression
-        - assumes that there is a linear relationship between the input and output
-        - relationship represented by a straight line.
-        - uses the equation of a line: Y = mX + b
-          - Y = predicted value (output)
-          - m = slope of the line (coefficient)
-          - X = input feature
-          - b = y-intercept (constant term)
-        - Simple Linear Regression
-          - involves a single independent variable to predict a dependent variable.
-          - equation: Y = β0 + β1X1
-            - Y = predicted value
-            - β0 = intercept
-            - β1 = coefficient for the feature
-            - X1 = input feature
-        - Multiple Linear Regression
-          - involves two or more independent variables to predict a dependent variable.
-          - equation: Y = β0 + β1X1 + β2X2 + ... + βnXn
-            - Y = predicted value
-            - β0 = intercept
-            - β1, β2, ..., βn = coefficients for each feature
-            - X1, X2, ..., Xn = input features
-          - Multicollinearity
-            - occurs when two or more independent variables in a regression model are highly correlated.
-            - can lead to unstable coefficient estimates and make it difficult to assess the individual effect of each predictor.
-            - Detection Methods
-              - Variance Inflation Factor (VIF)
-                - quantifies how much the variance of a regression coefficient is increased due to multicollinearity.
-                - VIF = 1 / (1 - R²)
-                  - R² = coefficient of determination from regressing the predictor against all other predictors.
-                - A VIF value greater than 5 or 10 indicates high multicollinearity.
-              - Correlation Matrix
-                - examines pairwise correlations between independent variables.
-                - high correlation coefficients (e.g., above 0.8 or below -0.8) suggest multicollinearity.
-              - Condition Index
-                - assesses the sensitivity of the regression estimates to small changes in the data.
-                - values above 30 indicate potential multicollinearity issues.
-            - Remedies
-              - Remove one of the correlated variables
-              - Combine correlated variables into a single predictor using techniques like Principal Component Analysis (PCA)
-              - Regularization methods like Ridge Regression or Lasso Regression
-        - Polynomial Regression
-          - models the relationship between the independent variable and dependent variable as an nth degree polynomial.
-          - captures non-linear relationships by introducing polynomial terms of the independent variable.
-        - use cases
-          - House prices forcasting based on features like size, location, and number of bedrooms.
-          - Sales forcasting based on advertising spend and market trends.
-          - Estimating the impact of temperature on electricity consumption.
-          - Stock price prediction based on historical data and market indicators.
-          - Medical risk prediction based on patient health metrics.
-        - Minimizing the error
-          - Ordinary Least Squares (OLS)
-            - minimizes the sum of squared differences between observed and predicted values.
-            - Residuals = Observed - Predicted
-            - Cost Function (SSE) = Σ(Residuals)²
-          - Hypothesis in Linear Regression
-            - represents the predicted output based on input features and model parameters.
-            - Single linear Regression Hypothesis:
-              - h(X) = β0 + β1X1
-                - h(X) = predicted value
-                - β0 = intercept
-                - β1 = coefficient for the feature
-                - X1 = input feature
-            - Multiple linear Regression Hypothesis:
-              - h(X) = β0 + β1X1 + β2X2 + ... + βnXn
-                - h(X) = predicted value
-                - β0 = intercept
-                - β1, β2, ..., βn = coefficients for each feature
-                - X1, X2, ..., Xn = input features
-        - Cost Function
-          - Mean Squared Error (MSE)
-            - MSE = (1/n) * Σ(predicted - actual)²
-          - Root Mean Squared Error (RMSE)
-            - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
-          - Mean Absolute Error (MAE)
-            - MAE = (1/n) * Σ|predicted - actual|
-        - Gradient Descent
-            - find best fit line for the data
-            - iterative optimization algorithm
-            - minimizes the cost function by updating model parameters in the direction of the steepest descent.
-            - minimize the prediction error 
-            - start with random model parameters and
-            - repeatedly adjust them to reduce the difference between predicted and actual values.
-            - cost function = MSE = (1/n) * Σ(predicted - actual)²
-            - Gradient computation:
-              - for MSE cost function, the gradient with respect to βj is:
-                - (∂/∂βj) * MSE = (2/n) * Σ(predicted - actual) * Xj
-                  - Xj = input feature corresponding to βj
-              - update rule:
-                  - βj = βj - α * (∂/∂βj) * Cost Function
-                      - βj = model parameter (coefficient)
-                      - α = learning rate (step size)
-                      - (∂/∂βj) * Cost Function = gradient of the cost function with respect to βj
-        - Gradient Descent Variants for Linear Regression
-          - Batch Gradient Descent
-          - Stochastic Gradient Descent (SGD)
-          - Mini-Batch Gradient Descent
-        - Evaluation Metrics for Linear Regression
-          - R-squared (Coefficient of Determination)
-            - indicates how much variation the developed model can explain or capture
-            - R² = 1 - (SS_res / SS_tot)
-              - SS_res = Σ(actual - predicted)²
-              - SS_tot = Σ(actual - mean(actual))²
-          - Residual Standard Error (RSE)
-            - measures the average amount that the observed values deviate from the predicted values.
-            - RSE = sqrt(SS_res / (n - p - 1))
-              - SS_res = Σ(actual - predicted)²
-              - n = number of observations
-              - p = number of predictors
-          - Residual sum of squares (RSS)
-            - RSS = Σ(actual - predicted)²
-          - Total sum of squares (TSS)
-            - TSS = Σ(actual - mean(actual))²
-          - Adjusted R-squared Error
-            - Adjusted R² = 1 - [(1 - R²)(n - 1) / (n - p - 1)]
-              - n = number of observations
-              - p = number of predictors
-          - Mean Absolute Error (MAE)
-            - MAE = (1/n) * Σ|predicted - actual|
-          - Mean Squared Error (MSE)
-            - average of the squared differences between the actual and predicted values for all the data points
-            - gives higher weight to larger errors.
-            - MSE = (1/n) * Σ(predicted - actual)²
-          - Root Mean Squared Error (RMSE)
-            - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
-      - Logistic Regression
-        - Used when the output is a "yes or no" type answer
-        - helps in predicting categories like pass/fail or spam/not spam.
-        - predicts binary outcomes (0 or 1) based on input features.
-        - used for classification problems
-        - uses the logistic function (sigmoid function) to model the probability of the positive class.
-        - Logistic Function (Sigmoid Function)
-          - S curve
-          - S(t) = 1 / (1 + e^(-t))
-            - S(t) = predicted probability of the positive class
-            - e = Euler's number (approximately 2.71828)
-            - t = linear combination of input features and model parameters
-          - Likelihood function for Logistic Regression
-            - L(β) = Π P(y_i | X_i; β)
-              - P(y_i | X_i; β) = S(X_i * β) if y_i = 1
-              - P(y_i | X_i; β) = 1 - S(X_i * β) if y_i = 0
-              - y_i = actual label (0 or 1)
-              - X_i = input features for the i-th instance
-              - β = model parameters (coefficients)
-          - Log likelihood function
-            - LL(β) = Σ [y_i * log(S(X_i * β)) + (1 - y_i) * log(1 - S(X_i * β))]
-          - Gradient of the Log Likelihood
-            - ∂LL(β) / ∂β = Σ (y_i - S(X_i * β)) * X_i
-        - Odds and Log-Odds
-          - Odds = P / (1 - P)
-            - P = probability of the positive class
-          - Log-Odds (Logit) = log(P / (1 - P))
-        - Cost Function
-          - Logistic Regression uses the Log Loss (Cross-Entropy Loss) as its cost function.
-          - Log Loss(cost) = -[y * log(p) + (1 - y) * log(1 - p)]
-            - y = actual label (0 or 1)
-            - p = predicted probability of the positive class
-        - Model Training
-          - Maximum Likelihood Estimation (MLE)
-            - finds the model parameters that maximize the likelihood of observing the given data.
-        - Types of Logistic Regression
-          - Binary Logistic Regression
-            - Two classes (0 and 1)
-            - e.g. spam detection, disease diagnosis etc.
-          - Multinomial Logistic Regression
-            - more than two classes without any order
-            - e.g. classifying types of fruits (apple, banana, orange)
-          - Ordinal Logistic Regression
-            - more than two classes with a specific order
-            - e.g. rating scales (poor, average, good, excellent)
-      - Polynomial Regression
-    - Decision Trees
-      - supervised learning algorithm used for both classification and regression tasks
-      - tree-like model of decisions and their possible consequences.
-      - splits data into subsets based on feature values
-      - recursively partitions the data to create a tree structure.
-      - like a flowchart to help make decisions based on input features.
-      - Components
-        - Root Node
-        - branches: attribute values/outcomes of a test
-        - Internal Nodes: attribute tests
-        - Leaf Nodes: Final decision o predictions(class labels or continuous values)
-      - Applications
-        - Customer Segmentation
-        - Fraud Detection
-        - Medical Diagnosis
-        - Loan Approval
-      - Splitting Criteria
-        - Gini Index/Impurity
-          - measures how often a randomly chosen element would be incorrectly labeled 
-          - if it was randomly labeled according to the distribution of labels in the subset.
-          - i.e. attribute with a lower Gini index should be preferred
-          - IGini = 1 - Σ(p_i)²
-            - p_i = proportion of instances belonging to class i
-        - Information Gain
-          - it tells how useful a question (or feature) is for splitting data into groups.
-          - measures how much the uncertainty decreases after the split.
-          - Information Gain = Entropy(Parent) - Weighted Average * Entropy(Children)
-        - Mean Squared Error (MSE) for regression tasks
-        - Gain(G, A) = Entropy(G) - Σ (|G_v| / |G|) * Entropy(G_v)
-          - G = dataset before the split
-          - A = feature used for splitting
-          - G_v = subset of G where feature A has value v
-      - Decision Tree Algorithms
-        - ID3 (Iterative Dichotomiser 3)
-          - greedily choosing the feature that maximizes the information gain at each node
-          - uses entropy as the splitting criterion
-          - Entropy measures impurity in the dataset
-          - Entropy(S) = - Σ p_i * log2(p_i)
-            - p_i = proportion of instances belonging to class i
-          - Information Gain
-            - IG(S, A) = Entropy(S) - Σ (|S_v| / |S|) * Entropy(S_v)
-              - S = dataset before the split
-              - A = feature used for splitting
-              - S_v = subset of S where feature A has value v
-          - it recursively splits the dataset using the feature with the highest information gain 
-          - until all examples in a node belong to the same class or no features remain to split.
-          - prone to overfitting
-        - C4.5
-          - modified version of information gain called the gain ratio
-          - to reduce the bias towards features with many values
-          - Gain Ratio = Information Gain / Split Information
-            - Split Information = - Σ (|S_v| / |S|) * log2(|S_v| / |S|)
-          - handles both continuous and categorical features
-          - manages missing values effectively
-          - prunes the tree after creation to reduce overfitting
-          - struggles with large datasets and high-dimensional data and noisy datasets.
-        - CART (Classification and Regression Trees)
-          - for both classification and regression tasks
-          - uses Gini impurity as the splitting criterion for classification tasks
-          - which measures the impurity(likelihood of incorrect classification) of a dataset.
-          - Gini Impurity = 1 - Σ(p_i)²
-            - p_i = proportion of instances belonging to class i
-          - for regression tasks, it uses Mean Squared Error (MSE) to minimize the variance within each node.
-          - produces binary trees, where each internal node has exactly two children.
-          - employs cost-complexity pruning to avoid overfitting
-          - handles both numerical and categorical data effectively.
-          - uses cost-complexity pruning after tree construction to reduce overfitting
-          - builds binary trees
-        - CHAID (Chi-squared Automatic Interaction Detector)
-          - uses chi-square tests to determine the best splits especially for categorical variables.
-          - chi-square tests
-            - find relationship between two entities.
-            - used to determine whether observed frequencies differ significantly from expected frequencies
-            - under given hypothesis.
-            - Applications
-              - feature selection
-              - goodness of fit testing
-              - independence testing
-              - A/B testing and feature evaluation
-              - Feature selection in machine learning
-              - Database Query Optimization
-                - test if actual row counts per partition match the expected uniform distribution.
-                - Uneven distribution (χ² significance) suggests a poor sharding strategy.
-              - NLP
-                - Evaluate word frequency distributions in texts.
-          - recursively splits the data based on the feature that shows the most significant association with the target variable.
-          - can create multi-way splits, allowing nodes to have more than two children.
-          - handles both categorical and continuous features
-          - Chi-square statistic (χ²)
-            - χ² = Σ (O_i - E_i)² / E_i
-              - O_i = observed frequency for category i
-              - E_i = expected frequency for category i
-          - Classification: 
-            - assign a class label to new data points by following the tree from the root to a leaf node
-            - with leaf node’s class label being assigned to data. 
-          - Regression
-            - predicts the target variable by averaging the values at the leaf node.
-        - MARS (Multivariate Adaptive Regression Splines)
-          - extension of the CART algorithm
-          - uses splines to model non-linear relationships between variables
-          - constructs a piecewise linear model where the relationship between the input and output variables
-          - but with variable slopes at different points, known as knots.
-          - automatically selects and positions these knots based on the data distribution and the need to capture non-linearities.
-          - Basis Functions
-            - h(x) = max(0, x - t) or h(x) = max(0, t - x)
-              - t = knot location
-          - Knot function
-            - points where the slope of the piecewise linear function changes.
-        - Conditional Inference Trees
-          - uses statistical tests to choose splits based on the relationship between features and the target variable.
-          - use permutation tests to select the feature that best splits the data while minimizing bias.
-          - follows recursive approach
-          - At each node it evaluates the statistical significance of potential splits 
-          - using tests like the Chi-squared test for categorical features and 
-          - the F-test for continuous features.
-      - Types
-        - Classification Trees
-        - Regression Trees
-        - Pruning Techniques
-    - Ensemble Methods
-      - Bagging
-      - Boosting
-      - Stacking
-    - Support Vector Machines (SVM)
-      - used for both classification and regression tasks
-      - finds the optimal hyperplane that separates different classes in the feature space.
-      - aims to maximize the margin between the hyperplane and the nearest data points from each class
-      - Support Vectors
-        - data points closest to the hyperplane
-        - influence the position and orientation of the hyperplane.
-      - Hyperplane
-        - decision boundary that separates different classes in the feature space.
-      - Margin
-        - distance between the hyperplane and the nearest data points from each class.
-      - Objective Function
-        - maximize the margin while minimizing classification errors.
-        - Optimization Problem
-          - Minimize: (1/2) * ||w||² + C * Σ ξ_i
-            - w = weight vector defining the hyperplane
-            - C = regularization parameter balancing margin maximization and error minimization
-            - ξ_i = slack variables allowing for misclassification of data points
-          - Subject to: y_i * (w · x_i + b) ≥ 1 - ξ_i, for all i
-            - y_i = class label of data point i (+1 or -1)
-            - x_i = feature vector of data point i
-            - b = bias term
-      - Hinge Loss
-        - Hinge loss is used to measure the error in SVM classification.
-      - Hinge Loss Function
-        - L(y, f(x)) = max(0, 1 - y * f(x))
-          - y = actual class label (+1 or -1)
-          - f(x) = predicted value from the SVM model
-      - Langrange Multipliers
-        - used to solve constrained optimization problems in SVMs.
-        - transform the constrained optimization problem into an unconstrained one
-        - by introducing additional variables (Lagrange multipliers) for each constraint.
-        - L(w, b, α) = (1/2) * ||w||² - Σ α_i [y_i * (w · x_i + b) - 1]
-          - α_i = Lagrange multiplier for data point i
-      - Dual problem for SVM
-        - Maximize: W(α) = Σ α_i - (1/2) * Σ Σ α_i * α_j * y_i * y_j * (x_i · x_j)
-          - Subject to: Σ α_i * y_i = 0 and α_i ≥ 0 for all i
-      - SVM Decision Boundary
-        - f(x) = w · x + b
-          - w = weight vector defining the hyperplane
-          - x = input feature vector
-          - b = bias term
-      - Use cases:
-        - Binary classification
-          - Spam vs Non-Spam
-          - Cat vs Dog
-      - Types
-        - Linear SVM
-          - uses linear boundary to separate classes
-        - Non-linear SVM
-          - uses Kernel functions to transform data into higher dimensions
-          - Kernel Functions
-            - Kernel: function transforms the input data into a higher-dimensional space
-              - allows SVM to find a linear separating hyperplane in that space.
-              - Common Kernel Functions
-                - Linear Kernel
-                  - for linearly separable data
-                - Polynomial Kernel
-                  - for non-linear data
-                - Radial Basis Function (RBF) Kernel
-                  - for complex non-linear data
-                  - transforms data into space based on distance from a center point
-                  - ideal for spherical or circular relationships
-                - Sigmoid Kernel
-                  - for certain types of non-linear data
-                  - mimics neural network behavior using sigmoid activation function
-    - K-NN (K-Nearest Neighbors)
-      - Find closest data points(neighbours) to make predictions
-      - used for classification and regression tasks
-      - find k nearest data points in the training set and 
-        - make predictions based on majority class (classification) or average value (regression) of those neighbors.
-      - Also called Lazy Learner Algorithm
-        - because it does not learn a model during training phase
-        - simply stores the training data and makes predictions during the testing phase.
-      - based on proximity and majority voting (for classification) or averaging (for regression).
-      - Boundary
-        - shape of the decision boundary is determined by the distribution of training data points.
-      - Voronoi Diagram
-        - partitioning of a space into regions based on distance to a specific set of points.
-        - each region contains all points closer to one particular point than to any other.
-        - helps visualize how K-NN classifies new data points based on proximity to training data.
-      - What is k?
-        - number of nearest neighbors to consider when making predictions.
-      - How to choose k?
-        - Experiment with different k values using cross-validation
-        - choose the one that gives the best performance on validation data.
-        - if data has lot of outliers, choose larger k to smooth out predictions.
-      - Methods to choose k
+                    - smooth out short-term fluctuations and highlight longer-term trends
+                - Noise
+                    - irregular and unpredictable components
+                - Differencing
+                    - make the difference in values of a specified interval.
+                - Stationarity time series
+                    - statistical properties such as mean, variance and autocorrelation remain constant over time.
+                - Order of Differencing
+                    - number of times the time series data needs to be differenced to achieve stationarity.
+                - Autocorrelation Function (ACF)
+                    - quantify the degree of similarity between a time series and a lagged version of itself.
+                - Resampling
+                    - changing the frequency of the data observations.
+                - Cyclic Patterns
+                - Irregular Components
+                - Decomposition Methods
+                    - Additive Decomposition
+                    - Multiplicative Decomposition
+            - Types
+                - Continuous Time Series
+                    - Data recorded at regular intervals with a continuous range of values
+                    - like temperature, stock prices, Sensor Data, etc.
+                - Discrete Time Series
+                    - recorded at specific time points like counts of events, categorical statuses, etc.
+    - Feature Engineering: selecting only relevant variables(features)
+        - create new feature or transform existing features
+        - Feature Creation
+            - generating new features from domain knowledge or by observing patterns in the data.
+            - Interaction Features
+            - Polynomial Features
+        - Feature Transformation
+            - Normalization & Scaling
+            - Encoding
+            - Mathematical transformations
+                - e.g. logarithmic transformations for skewed data
+        - Feature Selection: choosing only the most useful input features
+            - Filter Methods
+                - evaluate each feature independently with target variable
+                - Based on statistical measures like correlation.
+                - Common Filter Techniques
+                    - Information Gain:
+                        - Measures reduction in entropy when a feature is used.
+                    - Chi-square test:
+                        - Checks the relationship between categorical features.
+                    - Fisher’s Score:
+                        - Ranks features based on class separability.
+                    - Pearson’s Correlation Coefficient:
+                        - Measures linear relationship between two continuous variables.
+                    - Variance Threshold:
+                        - Removes features with very low variance.
+                    - Mean Absolute Difference:
+                        - Similar to variance threshold but uses absolute differences.
+                    - Dispersion ratio:
+                        - Ratio of arithmetic mean to geometric mean;
+                        - higher values indicate useful features.
+            - Wrapper Methods
+                - greedy algorithms that train algorithm
+                - use different combination of features and compute relation between these subset features and target
+                  variable
+                - Common Wrapper Techniques
+                    - Forward Selection
+                        - start with no features
+                        - add features one by one based on model performance improvement.
+                    - Backward Elimination
+                        - start with all features
+                        - remove least significant features iteratively.
+                    - Recursive Feature Elimination (RFE)
+                        - recursively removes least important features
+                - Select based on model performance.
+            - Embedded Methods
+                - Feature selection integrated within model training.
+                - Combine the benefits of both filter and wrapper methods
+                - Common Embedded Techniques
+                    - Lasso Regression (L1 Regularization)
+                        - Keeps only features with non-zero coefficients.
+                        - adds penalty equal to the absolute value of the magnitude of coefficients to prevent
+                          overfitting.
+                        - can shrink some coefficients to zero, effectively performing feature selection.
+                        - J(λ) = Loss + λ * Σ|coefficients|
+                    - Ridge Regression (L2 Regularization)
+                        - adds penalty equal to the square of the magnitude of coefficients.
+                        - penalize large coefficient in linear regression equation
+                        - does not perform feature selection but helps in reducing multicollinearity.
+                        - J(λ) = Loss + λ * Σ(coefficients)²
+                    - Elastic Net Regression
+                        - combines L1 and L2 regularization
+                        - balances between feature selection and coefficient shrinkage.
+                        - J(λ1, λ2) = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
+                    - Decision Trees and Random Forests
+                        - provide feature importance scores based on how much each feature contributes to
+                            - reducing impurity.
+                    - Gradient Boosting Machines (GBM)
+                        - similar to Random Forests
+                        - can be used to assess feature importance.
+                        - pick features that reduce prediction error the most.
+        - Feature Scaling:
+            - standardize the range of independent variables or features of data.
+            - Scaling Techniques
+                - Absolute Maximum Scaling
+                    - rescales each feature by dividing all values by the maximum absolute value of that feature
+                    - feature values fall within the range of -1 to 1
+                    - highly sensitive to outliers
+                - Min-Max Scaling(Normalization)
+                    - transforms by subtracting the minimum value and
+                    - dividing by the difference between the maximum and minimum values.
+                    - rescales the values to a specified range, typically between 0 and 1.
+                    - preserving the original distribution shape
+                    - but is still affected by outliers
+                - Vector Normalization
+                    - scales each data sample (row) such that its vector length (Euclidean norm) is 1
+                    - focuses on the direction of data points rather than magnitude
+                - Standardization (Z-score Normalization)
+                    - transforms the values to have a mean of 0 and a standard deviation of 1.
+                    - centers the data around the mean and scales it based on the standard deviation.
+                    - useful when the data follows a Gaussian distribution.
+                    - less sensitive to outliers compared to Min-Max Scaling.
+                    - preserves the shape of the original distribution of the data.
+                    - subtracting the mean and scales them by dividing by the standard deviation
+                    - normal distribution often benefits models like linear regression,
+                        - logistic regression and neural networks by improving convergence speed and stability.
+                    - Z = (X - μ) / σ
+                        - X = Data
+                          μ = Mean value of X
+                          σ = Standard deviation of X
+                - Robust Scaling
+                    - uses the median and interquartile range (IQR) instead of the mean and standard deviation
+                    - transformation robust to outliers and skewed distributions.
+                    - suitable when the dataset contains extreme values or noise.
+                    - Reduces influence of outliers by centering on median
+        - Feature Extraction
+            - transforming raw data into a simplified and informative set of features or attributes.
+            - reduces data complexity and highlights the most relevant information
+            - Techniques
+                - Statistical Methods
+                    - Mean: average value of a dataset.
+                    - Median: middle value when data is ordered.
+                    - Mode: most frequently occurring value.
+                    - Standard Deviation: measure of data dispersion around the mean.
+                    - corelation and covariance: measure relationships between variables.
+                    - Regression Analysis: understand relationships between dependent and independent variables.
+                    - Variance: measure of data spread.
+                    - Skewness: measure of data asymmetry.
+                    - Kurtosis: measure of data "tailedness".
+                - Dimensionality Reduction Techniques
+                    - Principal Component Analysis (PCA)
+                        - select variables that account for most of the data’s variation
+                        - reduces dimensionality while preserving important information
+                    - Linear Discriminant Analysis (LDA)
+                        - find the best combination of features to separate different classes
+                    - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+                        - reduce high-dimensional data into two or three dimensions
+                    - UMAP (Uniform Manifold Approximation and Projection)
+                        - similar to t-SNE but faster and scalable
+                        - preserves both local and global data structure
+                - Independent Component Analysis (ICA)
+                    - separates a multivariate signal into additive, independent components
+                    - useful in signal processing and image analysis.
+                - Aggregation & Combination
+                    - Summing or averaging features
+                - for Text Data
+                    - Bag of Words (BoW)
+                        - Represents a document by counting word frequencies, ignoring word order,
+                        - useful for basic text classification.
+                    - Term Frequency-Inverse Document Frequency (TF-IDF)
+                        - Adjust word importance based on frequency
+                        - in a specific document compared to all documents
+                        - highlighting unique terms.
+                    - Word Embeddings (Word2Vec, GloVe)
+                - Signal Processing Methods: used for analyzing time-series, audio and sensor data
+                    - Fourier Transform
+                        - convert signal from the time domain to the frequency domain to analyze its frequency
+                          components.
+                    - Wavelet Transform
+                        - analyzes signals that vary over time,
+                        - offering both time and frequency information for non-stationary signals.
+                    - Short-Time Fourier Transform (STFT)
+                - Image Processing Methods
+                    - Histogram of Oriented Gradients (HOG)
+                        - finds the distribution of intensity gradients or edge directions in an image
+                        - used in object detection and recognition tasks.
+                        - feature descriptor for object detection in images
+                        - captures edge and gradient structures.
+                    - Convolutional Neural Networks (CNN) Features
+                        - learn hierarchical features from images through layers of convolutions,
+                        - ideal for classification and detection tasks.
+                    - Scale-Invariant Feature Transform (SIFT)
+                        - detects and describes local features in images
+                        - robust to scale, rotation, and illumination changes.
+                    - Speeded-Up Robust Features (SURF)
+                        - faster alternative to SIFT for detecting and describing image features.
+            - tools for Feature Extraction
+                - TensorFlow / Keras
+                - PyTorch
+                - NLTK(Natural Language Toolkit)
+                - FeatureTools
+                - Tsfresh
+                - OpenCV
+                - Scikit-Image
+        - step includes
+            - Data Cleaning
+                - handling missing values,
+                - correct errors or inconsistencies
+            - Data Transformation
+                - raw data into a format suitable for modeling including scaling, normalization and encoding.
+            - scaling numbers,
+            - creating new features
+            - or combining existing ones.
+        - Data Handling
+            - handling missing values,
+            - correct errors or inconsistencies
+            - collect, organize, analyze, and present data to extract useful information and support decision-making
+            - Data Handling Steps
+                - Data Gathering
+                - Recording
+                - Organizing
+                - Analyzing
+            - Types of Data
+                - Quantitative Data
+                    - Numerical data that can be measured and quantified.
+                    - Examples: age, income, temperature, etc.
+                    - Types
+                        - Discrete Data
+                            - countable values, often integers.
+                            - e.g. number of students in a class, number of cars in a parking lot, etc.
+                        - Continuous Data
+                            - can take any value within a range, including decimals.
+                            - e.g. height, weight, time, etc.
+                - Qualitative Data
+                    - Categorical data that describes qualities or characteristics.
+                    - Examples: gender, color, type of product, etc.
+            - Graphical Representation of Data
+                - Bar Charts/Graphs
+                    - graphical representation of any quantity, number, or data in the form of bars
+                    - used to compare different categories or groups of data.
+                    - Types of Bar Charts
+                        - Vertical Bar Chart
+                            - the bars of grouped data in vertical bar graphs lie vertically
+                        - Horizontal Bar Chart
+                            - rectangular bars lie horizontally
+                            - frequency of the data is represented on the x-axis
+                            - categories of data are shown on the y-axis.
+                        - Double Bar Graph
+                            - two sets of data are represented by two bars for each category
+                            - allows for easy comparison between the two datasets.
+                            - used when multiple data points need to be represented
+                            - e.g. comparing sales of two products across different regions.
+                        - Stacked Bar Chart
+                        - Grouped Bar Chart
+                            - multiple sets of data items are compared,
+                                - with a single color used to denote a specific series across all sets.
+                            - also called the clustered bar graph.
+                        - Subdivided Bar Chart
+                            - color coded segments within each bar to represent subcategories or components of the data.
+                        - Percentage Bar Chart
+                            - represent data in the form of percentages
+                        - Broken-Scale Bar Chart
+                            - scale on an axis is intentionally broken to show both very large and small values clearly.
+                        - Deviation Bar Chart
+                            - bars are drawn on both sides of a baseline (usually zero) to show positive and negative
+                              values.
+                            - Bars above the baseline represent positive deviations, while bars below represent negative
+                              deviations from a standard or average value.
+                            - useful for visualizing differences or changes in data relative to a reference point.
+                - Histograms
+                    - shows the distribution of continuous numerical data.
+                    - data is divided into intervals (bins) and the frequency of data points in each bin is represented
+                      by the height of the bars.
+                    - useful for understanding the shape, central tendency, and variability of the data distribution.
+                    - Types of Histograms
+                        - Uniform Histogram
+                            - basic histogram with equal-width bins.
+                        - Bimodal Histogram
+                            - shows two distinct peaks in the data distribution.
+                        - Symmetric Histogram
+                            - data is evenly distributed around the mean, creating a bell-shaped curve.
+                        - Right Skewed Histogram
+                            - data is skewed to the right, with a longer tail on the right side of the distribution.
+                        - Left Skewed Histogram
+                            - data is skewed to the left, with a longer tail on the left side of the distribution.
+                        - Frequency Histogram
+                            - shows the frequency of data points in each bin.
+                        - Relative Frequency Histogram
+                            - shows the relative frequency (proportion) of data points in each bin.
+                        - Cumulative Histogram
+                            - shows the cumulative frequency of data points up to each bin.
+                        - Cumulative Relative Frequency Histogram
+                            - shows the cumulative relative frequency (proportion) of data points up to each bin.
+                - Pie Charts: https://www.geeksforgeeks.org/maths/pie-charts/
+                    - data is represented in a circular shape
+                    - divided into sectors or slices that represent the proportion of each category in the whole
+                      dataset.
+                    - also known as circle graphs or pie diagrams
+                    - useful for showing the relative sizes of parts to a whole, especially when there are a limited
+                      number
+                      of categories.
+                    - Formula for Pie Charts
+                        - Percentage = (Value of the category / Total value of all categories) * 100
+                - Box Plots
+                - Scatter Plots
+                    - displays individual data points on a two-dimensional coordinate system
+                    - Each point on the plot represents the values of two variables, allowing us to observe any
+                      patterns, trends, or relationships between them.
+                    - commonly used in data analysis to visually explore the relationship between variables and to
+                      identify any correlations or outliers present in the data.
+                    - Types of Scatter Plots
+                        - Simple Scatter Plot
+                            - plots individual data points based on two variables.
+                        - Bubble Chart
+                            - similar to a scatter plot but with an additional dimension represented by the size of the
+                              bubbles.
+                            - useful for visualizing three variables in a two-dimensional space.
+                        - 3D Scatter Plot
+                            - extends the scatter plot into three dimensions, allowing for the visualization of
+                              relationships between three variables.
+                            - provides a more comprehensive view of the data, especially when there are complex
+                              interactions between variables.
+                    - Applications of Scatter Plots
+                        - Correlation Analysis:
+                            - identify the strength and direction of relationships between variables.
+                        - Outlier Detection:
+                            - identify data points that deviate significantly from the overall pattern.
+                        - Trend Analysis:
+                            - observe trends or patterns in the data, such as clusters or linear relationships.
+                - Pictograms
+                    - pictorial representation of data
+                    - e.g. using icons to represent the number of people in a survey
+                - Line Graphs
+                    - shows how different things relate over time by connecting dots with straight lines
+                    - useful for visualizing trends and patterns in data over time.
+                    - Parts of a Line Graph
+                        - Title: describes what the graph is about.
+                        - Axes:
+                            - X-axis (horizontal) typically represents time or categories.
+                            - Y-axis (vertical) represents the values being measured.
+                        - Data Points: individual points that represent the values of the variables being plotted.
+                        - Lines: connect the data points to show trends or relationships between them.
+                        - Legend: explains what different lines or colors represent in the graph.
+                    - Types of Line Graphs
+                        - Simple Line Graph
+                            - plots a single line to show the relationship between two variables.
+                        - Multiple Line Graph
+                            - plots multiple lines on the same graph to compare different datasets or categories.
+                        - Cumulative Line Graph
+                            - shows the cumulative total of a variable over time, with each point representing the sum
+                              of all previous values up to that point.
+                        - Step Line Graph
+                            - connects data points with horizontal and vertical lines, creating a step-like appearance,
+                              useful for showing changes that occur at specific intervals.
+                        - Compound Line Graph
+                            - combines multiple line graphs into one, often with different scales or axes, to compare
+                              different types of data in a single visualization.
+                - Frequency Distribution
+                    - shows how often each value in a dataset occurs.
+                    - Types:
+                        - Grouped Frequency Distribution
+                            - observations are divided between different intervals known as class intervals
+                            - their frequencies are counted for each class interval.
+                        - Ungrouped Frequency Distribution
+                            - all distinct observations are mentioned and counted individually
+                        - Relative Frequency Distribution
+                            - distribution displays the proportion or percentage of observations in each interval or
+                              class.
+                            - useful for comparing different data sets or for analyzing the distribution of data within
+                              a set.
+                            - Relative Frequency = (Frequency of a class interval) / (Total number of observations)
+                        - Cumulative Frequency Distribution
+                            - distribution shows the cumulative total of frequencies up to a certain class interval.
+                            - useful for understanding the number of observations that fall below a particular value or
+                              threshold.
+                            - Cumulative Frequency = Σ(Frequency of all class intervals up to and including the current
+                              interval)
+                        - Frequency Distribution Curve
+                            - a graphical representation of a frequency distribution, often used to visualize the shape
+                              of the
+                              distribution and identify patterns such as skewness or modality.
+                            - Types of Frequency Distribution Curves
+                                - Normal Distribution Curve
+                                    - bell-shaped curve that is symmetric around the mean, representing a normal
+                                      distribution of data.
+                                - Skewed Distribution Curve
+                                    - asymmetric curve that can be skewed to the left (negatively skewed) or right (
+                                      positively skewed),
+                                      indicating that the data is not symmetrically distributed.
+                                - Bimodal Distribution Curve
+                                    - curve with two distinct peaks, indicating the presence of two different groups or
+                                      modes in the data.
+                                - Multimodal Distribution Curve
+                                    - curve with more than two peaks, indicating the presence of multiple groups or
+                                      modes in the data.
+                                - Uniform Distribution Curve
+                                    - flat curve where all values have equal frequency, indicating that the data is
+                                      uniformly distributed.
+                                - Exponential Distribution Curve
+                                    - curve that shows a rapid decrease in frequency as values increase, often used to
+                                      model time between events in a Poisson process.
+                                - Log-Normal Distribution Curve
+                                    - curve that is skewed to the right, where the logarithm of the variable is normally
+                                      distributed, often used to model data that cannot be negative and has a long tail
+                                      on the right side.
+                        - Formula for Frequency Distribution
+                            - Frequency = (Number of observations in a class interval) / (Total number of observations)
+                            - Coefficient of Variation (CV) = (Standard Deviation / Mean) * 100
+            - Strategies for Handling Missing Values in Data Analysis
+                - Removing rows with missing values
+                - Imputation techniques
+                    - Mean/Median/Mode Imputation
+                        - replace missing values with the mean, median, or mode of the respective feature.
+                    - Forward and Backward Fill
+                        - forward fill (propagate last valid observation forward) and
+                        - backward fill (propagate next valid observation backward).
+                    - Interpolation
+                        - estimate missing values based on the values of neighboring data points.
+                    - K-Nearest Neighbors (KNN) Imputation
+                    - Regression Imputation
+                    - Multiple Imputation
+        - Feature Engineering Types
+            - Imputation
+                - replace missing values
+            - Handling Outliers
+                - anomalies in data
+            - Binning
+                - categorise data
+            - Log Transform
+                - normalization
+            - One-hot encoding
+                - categorical attributes
+            - Grouping operations
+            - Scaling
+                - e.g. weight and height may have different metrics
+        - Feature Engineering Techniques
+            - One-Hot Encoding
+                - convert categorical variables into binary indicators
+            - Binning
+                - transform continuous variables into discrete bins
+                - e.g labels = ['0-20', '21-40', '41-60', '61+']
+            - Text Data Preprocessing
+                - removing stop-words
+                    - filtering out commonly occurring words that
+                    - provide no or very little semantic value to text analysis.
+                        - e.g. "is", "the", "and"
+                    - Categories of Stopwords
+                        - Standard Stopwords
+                            - articles("a", "the"),
+                            - conjunctions ("and", "but")
+                            - and prepositions ("in", "on")
+                        - Domain-Specific Stopwords
+                        - Contextual Stopwords
+                            - Words with extremely high frequency
+                        - Numerical Stopwords
+                            - Digits, punctuation marks and single characters
+                - Stemming
+                    - reducing words to their root form
+                    - remove prefixes and suffixes.
+                        - e.g. "running", "runner", and "ran" to "run"
+                    - Stemming Algorithms
+                        - Porter Stemmer
+                            - rule-based algorithm
+                            - removes common morphological and inflectional endings from words in English.
+                            - suffix EED to EE
+                                - 'agreed' → 'agree'
+                            - suffix ED or ING to null
+                                - e.g 'playing' → 'play', 'played' → 'play'
+                            - suffix ATION to ATE
+                                - e.g 'relational' → 'relate'
+                            - suffix TIONAL to TION
+                                - e.g 'conditional' → 'condition'
+                            - suffix FUL to null
+                                - e.g 'hopeful' → 'hope'
+                        - Snowball Stemmer(Porter2)
+                            - enhanced version of the Porter Stemmer
+                            - supports multiple languages(multilingual stemmer)
+                            - Example:
+                                - 'running' → 'run'
+                                - 'quickly' → 'quick'
+                        - Lancaster Stemmer
+                            - more aggressive and faster than other stemmers.
+                            - also more destructive and may lead to excessively shortened stems
+                        - Regexp Stemmer
+                            - Regular Expression Stemmer
+                            - allows users to define custom rules using regular expressions (regex).
+                            - 'running' → 'runn'
+                              Custom rule: r'ing$' removes the suffix ing.
+                        - Krovetz Stemmer
+                            - more linguistically accurate
+                            - preserve meaning more effectively
+                            - steps like converting plural forms to singular and removing ing from past-tense verbs.
+                            - 'children' → 'child'
+                - Lemmatization
+                    - Reduces words to their base form (lemma) ensuring a valid word.
+                    - Considers the word's meaning and context to return the base form.
+                    - Always produces a valid word.
+                    - Example: "Better" → "good"
+                    - Considers the context and part of speech.
+                - Vectorizing text data
+                    - transform human language into a format that machines can comprehend and process
+                    - numerical representations
+                        - enable computers to perform tasks such as
+                            - sentiment analysis,
+                            - machine translation and
+                            - information retrieval
+                    - Vectors are numerical representations of words, phrases or entire documents.
+                    - Techniques
+                        - One Hot Encoding
+                            - each word is represented by a vector with a high bit corresponding to
+                            - the word’s index in the vocabulary
+                            - all other bits set to zero.
+                        - Bag of Words (BoW)
+                            - converts text into a vector
+                            - representing the frequency of words, disregarding grammar and word order.
+                            - Ignores the order and context of words.
+                            - Results in high-dimensional and sparse matrices.
+                        - Term Frequency-Inverse Document Frequency (TF-IDF)
+                            - extension of BoW that weighs the frequency of words by their importance across documents.
+                            - reduces the weight of common words and increases the weight of rare but significant words.
+                            - TF(t,d)=
+                              Total number of terms in document d/Number of times term t appears in document d
+                            - IDF(t)= log_e(Total number of documents/Number of documents with term t in it)
+                        - Count Vectorizer
+                            - represents text by counting the occurrences of each word in a document.
+                            - similar to BoW but focuses on raw counts rather than binary presence.
+                            - converts a collection of text documents to a matrix of token counts
+                        - Word Embeddings (Word2Vec, GloVe)
+                            - dense vector representations of words in a continuous vector space
+                            - semantically similar words are located closer to each other.
+                        - Image Embeddings
+                            - transforms images into numerical representations
+                            - Convolutional Neural Networks (CNNs)
+                                - extract high-level features from images
+                                - represent them as dense vectors.
+            - Feature Splitting
+                - Divide single feature into multiple sub-features,
+                - uncovering valuable insights
+            - Feature Engineering tools
+                - FeatureTools
+                - Tsfresh
+                - Pandas
+                - NumPy
+                - TPOT
+                - DataRobot
+                - Alteryx
+                - H2O.ai
+    - Model Selection
+        - Choosing appropriate algorithms based on:
+            - Problem Type
+            - Data Characteristics
+            - Computational Resources
+    - Model Training
+        - Process
+            - Iterative training
+            - Optimization
+            - Validation
+    - Model Types
+        - Supervised Learning
+            - Trains models on labeled data to predict or classify new, unseen data.
+        - Unsupervised Learning
+            - Finds patterns or groups in unlabeled data, like clustering or dimensionality reduction.
+        - Reinforcement Learning
+            - Learns through trial and error to maximize rewards, ideal for decision-making tasks.
+        - Self-Supervised Learning
+            - Utilizes large amounts of unlabeled data by
+                - generating own labels from the data itself
+        - Semi-Supervised Learning
+            - Combines a small amount of labeled data with a large amount of unlabeled data
+    - Model Evaluation
+        - Regularization Techniques: prevent overfitting by adding penalty to model complexity
+            - L1 Regularization (Lasso): Least Absolute Shrinkage and Selection Operator regression
+                - add the absolute value of magnitude of the coefficient as a penalty term to the loss function(L)
+                - L = Loss + λ * Σ|coefficients|
+                - can shrink some coefficients to zero, effectively performing feature selection.
+            - L2 Regularization (Ridge)
+                - add the squared magnitude of the coefficient as a penalty term to the loss function(L).
+                - handle multicollinearity by shrinking the coefficients of correlated features instead of eliminating
+                  them.
+                - L = Loss + λ * Σ(coefficients)²
+            - Elastic Net Regression
+                - combines L1 and L2 regularization
+                - add the absolute norm of the weights as well as the squared measure of the weights
+                - balances between feature selection and coefficient shrinkage.
+                - L = Loss + λ1 * Σ|coefficients| + λ2 * Σ(coefficients)²
+            - Dropout
+        - Confusion Matrix
+            - True Positive
+                - When the model correctly predicts the positive class.
+            - True Negative
+                - when the model correctly predicts the negative class.
+            - False Positive
+                - when the model incorrectly predicts the positive class for a negative instance.
+            - False Negative
+                - when the model incorrectly predicts the negative class for a positive instance.
         - Cross-Validation
-          - k-fold cross-validation
-            - dividing the dataset into k parts
-            - k value chosen is the one that gives the highest average accuracy during these tests.
-        - Elbow Method
-          - Draw/plot accuracy vs different k values
-          - look for the "elbow" point where accuracy starts to level off
-          - choose k at this point to balance accuracy and complexity.
-      - Steps to implement K-NN
-        - Choose the number of neighbors (k)
-        - Calculate the distance between the new data point and all training data points
-        - Sort the distances and select the k nearest neighbors
-        - For classification: use majority voting to determine the class label
-        - For regression: calculate the average of the k nearest neighbors' values
-      - Distance Metrics: distance calculation to identify nearest neighbors
-        - Euclidean Distance
-          - shortest path between two points in multi-dimensional space
-          - d(p, q) = sqrt(Σ (p_i - q_i)²)
-            - p and q are two points
-            - p_i and q_i are the coordinates of points p and q in each dimension
-        - Manhattan Distance
-          - total absolute difference between coordinates of two points
-          - d(p, q) = Σ |p_i - q_i|
-          - Also called Taxi-cab distance or L1 norm
-          - otal distance you would travel if you could only move along horizontal and vertical lines like a grid or city streets.
-        - Minkowski Distance
-          - family of distance metrics that includes both Euclidean and Manhattan distances as special cases.
-          - d(p, q) = (Σ |p_i - q_i|^p)^(1/p)
-            - p = order of the norm
-            - when p = 2, it becomes Euclidean distance
-            - when p = 1, it becomes Manhattan distance
-        - Hamming Distance
-      - Choosing the value of k
-        - small k: sensitive to noise, captures local patterns
-        - large k: smooths out predictions, captures global patterns
-      - Weighted K-NN
-        - closer neighbors have more influence on the prediction
-      - Applications of K-NN
-        - Image Recognition
-        - Recommender Systems
-          - Movie recommendations
-          - Product recommendations
-        - Medical Diagnosis
-        - Fraud Detection
-          - Spam detection
-            - comparing new emails to known spam and non-spam examples.
-        - Customer Segmentation
-          - Customer behavior analysis
-        - Anomaly Detection
-        - Speech Recognition
-          - Match spoken words to known patterns to convert them into text.
-      - Impact of K on decision boundary
-        - small k: complex, wiggly decision boundary
-        - large k: smoother, simpler decision boundary
-    - Naive Bayes
-      - predicts the category of a data point using probability
-      - based on Bayes' Theorem
-        - formula in probability theory used to update the probability of a hypothesis (\(A\)) based on new evidence (\(B\))
-        - Formula:
-          - P(A|B) = (P(B|A) * P(A)) / P(B)
-            - P(A|B) = posterior probability of hypothesis A given evidence B
-            - P(B|A) = likelihood of evidence B given hypothesis A
-            - P(A) = prior probability of hypothesis A
-            - P(B) = prior probability of evidence B
-      - Assumes independence between features
-      - Used for classification tasks
-      - Used mostly in high-dimensional text classification
-      - Naive assumption
-        - assumes that all features are independent of each other given the class label.
-        - simplifies the computation of probabilities
-        - allows the model to make predictions efficiently even with high-dimensional data.
-      - Assumptions
-        - Feature Independence
-          - assumes that all features are independent of each other given the class label.
-        - Class Conditional Independence
-          - assumes that the presence or absence of a feature is independent of the presence or absence of any other feature, given the class label.
-        - Discrete Features have multinomial distribution
-          - assumes that features follow a multinomial distribution, especially in text classification tasks.
-        - Features are equally important
-          - assumes that all features contribute equally to the final prediction.
-        - No missing data
-          - assumes that there are no missing values in the dataset.
-        - Naive Bayes for continuous features
-          - assumes that continuous features follow a Gaussian (normal) distribution within each class.
-          - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
-            - P(x|C) = probability of feature x given class C
-            - μ_C = mean of feature x for class C
-            - σ_C² = variance of feature x for class C
-      - Types of Naive Bayes Classifiers
-        - Gaussian Naive Bayes
-          - continuous features
-          - assumes that features follow a normal (Gaussian) distribution or 
-          - Normal Distribution within each class.
-          - i.e. Bell curve symmetric about the mean of the feature
-          - it assumes likelihood follows Gaussian distribution
-            - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
-              - P(x|C) = probability of feature x given class C
-              - μ_C = mean of feature x for class C
-              - σ_C² = variance of feature x for class C
-        - Multinomial Naive Bayes
-          - for discrete data and text classification problems
-          - Used to represent the frequencies of words or events in documents.
-          - assumes that features represent counts or frequencies of events.
-          - assumes each word or feature is independent of the others
-          - commonly used for text classification tasks like spam detection and sentiment analysis.
-          - [Multinomial.png](Multinomial.png)
-          - Maximum Likelihood Estimation (MLE)
-            - estimates the probabilities of features given the class labels based on their observed frequencies in the training data.
-            - [MLE](MLE.png)
-          - Laplace Smoothing
-            - technique used to handle zero probabilities in Multinomial Naive Bayes.
-            - adds a small constant (usually 1) to the count of each feature
-            - ensures that no feature has a probability of zero.
-            - P(w|C) = (count(w, C) + 1) / (Σ count(w', C) + V)
-              - P(w|C) = probability of word w given class C
-              - count(w, C) = count of word w in documents of class C
-              - V = total number of unique words in the vocabulary
-        - Bernoulli Naive Bayes
-          - deals with binary/boolean features
-          - assumes that features are binary (0 or 1), indicating the presence or absence of an event.
-          - commonly used for document classification tasks where the presence or absence of words is important
-          - for classification of binary features such as 'Yes' or 'No', '1' or '0', 'True' or 'False' etc
-          - P(x|C) = P(w|C)^x * (1 - P(w|C))^(1 - x)
-            - P(x|C) = probability of feature x given class C
-            - P(w|C) = probability of word w given class C
-            - x = binary feature (0 or 1)
-          - Bernoulli Distribution
-            - models the probability of a binary outcome (success/failure) for a single trial.
-            - P(X = k) = p^k * (1 - p)^(1 - k)
-              - k = outcome (0 or 1)
-              - p = probability of success (1)
-        - Complement Naive Bayes
-          - variant of Multinomial Naive Bayes
-          - designed to handle imbalanced datasets better.
-            - reduce the bias towards the majority class
-          - focuses on the complement of each class
-          - estimates probabilities based on instances not belonging to the class.
-          - often used in text classification tasks with imbalanced class distributions.
-          - Formula
-            - P(w|C) = (count(w, ¬C) + 1) / (Σ count(w', ¬C) + V)
-              - P(w|C) = probability of word w given class C
-              - count(w, ¬C) = count of word w in documents not belonging to class C
-              - V = total number of unique words in the vocabulary
-          - e.g. CNB estimates probabilities for Apples using Bananas' data (complement) and vice versa
-      - Applications
-        - Spam Detection
-        - Sentiment Analysis
-        - Document/Text Classification/Categorization
-        - Credit Scoring
-        - Medical Diagnosis
-        - Weather Prediction
-    - Random Forest
-      - uses decision trees as base learners
-      - each tree looks at a random subset of data and 
-        - the results are combined by voting for classification or averaging for regression
-        - to make a final prediction.
-      - ensemble learning method
-        - Method that combines multiple models to improve overall performance.
-      - combines multiple decision trees(forest) to improve predictive performance and reduce overfitting.
-      - builds multiple decision trees during training
-      - merges their predictions to make a final prediction.
-      - Ensemble Methods
-        - Bagging (Bootstrap Aggregating)
-          - models are trained independently in parallel
-          - results are combined to make a final prediction.
-          - creates multiple subsets of the training data by sampling with replacement
-          - trains a decision tree on each subset
-          - combines their predictions through majority voting (classification) or averaging (regression).
-          - Bagging Algorithms
-            - Bootstrap Sampling
-              - randomly samples the training data with replacement to create 'N' multiple subsets.
-              - each subset is used to train a separate decision tree.
-            - Base Model Training
-              - trains a decision tree on each bootstrap sample independently in parallel.
-            - Prediction Aggregation
-              - combines predictions from multiple models to make a final prediction.
-              - majority voting for classification tasks
-              - averaging for regression tasks.
-            - Out of Bag Evaluation
-              - estimates model performance using data points not included in the bootstrap samples for each tree.
-              - provides an unbiased estimate of the model's accuracy without needing a separate validation set.
-        - Boosting
-          - train models one after another
-          - each model tries to correct the errors of the previous one.
-          - combines their predictions to make a final prediction.
-          - Algorithms
-            - AdaBoost (Adaptive Boosting)
-              - sequentially trains weak learners (usually decision stumps)
-              - each learner focuses more on the misclassified instances from the previous learners.
-              - combines their predictions through weighted voting (classification) or weighted averaging (regression).
-              - Weight Update
-                - assigns equal weights to all training samples initially
-                - increases the weights of misclassified instances, reducing bias and variance
-                - decreases the weights of correctly classified instances
-                - so that subsequent learners focus more on the difficult cases.
-                - but it is sensitive to noisy data and outliers
-            - Gradient Boosting
-              - builds models sequentially
-              - each new model tries to correct the residual errors of the combined previous models.
-              - uses gradient descent to minimize a specified loss function.
-              - Loss Function Optimization
-                - minimizes a specified loss function (e.g., Mean Squared Error for regression, Log Loss for classification)
-                - using gradient descent to optimize model predictions.
-            - XGBoost (Extreme Gradient Boosting)
-              - optimized implementation of gradient boosting
-              - designed for speed and performance
-              - includes regularization techniques to prevent overfitting.
-              - Regularization
-                - includes L1 (Lasso) and L2 (Ridge) regularization terms in the objective function
-                - helps prevent overfitting by penalizing complex models.
-            - LightGBM (Light Gradient Boosting Machine)
-              - gradient boosting framework that uses tree-based learning algorithms
-              - designed for efficiency and scalability
-              - uses histogram-based algorithms to speed up training and reduce memory usage.
-              - Histogram-based Splitting
-                - uses histogram-based algorithms to find optimal split points
-                - speeds up training and reduces memory usage.
-            - CatBoost (Categorical Boosting)
-              - gradient boosting library that handles categorical features natively
-              - employs symmetric decision trees and 
-              - a unique encoding method that considers target values
-              - reduces the need for extensive data preprocessing.
-              - Categorical Feature Handling
-                - natively handles categorical features
-                - reduces the need for extensive data preprocessing.
-        - Stacking(Stacked Generalization)
-          - combines predictions from multiple models (base learners)
-          - uses a meta-model to learn how to best combine these predictions for improved accuracy.
-          - Meta Model
-            - model that learns to combine predictions from base learners.
-      - Feature Randomness
-        - at each split in a decision tree, a random subset of features is selected
-        - helps create diverse trees and reduces correlation between them.
-      - Out-of-Bag (OOB) Error Estimation
-        - estimates model performance using data points not included in the bootstrap samples for each tree.
-        - provides an unbiased estimate of the model's accuracy without needing a separate validation set.
-      - Feature Importance
-        - measures the contribution of each feature to the model's predictions
-        - helps identify the most relevant features for the target variable.
-      - Use Cases
-        - Classification Tasks
-        - Regression Tasks
-        - Anomaly Detection
-        - Feature Selection
-      - Applications
-        - Credit Scoring
-        - Fraud Detection
-        - Medical Diagnosis
-        - Stock Market Prediction
-      - out of Bag Scoring
-        - method to estimate the performance of Random Forest models
-      - Out of Bag (OOB) Error
-        - estimate of the model's prediction error
-        - calculated using data points not included in the bootstrap samples for each tree.
-      - Hyperparameters
-        - Number of Trees (n_estimators)
-          - Default: 100
-        - Maximum Depth of Trees (max_depth)
-          - Default: None (nodes are expanded until all leaves are pure or contain less than min_samples_split samples)
-        - Minimum Samples to Split a Node (min_samples_split)
-          - Minimum number of samples required to split an internal node
-          - Default: 2
-        - Minimum Samples per Leaf (min_samples_leaf)
-          - Default: 1
-        - Number of Features to Consider at Each Split (max_features)
-          - Default max features:
-            - for classification: sqrt(total number of features)
-            - for regression: total number of features / 3
-        - Max Leaf Nodes (max_leaf_nodes)
-          - Default: None (unlimited)
-        - Max Samples (max_samples)
-          - Default: None (use all samples)
-      - Hyperparameter Tuning
-        - Grid Search
-        - Random Search
+            - how well model performs on unseen data while preventing overfitting
+            - Train model on some parts and test it on the remaining part of dataset
+            - Techniques
+                - Holdout Validation
+                    - 50% data for training and 50% for testing.
+                - LOOCV (Leave One Out Cross Validation)
+                    - model is trained on the entire dataset except for one data point which is used for testing.
+                    - repeated for each data point in the dataset.
+                    - computationally expensive for large datasets.
+                - K-Fold Cross-Validation
+                    - split the dataset into k equal-sized folds.
+                    - train model on k-1 folds and tested on the remaining fold.
+                    - process is repeated k times, with each fold used as the test set once.
+                    - final performance is averaged over all k iterations.
+                    - k should be greater than or equal to 5 and less than or equal to 10.
+                - Stratified K-Fold Cross-Validation
+                    - ensures each fold of the cross-validation process has the same class distribution as the full
+                      dataset.
+                    - important for imbalanced datasets
+                - Leave-One-Out Cross-Validation (LOOCV)
+                - Shuffle Split Cross-Validation
+        - Performance Metrics
+        - Metrics
+        - features like:
+            - Accuracy
+                - ratio of correctly predicted instances to the total instances in a dataset.
+                - can be misleading when one class is more dominant over the other
+                - Accuracy = (TP + TN) / (TP + TN + FP + FN)
+            - Precision
+                - ratio of true positive predictions to the total predicted positives.
+                - measures the accuracy of positive predictions.
+                - important in scenarios where false positives are costly.
+                - like spam detection, fraud detection etc.
+                - Precision = TP / (TP + FP)
+            - Recall
+                - Recall (Sensitivity) is the ratio of true positive predictions to the total actual positives.
+                - measures how how good the model is at predicting positives.
+                - important in scenarios where false negatives are costly.
+                - like disease diagnosis, safety-critical systems etc.
+                - Recall = TP / (TP + FN)
+            - F1-Score
+                - F1-Score is the harmonic mean of Precision and Recall,
+                - providing a balance between the two metrics.
+                - useful when dealing with imbalanced datasets
+                - where one class is significantly more prevalent than the other.
+                - F1 = 2 * (Precision * Recall) / (Precision + Recall)
+            - Specificity(True Negative Rate)
+                - ratio of true negative predictions to the total actual negatives.
+                - measures how well the model identifies negative instances.
+                - important in scenarios where false positives are costly.
+                - like spam detection, fraud detection etc.
+                - Specificity = TN / (TN + FP)
+                - 1 - Specificity = False Positive Rate (FPR)
+            - Type I Error (False Positive Rate)
+                - occurs when the model incorrectly predicts the positive class for a negative instance.
+                - Type I Error Rate = FP / (FP + TN)
+            - Type II Error (False Negative Rate)
+                - occurs when the model incorrectly predicts the negative class for a positive instance.
+                - Type II Error Rate = FN / (FN + TP)
+            - Mean Absolute Error (MAE)
+                - average of the absolute differences between predicted and actual values.
+                - provides a straightforward measure of prediction accuracy.
+                - MAE = (1/n) * Σ|predicted - actual|
+            - Mean Squared Error (MSE)
+                - average of the squared differences between predicted and actual values.
+                - penalizes larger errors more than MAE.
+                - MSE = (1/n) * Σ(predicted - actual)²
+            - Root Mean Squared Error (RMSE)
+                - square root of the average of the squared differences between predicted and actual values.
+                - provides an interpretable measure of prediction accuracy in the same units as the target variable.
+                - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
+            - R-squared (Coefficient of Determination)
+                - indicates the proportion of variance in the dependent variable that can be explained by the
+                  independent variables.
+                - R² = 1 - (SS_res / SS_tot)
+                    - SS_res = Σ(actual - predicted)²
+                    - SS_tot = Σ(actual - mean(actual))²
+            - ROC-AUC Curve
+                - ROC-AUC (Receiver Operating Characteristic - Area Under the Curve)
+                - Check how well a binary classification model works
+                - how well the model separates the positive cases like people with a disease from the
+                - negative cases like people without the disease at different threshold level.
+                - measures a model's ability to distinguish between classes,
+                - with higher values indicating better performance.
+                - True Positive Rate (TPR) vs False Positive Rate (FPR)
+                    - True Positive Rate (TPR) = TP / (TP + FN) = Recall
+                    - False Positive Rate (FPR) = FP / (FP + TN) = 1 - Specificity
+    - Hyperparameter Model Tuning:
+        - optimize model performance by finding the best hyperparameters
+        - Grid Search CV
+            - brute-force approach
+            - train model using all possible combinations of specified hyperparameter values to
+            - find the best-performing setup.
+            - slow and uses a lot of computer power
+            - exhaustively searches through a specified subset of hyperparameters
+            - evaluates model performance for each combination
+            - computationally expensive for large hyperparameter spaces
+            - example:
+                - Tuning Logistic Regression with GridSearchCV
+        - Random Search CV
+            - randomly samples hyperparameter combinations from a given range
+            - evaluates model performance for each combination
+            - more efficient than Grid Search for large hyperparameter spaces
+            - Example:
+                - Tuning Random Forest with RandomizedSearchCV
+                - Tuning Decision Tree with RandomizedSearchCV
         - Bayesian Optimization
-    - Neural Networks
-      - Feedforward Neural Networks
-      - Convolutional Neural Networks (CNN)
-      - Recurrent Neural Networks (RNN)
-  - Tools and Frameworks
-    - Programming Languages
-      - Python
-      - R
-      - Julia
-    - Libraries
-      - Scikit-learn
-      - TensorFlow
-      - PyTorch
-    - Platforms
-      - Google Colab
-      - Jupyter Notebooks
-      - Azure Machine Learning Studio
-  - Applications/Use cases
-    - Image Recognition
-    - Natural Language Processing (NLP)
-    - Recommendation Systems
-    - Fraud Detection
-    - Predictive Analytics
-  - Overfitting
-    - when a model learns the training data too well, 
-    - capturing noise and details that do not generalize to new data.
-  - underfitting
-    - when a model is too simple to capture the underlying patterns in the data,
-    - resulting in poor performance on both training and new data.
+            - treats hyperparameter tuning like a mathematical optimization problem and
+            - learns from past results to decide what to try next.
+            - builds a probabilistic model(surrogate function) of the objective function
+            - uses it to select the most promising hyperparameter combinations to evaluate
+            - balances exploration and exploitation
+            - P(score(y)∣hyperparameters(x))
+            - surrogate function models the relationship between hyperparameters x and the score y.
+            - surrogate models used in Bayesian optimization include:
+                - Gaussian Processes
+                - Random Forests
+                - Tree-structured Parzen Estimators (TPE)
+        - Genetic Algorithms
+            - inspired by the process of natural selection
+            - iteratively evolves a population of hyperparameter combinations
+            - selects the best-performing combinations for the next generation
+    - Model Deployment
+        - Containerization
+            - Docker
+            - Kubernetes
+        - Cloud Services
+            - AWS SageMaker
+            - Google AI Platform
+            - Microsoft Azure ML
+    - Model Monitoring and Maintenance
+        - Model Drift Detection
+        - Performance Monitoring
+        - Monitoring issues like:
+            - Data Drift
+                - Data Drift occurs when the
+                - statistical properties of the input data change over time,
+                - leading to a decline in model performance.
+            - Concept Drift
+                - Concept Drift refers to changes in the
+                - underlying relationships between input features and target variables over time,
+                - which can result in decreased model accuracy.
+    - Algorithms
+        - Regression
+            - Linear Regression
+                - assumes that there is a linear relationship between the input and output
+                - relationship represented by a straight line.
+                - uses the equation of a line: Y = mX + b
+                    - Y = predicted value (output)
+                    - m = slope of the line (coefficient)
+                    - X = input feature
+                    - b = y-intercept (constant term)
+                - Simple Linear Regression
+                    - involves a single independent variable to predict a dependent variable.
+                    - equation: Y = β0 + β1X1
+                        - Y = predicted value
+                        - β0 = intercept
+                        - β1 = coefficient for the feature
+                        - X1 = input feature
+                - Multiple Linear Regression
+                    - involves two or more independent variables to predict a dependent variable.
+                    - equation: Y = β0 + β1X1 + β2X2 + ... + βnXn
+                        - Y = predicted value
+                        - β0 = intercept
+                        - β1, β2, ..., βn = coefficients for each feature
+                        - X1, X2, ..., Xn = input features
+                    - Multicollinearity
+                        - occurs when two or more independent variables in a regression model are highly correlated.
+                        - can lead to unstable coefficient estimates and make it difficult to assess the individual
+                          effect of each predictor.
+                        - Detection Methods
+                            - Variance Inflation Factor (VIF)
+                                - quantifies how much the variance of a regression coefficient is increased due to
+                                  multicollinearity.
+                                - VIF = 1 / (1 - R²)
+                                    - R² = coefficient of determination from regressing the predictor against all other
+                                      predictors.
+                                - A VIF value greater than 5 or 10 indicates high multicollinearity.
+                            - Correlation Matrix
+                                - examines pairwise correlations between independent variables.
+                                - high correlation coefficients (e.g., above 0.8 or below -0.8) suggest
+                                  multicollinearity.
+                            - Condition Index
+                                - assesses the sensitivity of the regression estimates to small changes in the data.
+                                - values above 30 indicate potential multicollinearity issues.
+                        - Remedies
+                            - Remove one of the correlated variables
+                            - Combine correlated variables into a single predictor using techniques like Principal
+                              Component Analysis (PCA)
+                            - Regularization methods like Ridge Regression or Lasso Regression
+                - Polynomial Regression
+                    - models the relationship between the independent variable and dependent variable as an nth degree
+                      polynomial.
+                    - captures non-linear relationships by introducing polynomial terms of the independent variable.
+                - use cases
+                    - House prices forcasting based on features like size, location, and number of bedrooms.
+                    - Sales forcasting based on advertising spend and market trends.
+                    - Estimating the impact of temperature on electricity consumption.
+                    - Stock price prediction based on historical data and market indicators.
+                    - Medical risk prediction based on patient health metrics.
+                - Minimizing the error
+                    - Ordinary Least Squares (OLS)
+                        - minimizes the sum of squared differences between observed and predicted values.
+                        - Residuals = Observed - Predicted
+                        - Cost Function (SSE) = Σ(Residuals)²
+                    - Hypothesis in Linear Regression
+                        - represents the predicted output based on input features and model parameters.
+                        - Single linear Regression Hypothesis:
+                            - h(X) = β0 + β1X1
+                                - h(X) = predicted value
+                                - β0 = intercept
+                                - β1 = coefficient for the feature
+                                - X1 = input feature
+                        - Multiple linear Regression Hypothesis:
+                            - h(X) = β0 + β1X1 + β2X2 + ... + βnXn
+                                - h(X) = predicted value
+                                - β0 = intercept
+                                - β1, β2, ..., βn = coefficients for each feature
+                                - X1, X2, ..., Xn = input features
+                - Cost Function
+                    - Mean Squared Error (MSE)
+                        - MSE = (1/n) * Σ(predicted - actual)²
+                    - Root Mean Squared Error (RMSE)
+                        - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
+                    - Mean Absolute Error (MAE)
+                        - MAE = (1/n) * Σ|predicted - actual|
+                - Gradient Descent
+                    - find best fit line for the data
+                    - iterative optimization algorithm
+                    - minimizes the cost function by updating model parameters in the direction of the steepest descent.
+                    - minimize the prediction error
+                    - start with random model parameters and
+                    - repeatedly adjust them to reduce the difference between predicted and actual values.
+                    - cost function = MSE = (1/n) * Σ(predicted - actual)²
+                    - Gradient computation:
+                        - for MSE cost function, the gradient with respect to βj is:
+                            - (∂/∂βj) * MSE = (2/n) * Σ(predicted - actual) * Xj
+                                - Xj = input feature corresponding to βj
+                        - update rule:
+                            - βj = βj - α * (∂/∂βj) * Cost Function
+                                - βj = model parameter (coefficient)
+                                - α = learning rate (step size)
+                                - (∂/∂βj) * Cost Function = gradient of the cost function with respect to βj
+                - Gradient Descent Variants for Linear Regression
+                    - Batch Gradient Descent
+                    - Stochastic Gradient Descent (SGD)
+                    - Mini-Batch Gradient Descent
+                - Evaluation Metrics for Linear Regression
+                    - R-squared (Coefficient of Determination)
+                        - indicates how much variation the developed model can explain or capture
+                        - R² = 1 - (SS_res / SS_tot)
+                            - SS_res = Σ(actual - predicted)²
+                            - SS_tot = Σ(actual - mean(actual))²
+                    - Residual Standard Error (RSE)
+                        - measures the average amount that the observed values deviate from the predicted values.
+                        - RSE = sqrt(SS_res / (n - p - 1))
+                            - SS_res = Σ(actual - predicted)²
+                            - n = number of observations
+                            - p = number of predictors
+                    - Residual sum of squares (RSS)
+                        - RSS = Σ(actual - predicted)²
+                    - Total sum of squares (TSS)
+                        - TSS = Σ(actual - mean(actual))²
+                    - Adjusted R-squared Error
+                        - Adjusted R² = 1 - [(1 - R²)(n - 1) / (n - p - 1)]
+                            - n = number of observations
+                            - p = number of predictors
+                    - Mean Absolute Error (MAE)
+                        - MAE = (1/n) * Σ|predicted - actual|
+                    - Mean Squared Error (MSE)
+                        - average of the squared differences between the actual and predicted values for all the data
+                          points
+                        - gives higher weight to larger errors.
+                        - MSE = (1/n) * Σ(predicted - actual)²
+                    - Root Mean Squared Error (RMSE)
+                        - RMSE = sqrt((1/n) * Σ(predicted - actual)²)
+            - Logistic Regression
+                - Used when the output is a "yes or no" type answer
+                - helps in predicting categories like pass/fail or spam/not spam.
+                - predicts binary outcomes (0 or 1) based on input features.
+                - used for classification problems
+                - uses the logistic function (sigmoid function) to model the probability of the positive class.
+                - Logistic Function (Sigmoid Function)
+                    - S curve
+                    - S(t) = 1 / (1 + e^(-t))
+                        - S(t) = predicted probability of the positive class
+                        - e = Euler's number (approximately 2.71828)
+                        - t = linear combination of input features and model parameters
+                    - Likelihood function for Logistic Regression
+                        - L(β) = Π P(y_i | X_i; β)
+                            - P(y_i | X_i; β) = S(X_i * β) if y_i = 1
+                            - P(y_i | X_i; β) = 1 - S(X_i * β) if y_i = 0
+                            - y_i = actual label (0 or 1)
+                            - X_i = input features for the i-th instance
+                            - β = model parameters (coefficients)
+                    - Log likelihood function
+                        - LL(β) = Σ [y_i * log(S(X_i * β)) + (1 - y_i) * log(1 - S(X_i * β))]
+                    - Gradient of the Log Likelihood
+                        - ∂LL(β) / ∂β = Σ (y_i - S(X_i * β)) * X_i
+                - Odds and Log-Odds
+                    - Odds = P / (1 - P)
+                        - P = probability of the positive class
+                    - Log-Odds (Logit) = log(P / (1 - P))
+                - Cost Function
+                    - Logistic Regression uses the Log Loss (Cross-Entropy Loss) as its cost function.
+                    - Log Loss(cost) = -[y * log(p) + (1 - y) * log(1 - p)]
+                        - y = actual label (0 or 1)
+                        - p = predicted probability of the positive class
+                - Model Training
+                    - Maximum Likelihood Estimation (MLE)
+                        - finds the model parameters that maximize the likelihood of observing the given data.
+                - Types of Logistic Regression
+                    - Binary Logistic Regression
+                        - Two classes (0 and 1)
+                        - e.g. spam detection, disease diagnosis etc.
+                    - Multinomial Logistic Regression
+                        - more than two classes without any order
+                        - e.g. classifying types of fruits (apple, banana, orange)
+                    - Ordinal Logistic Regression
+                        - more than two classes with a specific order
+                        - e.g. rating scales (poor, average, good, excellent)
+            - Polynomial Regression
+        - Decision Trees
+            - supervised learning algorithm used for both classification and regression tasks
+            - tree-like model of decisions and their possible consequences.
+            - splits data into subsets based on feature values
+            - recursively partitions the data to create a tree structure.
+            - like a flowchart to help make decisions based on input features.
+            - Components
+                - Root Node
+                - branches: attribute values/outcomes of a test
+                - Internal Nodes: attribute tests
+                - Leaf Nodes: Final decision o predictions(class labels or continuous values)
+            - Applications
+                - Customer Segmentation
+                - Fraud Detection
+                - Medical Diagnosis
+                - Loan Approval
+            - Splitting Criteria
+                - Gini Index/Impurity
+                    - measures how often a randomly chosen element would be incorrectly labeled
+                    - if it was randomly labeled according to the distribution of labels in the subset.
+                    - i.e. attribute with a lower Gini index should be preferred
+                    - IGini = 1 - Σ(p_i)²
+                        - p_i = proportion of instances belonging to class i
+                - Information Gain
+                    - it tells how useful a question (or feature) is for splitting data into groups.
+                    - measures how much the uncertainty decreases after the split.
+                    - Information Gain = Entropy(Parent) - Weighted Average * Entropy(Children)
+                - Mean Squared Error (MSE) for regression tasks
+                - Gain(G, A) = Entropy(G) - Σ (|G_v| / |G|) * Entropy(G_v)
+                    - G = dataset before the split
+                    - A = feature used for splitting
+                    - G_v = subset of G where feature A has value v
+            - Decision Tree Algorithms
+                - ID3 (Iterative Dichotomiser 3)
+                    - greedily choosing the feature that maximizes the information gain at each node
+                    - uses entropy as the splitting criterion
+                    - Entropy measures impurity in the dataset
+                    - Entropy(S) = - Σ p_i * log2(p_i)
+                        - p_i = proportion of instances belonging to class i
+                    - Information Gain
+                        - IG(S, A) = Entropy(S) - Σ (|S_v| / |S|) * Entropy(S_v)
+                            - S = dataset before the split
+                            - A = feature used for splitting
+                            - S_v = subset of S where feature A has value v
+                    - it recursively splits the dataset using the feature with the highest information gain
+                    - until all examples in a node belong to the same class or no features remain to split.
+                    - prone to overfitting
+                - C4.5
+                    - modified version of information gain called the gain ratio
+                    - to reduce the bias towards features with many values
+                    - Gain Ratio = Information Gain / Split Information
+                        - Split Information = - Σ (|S_v| / |S|) * log2(|S_v| / |S|)
+                    - handles both continuous and categorical features
+                    - manages missing values effectively
+                    - prunes the tree after creation to reduce overfitting
+                    - struggles with large datasets and high-dimensional data and noisy datasets.
+                - CART (Classification and Regression Trees)
+                    - for both classification and regression tasks
+                    - uses Gini impurity as the splitting criterion for classification tasks
+                    - which measures the impurity(likelihood of incorrect classification) of a dataset.
+                    - Gini Impurity = 1 - Σ(p_i)²
+                        - p_i = proportion of instances belonging to class i
+                    - for regression tasks, it uses Mean Squared Error (MSE) to minimize the variance within each node.
+                    - produces binary trees, where each internal node has exactly two children.
+                    - employs cost-complexity pruning to avoid overfitting
+                    - handles both numerical and categorical data effectively.
+                    - uses cost-complexity pruning after tree construction to reduce overfitting
+                    - builds binary trees
+                - CHAID (Chi-squared Automatic Interaction Detector)
+                    - uses chi-square tests to determine the best splits especially for categorical variables.
+                    - chi-square tests
+                        - find relationship between two entities.
+                        - used to determine whether observed frequencies differ significantly from expected frequencies
+                        - under given hypothesis.
+                        - Applications
+                            - feature selection
+                            - goodness of fit testing
+                            - independence testing
+                            - A/B testing and feature evaluation
+                            - Feature selection in machine learning
+                            - Database Query Optimization
+                                - test if actual row counts per partition match the expected uniform distribution.
+                                - Uneven distribution (χ² significance) suggests a poor sharding strategy.
+                            - NLP
+                                - Evaluate word frequency distributions in texts.
+                    - recursively splits the data based on the feature that shows the most significant association with
+                      the target variable.
+                    - can create multi-way splits, allowing nodes to have more than two children.
+                    - handles both categorical and continuous features
+                    - Chi-square statistic (χ²)
+                        - χ² = Σ (O_i - E_i)² / E_i
+                            - O_i = observed frequency for category i
+                            - E_i = expected frequency for category i
+                    - Classification:
+                        - assign a class label to new data points by following the tree from the root to a leaf node
+                        - with leaf node’s class label being assigned to data.
+                    - Regression
+                        - predicts the target variable by averaging the values at the leaf node.
+                - MARS (Multivariate Adaptive Regression Splines)
+                    - extension of the CART algorithm
+                    - uses splines to model non-linear relationships between variables
+                    - constructs a piecewise linear model where the relationship between the input and output variables
+                    - but with variable slopes at different points, known as knots.
+                    - automatically selects and positions these knots based on the data distribution and the need to
+                      capture non-linearities.
+                    - Basis Functions
+                        - h(x) = max(0, x - t) or h(x) = max(0, t - x)
+                            - t = knot location
+                    - Knot function
+                        - points where the slope of the piecewise linear function changes.
+                - Conditional Inference Trees
+                    - uses statistical tests to choose splits based on the relationship between features and the target
+                      variable.
+                    - use permutation tests to select the feature that best splits the data while minimizing bias.
+                    - follows recursive approach
+                    - At each node it evaluates the statistical significance of potential splits
+                    - using tests like the Chi-squared test for categorical features and
+                    - the F-test for continuous features.
+            - Types
+                - Classification Trees
+                - Regression Trees
+                - Pruning Techniques
+        - Ensemble Methods
+            - Bagging
+            - Boosting
+            - Stacking
+        - Support Vector Machines (SVM)
+            - used for both classification and regression tasks
+            - finds the optimal hyperplane that separates different classes in the feature space.
+            - aims to maximize the margin between the hyperplane and the nearest data points from each class
+            - Support Vectors
+                - data points closest to the hyperplane
+                - influence the position and orientation of the hyperplane.
+            - Hyperplane
+                - decision boundary that separates different classes in the feature space.
+            - Margin
+                - distance between the hyperplane and the nearest data points from each class.
+            - Objective Function
+                - maximize the margin while minimizing classification errors.
+                - Optimization Problem
+                    - Minimize: (1/2) * ||w||² + C * Σ ξ_i
+                        - w = weight vector defining the hyperplane
+                        - C = regularization parameter balancing margin maximization and error minimization
+                        - ξ_i = slack variables allowing for misclassification of data points
+                    - Subject to: y_i * (w · x_i + b) ≥ 1 - ξ_i, for all i
+                        - y_i = class label of data point i (+1 or -1)
+                        - x_i = feature vector of data point i
+                        - b = bias term
+            - Hinge Loss
+                - Hinge loss is used to measure the error in SVM classification.
+            - Hinge Loss Function
+                - L(y, f(x)) = max(0, 1 - y * f(x))
+                    - y = actual class label (+1 or -1)
+                    - f(x) = predicted value from the SVM model
+            - Langrange Multipliers
+                - used to solve constrained optimization problems in SVMs.
+                - transform the constrained optimization problem into an unconstrained one
+                - by introducing additional variables (Lagrange multipliers) for each constraint.
+                - L(w, b, α) = (1/2) * ||w||² - Σ α_i [y_i * (w · x_i + b) - 1]
+                    - α_i = Lagrange multiplier for data point i
+            - Dual problem for SVM
+                - Maximize: W(α) = Σ α_i - (1/2) * Σ Σ α_i * α_j * y_i * y_j * (x_i · x_j)
+                    - Subject to: Σ α_i * y_i = 0 and α_i ≥ 0 for all i
+            - SVM Decision Boundary
+                - f(x) = w · x + b
+                    - w = weight vector defining the hyperplane
+                    - x = input feature vector
+                    - b = bias term
+            - Use cases:
+                - Binary classification
+                    - Spam vs Non-Spam
+                    - Cat vs Dog
+            - Types
+                - Linear SVM
+                    - uses linear boundary to separate classes
+                - Non-linear SVM
+                    - uses Kernel functions to transform data into higher dimensions
+                    - Kernel Functions
+                        - Kernel: function transforms the input data into a higher-dimensional space
+                            - allows SVM to find a linear separating hyperplane in that space.
+                            - Common Kernel Functions
+                                - Linear Kernel
+                                    - for linearly separable data
+                                - Polynomial Kernel
+                                    - for non-linear data
+                                - Radial Basis Function (RBF) Kernel
+                                    - for complex non-linear data
+                                    - transforms data into space based on distance from a center point
+                                    - ideal for spherical or circular relationships
+                                - Sigmoid Kernel
+                                    - for certain types of non-linear data
+                                    - mimics neural network behavior using sigmoid activation function
+        - K-NN (K-Nearest Neighbors)
+            - Find closest data points(neighbours) to make predictions
+            - used for classification and regression tasks
+            - find k nearest data points in the training set and
+                - make predictions based on majority class (classification) or average value (regression) of those
+                  neighbors.
+            - Also called Lazy Learner Algorithm
+                - because it does not learn a model during training phase
+                - simply stores the training data and makes predictions during the testing phase.
+            - based on proximity and majority voting (for classification) or averaging (for regression).
+            - Boundary
+                - shape of the decision boundary is determined by the distribution of training data points.
+            - Voronoi Diagram
+                - partitioning of a space into regions based on distance to a specific set of points.
+                - each region contains all points closer to one particular point than to any other.
+                - helps visualize how K-NN classifies new data points based on proximity to training data.
+            - What is k?
+                - number of nearest neighbors to consider when making predictions.
+            - How to choose k?
+                - Experiment with different k values using cross-validation
+                - choose the one that gives the best performance on validation data.
+                - if data has lot of outliers, choose larger k to smooth out predictions.
+            - Methods to choose k
+                - Cross-Validation
+                    - k-fold cross-validation
+                        - dividing the dataset into k parts
+                        - k value chosen is the one that gives the highest average accuracy during these tests.
+                - Elbow Method
+                    - Draw/plot accuracy vs different k values
+                    - look for the "elbow" point where accuracy starts to level off
+                    - choose k at this point to balance accuracy and complexity.
+            - Steps to implement K-NN
+                - Choose the number of neighbors (k)
+                - Calculate the distance between the new data point and all training data points
+                - Sort the distances and select the k nearest neighbors
+                - For classification: use majority voting to determine the class label
+                - For regression: calculate the average of the k nearest neighbors' values
+            - Distance Metrics: distance calculation to identify nearest neighbors
+                - Euclidean Distance
+                    - shortest path between two points in multi-dimensional space
+                    - d(p, q) = sqrt(Σ (p_i - q_i)²)
+                        - p and q are two points
+                        - p_i and q_i are the coordinates of points p and q in each dimension
+                - Manhattan Distance
+                    - total absolute difference between coordinates of two points
+                    - d(p, q) = Σ |p_i - q_i|
+                    - Also called Taxi-cab distance or L1 norm
+                    - otal distance you would travel if you could only move along horizontal and vertical lines like a
+                      grid or city streets.
+                - Minkowski Distance
+                    - family of distance metrics that includes both Euclidean and Manhattan distances as special cases.
+                    - d(p, q) = (Σ |p_i - q_i|^p)^(1/p)
+                        - p = order of the norm
+                        - when p = 2, it becomes Euclidean distance
+                        - when p = 1, it becomes Manhattan distance
+                - Hamming Distance
+            - Choosing the value of k
+                - small k: sensitive to noise, captures local patterns
+                - large k: smooths out predictions, captures global patterns
+            - Weighted K-NN
+                - closer neighbors have more influence on the prediction
+            - Applications of K-NN
+                - Image Recognition
+                - Recommender Systems
+                    - Movie recommendations
+                    - Product recommendations
+                - Medical Diagnosis
+                - Fraud Detection
+                    - Spam detection
+                        - comparing new emails to known spam and non-spam examples.
+                - Customer Segmentation
+                    - Customer behavior analysis
+                - Anomaly Detection
+                - Speech Recognition
+                    - Match spoken words to known patterns to convert them into text.
+            - Impact of K on decision boundary
+                - small k: complex, wiggly decision boundary
+                - large k: smoother, simpler decision boundary
+        - Naive Bayes
+            - predicts the category of a data point using probability
+            - based on Bayes' Theorem
+                - formula in probability theory used to update the probability of a hypothesis (\(A\)) based on new
+                  evidence (\(B\))
+                - Formula:
+                    - P(A|B) = (P(B|A) * P(A)) / P(B)
+                        - P(A|B) = posterior probability of hypothesis A given evidence B
+                        - P(B|A) = likelihood of evidence B given hypothesis A
+                        - P(A) = prior probability of hypothesis A
+                        - P(B) = prior probability of evidence B
+            - Assumes independence between features
+            - Used for classification tasks
+            - Used mostly in high-dimensional text classification
+            - Naive assumption
+                - assumes that all features are independent of each other given the class label.
+                - simplifies the computation of probabilities
+                - allows the model to make predictions efficiently even with high-dimensional data.
+            - Assumptions
+                - Feature Independence
+                    - assumes that all features are independent of each other given the class label.
+                - Class Conditional Independence
+                    - assumes that the presence or absence of a feature is independent of the presence or absence of any
+                      other feature, given the class label.
+                - Discrete Features have multinomial distribution
+                    - assumes that features follow a multinomial distribution, especially in text classification tasks.
+                - Features are equally important
+                    - assumes that all features contribute equally to the final prediction.
+                - No missing data
+                    - assumes that there are no missing values in the dataset.
+                - Naive Bayes for continuous features
+                    - assumes that continuous features follow a Gaussian (normal) distribution within each class.
+                    - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
+                        - P(x|C) = probability of feature x given class C
+                        - μ_C = mean of feature x for class C
+                        - σ_C² = variance of feature x for class C
+            - Types of Naive Bayes Classifiers
+                - Gaussian Naive Bayes
+                    - continuous features
+                    - assumes that features follow a normal (Gaussian) distribution or
+                    - Normal Distribution within each class.
+                    - i.e. Bell curve symmetric about the mean of the feature
+                    - it assumes likelihood follows Gaussian distribution
+                        - P(x|C) = (1 / sqrt(2πσ_C²)) * exp(- (x - μ_C)² / (2σ_C²))
+                            - P(x|C) = probability of feature x given class C
+                            - μ_C = mean of feature x for class C
+                            - σ_C² = variance of feature x for class C
+                - Multinomial Naive Bayes
+                    - for discrete data and text classification problems
+                    - Used to represent the frequencies of words or events in documents.
+                    - assumes that features represent counts or frequencies of events.
+                    - assumes each word or feature is independent of the others
+                    - commonly used for text classification tasks like spam detection and sentiment analysis.
+                    - [Multinomial.png](Multinomial.png)
+                    - Maximum Likelihood Estimation (MLE)
+                        - estimates the probabilities of features given the class labels based on their observed
+                          frequencies in the training data.
+                        - [MLE](MLE.png)
+                    - Laplace Smoothing
+                        - technique used to handle zero probabilities in Multinomial Naive Bayes.
+                        - adds a small constant (usually 1) to the count of each feature
+                        - ensures that no feature has a probability of zero.
+                        - P(w|C) = (count(w, C) + 1) / (Σ count(w', C) + V)
+                            - P(w|C) = probability of word w given class C
+                            - count(w, C) = count of word w in documents of class C
+                            - V = total number of unique words in the vocabulary
+                - Bernoulli Naive Bayes
+                    - deals with binary/boolean features
+                    - assumes that features are binary (0 or 1), indicating the presence or absence of an event.
+                    - commonly used for document classification tasks where the presence or absence of words is
+                      important
+                    - for classification of binary features such as 'Yes' or 'No', '1' or '0', 'True' or 'False' etc
+                    - P(x|C) = P(w|C)^x * (1 - P(w|C))^(1 - x)
+                        - P(x|C) = probability of feature x given class C
+                        - P(w|C) = probability of word w given class C
+                        - x = binary feature (0 or 1)
+                    - Bernoulli Distribution
+                        - models the probability of a binary outcome (success/failure) for a single trial.
+                        - P(X = k) = p^k * (1 - p)^(1 - k)
+                            - k = outcome (0 or 1)
+                            - p = probability of success (1)
+                - Complement Naive Bayes
+                    - variant of Multinomial Naive Bayes
+                    - designed to handle imbalanced datasets better.
+                        - reduce the bias towards the majority class
+                    - focuses on the complement of each class
+                    - estimates probabilities based on instances not belonging to the class.
+                    - often used in text classification tasks with imbalanced class distributions.
+                    - Formula
+                        - P(w|C) = (count(w, ¬C) + 1) / (Σ count(w', ¬C) + V)
+                            - P(w|C) = probability of word w given class C
+                            - count(w, ¬C) = count of word w in documents not belonging to class C
+                            - V = total number of unique words in the vocabulary
+                    - e.g. CNB estimates probabilities for Apples using Bananas' data (complement) and vice versa
+            - Applications
+                - Spam Detection
+                - Sentiment Analysis
+                - Document/Text Classification/Categorization
+                - Credit Scoring
+                - Medical Diagnosis
+                - Weather Prediction
+        - Random Forest
+            - uses decision trees as base learners
+            - each tree looks at a random subset of data and
+                - the results are combined by voting for classification or averaging for regression
+                - to make a final prediction.
+            - ensemble learning method
+                - Method that combines multiple models to improve overall performance.
+            - combines multiple decision trees(forest) to improve predictive performance and reduce overfitting.
+            - builds multiple decision trees during training
+            - merges their predictions to make a final prediction.
+            - Ensemble Methods
+                - Bagging (Bootstrap Aggregating)
+                    - models are trained independently in parallel
+                    - results are combined to make a final prediction.
+                    - creates multiple subsets of the training data by sampling with replacement
+                    - trains a decision tree on each subset
+                    - combines their predictions through majority voting (classification) or averaging (regression).
+                    - Bagging Algorithms
+                        - Bootstrap Sampling
+                            - randomly samples the training data with replacement to create 'N' multiple subsets.
+                            - each subset is used to train a separate decision tree.
+                        - Base Model Training
+                            - trains a decision tree on each bootstrap sample independently in parallel.
+                        - Prediction Aggregation
+                            - combines predictions from multiple models to make a final prediction.
+                            - majority voting for classification tasks
+                            - averaging for regression tasks.
+                        - Out of Bag Evaluation
+                            - estimates model performance using data points not included in the bootstrap samples for
+                              each tree.
+                            - provides an unbiased estimate of the model's accuracy without needing a separate
+                              validation set.
+                - Boosting
+                    - train models one after another
+                    - each model tries to correct the errors of the previous one.
+                    - combines their predictions to make a final prediction.
+                    - Algorithms
+                        - AdaBoost (Adaptive Boosting)
+                            - sequentially trains weak learners (usually decision stumps)
+                            - each learner focuses more on the misclassified instances from the previous learners.
+                            - combines their predictions through weighted voting (classification) or weighted
+                              averaging (regression).
+                            - Weight Update
+                                - assigns equal weights to all training samples initially
+                                - increases the weights of misclassified instances, reducing bias and variance
+                                - decreases the weights of correctly classified instances
+                                - so that subsequent learners focus more on the difficult cases.
+                                - but it is sensitive to noisy data and outliers
+                        - Gradient Boosting
+                            - builds models sequentially
+                            - each new model tries to correct the residual errors of the combined previous models.
+                            - uses gradient descent to minimize a specified loss function.
+                            - Loss Function Optimization
+                                - minimizes a specified loss function (e.g., Mean Squared Error for regression, Log Loss
+                                  for classification)
+                                - using gradient descent to optimize model predictions.
+                        - XGBoost (Extreme Gradient Boosting)
+                            - optimized implementation of gradient boosting
+                            - designed for speed and performance
+                            - includes regularization techniques to prevent overfitting.
+                            - Regularization
+                                - includes L1 (Lasso) and L2 (Ridge) regularization terms in the objective function
+                                - helps prevent overfitting by penalizing complex models.
+                        - LightGBM (Light Gradient Boosting Machine)
+                            - gradient boosting framework that uses tree-based learning algorithms
+                            - designed for efficiency and scalability
+                            - uses histogram-based algorithms to speed up training and reduce memory usage.
+                            - Histogram-based Splitting
+                                - uses histogram-based algorithms to find optimal split points
+                                - speeds up training and reduces memory usage.
+                        - CatBoost (Categorical Boosting)
+                            - gradient boosting library that handles categorical features natively
+                            - employs symmetric decision trees and
+                            - a unique encoding method that considers target values
+                            - reduces the need for extensive data preprocessing.
+                            - Categorical Feature Handling
+                                - natively handles categorical features
+                                - reduces the need for extensive data preprocessing.
+                - Stacking(Stacked Generalization)
+                    - combines predictions from multiple models (base learners)
+                    - uses a meta-model to learn how to best combine these predictions for improved accuracy.
+                    - Meta Model
+                        - model that learns to combine predictions from base learners.
+            - Feature Randomness
+                - at each split in a decision tree, a random subset of features is selected
+                - helps create diverse trees and reduces correlation between them.
+            - Out-of-Bag (OOB) Error Estimation
+                - estimates model performance using data points not included in the bootstrap samples for each tree.
+                - provides an unbiased estimate of the model's accuracy without needing a separate validation set.
+            - Feature Importance
+                - measures the contribution of each feature to the model's predictions
+                - helps identify the most relevant features for the target variable.
+            - Use Cases
+                - Classification Tasks
+                - Regression Tasks
+                - Anomaly Detection
+                - Feature Selection
+            - Applications
+                - Credit Scoring
+                - Fraud Detection
+                - Medical Diagnosis
+                - Stock Market Prediction
+            - out of Bag Scoring
+                - method to estimate the performance of Random Forest models
+            - Out of Bag (OOB) Error
+                - estimate of the model's prediction error
+                - calculated using data points not included in the bootstrap samples for each tree.
+            - Hyperparameters
+                - Number of Trees (n_estimators)
+                    - Default: 100
+                - Maximum Depth of Trees (max_depth)
+                    - Default: None (nodes are expanded until all leaves are pure or contain less than min_samples_split
+                      samples)
+                - Minimum Samples to Split a Node (min_samples_split)
+                    - Minimum number of samples required to split an internal node
+                    - Default: 2
+                - Minimum Samples per Leaf (min_samples_leaf)
+                    - Default: 1
+                - Number of Features to Consider at Each Split (max_features)
+                    - Default max features:
+                        - for classification: sqrt(total number of features)
+                        - for regression: total number of features / 3
+                - Max Leaf Nodes (max_leaf_nodes)
+                    - Default: None (unlimited)
+                - Max Samples (max_samples)
+                    - Default: None (use all samples)
+            - Hyperparameter Tuning
+                - Grid Search
+                - Random Search
+                - Bayesian Optimization
+        - Neural Networks
+            - Feedforward Neural Networks
+            - Convolutional Neural Networks (CNN)
+            - Recurrent Neural Networks (RNN)
+    - Tools and Frameworks
+        - Programming Languages
+            - Python
+            - R
+            - Julia
+        - Libraries
+            - Scikit-learn
+            - TensorFlow
+            - PyTorch
+        - Platforms
+            - Google Colab
+            - Jupyter Notebooks
+            - Azure Machine Learning Studio
+    - Applications/Use cases
+        - Image Recognition
+        - Natural Language Processing (NLP)
+        - Recommendation Systems
+        - Fraud Detection
+        - Predictive Analytics
+    - Overfitting
+        - when a model learns the training data too well,
+        - capturing noise and details that do not generalize to new data.
+    - underfitting
+        - when a model is too simple to capture the underlying patterns in the data,
+        - resulting in poor performance on both training and new data.
 - Supervised Learning
-  - Classification
-    - goal is to predict discrete labels or categories
-    - e.g. spam detection, image recognition, sentiment analysis etc.
-  - Regression
-    - aim to predict continuous numerical values
-    - e.g. house price prediction, stock price forecasting, temperature prediction etc.
-  - Algorithms
-    - Linear Regression
-      - predict numbers using a straight line.
-      - helps find the relationship between input and output.
-      - uses the equation of a line: Y = mX + b
-        - Y = predicted value (output)
-        - m = slope of the line (coefficient)
-        - X = input feature
-        - b = y-intercept (constant term)
-    - Logistic Regression
-    - Decision Trees
-    - Random Forest
-    - Support Vector Machines (SVM)
-    - Neural Networks
+    - Classification
+        - goal is to predict discrete labels or categories
+        - e.g. spam detection, image recognition, sentiment analysis etc.
+    - Regression
+        - aim to predict continuous numerical values
+        - e.g. house price prediction, stock price forecasting, temperature prediction etc.
+    - Algorithms
+        - Linear Regression
+            - predict numbers using a straight line.
+            - helps find the relationship between input and output.
+            - uses the equation of a line: Y = mX + b
+                - Y = predicted value (output)
+                - m = slope of the line (coefficient)
+                - X = input feature
+                - b = y-intercept (constant term)
+        - Logistic Regression
+        - Decision Trees
+        - Random Forest
+        - Support Vector Machines (SVM)
+        - Neural Networks
 - Unsupervised Learning
-  - Clustering
-    - groups similar data points together into clusters
-    - based on their characteristics, without using any labeled data
-    - discovery of natural groupings and hidden patterns in complex datasets.
-    - Similarity Measures: 
-      - Euclidean distance,
-      - Cosine Similarity
-      - Manhattan Distance
-    - Use cases
-      - Customer Segmentation: group customers with similar shopping habits
-      - Anomaly Detection: Identifying outliers or fraudulent activities in finance, network security and sensor data.
-      - Image Segmentation: Dividing images into meaningful parts for object detection, medical diagnostics or computer vision tasks.
-      - Recommendation Systems: Clustering user preferences to recommend movies, products or content tailored to different groups. 
-      - Market Basket Analysis: Discovering products frequently bought together to optimize store layouts and promotions.
-    - Types of clustering
-      - Hard Clustering
-        - each data point strictly belongs to exactly one cluster
-        - no overlap is allowed
-        - Use cases: 
-          - Market segmentation, 
-          - customer grouping, 
-          - document clustering.
-      - Soft Clustering
-        - assigns each data point a probability or degree of membership to multiple clusters simultaneously
-        - allowing data points to partially belong to several groups.
-        - e.g.
-          - A data point may have a 70% membership in Cluster 1 and 30% in Cluster 2, 
-          - reflecting uncertainty or overlap in group characteristics.
-    - Clustering Methods
-      - Centroid-based Clustering (Partitioning Methods)
-        - organizes data points around central prototypes called centroids
-        - each cluster is represented by the mean (or medoid) of its members
-        - number of clusters is specified in advance
-        - algorithm allocates points to the nearest centroid
-        - Algos
-          - K-Means clustering
-            - Iteratively assigns points to nearest centroid
-            - recalculates centroids to minimize intra-cluster variance
-          - K-medoids
-            - uses actual data points (medoids) as centers, robust to outliers.
-      - Density-based Clustering (Model-based Methods)
-        - defines clusters as contiguous regions of high data density separated by areas of lower density
-        - identify clusters of arbitrary shapes
-        - does not require predefining the number of clusters
-        - Algos
-          - DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
-            - Groups points with sufficient neighbors
-            - labels sparse points as noise.
-          - OPTICS (Ordering Points To Identify Clustering Structure)
-            - Extends DBSCAN to handle varying densities
-      - Connectivity-based Clustering (Hierarchical Clustering)
-        - builds nested groupings of data by evaluating how data points are connected to their neighbors.
-        - creates a dendrogram a tree-like structure that reflects relationships at various granularity levels
-        - does not require specifying cluster numbers in advance
-        - but can be computationally intensive
-        - Algos
-          - Agglomerative (Bottom-up)
-            - Start with each point as a cluster
-            - iteratively merge the closest clusters.
-          - Divisive (Top-down)
-            - Start with one cluster
-            - iteratively split into smaller clusters.
-      - Distribution-based Clustering
-        - assumes data is generated from a mixture of probability distributions, 
-        - such as Gaussian distributions and assigns points to clusters based on statistical likelihood
-        - supports clusters with flexible shapes and overlaps
-        - but requires specifying the number of distributions.
-        - Algos
-          - Gaussian Mixture Model (GMM)
-            - Fits data as a weighted mixture of Gaussian distributions; 
-            - assigns data points based on likelihood.
-      - Fuzzy Clustering
-        - extends traditional methods by allowing each data point to belong to multiple clusters 
-        - with varying degrees of membership.
-        - captures ambiguity and soft boundaries in data
-        - particularly useful when the clusters overlap or boundaries are not clear-cut.
-        - Algos
-          - Fuzzy C-Means: 
-            - Similar to K-means but with fuzzy memberships updated iteratively.
-  - Associate Rule Mining
-    - discover interesting relationships or associations between variables in large datasets.
-    - often used in market basket analysis to find products that are frequently bought together.
-  - Dimensionality Reduction
+    - Clustering
+        - groups similar data points together into clusters
+        - based on their characteristics, without using any labeled data
+        - discovery of natural groupings and hidden patterns in complex datasets.
+        - Similarity Measures:
+            - Euclidean distance,
+            - Cosine Similarity
+            - Manhattan Distance
+        - Use cases
+            - Customer Segmentation: group customers with similar shopping habits
+            - Anomaly Detection: Identifying outliers or fraudulent activities in finance, network security and sensor
+              data.
+            - Image Segmentation: Dividing images into meaningful parts for object detection, medical diagnostics or
+              computer vision tasks.
+            - Recommendation Systems: Clustering user preferences to recommend movies, products or content tailored to
+              different groups.
+            - Market Basket Analysis: Discovering products frequently bought together to optimize store layouts and
+              promotions.
+        - Types of clustering
+            - Hard Clustering
+                - each data point strictly belongs to exactly one cluster
+                - no overlap is allowed
+                - Use cases:
+                    - Market segmentation,
+                    - customer grouping,
+                    - document clustering.
+            - Soft Clustering
+                - assigns each data point a probability or degree of membership to multiple clusters simultaneously
+                - allowing data points to partially belong to several groups.
+                - e.g.
+                    - A data point may have a 70% membership in Cluster 1 and 30% in Cluster 2,
+                    - reflecting uncertainty or overlap in group characteristics.
+        - Clustering Methods
+            - Centroid-based Clustering (Partitioning Methods)
+                - organizes data points around central prototypes called centroids
+                - each cluster is represented by the mean (or medoid) of its members
+                - number of clusters is specified in advance
+                - algorithm allocates points to the nearest centroid
+                - Algos
+                    - K-Means clustering
+                        - Iteratively assigns points to nearest centroid
+                        - recalculates centroids to minimize intra-cluster variance
+                        - Helps identify natural groupings in unlabeled datasets
+                        - used in customer segmentation, image compression, and pattern discovery
+                        - working
+                            - k represents the number of groups or clusters we want to classify our items into.
+                            - choose initial centroids randomly from the data points
+                            - assign each data point to the nearest centroid to form clusters
+                            - recalculate the centroids by taking the mean of all data points in each cluster
+                            - repeat the assignment and update steps until the centroids do not change significantly or
+                              a maximum number of iterations is reached.
+                        - elbow method to determine optimal k
+                            - plot the within-cluster sum of squares (WCSS) against different values of k
+                            - look for the "elbow" point where the rate of decrease in WCSS slows down
+                            - choose k at this point to balance cluster compactness and model simplicity.
+                            - Distortion (WCSS)
+                                - measures the average squared distance between each data point and its assigned cluster
+                                  center.
+                                - measure of how well the clusters represent the data.
+                                - lower distortion indicates that data points are closer to their assigned centroids,
+                                  suggesting better clustering.
+                                - Distortion = Σ (distance of each point to its assigned centroid)²
+                            - Inertia
+                                - sum of squared distances of each data point to its closest cluster center
+                                - total squared error of the clustering.
+                                - lower inertia indicates that data points are closer to their assigned centroids,
+                                  suggesting better clustering.
+                                - Inertia = Σ (distance of each point to its assigned centroid)²
+                    - K means++ clustering
+                        - improves K-means by selecting initial centroids more strategically
+                        - helps achieve better convergence and clustering results.
+                        - initialization process
+                            - randomly select the first centroid from the data points
+                            - for each subsequent centroid,
+                                - calculate the distance from the existing centroids and
+                                - select the next centroid with a probability proportional to the square of the
+                                  distance.
+                        - P(x) = D(x)² / Σ D(x)²
+                            - P(x) = probability of selecting data point x as the next centroid
+                            - D(x) = distance from data point x to the nearest existing centroid
+                    - K mode clustering
+                        - variant of K-means for categorical data
+                        - uses modes/number of mismatches instead of means to represent cluster centers.
+                        - suitable for clustering categorical data where calculating means is not meaningful.
+                        - working
+                            - k represents the number of clusters we want to classify our items into.
+                            - choose initial modes randomly from the data points
+                            - assign each data point to the nearest mode based on the number of mismatches (Hamming
+                              distance)
+                            - recalculate the modes by selecting the most frequent category for each feature in each
+                              cluster
+                            - repeat the assignment and update steps until the modes do not change significantly or a
+                              maximum number of iterations is reached.
+                    - Fuzzy C-Means clustering(FCM)
+                        - [Fuzzy](Fuzzy.webp)
+                        - allows data points to belong to multiple clusters with varying degrees of membership
+                        - captures ambiguity and soft boundaries in data.
+                        - particularly useful when the clusters overlap or boundaries are not clear-cut.
+                        - working
+                            - k represents the number of clusters we want to classify our items into.
+                            - choose initial cluster centers randomly from the data points
+                            - calculate the degree of membership for each data point to each cluster based on distance
+                                - V_ij = 1 / Σ (d_ij / d_ik)^(2/(m-1))
+                                    - V_ij = degree of membership of data point i to cluster j
+                                    - d_ij = distance from data point i to cluster center j
+                                    - m = fuzziness parameter that controls the degree of membership (m > 1)
+                            - update the cluster centers by taking a weighted average of all data points, where weights
+                              are determined by their degree of membership
+                            - repeat the assignment and update steps until convergence is achieved (i.e., when changes
+                              in cluster centers or membership degrees fall below a specified threshold).
+                    - K-medoids
+                        - uses actual data points (medoids) as centers, robust to outliers.
+            - Density-based Clustering (Model-based Methods)
+                - defines clusters as contiguous regions of high data density separated by areas of lower density
+                - identify clusters of arbitrary shapes
+                - does not require predefining the number of clusters
+                - Algos
+                    - DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+                        - Groups points with sufficient neighbors
+                        - labels sparse points as noise.
+                        - Parameters:
+                            - Epsilon (ε):
+                                - radius to search for neighboring points
+                                - determines the size of the neighborhood around each point.
+                                - smaller ε leads to more clusters and more noise, while larger ε may merge distinct
+                                  clusters together.
+                                - determine eps is by analyzing the k-distance graph.
+                            - MinPts:
+                                - minimum number of points required to form a dense region
+                                - MinPts = 3 is a common default value, but it can be adjusted based on the dataset and
+                                  desired cluster density.
+                                - MinPts>=D+1, where D is the number of dimensions in the dataset.
+                            - Core Points: points with at least MinPts neighbors within ε
+                        - Working
+                            - For each point, count the number of points within ε radius.
+                            - If the count is greater than or equal to MinPts, label it as a core point and form a
+                              cluster.
+                            - If a point is not a core point but is within ε of a core point, label it as a border point
+                              and assign it to the same cluster.
+                            - If a point is neither a core point nor a border point, label it as noise.
+                        - Evaluation
+                            - Silhouette Score:
+                                - measures how similar a point is to its own cluster compared to other clusters.
+                                - ranges from -1 to 1, with higher values indicating better clustering.
+                                - 0 indicates that the point is on the boundary between two clusters, while negative
+                                  values suggest that the point may have been assigned to the wrong cluster.
+                                - Silhouette Score = (b - a) / max(a, b)
+                                    - a = average distance from the point to other points in the same cluster
+                                    - b = average distance from the point to points in the nearest cluster
+                            - Davies-Bouldin Index:
+                                - evaluates the average similarity between clusters,
+                                - lower values indicate better clustering.
+                            - Adjusted Rand Index:
+                                - measures the similarity between two clusterings,
+                                - adjusted for chance grouping.
+                                - range 0 to 1, with higher values indicating better agreement between the clusterings.
+                                - 0 indicates random clustering, while 1 indicates perfect agreement.
+                    - OPTICS (Ordering Points To Identify Clustering Structure)
+                        - Extends DBSCAN to handle varying densities
+                        - produces an ordering of points based on their reachability distance,
+                        - allowing for the identification of clusters at different density levels.
+                        - Concepts
+                            - Core Distance:
+                                - distance from a point to its MinPts-th nearest neighbor,
+                                - indicating how densely the point is surrounded by other points.
+                            - Reachability Distance:
+                                - distance from a point to another point,
+                                - considering the core distance of the second point,
+                                - which helps determine how reachable one point is from another.
+                        - Reachability Plot
+                            - [OpticCLuster](OpticCLuster.webp)
+                            - visual representation of the reachability distances of points in the dataset.
+                            - helps identify clusters by looking for valleys in the plot,
+                            - where lower reachability distances indicate denser regions of data.
+            - Connectivity-based Clustering (Hierarchical Clustering)
+                - builds nested groupings of data by evaluating how data points are connected to their neighbors.
+                - creates a dendrogram a tree-like structure that reflects relationships at various granularity levels
+                - does not require specifying cluster numbers in advance
+                - but can be computationally intensive
+                - Dendogram
+                    - tree-like diagram that illustrates the arrangement of clusters produced by hierarchical
+                      clustering.
+                    - shows the relationships between clusters at different levels of similarity.
+                - Distance Metrics
+                    - Single Linkage: distance between the closest points of two clusters
+                    - Complete Linkage: distance between the farthest points of two clusters
+                    - Average Linkage: average distance between all pairs of points in two clusters
+                    - Ward's Method: minimizes the total within-cluster variance when merging clusters
+                    - Minimum Distance: distance between the closest points of two clusters
+                    - Maximum Distance: distance between the farthest points of two clusters
+                    - Group Average Distance: average distance between all pairs of points in two clusters
+                - Algos
+                    - Agglomerative (Bottom-up)
+                        - [AglomerativeHierarchialClustering](AglomerativeHierarchialClustering.webp)
+                        - Start with each point as a cluster
+                        - iteratively merge the closest clusters.
+                    - Divisive (Top-down)
+                        - Start with one cluster
+                        - iteratively split into smaller clusters.
+                    - Affinity Propagation(AP)
+                        - identifies exemplars among data points
+                        - forms clusters around these exemplars based on message passing between points.
+                        - does not require specifying the number of clusters in advance
+                        - automatically determines the optimal number of clusters based on the data.
+                        - Message Passing
+                            - iterative process where data points exchange messages to determine cluster assignments.
+                            - each point sends messages to other points indicating how well they would serve as
+                              exemplars
+                              for each other.
+                            - through this communication, the algorithm identifies exemplars and forms clusters around
+                              them.
+                        - Working
+                            - Initialize messages between data points
+                            - Iteratively update messages based on similarity and preferences
+                            - Identify exemplars and assign clusters based on message convergence.
+                            - Similar Computation
+                                - calculates the similarity between data points to determine how well they would serve
+                                  as
+                                  exemplars for each other.
+                                - Similarity can be based on distance metrics or other measures of similarity relevant
+                                  to the
+                                  data.
+                                - Similarity(i, k) = -distance(i, k)
+                                - s(i, k) = -||x_i - x_k||²
+                                    - Similarity(i, k) = similarity between data point i and potential exemplar k
+                                    - distance(i, k) = distance between data point i and potential exemplar k
+                            - Responsibility Update
+                                - updates the responsibility messages that indicate how well a data point serves as an
+                                  exemplar
+                                  for another point.
+                                - Responsibility(i, k) = Similarity(i, k) - max(Similarity(i, j) + Availability(j, k))
+                                - R(i, k) = S(i, k) - max_{j ≠ k} (S(i, j) + A(j, k))
+                                    - Responsibility(i, k) = responsibility of data point i for potential exemplar k
+                                    - Similarity(i, k) = similarity between data point i and potential exemplar k
+                                    - Availability(j, k) = availability of potential exemplar j for data point k
+                            - Availability Update
+                                - updates the availability messages that indicate how appropriate it would be for a data
+                                  point to
+                                  choose another point as its exemplar.
+                                - Availability(i, k) = min(0, Responsibility(k, k) + Σ max(0, Responsibility(j, k)))
+                                - A(i, k) = min(0, R(k, k) + Σ max(0, R(j, k))) for j ≠ i
+                                    - Availability(i, k) = availability of potential exemplar k for data point i
+                                    - Responsibility(k, k) = self-responsibility of potential exemplar k
+                                    - Responsibility(j, k) = responsibility of other data points j for potential
+                                      exemplar k
+                            - Iteration and Convergence
+                                - the algorithm iteratively updates responsibility and availability messages until
+                                  convergence is
+                                  achieved, meaning that cluster assignments stabilize and do not change significantly
+                                  with
+                                  further iterations.
+                                - r(i, i) + a(i, i) > 0 indicates that data point i is an exemplar
+                        - Parameters
+                            - Preference:
+                                - controls the number of clusters by influencing the likelihood of points being
+                                  chosen as exemplars.
+                                - higher preference values lead to more clusters, while lower values result in fewer
+                                  clusters.
+                            - Damping Factor:
+                                - helps stabilize message updates and prevent oscillations during convergence.
+                                - typically set between 0.5 and 1, with higher values providing more stability at the
+                                  cost of slower convergence.
+                                - Damping Factor (λ) = 0.5 to 1
+                                - Without damping, the algorithm may oscillate or fail to converge.
+            - Distribution-based Clustering
+                - assumes data is generated from a mixture of probability distributions,
+                - such as Gaussian distributions and assigns points to clusters based on statistical likelihood
+                - supports clusters with flexible shapes and overlaps
+                - but requires specifying the number of distributions.
+                - Algos
+                    - Gaussian Mixture Model (GMM)
+                        - probabilistic model that assumes data is generated from
+                            - a mixture of several Gaussian distributions
+                            - with unknown parameters.
+                        - soft clustering method that assigns data points to clusters based on the probability of
+                          belonging to each cluster
+                        - Fits data as a weighted mixture of Gaussian distributions
+                        - assigns data points based on likelihood.
+                        - probablity density function of a Gaussian distribution
+                            - P(x) = (1 / (σ * sqrt(2π))) * exp(- (x - μ)² / (2σ²))
+                                - P(x) = probability density of data point x
+                                - μ = mean of the Gaussian distribution
+                                - σ = standard deviation of the Gaussian distribution
+                        - EM algorithm for GMM
+                            - Expectation-Maximization (EM) algorithm is an iterative method used to find maximum
+                              likelihood estimates of parameters in statistical models, particularly for Gaussian
+                              Mixture Models (GMMs).
+                            - E-step (Expectation step):
+                                - calculates the expected membership probabilities (responsibilities) for each data
+                                  point belonging to each Gaussian component based on current parameter estimates.
+                                - γ_ik = P(z_i = k | x_i, θ) = (π_k * P(x_i | μ_k, σ_k)) / Σ (π_j * P(x_i | μ_j, σ_j))
+                                    - γ_ik = responsibility of component k for data point i
+                                    - π_k = mixing coefficient for component k
+                                    - P(x_i | μ_k, σ_k) = probability density of data point x_i under Gaussian component
+                                      k
+                            - M-step (Maximization step):
+                                - updates the parameters of the Gaussian components (means, variances, and mixing
+                                  coefficients) based on the responsibilities calculated in the E-step.
+                                - μ_k = (Σ γ_ik * x_i) / Σ γ_ik
+                                - σ_k² = (Σ γ_ik * (x_i - μ_k)²) / Σ γ_ik
+                                - π_k = Σ γ_ik / N
+                                    - N = total number of data points
+                        - Covariance and weights
+                            - covariance matrix (Σ_k) captures the shape and orientation of each Gaussian component
+                            - mixing coefficients (π_k) represent the proportion of data points belonging to each
+                              component.
+                        - Posterior probabilities(Cluster Responsibilities)
+                            - after fitting the GMM, we can calculate the posterior probabilities for each data point
+                              belonging to each cluster using Bayes' theorem.
+                            - P(z_i = k | x_i) = (π_k * P(x_i | μ_k, σ_k)) / Σ (π_j * P(x_i | μ_j, σ_j))
+                                - P(z_i = k | x_i) = posterior probability of data point i belonging to cluster k
+                                - π_k = mixing coefficient for component k
+                                - P(x_i | μ_k, σ_k) = probability density of data point x_i under Gaussian component k
+                        - Likelihood Function
+                            - measures how well the GMM fits the data
+                            - calculated as the product of the probabilities of all data points under the model.
+                            - L(θ) = Π P(x_i | θ) = Π Σ (π_k * P(x_i | μ_k, σ_k))
+                                - L(θ) = likelihood of the model parameters θ given the data
+                                - P(x_i | θ) = probability density of data point x_i under the GMM
+                                - π_k = mixing coefficient for component k
+                                - P(x_i | μ_k, σ_k) = probability density of data point x_i under Gaussian component k
+                        - Expectation-Maximization (EM) Algorithm
+                            - iterative method to find maximum likelihood estimates of parameters in GMMs.
+                            - E-step:
+                                - calculates responsibilities (membership probabilities) for each data point.
+                            - M-step:
+                                - updates parameters (means, variances, mixing coefficients) based on responsibilities.
+                    - Log Likelihood
+                        - logarithm of the likelihood function
+                        - used to evaluate model fit and convergence in GMMs.
+                        - log L(θ) = Σ log P(x_i | θ) = Σ log Σ (π_k * P(x_i | μ_k, σ_k))
+                            - log L(θ) = log-likelihood of the model parameters θ given the data
+                            - P(x_i | θ) = probability density of data point x_i under the GMM
+                            - π_k = mixing coefficient for component k
+                            - P(x_i | μ_k, σ_k) = probability density of data point x_i under Gaussian component k
+                    - Cluster shapes in GMM
+                        - Mean (μ_k): represents the center of each Gaussian component, indicating the average location
+                          of data points in that cluster.
+                        - Covariance Matrix (Σ_k): captures the shape and orientation of each Gaussian component,
+                          allowing for clusters that can be elongated, circular, or oriented in different directions.
+                    - GMM allows:
+                        - elongated clusters (if covariance matrices have different eigenvalues)
+                        - circular clusters (if covariance matrices are isotropic)
+                        - tilted clusters (if covariance matrices have off-diagonal elements)
+                        - overlapping clusters (if means are close and covariance matrices are large)
+                    - Visualization of GMM Clusters
+                        - contour plots
+                            - can be used to visualize the Gaussian components and
+                            - their corresponding clusters in a 2D feature space.
+                            - each contour represents a level of constant probability density for the Gaussian
+                              distribution,
+                            - helping to illustrate the shape and spread of each cluster.
+                        - Scatter plots
+                            - can also be used to visualize the data points colored by their assigned cluster,
+                            - along with the means of each Gaussian component to show the cluster centers.
+                    - Probability Density Function (PDF)
+                        - describes the likelihood of a continuous random variable taking on a specific value.
+                        - for GMM, the PDF is a weighted sum of Gaussian distributions.
+                        - P(x) = Σ (π_k * P(x | μ_k, σ_k))
+                            - P(x) = probability density of data point x under the GMM
+                            - π_k = mixing coefficient for component k
+                            - P(x | μ_k, σ_k) = probability density of data point x under Gaussian component k
+                        - PDF tells us:
+                            - Relative Likelihood of values within a given interval
+                            - Shape of the Distribution
+                            - Expected Value (Mean) and Variance
+                        - use cases of PDF
+                            - Rainfall Prediction: modeling the distribution of daily rainfall amounts to estimate the
+                              likelihood of different rainfall levels.
+                            - Stock Price Modeling: modeling the distribution of stock returns to assess the probability
+                              of various return levels and inform investment decisions.
+                            - Customer Behavior Analysis: modeling the distribution of customer purchase amounts to
+                              understand spending patterns and predict future behavior.
+                            - Income Distribution Analysis: modeling the distribution of household incomes to analyze
+                              economic inequality and inform policy decisions.
+                        - Important Measures of a Probability Distribution
+                            - Mean of Probability Density Function
+                                - average value of the random variable
+                                - also called as expected value or expectation.
+                                - E[X] = ∫ x * P(x) dx
+                                    - E[X] = expected value (mean) of the random variable X
+                                    - P(x) = probability density function of X
+                            - Median of Probability Density Function
+                                - value which divides the probability density function graph into two equal halves.
+                                - the point at which the cumulative density function (CDF) equals 0.5.
+                                - Median = CDF^(-1)(0.5)
+                                    - CDF^(-1) = inverse cumulative density function
+                                - Variance of Probability Density Function
+                                    - measure of the spread or dispersion of the random variable around its mean.
+                                    - Var(X) = E[(X - E[X])²] = ∫ (x - E[X])² * P(x) dx
+                                        - Var(X) = variance of the random variable X
+                                        - E[X] = expected value (mean) of X
+                                        - P(x) = probability density function of X
+                                - Standard Deviation of Probability Density Function
+                                    - square root of the variance
+                                    - provides a measure of the average distance of data points from the mean.
+                                    - SD(X) = sqrt(Var(X)) = sqrt(E[(X - E[X])²])
+                                        - SD(X) = standard deviation of the random variable X
+                                        - Var(X) = variance of X
+                                - Types of Probability Distributions
+                                    - Normal Distribution (Gaussian distribution)
+                                        - bell-shaped curve
+                                        - symmetric about its mean
+                                        - defined by its mean and standard deviation.
+                                        - P(x) = (1 / (σ * sqrt(2π))) * exp(- (x - μ)² / (2σ²))
+                                            - P(x) = probability density of data point x
+                                            - μ = mean of the distribution
+                                            - σ = standard deviation of the distribution
+                                        - in standard normal distribution, mean = 0 and standard deviation = 1
+                                        - so, P(z) = (1 / sqrt(2π)) * exp(- z² / 2)
+                                            - P(z) = probability density of data point z under the standard normal
+                                              distribution
+                                            - z = (x - μ) / σ (standardized value of x)
+                                    - Uniform Distribution(rectangular distribution)
+                                        - all outcomes are equally likely within a specified range.
+                                        - f(x) = 1 / (b - a) for a ≤ x ≤ b
+                                            - a = lower bound of the distribution
+                                            - b = upper bound of the distribution
+                                    - Exponential Distribution
+                                        - models the time between events in a Poisson process.
+                                    - Binomial Distribution
+                                        - models the number of successes in a fixed number of independent Bernoulli
+                                          trials.
+                                        - P(X = k) = C(n, k) * p^k * (1 - p)^(n - k)
+                                            - P(X = k) = probability of observing k successes in n trials
+                                            - C(n, k) = binomial coefficient (number of ways to choose k successes from
+                                              n trials)
+                                            - p = probability of success on an individual trial
+                                    - Chi-Square Distribution
+                                        - models the distribution of the sum of squared standard normal variables.
+                                        - P(X = k) = (1 / (2^(k/2) * Γ(k/2))) * x^(k/2 - 1) * exp(-x/2)
+                                            - P(X = k) = probability density of data point x under the chi-square
+                                              distribution with k degrees of freedom
+                                            - Γ(k/2) = gamma function evaluated at k/2
+                                - Joint Probability Density Function
+                                    - describes the probability of two or more random variables taking on specific
+                                      values simultaneously.
+                                    - for GMM, the joint PDF can be calculated by multiplying the PDFs of the individual
+                                      Gaussian components and their mixing coefficients.
+                                    - P(x, y) = Σ (π_k * P(x | μ_k, σ_k) * P(y | μ_k, σ_k))
+                                        - P(x, y) = joint probability density of data points x and y under the GMM
+                                        - π_k = mixing coefficient for component k
+                                        - P(x | μ_k, σ_k) = probability density of data point x under Gaussian component
+                                          k
+                                        - P(y | μ_k, σ_k) = probability density of data point y under Gaussian component
+                                          k
+                        - Kernel Density Estimation (KDE)
+                            - non-parametric method to estimate the probability density function of a random variable.
+                            - Unlike histograms, which use discrete bins,
+                                - KDE provides a smooth and continuous estimate of the underlying distribution,
+                                - making it particularly useful when dealing with continuous data.
+                            - smooths data points using a kernel function to create a continuous density estimate.
+                            - useful for visualizing the distribution of data and identifying underlying patterns
+                              without assuming a specific parametric form.
+                            - f(x) = (1 / (n * h)) * Σ K((x - x_i) / h)
+                                - f(x) = estimated probability density function at point x
+                                - n = number of data points
+                                - h = bandwidth (smoothing parameter)
+                                - K = kernel function (e.g., Gaussian kernel)
+                                - x_i = individual data points
+                            - Kernel Functions
+                                - Gaussian Kernel: K(u) = (1 / sqrt(2π)) * exp(-u² / 2)
+                                - Epanechnikov Kernel: K(u) = 0.75 * (1 - u²) for |u| ≤ 1, 0 otherwise
+                                - Uniform Kernel: K(u) = 0.5 for |u| ≤ 1, 0 otherwise
+                                - Triangular Kernel: K(u) = (1 - |u|) for |u| ≤ 1, 0 otherwise
+                                - Quartic (Biweight) Kernel: K(u) = (15/16) * (1 - u²)² for |u| ≤ 1, 0 otherwise
+                            - bandwidth selection
+                                - critical parameter that controls the smoothness of the density estimate
+                                - too small bandwidth leads to overfitting (too wiggly), while too large bandwidth leads
+                                  to underfitting (too smooth).
+                                - methods for selecting bandwidth include Silverman's rule of thumb, cross-validation,
+                                  and plug-in methods.
+                            - Optimal Bandwidth Selection
+                                - Silverman's Rule of Thumb: h = 1.06 * σ * n^(-1/5)
+                                    - h = optimal bandwidth
+                                    - σ = standard deviation of the data
+                                    - n = number of data points
+                                - Cross-Validation: selecting the bandwidth that minimizes the mean integrated squared
+                                  error (MISE) through techniques like leave-one-out cross-validation.
+                                - Plug-in Methods: estimating the optimal bandwidth by plugging in estimates of the
+                                  underlying density's derivatives.
+                            - Multivariate KDE
+                                - extends KDE to estimate the joint probability density function of multiple random
+                                  variables.
+                                - f(x) = (1 / (n * h^d)) * Σ K((x - x_i) / h)
+                                    - f(x) = estimated joint probability density function at point x
+                                    - n = number of data points
+                                    - h = bandwidth (smoothing parameter)
+                                    - d = number of dimensions (random variables)
+                                    - K = multivariate kernel function (e.g., multivariate Gaussian kernel)
+                                    - x_i = individual data points in d-dimensional space
+                            - Variants of KDE
+                                - Adaptive KDE: adjusts the bandwidth locally based on the density of data points,
+                                  allowing for better estimation in regions with varying data density.
+                                - Boundary-Corrected KDE: modifies the kernel function near the boundaries of the data
+                                  to reduce bias in density estimation.
+                                - Fast KDE: utilizes efficient algorithms and data structures (e.g., KD-trees) to speed
+                                  up the computation of KDE for large datasets.
+                    - Cummulative Density Function (CDF)
+                        - describes the probability that a continuous random variable takes on a value less than or
+                          equal to a specific value.
+                        - for GMM, the CDF can be calculated by integrating the PDF over the desired range.
+                        - CDF(x) = Σ (π_k * CDF_k(x))
+                            - CDF(x) = cumulative density function of data point x under the GMM
+                            - π_k = mixing coefficient for component k
+                            - CDF_k(x) = cumulative density function of data point x under Gaussian component k
+                    - PDF is obtained by differentiating the Cumulative Distribution Function (CDF), and the CDF can be
+                      obtained by integrating the PDF
+                    - Dirichlet Process Mixture Models (DPMMs)
+                        - automatically decide the number of clusters based on the data.
+                        - non-parametric Bayesian approach that allows for an infinite number of potential clusters,
+                          with the actual number determined by the data.
+                        - uses a Dirichlet process as a prior distribution over the mixture components, enabling
+                          flexible modeling of complex data distributions without needing to specify the number of
+                          clusters in advance.
+                        - working
+                            - data points are assigned to clusters based on a Chinese Restaurant Process (CRP) or
+                              stick-breaking construction, which allows for the creation of new clusters as needed.
+                            - the model iteratively updates cluster assignments and parameters using Markov Chain Monte
+                              Carlo (MCMC) sampling or variational inference methods to find the best fit for the data.
+                            - the number of clusters can grow as more data points are observed, allowing for a flexible
+                              and adaptive clustering solution that can capture the underlying structure of the data
+                              without overfitting or underfitting.
+                            - the Dirichlet process is parameterized by a concentration parameter (α) that controls the
+                              likelihood of creating new clusters, with higher values of α leading to more clusters and
+                              lower values leading to fewer clusters.
+                            - the model can be used for various applications, including clustering, density estimation,
+                              and topic modeling, where the number of underlying groups or topics is unknown and needs
+                              to be inferred from the data.
+                            - DPMMs are particularly useful in scenarios where the data may have a complex structure
+                              with an unknown number of clusters, such as in natural language processing, image
+                              analysis, and bioinformatics.
+                        - Concepts
+                            - Chinese Restaurant Process (CRP): a metaphor for how data points are assigned to clusters
+                              in a DPMM, where customers (data points) choose tables (clusters) based on the number of
+                              customers already at the table and a concentration parameter.
+                            - Stick-breaking Construction: a method for constructing the Dirichlet process by breaking a
+                              stick into pieces that represent the weights of the mixture components, allowing for an
+                              infinite number of potential clusters.
+                            - Beta Distribution: a family of continuous probability distributions that can be used as a
+                              prior for the mixing proportions in a DPMM, allowing for flexible modeling of cluster
+                              weights.
+                                - f(x; α, β) = (1 / B(α, β)) * x^(α - 1) * (1 - x)^(β - 1)
+                                    - f(x; α, β) = probability density function of the Beta distribution with parameters
+                                      α and β
+                                    - B(α, β) = beta function evaluated at α and β
+                                    - x = value between 0 and 1 representing the mixing proportion for a cluster
+                            - Dirichlet distribution: a family of continuous multivariate probability distributions that
+                              can be used as a prior for
+                              the cluster assignments in a DPMM, allowing for flexible modeling of cluster membership
+                              probabilities.
+                                - f(x_1, ..., x_k; α_1, ..., α_k) = (1 / B(α)) * Π x_i^(α_i - 1)
+                                    - f(x_1, ..., x_k; α_1, ..., α_k) = probability density function of the Dirichlet
+                                      distribution with parameters α_1, ..., α_k
+                                    - B(α) = multivariate beta function evaluated at α_1, ..., α_k
+                                    - x_i = value between 0 and 1 representing the probability of assignment to cluster
+                                      i
+                            - Dirichlet Process: a stochastic process used in Bayesian non-parametric models, where the
+                              number of clusters can grow as more data is observed, allowing for flexible modeling of
+                              complex data distributions without needing to specify the number of clusters in advance.
+                                - DP(α, G_0)
+                                    - α = concentration parameter that controls the likelihood of creating new clusters
+                                    - G_0 = base distribution that defines the prior distribution over cluster
+                                      parameters
+                            - Stick Breaking Process: a constructive definition of the Dirichlet process where a stick
+                              of unit length is broken into pieces to represent the weights of the mixture components,
+                              allowing for an infinite number of potential clusters.
+                                - V_k ~ Beta(1, α)
+                                - π_k = V_k * Π (1 - V_j) for j < k
+                                    - V_k = random variable drawn from a Beta distribution representing the proportion
+                                      of the stick allocated to cluster k
+                                    - π_k = weight of cluster k in the mixture model, calculated based on the
+                                      stick-breaking process
+            - Fuzzy Clustering
+                - extends traditional methods by allowing each data point to belong to multiple clusters
+                - with varying degrees of membership.
+                - captures ambiguity and soft boundaries in data
+                - particularly useful when the clusters overlap or boundaries are not clear-cut.
+                - Algos
+                    - Fuzzy C-Means:
+                        - Similar to K-means but with fuzzy memberships updated iteratively.
+    - Associate Rule Mining(Associate Rule)
+        - discover interesting relationships or associations between variables in large datasets.
+        - Market Basket Analysis
+          - often used in market basket analysis to find products that are frequently bought together.
+              - help retailers and analysts understand customer behavior by discovering item associations in transaction
+                data.
+              - e.g. if customers often buy bread and butter together,
+              - the rule {bread} → {butter} might be discovered,
+              - indicating that the presence of bread in a transaction increases the likelihood of butter
+              - being purchased as well.
+        - Data Mining
+          - used in various data mining applications to uncover hidden patterns and relationships in large datasets,
+            such as customer segmentation, web usage mining, bioinformatics, and fraud detection.
+          - 
+        - Key Concepts
+            - Support: measures how frequently the items appear together in the dataset.
+                - Support(A → B) = P(A ∩ B) = (Number of transactions containing both A and B) / (Total number of
+                  transactions)
+            - Confidence: measures how often item B is purchased when item A is purchased.
+                - Confidence(A → B) = P(B|A) = (Number of transactions containing both A and B) / (Number of
+                  transactions containing A)
+            - Lift: measures how much more likely item B is purchased when item A is purchased, compared to when item A
+              is not purchased.
+                - Lift(A → B) = P(B|A) / P(B) = Confidence(A → B) / Support(B)
+        - Algorithms
+            - Apriori Algorithm
+                - generates candidate itemsets and prunes those that do not meet minimum support thresholds.
+            - FP-Growth (Frequent Pattern Growth)
+                - constructs a compact data structure called an FP-tree
+                - to efficiently mine frequent itemsets without candidate generation.
+            - Eclat (Equivalence Class Clustering and bottom-up Lattice Traversal)
+                - uses a depth-first search strategy to find frequent itemsets by intersecting transaction lists.
+        - Key Components(X -> Y)
+            - Antecedent (X): the item or itemset that appears on the left side of the rule (the "if" part).
+            - Consequent (Y): the item or itemset that appears on the right side of the rule (the "then" part).
+            - Rule: an implication of the form A → B, where A is the antecedent and B is the consequent.
+        - Rule Evaluation Metrics
+            - Support:
+                - measures how frequently both items X and Y appear together in the dataset.
+                - support(X → Y) = P(X ∩ Y) = (Number of transactions containing both X and Y) / (Total number of
+                  transactions)
+            - Confidence:
+                - measures how often item B is purchased when item A is purchased.
+                - confidence(X → Y) = P(Y|X) = (Number of transactions containing both X and Y) / (Number of
+                  transactions containing X)
+            - Lift:
+                - measures how much more likely item B is purchased when item A is purchased, compared to when item A is
+                  not purchased.
+                - lift(X → Y) = P(Y|X) / P(Y) = confidence(X → Y) / support(Y)
+                - lift > 1 indicates a positive association between X and Y
+                - lift < 1 indicates a negative association between X and Y
+                - lift = 1 indicates no association between X and Y
+        - Applications
+            - Market Basket Analysis: discovering products frequently bought together to optimize store layouts and
+              promotions.
+            - Customer Segmentation: identifying groups of customers with similar purchasing behaviors.
+            - Web Usage Mining: analyzing user behavior on websites to improve navigation and content placement.
+            - Bioinformatics: discovering associations between genes, proteins, or diseases.
+            - Fraud Detection: identifying patterns of fraudulent transactions by analyzing associations between
+              transaction attributes.
+    - Dimensionality Reduction
+        - reduce the number of features while retaining key information.
+        - helps improve model performance, reduce overfitting and enhance interpretability.
+        - converts high-dimensional data into a lower-dimensional space while preserving important details.
+        - Techniques
+            - Feature Selection
+                - selects a subset of the original features based on their importance or relevance to the target
+                  variable.
+                - methods include
+                    - filter methods (e.g., correlation, mutual information)
+                    - wrapper methods (e.g., recursive feature elimination)
+                    - embedded methods (e.g., Lasso regression).
+            - Feature Extraction
+                - creates new features by transforming the original features into a lower-dimensional space.
+                - methods include:
+                    - Principal Component Analysis (PCA)
+                        - dimensionality reduction technique
+                        - reduce the number of features in a dataset
+                        - by transforming the original features into a new set of uncorrelated variables called
+                          principal components.
+                        - Principal Components
+                            - linear combinations of the original features that capture the maximum variance in the
+                              data.
+                            - the first principal component captures the most variance, followed by the second, and so
+                              on.
+                        - uses linear algebra to transform data into new features called principal components.
+                        - Principal Component Analysis (PCA) Steps
+                            - Standardize the data
+                                - normalize the data to have a mean of zero and a standard deviation of one
+                                    - Z = (X - μ) / σ
+                                        - X = original feature value
+                                        - μ = mean of the feature
+                                        - σ = standard deviation of the feature
+                            - Compute the covariance matrix
+                                - cov(x1, x2) = sigma i=1 to n[(x1 - μ1)(x2 - μ2)]/n-1
+                                    - x1 and x2 are two features
+                                    - μ1 and μ2 are the means of those features
+                            - Find the principal components
+                                - PC1 = direction of maximum variance (most spread).
+                                    - w1 * x1 + w2 * x2 + ... + wp * xp
+                                        - PC1 = first principal component
+                                        - w1, w2, ..., wp = weights (eigenvectors) for each original feature
+                                        - x1, x2, ..., xp = original features
+                                - PC2 = next best direction, perpendicular to PC1 and so on.
+                                    - w1 * x1 + w2 * x2 + ... + wp * xp
+                                        - PC2 = second principal component
+                                        - w1, w2, ..., wp = weights (eigenvectors) for each original feature
+                                        - x1, x2, ..., xp = original features
+                            - Calculate eigenvalues(importance) and eigenvectors(directions of maximum variance)
+                                - AX = λX
+                                    - A = covariance matrix
+                                    - X = eigenvector (direction of maximum variance)
+                                    - λ = eigenvalue (amount of variance captured by that direction)
+                                - i.e.
+                                    - A acts on X it only stretches or shrinks X by the scalar λ.
+                                    - direction of X remains unchanged hence eigenvectors define "stable directions" of
+                                      A.
+                            - Sort eigenvalues and select top k eigenvectors
+                            - Pick the top direction
+                                - PCA ranks eigenvalues and eigenvectors by the amount of information they capture
+                                - select the top k eigenvectors corresponding to the largest eigenvalues to form the new
+                                  feature space.
+                            - Transform the original data to the new feature space using the selected eigenvectors.
+                                - new_data = original_data * selected_eigenvectors
+                    - Singular Value Decomposition (SVD)
+                        - factorizes a matrix into three matrices (U, Σ, V^T)
+                        - used for dimensionality reduction, noise reduction and data compression.
+                    - Missing Value Ratio
+                        - entries in a dataset are left blank, marked as NaN, None or special strings like "Unknown"
+                        - can lead to biased models and inaccurate predictions if not handled properly.
+                        - features with a high ratio of missing values may be less informative and can be considered for
+                          removal during feature selection.
+                        - Types of Missing Data
+                            - Missing Completely at Random (MCAR)
+                                - missingness is unrelated to any observed or unobserved data.
+                            - Missing at Random (MAR)
+                                - missingness is related to observed data but not the missing data itself.
+                            - Missing Not at Random (MNAR)
+                                - missingness is related to the missing data itself.
+                            - Methods to Handle Missing Data
+                                - Deletion Methods
+                                    - Listwise Deletion:
+                                        - removes entire rows with missing values.
+                                    - Pairwise Deletion:
+                                        - uses all available data for each analysis,
+                                        - ignoring missing values on a case-by-case basis.
+                                - Imputation Methods
+                                    - Mean/Median/Mode Imputation:
+                                        - fills missing values with the mean, median or mode of the feature.
+                                    - K-Nearest Neighbors (KNN) Imputation:
+                                        - fills missing values based on the values of the nearest neighbors.
+                                    - Multiple Imputation:
+                                        - creates multiple imputed datasets and combines results to account for
+                                          uncertainty in imputation.
+                                    - Regression Imputation:
+                                        - predicts missing values using a regression model based on other features.
+                    - Backward Feature Selection/Elimination
+                        - starts with all features and iteratively removes the least important ones based on model
+                          performance.
+                            - example:
+                                - Predicting Sales Based on Advertising Budget
+                    - Forward Feature Selection
+                    - Factor Analysis
+                        - identify hidden patterns or underlying relationships among a large set of variables.
+                        - Features of factor analysis
+                            - Data Reduction
+                                - reduces the number of observed variables into a smaller set of latent factors.
+                            - Latent Variables (Factors)
+                                - unobserved variables that explain the correlations among observed variables.
+                            - Correlation based
+                                - group observed variables that are highly correlated with each other into factors.
+                            - Variance Explained
+                                - shared variance among observed variables that is captured by the latent factors.
+                            - Exploratory and Confirmatory
+                                - exploratory factor analysis (EFA)
+                                    - used to discover the underlying factor structure without predefined hypotheses
+                                    - identifies the number of factors and the loadings of observed variables on those
+                                      factors.
+                                    - uses techniques like eigenvalues and scree plots to determine the number of
+                                      factors to retain.
+                                    - scree plot is a graphical representation of the eigenvalues associated with each
+                                      factor, used to determine the
+                                      number of factors to retain in exploratory factor analysis (EFA).
+                                    - the plot typically shows a steep decline in eigenvalues followed by a leveling
+                                      off,
+                                    - and the point at which the decline levels off (the "elbow") is often used as a
+                                      criterion
+                                    - for selecting the number of factors to retain.
+                                - confirmatory factor analysis (CFA)
+                                    - tests specific hypotheses about the factor structure
+                                    - used to confirm whether the data fits a predefined factor model based on
+                                      theoretical expectations.
+                                    - requires specifying the number of factors and the expected relationships between
+                                      observed variables and latent factors in advance.
+                                    - uses fit indices (e.g., Chi-square, RMSEA, CFI) to evaluate how well the specified
+                                      model fits the observed data.
+                                    - fit indices provide quantitative measures of how well the specified factor model
+                                      matches the observed data,
+                                      helping researchers assess the adequacy of their model and make informed decisions
+                                      about model modifications or acceptance
+                            - Factor Loadings
+                                - coefficients that represent the relationship between observed variables and latent
+                                  factors.
+                            - Eigenvalues
+                                - measure the amount of variance in the observed variables explained by each factor.
+                            - Factor Rotation for clarity
+                                - technique used to improve interpretability of factors by making loadings more
+                                  distinct.
+                                - methods include
+                                    - Varimax (orthogonal) rotation
+                                        - simplifies the factor structure by maximizing the variance of squared loadings
+                                          for each factor.
+                                            - results in factors that are uncorrelated with each other.
+                                    - Promax (oblique) rotation
+                                        - permits factors to be correlated,
+                                        - allowing for a more realistic representation of relationships among factors.
+                        - Types of Factor Extraction Methods
+                            - Principal Component Analysis (PCA)
+                                - focuses on maximizing the variance explained by the factors, rather than modeling the
+                                  underlying structure of the data.
+                            - Canonical Factor Analysis (CFA)
+                                - focuses on maximizing the correlation between observed variables and the factors.
+                                - Also known as Rao's Canonical Factor Analysis, it identifies factors that are linear
+                                  combinations of the observed variables, maximizing the correlation between the factors
+                                  and the original variables.
+                                - differs from PCA in that it seeks to find factors that are most strongly correlated
+                                  with the original variables, rather than simply maximizing variance.
+                                - aims to identify factors that are most strongly correlated with the original
+                                  variables, rather than simply maximizing variance as in PCA.
+                            - Common Factor Analysis (CFA)
+                                - focuses on shared variance among observed variables to identify underlying factors.
+                                - also known as Principal Axis Factoring (PAF), it identifies factors that explain the
+                                  common variance among observed variables, rather than the total variance as in PCA.
+                            - Principal Axis Factoring (PAF)
+                                - focuses on shared variance among observed variables to identify underlying factors.
+                            - Maximum Likelihood Factor Analysis
+                                - estimates factor loadings by maximizing the likelihood of the observed data given the
+                                  model.
+                            - Alpha Factoring
+                                - based on the reliability of the factors, aiming to maximize internal consistency.
+                            - Image Factoring
+                                - uses the squared multiple correlations of observed variables as initial communality
+                                  estimates.
+                            - Unweighted Least Squares (ULS)
+                                - minimizes the sum of squared differences between observed and reproduced correlation
+                                  matrices without assuming multivariate normal
+                        - Working of Factor Analysis
+                            - Determine Suitability of Data for Factor Analysis
+                                - Bartlett's Test of Sphericity
+                                    - tests whether the correlation matrix is an identity matrix, indicating that
+                                      variables are unrelated and unsuitable for factor analysis.
+                                - Kaiser-Meyer-Olkin (KMO) Measure of Sampling Adequacy
+                                    - assesses the proportion of variance among variables that might be common variance,
+                                      with values closer to 1 indicating suitability for factor analysis.
+                                    - value of 0.6 or above is generally considered acceptable for factor analysis.
+                            - Choose the extraction method
+                                - Principal Component Analysis (PCA)
+                                - Canonical Factor Analysis (CFA)
+                                - Common Factor Analysis (CFA)
+                                - Principal Axis Factoring (PAF)
+                                - Maximum Likelihood Factor Analysis
+                                - Alpha Factoring
+                                - Image Factoring
+                                - Unweighted Least Squares (ULS)
+                            - Factor Extraction
+                                - extract factors based on the chosen method, resulting in factor loadings and
+                                  eigenvalues.
+                            - Determine the number of factors to retain
+                                - use criteria such as eigenvalues greater than 1, scree plot analysis, or parallel
+                                  analysis to decide how many factors to keep.
+                            - Factor Rotation
+                                - apply rotation techniques (e.g., Varimax, Promax) to improve the interpretability of
+                                  the factor solution by making loadings more distinct.
+                            - Interpret the factors
+                                - analyze the factor loadings to understand the underlying structure of the data and the
+                                  relationships between observed variables and latent factors.
+                            - Compute factor scores (optional)
+                                - calculate factor scores for each observation, which can be used in subsequent analyses
+                                  or modeling.
+                            - Report and validate results
+                                - present the factor analysis results, including the factor loadings, eigenvalues, and
+                                  fit indices, and validate the findings through cross-validation or replication
+                                  studies.
+                    - Independent component analysis(ICA)
+                        - used to separate mixed signals into their independent, non-Gaussian components.
+                        - find a linear transformation of data that maximizes statistical independence among the
+                          components.
+                        - Statistical Independence
+                            - components are independent if the joint probability distribution of the components
+                              factorizes into the product of their individual distributions.
+                            - P(X and Y) = P(X) * P(Y) or P(X ∩ Y) = P(X)P(Y)
+                        - Assumptions of ICA
+                            - Linearity: ICA assumes that the observed data is a linear mixture of independent
+                              components, meaning that the observed signals are generated by linearly combining the
+                              independent sources.
+                            - Statistical Independence: ICA assumes that the underlying components are statistically
+                              independent of each other, meaning that the occurrence of one component does not provide
+                              any information about the occurrence of another component.
+                            - Non-Gaussianity: ICA relies on the assumption that the independent components are
+                              non-Gaussian, as Gaussian variables cannot be separated using ICA due to their symmetric
+                              properties.
+                        - e.g. Cocktail Party Problem
+                            - multiple people talking simultaneously in a noisy environment
+                            - ICA can separate the mixed audio signals into individual voices, allowing us to focus on a
+                              specific speaker.
+                        - Applications include:
+                            - Blind Source Separation: separating mixed audio signals into individual sources (e.g.,
+                              separating voices in a recording).
+                            - Image Processing: separating overlapping images or extracting features from images.
+                            - Biomedical Signal Processing: analyzing EEG or fMRI data to identify independent brain
+                              activity patterns.
+                            - Financial Data Analysis: identifying independent factors that influence financial markets.
+                            - Natural Language Processing: separating mixed topics in text data.
+                        - Algorithms include:
+                            - FastICA: an efficient algorithm for performing ICA using a fixed-point iteration scheme.
+                            - Infomax: an algorithm that maximizes the mutual information between the input and output
+                              signals to achieve independence.
+                            - JADE (Joint Approximate Diagonalization of Eigenmatrices): an algorithm that uses
+                              higher-order statistics to achieve independence.
+                            - Kernel ICA: an extension of ICA that uses kernel methods to capture nonlinear
+                              relationships between components.
+                        - Steps in ICA:
+                            - Centering: subtract the mean from the data to center it around the origin.
+                            - Whitening: transform the data to have unit variance and be uncorrelated.
+                            - Estimation of Independent Components: apply an algorithm (e.g., FastICA) to estimate the
+                              independent components from the whitened data.
+                            - Post-processing: optionally, scale or order the independent components for
+                              interpretability or further analysis.
+                        - Challenges in ICA:
+                            - Identifiability: ICA can only recover independent components up to a scaling and
+                              permutation ambiguity, meaning that the order and scale of the components cannot be
+                              determined.
+                            - Non-Gaussianity: ICA relies on the assumption that the independent components are
+                              non-Gaussian, which may not always hold in practice.
+                            - Computational Complexity: ICA can be computationally intensive, especially for large
+                              datasets or high-dimensional data.
+                        - Evaluation of ICA results:
+                            - Assessing the independence of the estimated components using measures such as mutual
+                              information or correlation.
+                            - Comparing the estimated components to known sources (if available) to evaluate the
+                              accuracy of the separation.
+                            - Visualizing the components to interpret their meaning and relevance to the original data.
+                    - Linear Discriminant Analysis
+                    - Independent Component Analysis
+                    - Non-negative Matrix Factorization
+                    - Multidimensional Scaling
+                    - Isomap
+                    - Locally Linear Embedding
+                    - Self-Organizing Maps
+                    - Uniform Manifold Approximation and Projection (UMAP)
+                - use cases
+                    - Text Categorization
+                        - classify data into predefined categories based on content, such as spam detection, sentiment
+                          analysis, topic classification etc.
+                    - Image Recognition
+                        - identify and classify objects or patterns in images, such as facial recognition, object
+                          detection, medical imaging analysis etc.
+                    - Dimensionality Reduction
+                        - reduce the number of features while retaining key information, improving model performance and
+                          interpretability.
+                        - e.g. PCA can be used to reduce the dimensionality of a dataset with many features while
+                          preserving as much variance as possible, making it easier to visualize and analyze the data.
+                    - Gene Expression Analysis
+                        - analyze gene expression data to identify patterns and relationships between genes, such as
+                          clustering genes with similar expression profiles or identifying key factors that influence
+                          gene expression.
+                    - Customer Segmentation
+                        - group customers based on their characteristics and behaviors to target marketing efforts and
+                          improve customer satisfaction.
+                    - Anomaly Detection
+                        - identify unusual patterns or outliers in data that may indicate fraud, network intrusions, or
+                          other abnormal behavior.
+                    - Recommender Systems
+                        - provide personalized recommendations to users based on their preferences and behavior, such as
+                          recommending movies, products, or content.
+                    - Natural Language Processing
+                        - analyze and understand human language, such as sentiment analysis, topic modeling, and text
+                          classification.
+                    - Time Series Analysis
+                        - analyze and forecast time-dependent data, such as stock prices, weather patterns, or sensor
+                          data.
+                    - Bioinformatics
+                        - analyze biological data, such as gene expression, protein interactions, or evolutionary
+                          relationships.
+                    - Social Network Analysis
+                        - analyze social networks to understand relationships and influence among individuals or groups.
+                    - Image Compression
+                    - Anomaly Detection
+                    - Data Visualization
+            - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+                - non-linear dimensionality reduction technique
+                - used for visualizing high-dimensional data in a lower-dimensional space (typically 2D or 3D).
+                - preserves local structure of the data, making it effective for visualizing clusters and patterns in
+                  complex datasets.
+                - Steps in t-SNE:
+                    - Compute pairwise similarities in the high-dimensional space using a Gaussian distribution.
+                    - Compute pairwise similarities in the low-dimensional space using a Student's t-distribution.
+                    - Minimize the Kullback-Leibler divergence between the two distributions using gradient descent.
+                - Applications of t-SNE:
+                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                      embeddings.
+                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                      embeddings.
+            - Non-Negative Matrix Factorization (NMF)
+                - break down large dataset into smaller meaningful parts while ensuring that all values remain
+                  non-negative
+                - factorizes a non-negative matrix into two lower-rank non-negative matrices,
+                - A ≈ W * H
+                    - A = original non-negative matrix (e.g., data matrix)
+                    - W = basis matrix (non-negative)
+                    - H = coefficient matrix (non-negative)
+                - used for dimensionality reduction and feature extraction.
+                - Steps in NMF:
+                    - Initialize the factor matrices with non-negative values.
+                    - Update the factor matrices iteratively using multiplicative update rules to minimize the
+                      reconstruction error.
+                    - Continue updating until convergence or a specified number of iterations is reached.
+                - Optimization in NMF:
+                    - Multiplicative Update Rules
+                        - ensure that the factor matrices remain non-negative throughout the optimization process.
+                    - Alternating Least Squares (ALS)
+                        - alternately fix one factor matrix and solve for the other using least squares optimization.
+                    - The objective function to minimize is often the Frobenius norm
+                        - of the difference between the original matrix and the product of the factor
+                        - matrices, i.e., ||A - W * H||_F^2.
+                - Applications include
+                    - topic modeling in text analysis,
+                    - image processing, and
+                    - collaborative filtering in recommender systems.
+                - Advantages of NMF:
+                    - Interpretability: the non-negativity constraint leads to parts-based representations, making it
+                      easier to interpret the resulting factors.
+                    - Sparsity: NMF often produces sparse representations, which can be beneficial for feature selection
+                      and reducing overfitting.
+                    - Flexibility: NMF can be applied to various types of data, including text, images, and
+                      collaborative filtering data.
+                - Challenges of NMF:
+                    - Local Minima: NMF optimization can get stuck in local minima, leading to suboptimal factorization
+                      results.
+                    - Sensitivity to Initialization: the choice of initial values for the factor matrices can
+                      significantly impact the convergence and quality of the factorization.
+                    - Computational Complexity: NMF can be computationally intensive, especially for large datasets or
+                      high-dimensional data.
+                - Variants of NMF:
+                    - Sparse NMF: incorporates sparsity constraints to encourage sparse representations in the factor
+                      matrices.
+                    - Non-negative Tensor Factorization: extends NMF to higher-order tensors for analyzing
+                      multi-dimensional data.
+                    - Convolutional NMF: applies NMF to convolutional data, such as images or time series, to capture
+                      local patterns and features.
+                - Evaluation of NMF results:
+                    - Reconstruction Error: measures the difference between the original matrix and the product of the
+                      factor matrices, with lower values indicating better factorization.
+                    - Explained Variance: assesses how much of the variance in the original data is captured by the
+                      factorization, with higher values indicating better performance.
+                    - Interpretability: evaluates how well the resulting factors can be interpreted in the context of
+                      the data and the specific application.
+            - Isomap
+                - non-linear dimensionality reduction technique
+                - preserves geodesic distances between data points in the high-dimensional space when mapping to a
+                  lower-dimensional space.
+                - Steps in Isomap:
+                    - Construct a neighborhood graph based on pairwise distances between data points.
+                    - Compute the shortest path (geodesic distance) between all pairs of data points in the graph.
+                    - Apply classical Multidimensional Scaling (MDS) to the matrix of geodesic distances to obtain the
+                      low-dimensional embedding.
+                - Working of Isomap:
+                    - Neighborhood Graph Construction
+                        - connect each data point to its k nearest neighbors or all points within a certain radius.
+                    - Geodesic Distance Calculation
+                        - use algorithms like Dijkstra's or Floyd-Warshall to compute the shortest path between all pairs
+                          of data points in the neighborhood graph, resulting in a matrix of geodesic distances.
+                    - Dimensionality Reduction
+                        - apply classical MDS to the geodesic distance matrix to find a low-dimensional embedding that
+                          preserves the geodesic distances as much as possible.
+                - Manifold Learning
+                    - techniques that seek to uncover the underlying structure of high-dimensional data by assuming
+                      that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
+                    - Example
+                      - A 2D sheet of paper twisted into a 3D spiral
+                    - Methods include:
+                        - Isomap
+                        - Locally Linear Embedding (LLE)
+                        - Self-Organizing Maps (SOM)
+                        - Uniform Manifold Approximation and Projection (UMAP)
+                - Applications include:
+                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                      embeddings.
+                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                      embeddings.
+            - LLE(Locally Linear Embedding)
+                - Example dataset
+                  - Swiss roll reduction
+                - non-linear dimensionality reduction technique
+                - manifold learning method that seeks to uncover the underlying structure of high-dimensional data by assuming
+                  that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
+                - assumes each data point and its neighbors lie on a locally linear patch of the manifold
+                - preserves local relationships between data points in the high-dimensional space when mapping to a
+                  lower-dimensional space.
+                - Steps in LLE:
+                    - Construct a neighborhood graph based on pairwise distances between data points.
+                    - Compute the weights that best reconstruct each data point from its neighbors in the high-dimensional
+                      space.
+                    - Compute the low-dimensional embedding by minimizing the reconstruction error using the computed
+                      weights.
+                - Applications include:
+                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                      embeddings.
+                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                      embeddings.
+            - Autoencoders
+    - e.g.
+        - house price prediction
+            - features like size, location, number of bedrooms, age of the house etc.
+            - too much features like: number of windows, color of the walls, type of flooring etc.
+                - may lead to overfitting and poor generalization to new data.
+        - customer churn prediction
+            - features like customer demographics, usage patterns, customer service interactions etc.
+        - customer segmentation
+        - image recognition
+        - sentiment analysis
+        - fraud detection
 - Reinforcement Learning
-  - Q-Learning
-  - Deep Q-Networks (DQN)
-  - Policy Gradient Methods
+    - Q-Learning
+    - Deep Q-Networks (DQN)
+    - Policy Gradient Methods
 - Acronyms
-  - ML: Machine Learning
-  - AI: Artificial Intelligence
-  - CNN: Convolutional Neural Networks
-  - RNN: Recurrent Neural Networks
-  - SVM: Support Vector Machines
-  - AWS: Amazon Web Services
-  - NLP: Natural Language Processing
-  - EDA: Exploratory Data Analysis
-  - ROC-AUC: Receiver Operating Characteristic - Area Under the Curve
+    - ML: Machine Learning
+    - AI: Artificial Intelligence
+    - CNN: Convolutional Neural Networks
+    - RNN: Recurrent Neural Networks
+    - SVM: Support Vector Machines
+    - AWS: Amazon Web Services
+    - NLP: Natural Language Processing
+    - EDA: Exploratory Data Analysis
+    - ROC-AUC: Receiver Operating Characteristic - Area Under the Curve
 - Data Quality
-  - GIGO: Garbage In, Garbage Out
-  - enrich dataset
-    - data from diverse sources and catalog
-  - Metrics to measure data quality
-    - Ratio of data to errors
-    - no of empty values
-    - Data transformation error rates
-    - Amount of dark data
-      - information not useful
+    - GIGO: Garbage In, Garbage Out
+    - enrich dataset
+        - data from diverse sources and catalog
+    - Metrics to measure data quality
+        - Ratio of data to errors
+        - no of empty values
+        - Data transformation error rates
+        - Amount of dark data
+            - information not useful
 - Pickle File
-  - serialized version of python model
-    - can be unpackaged for further usage
-  - used for:
-    - save feature engineered data into binary format
-    - and reload it while model training
-    - save final ML model as pickle file after achieving high accuracy
-  - Versioning of pickle file
+    - serialized version of python model
+        - can be unpackaged for further usage
+    - used for:
+        - save feature engineered data into binary format
+        - and reload it while model training
+        - save final ML model as pickle file after achieving high accuracy
+    - Versioning of pickle file
 - ML lifecycle
-  - Pipeline Development
-    - Gathering Data
-      - transforming row into cleanse data
-    - Data Preparation
-    - Data Wragling
-    - Analyze Data
-  - Training Phase
-    - Train Model
-    - Test Model
-  - Inference Phase
-    - Deployment
-    - retraining model
+    - Pipeline Development
+        - Gathering Data
+            - transforming row into cleanse data
+        - Data Preparation
+        - Data Wragling
+        - Analyze Data
+    - Training Phase
+        - Train Model
+        - Test Model
+    - Inference Phase
+        - Deployment
+        - retraining model
+- read:
+    - https://www.geeksforgeeks.org/maths/central-limit-theorem/
+    - https://www.geeksforgeeks.org/engineering-mathematics/continuous-random-variables/
+    - https://www.geeksforgeeks.org/maths/poisson-distribution/
+    - https://www.geeksforgeeks.org/maths/what-is-binomial-probability-distribution-with-example/
+    - https://www.geeksforgeeks.org/data-science/normal-distribution-in-business-statistics/
