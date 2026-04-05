@@ -2157,10 +2157,23 @@
               - the rule {bread} → {butter} might be discovered,
               - indicating that the presence of bread in a transaction increases the likelihood of butter
               - being purchased as well.
-        - Data Mining
-          - used in various data mining applications to uncover hidden patterns and relationships in large datasets,
-            such as customer segmentation, web usage mining, bioinformatics, and fraud detection.
-          - 
+          - Types of Market Basket Analysis
+            - Descriptive Market Basket Analysis: 
+              - focuses on summarizing and describing the patterns of item co-occurrence in
+                transaction data, providing insights into which items are frequently bought together without making
+                predictions about future transactions.
+            - Predictive Market Basket Analysis: 
+              - goes beyond description to predict future purchasing behavior based on the
+                discovered associations, allowing retailers to make informed decisions about product placement, promotions,
+                and inventory management.
+            - Differential Market Basket Analysis: 
+              - compares the purchasing patterns of different customer segments or time periods to identify
+                changes in consumer behavior, preferences, or trends, helping businesses adapt their strategies accordingly.
+            - Applications of Market Basket Analysis
+              - Product Placement: optimizing store layouts by placing frequently bought together items near each other.
+              - Cross-Selling: recommending related products to customers based on their purchase history.
+              - Inventory Management: managing stock levels by understanding which products are often purchased together.
+              - Promotion Planning: designing targeted promotions and discounts for items that are frequently bought together.
         - Key Concepts
             - Support: measures how frequently the items appear together in the dataset.
                 - Support(A → B) = P(A ∩ B) = (Number of transactions containing both A and B) / (Total number of
@@ -2174,11 +2187,36 @@
         - Algorithms
             - Apriori Algorithm
                 - generates candidate itemsets and prunes those that do not meet minimum support thresholds.
+                - working
+                    - generates candidate itemsets of increasing size (starting from single items)
+                    - counts their support in the dataset
+                    - prunes itemsets that do not meet the minimum support threshold
+                    - continues this process iteratively until no more candidate itemsets can be generated.
             - FP-Growth (Frequent Pattern Growth)
-                - constructs a compact data structure called an FP-tree
+                - constructs a compact data structure called an FP-tree(Frequent-pattern tree)
                 - to efficiently mine frequent itemsets without candidate generation.
+                - Working
+                    - builds an FP-tree by scanning the dataset and inserting transactions in a way that common
+                      prefixes are shared.
+                    - mines the FP-tree recursively to find frequent itemsets by exploring conditional patterns.
+                - Steps
+                  - Data Compression: 
+                    - scans the dataset to identify frequent items and their counts, and 
+                    - constructs the FP-tree by inserting transactions in a way that common prefixes are shared.
+                  - Mining the tree: 
+                    - recursively mines the FP-tree to find frequent itemsets by exploring conditional patterns, 
+                    - starting from the least frequent items and working upwards to more frequent items.
+                  - Generating Patterns: 
+                    - generates frequent itemsets from the mined patterns in the FP-tree, 
+                    - which can then be used to derive association rules.
             - Eclat (Equivalence Class Clustering and bottom-up Lattice Traversal)
-                - uses a depth-first search strategy to find frequent itemsets by intersecting transaction lists.
+                - uses a depth-first search strategy to find frequent itemsets 
+                - by intersecting transaction lists.
+                - working
+                    - represents the dataset as a vertical layout where each item is associated 
+                      - with a list of transaction IDs (TIDs) that contain that item.
+                    - uses a depth-first search strategy to find frequent itemsets by intersecting the TID lists of items, 
+                    - which allows for efficient mining of frequent itemsets without generating candidate itemsets explicitly.
         - Key Components(X -> Y)
             - Antecedent (X): the item or itemset that appears on the left side of the rule (the "if" part).
             - Consequent (Y): the item or itemset that appears on the right side of the rule (the "then" part).
@@ -2207,478 +2245,511 @@
             - Bioinformatics: discovering associations between genes, proteins, or diseases.
             - Fraud Detection: identifying patterns of fraudulent transactions by analyzing associations between
               transaction attributes.
-    - Dimensionality Reduction
-        - reduce the number of features while retaining key information.
-        - helps improve model performance, reduce overfitting and enhance interpretability.
-        - converts high-dimensional data into a lower-dimensional space while preserving important details.
-        - Techniques
-            - Feature Selection
-                - selects a subset of the original features based on their importance or relevance to the target
-                  variable.
-                - methods include
-                    - filter methods (e.g., correlation, mutual information)
-                    - wrapper methods (e.g., recursive feature elimination)
-                    - embedded methods (e.g., Lasso regression).
-            - Feature Extraction
-                - creates new features by transforming the original features into a lower-dimensional space.
-                - methods include:
-                    - Principal Component Analysis (PCA)
-                        - dimensionality reduction technique
-                        - reduce the number of features in a dataset
-                        - by transforming the original features into a new set of uncorrelated variables called
-                          principal components.
-                        - Principal Components
-                            - linear combinations of the original features that capture the maximum variance in the
-                              data.
-                            - the first principal component captures the most variance, followed by the second, and so
-                              on.
-                        - uses linear algebra to transform data into new features called principal components.
-                        - Principal Component Analysis (PCA) Steps
-                            - Standardize the data
-                                - normalize the data to have a mean of zero and a standard deviation of one
-                                    - Z = (X - μ) / σ
-                                        - X = original feature value
-                                        - μ = mean of the feature
-                                        - σ = standard deviation of the feature
-                            - Compute the covariance matrix
-                                - cov(x1, x2) = sigma i=1 to n[(x1 - μ1)(x2 - μ2)]/n-1
-                                    - x1 and x2 are two features
-                                    - μ1 and μ2 are the means of those features
-                            - Find the principal components
-                                - PC1 = direction of maximum variance (most spread).
-                                    - w1 * x1 + w2 * x2 + ... + wp * xp
-                                        - PC1 = first principal component
-                                        - w1, w2, ..., wp = weights (eigenvectors) for each original feature
-                                        - x1, x2, ..., xp = original features
-                                - PC2 = next best direction, perpendicular to PC1 and so on.
-                                    - w1 * x1 + w2 * x2 + ... + wp * xp
-                                        - PC2 = second principal component
-                                        - w1, w2, ..., wp = weights (eigenvectors) for each original feature
-                                        - x1, x2, ..., xp = original features
-                            - Calculate eigenvalues(importance) and eigenvectors(directions of maximum variance)
-                                - AX = λX
-                                    - A = covariance matrix
-                                    - X = eigenvector (direction of maximum variance)
-                                    - λ = eigenvalue (amount of variance captured by that direction)
-                                - i.e.
-                                    - A acts on X it only stretches or shrinks X by the scalar λ.
-                                    - direction of X remains unchanged hence eigenvectors define "stable directions" of
-                                      A.
-                            - Sort eigenvalues and select top k eigenvectors
-                            - Pick the top direction
-                                - PCA ranks eigenvalues and eigenvectors by the amount of information they capture
-                                - select the top k eigenvectors corresponding to the largest eigenvalues to form the new
-                                  feature space.
-                            - Transform the original data to the new feature space using the selected eigenvectors.
-                                - new_data = original_data * selected_eigenvectors
-                    - Singular Value Decomposition (SVD)
-                        - factorizes a matrix into three matrices (U, Σ, V^T)
-                        - used for dimensionality reduction, noise reduction and data compression.
-                    - Missing Value Ratio
-                        - entries in a dataset are left blank, marked as NaN, None or special strings like "Unknown"
-                        - can lead to biased models and inaccurate predictions if not handled properly.
-                        - features with a high ratio of missing values may be less informative and can be considered for
-                          removal during feature selection.
-                        - Types of Missing Data
-                            - Missing Completely at Random (MCAR)
-                                - missingness is unrelated to any observed or unobserved data.
-                            - Missing at Random (MAR)
-                                - missingness is related to observed data but not the missing data itself.
-                            - Missing Not at Random (MNAR)
-                                - missingness is related to the missing data itself.
-                            - Methods to Handle Missing Data
-                                - Deletion Methods
-                                    - Listwise Deletion:
-                                        - removes entire rows with missing values.
-                                    - Pairwise Deletion:
-                                        - uses all available data for each analysis,
-                                        - ignoring missing values on a case-by-case basis.
-                                - Imputation Methods
-                                    - Mean/Median/Mode Imputation:
-                                        - fills missing values with the mean, median or mode of the feature.
-                                    - K-Nearest Neighbors (KNN) Imputation:
-                                        - fills missing values based on the values of the nearest neighbors.
-                                    - Multiple Imputation:
-                                        - creates multiple imputed datasets and combines results to account for
-                                          uncertainty in imputation.
-                                    - Regression Imputation:
-                                        - predicts missing values using a regression model based on other features.
-                    - Backward Feature Selection/Elimination
-                        - starts with all features and iteratively removes the least important ones based on model
-                          performance.
-                            - example:
-                                - Predicting Sales Based on Advertising Budget
-                    - Forward Feature Selection
-                    - Factor Analysis
-                        - identify hidden patterns or underlying relationships among a large set of variables.
-                        - Features of factor analysis
-                            - Data Reduction
-                                - reduces the number of observed variables into a smaller set of latent factors.
-                            - Latent Variables (Factors)
-                                - unobserved variables that explain the correlations among observed variables.
-                            - Correlation based
-                                - group observed variables that are highly correlated with each other into factors.
-                            - Variance Explained
-                                - shared variance among observed variables that is captured by the latent factors.
-                            - Exploratory and Confirmatory
-                                - exploratory factor analysis (EFA)
-                                    - used to discover the underlying factor structure without predefined hypotheses
-                                    - identifies the number of factors and the loadings of observed variables on those
-                                      factors.
-                                    - uses techniques like eigenvalues and scree plots to determine the number of
-                                      factors to retain.
-                                    - scree plot is a graphical representation of the eigenvalues associated with each
-                                      factor, used to determine the
-                                      number of factors to retain in exploratory factor analysis (EFA).
-                                    - the plot typically shows a steep decline in eigenvalues followed by a leveling
-                                      off,
-                                    - and the point at which the decline levels off (the "elbow") is often used as a
-                                      criterion
-                                    - for selecting the number of factors to retain.
-                                - confirmatory factor analysis (CFA)
-                                    - tests specific hypotheses about the factor structure
-                                    - used to confirm whether the data fits a predefined factor model based on
-                                      theoretical expectations.
-                                    - requires specifying the number of factors and the expected relationships between
-                                      observed variables and latent factors in advance.
-                                    - uses fit indices (e.g., Chi-square, RMSEA, CFI) to evaluate how well the specified
-                                      model fits the observed data.
-                                    - fit indices provide quantitative measures of how well the specified factor model
-                                      matches the observed data,
-                                      helping researchers assess the adequacy of their model and make informed decisions
-                                      about model modifications or acceptance
-                            - Factor Loadings
-                                - coefficients that represent the relationship between observed variables and latent
-                                  factors.
-                            - Eigenvalues
-                                - measure the amount of variance in the observed variables explained by each factor.
-                            - Factor Rotation for clarity
-                                - technique used to improve interpretability of factors by making loadings more
-                                  distinct.
-                                - methods include
-                                    - Varimax (orthogonal) rotation
-                                        - simplifies the factor structure by maximizing the variance of squared loadings
-                                          for each factor.
-                                            - results in factors that are uncorrelated with each other.
-                                    - Promax (oblique) rotation
-                                        - permits factors to be correlated,
-                                        - allowing for a more realistic representation of relationships among factors.
-                        - Types of Factor Extraction Methods
-                            - Principal Component Analysis (PCA)
-                                - focuses on maximizing the variance explained by the factors, rather than modeling the
-                                  underlying structure of the data.
-                            - Canonical Factor Analysis (CFA)
-                                - focuses on maximizing the correlation between observed variables and the factors.
-                                - Also known as Rao's Canonical Factor Analysis, it identifies factors that are linear
-                                  combinations of the observed variables, maximizing the correlation between the factors
-                                  and the original variables.
-                                - differs from PCA in that it seeks to find factors that are most strongly correlated
-                                  with the original variables, rather than simply maximizing variance.
-                                - aims to identify factors that are most strongly correlated with the original
-                                  variables, rather than simply maximizing variance as in PCA.
-                            - Common Factor Analysis (CFA)
-                                - focuses on shared variance among observed variables to identify underlying factors.
-                                - also known as Principal Axis Factoring (PAF), it identifies factors that explain the
-                                  common variance among observed variables, rather than the total variance as in PCA.
-                            - Principal Axis Factoring (PAF)
-                                - focuses on shared variance among observed variables to identify underlying factors.
-                            - Maximum Likelihood Factor Analysis
-                                - estimates factor loadings by maximizing the likelihood of the observed data given the
-                                  model.
-                            - Alpha Factoring
-                                - based on the reliability of the factors, aiming to maximize internal consistency.
-                            - Image Factoring
-                                - uses the squared multiple correlations of observed variables as initial communality
-                                  estimates.
-                            - Unweighted Least Squares (ULS)
-                                - minimizes the sum of squared differences between observed and reproduced correlation
-                                  matrices without assuming multivariate normal
-                        - Working of Factor Analysis
-                            - Determine Suitability of Data for Factor Analysis
-                                - Bartlett's Test of Sphericity
-                                    - tests whether the correlation matrix is an identity matrix, indicating that
-                                      variables are unrelated and unsuitable for factor analysis.
-                                - Kaiser-Meyer-Olkin (KMO) Measure of Sampling Adequacy
-                                    - assesses the proportion of variance among variables that might be common variance,
-                                      with values closer to 1 indicating suitability for factor analysis.
-                                    - value of 0.6 or above is generally considered acceptable for factor analysis.
-                            - Choose the extraction method
-                                - Principal Component Analysis (PCA)
-                                - Canonical Factor Analysis (CFA)
-                                - Common Factor Analysis (CFA)
-                                - Principal Axis Factoring (PAF)
-                                - Maximum Likelihood Factor Analysis
-                                - Alpha Factoring
-                                - Image Factoring
-                                - Unweighted Least Squares (ULS)
-                            - Factor Extraction
-                                - extract factors based on the chosen method, resulting in factor loadings and
-                                  eigenvalues.
-                            - Determine the number of factors to retain
-                                - use criteria such as eigenvalues greater than 1, scree plot analysis, or parallel
-                                  analysis to decide how many factors to keep.
-                            - Factor Rotation
-                                - apply rotation techniques (e.g., Varimax, Promax) to improve the interpretability of
-                                  the factor solution by making loadings more distinct.
-                            - Interpret the factors
-                                - analyze the factor loadings to understand the underlying structure of the data and the
-                                  relationships between observed variables and latent factors.
-                            - Compute factor scores (optional)
-                                - calculate factor scores for each observation, which can be used in subsequent analyses
-                                  or modeling.
-                            - Report and validate results
-                                - present the factor analysis results, including the factor loadings, eigenvalues, and
-                                  fit indices, and validate the findings through cross-validation or replication
-                                  studies.
-                    - Independent component analysis(ICA)
-                        - used to separate mixed signals into their independent, non-Gaussian components.
-                        - find a linear transformation of data that maximizes statistical independence among the
-                          components.
-                        - Statistical Independence
-                            - components are independent if the joint probability distribution of the components
-                              factorizes into the product of their individual distributions.
-                            - P(X and Y) = P(X) * P(Y) or P(X ∩ Y) = P(X)P(Y)
-                        - Assumptions of ICA
-                            - Linearity: ICA assumes that the observed data is a linear mixture of independent
-                              components, meaning that the observed signals are generated by linearly combining the
-                              independent sources.
-                            - Statistical Independence: ICA assumes that the underlying components are statistically
-                              independent of each other, meaning that the occurrence of one component does not provide
-                              any information about the occurrence of another component.
-                            - Non-Gaussianity: ICA relies on the assumption that the independent components are
-                              non-Gaussian, as Gaussian variables cannot be separated using ICA due to their symmetric
-                              properties.
-                        - e.g. Cocktail Party Problem
-                            - multiple people talking simultaneously in a noisy environment
-                            - ICA can separate the mixed audio signals into individual voices, allowing us to focus on a
-                              specific speaker.
-                        - Applications include:
-                            - Blind Source Separation: separating mixed audio signals into individual sources (e.g.,
-                              separating voices in a recording).
-                            - Image Processing: separating overlapping images or extracting features from images.
-                            - Biomedical Signal Processing: analyzing EEG or fMRI data to identify independent brain
-                              activity patterns.
-                            - Financial Data Analysis: identifying independent factors that influence financial markets.
-                            - Natural Language Processing: separating mixed topics in text data.
-                        - Algorithms include:
-                            - FastICA: an efficient algorithm for performing ICA using a fixed-point iteration scheme.
-                            - Infomax: an algorithm that maximizes the mutual information between the input and output
-                              signals to achieve independence.
-                            - JADE (Joint Approximate Diagonalization of Eigenmatrices): an algorithm that uses
-                              higher-order statistics to achieve independence.
-                            - Kernel ICA: an extension of ICA that uses kernel methods to capture nonlinear
-                              relationships between components.
-                        - Steps in ICA:
-                            - Centering: subtract the mean from the data to center it around the origin.
-                            - Whitening: transform the data to have unit variance and be uncorrelated.
-                            - Estimation of Independent Components: apply an algorithm (e.g., FastICA) to estimate the
-                              independent components from the whitened data.
-                            - Post-processing: optionally, scale or order the independent components for
-                              interpretability or further analysis.
-                        - Challenges in ICA:
-                            - Identifiability: ICA can only recover independent components up to a scaling and
-                              permutation ambiguity, meaning that the order and scale of the components cannot be
-                              determined.
-                            - Non-Gaussianity: ICA relies on the assumption that the independent components are
-                              non-Gaussian, which may not always hold in practice.
-                            - Computational Complexity: ICA can be computationally intensive, especially for large
-                              datasets or high-dimensional data.
-                        - Evaluation of ICA results:
-                            - Assessing the independence of the estimated components using measures such as mutual
-                              information or correlation.
-                            - Comparing the estimated components to known sources (if available) to evaluate the
-                              accuracy of the separation.
-                            - Visualizing the components to interpret their meaning and relevance to the original data.
-                    - Linear Discriminant Analysis
-                    - Independent Component Analysis
-                    - Non-negative Matrix Factorization
-                    - Multidimensional Scaling
-                    - Isomap
-                    - Locally Linear Embedding
-                    - Self-Organizing Maps
-                    - Uniform Manifold Approximation and Projection (UMAP)
-                - use cases
-                    - Text Categorization
-                        - classify data into predefined categories based on content, such as spam detection, sentiment
-                          analysis, topic classification etc.
-                    - Image Recognition
-                        - identify and classify objects or patterns in images, such as facial recognition, object
-                          detection, medical imaging analysis etc.
-                    - Dimensionality Reduction
-                        - reduce the number of features while retaining key information, improving model performance and
-                          interpretability.
-                        - e.g. PCA can be used to reduce the dimensionality of a dataset with many features while
-                          preserving as much variance as possible, making it easier to visualize and analyze the data.
-                    - Gene Expression Analysis
-                        - analyze gene expression data to identify patterns and relationships between genes, such as
-                          clustering genes with similar expression profiles or identifying key factors that influence
-                          gene expression.
-                    - Customer Segmentation
-                        - group customers based on their characteristics and behaviors to target marketing efforts and
-                          improve customer satisfaction.
-                    - Anomaly Detection
-                        - identify unusual patterns or outliers in data that may indicate fraud, network intrusions, or
-                          other abnormal behavior.
-                    - Recommender Systems
-                        - provide personalized recommendations to users based on their preferences and behavior, such as
-                          recommending movies, products, or content.
-                    - Natural Language Processing
-                        - analyze and understand human language, such as sentiment analysis, topic modeling, and text
-                          classification.
-                    - Time Series Analysis
-                        - analyze and forecast time-dependent data, such as stock prices, weather patterns, or sensor
-                          data.
-                    - Bioinformatics
-                        - analyze biological data, such as gene expression, protein interactions, or evolutionary
-                          relationships.
-                    - Social Network Analysis
-                        - analyze social networks to understand relationships and influence among individuals or groups.
-                    - Image Compression
-                    - Anomaly Detection
-                    - Data Visualization
-            - t-Distributed Stochastic Neighbor Embedding (t-SNE)
-                - non-linear dimensionality reduction technique
-                - used for visualizing high-dimensional data in a lower-dimensional space (typically 2D or 3D).
-                - preserves local structure of the data, making it effective for visualizing clusters and patterns in
-                  complex datasets.
-                - Steps in t-SNE:
-                    - Compute pairwise similarities in the high-dimensional space using a Gaussian distribution.
-                    - Compute pairwise similarities in the low-dimensional space using a Student's t-distribution.
-                    - Minimize the Kullback-Leibler divergence between the two distributions using gradient descent.
-                - Applications of t-SNE:
-                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
-                      embeddings.
-                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
-                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
-                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
-                      embeddings.
-            - Non-Negative Matrix Factorization (NMF)
-                - break down large dataset into smaller meaningful parts while ensuring that all values remain
-                  non-negative
-                - factorizes a non-negative matrix into two lower-rank non-negative matrices,
-                - A ≈ W * H
-                    - A = original non-negative matrix (e.g., data matrix)
-                    - W = basis matrix (non-negative)
-                    - H = coefficient matrix (non-negative)
-                - used for dimensionality reduction and feature extraction.
-                - Steps in NMF:
-                    - Initialize the factor matrices with non-negative values.
-                    - Update the factor matrices iteratively using multiplicative update rules to minimize the
-                      reconstruction error.
-                    - Continue updating until convergence or a specified number of iterations is reached.
-                - Optimization in NMF:
-                    - Multiplicative Update Rules
-                        - ensure that the factor matrices remain non-negative throughout the optimization process.
-                    - Alternating Least Squares (ALS)
-                        - alternately fix one factor matrix and solve for the other using least squares optimization.
-                    - The objective function to minimize is often the Frobenius norm
-                        - of the difference between the original matrix and the product of the factor
-                        - matrices, i.e., ||A - W * H||_F^2.
-                - Applications include
-                    - topic modeling in text analysis,
-                    - image processing, and
-                    - collaborative filtering in recommender systems.
-                - Advantages of NMF:
-                    - Interpretability: the non-negativity constraint leads to parts-based representations, making it
-                      easier to interpret the resulting factors.
-                    - Sparsity: NMF often produces sparse representations, which can be beneficial for feature selection
-                      and reducing overfitting.
-                    - Flexibility: NMF can be applied to various types of data, including text, images, and
-                      collaborative filtering data.
-                - Challenges of NMF:
-                    - Local Minima: NMF optimization can get stuck in local minima, leading to suboptimal factorization
-                      results.
-                    - Sensitivity to Initialization: the choice of initial values for the factor matrices can
-                      significantly impact the convergence and quality of the factorization.
-                    - Computational Complexity: NMF can be computationally intensive, especially for large datasets or
-                      high-dimensional data.
-                - Variants of NMF:
-                    - Sparse NMF: incorporates sparsity constraints to encourage sparse representations in the factor
-                      matrices.
-                    - Non-negative Tensor Factorization: extends NMF to higher-order tensors for analyzing
-                      multi-dimensional data.
-                    - Convolutional NMF: applies NMF to convolutional data, such as images or time series, to capture
-                      local patterns and features.
-                - Evaluation of NMF results:
-                    - Reconstruction Error: measures the difference between the original matrix and the product of the
-                      factor matrices, with lower values indicating better factorization.
-                    - Explained Variance: assesses how much of the variance in the original data is captured by the
-                      factorization, with higher values indicating better performance.
-                    - Interpretability: evaluates how well the resulting factors can be interpreted in the context of
-                      the data and the specific application.
-            - Isomap
-                - non-linear dimensionality reduction technique
-                - preserves geodesic distances between data points in the high-dimensional space when mapping to a
-                  lower-dimensional space.
-                - Steps in Isomap:
-                    - Construct a neighborhood graph based on pairwise distances between data points.
-                    - Compute the shortest path (geodesic distance) between all pairs of data points in the graph.
-                    - Apply classical Multidimensional Scaling (MDS) to the matrix of geodesic distances to obtain the
-                      low-dimensional embedding.
-                - Working of Isomap:
-                    - Neighborhood Graph Construction
-                        - connect each data point to its k nearest neighbors or all points within a certain radius.
-                    - Geodesic Distance Calculation
-                        - use algorithms like Dijkstra's or Floyd-Warshall to compute the shortest path between all pairs
-                          of data points in the neighborhood graph, resulting in a matrix of geodesic distances.
-                    - Dimensionality Reduction
-                        - apply classical MDS to the geodesic distance matrix to find a low-dimensional embedding that
-                          preserves the geodesic distances as much as possible.
-                - Manifold Learning
-                    - techniques that seek to uncover the underlying structure of high-dimensional data by assuming
-                      that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
-                    - Example
-                      - A 2D sheet of paper twisted into a 3D spiral
-                    - Methods include:
-                        - Isomap
-                        - Locally Linear Embedding (LLE)
-                        - Self-Organizing Maps (SOM)
-                        - Uniform Manifold Approximation and Projection (UMAP)
-                - Applications include:
-                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
-                      embeddings.
-                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
-                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
-                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
-                      embeddings.
-            - LLE(Locally Linear Embedding)
-                - Example dataset
-                  - Swiss roll reduction
-                - non-linear dimensionality reduction technique
-                - manifold learning method that seeks to uncover the underlying structure of high-dimensional data by assuming
-                  that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
-                - assumes each data point and its neighbors lie on a locally linear patch of the manifold
-                - preserves local relationships between data points in the high-dimensional space when mapping to a
-                  lower-dimensional space.
-                - Steps in LLE:
-                    - Construct a neighborhood graph based on pairwise distances between data points.
-                    - Compute the weights that best reconstruct each data point from its neighbors in the high-dimensional
-                      space.
-                    - Compute the low-dimensional embedding by minimizing the reconstruction error using the computed
-                      weights.
-                - Applications include:
-                    - Visualizing high-dimensional data such as gene expression profiles, image features, or word
-                      embeddings.
-                    - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
-                    - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
-                    - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
-                      embeddings.
-            - Autoencoders
-    - e.g.
-        - house price prediction
-            - features like size, location, number of bedrooms, age of the house etc.
-            - too much features like: number of windows, color of the walls, type of flooring etc.
-                - may lead to overfitting and poor generalization to new data.
-        - customer churn prediction
-            - features like customer demographics, usage patterns, customer service interactions etc.
-        - customer segmentation
-        - image recognition
-        - sentiment analysis
-        - fraud detection
+    - Data Mining
+      - used in various data mining applications to uncover hidden patterns and relationships in large datasets,
+      such as customer segmentation, web usage mining, bioinformatics, and fraud detection.
+        - Dimensionality Reduction
+          - reduce the number of features while retaining key information.
+          - helps improve model performance, reduce overfitting and enhance interpretability.
+          - converts high-dimensional data into a lower-dimensional space while preserving important details.
+          - Techniques
+              - Feature Selection
+                  - selects a subset of the original features based on their importance or relevance to the target
+                    variable.
+                  - methods include
+                      - filter methods (e.g., correlation, mutual information)
+                      - wrapper methods (e.g., recursive feature elimination)
+                      - embedded methods (e.g., Lasso regression).
+              - Feature Extraction
+                  - creates new features by transforming the original features into a lower-dimensional space.
+                  - methods include:
+                      - Principal Component Analysis (PCA)
+                          - dimensionality reduction technique
+                          - reduce the number of features in a dataset
+                          - by transforming the original features into a new set of uncorrelated variables called
+                            principal components.
+                          - Principal Components
+                              - linear combinations of the original features that capture the maximum variance in the
+                                data.
+                              - the first principal component captures the most variance, followed by the second, and so
+                                on.
+                          - uses linear algebra to transform data into new features called principal components.
+                          - Principal Component Analysis (PCA) Steps
+                              - Standardize the data
+                                  - normalize the data to have a mean of zero and a standard deviation of one
+                                      - Z = (X - μ) / σ
+                                          - X = original feature value
+                                          - μ = mean of the feature
+                                          - σ = standard deviation of the feature
+                              - Compute the covariance matrix
+                                  - cov(x1, x2) = sigma i=1 to n[(x1 - μ1)(x2 - μ2)]/n-1
+                                      - x1 and x2 are two features
+                                      - μ1 and μ2 are the means of those features
+                              - Find the principal components
+                                  - PC1 = direction of maximum variance (most spread).
+                                      - w1 * x1 + w2 * x2 + ... + wp * xp
+                                          - PC1 = first principal component
+                                          - w1, w2, ..., wp = weights (eigenvectors) for each original feature
+                                          - x1, x2, ..., xp = original features
+                                  - PC2 = next best direction, perpendicular to PC1 and so on.
+                                      - w1 * x1 + w2 * x2 + ... + wp * xp
+                                          - PC2 = second principal component
+                                          - w1, w2, ..., wp = weights (eigenvectors) for each original feature
+                                          - x1, x2, ..., xp = original features
+                              - Calculate eigenvalues(importance) and eigenvectors(directions of maximum variance)
+                                  - AX = λX
+                                      - A = covariance matrix
+                                      - X = eigenvector (direction of maximum variance)
+                                      - λ = eigenvalue (amount of variance captured by that direction)
+                                  - i.e.
+                                      - A acts on X it only stretches or shrinks X by the scalar λ.
+                                      - direction of X remains unchanged hence eigenvectors define "stable directions" of
+                                        A.
+                              - Sort eigenvalues and select top k eigenvectors
+                              - Pick the top direction
+                                  - PCA ranks eigenvalues and eigenvectors by the amount of information they capture
+                                  - select the top k eigenvectors corresponding to the largest eigenvalues to form the new
+                                    feature space.
+                              - Transform the original data to the new feature space using the selected eigenvectors.
+                                  - new_data = original_data * selected_eigenvectors
+                      - Singular Value Decomposition (SVD)
+                          - factorizes a matrix into three matrices (U, Σ, V^T)
+                          - used for dimensionality reduction, noise reduction and data compression.
+                      - Missing Value Ratio
+                          - entries in a dataset are left blank, marked as NaN, None or special strings like "Unknown"
+                          - can lead to biased models and inaccurate predictions if not handled properly.
+                          - features with a high ratio of missing values may be less informative and can be considered for
+                            removal during feature selection.
+                          - Types of Missing Data
+                              - Missing Completely at Random (MCAR)
+                                  - missingness is unrelated to any observed or unobserved data.
+                              - Missing at Random (MAR)
+                                  - missingness is related to observed data but not the missing data itself.
+                              - Missing Not at Random (MNAR)
+                                  - missingness is related to the missing data itself.
+                              - Methods to Handle Missing Data
+                                  - Deletion Methods
+                                      - Listwise Deletion:
+                                          - removes entire rows with missing values.
+                                      - Pairwise Deletion:
+                                          - uses all available data for each analysis,
+                                          - ignoring missing values on a case-by-case basis.
+                                  - Imputation Methods
+                                      - Mean/Median/Mode Imputation:
+                                          - fills missing values with the mean, median or mode of the feature.
+                                      - K-Nearest Neighbors (KNN) Imputation:
+                                          - fills missing values based on the values of the nearest neighbors.
+                                      - Multiple Imputation:
+                                          - creates multiple imputed datasets and combines results to account for
+                                            uncertainty in imputation.
+                                      - Regression Imputation:
+                                          - predicts missing values using a regression model based on other features.
+                      - Backward Feature Selection/Elimination
+                          - starts with all features and iteratively removes the least important ones based on model
+                            performance.
+                              - example:
+                                  - Predicting Sales Based on Advertising Budget
+                      - Forward Feature Selection
+                      - Factor Analysis
+                          - identify hidden patterns or underlying relationships among a large set of variables.
+                          - Features of factor analysis
+                              - Data Reduction
+                                  - reduces the number of observed variables into a smaller set of latent factors.
+                              - Latent Variables (Factors)
+                                  - unobserved variables that explain the correlations among observed variables.
+                              - Correlation based
+                                  - group observed variables that are highly correlated with each other into factors.
+                              - Variance Explained
+                                  - shared variance among observed variables that is captured by the latent factors.
+                              - Exploratory and Confirmatory
+                                  - exploratory factor analysis (EFA)
+                                      - used to discover the underlying factor structure without predefined hypotheses
+                                      - identifies the number of factors and the loadings of observed variables on those
+                                        factors.
+                                      - uses techniques like eigenvalues and scree plots to determine the number of
+                                        factors to retain.
+                                      - scree plot is a graphical representation of the eigenvalues associated with each
+                                        factor, used to determine the
+                                        number of factors to retain in exploratory factor analysis (EFA).
+                                      - the plot typically shows a steep decline in eigenvalues followed by a leveling
+                                        off,
+                                      - and the point at which the decline levels off (the "elbow") is often used as a
+                                        criterion
+                                      - for selecting the number of factors to retain.
+                                  - confirmatory factor analysis (CFA)
+                                      - tests specific hypotheses about the factor structure
+                                      - used to confirm whether the data fits a predefined factor model based on
+                                        theoretical expectations.
+                                      - requires specifying the number of factors and the expected relationships between
+                                        observed variables and latent factors in advance.
+                                      - uses fit indices (e.g., Chi-square, RMSEA, CFI) to evaluate how well the specified
+                                        model fits the observed data.
+                                      - fit indices provide quantitative measures of how well the specified factor model
+                                        matches the observed data,
+                                        helping researchers assess the adequacy of their model and make informed decisions
+                                        about model modifications or acceptance
+                              - Factor Loadings
+                                  - coefficients that represent the relationship between observed variables and latent
+                                    factors.
+                              - Eigenvalues
+                                  - measure the amount of variance in the observed variables explained by each factor.
+                              - Factor Rotation for clarity
+                                  - technique used to improve interpretability of factors by making loadings more
+                                    distinct.
+                                  - methods include
+                                      - Varimax (orthogonal) rotation
+                                          - simplifies the factor structure by maximizing the variance of squared loadings
+                                            for each factor.
+                                              - results in factors that are uncorrelated with each other.
+                                      - Promax (oblique) rotation
+                                          - permits factors to be correlated,
+                                          - allowing for a more realistic representation of relationships among factors.
+                          - Types of Factor Extraction Methods
+                              - Principal Component Analysis (PCA)
+                                  - focuses on maximizing the variance explained by the factors, rather than modeling the
+                                    underlying structure of the data.
+                              - Canonical Factor Analysis (CFA)
+                                  - focuses on maximizing the correlation between observed variables and the factors.
+                                  - Also known as Rao's Canonical Factor Analysis, it identifies factors that are linear
+                                    combinations of the observed variables, maximizing the correlation between the factors
+                                    and the original variables.
+                                  - differs from PCA in that it seeks to find factors that are most strongly correlated
+                                    with the original variables, rather than simply maximizing variance.
+                                  - aims to identify factors that are most strongly correlated with the original
+                                    variables, rather than simply maximizing variance as in PCA.
+                              - Common Factor Analysis (CFA)
+                                  - focuses on shared variance among observed variables to identify underlying factors.
+                                  - also known as Principal Axis Factoring (PAF), it identifies factors that explain the
+                                    common variance among observed variables, rather than the total variance as in PCA.
+                              - Principal Axis Factoring (PAF)
+                                  - focuses on shared variance among observed variables to identify underlying factors.
+                              - Maximum Likelihood Factor Analysis
+                                  - estimates factor loadings by maximizing the likelihood of the observed data given the
+                                    model.
+                              - Alpha Factoring
+                                  - based on the reliability of the factors, aiming to maximize internal consistency.
+                              - Image Factoring
+                                  - uses the squared multiple correlations of observed variables as initial communality
+                                    estimates.
+                              - Unweighted Least Squares (ULS)
+                                  - minimizes the sum of squared differences between observed and reproduced correlation
+                                    matrices without assuming multivariate normal
+                          - Working of Factor Analysis
+                              - Determine Suitability of Data for Factor Analysis
+                                  - Bartlett's Test of Sphericity
+                                      - tests whether the correlation matrix is an identity matrix, indicating that
+                                        variables are unrelated and unsuitable for factor analysis.
+                                  - Kaiser-Meyer-Olkin (KMO) Measure of Sampling Adequacy
+                                      - assesses the proportion of variance among variables that might be common variance,
+                                        with values closer to 1 indicating suitability for factor analysis.
+                                      - value of 0.6 or above is generally considered acceptable for factor analysis.
+                              - Choose the extraction method
+                                  - Principal Component Analysis (PCA)
+                                  - Canonical Factor Analysis (CFA)
+                                  - Common Factor Analysis (CFA)
+                                  - Principal Axis Factoring (PAF)
+                                  - Maximum Likelihood Factor Analysis
+                                  - Alpha Factoring
+                                  - Image Factoring
+                                  - Unweighted Least Squares (ULS)
+                              - Factor Extraction
+                                  - extract factors based on the chosen method, resulting in factor loadings and
+                                    eigenvalues.
+                              - Determine the number of factors to retain
+                                  - use criteria such as eigenvalues greater than 1, scree plot analysis, or parallel
+                                    analysis to decide how many factors to keep.
+                              - Factor Rotation
+                                  - apply rotation techniques (e.g., Varimax, Promax) to improve the interpretability of
+                                    the factor solution by making loadings more distinct.
+                              - Interpret the factors
+                                  - analyze the factor loadings to understand the underlying structure of the data and the
+                                    relationships between observed variables and latent factors.
+                              - Compute factor scores (optional)
+                                  - calculate factor scores for each observation, which can be used in subsequent analyses
+                                    or modeling.
+                              - Report and validate results
+                                  - present the factor analysis results, including the factor loadings, eigenvalues, and
+                                    fit indices, and validate the findings through cross-validation or replication
+                                    studies.
+                      - Independent component analysis(ICA)
+                          - used to separate mixed signals into their independent, non-Gaussian components.
+                          - find a linear transformation of data that maximizes statistical independence among the
+                            components.
+                          - Statistical Independence
+                              - components are independent if the joint probability distribution of the components
+                                factorizes into the product of their individual distributions.
+                              - P(X and Y) = P(X) * P(Y) or P(X ∩ Y) = P(X)P(Y)
+                          - Assumptions of ICA
+                              - Linearity: ICA assumes that the observed data is a linear mixture of independent
+                                components, meaning that the observed signals are generated by linearly combining the
+                                independent sources.
+                              - Statistical Independence: ICA assumes that the underlying components are statistically
+                                independent of each other, meaning that the occurrence of one component does not provide
+                                any information about the occurrence of another component.
+                              - Non-Gaussianity: ICA relies on the assumption that the independent components are
+                                non-Gaussian, as Gaussian variables cannot be separated using ICA due to their symmetric
+                                properties.
+                          - e.g. Cocktail Party Problem
+                              - multiple people talking simultaneously in a noisy environment
+                              - ICA can separate the mixed audio signals into individual voices, allowing us to focus on a
+                                specific speaker.
+                          - Applications include:
+                              - Blind Source Separation: separating mixed audio signals into individual sources (e.g.,
+                                separating voices in a recording).
+                              - Image Processing: separating overlapping images or extracting features from images.
+                              - Biomedical Signal Processing: analyzing EEG or fMRI data to identify independent brain
+                                activity patterns.
+                              - Financial Data Analysis: identifying independent factors that influence financial markets.
+                              - Natural Language Processing: separating mixed topics in text data.
+                          - Algorithms include:
+                              - FastICA: an efficient algorithm for performing ICA using a fixed-point iteration scheme.
+                              - Infomax: an algorithm that maximizes the mutual information between the input and output
+                                signals to achieve independence.
+                              - JADE (Joint Approximate Diagonalization of Eigenmatrices): an algorithm that uses
+                                higher-order statistics to achieve independence.
+                              - Kernel ICA: an extension of ICA that uses kernel methods to capture nonlinear
+                                relationships between components.
+                          - Steps in ICA:
+                              - Centering: subtract the mean from the data to center it around the origin.
+                              - Whitening: transform the data to have unit variance and be uncorrelated.
+                              - Estimation of Independent Components: apply an algorithm (e.g., FastICA) to estimate the
+                                independent components from the whitened data.
+                              - Post-processing: optionally, scale or order the independent components for
+                                interpretability or further analysis.
+                          - Challenges in ICA:
+                              - Identifiability: ICA can only recover independent components up to a scaling and
+                                permutation ambiguity, meaning that the order and scale of the components cannot be
+                                determined.
+                              - Non-Gaussianity: ICA relies on the assumption that the independent components are
+                                non-Gaussian, which may not always hold in practice.
+                              - Computational Complexity: ICA can be computationally intensive, especially for large
+                                datasets or high-dimensional data.
+                          - Evaluation of ICA results:
+                              - Assessing the independence of the estimated components using measures such as mutual
+                                information or correlation.
+                              - Comparing the estimated components to known sources (if available) to evaluate the
+                                accuracy of the separation.
+                              - Visualizing the components to interpret their meaning and relevance to the original data.
+                      - Linear Discriminant Analysis
+                      - Independent Component Analysis
+                      - Non-negative Matrix Factorization
+                      - Multidimensional Scaling
+                      - Isomap
+                      - Locally Linear Embedding
+                      - Self-Organizing Maps
+                      - Uniform Manifold Approximation and Projection (UMAP)
+                  - use cases
+                      - Text Categorization
+                          - classify data into predefined categories based on content, such as spam detection, sentiment
+                            analysis, topic classification etc.
+                      - Image Recognition
+                          - identify and classify objects or patterns in images, such as facial recognition, object
+                            detection, medical imaging analysis etc.
+                      - Dimensionality Reduction
+                          - reduce the number of features while retaining key information, improving model performance and
+                            interpretability.
+                          - e.g. PCA can be used to reduce the dimensionality of a dataset with many features while
+                            preserving as much variance as possible, making it easier to visualize and analyze the data.
+                      - Gene Expression Analysis
+                          - analyze gene expression data to identify patterns and relationships between genes, such as
+                            clustering genes with similar expression profiles or identifying key factors that influence
+                            gene expression.
+                      - Customer Segmentation
+                          - group customers based on their characteristics and behaviors to target marketing efforts and
+                            improve customer satisfaction.
+                      - Anomaly Detection
+                          - identify unusual patterns or outliers in data that may indicate fraud, network intrusions, or
+                            other abnormal behavior.
+                      - Recommender Systems
+                          - provide personalized recommendations to users based on their preferences and behavior, such as
+                            recommending movies, products, or content.
+                      - Natural Language Processing
+                          - analyze and understand human language, such as sentiment analysis, topic modeling, and text
+                            classification.
+                      - Time Series Analysis
+                          - analyze and forecast time-dependent data, such as stock prices, weather patterns, or sensor
+                            data.
+                      - Bioinformatics
+                          - analyze biological data, such as gene expression, protein interactions, or evolutionary
+                            relationships.
+                      - Social Network Analysis
+                          - analyze social networks to understand relationships and influence among individuals or groups.
+                      - Image Compression
+                      - Anomaly Detection
+                      - Data Visualization
+              - t-Distributed Stochastic Neighbor Embedding (t-SNE)
+                  - non-linear dimensionality reduction technique
+                  - used for visualizing high-dimensional data in a lower-dimensional space (typically 2D or 3D).
+                  - preserves local structure of the data, making it effective for visualizing clusters and patterns in
+                    complex datasets.
+                  - Steps in t-SNE:
+                      - Compute pairwise similarities in the high-dimensional space using a Gaussian distribution.
+                      - Compute pairwise similarities in the low-dimensional space using a Student's t-distribution.
+                      - Minimize the Kullback-Leibler divergence between the two distributions using gradient descent.
+                  - Applications of t-SNE:
+                      - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                        embeddings.
+                      - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                      - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                      - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                        embeddings.
+              - Non-Negative Matrix Factorization (NMF)
+                  - break down large dataset into smaller meaningful parts while ensuring that all values remain
+                    non-negative
+                  - factorizes a non-negative matrix into two lower-rank non-negative matrices,
+                  - A ≈ W * H
+                      - A = original non-negative matrix (e.g., data matrix)
+                      - W = basis matrix (non-negative)
+                      - H = coefficient matrix (non-negative)
+                  - used for dimensionality reduction and feature extraction.
+                  - Steps in NMF:
+                      - Initialize the factor matrices with non-negative values.
+                      - Update the factor matrices iteratively using multiplicative update rules to minimize the
+                        reconstruction error.
+                      - Continue updating until convergence or a specified number of iterations is reached.
+                  - Optimization in NMF:
+                      - Multiplicative Update Rules
+                          - ensure that the factor matrices remain non-negative throughout the optimization process.
+                      - Alternating Least Squares (ALS)
+                          - alternately fix one factor matrix and solve for the other using least squares optimization.
+                      - The objective function to minimize is often the Frobenius norm
+                          - of the difference between the original matrix and the product of the factor
+                          - matrices, i.e., ||A - W * H||_F^2.
+                  - Applications include
+                      - topic modeling in text analysis,
+                      - image processing, and
+                      - collaborative filtering in recommender systems.
+                  - Advantages of NMF:
+                      - Interpretability: the non-negativity constraint leads to parts-based representations, making it
+                        easier to interpret the resulting factors.
+                      - Sparsity: NMF often produces sparse representations, which can be beneficial for feature selection
+                        and reducing overfitting.
+                      - Flexibility: NMF can be applied to various types of data, including text, images, and
+                        collaborative filtering data.
+                  - Challenges of NMF:
+                      - Local Minima: NMF optimization can get stuck in local minima, leading to suboptimal factorization
+                        results.
+                      - Sensitivity to Initialization: the choice of initial values for the factor matrices can
+                        significantly impact the convergence and quality of the factorization.
+                      - Computational Complexity: NMF can be computationally intensive, especially for large datasets or
+                        high-dimensional data.
+                  - Variants of NMF:
+                      - Sparse NMF: incorporates sparsity constraints to encourage sparse representations in the factor
+                        matrices.
+                      - Non-negative Tensor Factorization: extends NMF to higher-order tensors for analyzing
+                        multi-dimensional data.
+                      - Convolutional NMF: applies NMF to convolutional data, such as images or time series, to capture
+                        local patterns and features.
+                  - Evaluation of NMF results:
+                      - Reconstruction Error: measures the difference between the original matrix and the product of the
+                        factor matrices, with lower values indicating better factorization.
+                      - Explained Variance: assesses how much of the variance in the original data is captured by the
+                        factorization, with higher values indicating better performance.
+                      - Interpretability: evaluates how well the resulting factors can be interpreted in the context of
+                        the data and the specific application.
+              - Isomap
+                  - non-linear dimensionality reduction technique
+                  - preserves geodesic distances between data points in the high-dimensional space when mapping to a
+                    lower-dimensional space.
+                  - Steps in Isomap:
+                      - Construct a neighborhood graph based on pairwise distances between data points.
+                      - Compute the shortest path (geodesic distance) between all pairs of data points in the graph.
+                      - Apply classical Multidimensional Scaling (MDS) to the matrix of geodesic distances to obtain the
+                        low-dimensional embedding.
+                  - Working of Isomap:
+                      - Neighborhood Graph Construction
+                          - connect each data point to its k nearest neighbors or all points within a certain radius.
+                      - Geodesic Distance Calculation
+                          - use algorithms like Dijkstra's or Floyd-Warshall to compute the shortest path between all pairs
+                            of data points in the neighborhood graph, resulting in a matrix of geodesic distances.
+                      - Dimensionality Reduction
+                          - apply classical MDS to the geodesic distance matrix to find a low-dimensional embedding that
+                            preserves the geodesic distances as much as possible.
+                  - Manifold Learning
+                      - techniques that seek to uncover the underlying structure of high-dimensional data by assuming
+                        that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
+                      - Example
+                        - A 2D sheet of paper twisted into a 3D spiral
+                      - Methods include:
+                          - Isomap
+                          - Locally Linear Embedding (LLE)
+                          - Self-Organizing Maps (SOM)
+                          - Uniform Manifold Approximation and Projection (UMAP)
+                  - Applications include:
+                      - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                        embeddings.
+                      - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                      - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                      - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                        embeddings.
+              - LLE(Locally Linear Embedding)
+                  - Example dataset
+                    - Swiss roll reduction
+                  - non-linear dimensionality reduction technique
+                  - manifold learning method that seeks to uncover the underlying structure of high-dimensional data by assuming
+                    that the data lies on a lower-dimensional manifold embedded in the high-dimensional space.
+                  - assumes each data point and its neighbors lie on a locally linear patch of the manifold
+                  - preserves local relationships between data points in the high-dimensional space when mapping to a
+                    lower-dimensional space.
+                  - Steps in LLE:
+                      - Construct a neighborhood graph based on pairwise distances between data points.
+                      - Compute the weights that best reconstruct each data point from its neighbors in the high-dimensional
+                        space.
+                      - Compute the low-dimensional embedding by minimizing the reconstruction error using the computed
+                        weights.
+                  - Applications include:
+                      - Visualizing high-dimensional data such as gene expression profiles, image features, or word
+                        embeddings.
+                      - Clustering analysis to identify groups of similar data points in a lower-dimensional space.
+                      - Analyzing the structure of complex datasets, such as social networks or customer behavior data.
+                      - Evaluating the performance of dimensionality reduction techniques by visualizing the resulting
+                        embeddings.
+              - Autoencoders
+      - e.g.
+          - house price prediction
+              - features like size, location, number of bedrooms, age of the house etc.
+              - too much features like: number of windows, color of the walls, type of flooring etc.
+                  - may lead to overfitting and poor generalization to new data.
+          - customer churn prediction
+              - features like customer demographics, usage patterns, customer service interactions etc.
+          - customer segmentation
+          - image recognition
+          - sentiment analysis
+          - fraud detection
 - Reinforcement Learning
-    - Q-Learning
-    - Deep Q-Networks (DQN)
-    - Policy Gradient Methods
+    - Agent learns to make decisions by interacting with an environment and receiving feedback in the form of rewards or penalties.
+    - Goal of agent is to learn a policy that maximizes the cumulative reward over time.
+    - Key components:
+      - Agent: 
+        - learner or decision-maker that interacts with the environment.
+      - Environment: 
+        - external system with which the agent interacts and receives feedback.
+      - State: 
+        - representation of the current situation or configuration of the environment.
+      - Action: 
+        - choice made by the agent that affects the state of the environment.
+      - Reward:
+        - scalar feedback signal received by the agent after taking an action, indicating the desirability of the resulting state.
+      - Policy:
+        - strategy or mapping from states to actions that the agent follows to make decisions.
+      - Value Function:
+        - function that estimates the expected cumulative reward for a given state or state-action pair, guiding the agent's decision-making process.
+    - Methods
+      - Model Based Methods
+        - Markov Decision Processes (MDP)
+          - 
+        - Bellman Equations
+        - Value Iteration
+        - Monte Carlo Tree Search
+      - Model Free Methods
+        - Q-Learning
+        - SARSA (State-Action-Reward-State-Action)
+        - Monte Carlo Methods
+        - Reinforce Algorithm
+        - Actor-Critic Methods
+        - Asynchronous Advantage Actor-Critic (A3C)
+      - Deep Q-Networks (DQN)
+      - Policy Gradient Methods
 - Acronyms
     - ML: Machine Learning
     - AI: Artificial Intelligence
