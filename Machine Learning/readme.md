@@ -20,6 +20,9 @@
                             -
                         - Visualization Techniques
                             - Box Plots
+                            - A box plot visually identifies outliers using the IQR rule.
+                            |----Box----|      *
+                                              Outlier
                             - Scatter Plots
                 - Inconsistent Data
                 - Irrelevant Data
@@ -685,12 +688,20 @@
         - Confusion Matrix
             - True Positive
                 - When the model correctly predicts the positive class.
+                - this is the case when the model correctly identifies a positive instance, such as correctly diagnosing a disease or
+                  identifying a fraudulent transaction.
             - True Negative
                 - when the model correctly predicts the negative class.
+                - this is the case when the model correctly identifies a negative instance, such as correctly identifying a healthy patient or
+                  a legitimate transaction.
             - False Positive
                 - when the model incorrectly predicts the positive class for a negative instance.
+                - this is the case when the model incorrectly identifies a negative instance as positive, such as misdiagnosing a healthy patient with a disease or
+                  flagging a legitimate transaction as fraudulent.
             - False Negative
                 - when the model incorrectly predicts the negative class for a positive instance.
+                - this is the case when the model incorrectly identifies a positive instance as negative, such as failing to diagnose a disease or
+                  missing a fraudulent transaction.
         - Cross-Validation
             - how well model performs on unseen data while preventing overfitting
             - Train model on some parts and test it on the remaining part of dataset
@@ -728,7 +739,7 @@
                 - Precision = TP / (TP + FP)
             - Recall
                 - Recall (Sensitivity) is the ratio of true positive predictions to the total actual positives.
-                - measures how how good the model is at predicting positives.
+                - measures how good the model is at predicting positives.
                 - important in scenarios where false negatives are costly.
                 - like disease diagnosis, safety-critical systems etc.
                 - Recall = TP / (TP + FN)
