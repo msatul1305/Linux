@@ -2166,7 +2166,7 @@
               - goes beyond description to predict future purchasing behavior based on the
                 discovered associations, allowing retailers to make informed decisions about product placement, promotions,
                 and inventory management.
-            - Differential Market Basket Analysis: 
+            - Differential Market Basket Analysis:
               - compares the purchasing patterns of different customer segments or time periods to identify
                 changes in consumer behavior, preferences, or trends, helping businesses adapt their strategies accordingly.
             - Applications of Market Basket Analysis
@@ -2737,19 +2737,393 @@
     - Methods
       - Model Based Methods
         - Markov Decision Processes (MDP)
-          - 
+          - way to describe how a decision-making agent like a robot or game character moves 
+          - through different situations while trying to achieve a goal.
+          - rely on variables such as the environment, agent’s actions and rewards to decide the system’s next optimal action
+          - MDP consists of:
+            - States (S): all the different situations the agent can be in.
+            - Model (M): a representation of how the environment works, including how it responds to the agent's actions and what rewards it gives.
+              - e.g. in a chess game, the model would include the rules of the game, how pieces move, and how points are scored.
+            - Actions (A): all the possible moves or decisions the agent can make.
+              - e.g. in a chess game, actions would include moving a piece, capturing an opponent's piece, or castling.
+            - Transition Probabilities (P): the likelihood of moving from one state to another after taking a specific action.
+              - e.g. in a chess game, the transition probabilities would represent the chances of the opponent's response to a move, such as how likely they are to capture a piece or make a defensive move.
+            - Rewards (R): the feedback the agent receives after taking an action, which helps it learn what actions are good or bad.
+              - e.g. in a chess game, rewards could be points gained for capturing an opponent's piece or penalties for losing a piece.
+            - Policy (π): a strategy that tells the agent which action to take in each state to maximize its rewards over time.
+              - e.g. in a chess game, the policy would guide the agent to make moves that increase its chances of winning, such as controlling the center of the board or developing pieces effectively.
         - Bellman Equations
+          - used in reinforcement learning to calculate the value of a state.
+          - the value of a state is equal to the reward received now plus the expected value of the next state.
+          - considers both immediate and future rewards.
+          - fundamental recursive relationships that describe the optimal value function in terms of the expected rewards and the value of subsequent states.
+          - used to derive optimal policies and value functions in reinforcement learning.
+          - Bellman Expectation Equation: describes the value of a state under a given policy.
+            - V^π(s) = E[R_{t+1} + γV^π(s_{t+1}) | s_t = s]
+            - expanding this equation with transition probabilities we get:
+              - V^π(s) = ∑_a π(a|s) ∑_{s'} P(s'|s,a) [R(s,a,s') + γV^π(s')]
+              - where
+                - V^π(s) is the value of state s under policy π,
+                - π(a|s) is the probability of taking action a in state s under policy π,
+                - P(s'|s,a) is the probability of transitioning to state s' from state s after taking action a,
+                - R(s,a,s') is the reward received after transitioning from state s to state s' by taking action a,
+                - γ is the discount factor that determines the importance of future rewards.
+          - Bellman Optimality Equation: describes the value of a state under the optimal policy.
+            - V*(s) = max_a E[R_{t+1} + γV*(s_{t+1}) | s_t = s, a_t = a]
+            - Optimal action value function Q*(s,a) can be defined as:
+              - Q*(s,a) = E[R_{t+1} + γ max_{a'} Q*(s_{t+1}, a') | s_t = s, a_t = a]
+              - expanding this equation with transition probabilities we get:
+                - Q*(s,a) = ∑_{s'} P(s'|s,a) [R(s,a,s') + γ max_{a'} Q*(s', a')]
+                - where
+                  - Q*(s,a) is the optimal action value function, representing the expected cumulative reward of taking action a in state s and following the optimal policy thereafter.
+                    - max_{a'} Q*(s_{t+1}, a') represents the maximum expected cumulative reward achievable from the next state s_{t+1} by taking the best possible action a'.
+          - Bellman Optimality Equation for Action-Value Function:
+            - Q*(s,a) = E[R_{t+1} + γ max_{a'} Q*(s_{t+1}, a') | s_t = s, a_t = a]
+            - expanding this equation with transition probabilities we get:
+              - Q*(s,a) = ∑_{s'} P(s'|s,a) [R(s,a,s') + γ max_{a'} Q*(s', a')]
+          - Bellman Optimality Equation for State-Value Function:
+            - V*(s) = max_a Q*(s,a)
         - Value Iteration
-        - Monte Carlo Tree Search
+          - iterative algorithm used to compute the optimal value function and policy in a Markov Decision Process (MDP).
+          - starts with an initial guess for the value function and iteratively updates it using the Bellman optimality equation until convergence.
+          - Steps in Value Iteration:
+              - Initialize the value function V(s) arbitrarily for all states s (e.g., V(s) = 0 for all s).
+              - Repeat until convergence:
+                  - For each state s in the state space:
+                      - Update the value function using the Bellman optimality equation:
+                        - V(s) = max_a ∑_{s'} P(s'|s,a) [R(s,a,s') + γV(s')]
+              - Derive the optimal policy π* from the optimal value function:
+                  - π*(s) = argmax_a ∑_{s'} P(s'|s,a) [R(s,a,s') + γV(s')]
+        - Policy Iteration
+          - iterative algorithm used to compute the optimal policy and value function in a Markov Decision Process (MDP).
+          - alternates between 
+            - policy evaluation (calculating the value function for a given policy) and 
+            - policy improvement (updating the policy based on the current value function) until convergence.
+          - Steps in Policy Iteration:
+              - Initialize the policy π(s) arbitrarily for all states s (e.g., π(s) = random action for all s).
+              - Repeat until convergence:
+                  - Policy Evaluation: For each state s, calculate the value function V^π(s) under the current policy π using the Bellman expectation equation:
+                    - V^π(s) = ∑_a π(a|s) ∑_{s'} P(s'|s,a) [R(s,a,s') + γV^π(s')]
+                  - Policy Improvement: For each state s, update the policy by choosing the action that maximizes the expected value based on the current value function:
+                    - π'(s) = argmax_a ∑_{s'} P(s'|s,a) [R(s,a,s') + γV^π(s')]
+                  - If π' is equal to π, then the policy has converged to the optimal policy π*; otherwise, set π = π' and repeat.
+        - Monte Carlo Tree Search(MCTS)
+          - heuristic search algorithm used for decision-making in game playing and other sequential decision problems.
+          - builds a search tree incrementally by simulating random playouts of the game and using the results to guide the search towards promising moves.
+          - Steps in MCTS:
+              - Selection: 
+                - starting from the root node, 
+                - select child nodes based on a selection policy 
+                - (e.g., (UCT)Upper Confidence Bound for Trees) until a leaf node is reached.
+                - UCT
+                  - selection policy that balances exploration and exploitation in MCTS by selecting the child node with the highest UCT value, which is calculated as:
+                    - UCT(s,a) = Q(s,a) + C * sqrt(ln(N(s)) / N(s,a))
+                    - where
+                      - Q(s,a) is the average reward of taking action a in state s,
+                      - N(s) is the total number of times state s has been visited,
+                      - N(s,a) is the number of times action a has been taken from state s,
+                      - C is a constant that controls the balance between exploration and exploitation.
+                      - e.g. Multi arm bandit problem, 
+                        - an agent must choose between multiple options (arms) with unknown rewards,
+                        - UCT can help the agent decide which arm to pull based on past rewards and
+                        - the number of times each arm has been tried.
+              - Expansion: 
+                - if the selected node is not a terminal state, 
+                - expand the node by adding one or more child nodes representing possible actions.
+              - Simulation: 
+                - perform a random playout from the newly expanded node to a terminal state,
+                - recording the outcome (win/loss/draw).
+              - Backpropagation: 
+                - update the values of the nodes along the path from the expanded node back to the root based on the simulation outcome, 
+                - allowing the algorithm to learn which moves are more promising over time.
+              - UCB1
+                - selection policy used in MCTS to balance exploration and exploitation by selecting the child node with the highest UCB1 value, which is calculated as:
+                  - UCB1(s,a) = Q(s,a) + C * sqrt(ln(N(s)) / N(s,a))
+                  - where
+                    - Q(s,a) is the average reward of taking action a in state s,
+                    - N(s) is the total number of times state s has been visited,
+                    - N(s,a) is the number of times action a has been taken from state s,
+                    - C is a constant that controls the balance between exploration and exploitation.
+                    - e.g. Multi arm bandit problem, 
+                      - an agent must choose between multiple options (arms) with unknown rewards,
+                      - UCB1 can help the agent decide which arm to pull based on past rewards and
+                      - the number of times each arm has been tried.
       - Model Free Methods
-        - Q-Learning
+        - Q-Learning(Q=Quality Learning)
+          - ***off-policy reinforcement learning algorithm*** that learns the optimal action-value function (Q-function) 
+            - directly from interactions with the environment without requiring a model of the environment's dynamics.
+          - updates the Q-values based on the observed rewards and the maximum estimated future rewards, 
+          - allowing the agent to learn optimal policies through trial and error.
+          - Q-Values or Action Values
+            - Q(s,a) represents the expected cumulative reward of taking action a in state s and following the optimal policy thereafter.
+            - Updated over time using Tempo-Difference (TD) learning, which combines ideas from Monte Carlo methods and dynamic programming.
+          - Rewards and Episodes
+            - the agent receives rewards from the environment after taking actions, which are used to update the Q-values.
+            - learning occurs over multiple episodes, where an episode is a sequence of states, actions, and rewards that ends when a terminal state is reached.
+            - the agent learns to maximize the cumulative reward over time by updating its Q-values based on the observed rewards and the estimated future rewards.
+          - Q-Learning Update Rule(Temporal Difference or TD-Update):
+            - Q(s_t, a_t) ← Q(s_t, a_t) + α [R_{t+1} + γ max_{a'} Q(s_{t+1}, a') - Q(s_t, a_t)]
+            - where
+              - Q(s_t, a_t) is the current estimate of the action-value function for state s_t and action a_t,
+              - α is the learning rate that determines how much the Q-values are updated based on new information,
+              - R_{t+1} is the reward received after taking action a_t in state s_t,
+              - γ is the discount factor that determines the importance of future rewards,
+              - max_{a'} Q(s_{t+1}, a') is the maximum estimated action-value for the next state s_{t+1} across all possible actions a'.
+          - ϵ-greedy Policy (Exploration vs. Exploitation)
+            - ϵ-greedy policy is a strategy used in reinforcement learning to balance exploration and exploitation when selecting actions.
+            - With probability ϵ, the agent selects a random action (exploration), and with probability 1-ϵ, it selects the action that has the highest estimated Q-value (exploitation).
+            - This approach allows the agent to explore the environment and discover new actions while still leveraging its current knowledge to maximize rewards.
+          - Process
+            - Initialize Q-values for all state-action pairs (e.g., Q(s,a) = 0 for all s and a).
+            - For each episode:
+                - Initialize the starting state s.
+                - Repeat until the episode ends:
+                    - Choose an action a using the ϵ-greedy policy based on the current Q-values.
+                    - Take action a and observe the reward R and the next state s'.
+                    - Update the Q-value for the state-action pair (s, a) using the Q-Learning update rule.
+                    - Set the current state s to the next state s'.
+          - Methods for determining Q-Values:
+            - Temporal Difference (TD) Learning: updates Q-values based on the observed reward and the estimated future rewards, allowing the agent to learn from incomplete episodes.
+            - Bellman Optimality Equation: provides a recursive relationship for the optimal action-value function, which can be used to derive the Q-Learning update rule.
+              - Q(s,a) = E[R_{t+1} + γ max_{a'} Q(s_{t+1}, a') | s_t = s, a_t = a]
+          - Q-Table
+            - Q-table is a data structure used in Q-Learning to store the estimated action-values (Q-values) for each state-action pair.
+            - It is typically implemented as a two-dimensional array or dictionary, where rows represent states and columns represent actions.
+            - The Q-table is updated iteratively based on the observed rewards and the estimated future rewards, allowing the agent to learn optimal policies over time.
+            - Structure of Q-Table:
+              - Rows: represent the different states in the environment.
+              - Columns: represent the possible actions that the agent can take in each state.
+              - Values: represent the estimated Q-values for each state-action pair, which are updated based on the agent's interactions with the environment.
+          - Q-Learning is an off-policy algorithm because it learns the optimal policy independently of the agent's actions, allowing it to learn from actions that may not be part of the current policy.
+          - Applications of Q-Learning include:
+              - Game Playing: learning optimal strategies for games like chess, Go, or video games.
+              - Robotics: enabling robots to learn tasks such as navigation, manipulation, or control through interaction with their environment.
+              - Autonomous Vehicles: allowing self-driving cars to learn how to navigate and make decisions in complex traffic environments.
+              - Resource Management: optimizing the allocation of resources in systems such as data centers, supply chains, or energy grids.
+              - Recommender Systems: learning to provide personalized recommendations to users based on their preferences and behavior.
+              - Finance: optimizing trading strategies or portfolio management through reinforcement learning techniques.
+              - Healthcare: developing personalized treatment plans or optimizing clinical decision-making using reinforcement learning approaches.
+              - Natural Language Processing: training conversational agents or chatbots to interact with users and provide relevant responses based on reinforcement learning principles.
+              - Robotics Process Automation: enabling software bots to learn and automate repetitive tasks in business processes through reinforcement learning techniques.
+              - Smart Grid Management: optimizing energy distribution and consumption in smart grids using reinforcement learning algorithms like Q-Learning.
         - SARSA (State-Action-Reward-State-Action)
+          - ***on-policy reinforcement learning (RL) algorithm***
+            - i.e. Unlike off-policy algorithms like Q-learning which learn from the best possible actions, 
+              - it updates its knowledge based on the actual actions the agent takes.
+          - helps an agent to learn an optimal policy by interacting with its environment
+          - agent explores its environment, takes actions, receives feedback and continuously updates its behavior to maximize long-term rewards.
+          - SARSA Algorithm learning process:
+            - Observe State
+            - Select Action
+            - Execute Action
+            - Observe Reward: receive feedback from the environment
+            - Update Q-Value
+          - SARSA stands for State-Action-Reward-State-Action, which represents the sequence of events that occur during the learning process:
+              - State (S): the current state of the environment.
+              - Action (A): the action taken by the agent in response to the current state.
+              - Reward (R): the feedback received from the environment after taking the action, indicating how good or bad the action was.
+              - Next State (S'): the new state of the environment after taking the action.
+              - Next Action (A'): the next action that the agent will take in response to the new state.
+          - The SARSA algorithm updates the action-value function (Q-values) based on the observed rewards and the estimated future rewards, allowing the agent to learn optimal policies through trial and error.
+          - SARSA Update Rule:
+            - Q(S_t, A_t) ← Q(S_t, A_t) + α [R_{t+1} + γ Q(S_{t+1}, A_{t+1}) - Q(S_t, A_t)]
+            - where
+              - Q(S_t, A_t) is the current estimate of the action-value function for state S_t and action A_t,
+              - α is the learning rate that determines how much the Q-values are updated based on new information,
+              - R_{t+1} is the reward received after taking action A_t in state S_t,
+              - γ is the discount factor that determines the importance of future rewards,
+              - Q(S_{t+1}, A_{t+1}) is the estimated action-value for the next state S_{t+1} and the next action
         - Monte Carlo Methods
+          - statistical technique uses random sampling to estimate the expected value of a function or
+          - to solve problems that may be deterministic in principle but are difficult to solve analytically.
+          - In reinforcement learning, Monte Carlo methods are used to estimate the value of states or
+          - state-action pairs based on the observed rewards from multiple episodes of interaction with the environment.
+          - Monte Carlo methods can be used for policy evaluation, 
+          - where the value of a state or state-action pair is estimated based on the average return observed from multiple episodes starting from that state or state-action pair.
+          - Monte Carlo methods can also be used for policy improvement, 
+          - where the policy is updated based on the estimated values of states or state-action pairs to maximize the expected return.
+          - Monte Carlo methods are particularly useful in situations where the environment is complex or unknown, 
+          - as they allow the agent to learn from experience without requiring a model of the environment's dynamics.
+          - ideal for complex or high-dimensional cases where traditional dynamic programming methods may be computationally infeasible.
+          - Monte Carlo methods can be categorized into two types:
+              - First-Visit Monte Carlo: 
+                - estimates the value of a state or state-action pair based on the first time it is visited in an episode.
+              - Every-Visit Monte Carlo: 
+                - estimates the value of a state or state-action pair based on every time it is visited in an episode.
+          - Monte Carlo methods can be combined with other reinforcement learning techniques, such as temporal difference learning or function approximation, to create more powerful algorithms for learning optimal policies in complex environments.
+          - Estimate a define integral:
+            - I = ∫_a^b f(x) dx
+            - can be approximated using Monte Carlo methods by randomly sampling points in the interval [a, b] and averaging the function values at those points:
+              - I ≈ (b - a) * (1/N) ∑_{i=1}^N f(x_i)
+          - Applications of Monte Carlo methods in reinforcement learning include:
+              - Game Playing: estimating the value of game states or state-action pairs based on observed rewards from simulated games.
+              - Robotics: learning optimal policies for robot control tasks by estimating the value of states or state-action pairs based on observed rewards from interactions with the environment.
+              - Finance: optimizing trading strategies or portfolio management by estimating the value of states or state-action pairs based on observed rewards from simulated trading scenarios.
+              - Healthcare: developing personalized treatment plans or optimizing clinical decision-making by estimating the value of states or state-action pairs based on observed rewards from simulated patient interactions.
+              - Natural Language Processing: training conversational agents or chatbots to interact with users and provide relevant responses by estimating the value of states or state-action pairs based on observed rewards from simulated conversations.
+              - Robotics Process Automation: enabling software bots to learn and automate repetitive tasks in business processes by estimating the value of states or state-action pairs based on observed rewards from simulated interactions with the environment.
+              - Smart Grid Management: optimizing energy distribution and consumption in smart grids by estimating the value of states or state-action pairs based on observed rewards from simulated energy management scenarios.
         - Reinforce Algorithm
+          - policy gradient method used in reinforcement learning to optimize the policy directly by maximizing the expected cumulative reward.
+          - works by sampling actions from the current policy, observing the rewards received, and updating the policy parameters in the direction that increases the likelihood of actions that lead to higher rewards.
+          - Reinforce stands for "REward Increment = Nonnegative Factor * Offset Reinforcement * Characteristic Eligibility", which describes the update rule for the policy parameters based on the observed rewards and the actions taken.
+          - The Reinforce algorithm is a Monte Carlo policy gradient method that estimates the policy gradient using the observed rewards from complete episodes of interaction with the environment, allowing the agent to learn optimal policies through trial and error.
+          - Steps in the Reinforce Algorithm:
+              - Collect Episodes: Generate episodes of interaction with the environment by following the current policy π_θ, resulting in sequences of states, actions, and rewards.
+              - Compute Returns: For each time step in the episode, compute the return G_t, which is the cumulative discounted reward from that time step onward.
+              - Update Policy: Update the policy parameters θ using the policy gradient update rule based on the observed returns and the actions taken during the episode.
+          - Policy Gradient Update Rule:
+              - θ ← θ + α * G_t * ∇_θ log π_θ(a_t | s_t)
+              - where
+                - θ is the vector of policy parameters,
+                - α is the learning rate that determines how much the policy parameters are updated based on new information,
+                - G_t is the return (cumulative discounted reward) from time step t onward,
+                - ∇_θ log π_θ(a_t | s_t) is the gradient of the log-probability of taking action a_t in state s_t under the current policy π_θ, which indicates how the policy parameters should be adjusted to increase the likelihood of taking action a_t in state s_t.
+          - Repeat the process of collecting episodes, computing returns, and updating the policy parameters until convergence, allowing the agent to learn an optimal policy that maximizes the expected cumulative reward over time.
+          - Process of the Reinforce Algorithm:
+              - Initialize the policy parameters θ arbitrarily (e.g., θ = 0).
+              - For each episode:
+                  - Generate an episode by following the current policy π_θ, resulting in a sequence of states, actions, and rewards: (s_0, a_0, r_1, s_1, a_1, r_2, ..., s_T).
+                  - For each time step t in the episode:
+                      - Compute the return G_t, which is the cumulative discounted reward from time step t onward: G_t = ∑_{k=t+1}^T γ^{k-t-1} r_k.
+                      - Update the policy parameters θ using the policy gradient update rule: θ ← θ + α * G_t * ∇_θ log π_θ(a_t | s_t), where α is the learning rate and ∇_θ log π_θ(a_t | s_t) is the gradient of the log-probability of taking action a_t in state s_t under the current policy π_θ.
         - Actor-Critic Methods
-        - Asynchronous Advantage Actor-Critic (A3C)
+          - class of reinforcement learning algorithms that combine the advantages of both value-based and policy-based methods by maintaining separate function approximators for the policy (actor) and the value function (critic).
+          - Actor(Policy) responsible for selecting actions based on the current policy, 
+          - Critic(Value Function) evaluates the actions taken by the actor by estimating the value function, providing feedback to the actor to improve its policy over time.
+          - Actor-Critic methods can be used to learn optimal policies in complex environments by leveraging the strengths of both value-based and policy-based approaches, allowing for more efficient learning and better performance in a wide range of reinforcement learning tasks.
+          - Variants of Actor-Critic Methods:
+              - Advantage Actor-Critic (A2C)
+                - synchronous version of the Actor-Critic algorithm that updates the policy and value function using multiple parallel agents interacting with their own copies of the environment, allowing for faster learning and improved performance.
+                - uses the advantage function to reduce the variance of the policy gradient estimates, leading to more stable learning and better convergence properties.
+                - advantage function A(s,a) = Q^π(s,a) - V^π(s) measures how much better an action a is compared to the average action in a given state s, providing feedback to the actor to improve its policy over time.
+              - Asynchronous Advantage Actor-Critic (A3C)
+                - asynchronous version of the Actor-Critic algorithm that allows multiple agents to interact with their own copies of the environment in parallel, updating the shared policy and value function asynchronously, leading to faster learning and improved performance.
+                - uses the advantage function to reduce the variance of the policy gradient estimates, leading to more stable learning and better convergence properties.
+                - uses a shared global network along with multiple worker agents that operate in parallel
+                - Each worker interacts with its own environment, learns independently, and contributes updates to the global model, enabling faster and more stable training.
+                - Architecure
+                  - Asynchronous Training
+                    - uns several agents in parallel, each interacting independently with a separate copy of the environment.
+                    - workers collect experience at different rates and send updates simultaneously to a central global network
+                  - Actor-Critic Framework
+                    - Actor (Policy):
+                      - responsible for selecting actions based on the current state of the environment.
+                    - Critic (Value Function):
+                      - evaluates the actions taken by the actor by estimating the expected cumulative reward for a given state, providing feedback to the actor to improve its policy over time.
+                  - Advantage Function
+                    - A(s,a) = Q^π(s,a) - V^π(s), where Q^π(s,a) is the action-value function that estimates the expected cumulative reward of taking action a in state s and following the current policy π thereafter, and V^π(s) is the value function that estimates the expected cumulative reward for a given state under the current policy π.
+                  - A3C uses n-step returns to strike a balance between bias and variance:
+                    - Shorter n → more bias, less variance (quicker updates), 
+                    - Longer n → less bias, more variance (smoother updates).
+              - Deep Deterministic Policy Gradient (DDPG)
+              - Proximal Policy Optimization (PPO)
+              - Trust Region Policy Optimization (TRPO)
+              - Soft Actor-Critic (SAC)
+          - Policy (Actor):
+            - denoted as π_θ(a|s), where θ represents the parameters of the policy network.
+            - responsible for selecting actions based on the current state of the environment.
+          - Value Function (Critic):
+            - denoted as V_w(s), where w represents the parameters of the value network.
+            - evaluates the actions taken by the actor by estimating the expected cumulative reward for a given state
+          - Working:
+            - Policy Gradient (Actor) formula:
+              - ∇_θ J(θ) = E_{s ~ d^π, a ~ π_θ} [∇_θ log π_θ(a|s) * A(s,a)], where A(s,a) is the advantage function that measures how much better an action is compared to the average action in a given state.
+              - here, 
+                - d^π represents the state distribution under the current policy π,
+                - a ~ π_θ indicates that actions are sampled from the current policy π_θ,
+                - ∇_θ log π_θ(a|s) is the gradient of the log-probability of taking action a in state s under the current policy π_θ, which indicates how the policy parameters should be adjusted to increase the likelihood of taking action a in state s,
+                - A(s,a) is the advantage function that measures how much better an action is compared to the average action in a given state, providing feedback to the actor to improve its policy over time.
+            - Value Function (Critic) formula:
+              - V_w(s) = E_{a ~ π_θ} [Q^π(s,a)], where Q^π(s,a) is the action-value function that estimates the expected cumulative reward of taking action a in state s and following the current policy π thereafter.
+              - here,
+                - a ~ π_θ indicates that actions are sampled from the current policy π_θ,
+                - Q^π(s,a) is the action-value function that estimates the expected cumulative reward of taking action a in state s and following the current policy π thereafter, providing feedback to the actor to improve its policy over time.
+            - Update Rules:
+              - Actor Update: θ ← θ + α * ∇_θ log π_θ(a|s) * A(s,a), where α is the learning rate and A(s,a) is the advantage function that measures how much better an action is compared to the average action in a given state, providing feedback to the actor to improve its policy over time.
+              - Critic Update: w ← w + β * (R + γV_w(s') - V_w(s)) * ∇_w V_w(s), where β is the learning
+          - Advantage Function:
+            - A(s,a) = Q^π(s,a) - V^π(s), where Q^π(s,a) is the action-value function that estimates the expected cumulative reward of taking action a in state s and following the current policy π thereafter, and V^π(s) is the value function that estimates the expected cumulative reward for a given state under the current policy π.
+            - The advantage function A(s,a) measures how much better an action a is compared to the average action in a given state s, providing feedback to the actor to improve its policy over time.
+            - Adam Optimizer(Adaptive Moment Estimation)
+              - commonly used to optimize the parameters of both the actor and critic networks in Actor-Critic methods, allowing for efficient learning and better performance in a wide range of reinforcement learning tasks.
+              - combines the advantages of both momentum and RMSprop adaptive learning rates to provide faster convergence and improved performance in training deep reinforcement learning models.
+              - working:
+                - Adam maintains two moving averages for each parameter: 
+                  - the first moment (mean) and the second moment (uncentered variance) of the gradients.
+                - The algorithm updates the parameters using these moving averages, which helps to stabilize the learning process and improve convergence.
+                - The update rule for Adam is given by:
+                  - m_t = β_1 * m_{t-1} + (1 - β_1) * g_t
+                  - v_t = β_2 * v_{t-1} + (1 - β_2) * g_t^2
+                  - m̂_t = m_t / (1 - β_1^t)
+                  - v̂_t = v_t / (1 - β_2^t)
+                  - θ_t = θ_{t-1} - α * m̂_t / (sqrt(v̂_t) + ε)
+                - where
+                  - g_t is the gradient of the loss function with respect to the parameters at time step t,
+                  - m_t is the first moment estimate (mean of gradients),
+                  - v_t is the second moment estimate (uncentered variance of gradients),
+                  - m̂_t and v̂_t are bias-corrected estimates of the first and second moments,
+                  - α is the learning rate,
+                  - β_1 and β_2 are hyperparameters that control the decay rates of the moving averages,
+                  - ε is a small constant added to prevent division by zero.
       - Deep Q-Networks (DQN)
+        - model-free reinforcement learning algorithm that combines Q-Learning with deep neural networks to learn optimal policies in high-dimensional state spaces.
+        - uses a deep neural network to approximate the Q-values for each state-action pair, allowing the agent to learn optimal policies in complex environments where traditional Q-Learning may struggle due to the curse of dimensionality.
+        - DQN incorporates several key techniques to stabilize training and improve performance, including experience replay and target networks.
+        - Experience Replay: stores the agent's experiences (state, action, reward, next state) in a replay buffer and samples mini-batches of experiences randomly during training, which helps to break the correlation between consecutive experiences and improve the stability of learning.
+        - Target Networks: maintains a separate target network that is used to compute the target Q-values during training, which helps to stabilize the learning process by providing a fixed target for the Q-value updates, reducing the likelihood of divergence during training.
+        - DQN has been successfully applied to a wide range of reinforcement learning tasks, including game playing (e.g., Atari games), robotics, and autonomous control, demonstrating the effectiveness of deep reinforcement learning in complex environments.
+        - Architecture
+          - Neural Network: DQN uses a deep neural network to approximate the Q-values for each state-action pair, allowing the agent to learn optimal policies in high-dimensional state spaces.
+          - Experience Replay: DQN incorporates experience replay, which stores the agent's experiences (state, action, reward, next state) in a replay buffer and samples mini-batches of experiences randomly during training, helping to break the correlation between consecutive experiences and improve the stability of learning.
+          - Target Networks: DQN maintains a separate target network that is used to compute the target Q-values during training, which helps to stabilize the learning process by providing a fixed target for the Q-value updates, reducing the likelihood of divergence during training.
+          - Loss Function: DQN minimizes the mean squared error between the predicted Q-values and the target Q-values, which are computed using the target network and the observed rewards from the environment.
+            - L(θ) = E_{s,a,r,s'} [(r + γ max_{a'} Q_{target}(s', a'; θ^-) - Q(s, a; θ))^2], where θ are the parameters of the Q-network, θ^- are the parameters of the target network, r is the reward received after taking action a in state s, and γ is the discount factor that determines the importance of future rewards.
+        - Training process:
+          - Initialization
+            - replay buffer, main network, and target network with random weights.
+            - Set Hyperparameters: learning rate, discount factor, batch size, and exploration rate (ϵ).
+          - Exploration vs. Exploitation
+            - For each episode:
+                - Initialize the starting state s.
+                - Repeat until the episode ends:
+                    - Choose an action a using the ϵ-greedy policy based on the current Q-values.
+                    - Take action a and observe the reward r and the next state s'.
+                    - Store the experience (s, a, r, s') in the replay buffer.
+                    - Sample a random mini-batch of experiences from the replay buffer.
+                    - Compute target Q-values using the target network: y = r + γ max_{a'} Q_{target}(s', a'; θ^-).
+                    - Update the main network by minimizing the loss: L(θ) = E_{s,a,r,s'} [(y - Q(s, a; θ))^2].
+                    - Periodically update the target network parameters: θ^- ← θ.
+        - Experience collection and replay buffer management:
+          - The agent interacts with the environment to collect experiences, which are stored in the replay buffer.
+          - The replay buffer is typically implemented as a fixed-size queue that holds a certain number of recent experiences, allowing the agent to learn from a diverse set of past interactions with the environment.
+          - During training, mini-batches of experiences are randomly sampled from the replay buffer to update the Q-network, which helps to break the correlation between consecutive experiences and improve the stability of learning.
+        - Training Updates
+          - The Q-network is updated by minimizing the mean squared error between the predicted Q-values and the target Q-values, which are computed using the target network and the observed rewards from the environment.
+          - The target Q-values are computed as y = r + γ max_{a'} Q_{target}(s', a'; θ^-), where r is the reward received after taking action a in state s, γ is the discount factor that determines the importance of future rewards, and θ^- are the parameters of the target network.
+          - The loss function for training the Q-network is given by L(θ) = E_{s,a,r,s'} [(y - Q(s, a; θ))^2], where θ are the parameters of the Q-network.
+        - Target Network Updates
+          - The target network is updated periodically by copying the parameters from the main Q-network, which helps to stabilize the learning process by providing a fixed target for the Q-value updates, reducing the likelihood of divergence during training.
+          - The update rule for the target network is given by θ^- ← θ, where θ are the parameters of the main Q-network and θ^- are the parameters of the target network.
+          - The frequency of target network updates can be controlled by a hyperparameter, such as updating every C steps or after a certain number of episodes, allowing for a balance between stability and learning speed.
+        - Decay Exploration Rate
+          - The exploration rate (ϵ) is typically decayed over time to allow the agent to shift from exploration to exploitation as it learns more about the environment.
+          - A common approach is to use an exponential decay schedule, where ϵ is updated as ϵ ← ϵ * decay_rate after each episode or after a certain number of steps, allowing the agent to gradually reduce its exploration and focus more on exploiting its learned policy as it gains more experience in the environment.
       - Policy Gradient Methods
+      - Proximal Policy Optimization (PPO)
+        - model-free reinforcement learning algorithm that optimizes the policy directly by maximizing the expected cumulative reward while ensuring that the policy updates are not too large, which helps to stabilize training and improve performance in complex environments.
+        - PPO uses a clipped surrogate objective function to limit the size of policy updates, preventing large changes to the policy that could lead to divergence during training, while still allowing for sufficient exploration and learning of optimal policies over time.
+        - PPO has been successfully applied to a wide range of reinforcement learning tasks, including game playing, robotics, and autonomous control, demonstrating the effectiveness of policy gradient methods in complex environments.
+        - Architecture
+          - Policy Network: PPO uses a policy network to represent the policy π_θ(a|s), where θ represents the parameters of the policy network. The policy network is responsible for selecting actions based on the current state of the environment.
+          - Clipped Surrogate Objective: PPO uses a clipped surrogate objective function to limit the size of policy updates, preventing large changes to the policy that could lead to divergence during training, while still allowing for sufficient exploration and learning of optimal policies over time.
+            - The clipped surrogate objective is given by:
+              - L^{CLIP}(θ) = E_{s,a} [min(r(θ) * A(s,a), clip(r(θ), 1 - ε, 1 + ε) * A(s,a))], where r(θ) = π_θ(a|s) / π_{θ_{old}}(a|s) is the probability ratio of the new policy to the old policy, A(s,a) is the advantage function that measures how much better an action a is compared to the average action in a given state s, and ε is a hyperparameter that controls the clipping range for the probability ratio, allowing for a balance between exploration and exploitation while ensuring stable policy updates.
+          - Advantage Function: PPO uses the advantage function A(s,a) to measure how much better an action a is compared to the average action in a given state s, providing feedback to the policy network to improve its policy over time. The advantage function is typically estimated using a value function or a critic network, which evaluates the expected cumulative reward for a given state and action, allowing the policy network to learn optimal policies through trial and error.
+          - Value Function (Critic): PPO can also include a value function (critic) to estimate the expected cumulative reward for a given state, providing additional feedback to the policy network to improve its policy over time. The value function is typically represented as a separate neural network that is trained to minimize the mean squared error between the predicted value and the observed returns from the environment, allowing the policy network to learn optimal policies through trial and error while leveraging the value function for more stable learning.
+        - Training Process:
+          - Collect Trajectories: Generate trajectories of interaction with the environment by following the current policy π_θ, resulting in sequences of states, actions, and rewards: (s_0, a_0, r_1, s_1, a_1, r_2, ..., s_T).
+          - Compute Advantage Estimates: For each time step in the trajectory, compute the advantage estimates A(s,a) using a value function or critic network, which evaluates the expected cumulative reward for a given state and action, providing feedback to the policy network to improve its policy over time.
 - Acronyms
     - ML: Machine Learning
     - AI: Artificial Intelligence
