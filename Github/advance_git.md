@@ -1,0 +1,553 @@
+- git reflog
+  - useful for recovering lost commits or branches
+  - only for ***local repository/changes***, not shared with others
+  - shows a log of all reference updates in the repository, including commits, branch changes, and other actions
+  - can be used to find the commit hash of a lost commit and restore it using `git checkout` or `git reset`
+  - example usage:
+    - `git reflog` to view the log of reference updates
+    - `git checkout <commit-hash>` to restore a lost commit
+  - options:
+    - `--expire=<time>`: expire entries older than the specified time (e.g., `--expire=30.days.ago`)
+    - `--all`: show reflog entries for all references, not just the current branch
+    - gc.reflogExpire: configuration option to set the default expiration time for reflog entries 
+      - (e.g., `git config --global gc.reflogExpire "30 days"`)
+      - default is ***90 days for reachable entries*** and ***30 days for unreachable entries***
+    - gc.reflogExpireUnreachable: configuration option to set the expiration time for unreachable reflog entries 
+      - (e.g., `git config --global gc.reflogExpireUnreachable "7 days"`)
+      - default is 30 days for unreachable entries
+    - gc.reflogExpireNever: configuration option to prevent reflog entries from expiring 
+      - (e.g., `git config --global gc.reflogExpireNever true`)
+      - default is false, meaning reflog entries will expire based on the other expiration settings
+    - note: reflog entries are stored in the `.git/logs` directory and can be manually edited if necessary, but this is generally not recommended
+- rerere
+  - reuse recorded resolution
+  - meaning: git can remember how you resolved a conflict and 
+  - apply the same resolution if the same conflict occurs again
+- git log options
+  - `--oneline`: shows each commit on a single line, displaying the commit hash and message
+  - `--graph`: visualizes the commit history as a graph, showing branches and merges
+  - `--decorate`: adds branch and tag names to the commit log for better context
+  - `--all`: shows all commits from all branches, not just the current branch
+  - `--stat`: shows the files changed in each commit along with the number of insertions and deletions
+  - `--patch` or `-p`: shows the actual changes made in each commit (the diff)
+  - example usage:
+    - `git log --oneline --graph --decorate --all` to view a concise and visual representation of the commit history
+- git plumbing commands
+  - low-level commands that interact directly with the Git repository
+  - used for advanced operations and scripting
+  - examples include:
+    - `git hash-object`: 
+      - computes the hash of a file and optionally stores it in the object database
+      - e.g. `git hash-object -w <filename>` to compute the hash and write the object to the database
+    - `git cat-file`: 
+      - provides information about objects in the repository, such as their type and content
+      - e.g. `git cat-file -t <object-hash>` to show the type of an object, 
+      - or `git cat-file -p <object-hash>` to show the content of an object(pretty printing)
+    - `git update-index`: 
+      - updates the index with new file information, such as adding or removing files from staging
+    - `git count-objects`:
+      - counts the number of objects in the repository and their disk usage
+      - e.g. `git count-objects -v`
+      - to show a verbose output with detailed information about the objects in the repository
+    - `git rev-parse`:
+      - parses revision identifiers and returns their corresponding commit hashes
+    - `git show-ref`:
+      - shows references in the repository,
+      - such as branches and tags, 
+      - along with their corresponding commit hashes
+  - these commands are typically used by Git itself or by advanced users for custom workflows and automation
+  - porcelain commands are the high-level commands that most users interact with, 
+    - while plumbing commands are the underlying tools that make those high-level commands work
+  - following sequence of plumbing/internal command sequence:
+    - git hash-object -> git update-index -> git write-tree is equivalent to `git add`
+    - git write-tree -> git commit-tree is equivalent to `git commit`
+- git bisect
+  - a tool for finding the commit that introduced a bug or issue
+  - uses a binary search algorithm to efficiently narrow down the range of commits to test
+  - example usage:
+    - `git bisect start` to begin the bisect process
+    - `git bisect bad` to mark the current commit as bad (contains the bug)
+    - `git bisect good <commit-hash>` to mark a known good commit (does not contain the bug)
+    - Git will then check out a commit in the middle of the range for testing, and you can repeat the process until you find the exact commit that introduced the issue
+- submodules
+  - a way to include one Git repository inside another as a subdirectory
+  - allows you to manage dependencies on other repositories while keeping them separate
+  - example usage:
+    - `git submodule add <repository-url> <path>` to add a submodule
+    - `git submodule update --init --recursive` to initialize and update submodules
+    - `git submodule foreach 'git pull origin master'` to update all submodules to their latest commits on the master branch
+  - submodules are useful for projects that rely on external libraries or components, 
+  - allowing you to keep those dependencies organized and versioned separately from your main project
+- git stash
+  - a way to temporarily save changes that are not ready to be committed
+  - allows you to switch branches or perform other operations without losing your work
+  - example usage:
+    - `git stash` to save your current changes to the stash
+    - `git stash list` to view the list of stashed changes
+    - `git stash apply` to apply the most recent stashed changes back to your working directory 
+      - without removing them from the stash list
+    - `git stash pop` to apply the most recent stashed changes
+      - and remove them from the stash list
+    - `git stash drop <stash-id>` to remove a specific stash from the list without applying it
+  - stashing is useful for situations where you need to quickly switch contexts or work on something else without committing incomplete work, 
+  - allowing you to easily return to your original changes when you're ready.
+- git cherry-pick
+  - a command that allows you to apply the changes from a specific commit to your current branch
+  - useful for selectively applying changes from one branch to another
+  - without merging the entire branch
+  - example usage:
+    - `git cherry-pick <commit-hash>`
+      - to apply the changes from the specified commit to your current branch
+    - `git cherry-pick --no-commit <commit-hash>`
+      - to apply the changes without creating a new commit,
+      - allowing you to make additional modifications before committing
+    - `git cherry-pick --edit <commit-hash>`
+      - to apply the changes and open an editor to modify the commit message before committing
+  - cherry-picking is useful for situations where you want to incorporate specific changes 
+  - from another branch without merging all of its commits, 
+  - allowing for more granular control over which changes are included in your current branch.
+- git revert
+  - a command that creates a new commit that undoes the changes made by a previous commit
+  - useful for undoing changes in a way that preserves the history of the repository
+  - example usage:
+    - `git revert <commit-hash>` 
+      - to create a new commit that undoes the changes from the specified commit
+    - `git revert --no-commit <commit-hash>` 
+      - to prepare the changes for reverting without creating a new commit, 
+      - allowing you to make additional modifications before committing
+    - `git revert --edit <commit-hash>` 
+      - to prepare the changes for reverting
+      - and open an editor to modify the commit message before committing
+  - reverting is useful for situations where you want to undo specific changes 
+  - while maintaining a clear history of what was changed and why, 
+  - as opposed to using `git reset`, which can rewrite history and potentially lose commits.
+- git reset
+  - a command that can be used to undo changes in the working directory and staging area, 
+  - as well as to move the HEAD pointer to a different commit
+  - has three main modes: soft, mixed, and hard
+  - example usage:
+    - `git reset --soft <commit-hash>` or `git reset --soft HEAD~2` (reset to 2 commits back)
+      - to move the HEAD pointer to the specified commit without changing the staging area 
+      - or working directory
+    - `git reset --mixed <commit-hash>` (default)
+    - to move the HEAD pointer to the specified commit
+    - and unstage any changes, but keep them in the working directory
+    - `git reset --hard <commit-hash>`
+    - to move the HEAD pointer to the specified commit
+    - and discard all changes in the staging area
+    - and working directory,
+    - effectively resetting everything to that commit
+  - resetting is useful for situations where you want to undo commits or changes in a way that may rewrite history, 
+  - but should be used with caution, 
+    - especially when using `--hard`, 
+    - as it can lead to loss of work if not used properly.
+- reset vs revert
+  - `git reset` is used to undo commits and can rewrite history, while `git revert` creates a new commit that undoes the changes without rewriting history
+  - `git reset` can be used to move the HEAD pointer and change the state of the staging area and working directory, while `git revert` only creates a new commit to reverse changes
+  - `git reset` is typically used for local changes that have not been shared with others, while `git revert` is safer for undoing changes in shared branches, as it preserves the commit history
+  - example usage:
+    - `git reset --hard <commit-hash>` to undo commits and discard changes (use with caution)
+    - `git revert <commit-hash>` to create a new commit that undoes the changes from the specified commit, preserving history
+  - in summary, 
+  - use `git reset` for local, unshared changes when you want to rewrite history, and 
+  - use `git revert` for changes that have been shared with others, as it preserves the commit history
+- git gc
+  - a command that performs garbage collection on the Git repository, optimizing it by removing unnecessary files and compressing the remaining ones
+  - useful for improving performance and reducing disk space usage in large repositories
+  - example usage:
+    - `git gc` to run garbage collection with default settings
+    - `git gc --aggressive` to perform a more thorough garbage collection, which may take longer but can result in better optimization
+    - `git gc --prune=<time>` to remove objects that are older than the specified time (e.g., `--prune=30.days.ago`)
+  - garbage collection is typically run automatically by Git, but can be manually triggered when you want to optimize the repository or free up disk space, 
+  - especially after a large number of commits or changes have been made.
+- git fsck
+  - a command that checks the integrity of the Git repository and identifies any issues or corruption
+  - useful for diagnosing problems with the repository and ensuring that all objects are valid
+  - example usage:
+    - `git fsck` to check the integrity of the repository and report any issues
+    - `git fsck --full` to perform a more thorough check, including unreachable objects
+    - `git fsck --lost-found` to find and recover lost objects, placing them in the `.git/lost-found` directory
+  - file system check is useful for situations where you suspect there may be corruption or issues with the repository, 
+  - allowing you to identify and potentially recover from problems before they lead to data loss.
+- git blame
+  - a command that shows the author and commit information for each line of a file
+  - useful for identifying who made specific changes to a file and when those changes were made
+  - example usage:
+    - `git blame <filename>` to view the author and commit information for each line of the specified file
+    - `git blame -L <start>,<end> <filename>` to limit the output to a specific range of lines in the file
+    - `git blame --reverse <filename>` to show the most recent changes first, rather than the oldest
+  - blaming is useful for situations where you want to understand the history of a file and identify who is responsible for specific changes, 
+  - which can be helpful for debugging or understanding the context of certain modifications.
+- git shortlog
+  - a command that summarizes the commit history by showing the number of commits per author
+  - useful for getting an overview of contributions to a repository and identifying the most active contributors
+  - example usage:
+    - `git shortlog` to view a summary of commits grouped by author
+    - `git shortlog -s` to show only the number of commits per author, without the commit messages
+    - `git shortlog -n` to sort the output by the number of commits, with the most active contributors listed first
+  - shortlog is useful for situations where you want to quickly assess the contribution levels of different authors in a repository, 
+  - which can be helpful for project management and recognizing contributors.
+- git describe
+  - a command that gives a human-readable name to a specific commit based on the nearest tag and the number of commits since that tag
+  - useful for identifying commits in a more meaningful way than just using the commit hash
+  - example usage:
+    - `git describe` to get a description of the current commit based on the nearest tag
+    - `git describe <commit-hash>` to get a description of a specific commit
+    - `git describe --tags` to include all tags in the description, not just annotated tags
+  - describing is useful for situations where you want to reference commits in a more understandable way, 
+  - especially when working with releases or versions that are tagged in the repository.
+- git archive
+  - a command that creates an archive file (e.g., tar or zip) of the contents of a specific commit or branch
+  - useful for exporting a snapshot of the repository at a particular point in time
+  - example usage:
+    - `git archive --format=tar --output=archive.tar <commit-hash>` to create a tar archive of the specified commit
+    - `git archive --format=zip --output=archive.zip <branch-name>` to create a zip archive of the specified branch
+    - `git archive --prefix=project/ <commit-hash> | tar -x` to extract the contents of the specified commit into a directory named "project"
+  - archiving is useful for situations where you want to share or distribute a specific version of the repository without including the entire history, 
+  - allowing for easier distribution and deployment of specific snapshots of the codebase.
+- git bundle
+  - a command that creates a single file containing the entire Git repository or a subset of it, which can be used for transferring the repository to another location
+  - useful for sharing a repository without using a remote server, or for creating backups
+  - example usage:
+    - `git bundle create repo.bundle --all` to create a bundle file containing the entire repository
+    - `git bundle create repo.bundle <branch-name>` to create a bundle file containing only the specified branch
+    - `git clone repo.bundle <destination>` to clone the repository from the bundle file to a new location
+  - bundling is useful for situations where you want to transfer or share a Git repository without relying on network access, 
+  - allowing for offline sharing and backup of repositories.
+- git worktree
+  - a command that allows you to have multiple working directories associated with a single Git repository
+  - useful for working on multiple branches simultaneously without needing to switch between them in the same directory
+  - example usage:
+    - `git worktree add <path> <branch-name>` to create a new working directory at the specified path and check out the specified branch
+    - `git worktree list` to view the list of all worktrees associated with the repository
+    - `git worktree remove <path>` to remove a worktree at the specified path
+  - worktrees are useful for situations where you want to develop or test changes on different branches without affecting your main working directory, 
+  - allowing for more efficient multitasking and parallel development within the same repository.
+- git submodule
+  - a command that allows you to include one Git repository inside another as a subdirectory
+  - useful for managing dependencies on other repositories while keeping them separate
+  - example usage:
+    - `git submodule add <repository-url> <path>` to add a submodule to the repository
+    - `git submodule update --init --recursive` to initialize and update all submodules
+    - `git submodule foreach 'git pull origin master'` to update all submodules to their latest commits on the master branch
+  - submodules are useful for situations where you want to include external libraries or components in your project while maintaining their own version control, 
+  - allowing for better organization and separation of concerns in your codebase.
+- git filter-branch
+  - a command that allows you to rewrite the history of a Git repository 
+    - by applying filters to the commits
+  - useful for tasks such as removing sensitive information, 
+  - changing author information, or 
+  - modifying commit messages across the entire history
+  - example usage:
+    - `git filter-branch --tree-filter 'rm -rf path/to/file' -- --all` 
+      - to remove a specific file from the entire history of the repository
+    - `git filter-branch --env-filter 'export GIT_AUTHOR_NAME="New Name"; 
+       export GIT_AUTHOR_EMAIL="new.email@example.com"' -- --all` 
+      - to change the author information for all commits in the repository
+  - filter-branch is useful for situations where you need to make widespread changes to the commit history,
+  - such as removing sensitive data or updating author information across the entire repository.
+- git checkout
+  - a command that allows you to switch between branches or restore files in the working directory
+  - useful for navigating between different branches of development or reverting changes to specific files
+  - example usage:
+    - `git checkout <branch-name>` to switch to a different branch
+    - `git checkout <commit-hash>` to switch to a specific commit (detached HEAD state)
+    - `git checkout -- <filename>` to restore a specific file in the working directory to its last committed state
+  - checking out is useful for situations where you want to work on different branches of development or revert changes to specific files, 
+  - allowing you to easily navigate and manage different versions of your codebase.
+- git branch
+  - a command that allows you to create, list, and manage branches in a Git repository
+  - useful for organizing different lines of development and working on features or fixes in isolation
+  - example usage:
+    - `git branch` to list all local branches in the repository
+    - `git branch <branch-name>` to create a new branch with the specified name
+    - `git branch -d <branch-name>` to delete a local branch (only if it has been merged)
+    - `git branch -D <branch-name>` to force delete a local branch, 
+      - even if it has not been merged
+    - `git branch -r` to list all remote branches in the repository
+    - `git branch -a` to list all branches, both local and remote
+    - `git branch --set-upstream-to=<remote>/<branch> <local-branch>` to set the upstream branch for a local branch
+    - `git branch --move <old-branch-name> <new-branch-name>` to rename a local branch
+    - `git branch --list <pattern>` to list branches that match a specific pattern
+    - `git branch --contains <commit-hash>` to list branches that contain a specific commit
+    - `git branch --merged` to list branches that have been merged into the current branch
+    - `git branch --no-merged` to list branches that have not been merged into the current branch
+    - `git branch -M <new-branch-name>` to ***force rename*** a local branch, 
+      - even if the new name already exists
+  - branching is useful for situations where you want to work on different features or fixes without affecting the main codebase, 
+  - allowing for better organization and collaboration in your development workflow.
+- git merge
+  - a command that allows you to combine the changes from one branch into another branch
+  - useful for integrating changes from different branches while preserving the history of both branches
+  - example usage:
+    - `git merge <branch-name>` to merge the specified branch into the current branch
+    - `git merge --no-ff <branch-name>` to create a merge commit even if the merge could be resolved with a fast-forward, 
+      - preserving the history of the merged branch
+  - merging is useful for situations where you want to integrate changes from one branch into another while maintaining a clear history of how the branches were combined, 
+  - especially when working with feature branches or when you want to preserve the context of the merged changes.
+- git rebase
+  - a command that allows you to move or combine a sequence of commits to a new base commit
+  - useful for maintaining a cleaner commit history by avoiding unnecessary merge commits 
+  - and allowing for more linear development
+  - example usage:
+    - `git rebase <base-branch>` to rebase the current branch onto the specified base branch
+    - `git rebase -i <base-branch>` to perform an interactive rebase, 
+      - allowing you to edit, reorder, or squash commits during the rebase process
+  - rebasing is useful for situations where you want to integrate changes from one branch into another
+  - while maintaining a cleaner and more linear commit history, 
+  - but should be used with caution when working with shared branches, 
+  - as it can rewrite history and cause issues for other collaborators.
+- git config
+  - a command that allows you to set and manage configuration options for Git
+  - useful for customizing Git's behavior and setting user preferences
+  - example usage:
+    - `git config --global user.name "Your Name"`: set the global username for Git commits
+    - `git config --global user.email "your.email@example.com"`:set the global email for Git commits
+-   - `git config --list`: view all Git configuration settings
+    - `git config --global --edit`:open global Git configuration file in an editor for manual editing
+  - configuring is useful for situations where you want to customize Git's behavior or set user information for commits, 
+  - allowing you to tailor Git to your specific needs and preferences.
+- git log
+  - a command that shows the commit history of the repository
+  - useful for understanding the changes that have been made over time and who made those changes
+  - example usage:
+    - `git log` to view the commit history in a default format
+    - `git log --oneline` to view a condensed version of the commit history, 
+      - showing only the commit hash and message
+    - `git log --graph` to visualize the commit history as a graph, 
+      - showing branches and merges
+    - `git log --decorate` to add branch and tag names to the commit log for better context
+    - `git log --all` to show all commits from all branches, 
+      - not just the current branch
+  - logging is useful for situations where you want to review the history of changes in your repository, 
+  - allowing you to understand how the codebase has evolved and identify specific commits or changes that may be relevant to your work.
+- git reset
+  - a command that can be used to undo changes in the working directory and staging area, as well as to move the HEAD pointer to a different commit
+  - has three main modes: soft, mixed, and hard
+  - example usage:
+    - `git reset --soft <commit-hash>` to move the HEAD pointer to the specified commit without changing the staging area or working directory
+    - `git reset --mixed <commit-hash>` (default) to move the HEAD pointer to the specified commit and unstage any changes, but keep them in the working directory
+    - `git reset --hard <commit-hash>` to move the HEAD pointer to the specified commit and discard all changes in the staging area and working directory, effectively resetting everything to that commit
+  - resetting is useful for situations where you want to undo commits or changes in a way that may rewrite history, 
+  - but should be used with caution, especially when using `--hard`, as it can lead to loss of work if not used properly.
+- git clean
+  - a command that removes untracked files and directories from the working directory
+  - useful for cleaning up the working directory by removing files that are not being tracked by Git
+  - example usage:
+    - `git clean -f` to remove untracked files
+    - `git clean -fd` to remove untracked files and directories
+    - `git clean -n` or `git clean --dry-run` 
+      - to preview which files would be removed without actually deleting them
+    - `git clean -x` to remove untracked files, including those ignored by .gitignore
+    - `git clean -X` to remove only untracked files that are ignored by .gitignore
+    - `git clean -e <pattern>` to exclude files matching the specified pattern from being removed
+    - `git clean -i` or `git clean --interactive` to interactively select which untracked files to remove
+    - `git clean -q` or `git clean --quiet` to suppress output while cleaning
+    - `git clean -d` to remove untracked directories in addition to untracked files
+    - `git clean -f -d` to forcefully remove untracked files and directories, 
+      - which is often used in combination with `git reset --hard` 
+      - to completely clean the working directory
+    - `git clean -f -x` to forcefully remove all untracked files, 
+    - including those ignored by .gitignore(equivalent to `git clean -a`)
+    - `git clean -f -X` to forcefully remove only untracked files that are ignored by .gitignore
+  - cleaning is useful for situations where you want to get rid of temporary or generated files that are not part of the repository, 
+  - but should be used with caution, as it can lead to loss of work if you accidentally remove important untracked files.
+- git request-pull
+  - a command that generates a summary of changes between two branches and formats it as a pull request
+  - useful for sharing changes with others and requesting that they review and merge those changes into their branch
+  - example usage:
+    - `git request-pull <start> <url> <end>` to generate a pull request summary for the changes between the specified start and end commits, using the provided URL as the base for the pull request
+  - requesting a pull is useful for situations where you want to share your changes with others and facilitate collaboration by providing a clear summary of what has changed and why, 
+  - allowing for easier code review and integration of changes into the main codebase.
+- merge strategies:
+  - fast-forward: 
+    - a simple merge that moves the HEAD pointer forward to the latest commit on the branch being merged, 
+      - only possible when there are no divergent commits between the branches
+  - recursive: 
+    - the default merge strategy that creates a new merge commit to combine the changes from both branches, 
+      - used when there are divergent commits between the branches
+  - ort strategy: a new merge strategy introduced in Git 2.34
+    - designed to be faster and more efficient than the recursive strategy,
+      - uses a different algorithm for resolving conflicts and creating the merge commit,
+      - used when you want to improve performance during merges, especially in large repositories
+  - 3 way: 
+    - a merge strategy that uses a three-way merge algorithm to combine changes from two branches, 
+      - creates a new merge commit that incorporates the changes from both branches, 
+      - used when there are divergent commits between the branches 
+      - and you want to preserve the history of both branches
+  - octopus: a merge strategy that can handle merging more than two branches at once, 
+    - creates a single merge commit that combines the changes from all branches, 
+    - used when merging multiple branches together
+  - ours: a merge strategy that resolves conflicts by favoring the current branch's changes over the changes from the branch being merged, 
+    - creates a new merge commit that effectively ignores the changes from the other branch, 
+    - used when you want to keep the current branch's changes
+  - theirs: a merge strategy that resolves conflicts by favoring the changes from the branch being merged over the current branch's changes, 
+    - creates a new merge commit that effectively ignores the current branch's changes, 
+    - used when you want to accept the changes from the other branch
+  - subtree: a merge strategy that is used when merging a subproject into a larger project, 
+    - creates a new merge commit that combines the changes from the subproject into the main project, 
+    - used when you want to integrate a separate repository as a subdirectory in your main repository
+- Working of Git:
+  - Git is a distributed version control system that allows multiple developers to work on a project simultaneously
+  - It tracks changes to files and directories over time, allowing users to revert to previous versions, compare changes, and collaborate effectively
+  - Git uses a directed acyclic graph (DAG) to represent the history of commits, with each commit pointing to its parent(s)
+  - The main components of Git include:
+    - Repository: A directory that contains all the files and history of a project
+    - Commit: A snapshot of the project at a specific point in time, including changes made to files
+    - Branch: A separate line of development that allows for parallel work on different features or fixes
+    - Merge: The process of combining changes from one branch into another
+    - Rebase: The process of moving or combining commits to create a linear history
+    - Remote: A version of the repository hosted on a server, allowing for collaboration with others
+  - Git provides various commands and tools for managing repositories, branches, commits, and collaboration, making it a powerful tool for software development and version control.
+  - Git's distributed nature allows developers to work offline and independently, with the ability to synchronize changes with remote repositories when needed
+  - Git Objects:
+    - Git stores data as objects in a content-addressable storage system, where each object is identified by a unique SHA-1 hash
+    - The main types of Git objects include:
+      - Blob: 
+        - Represents the contents of a file, storing the file's data without any metadata
+      - Tree: 
+        - Represents a directory, containing references to blobs and other trees, along with their names and permissions
+      - Commit: 
+        - Represents a snapshot of the repository at a specific point in time
+          - Contains metadata such as the author, committer, commit message,
+          - and references to parent commits and the root tree object
+      - Tag:(Annotated Tags)
+        - Represents a named reference to a specific commit, 
+        - often used for marking releases or important points in the repository's history
+    - Git objects are stored in the `.git/objects` directory, 
+    - with each object being compressed and stored in a file named after its SHA-1 hash
+    - Git uses these objects to efficiently track changes, 
+    - manage history, and facilitate collaboration between developers, 
+    - allowing for a robust and flexible version control system.
+  - Git Internals:
+    - Git's internal architecture is designed to efficiently manage and track changes in a distributed version control system
+    - The main components of Git's internals include:
+      - Index (Staging Area): A temporary area where changes are prepared before being committed to the repository
+      - HEAD: A reference to the current commit, typically pointing to the latest commit on the current branch
+      - Refs: References to branches, tags, and other pointers in the repository, stored in the `.git/refs` directory
+      - Objects: The underlying data storage system that stores blobs, trees, commits, and tags as content-addressable objects
+      - Packfiles: Compressed files that store multiple Git objects, used to optimize storage and improve performance
+      - Garbage Collection: A process that cleans up unnecessary files and optimizes the repository by removing unreachable objects and compressing packfiles
+    - Git's internals are designed to provide a fast, efficient, and reliable version control system, allowing developers to work collaboratively and manage changes effectively in a distributed environment.
+  - Git Workflow:
+    - Git supports various workflows that define how developers collaborate and manage changes in a project
+    - Common Git workflows include:
+      - Centralized Workflow: A simple workflow where all developers push and pull changes to a central repository, similar to traditional version control systems
+      - Feature Branch Workflow: A workflow where developers create separate branches for each feature or bug fix, allowing for isolated development and easier code review
+      - Gitflow Workflow: A workflow that defines a strict branching model with specific branches for features, releases, and hotfixes, providing a structured approach to managing development and releases
+      - Forking Workflow: A workflow where developers fork a repository, make changes in their own copy, and submit pull requests to the original repository for review and merging, commonly used in open-source projects
+    - Git workflows help teams organize their development process, manage collaboration, and maintain a clean and efficient codebase, allowing for better project management and version control practices.
+    - Git Best Practices:
+    - Commit Often: Make small, frequent commits to keep track of changes and make it easier to identify issues or revert changes if needed
+    - Write Clear Commit Messages: Use descriptive commit messages that explain the purpose of the changes, making it easier for others (and yourself) to understand the history of the project
+    - Use Branches: Create separate branches for features, bug fixes, and experiments to keep the main branch stable and organized
+    - Keep Branches Up-to-Date: Regularly merge or rebase branches to incorporate changes from the main branch, preventing conflicts and keeping your work current
+    - Review Code: Use code reviews to catch issues, improve code quality, and share knowledge among team members
+    - Use Tags for Releases: Tag important commits to mark releases or milestones, making it easier to reference specific points in the project's history
+    - Avoid Large Commits: Break down large changes into smaller, manageable commits to make it easier to review and understand the changes
+    - Use .gitignore: Create a .gitignore file to exclude unnecessary files (e.g., build artifacts, temporary files) from being tracked by Git, keeping the repository clean and focused
+    - Backup Your Repository: Regularly back up your repository to prevent data loss and ensure that you can recover your work in case of hardware failure or other issues
+    - Use Git Hooks:
+    - Git hooks are scripts that run automatically at specific points in the Git workflow, allowing you to automate tasks, enforce policies, and customize Git's behavior
+    - Common Git hooks include:
+      - Pre-commit hook: Runs before a commit is created, allowing you to check code quality, run tests, or enforce coding standards before changes are committed
+      - Post-commit hook: Runs after a commit is created, allowing you to perform actions such as sending notifications, updating documentation, or triggering continuous integration builds
+      - Pre-push hook: Runs before changes are pushed to a remote repository, allowing you to run tests, check for merge conflicts, or enforce policies before changes are shared with others
+      - Post-merge hook: Runs after a merge is completed, allowing you to perform actions such as running tests, updating dependencies, or notifying team members of the merge
+      - Pre-receive hook: Runs on the remote repository before changes are accepted, allowing you to enforce policies, validate commits, or reject changes that do not meet certain criteria
+      - Post-receive hook: Runs on the remote repository after changes are accepted, allowing you to perform actions such as deploying code, sending notifications, or updating documentation
+    - Git hooks are useful for automating tasks, enforcing policies, and customizing Git's behavior to fit your team's workflow
+    - They can help improve code quality, streamline development processes, and ensure that best practices are followed throughout the project.
+  - Git Aliases:
+    - Git aliases are custom shortcuts for Git commands that allow you to create shorter or more convenient ways to run frequently used commands
+    - Useful for improving productivity and reducing the amount of typing required
+    - Example usage:
+      - `git config --global alias.co checkout` to create an alias for the `git checkout` command, allowing you to use `git co` instead
+      - `git config --global alias.br branch` to create an alias for the `git branch` command, allowing you to use `git br` instead
+      - `git config --global alias.ci commit` to create an alias for the `git commit` command, allowing you to use `git ci` instead
+      - `git config --global alias.st status` to create an alias for the `git status` command, allowing you to use `git st` instead
+      - `git config --global alias.lg "log --oneline --graph --decorate"` to create an alias for a custom log command that shows a condensed, graphical view of the commit history
+    - Aliases can be useful for situations where you want to save time and reduce typing by creating shortcuts for commonly used Git commands, allowing you to work more efficiently and streamline your workflow.
+- merge vs rebase
+  - `git merge` is used to combine changes from one branch into another 
+    - while preserving the history of both branches, 
+    - creating a new merge commit if necessary
+  - `git rebase` is used to move or combine commits to a new base commit, 
+    - creating a linear history by applying changes on top of the specified base branch
+  - Merging is typically used when you want to integrate changes from one branch into another 
+    - while ***maintaining a clear history*** of how the branches were combined, 
+    - especially when working with feature branches
+    - or when you want to preserve the context of the merged changes
+  - Rebasing is typically used when you want to integrate changes from one branch into another
+    - while maintaining a ***cleaner and more linear commit history***,
+    - but should be used with caution when working with shared branches,
+    - as it can rewrite history and cause issues for other collaborators
+  - Example usage:
+    - To merge a feature branch into the main branch:
+      - `git checkout main`
+      - `git merge feature`
+    - To rebase a feature branch onto the main branch:
+      - `git checkout feature`
+      - `git rebase main`
+- git pull origin main
+  - ***merges*** (NOT rebase) the changes from the main branch of the origin remote repository into your current branch
+  - so it is same as:
+    - `git fetch origin main` 
+    - `git merge origin/main`
+  - useful for keeping your local branch up-to-date with the latest changes from the remote repository
+  - a command that fetches changes from the remote repository (origin) and merges them into the current branch (main)
+  - useful for keeping your local branch up-to-date with the latest changes from the remote repository
+  - example usage:
+    - `git pull origin main` to fetch and merge changes from the main branch of the origin remote repository into your current branch
+    - `git pull --rebase origin main` to fetch changes and rebase your current branch on top of the latest changes from the main branch, 
+      - instead of creating a merge commit
+  - pulling is useful for situations where you want to synchronize your local branch with the remote repository, 
+  - allowing you to stay up-to-date with changes made by other collaborators and avoid conflicts when pushing your own changes.
+- tag
+  - a command that allows you to create, list, and manage tags in a Git repository
+  - useful for marking specific points in the repository's history, such as releases or important milestones
+  - example usage:
+    - `git tag` to list all tags in the repository
+    - `git tag <tag-name>` to create a new lightweight tag with the specified name
+    - `git tag -a <tag-name> -m "Tag message"` 
+      - to create a new annotated tag with the specified name and message
+    - `git tag -d <tag-name>` to delete a local tag
+    - `git push origin <tag-name>` to push a local tag to the remote repository
+    - `git push origin --tags` to push all local tags to the remote repository
+  - tagging is useful for situations where you want to mark specific commits in your repository's history, 
+  - making it easier to reference those commits later on, especially when working with releases or important milestones.
+  - Annotated tag vs lightweight tag:
+    - Annotated tags are stored as full objects in the Git repository, 
+      - containing metadata such as the tagger's name, email, date, and a message describing the tag
+    - Lightweight tags are simply pointers to a specific commit, 
+      - without any additional metadata or information
+    - Annotated tags are generally recommended for marking releases or important milestones, 
+      - as they provide more context and information about the tag, 
+      - while lightweight tags can be useful for temporary references or when you don't need the additional metadata.
+- modern git commands new
+  - git switch:
+    - a command that allows you to switch between branches in a more intuitive way than `git checkout`
+    - useful for navigating between different branches of development without the risk of accidentally checking out a file
+    - example usage:
+      - `git switch <branch-name>` to switch to a different branch
+      - `git switch -c <new-branch-name>` to create and switch to a new branch
+  - git restore:
+    - a command that allows you to restore files in the working directory to their last committed state
+    - useful for undoing changes to specific files without affecting the staging area or other files
+    - example usage:
+      - `git restore <filename>` to restore a specific file to its last committed state
+      - `git restore --staged <filename>` to unstage a specific file while keeping the changes in the working directory
+      - `git restore --source <commit-hash> <filename>` to restore a specific file to the state it was in at a specific commit
+  - These modern Git commands provide a more user-friendly and intuitive way to perform common tasks,
+  - helping to reduce confusion and improve the overall user experience when working with Git.
+- `git pull` is same as:
+  - `git fetch origin main` to fetch the latest changes from the main branch of the origin remote repository
+  - `git merge origin/main` to merge those changes into your current branch
+  - useful for keeping your local branch up-to-date with the latest changes from the remote repository
+  - example usage:
+    - `git pull origin main` to fetch and merge changes from the main branch of the origin remote repository into your current branch
+    - `git pull --rebase origin main` to fetch changes and rebase your current branch on top of the latest changes from the main branch,
+      - instead of creating a merge commit
+  - pulling is useful for situations where you want to synchronize your local branch with the remote repository,
+  - allowing you to stay up-to-date with changes made by other collaborators and avoid conflicts when pushing your own changes.
+- 

@@ -1,83 +1,147 @@
-I. Basic flow:
+# GitHub & Git Guide
 
-1. git clone "url"
-2. git status
-3. git checkout "some branch"
-4. git add .
-5. git commit -m "something"
-6. git push
+## I. Basic Git Workflow
 
-II. To undo git add . (remove all files from stage):
+1. Clone a repository: `git clone "url"`
+2. Check status: `git status`
+3. Switch branch: `git checkout "some branch"`
+4. Stage changes: `git add .`
+5. Commit changes: `git commit -m "something"`
+6. Push to remote: `git push`
+
+## II. Undoing Changes
+
+### Undo `git add .` (remove all files from stage)
+```bash
 git reset
+```
 
-III. To undo git add to specific file:
+### Undo `git add` for a specific file
+```bash
 git reset <file>
+```
 
-IV. Explicitly remove a tracked file from tracking in git(like a config file):
+### Explicitly remove a tracked file from git (e.g., config file)
+```bash
 git rm --cached path/filename
+```
 
-V. get current branch:
+## III. Git Status & Information
+
+### Get current branch
+```bash
 git status | grep 'On branch'
+```
 
-VI. difference between the current version and last updated version of a file:
+### View differences between current and last updated version of a file
+```bash
 git diff "filename"
+```
 
-VII. get config list:
+### Get git diff line numbers where changes are made
+```bash
+git diff --unified=0 | grep -Po '^\+\+\+ ./\K.*|^@@ -[0-9]+(,[0-9]+)? \+\K[0-9]+(,[0-9]+)?(?= @@)'
+```
+
+### Get git config list
+```bash
 git config --list
+```
 
-Get git diff line numbers where changes are made: git diff --unified=0 | grep -Po '^\+\+\+ ./\K.*|^@@ -[0-9]+(,[0-9]+)?
-\+\K[0-9]+(,[0-9]+)?(?= @@)'
+## IV. Remote Synchronization
 
-Reset and sync local repository with remote branch:
-Note: This command will destroy all local changes
+### Reset and sync local repository with remote branch
+> **⚠️ Warning:** This command will destroy all local changes
+```bash
 git fetch origin && git reset --hard origin/master && git clean -f -d
-get host id to do telnet: host "servername"
-e.g. host MSI
+```
 
-VIII. Git rebase vs merge: https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+## V. Branching
 
-- Both of these commands are designed to integrate changes from one branch into another branch.
-- The Merge Option
-    - The easiest option is to merge the main branch into the feature branch using something like the following:
-      git checkout feature
-      git merge main
-      Or, you can condense this to a one-liner:
-      git merge feature main
-    - As an alternative to merging, you can rebase the feature branch onto the main branch using the following commands:
-      git checkout feature
-      git rebase main
-        - This moves the entire feature branch to begin on the tip of the main branch,
-        - effectively incorporating all the new commits in the main.
-        - But, instead of using a merge commit, rebasing re-writes the project history by creating brand-new
-          commits for each commit in the original branch.
-        - The major benefit of rebasing is that you get a much cleaner project history.
-    - Interactive Rebasing: Interactive rebasing gives you the opportunity to alter commits as they are moved to the new
-      branch.
+### List all branches
+```bash
+git branch -a
+```
 
-- Set up git SSH
-    - Step 1: Generate SSH Key Pair
-        - Open a terminal on your local machine and run the following command to generate an SSH key pair:
-        - ```ssh-keygen -t rsa -b 4096 -C "your_email@example.com"```
-    - Step 2: Add SSH Key to SSH Agent (Optional but recommended)
-        - ```eval "$(ssh-agent -s)"```
-        - ```ssh-add ~/.ssh/id_rsa```
-    - Step 3: Add SSH Key to Git Hosting Service
-        - Copy the contents of the public key (~/.ssh/id_rsa.pub) using the following command:
-            - ```cat ~/.ssh/id_rsa.pub```
-        - Now, go to your Git hosting service (e.g., GitHub, GitLab, Bitbucket) and add the copied SSH key in your
-          account settings.
-        - It's usually found under "SSH and GPG keys" or a similar section.
-    - Step 4: Configure Git to Use SSH
-        - Open a terminal and run the following commands to configure Git to use SSH:
-        - ```git config --global user.email "your_email@example.com"```
-          ```git config --global user.name "Your Name"```
-          ```git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa -F /dev/null"```
-    - Step 5: Test the SSH Connection
-        - ```ssh -T git@github.com```
-    - Step 6: to clone repositories using the SSH URL:
-        - ```git clone git@github.com:user/repo.git```
+### Create a new branch from current branch
+```bash
+git checkout -b "new-branch_name"
+```
 
-- List all branches:
-    - git branch -a
-- create new branch from current branch
-  - git checkout -b "new-branch_name"
+### Get host ID for telnet
+```bash
+host "servername"
+# Example: host MSI
+```
+
+## VI. Git Rebase vs Merge
+
+See: https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+
+Both commands integrate changes from one branch into another branch.
+
+### Merge Option
+Merge the main branch into the feature branch:
+```bash
+git checkout feature
+git merge main
+```
+
+Or as a one-liner:
+```bash
+git merge feature main
+```
+
+### Rebase Option
+Rebase the feature branch onto the main branch:
+```bash
+git checkout feature
+git rebase main
+```
+
+**Benefits of Rebasing:**
+- Moves the entire feature branch to begin on the tip of the main branch
+- Effectively incorporates all new commits from main
+- Re-writes the project history by creating brand-new commits for each commit in the original branch
+- Results in a much cleaner project history
+
+**Interactive Rebasing:**
+Interactive rebasing gives you the opportunity to alter commits as they are moved to the new branch.
+
+## VII. Setting Up Git SSH
+
+### Step 1: Generate SSH Key Pair
+Open a terminal and run:
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+### Step 2: Add SSH Key to SSH Agent (Optional but recommended)
+```bash
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+```
+
+### Step 3: Add SSH Key to Git Hosting Service
+Copy the contents of your public key:
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+Now go to your Git hosting service (GitHub, GitLab, Bitbucket, etc.) and add the SSH key in your account settings. It's usually found under "SSH and GPG keys" or a similar section.
+
+### Step 4: Configure Git to Use SSH
+```bash
+git config --global user.email "your_email@example.com"
+git config --global user.name "Your Name"
+git config --global core.sshCommand "ssh -i ~/.ssh/id_rsa -F /dev/null"
+```
+
+### Step 5: Test the SSH Connection
+```bash
+ssh -T git@github.com
+```
+
+### Step 6: Clone Repositories Using SSH URL
+```bash
+git clone git@github.com:user/repo.git
+```
